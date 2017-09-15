@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2017-09-16-macOS High Sierra 10.13 原版镜像集合]]></title>
+    <url>%2F2017%2F09%2F16%2F2017-09-16-macOS-High-Sierra-10-13-%E5%8E%9F%E7%89%88%E9%95%9C%E5%83%8F%E9%9B%86%E5%90%88%2F</url>
+    <content type="text"><![CDATA[macOS High Sierra 10.13 原版镜像集合 12345678910DP1：链接:http://pan.baidu.com/s/1eRYNXL4 密码:29b8DP2：链接:http://pan.baidu.com/s/1o7AReQI 密码:3hi2DP3：链接:http://pan.baidu.com/s/1o8UKbu6 密码:usioDP4：链接:http://pan.baidu.com/s/1qXSxV2W 密码:a9gvDP5：链接:http://pan.baidu.com/s/1kV9l6CZ 密码:7t93DP6：链接:http://pan.baidu.com/s/1kVsqV0j 密码:033cDP7：链接:http://pan.baidu.com/s/1qXKrARM 密码:lbj0DP8：链接:http://pan.baidu.com/s/1c1Z9kbQ 密码:9nmrDP9：链接:http://pan.baidu.com/s/1micaQ1M 密码:dp1zGM:：链接:http://pan.baidu.com/s/1qY9Jw1u 密码:zzoo]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
+        <tag>镜像</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[macOS 打开任何来源]]></title>
     <url>%2F2017%2F09%2F15%2FmacOS-%E6%89%93%E5%BC%80%E4%BB%BB%E4%BD%95%E6%9D%A5%E6%BA%90%2F</url>
     <content type="text"><![CDATA[macOS 打开任何来源 许多朋友升级到 macOS Sierra 后在”安全性与隐私”中找不到”任何来源”选项，这里我教给大家怎么打开”任何来源”。 打开终端，输入以下代码回车： 1sudo spctl --master-disable 会提示输入密码，根据提示输入密码回车之后就可以在”安全性与隐私”中打开”任何来源”选项了]]></content>
@@ -30,7 +43,7 @@
   <entry>
     <title><![CDATA[BCM94352z 驱动教程]]></title>
     <url>%2F2017%2F09%2F13%2F2017-09-13-BCM94352z%E9%A9%B1%E5%8A%A8%E6%95%99%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[黑苹果无线网卡 BCM94352z 驱动教程 添加仿冒 ID 启用蓝牙：config.plist -&gt; Device -&gt; FakeID -&gt; WIFI 中填写 0x43a014e4 在 Clover 的配置文件 config.plist -&gt; Kernel and Kext Patches 添加以下代码块&lt;dict&gt; &lt;key&gt;Comment&lt;/key&gt; &lt;string&gt;10.11+-BT4LE-Handoff-Hotspot-lisai9093&lt;/string&gt; &lt;key&gt;Disabled&lt;/key&gt; &lt;false/&gt; &lt;key&gt;Find&lt;/key&gt; &lt;data&gt; SIX/dEdIiwc= &lt;/data&gt; &lt;key&gt;Name&lt;/key&gt; &lt;string&gt;IOBluetoothFamily&lt;/string&gt; &lt;key&gt;Replace&lt;/key&gt; &lt;data&gt; Qb4PAAAA60Q= &lt;/data&gt; &lt;/dict&gt; 下载并安装驱动https://github.com/vit9696/Lilu/releases https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/ https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/ https://sourceforge.net/projects/airportbrcmfixup/files/?source=navbar 将以下驱动拷贝到 CLOVER/EFI/CLOVER/kexts/Other 文件夹下(由于 AirportBrcmFixup.kext 是依赖于 Lilu 运行的插件，所以还需要确保该目录下必须存在 Lilu.kext) AirportBrcmFixup.kext FakePCIID.kext FakePCIID_Broadcom_WiFi.kext BrcmPatchRAM2.kext BrcmFirmwareData.kext Lilu.kext 重建缓存sudo rm -rf /System/Library/Caches/com.apple.kext.caches/Startup/kernelcache sudo rm -rf /System/Library/PrelinkedKernels/prelinkedkernel sudo touch /System/Library/Extensions/ &amp;&amp; sudo kextcache -u / 重启]]></content>
+    <content type="text"><![CDATA[黑苹果无线网卡 BCM94352z 驱动教程 添加仿冒 ID 启用蓝牙：1config.plist -&gt; Device -&gt; FakeID -&gt; WIFI 中填写 0x43a014e4 在 Clover 的配置文件 config.plist -&gt; Kernel and Kext Patches 添加以下代码块12345678910111213141516&lt;dict&gt; &lt;key&gt;Comment&lt;/key&gt; &lt;string&gt;10.11+-BT4LE-Handoff-Hotspot-lisai9093&lt;/string&gt; &lt;key&gt;Disabled&lt;/key&gt; &lt;false/&gt; &lt;key&gt;Find&lt;/key&gt; &lt;data&gt; SIX/dEdIiwc= &lt;/data&gt; &lt;key&gt;Name&lt;/key&gt; &lt;string&gt;IOBluetoothFamily&lt;/string&gt; &lt;key&gt;Replace&lt;/key&gt; &lt;data&gt; Qb4PAAAA60Q= &lt;/data&gt;&lt;/dict&gt; 下载并安装驱动1234https://github.com/vit9696/Lilu/releaseshttps://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/ https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/https://sourceforge.net/projects/airportbrcmfixup/files/?source=navbar 将以下驱动拷贝到 CLOVER/EFI/CLOVER/kexts/Other 文件夹下(由于 AirportBrcmFixup.kext 是依赖于 Lilu 运行的插件，所以还需要确保该目录下必须存在 Lilu.kext) 123456AirportBrcmFixup.kext FakePCIID.kext FakePCIID_Broadcom_WiFi.kext BrcmPatchRAM2.kext BrcmFirmwareData.kextLilu.kext 重建缓存123sudo rm -rf /System/Library/Caches/com.apple.kext.caches/Startup/kernelcachesudo rm -rf /System/Library/PrelinkedKernels/prelinkedkernelsudo touch /System/Library/Extensions/ &amp;&amp; sudo kextcache -u / 重启]]></content>
       <categories>
         <category>Hacintosh</category>
       </categories>
@@ -43,7 +56,7 @@
   <entry>
     <title><![CDATA[低碳生活答题问题]]></title>
     <url>%2F2017%2F09%2F12%2F2017-09-12-%E4%BD%8E%E7%A2%B3%E7%94%9F%E6%B4%BB%E7%AD%94%E9%A2%98%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[低碳生活答题问题 问题描述某电视台举办了低碳生活大奖赛。题目的计分规则相当奇怪： 1、每位选手需要回答10个问题（其编号为1到10），越后面越有难度。答对的，当前分数翻倍；答错了则扣掉与题号相同的分数（选手必须回答问题，不回答按错误处理）。 2、每位选手都有一个起步的分数为10分。 某获胜选手最终得分刚好是100分，如果不让你看比赛过程，你能推断出他（她）哪个题目答对了，哪个题目答错了吗？ 3、如果把答对的记为1，答错的记为0，则10个题目的回答情况可以用仅含有1和0的串来表示。例如：0010110011 就是可能的情况。 4、你的任务是算出所有可能情况。每个答案占一行。 解题思路一共十个问题，每个问题两种情况，要么对要么错，那么结果就会有 0000000000 ~ 1111111111 = pow（2，10）种，就可以用暴力搜索将所有情况枚举出来然后判断符合要求的情况； 分数的控制可以直接利用遍历所有情况的 for 循环分别判断两种情况； 如果用输出 1 代表回答正确， 0 代表错误，不难想到任何一个正整数对 2 取余结果只有 1 和 0 两种情况， 输出的时候也就成了进制转换问题； 代码实现#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() { int i,j; int score,temp; for(i=0;i&lt;pow(2,10);i++){ temp=i; score=10; for(j=0;j&lt;10;j++){ if(temp%2 == 1) score*=2; else score-=j+1; temp/=2; } if(score==100){ temp=i; for(j=0;j&lt;10;j++){ printf(&quot;%d &quot;, temp%2); temp/=2; } printf(&quot;\n&quot;); } } return 0; } 运行结果1 0 1 1 0 1 0 0 0 0 0 1 1 1 0 1 0 0 0 0 0 0 1 0 1 1 0 0 1 1]]></content>
+    <content type="text"><![CDATA[低碳生活答题问题 问题描述某电视台举办了低碳生活大奖赛。题目的计分规则相当奇怪： 1、每位选手需要回答10个问题（其编号为1到10），越后面越有难度。答对的，当前分数翻倍；答错了则扣掉与题号相同的分数（选手必须回答问题，不回答按错误处理）。 2、每位选手都有一个起步的分数为10分。 某获胜选手最终得分刚好是100分，如果不让你看比赛过程，你能推断出他（她）哪个题目答对了，哪个题目答错了吗？ 3、如果把答对的记为1，答错的记为0，则10个题目的回答情况可以用仅含有1和0的串来表示。例如：0010110011 就是可能的情况。 4、你的任务是算出所有可能情况。每个答案占一行。 解题思路一共十个问题，每个问题两种情况，要么对要么错，那么结果就会有 0000000000 ~ 1111111111 = pow（2，10）种，就可以用暴力搜索将所有情况枚举出来然后判断符合要求的情况； 分数的控制可以直接利用遍历所有情况的 for 循环分别判断两种情况； 如果用输出 1 代表回答正确， 0 代表错误，不难想到任何一个正整数对 2 取余结果只有 1 和 0 两种情况， 输出的时候也就成了进制转换问题； 代码实现12345678910111213141516171819202122232425262728293031#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int i,j; int score,temp; for(i=0;i&lt;pow(2,10);i++)&#123; temp=i; score=10; for(j=0;j&lt;10;j++)&#123; if(temp%2 == 1) score*=2; else score-=j+1; temp/=2; &#125; if(score==100)&#123; temp=i; for(j=0;j&lt;10;j++)&#123; printf(&quot;%d &quot;, temp%2); temp/=2; &#125; printf(&quot;\n&quot;); &#125; &#125; return 0;&#125;# 运行结果 1 0 1 1 0 1 0 0 0 00 1 1 1 0 1 0 0 0 00 0 1 0 1 1 0 0 1 1```]]></content>
       <categories>
         <category>Arithmetics</category>
       </categories>
@@ -80,19 +93,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[加快黑苹果开机速度的一种方法]]></title>
-    <url>%2F2017%2F09%2F05%2F2017-09-05-%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>Hacintosh</tag>
-        <tag>黑苹果</tag>
-        <tag>开机速度</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[利用 AppleIntelInfo 查看变频]]></title>
     <url>%2F2017%2F09%2F05%2F2017-09-05-%E5%88%A9%E7%94%A8%20AppleIntelInfo%20%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%A2%91%2F</url>
     <content type="text"><![CDATA[很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频 开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：1cd ~/Desktop 回车继续敲： 1git clone https://github.com/athlonreg/AppleIntelInfo.git 回车后就把 AppleIntelInfo 源码下载在桌面了 然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)： 1http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/ 将编译后的 AppleIntelInfo.kext 放到桌面 然后开始利用命令行看变频数据打开终端，输入： 1cd ~/Desktop 回车后继续敲 1sudo chown -R root:wheel AppleIntelInfo.kext 回车会提示输入密码，输入之后回车继续敲： 1sudo kextutil AppleIntelInfo.kext 再回车，接着敲： 1sudo cat /tmp/AppleIntelInfo.dat 回车之后变频数据就出来了，例如我的机器： 一般我们只看最后一行就可以了哦 比如我的机器就是 800、 1000、 …… 、 2700 ，单位是MHz，正好符合我的机器，最低 800MHz ，最高2.4GHz，可超频到2.7GHz。 完工行胜于言，快去试试你的机器是不是变频正常吧！！]]></content>
@@ -104,6 +104,19 @@
         <tag>黑苹果</tag>
         <tag>AppleIntelInfo</tag>
         <tag>变频</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[加快黑苹果开机速度的一种方法]]></title>
+    <url>%2F2017%2F09%2F05%2F2017-09-05-%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
+        <tag>开机速度</tag>
       </tags>
   </entry>
   <entry>
@@ -122,7 +135,7 @@
   <entry>
     <title><![CDATA[金币阵列问题]]></title>
     <url>%2F2017%2F09%2F03%2F2017-09-03-%E9%87%91%E5%B8%81%E9%98%B5%E5%88%97%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[问题描述：有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则是：1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务：给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 算法的具体思路:本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现如下:123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];int number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
+    <content type="text"><![CDATA[问题描述：有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则是：1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务：给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 算法的具体思路:本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现如下:123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];nt number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
       <categories>
         <category>Arithmetics</category>
       </categories>
@@ -130,19 +143,6 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>金币阵列</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[字典序问题]]></title>
-    <url>%2F2017%2F08%2F31%2F2017-08-31-%E5%AD%97%E5%85%B8%E5%BA%8F%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[问题描述：在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A由26个小写字母组成。该字母表产生的升序字符串中字母从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1次。例如，a,b,ab,bc,xyz等字符串都是升序字符串。现在对字母表中产生的所有长度不超过6的升序字符串，计算它在字典中的编码。 解题思路：首先判断字符串长度为3，先算长度为1和2的所有情况，即从26个字母中选1个或两个字母，因为是升序，即sum=C（26，1）+C（26，2）； 之后再看字符串的第一个字符，为’d’,之前有以a,b,c开头的长度为3的字符串，以a开头，后边2位需要在25个字母中选择（除了a），以b开头的后2位需要在24个字母中选择（除了a,b），以c开头的在23个字母（除了a,,b,c）中选择，即sum+=(C(25,2)+C(24,2)+C(23,2)); 然后再看下一个字母’g’，d与g之间有e,f,需要算以de开头以及以df开头的所有情况，即sum+=(C(21,1)+C(20,1))； 最后再加上h-‘a’+1; 代码实现如下：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051#include &lt;stdio.h&gt;#include &lt;string.h&gt;int getCombinatorialNumber(int m, int n) &#123; int n_Product=1, m_Product=1; int i; for(i=1; i&lt;=n; i++) n_Product*=i; for(i=m; i&gt;m-n; i--) m_Product*=i; return m_Product/n_Product;&#125;int main(int argc, const char * argv[]) &#123; int number; //要统计字符串的个数 int sum; //存放字符串的序号 int length; char str[10]; //存放字符串 int a[10]; //存放字符串的每一位字符的值 int i, j; scanf(&quot;%d&quot;, &amp;number); while(number--) &#123; getchar(); sum=1; scanf(&quot;%s&quot;, str); length=(int)strlen(str); for(i=1; i&lt;length; i++) &#123; sum += getCombinatorialNumber(26, i); //小于字符串长度的字符串个数 &#125; for(i=0; i&lt;length; i++) &#123; a[i]=str[i]-96; //计算每个字符从a开始的序号数值, a~z分别对应1~26 //printf(&quot;%d &quot;, a[i]); &#125; //printf(&quot;%d\n&quot;, f(26, 2)); int temp=1; for(i=length; i&gt;0; i--) &#123; for(j=temp; j&lt;a[length-i]; j++) &#123; sum += getCombinatorialNumber(26-j, i-1); //依次扫描字符，计算所有情况 &#125; temp=a[length-i]+1; &#125; printf(&quot;%d\n&quot;, sum); &#125; return 0;&#125;]]></content>
-      <categories>
-        <category>Arithmetics</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-        <tag>算法</tag>
-        <tag>字典序</tag>
       </tags>
   </entry>
   <entry>
@@ -156,6 +156,19 @@
         <tag>Lilu</tag>
         <tag>五国</tag>
         <tag>编译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[字典序问题]]></title>
+    <url>%2F2017%2F08%2F31%2F2017-08-31-%E5%AD%97%E5%85%B8%E5%BA%8F%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[问题描述：在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A由26个小写字母组成。该字母表产生的升序字符串中字母从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1次。例如，a,b,ab,bc,xyz等字符串都是升序字符串。现在对字母表中产生的所有长度不超过6的升序字符串，计算它在字典中的编码。 解题思路：首先判断字符串长度为3，先算长度为1和2的所有情况，即从26个字母中选1个或两个字母，因为是升序，即sum=C（26，1）+C（26，2）； 之后再看字符串的第一个字符，为’d’,之前有以a,b,c开头的长度为3的字符串，以a开头，后边2位需要在25个字母中选择（除了a），以b开头的后2位需要在24个字母中选择（除了a,b），以c开头的在23个字母（除了a,,b,c）中选择，即sum+=(C(25,2)+C(24,2)+C(23,2)); 然后再看下一个字母’g’，d与g之间有e,f,需要算以de开头以及以df开头的所有情况，即sum+=(C(21,1)+C(20,1))； 最后再加上h-‘a’+1; 代码实现如下：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include &lt;stdio.h&gt;#include &lt;string.h&gt;int getCombinatorialNumber(int m, int n) &#123; int n_Product=1, m_Product=1; int i; for(i=1; i&lt;=n; i++) n_Product*=i; for(i=m; i&gt;m-n; i--) &#123; m_Product*=i; return m_Product/n_Product; &#125;&#125;int main(int argc, const char * argv[]) &#123; int number; //要统计字符串的个数 int sum; //存放字符串的序号 int length; char str[10]; //存放字符串 int a[10]; //存放字符串的每一位字符的值 int i, j; scanf(&quot;%d&quot;, &amp;number); while(number--) &#123; getchar(); sum=1; scanf(&quot;%s&quot;, str); length=(int)strlen(str); for(i=1; i&lt;length; i++) &#123; sum += getCombinatorialNumber(26, i); //小于字符串长度的字符串个数 &#125; for(i=0; i&lt;length; i++) &#123; a[i]=str[i]-96; //计算每个字符从a开始的序号数值, a~z分别对应1~26 //printf(&quot;%d &quot;, a[i]); &#125; //printf(&quot;%d\n&quot;, f(26, 2)); int temp=1; for(i=length; i&gt;0; i--) &#123; for(j=temp; j&lt;a[length-i]; j++) &#123; sum += getCombinatorialNumber(26-j, i-1); //依次扫描字符，计算所有情况 &#125; temp=a[length-i]+1; &#125; printf(&quot;%d\n&quot;, sum); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>Arithmetics</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>字典序</tag>
       </tags>
   </entry>
   <entry>
@@ -174,7 +187,7 @@
   <entry>
     <title><![CDATA[统计数字问题]]></title>
     <url>%2F2017%2F08%2F29%2F2017-08-29-%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[统计数字问题 问题描述：一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 。 算法的具体思路:暴力求解。本题关键在于将每一页码的数字进行分解，这种方式可以利用整数的除法和对10取余计算。 代码实现如下:123456789101112131415161718192021222324252627282930313233343536#include &lt;stdio.h&gt;#include &lt;math.h&gt;int main(int argc, const char * argv[]) &#123; // insert code here... int array[10] = &#123;0&#125;; //存放0~9出现的次数 int low, temp, high; //以temp为分割点 将页数分为三部分 high和low分别代表高位和低位的数值 int paginations; //存放总页数 int i, j; printf(&quot;一共多少页: &quot;); scanf(&quot;%d&quot;, &amp;paginations); int count = 0; //存放除去最高位后总页码的位数 count = (int)log10(paginations); for(i = count; i &gt;= 0; i --) &#123; //i表示低位（low）的位数 low = paginations % (int)pow(10, i); //计算low的数值 temp = paginations / (int)pow(10, i) % 10; //计算temp的数值 high = paginations / (int)pow(10, i + 1); //计算high的数值 for(j = 0; j &lt; temp; j ++) array[j] += (high + 1) * pow(10, i); //计算 0&lt;中间位&lt;temp 出现的次数 array[temp] += high * pow(10, i) + low + 1; //计算 中间位=temp 出现的次数 for(j = temp + 1; j &lt; 10; j ++) //计算 temp&lt;中间位&lt;9 出现的次数 array[j] += high * pow(10, i); &#125; for(i = count; i &gt;= 0; i --) //除去多统计的a[0]出现的次数 array[0] -= pow(10, i); printf(&quot;0~9分别出现的次数为:\n&quot;); for(i = 0; i &lt; 10; i ++) //打印0~9分别出现的次数 printf(&quot;%d\n&quot;, array[i]); return 0;&#125;]]></content>
+    <content type="text"><![CDATA[统计数字问题 问题描述：一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 。 算法的具体思路:暴力求解。本题关键在于将每一页码的数字进行分解，这种方式可以利用整数的除法和对10取余计算。 代码实现如下:123456789101112131415161718192021222324252627282930313233343536#include &lt;stdio.h&gt;#include &lt;math.h&gt; int main(int argc, const char * argv[]) &#123; // insert code here... int array[10] = &#123;0&#125;; //存放0~9出现的次数 int low, temp, high; //以temp为分割点 将页数分为三部分 high和low分别代表高位和低位的数值 int paginations; //存放总页数 int i, j; printf(&quot;一共多少页: &quot;); scanf(&quot;%d&quot;, &amp;paginations); int count = 0; //存放除去最高位后总页码的位数 count = (int)log10(paginations); for(i = count; i &gt;= 0; i --) &#123; //i表示低位（low）的位数 low = paginations % (int)pow(10, i); //计算low的数值 temp = paginations / (int)pow(10, i) % 10; //计算temp的数值 high = paginations / (int)pow(10, i + 1); //计算high的数值 for(j = 0; j &lt; temp; j ++) array[j] += (high + 1) * pow(10, i); //计算 0&lt;中间位&lt;temp 出现的次数 array[temp] += high * pow(10, i) + low + 1; //计算 中间位=temp 出现的次数 for(j = temp + 1; j &lt; 10; j ++) //计算 temp&lt;中间位&lt;9 出现的次数 array[j] += high * pow(10, i); &#125; for(i = count; i &gt;= 0; i --) //除去多统计的a[0]出现的次数 array[0] -= pow(10, i); printf(&quot;0~9分别出现的次数为:\n&quot;); for(i = 0; i &lt; 10; i ++) //打印0~9分别出现的次数 printf(&quot;%d\n&quot;, array[i]); return 0;&#125;]]></content>
       <categories>
         <category>Arithmetics</category>
       </categories>
