@@ -107,19 +107,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[金币阵列问题]]></title>
-    <url>%2F2017%2F09%2F03%2F2017-09-03-%E9%87%91%E5%B8%81%E9%98%B5%E5%88%97%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[问题描述：有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则是：1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务：给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 算法的具体思路:本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现如下:123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];int number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
-      <categories>
-        <category>Arithmetics</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-        <tag>算法</tag>
-        <tag>金币阵列</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[How to use xcode-select in terminal]]></title>
     <url>%2F2017%2F09%2F03%2F2017-09-10-How%20to%20use%20xcode-select%20in%20terminal%2F</url>
     <content type="text"><![CDATA[How to use xcode-select in terminal It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.The command line options are below: 1234xcode-select [-help]xcode-select [-switch xcode_folder_path]xcode-select [-print-path]xcode-select [-version] Here is how to print the current Xcode path:12$ xcode-select --print-path/Developer/Applications/Xcode.app Line number 2 shows the current version of Xcode that is ‘active.’ If you are accessing xcodebuild or other related tools from a script, –print-path is the preferred means to determine the current Xcode location.Use the -switch option to change to another version of Xcode on your system: 1$ sudo xcode-select --switch /Applications/Xcode-beta.app/Contents/Developer This changes to the Xcode-beta 9 on my system. Note that root access is required to set the Xcode location, thus I have used sudo to execute the command as root.Printing the path now looks as follows: 12$ xcode-select --print-path/Applications/Xcode-beta.app/Contents/Developer To switch back to Xcode installed in the /Applications directory:1$ sudo xcode-select -switch /Applications/Xcode.app/ You can read more about xcode-select by view the man page from a terminal:1$ man xcode-select]]></content>
@@ -130,6 +117,19 @@
         <tag>Mac</tag>
         <tag>终端</tag>
         <tag>Xcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[金币阵列问题]]></title>
+    <url>%2F2017%2F09%2F03%2F2017-09-03-%E9%87%91%E5%B8%81%E9%98%B5%E5%88%97%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[问题描述：有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则是：1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务：给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 算法的具体思路:本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现如下:123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];int number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>Arithmetics</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>金币阵列</tag>
       </tags>
   </entry>
   <entry>
@@ -153,9 +153,9 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
+        <tag>编译</tag>
         <tag>Lilu</tag>
         <tag>五国</tag>
-        <tag>编译</tag>
       </tags>
   </entry>
   <entry>
@@ -166,9 +166,21 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>编译</tag>
         <tag>DSDT</tag>
         <tag>SSDT</tag>
+        <tag>编译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[AppleALC-ALCPlugFix]]></title>
+    <url>%2F2017%2F08%2F29%2F2017-08-29-AppleALC-ALCPlugFix%2F</url>
+    <content type="text"><![CDATA[简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题 首先下载 AppleALC 源码，打开终端输入： 1git clone https://github.com/vit9696/AppleALC 回车之后就将 AppleALC 下载到了你的用户根目录 然后下载 Lilu ： 1链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62 将下载的 Lilu 中 Debug 里面的 Lilu.kext 放进 AppleALC 源码根目录，然后删除 /AppleALC/Resources 中多余文件夹，只留下你的声卡型号文件夹、 Pinconfigs.kext 以及四个 plist 文件，以 cx20751 为例剩下如下文件 然后打开计算器，显示为编程器 打开你的 Codec ，找到 Vendor Id ，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开 /AppleALC/Resources/CX20751_2/Info.plist （此处的 CX20751_2 需要换成你的声卡型号），把 codecid 换成刚才拷贝的十进制数 保存退出，右键 PinConfigs.kext 显示包内容，打开里面的 Info.plist ，搜索刚才拷贝的十进制数，记下 LayoutID 数据，有几个记几个，都记下来，然后将 IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault 中的其他型号删除，（为避免出错，这里的删除可以不操作，删除只是为了精简做出来的 AppleALC ），保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的 export next where 填上桌面，点 export 就生成 AppleALC 在桌面上了，一层一层打开它，将其中的 AppleALC.kext 放到 clover 驱动目录，注意之前下载的 Lilu 里面的Release中 Lilu.kext 也要放到 clover 驱动目录，最后不要忘了在 config 注入 LayoutID ： 如图 Audio 处写上刚才记下的 LayoutID 到这里 AppleALC 的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有 ID ，如果能驱动但无法做到插入耳机自动切换，接着往下看： 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的 ALCPlugFix 中的 main.m 下拉到最下方，注意这一部分： 下载 had-tools ,将 codec 复制到 had-tools 目录，打开终端， cd 到此目录，输入 1./widget_dump.sh codec.txt 回车，此处 codec.txt 要根据你的 codec 名字来，回车可以看到以下输出： 找到 nid = 0x19 和 nid = 0x1a ,这里我的 19 为 line in ， 1a 为 mic in ，记录下最后两位，我的是 04 和 24 就这么改 保存退出，双击按照 AppleALC 的编译方法编译这个 然后将生成的 ALCPlugFix 替换 alc_fix 中的 ALCPlugFix ，终端 cd 到 alc_fix 目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh codec.txt 就可以发现之前的 19 和 1a 后面的数据反过来了 如果不行重启一次应该就好了。]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
       </tags>
   </entry>
   <entry>
@@ -182,18 +194,6 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>统计数字</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[AppleALC-ALCPlugFix]]></title>
-    <url>%2F2017%2F08%2F29%2F2017-08-29-AppleALC-ALCPlugFix%2F</url>
-    <content type="text"><![CDATA[简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题 首先下载 AppleALC 源码，打开终端输入： 1git clone https://github.com/vit9696/AppleALC 回车之后就将 AppleALC 下载到了你的用户根目录 然后下载 Lilu ： 1链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62 将下载的 Lilu 中 Debug 里面的 Lilu.kext 放进 AppleALC 源码根目录，然后删除 /AppleALC/Resources 中多余文件夹，只留下你的声卡型号文件夹、 Pinconfigs.kext 以及四个 plist 文件，以 cx20751 为例剩下如下文件 然后打开计算器，显示为编程器 打开你的 Codec ，找到 Vendor Id ，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开 /AppleALC/Resources/CX20751_2/Info.plist （此处的 CX20751_2 需要换成你的声卡型号），把 codecid 换成刚才拷贝的十进制数 保存退出，右键 PinConfigs.kext 显示包内容，打开里面的 Info.plist ，搜索刚才拷贝的十进制数，记下 LayoutID 数据，有几个记几个，都记下来，然后将 IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault 中的其他型号删除，（为避免出错，这里的删除可以不操作，删除只是为了精简做出来的 AppleALC ），保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的 export next where 填上桌面，点 export 就生成 AppleALC 在桌面上了，一层一层打开它，将其中的 AppleALC.kext 放到 clover 驱动目录，注意之前下载的 Lilu 里面的Release中 Lilu.kext 也要放到 clover 驱动目录，最后不要忘了在 config 注入 LayoutID ： 如图 Audio 处写上刚才记下的 LayoutID 到这里 AppleALC 的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有 ID ，如果能驱动但无法做到插入耳机自动切换，接着往下看： 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的 ALCPlugFix 中的 main.m 下拉到最下方，注意这一部分： 下载 had-tools ,将 codec 复制到 had-tools 目录，打开终端， cd 到此目录，输入 1./widget_dump.sh codec.txt 回车，此处 codec.txt 要根据你的 codec 名字来，回车可以看到以下输出： 找到 nid = 0x19 和 nid = 0x1a ,这里我的 19 为 line in ， 1a 为 mic in ，记录下最后两位，我的是 04 和 24 就这么改 保存退出，双击按照 AppleALC 的编译方法编译这个 然后将生成的 ALCPlugFix 替换 alc_fix 中的 ALCPlugFix ，终端 cd 到 alc_fix 目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh codec.txt 就可以发现之前的 19 和 1a 后面的数据反过来了 如果不行重启一次应该就好了。]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>Hacintosh</tag>
-        <tag>黑苹果</tag>
       </tags>
   </entry>
   <entry>
