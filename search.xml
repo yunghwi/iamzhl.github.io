@@ -80,19 +80,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[加快黑苹果开机速度的一种方法]]></title>
-    <url>%2F2017%2F09%2F05%2F2017-09-05-%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>Hacintosh</tag>
-        <tag>黑苹果</tag>
-        <tag>开机速度</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[利用 AppleIntelInfo 查看变频]]></title>
     <url>%2F2017%2F09%2F05%2F2017-09-05-%E5%88%A9%E7%94%A8%20AppleIntelInfo%20%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%A2%91%2F</url>
     <content type="text"><![CDATA[很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频 开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：1cd ~/Desktop 回车继续敲： 1git clone https://github.com/athlonreg/AppleIntelInfo.git 回车后就把 AppleIntelInfo 源码下载在桌面了 然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)： 1http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/ 将编译后的 AppleIntelInfo.kext 放到桌面 然后开始利用命令行看变频数据打开终端，输入： 1cd ~/Desktop 回车后继续敲 1sudo chown -R root:wheel AppleIntelInfo.kext 回车会提示输入密码，输入之后回车继续敲： 1sudo kextutil AppleIntelInfo.kext 再回车，接着敲： 1sudo cat /tmp/AppleIntelInfo.dat 回车之后变频数据就出来了，例如我的机器： 一般我们只看最后一行就可以了哦 比如我的机器就是 800、 1000、 …… 、 2700 ，单位是MHz，正好符合我的机器，最低 800MHz ，最高2.4GHz，可超频到2.7GHz。 完工行胜于言，快去试试你的机器是不是变频正常吧！！]]></content>
@@ -107,6 +94,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[加快黑苹果开机速度的一种方法]]></title>
+    <url>%2F2017%2F09%2F05%2F2017-09-05-%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
+        <tag>开机速度</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[How to use xcode-select in terminal]]></title>
     <url>%2F2017%2F09%2F03%2F2017-09-10-How%20to%20use%20xcode-select%20in%20terminal%2F</url>
     <content type="text"><![CDATA[How to use xcode-select in terminal It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.The command line options are below: 1234xcode-select [-help]xcode-select [-switch xcode_folder_path]xcode-select [-print-path]xcode-select [-version] Here is how to print the current Xcode path:12$ xcode-select --print-path/Developer/Applications/Xcode.app Line number 2 shows the current version of Xcode that is ‘active.’ If you are accessing xcodebuild or other related tools from a script, –print-path is the preferred means to determine the current Xcode location.Use the -switch option to change to another version of Xcode on your system: 1$ sudo xcode-select --switch /Applications/Xcode-beta.app/Contents/Developer This changes to the Xcode-beta 9 on my system. Note that root access is required to set the Xcode location, thus I have used sudo to execute the command as root.Printing the path now looks as follows: 12$ xcode-select --print-path/Applications/Xcode-beta.app/Contents/Developer To switch back to Xcode installed in the /Applications directory:1$ sudo xcode-select -switch /Applications/Xcode.app/ You can read more about xcode-select by view the man page from a terminal:1$ man xcode-select]]></content>
@@ -114,8 +114,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>终端</tag>
         <tag>Mac</tag>
+        <tag>终端</tag>
         <tag>Xcode</tag>
       </tags>
   </entry>
@@ -133,6 +133,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[解决Lilu造成的一些问题]]></title>
+    <url>%2F2017%2F08%2F31%2F2017-08-31-%E8%A7%A3%E5%86%B3Lilu%E9%80%A0%E6%88%90%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[解决Lilu造成的一些问题 众所周知，Lilu插件为黑果带来了巨大的影响，可以说 vit9696 在某种程度上改变了黑果界，但是有些朋友自己编译kext后发现会五国或者直接黑屏又或者直接重启，这是为什么呢，在和一些朋友一起测试后发现是由于操作不当引起的，这里我以 IntelGraphicsFixup 为例，简述一下编译过程 首先打开终端输入: 1cd ~/Desktop 回车即进入桌面目录，然后输入： 1git clone https://github.com/RehabMan/IntelGraphicsFixup.git 回车即可下载 IntelGraphicsFixup 源码到桌面上 然后将 Lilu 的 Debug 版放到 IntelGraphicsFixup 源码根目录 然后用 Xcode 打开 IntelGraphicsFixup 的工程文件 按如下所示操作即可编译 IntelGraphicsFixup 到桌面上 一层一层打开它，就会发现已经编译好的 IntelGraphicsFixup 将 Lilu 的 Release 版连同 IntelGraphicsFixup 一起放到你的驱动目录就可以用了 以上是依赖 Lilu 的一些驱动的编译方法。 但是我们往往要用到不止一个 Lilu 的插件，这时就有可能会造成其中一个无效甚至造成五国等问题，原因就在于你的这两个 Lilu 插件是用不同版本的 Lilu 源码编译出来的，要想使用多个Lilu插件而又避免这种情况的出现，你可以采取我提供的方法： 首先将 Lilu-1.1.6 保存到本地，所有的 Lilu 插件都用我上面叙述的方法来编译，而编译的时候由于我们使用的是 1.1.6 的 Debug 版 Lilu ，所以就可以避免出现那些奇怪的问题，这里有一点需要注意，我们最终需要用到的是 Lilu 的 Release 版和它的插件，而 Debug 版的Lilu我们只在编译的时候才用到了。 给大家提供下 Lilu-1.1.6 ，减少大家的工作量： 1链接:http://pan.baidu.com/s/1kUBEwgn 密码:9xuj 最后提一下10.13一些朋友更新时遇到的因为固件问题而升级失败的情况吧，在我和风铃大神遇到的不少升级 10.13 的朋友反馈情况来看，固件问题造成无法升级的几乎全是使用 APFS 的，而使用 HFS+ 的朋友则没有遇到这种问题，风铃大师遇到这种情况并解决了，经过研究后提出的观点是Apple的每次更新都会有固件的更新，而这些更新在引导中则体现在你的EFI下的 Apple 目录，也就是说使用 APFS 的朋友要想成功升级 10.13 ，这个文件夹千万不要动，如果你的这个文件夹没有动过但还是遇到这种问题，请尝试先安装 10.13 dp1 ，然后慢慢升级过去就可以了。（感谢风铃提出的思路） 这里提供一下我做的10.13的镜像吧 12345678910DP1：链接:http://pan.baidu.com/s/1eRYNXL4 密码:29b8DP2：链接:http://pan.baidu.com/s/1o7AReQI 密码:3hi2DP3：链接:http://pan.baidu.com/s/1o8UKbu6 密码:usioDP4：链接:http://pan.baidu.com/s/1qXSxV2W 密码:a9gvDP5：链接:http://pan.baidu.com/s/1kV9l6CZ 密码:7t93DP6：链接:http://pan.baidu.com/s/1kVsqV0j 密码:033cDP7：链接:http://pan.baidu.com/s/1qXKrARM 密码:lbj0DP8：链接:http://pan.baidu.com/s/1c1Z9kbQ 密码:9nmrDP9：链接:http://pan.baidu.com/s/1micaQ1M 密码:dp1zGM:：链接:http://pan.baidu.com/s/1qY9Jw1u 密码:zzoo]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>Lilu</tag>
+        <tag>五国</tag>
+        <tag>编译</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[字典序问题]]></title>
     <url>%2F2017%2F08%2F31%2F2017-08-31-%E5%AD%97%E5%85%B8%E5%BA%8F%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[问题描述：在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A由26个小写字母组成。该字母表产生的升序字符串中字母从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1次。例如，a,b,ab,bc,xyz等字符串都是升序字符串。现在对字母表中产生的所有长度不超过6的升序字符串，计算它在字典中的编码。 解题思路：首先判断字符串长度为3，先算长度为1和2的所有情况，即从26个字母中选1个或两个字母，因为是升序，即sum=C（26，1）+C（26，2）； 之后再看字符串的第一个字符，为’d’,之前有以a,b,c开头的长度为3的字符串，以a开头，后边2位需要在25个字母中选择（除了a），以b开头的后2位需要在24个字母中选择（除了a,b），以c开头的在23个字母（除了a,,b,c）中选择，即sum+=(C(25,2)+C(24,2)+C(23,2)); 然后再看下一个字母’g’，d与g之间有e,f,需要算以de开头以及以df开头的所有情况，即sum+=(C(21,1)+C(20,1))； 最后再加上h-‘a’+1; 代码实现如下：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051#include &lt;stdio.h&gt;#include &lt;string.h&gt;int getCombinatorialNumber(int m, int n) &#123; int n_Product=1, m_Product=1; int i; for(i=1; i&lt;=n; i++) n_Product*=i; for(i=m; i&gt;m-n; i--) m_Product*=i; return m_Product/n_Product;&#125;int main(int argc, const char * argv[]) &#123; int number; //要统计字符串的个数 int sum; //存放字符串的序号 int length; char str[10]; //存放字符串 int a[10]; //存放字符串的每一位字符的值 int i, j; scanf(&quot;%d&quot;, &amp;number); while(number--) &#123; getchar(); sum=1; scanf(&quot;%s&quot;, str); length=(int)strlen(str); for(i=1; i&lt;length; i++) &#123; sum += getCombinatorialNumber(26, i); //小于字符串长度的字符串个数 &#125; for(i=0; i&lt;length; i++) &#123; a[i]=str[i]-96; //计算每个字符从a开始的序号数值, a~z分别对应1~26 //printf(&quot;%d &quot;, a[i]); &#125; //printf(&quot;%d\n&quot;, f(26, 2)); int temp=1; for(i=length; i&gt;0; i--) &#123; for(j=temp; j&lt;a[length-i]; j++) &#123; sum += getCombinatorialNumber(26-j, i-1); //依次扫描字符，计算所有情况 &#125; temp=a[length-i]+1; &#125; printf(&quot;%d\n&quot;, sum); &#125; return 0;&#125;]]></content>
@@ -146,19 +159,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[解决Lilu造成的一些问题]]></title>
-    <url>%2F2017%2F08%2F31%2F2017-08-31-%E8%A7%A3%E5%86%B3Lilu%E9%80%A0%E6%88%90%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[解决Lilu造成的一些问题 众所周知，Lilu插件为黑果带来了巨大的影响，可以说 vit9696 在某种程度上改变了黑果界，但是有些朋友自己编译kext后发现会五国或者直接黑屏又或者直接重启，这是为什么呢，在和一些朋友一起测试后发现是由于操作不当引起的，这里我以 IntelGraphicsFixup 为例，简述一下编译过程 首先打开终端输入: 1cd ~/Desktop 回车即进入桌面目录，然后输入： 1git clone https://github.com/RehabMan/IntelGraphicsFixup.git 回车即可下载 IntelGraphicsFixup 源码到桌面上 然后将 Lilu 的 Debug 版放到 IntelGraphicsFixup 源码根目录 然后用 Xcode 打开 IntelGraphicsFixup 的工程文件 按如下所示操作即可编译 IntelGraphicsFixup 到桌面上 一层一层打开它，就会发现已经编译好的 IntelGraphicsFixup 将 Lilu 的 Release 版连同 IntelGraphicsFixup 一起放到你的驱动目录就可以用了 以上是依赖 Lilu 的一些驱动的编译方法。 但是我们往往要用到不止一个 Lilu 的插件，这时就有可能会造成其中一个无效甚至造成五国等问题，原因就在于你的这两个 Lilu 插件是用不同版本的 Lilu 源码编译出来的，要想使用多个Lilu插件而又避免这种情况的出现，你可以采取我提供的方法： 首先将 Lilu-1.1.6 保存到本地，所有的 Lilu 插件都用我上面叙述的方法来编译，而编译的时候由于我们使用的是 1.1.6 的 Debug 版 Lilu ，所以就可以避免出现那些奇怪的问题，这里有一点需要注意，我们最终需要用到的是 Lilu 的 Release 版和它的插件，而 Debug 版的Lilu我们只在编译的时候才用到了。 给大家提供下 Lilu-1.1.6 ，减少大家的工作量： 1链接:http://pan.baidu.com/s/1kUBEwgn 密码:9xuj 最后提一下10.13一些朋友更新时遇到的因为固件问题而升级失败的情况吧，在我和风铃大神遇到的不少升级 10.13 的朋友反馈情况来看，固件问题造成无法升级的几乎全是使用 APFS 的，而使用 HFS+ 的朋友则没有遇到这种问题，风铃大师遇到这种情况并解决了，经过研究后提出的观点是Apple的每次更新都会有固件的更新，而这些更新在引导中则体现在你的EFI下的 Apple 目录，也就是说使用 APFS 的朋友要想成功升级 10.13 ，这个文件夹千万不要动，如果你的这个文件夹没有动过但还是遇到这种问题，请尝试先安装 10.13 dp1 ，然后慢慢升级过去就可以了。（感谢风铃提出的思路） 这里提供一下我做的10.13的镜像吧 12345678910DP1：链接:http://pan.baidu.com/s/1eRYNXL4 密码:29b8DP2：链接:http://pan.baidu.com/s/1o7AReQI 密码:3hi2DP3：链接:http://pan.baidu.com/s/1o8UKbu6 密码:usioDP4：链接:http://pan.baidu.com/s/1qXSxV2W 密码:a9gvDP5：链接:http://pan.baidu.com/s/1kV9l6CZ 密码:7t93DP6：链接:http://pan.baidu.com/s/1kVsqV0j 密码:033cDP7：链接:http://pan.baidu.com/s/1qXKrARM 密码:lbj0DP8：链接:http://pan.baidu.com/s/1c1Z9kbQ 密码:9nmrDP9：链接:http://pan.baidu.com/s/1micaQ1M 密码:dp1zGM:：链接:http://pan.baidu.com/s/1qY9Jw1u 密码:zzoo]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>编译</tag>
-        <tag>Lilu</tag>
-        <tag>五国</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[DSDT SSDT 简单提取修复]]></title>
     <url>%2F2017%2F08%2F30%2F2017-08-30-DSDT%20SSDT%E7%AE%80%E5%8D%95%E6%8F%90%E5%8F%96%E4%BF%AE%E5%A4%8D%2F</url>
     <content type="text"><![CDATA[DSDT SSDT 简单提取修复 开工准备工作首先在 CLOVER 引导界面按 F4 或者 FN + F4 提取原始表单，然后进入 Mac ，利用 Clover Configurator 挂载ESP分区，提取的表单就在 /EFI/CLOVER/ACPI/origin ,将 origin 整个拷贝到桌面，并删除 origin 中除 DSDT SSDT 以外的所有文件 然后下载要用到的工具 12iasl：https://bitbucket.org/RehabMan/acpica/downloads/MaciASL：链接:http://pan.baidu.com/s/1pKAksR5 密码:nxyr 将 iasl 放到 /usr/bin 然后安装 MaciASL 并添加补丁源： Rehabman 补丁源： 12Name：RehabMan Laptop URL：http://raw.github.com/RehabMan/Laptop-DSDT-Patch/master 打开终端，输入： 1cd ~/Desktop/origin 回车 然后输入: 1iasl –da –dl *.aml 回车 这时打开桌面的 origin 文件夹会发现多出了很多 .dsl 文件，我们要用到的就是这些文件 先不要急，终端继续执行 1rm –rf *.aml 回车 然后执行: 1rm –rf *x.dsl 回车，这时就会发现终端只剩下了不带 x 的 dsl 文件 开始操作然后用 MaciASL 打开 DSDT.dsl 点 Compile 编译后会弹出错误的窗口： 点这些错误就会定位到错误的代码位置 这里说一下常见的错误修复方法: 1、 PARSEOP_ZERO 错误，定位后会发现一堆 zero 代码，直接将他们删掉即可2、 Unexpected ‘}’ 错误： 定位后是这样： 我们会发现这个错误位于 ADBG 的方法下，这时只需打个补丁即可： 点Patch 找到 Fix ADBG Error 点一下，然后 Apply 应用即可，这时我们会发现再编译就没有错误了(警告可以不用管)，然后保存成aml文件 Save 即可，其他 SSDT 文件也是一样的操作 修改完成在修改完所有表单的错误并保存成aml格式后，将这些 aml 文件放到 /EFI/CLOVER/ACPI/patched 就可以了 完工]]></content>
@@ -166,9 +166,21 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
+        <tag>编译</tag>
         <tag>DSDT</tag>
         <tag>SSDT</tag>
-        <tag>编译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[AppleALC-ALCPlugFix]]></title>
+    <url>%2F2017%2F08%2F29%2F2017-08-29-AppleALC-ALCPlugFix%2F</url>
+    <content type="text"><![CDATA[简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题 首先下载 AppleALC 源码，打开终端输入： 1git clone https://github.com/vit9696/AppleALC 回车之后就将 AppleALC 下载到了你的用户根目录 然后下载 Lilu ： 1链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62 将下载的 Lilu 中 Debug 里面的 Lilu.kext 放进 AppleALC 源码根目录，然后删除 /AppleALC/Resources 中多余文件夹，只留下你的声卡型号文件夹、 Pinconfigs.kext 以及四个 plist 文件，以 cx20751 为例剩下如下文件 然后打开计算器，显示为编程器 打开你的 Codec ，找到 Vendor Id ，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开 /AppleALC/Resources/CX20751_2/Info.plist （此处的 CX20751_2 需要换成你的声卡型号），把 codecid 换成刚才拷贝的十进制数 保存退出，右键 PinConfigs.kext 显示包内容，打开里面的 Info.plist ，搜索刚才拷贝的十进制数，记下 LayoutID 数据，有几个记几个，都记下来，然后将 IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault 中的其他型号删除，（为避免出错，这里的删除可以不操作，删除只是为了精简做出来的 AppleALC ），保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的 export next where 填上桌面，点 export 就生成 AppleALC 在桌面上了，一层一层打开它，将其中的 AppleALC.kext 放到 clover 驱动目录，注意之前下载的 Lilu 里面的Release中 Lilu.kext 也要放到 clover 驱动目录，最后不要忘了在 config 注入 LayoutID ： 如图 Audio 处写上刚才记下的 LayoutID 到这里 AppleALC 的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有 ID ，如果能驱动但无法做到插入耳机自动切换，接着往下看： 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的 ALCPlugFix 中的 main.m 下拉到最下方，注意这一部分： 下载 had-tools ,将 codec 复制到 had-tools 目录，打开终端， cd 到此目录，输入 1./widget_dump.sh codec.txt 回车，此处 codec.txt 要根据你的 codec 名字来，回车可以看到以下输出： 找到 nid = 0x19 和 nid = 0x1a ,这里我的 19 为 line in ， 1a 为 mic in ，记录下最后两位，我的是 04 和 24 就这么改 保存退出，双击按照 AppleALC 的编译方法编译这个 然后将生成的 ALCPlugFix 替换 alc_fix 中的 ALCPlugFix ，终端 cd 到 alc_fix 目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh codec.txt 就可以发现之前的 19 和 1a 后面的数据反过来了 如果不行重启一次应该就好了。]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
       </tags>
   </entry>
   <entry>
@@ -185,18 +197,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[AppleALC-ALCPlugFix]]></title>
-    <url>%2F2017%2F08%2F29%2F2017-08-29-AppleALC-ALCPlugFix%2F</url>
-    <content type="text"><![CDATA[简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题 首先下载 AppleALC 源码，打开终端输入： 1git clone https://github.com/vit9696/AppleALC 回车之后就将 AppleALC 下载到了你的用户根目录 然后下载 Lilu ： 1链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62 将下载的 Lilu 中 Debug 里面的 Lilu.kext 放进 AppleALC 源码根目录，然后删除 /AppleALC/Resources 中多余文件夹，只留下你的声卡型号文件夹、 Pinconfigs.kext 以及四个 plist 文件，以 cx20751 为例剩下如下文件 然后打开计算器，显示为编程器 打开你的 Codec ，找到 Vendor Id ，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开 /AppleALC/Resources/CX20751_2/Info.plist （此处的 CX20751_2 需要换成你的声卡型号），把 codecid 换成刚才拷贝的十进制数 保存退出，右键 PinConfigs.kext 显示包内容，打开里面的 Info.plist ，搜索刚才拷贝的十进制数，记下 LayoutID 数据，有几个记几个，都记下来，然后将 IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault 中的其他型号删除，（为避免出错，这里的删除可以不操作，删除只是为了精简做出来的 AppleALC ），保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的 export next where 填上桌面，点 export 就生成 AppleALC 在桌面上了，一层一层打开它，将其中的 AppleALC.kext 放到 clover 驱动目录，注意之前下载的 Lilu 里面的Release中 Lilu.kext 也要放到 clover 驱动目录，最后不要忘了在 config 注入 LayoutID ： 如图 Audio 处写上刚才记下的 LayoutID 到这里 AppleALC 的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有 ID ，如果能驱动但无法做到插入耳机自动切换，接着往下看： 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的 ALCPlugFix 中的 main.m 下拉到最下方，注意这一部分： 下载 had-tools ,将 codec 复制到 had-tools 目录，打开终端， cd 到此目录，输入 1./widget_dump.sh codec.txt 回车，此处 codec.txt 要根据你的 codec 名字来，回车可以看到以下输出： 找到 nid = 0x19 和 nid = 0x1a ,这里我的 19 为 line in ， 1a 为 mic in ，记录下最后两位，我的是 04 和 24 就这么改 保存退出，双击按照 AppleALC 的编译方法编译这个 然后将生成的 ALCPlugFix 替换 alc_fix 中的 ALCPlugFix ，终端 cd 到 alc_fix 目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh codec.txt 就可以发现之前的 19 和 1a 后面的数据反过来了 如果不行重启一次应该就好了。]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>Hacintosh</tag>
-        <tag>黑苹果</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Mac下搭建 Java 开发环境]]></title>
     <url>%2F2017%2F08%2F28%2F2017-08-28-MAC%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%2F</url>
     <content type="text"><![CDATA[Mac 下搭建 Java 开发环境 安装 jdkMac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。 配置 jdk 环境变量打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容： 1234567JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/HomePATH=$JAVA_HOME/bin:$PATH:.CLASSPATH=JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.export JAVA_HOMEexport PATHexport CLASSPATH 按下 esc ，然后输入 :wq 回车，保存退出 然后输入 source ~/.bash_profile 回车文件修改就生效了。 输入 java -version 回车可以查看 Java 版本，whereis java 可以查看 Java 位置，echo $JAVA_HOME 可以打印出 JAVA_HOME 。 安装eclipse为了更方便的进行开发工作，我们还需要安装Eclipse，去官网下载完成后解压，把.app文件拖进应用程序(Application)就可以了，然后创建一个workspace，也就是工作目录，用来存放工作代码。]]></content>
@@ -205,8 +205,8 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Mac</tag>
         <tag>搭建</tag>
+        <tag>Mac</tag>
         <tag>环境</tag>
       </tags>
   </entry>
