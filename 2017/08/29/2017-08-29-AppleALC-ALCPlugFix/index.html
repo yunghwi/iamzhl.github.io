@@ -101,13 +101,13 @@
 
 
 
-<meta name="description" content="简单制作AppleALC驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题  首先下载AppleALC源码，打开终端输入：  git clone https://github.com/vit9696/AppleALC  回车之后就将AppleALC下载到了你的用户根目录  然后下载Lilu： 链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62 将下载的L">
+<meta name="description" content="简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题  首先下载 AppleALC 源码，打开终端输入：  1git clone https://github.com/vit9696/AppleALC 回车之后就将 AppleALC 下载到了你的用户根目录  然后下载 Lilu ： 1链接:http://pan.baidu.com/s/1c2yB3vq 密码:i">
 <meta name="keywords" content="Hacintosh,黑苹果">
 <meta property="og:type" content="article">
 <meta property="og:title" content="     AppleALC-ALCPlugFix">
 <meta property="og:url" content="http://yoursite.com/2017/08/29/2017-08-29-AppleALC-ALCPlugFix/index.html">
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
-<meta property="og:description" content="简单制作AppleALC驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题  首先下载AppleALC源码，打开终端输入：  git clone https://github.com/vit9696/AppleALC  回车之后就将AppleALC下载到了你的用户根目录  然后下载Lilu： 链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62 将下载的L">
+<meta property="og:description" content="简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题  首先下载 AppleALC 源码，打开终端输入：  1git clone https://github.com/vit9696/AppleALC 回车之后就将 AppleALC 下载到了你的用户根目录  然后下载 Lilu ： 1链接:http://pan.baidu.com/s/1c2yB3vq 密码:i">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/ALC-1.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/ALC-2.png">
@@ -125,10 +125,10 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/ALC-14.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/ALC-15.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/ALC-16.png">
-<meta property="og:updated_time" content="2017-09-13T11:42:04.000Z">
+<meta property="og:updated_time" content="2017-09-15T13:54:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="     AppleALC-ALCPlugFix">
-<meta name="twitter:description" content="简单制作AppleALC驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题  首先下载AppleALC源码，打开终端输入：  git clone https://github.com/vit9696/AppleALC  回车之后就将AppleALC下载到了你的用户根目录  然后下载Lilu： 链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62 将下载的L">
+<meta name="twitter:description" content="简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题  首先下载 AppleALC 源码，打开终端输入：  1git clone https://github.com/vit9696/AppleALC 回车之后就将 AppleALC 下载到了你的用户根目录  然后下载 Lilu ： 1链接:http://pan.baidu.com/s/1c2yB3vq 密码:i">
 <meta name="twitter:image" content="http://ovefvi4g3.bkt.clouddn.com/ALC-1.png">
 
 
@@ -495,52 +495,52 @@
 
       
         <blockquote>
-<p>简单制作AppleALC驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题</p>
+<p>简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题</p>
 </blockquote>
-<p>首先下载AppleALC源码，打开终端输入： </p>
-<pre><code>git clone https://github.com/vit9696/AppleALC 
-</code></pre><p>回车之后就将AppleALC下载到了你的用户根目录</p>
+<p>首先下载 AppleALC 源码，打开终端输入： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/vit9696/AppleALC</div></pre></td></tr></table></figure>
+<p>回车之后就将 AppleALC 下载到了你的用户根目录</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-1.png" alt="ALC-1"></p>
-<p>然后下载Lilu：</p>
-<pre><code>链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62
-</code></pre><p>将下载的Lilu中Debug里面的Lilu.kext放进AppleALC源码根目录，然后删除/AppleALC/Resources中多余文件夹，只留下你的声卡型号文件夹、Pinconfigs.kext以及四个plist文件，以cx20751为例剩下如下文件</p>
+<p>然后下载 Lilu ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62</div></pre></td></tr></table></figure>
+<p>将下载的 Lilu 中 Debug 里面的 Lilu.kext 放进 AppleALC 源码根目录，然后删除 /AppleALC/Resources 中多余文件夹，只留下你的声卡型号文件夹、 Pinconfigs.kext 以及四个 plist 文件，以 cx20751 为例剩下如下文件</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-2.png" alt="ALC-2"></p>
 <p>然后打开计算器，显示为编程器</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-3.png" alt="ALC-3"></p>
-<p>打开你的Codec，找到Vendor Id，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串</p>
+<p>打开你的 Codec ，找到 Vendor Id ，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-4.png" alt="ALC-4"></p>
 <p>然后选中十进制，就换转换成十进制形式</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-5.png" alt="ALC-5"></p>
-<p>拷贝这个十进制数，打开/AppleALC/Resources/CX20751_2/Info.plist（此处的CX20751_2需要换成你的声卡型号），把codecid换成刚才拷贝的十进制数</p>
+<p>拷贝这个十进制数，打开 /AppleALC/Resources/CX20751_2/Info.plist （此处的 CX20751_2 需要换成你的声卡型号），把 codecid 换成刚才拷贝的十进制数</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-6.png" alt="ALC-6"></p>
-<p>保存退出，右键PinConfigs.kext显示包内容，打开里面的Info.plist，搜索刚才拷贝的十进制数，记下LayoutID数据，有几个记几个，都记下来，然后将IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault中的其他型号删除，（为避免出错，这里的删除可以不操作，删除只是为了精简做出来的AppleALC），保存退出。</p>
-<p>然后双击打开AppleALC中的工程文件：</p>
+<p>保存退出，右键 PinConfigs.kext 显示包内容，打开里面的 Info.plist ，搜索刚才拷贝的十进制数，记下 LayoutID 数据，有几个记几个，都记下来，然后将 IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault 中的其他型号删除，（为避免出错，这里的删除可以不操作，删除只是为了精简做出来的 AppleALC ），保存退出。</p>
+<p>然后双击打开 AppleALC 中的工程文件：</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-7.png" alt="ALC-7"></p>
 <p>按图示操作</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-8.png" alt="ALC-8"></p>
-<p>点击右面的export</p>
+<p>点击右面的 export </p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-9.png" alt="ALC-9"></p>
-<p>next</p>
+<p> next </p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-10.png" alt="ALC-10"></p>
-<p>where填上桌面，点export就生成AppleALC在桌面上了，一层一层打开它，将其中的AppleALC.kext放到clover驱动目录，注意之前下载的Lilu里面的Release中Lilu.kext也要放到clover驱动目录，最后不要忘了在config注入LayoutID：</p>
+<p> where 填上桌面，点 export 就生成 AppleALC 在桌面上了，一层一层打开它，将其中的 AppleALC.kext 放到 clover 驱动目录，注意之前下载的 Lilu 里面的Release中 Lilu.kext 也要放到 clover 驱动目录，最后不要忘了在 config 注入 LayoutID ：</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-11.png" alt="ALC-11"></p>
-<p>如图Audio处写上刚才记下的LayoutID 到这里AppleALC的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有ID，如果能驱动但无法做到插入耳机自动切换，接着往下看： 打开终端，输入 </p>
-<pre><code>git clone https://github.com/goodwin/ALCPlugFix 
-</code></pre><p>回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的 ALCPlugFix 中的 main.m 下拉到最下方，注意这一部分：</p>
+<p>如图 Audio 处写上刚才记下的 LayoutID 到这里 AppleALC 的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有 ID ，如果能驱动但无法做到插入耳机自动切换，接着往下看： 打开终端，输入 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/goodwin/ALCPlugFix</div></pre></td></tr></table></figure>
+<p>回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的 ALCPlugFix 中的 main.m 下拉到最下方，注意这一部分：</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-12.png" alt="ALC-12"></p>
-<p>下载had-tools,将codec复制到had-tools目录，打开终端，cd到此目录，输入 </p>
-<pre><code>./widget_dump.sh codec.txt 
-</code></pre><p>回车，此处codec.txt要根据你的codec名字来，回车可以看到以下输出：</p>
+<p>下载 had-tools ,将 codec 复制到 had-tools 目录，打开终端， cd 到此目录，输入 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./widget_dump.sh codec.txt</div></pre></td></tr></table></figure>
+<p>回车，此处 codec.txt 要根据你的 codec 名字来，回车可以看到以下输出：</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-13.png" alt="ALC-13"></p>
-<p>找到nid = 0x19和nid = 0x1a,这里我的19为line in，1a为mic in，记录下最后两位，我的是04和24就这么改</p>
+<p>找到 nid = 0x19 和 nid = 0x1a ,这里我的 19 为 line in ， 1a 为 mic in ，记录下最后两位，我的是 04 和 24 就这么改</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-14.png" alt="ALC-14"></p>
-<p>保存退出，双击按照AppleALC的编译方法编译这个</p>
+<p>保存退出，双击按照 AppleALC 的编译方法编译这个</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-15.png" alt="ALC-15"></p>
-<p>然后将生成的ALCPlugFix替换alc_fix中的ALCPlugFix，终端cd到alc_fix目录，执行 </p>
-<pre><code>./install.sh
-</code></pre><p>耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 </p>
-<pre><code>./widget_dump.sh codec.txt
-</code></pre><p>就可以发现之前的19和1a后面的数据反过来了</p>
+<p>然后将生成的 ALCPlugFix 替换 alc_fix 中的 ALCPlugFix ，终端 cd 到 alc_fix 目录，执行 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./install.sh</div></pre></td></tr></table></figure>
+<p>耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./widget_dump.sh codec.txt</div></pre></td></tr></table></figure>
+<p>就可以发现之前的 19 和 1a 后面的数据反过来了</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/ALC-16.png" alt="ALC-16"></p>
 <p>如果不行重启一次应该就好了。</p>
 
@@ -614,8 +614,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/29/2017-08-29-统计数字问题/" rel="next" title="统计数字问题">
-                <i class="fa fa-chevron-left"></i> 统计数字问题
+              <a href="/2017/08/28/2017-08-28-MAC搭建Java开发环境/" rel="next" title="Mac下搭建 Java 开发环境">
+                <i class="fa fa-chevron-left"></i> Mac下搭建 Java 开发环境
               </a>
             
           </div>
@@ -624,8 +624,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/30/2017-08-30-DSDT SSDT简单提取修复/" rel="prev" title="DSDT SSDT简单提取修复">
-                DSDT SSDT简单提取修复 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/29/2017-08-29-统计数字问题/" rel="prev" title="统计数字问题">
+                统计数字问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -706,7 +706,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -728,7 +728,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

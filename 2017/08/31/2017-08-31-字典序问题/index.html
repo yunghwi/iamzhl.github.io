@@ -110,7 +110,7 @@
 <meta property="og:description" content="问题描述：在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A由26个小写字母组成。该字母表产生的升序字符串中字母从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1次。例如，a,b,ab,bc,xyz等字符串都是升序字符串。现在对字母表中产生的所有长度不超过6的升序字符串，计算它在字典中的编码。 解题思路：首先判断字符串长度为3，先算长度为1和2的所有情况，即从2">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/20170831-zidianxu-1.png">
-<meta property="og:updated_time" content="2017-09-13T11:42:23.000Z">
+<meta property="og:updated_time" content="2017-09-15T13:43:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字典序问题">
 <meta name="twitter:description" content="问题描述：在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A由26个小写字母组成。该字母表产生的升序字符串中字母从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1次。例如，a,b,ab,bc,xyz等字符串都是升序字符串。现在对字母表中产生的所有长度不超过6的升序字符串，计算它在字典中的编码。 解题思路：首先判断字符串长度为3，先算长度为1和2的所有情况，即从2">
@@ -479,111 +479,13 @@
       
 
       
-        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><pre><code>在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A由26个小写字母组成。该字母表产生的升序字符串中字母从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1次。例如，a,b,ab,bc,xyz等字符串都是升序字符串。现在对字母表中产生的所有长度不超过6的升序字符串，计算它在字典中的编码。
-</code></pre><h1 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h1><pre><code>首先判断字符串长度为3，先算长度为1和2的所有情况，即从26个字母中选1个或两个字母，因为是升序，即sum=C（26，1）+C（26，2）；
-
-之后再看字符串的第一个字符，为&apos;d&apos;,之前有以a,b,c开头的长度为3的字符串，以a开头，后边2位需要在25个字母中选择（除了a），以b开头的后2位需要在24个字母中选择（除了a,b），以c开头的在23个字母（除了a,,b,c）中选择，即sum+=(C(25,2)+C(24,2)+C(23,2));
-
-然后再看下一个字母&apos;g&apos;，d与g之间有e,f,需要算以de开头以及以df开头的所有情况，即sum+=(C(21,1)+C(20,1))；
-
-最后再加上h-&apos;a&apos;+1;
-</code></pre><h1 id="代码实现如下："><a href="#代码实现如下：" class="headerlink" title="代码实现如下："></a>代码实现如下：</h1><pre><code>#include &lt;stdio.h&gt;
-
-#include &lt;string.h&gt;
-
-
-
-int getCombinatorialNumber(int m, int n) {
-
-    int n_Product=1, m_Product=1;
-
-    int i;
-
-
-    for(i=1; i&lt;=n; i++)
-
-        n_Product*=i;
-
-    for(i=m; i&gt;m-n; i--)
-
-        m_Product*=i;
-
-
-    return m_Product/n_Product;
-
-}
-
-
-
-int main(int argc, const char * argv[]) {
-
-    int number;                                                     //要统计字符串的个数
-
-    int sum;                                                        //存放字符串的序号
-
-    int length;
-
-    char str[10];                                                   //存放字符串
-
-    int a[10];                                                      //存放字符串的每一位字符的值
-
-    int i, j;
-
-
-
-    scanf(&quot;%d&quot;, &amp;number);
-
-    while(number--) {
-
-        getchar();
-
-        sum=1;
-
-        scanf(&quot;%s&quot;, str);
-
-        length=(int)strlen(str);
-
-
-        for(i=1; i&lt;length; i++) {
-
-            sum += getCombinatorialNumber(26, i);                 //小于字符串长度的字符串个数
-
-        }
-
-
-        for(i=0; i&lt;length; i++) {
-
-            a[i]=str[i]-96;                                     //计算每个字符从a开始的序号数值, a~z分别对应1~26
-
-            //printf(&quot;%d &quot;, a[i]);
-
-        }
-
-        //printf(&quot;%d\n&quot;, f(26, 2));
-
-
-        int temp=1;
-
-        for(i=length; i&gt;0; i--) {
-
-            for(j=temp; j&lt;a[length-i]; j++) {
-
-                sum += getCombinatorialNumber(26-j, i-1);     //依次扫描字符，计算所有情况
-
-             }
-
-            temp=a[length-i]+1;
-
-        }
-
-        printf(&quot;%d\n&quot;, sum);
-
-    }
-
-    return 0;
-
-}
-</code></pre><p><img src="http://ovefvi4g3.bkt.clouddn.com/20170831-zidianxu-1.png" alt="20170831-zidianxu"></p>
+        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A由26个小写字母组成。该字母表产生的升序字符串中字母从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1次。例如，a,b,ab,bc,xyz等字符串都是升序字符串。现在对字母表中产生的所有长度不超过6的升序字符串，计算它在字典中的编码。</p>
+<h1 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h1><p>首先判断字符串长度为3，先算长度为1和2的所有情况，即从26个字母中选1个或两个字母，因为是升序，即sum=C（26，1）+C（26，2）；</p>
+<p>之后再看字符串的第一个字符，为’d’,之前有以a,b,c开头的长度为3的字符串，以a开头，后边2位需要在25个字母中选择（除了a），以b开头的后2位需要在24个字母中选择（除了a,b），以c开头的在23个字母（除了a,,b,c）中选择，即sum+=(C(25,2)+C(24,2)+C(23,2));</p>
+<p>然后再看下一个字母’g’，d与g之间有e,f,需要算以de开头以及以df开头的所有情况，即sum+=(C(21,1)+C(20,1))；</p>
+<p>最后再加上h-‘a’+1;</p>
+<h1 id="代码实现如下："><a href="#代码实现如下：" class="headerlink" title="代码实现如下："></a>代码实现如下：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;string.h&gt;</div><div class="line"></div><div class="line">int getCombinatorialNumber(int m, int n) &#123;</div><div class="line">	int n_Product=1, m_Product=1;</div><div class="line">	int i;</div><div class="line">   </div><div class="line">	for(i=1; i&lt;=n; i++)</div><div class="line">		n_Product*=i;</div><div class="line">	for(i=m; i&gt;m-n; i--)</div><div class="line">		m_Product*=i;</div><div class="line">	return m_Product/n_Product;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main(int argc, const char * argv[]) &#123;</div><div class="line">	int number;                                             		//要统计字符串的个数</div><div class="line">	int sum;                                                		//存放字符串的序号</div><div class="line">	int length;</div><div class="line">	char str[10];                                           		//存放字符串</div><div class="line">	int a[10];                                              		//存放字符串的每一位字符的值</div><div class="line">	int i, j;</div><div class="line">	scanf(&quot;%d&quot;, &amp;number);</div><div class="line">   </div><div class="line">	while(number--) &#123;</div><div class="line">		getchar();</div><div class="line">		sum=1;</div><div class="line">		scanf(&quot;%s&quot;, str);</div><div class="line">		length=(int)strlen(str);</div><div class="line">       </div><div class="line">		for(i=1; i&lt;length; i++) &#123;</div><div class="line">			sum += getCombinatorialNumber(26, i);             	//小于字符串长度的字符串个数</div><div class="line">		&#125;</div><div class="line">       </div><div class="line">		for(i=0; i&lt;length; i++) &#123;</div><div class="line">			a[i]=str[i]-96;                                 	//计算每个字符从a开始的序号数值, a~z分别对应1~26</div><div class="line">			//printf(&quot;%d &quot;, a[i]);</div><div class="line">		&#125;</div><div class="line">		//printf(&quot;%d\n&quot;, f(26, 2));</div><div class="line">		</div><div class="line">		int temp=1;</div><div class="line">       </div><div class="line">		for(i=length; i&gt;0; i--) &#123;</div><div class="line">			for(j=temp; j&lt;a[length-i]; j++) &#123;</div><div class="line">				sum += getCombinatorialNumber(26-j, i-1);     //依次扫描字符，计算所有情况</div><div class="line"> 			&#125;</div><div class="line">			temp=a[length-i]+1;</div><div class="line">		&#125;</div><div class="line">		printf(&quot;%d\n&quot;, sum);</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/20170831-zidianxu-1.png" alt="20170831-zidianxu"></p>
 
       
     </div>
@@ -657,8 +559,8 @@ int main(int argc, const char * argv[]) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/30/2017-08-30-DSDT SSDT简单提取修复/" rel="next" title="DSDT SSDT简单提取修复">
-                <i class="fa fa-chevron-left"></i> DSDT SSDT简单提取修复
+              <a href="/2017/08/31/2017-08-31-解决Lilu造成的一些问题/" rel="next" title="解决Lilu造成的一些问题">
+                <i class="fa fa-chevron-left"></i> 解决Lilu造成的一些问题
               </a>
             
           </div>
@@ -667,8 +569,8 @@ int main(int argc, const char * argv[]) {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/31/2017-08-31-解决Lilu造成的一些问题/" rel="prev" title="解决Lilu造成的一些问题">
-                解决Lilu造成的一些问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/03/2017-09-10-How to use xcode-select in terminal/" rel="prev" title="How to use xcode-select in terminal">
+                How to use xcode-select in terminal <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -758,7 +660,7 @@ int main(int argc, const char * argv[]) {
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -780,7 +682,7 @@ int main(int argc, const char * argv[]) {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

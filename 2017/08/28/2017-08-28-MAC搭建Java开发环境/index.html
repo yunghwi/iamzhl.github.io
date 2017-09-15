@@ -101,18 +101,18 @@
 
 
 
-<meta name="description" content="Mac下搭建Java开发环境  1、安装jdk：Mac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。  2、配置jdk环境变量：打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容：         JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.">
+<meta name="description" content="Mac 下搭建 Java 开发环境  ##安装 jdk  Mac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。 ##配置 jdk 环境变量 打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容：  1234567JAVA_HOME=/Library/Java/JavaVirtualMachines/j">
 <meta name="keywords" content="Java,搭建,Mac,环境">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac下搭建Java开发环境">
+<meta property="og:title" content="Mac下搭建 Java 开发环境">
 <meta property="og:url" content="http://yoursite.com/2017/08/28/2017-08-28-MAC搭建Java开发环境/index.html">
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
-<meta property="og:description" content="Mac下搭建Java开发环境  1、安装jdk：Mac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。  2、配置jdk环境变量：打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容：         JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.">
+<meta property="og:description" content="Mac 下搭建 Java 开发环境  ##安装 jdk  Mac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。 ##配置 jdk 环境变量 打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容：  1234567JAVA_HOME=/Library/Java/JavaVirtualMachines/j">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-14T02:22:00.000Z">
+<meta property="og:updated_time" content="2017-09-15T14:01:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac下搭建Java开发环境">
-<meta name="twitter:description" content="Mac下搭建Java开发环境  1、安装jdk：Mac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。  2、配置jdk环境变量：打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容：         JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.">
+<meta name="twitter:title" content="Mac下搭建 Java 开发环境">
+<meta name="twitter:description" content="Mac 下搭建 Java 开发环境  ##安装 jdk  Mac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。 ##配置 jdk 环境变量 打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容：  1234567JAVA_HOME=/Library/Java/JavaVirtualMachines/j">
 
 
 
@@ -148,7 +148,7 @@
 
 
 
-  <title>Mac下搭建Java开发环境 | Athlonreg's Blog</title>
+  <title>Mac下搭建 Java 开发环境 | Athlonreg's Blog</title>
   
 
 
@@ -358,7 +358,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Mac下搭建Java开发环境</h1>
+          <h1 class="post-title" itemprop="name headline">Mac下搭建 Java 开发环境</h1>
         
 
         <div class="post-meta">
@@ -478,36 +478,19 @@
 
       
         <blockquote>
-<p>Mac下搭建Java开发环境</p>
+<p>Mac 下搭建 Java 开发环境</p>
 </blockquote>
-<pre><code>1、安装jdk：Mac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。
+<p>##安装 jdk </p>
+<p>Mac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。</p>
+<p>##配置 jdk 环境变量</p>
+<p>打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home</div><div class="line">PATH=$JAVA_HOME/bin:$PATH:.</div><div class="line">CLASSPATH=JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.</div><div class="line"></div><div class="line">export JAVA_HOME</div><div class="line">export PATH</div><div class="line">export CLASSPATH</div></pre></td></tr></table></figure>
+<p>按下 esc ，然后输入 :wq 回车，保存退出</p>
+<p>然后输入 source ~/.bash_profile 回车文件修改就生效了。</p>
+<p>输入 java -version 回车可以查看 Java 版本，whereis java 可以查看 Java 位置，echo $JAVA_HOME 可以打印出 JAVA_HOME 。</p>
+<p>##安装eclipse</p>
+<p>为了更方便的进行开发工作，我们还需要安装Eclipse，去官网下载完成后解压，把.app文件拖进应用程序(Application)就可以了，然后创建一个workspace，也就是工作目录，用来存放工作代码。</p>
 
-2、配置jdk环境变量：打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容： 
-
-
-     JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
-
-     PATH=$JAVA_HOME/bin:$PATH:.
-
-     CLASSPATH=JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
-
-
-     export JAVA_HOME
-
-     export PATH
-
-     export CLASSPATH
-
-
-按下esc，然后输入:wq回车，保存退出
-
-然后输入 source ~/.bash_profile 回车文件修改就生效了。
-
-输入java -version回车可以查看Java版本，whereis java可以查看Java位置，echo $JAVA_HOME可以打印出JAVA_HOME。
-
-
-3、安装eclipse：为了更方便的进行开发工作，我们还需要安装Eclipse，去官网下载完成后解压，把.app文件拖进应用程序(Application)就可以了，然后创建一个workspace，也就是工作目录，用来存放工作代码。
-</code></pre>
       
     </div>
     
@@ -592,8 +575,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/29/2017-08-29-统计数字问题/" rel="prev" title="统计数字问题">
-                统计数字问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/29/2017-08-29-AppleALC-ALCPlugFix/" rel="prev" title="     AppleALC-ALCPlugFix">
+                     AppleALC-ALCPlugFix <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -674,7 +657,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -696,7 +679,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -972,7 +955,7 @@
         var disqus_config = function () {
           this.page.url = 'http://yoursite.com/2017/08/28/2017-08-28-MAC搭建Java开发环境/';
           this.page.identifier = '2017/08/28/2017-08-28-MAC搭建Java开发环境/';
-          this.page.title = 'Mac下搭建Java开发环境';
+          this.page.title = 'Mac下搭建 Java 开发环境';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://athlonreg.disqus.com/embed.js';

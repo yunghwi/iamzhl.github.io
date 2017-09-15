@@ -101,18 +101,18 @@
 
 
 
-<meta name="description" content="EchoClient.java/*  To change this license header, choose License Headers in Project Properties. To change this template file, choose Tools | Templates and open the template in the editor. */   package">
+<meta name="description" content="EchoClient.java12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879/* * To change this license header,">
 <meta name="keywords" content="Java,网络编程,客户机与服务器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最简单的客户机与服务器案例演示">
 <meta property="og:url" content="http://yoursite.com/2017/09/07/2017-09-07-最简单的客户机与服务器案例演示/index.html">
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
-<meta property="og:description" content="EchoClient.java/*  To change this license header, choose License Headers in Project Properties. To change this template file, choose Tools | Templates and open the template in the editor. */   package">
+<meta property="og:description" content="EchoClient.java12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879/* * To change this license header,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-13T11:42:44.000Z">
+<meta property="og:updated_time" content="2017-09-15T13:32:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最简单的客户机与服务器案例演示">
-<meta name="twitter:description" content="EchoClient.java/*  To change this license header, choose License Headers in Project Properties. To change this template file, choose Tools | Templates and open the template in the editor. */   package">
+<meta name="twitter:description" content="EchoClient.java12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879/* * To change this license header,">
 
 
 
@@ -477,243 +477,8 @@
       
 
       
-        <h1 id="EchoClient-java"><a href="#EchoClient-java" class="headerlink" title="EchoClient.java"></a>EchoClient.java</h1><p>/*</p>
-<ul>
-<li>To change this license header, choose License Headers in Project Properties.</li>
-<li>To change this template file, choose Tools | Templates</li>
-<li><p>and open the template in the editor.</p>
-<p>*/</p>
-</li>
-</ul>
-<p>package athlonreg.top;</p>
-<p>import java.io.BufferedReader;</p>
-<p>import java.io.BufferedWriter;</p>
-<p>import java.io.IOException;</p>
-<p>import java.io.InputStreamReader;</p>
-<p>import java.io.OutputStreamWriter;</p>
-<p>import java.net.InetSocketAddress;</p>
-<p>import java.net.Socket;</p>
-<p>import java.net.SocketAddress;</p>
-<p>/<em>*
- </em></p>
-<ul>
-<li><p>@author athlonreg</p>
-<p>*/</p>
-</li>
-</ul>
-<p>public class EchoCilent {</p>
-<pre><code>/**
- * @param args the command line arguments
- */
-
-
-public static void main(String[] args) {
-
-    // TODO code application logic here
-
-    Socket clientSocket = null;
-
-    BufferedReader in = null;
-
-    BufferedWriter out = null;
-
-    try {
-
-
-        //1.创建客户机套接字
-
-        clientSocket = new Socket();
-
-        SocketAddress remoteAddr=new InetSocketAddress(&quot;localhost&quot;,5000); 
-
-        System.out.println(&quot;1.创建客户机套接字成功！&quot;);
-
-
-        //2.连接服务器
-
-        clientSocket.connect(remoteAddr);
-
-        System.out.println(&quot;2.客户机连接服务器localhost端口5000成功！&quot;);
-
-        System.out.println(&quot;客户机使用的地址和端口：&quot;+clientSocket.getLocalSocketAddress());
-
-
-        //与服务器会话           
-
-        in = new BufferedReader(
-
-             new InputStreamReader(
-
-             clientSocket.getInputStream()));    
-
-        out = new BufferedWriter(
-
-              new OutputStreamWriter(         
-
-              clientSocket.getOutputStream()));
-
-        String sendStr=&quot;有朋自远方来&quot;;
-
-        out.write(sendStr);  //向服务器发送字符串
-
-        out.newLine();
-
-        out.flush();
-
-        System.out.println(&quot;3.1向服务器发送字符串成功!&quot;+sendStr);
-
-        String recvStr=in.readLine();  //从服务器接收字符串 
-
-        System.out.println(&quot;3.2从服务器接收回送字符串成功！&quot;+recvStr);
-
-    } catch (IOException ex) {
-
-        System.out.println(&quot;异常信息：&quot;+ex.getMessage());
-
-    }
-
-
-    //关闭套接字和流
-
-    try {
-
-        if (in != null) in.close();
-
-        if (out != null)  out.close();
-
-        if (clientSocket != null)   clientSocket.close(); 
-
-        System.out.println(&quot;4.关闭套接字和流成功！&quot;);
-
-    } catch (IOException ex) {
-
-         System.out.println(&quot;异常信息：&quot;+ex.getMessage());
-
-    }
-
-}
-</code></pre><p>}</p>
-<h1 id="EchoServer-java"><a href="#EchoServer-java" class="headerlink" title="EchoServer.java"></a>EchoServer.java</h1><p>/*</p>
-<ul>
-<li>To change this license header, choose License Headers in Project Properties.</li>
-<li>To change this template file, choose Tools | Templates</li>
-<li><p>and open the template in the editor.</p>
-<p>*/</p>
-</li>
-</ul>
-<p>package athlonreg.top;</p>
-<p>import java.io.BufferedReader;</p>
-<p>import java.io.BufferedWriter;</p>
-<p>import java.io.IOException;</p>
-<p>import java.io.InputStreamReader;</p>
-<p>import java.io.OutputStreamWriter;</p>
-<p>import java.net.InetSocketAddress;</p>
-<p>import java.net.ServerSocket;</p>
-<p>import java.net.Socket;</p>
-<p>import java.net.SocketAddress;</p>
-<p>/<em>*
- </em></p>
-<ul>
-<li><p>@author athlonreg</p>
-<p>*/</p>
-</li>
-</ul>
-<p>public class EchoServer {</p>
-<pre><code>/**
- * @param args the command line arguments
- * @throws java.io.IOException
-
- */
-
-
-public static void main(String[] args) throws IOException {
-
-    // TODO code application logic here
-
-
-    //1.启动服务器
-
-    ServerSocket listenSocket = null; 
-
-    Socket clientSocket = null; 
-
-    BufferedReader in = null;
-
-    BufferedWriter out = null;
-
-    try {
-
-        listenSocket = new ServerSocket();
-
-        SocketAddress serverAddr=new InetSocketAddress(&quot;localhost&quot;,5000);
-
-        listenSocket.bind(serverAddr); 
-
-        System.out.println(&quot;1.服务器启动成功！开始在localhost的5000端口侦听连接...&quot;);
-
-
-        //2.处理连接                      
-
-        clientSocket = listenSocket.accept();
-
-        System.out.println(&quot;2.客户机连接成功！客户机地址和端口：&quot;+clientSocket.getRemoteSocketAddress());
-
-
-        //3.与客户机会话    
-
-        in = new BufferedReader(
-
-             new InputStreamReader(
-
-             clientSocket.getInputStream()));      
-
-        out = new BufferedWriter(
-
-              new OutputStreamWriter(            
-
-              clientSocket.getOutputStream()));
-
-        String recvStr=in.readLine();  //从客户机接收字符串
-
-        System.out.println(&quot;3.1 服务器收到字符串：&quot;+recvStr);
-
-        out.write(recvStr);  //向客户机回送字符串       
-
-        out.newLine();
-
-        out.flush(); 
-
-        System.out.println(&quot;3.2 服务器回送字符串成功：&quot;+recvStr);
-
-    } catch (IOException ex) {
-
-        System.out.println(&quot;异常信息：&quot;+ex.getMessage());
-
-    }
-
-
-    //4.关闭套接字和流
-
-    try {  
-
-        if (in != null)in.close();
-
-        if (out != null)  out.close();
-
-        if (listenSocket != null)   listenSocket.close();
-
-        if (clientSocket != null)   clientSocket.close(); 
-
-        System.out.println(&quot;4.关闭套接字和流成功！&quot;);
-
-    } catch (IOException ex) {
-
-       System.out.println(&quot;异常信息&quot;+ex.getMessage());
-
-    }
-
-}
-</code></pre><p>}</p>
+        <h1 id="EchoClient-java"><a href="#EchoClient-java" class="headerlink" title="EchoClient.java"></a>EchoClient.java</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> * To change this license header, choose License Headers in Project Properties.</div><div class="line"> * To change this template file, choose Tools | Templates</div><div class="line"> * and open the template in the editor.</div><div class="line"> */</div><div class="line"> </div><div class="line">package athlonreg.top;</div><div class="line"></div><div class="line">import java.io.BufferedReader;</div><div class="line">import java.io.BufferedWriter;</div><div class="line">import java.io.IOException;</div><div class="line">import java.io.InputStreamReader;</div><div class="line">import java.io.OutputStreamWriter;</div><div class="line">import java.net.InetSocketAddress;</div><div class="line">import java.net.Socket;</div><div class="line">import java.net.SocketAddress;</div><div class="line"></div><div class="line">/**</div><div class="line"> *</div><div class="line"> * @author athlonreg</div><div class="line"> </div><div class="line"> */</div><div class="line"> </div><div class="line">public class EchoCilent &#123;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * @param args the command line arguments</div><div class="line">     */</div><div class="line">      </div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        // TODO code application logic here</div><div class="line">        Socket clientSocket = null;</div><div class="line">        BufferedReader in = null;</div><div class="line">        BufferedWriter out = null;</div><div class="line">        </div><div class="line">        try &#123;</div><div class="line">        </div><div class="line">            //1.创建客户机套接字</div><div class="line">            clientSocket = new Socket();</div><div class="line">            SocketAddress remoteAddr=new InetSocketAddress(&quot;localhost&quot;,5000);  </div><div class="line">            System.out.println(&quot;1.创建客户机套接字成功！&quot;);</div><div class="line">            </div><div class="line">            //2.连接服务器</div><div class="line">            clientSocket.connect(remoteAddr);</div><div class="line">            System.out.println(&quot;2.客户机连接服务器localhost端口5000成功！&quot;);</div><div class="line">            System.out.println(&quot;客户机使用的地址和端口：&quot;+clientSocket.getLocalSocketAddress());</div><div class="line">            </div><div class="line">            //与服务器会话            </div><div class="line">            in = new BufferedReader(</div><div class="line">                 new InputStreamReader(</div><div class="line">                 clientSocket.getInputStream()));         </div><div class="line">            out = new BufferedWriter(</div><div class="line">                  new OutputStreamWriter(         </div><div class="line">                  clientSocket.getOutputStream()));</div><div class="line">            String sendStr=&quot;有朋自远方来&quot;;</div><div class="line">            out.write(sendStr);  //向服务器发送字符串</div><div class="line">            out.newLine();</div><div class="line">            out.flush();</div><div class="line">            System.out.println(&quot;3.1向服务器发送字符串成功!&quot;+sendStr);</div><div class="line">            String recvStr=in.readLine();  //从服务器接收字符串   </div><div class="line">            System.out.println(&quot;3.2从服务器接收回送字符串成功！&quot;+recvStr);    </div><div class="line">        &#125; catch (IOException ex) &#123;</div><div class="line">            System.out.println(&quot;异常信息：&quot;+ex.getMessage());</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        //关闭套接字和流</div><div class="line">        try &#123;</div><div class="line">            if (in != null) </div><div class="line">                in.close();</div><div class="line">            if (out != null)  </div><div class="line">                out.close(); </div><div class="line">            if (clientSocket != null)   </div><div class="line">                clientSocket.close(); </div><div class="line">            System.out.println(&quot;4.关闭套接字和流成功！&quot;); </div><div class="line">        &#125; catch (IOException ex) &#123;</div><div class="line">             System.out.println(&quot;异常信息：&quot;+ex.getMessage());</div><div class="line">        &#125; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="EchoServer-java"><a href="#EchoServer-java" class="headerlink" title="EchoServer.java"></a>EchoServer.java</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> * To change this license header, choose License Headers in Project Properties.</div><div class="line"> * To change this template file, choose Tools | Templates</div><div class="line"> * and open the template in the editor.</div><div class="line"> */</div><div class="line"> </div><div class="line">package athlonreg.top;</div><div class="line"></div><div class="line">import java.io.BufferedReader;</div><div class="line">import java.io.BufferedWriter;</div><div class="line">import java.io.IOException;</div><div class="line">import java.io.InputStreamReader;</div><div class="line">import java.io.OutputStreamWriter;</div><div class="line">import java.net.InetSocketAddress;</div><div class="line">import java.net.ServerSocket;</div><div class="line">import java.net.Socket;</div><div class="line">import java.net.SocketAddress;</div><div class="line"></div><div class="line">/**</div><div class="line"> *</div><div class="line"> * @author athlonreg</div><div class="line"> </div><div class="line"> */</div><div class="line"> </div><div class="line">public class EchoServer &#123;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * @param args the command line arguments</div><div class="line">     * @throws java.io.IOException</div><div class="line">     </div><div class="line">     */</div><div class="line">     </div><div class="line">    public static void main(String[] args) throws IOException &#123;</div><div class="line">        // TODO code application logic here</div><div class="line">   </div><div class="line">        //1.启动服务器</div><div class="line">        ServerSocket listenSocket = null; </div><div class="line">        Socket clientSocket = null; </div><div class="line">        BufferedReader in = null;</div><div class="line">        BufferedWriter out = null;</div><div class="line"></div><div class="line">        try &#123;</div><div class="line">            listenSocket = new ServerSocket();</div><div class="line">            SocketAddress serverAddr=new InetSocketAddress(&quot;localhost&quot;,5000);</div><div class="line">            listenSocket.bind(serverAddr); </div><div class="line">            System.out.println(&quot;1.服务器启动成功！开始在localhost的5000端口侦听连接...&quot;); </div><div class="line">            </div><div class="line">            //2.处理连接                      </div><div class="line">            clientSocket = listenSocket.accept();</div><div class="line">            System.out.println(&quot;2.客户机连接成功！客户机地址和端口：&quot;+clientSocket.getRemoteSocketAddress());</div><div class="line">              </div><div class="line">            //3.与客户机会话    </div><div class="line">            in = new BufferedReader(</div><div class="line">                 new InputStreamReader(</div><div class="line">                 clientSocket.getInputStream()));       </div><div class="line">            out = new BufferedWriter(</div><div class="line">                  new OutputStreamWriter(            </div><div class="line">                  clientSocket.getOutputStream()));    </div><div class="line">            String recvStr=in.readLine();  //从客户机接收字符串</div><div class="line">            System.out.println(&quot;3.1 服务器收到字符串：&quot;+recvStr);</div><div class="line">            out.write(recvStr);  //向客户机回送字符串       </div><div class="line">            out.newLine();  </div><div class="line">            out.flush(); </div><div class="line">            System.out.println(&quot;3.2 服务器回送字符串成功：&quot;+recvStr); </div><div class="line">        &#125; catch (IOException ex) &#123;</div><div class="line">            System.out.println(&quot;异常信息：&quot;+ex.getMessage());</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        //4.关闭套接字和流</div><div class="line">        try &#123;  </div><div class="line">            if (in != null)</div><div class="line">                in.close();</div><div class="line">            if (out != null)  </div><div class="line">                out.close();</div><div class="line">            if (listenSocket != null)   </div><div class="line">                listenSocket.close();</div><div class="line">            if (clientSocket != null)   </div><div class="line">                clientSocket.close(); </div><div class="line">            System.out.println(&quot;4.关闭套接字和流成功！&quot;);    </div><div class="line">        &#125; catch (IOException ex) &#123;</div><div class="line">            System.out.println(&quot;异常信息&quot;+ex.getMessage()); </div><div class="line">        &#125;     </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -787,8 +552,8 @@ public static void main(String[] args) throws IOException {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/05/2017-09-05-加快黑苹果开机速度的一种方法/" rel="next" title="加快黑苹果开机速度的一种方法">
-                <i class="fa fa-chevron-left"></i> 加快黑苹果开机速度的一种方法
+              <a href="/2017/09/05/2017-09-05-利用 AppleIntelInfo 查看变频/" rel="next" title="利用 AppleIntelInfo 查看变频">
+                <i class="fa fa-chevron-left"></i> 利用 AppleIntelInfo 查看变频
               </a>
             
           </div>
@@ -888,7 +653,7 @@ public static void main(String[] args) throws IOException {
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -910,7 +675,7 @@ public static void main(String[] args) throws IOException {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
