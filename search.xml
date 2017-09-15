@@ -82,7 +82,7 @@
   <entry>
     <title><![CDATA[利用 AppleIntelInfo 查看变频]]></title>
     <url>%2F2017%2F09%2F05%2F2017-09-05-%E5%88%A9%E7%94%A8%20AppleIntelInfo%20%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%A2%91%2F</url>
-    <content type="text"><![CDATA[很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频 开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：1234cd ~/Desktop ``` 回车继续敲： git clone https://github.com/athlonreg/AppleIntelInfo.git1234 回车后就把 AppleIntelInfo 源码下载在桌面了然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)： http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/123456 将编译后的 AppleIntelInfo.kext 放到桌面 ## 然后开始利用命令行看变频数据打开终端，输入： cd ~/Desktop12 回车后继续敲 sudo chown -R root:wheel AppleIntelInfo.kext12 回车会提示输入密码，输入之后回车继续敲： sudo kextutil AppleIntelInfo.kext12 再回车，接着敲： sudo cat /tmp/AppleIntelInfo.dat``` 回车之后变频数据就出来了，例如我的机器： 一般我们只看最后一行就可以了哦 比如我的机器就是 800、 1000、 …… 、 2700 ，单位是MHZ，正好符合我的机器，最低 800MHz ，最高2.4GHZ，可超频到2.7GHZ。 完工行胜于言，快去试试你的机器是不是变频正常吧！！]]></content>
+    <content type="text"><![CDATA[很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频 开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：cd ~/Desktop 回车继续敲： 1git clone https://github.com/athlonreg/AppleIntelInfo.git 回车后就把 AppleIntelInfo 源码下载在桌面了 然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)： http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/ 将编译后的 AppleIntelInfo.kext 放到桌面 然后开始利用命令行看变频数据打开终端，输入： 1cd ~/Desktop 回车后继续敲 1sudo chown -R root:wheel AppleIntelInfo.kext 回车会提示输入密码，输入之后回车继续敲： 1sudo kextutil AppleIntelInfo.kext 再回车，接着敲： 1sudo cat /tmp/AppleIntelInfo.dat 回车之后变频数据就出来了，例如我的机器： 一般我们只看最后一行就可以了哦 比如我的机器就是 800、 1000、 …… 、 2700 ，单位是MHZ，正好符合我的机器，最低 800MHz ，最高2.4GHZ，可超频到2.7GHZ。 完工行胜于言，快去试试你的机器是不是变频正常吧！！]]></content>
       <categories>
         <category>Hacintosh</category>
       </categories>
@@ -153,9 +153,9 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
+        <tag>编译</tag>
         <tag>Lilu</tag>
         <tag>五国</tag>
-        <tag>编译</tag>
       </tags>
   </entry>
   <entry>
@@ -166,15 +166,15 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>编译</tag>
         <tag>DSDT</tag>
         <tag>SSDT</tag>
+        <tag>编译</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[统计数字问题]]></title>
     <url>%2F2017%2F08%2F29%2F2017-08-29-%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[统计数字问题 问题描述：一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 。 算法的具体思路:暴力求解。本题关键在于将每一页码的数字进行分解，这种方式可以利用整数的除法和对10取余计算。 代码实现如下:123456789101112131415161718192021222324252627282930313233343536#include &lt;stdio.h&gt;#include &lt;math.h&gt;int main(int argc, const char * argv[]) &#123; // insert code here... int array[10] = &#123;0&#125;; //存放0~9出现的次数 int low, temp, high; //以temp为分割点 将页数分为三部分 high和low分别代表高位和低位的数值 int paginations; //存放总页数 int i, j; printf(&quot;一共多少页: &quot;); scanf(&quot;%d&quot;, &amp;paginations); int count = 0; //存放除去最高位后总页码的位数 count = (int)log10(paginations); for(i = count; i &gt;= 0; i --) &#123; //i表示低位（low）的位数 low = paginations % (int)pow(10, i); //计算low的数值 temp = paginations / (int)pow(10, i) % 10; //计算temp的数值 high = paginations / (int)pow(10, i + 1); //计算high的数值 for(j = 0; j &lt; temp; j ++) array[j] += (high + 1) * pow(10, i); //计算 0&lt;中间位&lt;temp 出现的次数 array[temp] += high * pow(10, i) + low + 1; //计算 中间位=temp 出现的次数 for(j = temp + 1; j &lt; 10; j ++) //计算 temp&lt;中间位&lt;9 出现的次数 array[j] += high * pow(10, i); &#125; for(i = count; i &gt;= 0; i --) //除去多统计的a[0]出现的次数 array[0] -= pow(10, i); printf(&quot;0~9分别出现的次数为:\n&quot;); for(i = 0; i &lt; 10; i ++) //打印0~9分别出现的次数 printf(&quot;%d\n&quot;, array[i]); return 0;&#125; ![2017-08-30](http://ovefvi4g3.bkt.clouddn.com/2017-08-30-1.png)]]></content>
+    <content type="text"><![CDATA[统计数字问题 问题描述：一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 。 算法的具体思路:暴力求解。本题关键在于将每一页码的数字进行分解，这种方式可以利用整数的除法和对10取余计算。 代码实现如下:123456789101112131415161718192021222324252627282930313233343536#include &lt;stdio.h&gt;#include &lt;math.h&gt;int main(int argc, const char * argv[]) &#123; // insert code here... int array[10] = &#123;0&#125;; //存放0~9出现的次数 int low, temp, high; //以temp为分割点 将页数分为三部分 high和low分别代表高位和低位的数值 int paginations; //存放总页数 int i, j; printf(&quot;一共多少页: &quot;); scanf(&quot;%d&quot;, &amp;paginations); int count = 0; //存放除去最高位后总页码的位数 count = (int)log10(paginations); for(i = count; i &gt;= 0; i --) &#123; //i表示低位（low）的位数 low = paginations % (int)pow(10, i); //计算low的数值 temp = paginations / (int)pow(10, i) % 10; //计算temp的数值 high = paginations / (int)pow(10, i + 1); //计算high的数值 for(j = 0; j &lt; temp; j ++) array[j] += (high + 1) * pow(10, i); //计算 0&lt;中间位&lt;temp 出现的次数 array[temp] += high * pow(10, i) + low + 1; //计算 中间位=temp 出现的次数 for(j = temp + 1; j &lt; 10; j ++) //计算 temp&lt;中间位&lt;9 出现的次数 array[j] += high * pow(10, i); &#125; for(i = count; i &gt;= 0; i --) //除去多统计的a[0]出现的次数 array[0] -= pow(10, i); printf(&quot;0~9分别出现的次数为:\n&quot;); for(i = 0; i &lt; 10; i ++) //打印0~9分别出现的次数 printf(&quot;%d\n&quot;, array[i]); return 0;&#125;]]></content>
       <categories>
         <category>Arithmetics</category>
       </categories>
@@ -199,7 +199,7 @@
   <entry>
     <title><![CDATA[Mac下搭建 Java 开发环境]]></title>
     <url>%2F2017%2F08%2F28%2F2017-08-28-MAC%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%2F</url>
-    <content type="text"><![CDATA[Mac 下搭建 Java 开发环境 ##安装 jdk Mac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。 ##配置 jdk 环境变量 打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容： 1234567JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/HomePATH=$JAVA_HOME/bin:$PATH:.CLASSPATH=JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.export JAVA_HOMEexport PATHexport CLASSPATH 按下 esc ，然后输入 :wq 回车，保存退出 然后输入 source ~/.bash_profile 回车文件修改就生效了。 输入 java -version 回车可以查看 Java 版本，whereis java 可以查看 Java 位置，echo $JAVA_HOME 可以打印出 JAVA_HOME 。 ##安装eclipse 为了更方便的进行开发工作，我们还需要安装Eclipse，去官网下载完成后解压，把.app文件拖进应用程序(Application)就可以了，然后创建一个workspace，也就是工作目录，用来存放工作代码。]]></content>
+    <content type="text"><![CDATA[Mac 下搭建 Java 开发环境 安装 jdkMac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。 配置 jdk 环境变量打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容： 1234567JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/HomePATH=$JAVA_HOME/bin:$PATH:.CLASSPATH=JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.export JAVA_HOMEexport PATHexport CLASSPATH 按下 esc ，然后输入 :wq 回车，保存退出 然后输入 source ~/.bash_profile 回车文件修改就生效了。 输入 java -version 回车可以查看 Java 版本，whereis java 可以查看 Java 位置，echo $JAVA_HOME 可以打印出 JAVA_HOME 。 安装eclipse为了更方便的进行开发工作，我们还需要安装Eclipse，去官网下载完成后解压，把.app文件拖进应用程序(Application)就可以了，然后创建一个workspace，也就是工作目录，用来存放工作代码。]]></content>
       <categories>
         <category>Study</category>
       </categories>

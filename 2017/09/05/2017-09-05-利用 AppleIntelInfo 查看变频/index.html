@@ -101,13 +101,13 @@
 
 
 
-<meta name="description" content="很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频  开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：1234cd ~/Desktop ``` 回车继续敲： git clone https://github.com/athlonreg/AppleIntelInfo.git1234  回">
+<meta name="description" content="很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频  开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：cd ~/Desktop  回车继续敲： 1git clone https://github.com/athlonreg/AppleIntelInfo.git 回车后就把 AppleI">
 <meta name="keywords" content="Hacintosh,黑苹果,AppleIntelInfo,变频">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用 AppleIntelInfo 查看变频">
 <meta property="og:url" content="http://yoursite.com/2017/09/05/2017-09-05-利用 AppleIntelInfo 查看变频/index.html">
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
-<meta property="og:description" content="很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频  开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：1234cd ~/Desktop ``` 回车继续敲： git clone https://github.com/athlonreg/AppleIntelInfo.git1234  回">
+<meta property="og:description" content="很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频  开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：cd ~/Desktop  回车继续敲： 1git clone https://github.com/athlonreg/AppleIntelInfo.git 回车后就把 AppleI">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-01-1.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-02-1.png">
@@ -115,10 +115,10 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-04-1.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-05-1.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-06-1.png">
-<meta property="og:updated_time" content="2017-09-15T13:34:59.000Z">
+<meta property="og:updated_time" content="2017-09-15T14:07:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用 AppleIntelInfo 查看变频">
-<meta name="twitter:description" content="很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频  开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：1234cd ~/Desktop ``` 回车继续敲： git clone https://github.com/athlonreg/AppleIntelInfo.git1234  回">
+<meta name="twitter:description" content="很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频  开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：cd ~/Desktop  回车继续敲： 1git clone https://github.com/athlonreg/AppleIntelInfo.git 回车后就把 AppleI">
 <meta name="twitter:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-01-1.png">
 
 
@@ -487,13 +487,21 @@
         <blockquote>
 <p>很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频</p>
 </blockquote>
-<h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><h2 id="首先下载-AppleIntelInfo-源码编译，打开终端，输入："><a href="#首先下载-AppleIntelInfo-源码编译，打开终端，输入：" class="headerlink" title="首先下载 AppleIntelInfo 源码编译，打开终端，输入："></a>首先下载 AppleIntelInfo 源码编译，打开终端，输入：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd ~/Desktop </div><div class="line">``` </div><div class="line"></div><div class="line">回车继续敲：</div></pre></td></tr></table></figure>
-<p>git clone <a href="https://github.com/athlonreg/AppleIntelInfo.git" target="_blank" rel="external">https://github.com/athlonreg/AppleIntelInfo.git</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line">回车后就把 AppleIntelInfo 源码下载在桌面了</div><div class="line"></div><div class="line">然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)：</div></pre></td></tr></table></figure></p>
-<p><a href="http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/" target="_blank" rel="external">http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   </div><div class="line">将编译后的 AppleIntelInfo.kext 放到桌面</div><div class="line">    </div><div class="line">## 然后开始利用命令行看变频数据</div><div class="line"></div><div class="line">打开终端，输入：</div></pre></td></tr></table></figure></p>
-<p>cd ~/Desktop<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line">回车后继续敲</div></pre></td></tr></table></figure></p>
-<p>sudo chown -R root:wheel AppleIntelInfo.kext<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">    </div><div class="line">回车会提示输入密码，输入之后回车继续敲：</div></pre></td></tr></table></figure></p>
-<p>sudo kextutil AppleIntelInfo.kext<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line">再回车，接着敲：</div></pre></td></tr></table></figure></p>
-<p>sudo cat /tmp/AppleIntelInfo.dat<br>```</p>
+<h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><h2 id="首先下载-AppleIntelInfo-源码编译，打开终端，输入："><a href="#首先下载-AppleIntelInfo-源码编译，打开终端，输入：" class="headerlink" title="首先下载 AppleIntelInfo 源码编译，打开终端，输入："></a>首先下载 AppleIntelInfo 源码编译，打开终端，输入：</h2><pre><code>cd ~/Desktop 
+</code></pre><p>回车继续敲：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/athlonreg/AppleIntelInfo.git</div></pre></td></tr></table></figure>
+<p>回车后就把 AppleIntelInfo 源码下载在桌面了</p>
+<p>然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)：</p>
+<pre><code>http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/
+</code></pre><p>将编译后的 AppleIntelInfo.kext 放到桌面</p>
+<h2 id="然后开始利用命令行看变频数据"><a href="#然后开始利用命令行看变频数据" class="headerlink" title="然后开始利用命令行看变频数据"></a>然后开始利用命令行看变频数据</h2><p>打开终端，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd ~/Desktop</div></pre></td></tr></table></figure>
+<p>回车后继续敲</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R root:wheel AppleIntelInfo.kext</div></pre></td></tr></table></figure>
+<p>回车会提示输入密码，输入之后回车继续敲：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo kextutil AppleIntelInfo.kext</div></pre></td></tr></table></figure>
+<p>再回车，接着敲：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cat /tmp/AppleIntelInfo.dat</div></pre></td></tr></table></figure>
 <p>回车之后变频数据就出来了，例如我的机器：</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-01-1.png" alt="2017-09-05-01"></p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-02-1.png" alt="2017-09-05-02"></p>
@@ -796,7 +804,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开工"><span class="nav-number">1.</span> <span class="nav-text">开工</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先下载-AppleIntelInfo-源码编译，打开终端，输入："><span class="nav-number">1.1.</span> <span class="nav-text">首先下载 AppleIntelInfo 源码编译，打开终端，输入：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完工"><span class="nav-number">2.</span> <span class="nav-text">完工</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开工"><span class="nav-number">1.</span> <span class="nav-text">开工</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先下载-AppleIntelInfo-源码编译，打开终端，输入："><span class="nav-number">1.1.</span> <span class="nav-text">首先下载 AppleIntelInfo 源码编译，打开终端，输入：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#然后开始利用命令行看变频数据"><span class="nav-number">1.2.</span> <span class="nav-text">然后开始利用命令行看变频数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完工"><span class="nav-number">2.</span> <span class="nav-text">完工</span></a></li></ol></div>
             
 
           </div>
