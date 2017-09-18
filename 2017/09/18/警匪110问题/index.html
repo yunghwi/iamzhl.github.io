@@ -101,7 +101,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="C语言,算法,统计数字," />
+  <meta name="keywords" content="算法,C语言,警匪110," />
 
 
 
@@ -119,20 +119,21 @@
 
 
 
-<meta name="description" content="统计数字问题  问题描述：一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 。 算法的具体思路:暴力求解。本题关键在于将每一页码的数字进行分解，这种方式可以利用整数">
-<meta name="keywords" content="C语言,算法,统计数字">
+<meta name="description" content="警匪110问题  问题描述 思路1、一共九个数字，八个操作符；2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；3、共有 3^8 种情况，遍历每种情况判断输出；4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1">
+<meta name="keywords" content="算法,C语言,警匪110">
 <meta property="og:type" content="article">
-<meta property="og:title" content="统计数字问题">
-<meta property="og:url" content="http://yoursite.com/2017/08/29/2017-08-29-统计数字问题/index.html">
+<meta property="og:title" content="警匪110问题">
+<meta property="og:url" content="http://yoursite.com/2017/09/18/警匪110问题/index.html">
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
-<meta property="og:description" content="统计数字问题  问题描述：一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 。 算法的具体思路:暴力求解。本题关键在于将每一页码的数字进行分解，这种方式可以利用整数">
+<meta property="og:description" content="警匪110问题  问题描述 思路1、一共九个数字，八个操作符；2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；3、共有 3^8 种情况，遍历每种情况判断输出；4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-08-30-1.png">
-<meta property="og:updated_time" content="2017-09-15T18:31:22.000Z">
+<meta property="og:image" content="http://yoursite.com/images/2017-09-18-05-1.png">
+<meta property="og:image" content="http://yoursite.com/images/2017-09-18-06-1.png">
+<meta property="og:updated_time" content="2017-09-18T10:59:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="统计数字问题">
-<meta name="twitter:description" content="统计数字问题  问题描述：一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 。 算法的具体思路:暴力求解。本题关键在于将每一页码的数字进行分解，这种方式可以利用整数">
-<meta name="twitter:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-08-30-1.png">
+<meta name="twitter:title" content="警匪110问题">
+<meta name="twitter:description" content="警匪110问题  问题描述 思路1、一共九个数字，八个操作符；2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；3、共有 3^8 种情况，遍历每种情况判断输出；4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1">
+<meta name="twitter:image" content="http://yoursite.com/images/2017-09-18-05-1.png">
 
 
 
@@ -162,13 +163,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/29/2017-08-29-统计数字问题/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/18/警匪110问题/"/>
 
 
 
 
 
-  <title>统计数字问题 | Athlonreg's Blog</title>
+  <title>警匪110问题 | Athlonreg's Blog</title>
   
 
 
@@ -361,7 +362,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/29/2017-08-29-统计数字问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/18/警匪110问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="athlonreg/套陆">
@@ -378,7 +379,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">统计数字问题</h1>
+          <h1 class="post-title" itemprop="name headline">警匪110问题</h1>
         
 
         <div class="post-meta">
@@ -390,8 +391,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T00:00:00+08:00">
-                2017-08-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-18T00:00:00+08:00">
+                2017-09-18
               </time>
             
 
@@ -431,9 +432,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/29/2017-08-29-统计数字问题/#comments" itemprop="discussionUrl">
+                <a href="/2017/09/18/警匪110问题/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/29/2017-08-29-统计数字问题/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/09/18/警匪110问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -441,7 +442,7 @@
 
           
           
-             <span id="/2017/08/29/2017-08-29-统计数字问题/" class="leancloud_visitors" data-flag-title="统计数字问题">
+             <span id="/2017/09/18/警匪110问题/" class="leancloud_visitors" data-flag-title="警匪110问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -467,7 +468,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  457 字
+                  513 字
                 </span>
               
 
@@ -505,12 +506,12 @@
 
       
         <blockquote>
-<p>统计数字问题</p>
+<p>警匪110问题</p>
 </blockquote>
-<h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 。</p>
-<h1 id="算法的具体思路"><a href="#算法的具体思路" class="headerlink" title="算法的具体思路:"></a>算法的具体思路:</h1><p>暴力求解。<br>本题关键在于将每一页码的数字进行分解，这种方式可以利用整数的除法和对10取余计算。</p>
-<h1 id="代码实现如下"><a href="#代码实现如下" class="headerlink" title="代码实现如下:"></a>代码实现如下:</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;math.h&gt;</div><div class="line">    </div><div class="line">int main(int argc, const char * argv[]) &#123;</div><div class="line">    // insert code here...</div><div class="line">    int array[10] = &#123;0&#125;;                                    //存放0~9出现的次数</div><div class="line">    int low, temp, high;                                    //以temp为分割点 将页数分为三部分 high和low分别代表高位和低位的数值 </div><div class="line">    int paginations;                                        //存放总页数</div><div class="line">    int i, j;</div><div class="line">    </div><div class="line">    printf(&quot;一共多少页: &quot;);</div><div class="line">    scanf(&quot;%d&quot;, &amp;paginations);</div><div class="line">    </div><div class="line">    int count = 0;                                          //存放除去最高位后总页码的位数</div><div class="line">    count = (int)log10(paginations);</div><div class="line">    </div><div class="line">    for(i = count; i &gt;= 0; i --) &#123; 				//i表示低位（low）的位数</div><div class="line">        low = paginations % (int)pow(10, i);                //计算low的数值</div><div class="line">        temp = paginations / (int)pow(10, i) % 10;          //计算temp的数值</div><div class="line">        high = paginations / (int)pow(10, i + 1);           //计算high的数值</div><div class="line">        </div><div class="line">        for(j = 0; j &lt; temp; j ++)</div><div class="line">            array[j] += (high + 1) * pow(10, i);            //计算 0&lt;中间位&lt;temp 出现的次数</div><div class="line">        array[temp] += high * pow(10, i) + low + 1;         //计算 中间位=temp 出现的次数</div><div class="line">        for(j = temp + 1; j &lt; 10; j ++)                     //计算 temp&lt;中间位&lt;9 出现的次数</div><div class="line">            array[j] += high * pow(10, i);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    for(i = count; i &gt;= 0; i --)                            //除去多统计的a[0]出现的次数</div><div class="line">        array[0] -= pow(10, i);</div><div class="line">    printf(&quot;0~9分别出现的次数为:\n&quot;);</div><div class="line">    for(i = 0; i &lt; 10; i ++)                                //打印0~9分别出现的次数</div><div class="line">        printf(&quot;%d\n&quot;, array[i]);</div><div class="line">    </div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-08-30-1.png" alt="2017-08-30"></p>
+<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p><img src="/images/2017-09-18-05-1.png" alt="2017-09-18-05"></p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>1、一共九个数字，八个操作符；<br>2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；<br>3、共有 3^8 种情况，遍历每种情况判断输出；<br>4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。<br>5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1x10+2，然后下一次循环操作符为+，需要计算的就是12+3，同理在3、4之间的空需要计算的是3x10+4，而不是（12+3）x10+4，所以需要一个临时变量来记录上次的操作数，还需要一个变量来记录上次的操作符将上次的结果进行统计处理，原因就在于我们无法确定下次的操作符是不是留空。<br>6、由于我们在统计和时，只有在下一次循环才能处理最后一个操作数，所以需要将9最后单独处<br>理。 </p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt; </div><div class="line">#include &lt;math.h&gt; </div><div class="line"></div><div class="line">int main() &#123;</div><div class="line">	int a[9]=&#123;1,2,3,4,5,6,7,8,9&#125;;</div><div class="line">	int sum; </div><div class="line">	int temp; </div><div class="line">	int oper,lastoper;  </div><div class="line">    int number; </div><div class="line">    int i,j;</div><div class="line">    </div><div class="line">	for(i=0;i&lt;pow(3,8);i++)  </div><div class="line">    &#123;  </div><div class="line">        sum=0; </div><div class="line">		temp=1; </div><div class="line">		lastoper=1;  </div><div class="line">        number=i;  </div><div class="line">        </div><div class="line">        for(j=1;j&lt;=8;j++)  </div><div class="line">        &#123;  //操作八次 </div><div class="line">            oper=number%3; </div><div class="line">			number=number/3;  </div><div class="line">            </div><div class="line">			if (!oper) </div><div class="line">				temp=temp*10+a[j];  //留空单独处理 </div><div class="line">				</div><div class="line">            if (oper==1) &#123;  //当前操作符 </div><div class="line">                if(lastoper==1)&#123; //前一次操作符 </div><div class="line">					sum=sum+temp; </div><div class="line">					temp=a[j];</div><div class="line">				&#125;  </div><div class="line">                if(lastoper==2)&#123;</div><div class="line">					sum=sum-temp; </div><div class="line">					temp=a[j];</div><div class="line">				&#125;  </div><div class="line">                lastoper=oper;  //更新上次操作符 </div><div class="line">            &#125;  </div><div class="line">            </div><div class="line">            if(oper==2)&#123;  </div><div class="line">                if(lastoper==1)&#123;</div><div class="line">					sum=sum+temp; </div><div class="line">					temp=a[j];</div><div class="line">				&#125;  </div><div class="line">                if(lastoper==2)&#123;</div><div class="line">					sum=sum-temp; </div><div class="line">					temp=a[j];</div><div class="line">				&#125;  </div><div class="line">                lastoper=oper;  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">  </div><div class="line">        if(lastoper==1) 	//第九次操作单独处理 </div><div class="line">			sum=sum+temp;  </div><div class="line">        if(lastoper==2) </div><div class="line">			sum=sum-temp;     </div><div class="line">  </div><div class="line">        if(sum==110)  </div><div class="line">        &#123;  </div><div class="line">            number=i;  </div><div class="line">            for(j=1;j&lt;=8;j++)  </div><div class="line">            &#123;  </div><div class="line">                printf(&quot;%d&quot;,a[j-1]);  </div><div class="line">                oper=number%3; </div><div class="line">				number=number/3;  </div><div class="line">                if(oper==1) </div><div class="line">					printf(&quot;+&quot;);  </div><div class="line">                if(oper==2) </div><div class="line">					printf(&quot;-&quot;);</div><div class="line">				else</div><div class="line">					continue;</div><div class="line">            &#125;             </div><div class="line">            printf(&quot;9\n&quot;);  </div><div class="line">        &#125;  </div><div class="line">    &#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p><img src="/images/2017-09-18-06-1.png" alt="2017-09-18-06"></p>
 
       
     </div>
@@ -567,11 +568,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C语言/" rel="tag"><i class="fa fa-tag"></i> C语言</a>
-          
             <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
-            <a href="/tags/统计数字/" rel="tag"><i class="fa fa-tag"></i> 统计数字</a>
+            <a href="/tags/C语言/" rel="tag"><i class="fa fa-tag"></i> C语言</a>
+          
+            <a href="/tags/警匪110/" rel="tag"><i class="fa fa-tag"></i> 警匪110</a>
           
         </div>
       
@@ -584,8 +585,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/28/2017-08-28-MAC搭建Java开发环境/" rel="next" title="Mac下搭建 Java 开发环境">
-                <i class="fa fa-chevron-left"></i> Mac下搭建 Java 开发环境
+              <a href="/2017/09/18/派遣敢死队问题/" rel="next" title="派遣敢死队问题">
+                <i class="fa fa-chevron-left"></i> 派遣敢死队问题
               </a>
             
           </div>
@@ -593,10 +594,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/29/2017-08-29-AppleALC-ALCPlugFix/" rel="prev" title="     AppleALC-ALCPlugFix">
-                     AppleALC-ALCPlugFix <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -691,7 +688,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -713,7 +710,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -807,7 +804,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题描述："><span class="nav-number">1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法的具体思路"><span class="nav-number">2.</span> <span class="nav-text">算法的具体思路:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码实现如下"><span class="nav-number">3.</span> <span class="nav-text">代码实现如下:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行结果"><span class="nav-number">4.</span> <span class="nav-text">运行结果</span></a></li></ol></div>
             
 
           </div>
@@ -853,7 +850,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      11.0k
+      12.2k
     </span>
   
 </div>
@@ -875,7 +872,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共11.0k字</span>
+  <span class="post-count">博客全站共12.2k字</span>
 </div>
 
         
@@ -995,9 +992,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/08/29/2017-08-29-统计数字问题/';
-          this.page.identifier = '2017/08/29/2017-08-29-统计数字问题/';
-          this.page.title = '统计数字问题';
+          this.page.url = 'http://yoursite.com/2017/09/18/警匪110问题/';
+          this.page.identifier = '2017/09/18/警匪110问题/';
+          this.page.title = '警匪110问题';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://athlonreg.disqus.com/embed.js';
