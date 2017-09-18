@@ -47,8 +47,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>镜像</tag>
       </tags>
   </entry>
@@ -60,14 +60,14 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>终端</tag>
         <tag>任何来源</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[2017-09-14-NexT使用详解]]></title>
+    <title><![CDATA[NexT使用详解]]></title>
     <url>%2F2017%2F09%2F14%2FNexT%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[NexT基本使用转自官方说明文档 前言Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。 在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。 为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。 安装 NexTHexo 安装主题的方式非常简单，只需要将主题文件拷贝至站点目录的 themes 目录下， 然后修改下配置文件即可。具体到 NexT 来说，安装步骤如下。 下载主题在终端窗口下，定位到 Hexo 站点目录下。使用 Git checkout 代码：12$ cd your-hexo-site$ git clone https://github.com/iissnan/hexo-theme-next themes/next 启用主题与所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开站点配置文件， 找到 theme 字段，并将其值更改为 next。 启用 NexT 主题 1theme: next 验证主题首先启动 Hexo 本地站点，并开启调试模式（即加上 –debug），整个命令是 hexo s –debug 。 在服务启动的过程，注意观察命令行输出是否有任何异常信息，如果你碰到问题，这些信息将帮助他人更好的定位错误。 当命令行输出中提示出： 1INFO hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop. 此时即可使用浏览器访问 http://localhost:4000 ，检查站点是否正确运行。 成功安装并启用了 NexT 主题后。下一步我们将要更改一些主题的设定，包括个性化以及集成第三方服务。 主题设定选择 SchemeScheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是： 123Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白Mist - Muse 的紧凑版本，整洁有序的单栏外观Pisces - 双栏 Scheme，小家碧玉似的清新 Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。 选择 Pisces Scheme 123#scheme: Muse#scheme: Mistscheme: Pisces 设置 语言编辑 站点配置文件， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用简体中文，配置如下： 1language: zh-Hans 目前 NexT 支持的语言如以下表格所示： 语言 代码 示例 English en language: en 简体中文 zh-Hans language: zh-Hans Français fr-FR language: fr-FR Português pt language: pt or language: pt-BR 繁體中文 zh-hk 或者 zh-tw language: zh-hk Русский язык ru language: ru Deutsch de language: de 日本語 ja language: ja Indonesian id language: id Korean ko language: ko 设置菜单菜单配置包括三个部分，第一是菜单项（名称和链接），第二是菜单项的显示文本，第三是菜单项对应的图标。 NexT 使用的是 Font Awesome 提供的图标， Font Awesome 提供了 600+ 的图标，可以满足绝大的多数的场景，同时无须担心在 Retina 屏幕下 图标模糊的问题。 编辑 主题配置文件，修改以下内容： 设定菜单内容，对应的字段是 menu。 菜单内容的设置格式是：item name: link。其中 item name 是一个名称，这个名称并不直接显示在页面上，她将用于匹配图标以及翻译。 菜单示例配置 1234567menu: home: / archives: /archives #about: /about #categories: /categories tags: /tags #commonweal: /404.html 若你的站点运行在子目录中，请将链接前缀的 / 去掉 NexT 默认的菜单项有 键值 设定值 显示文本 home home: / 主页 archives archives: /archives 归档页 categories categories: /categories 分类页 tags tags: /tags 标签页 about about: /about 关于页面 commonweal commonweal: /404.html 公益 404 2.设置菜单项的显示文本。在第一步中设置的菜单的名称并不直接用于界面上的展示。Hexo 在生成的时候将使用 这个名称查找对应的语言翻译，并提取显示文本。这些翻译文本放置在 NexT 主题目录下的 languages/{language}.yml （{language} 为你所使用的语言）。 以简体中文为例，若你需要添加一个菜单项，比如 something。那么就需要修改简体中文对应的翻译文件 languages/zh-Hans.yml，在 menu 字段下添加一项： 123456789menu: home: 首页 archives: 归档 categories: 分类 tags: 标签 about: 关于 search: 搜索 commonweal: 公益404 something: 有料 3.设定菜单项的图标，对应的字段是 menu_icons。 此设定格式是 item name: icon name，其中 item name 与上一步所配置的菜单名字对应，icon name 是 Font Awesome 图标的 名字。而 enable 可用于控制是否显示图标，你可以设置成 false 来去掉图标。 菜单图标配置示例 123456789menu_icons: enable: true # Icon Mapping. home: home about: user categories: th tags: tags archives: archive commonweal: heartbeat 在菜单图标开启的情况下，如果菜单项与菜单未匹配（没有设置或者无效的 Font Awesome 图标名字） 的情况下，NexT 将会使用 ? 作为图标。 请注意键值（如 home）的大小写要严格匹配 设置 侧栏默认情况下，侧栏仅在文章页面（拥有目录列表）时才显示，并放置于右侧位置。 可以通过修改 主题配置文件 中的 sidebar 字段来控制侧栏的行为。侧栏的设置包括两个部分，其一是侧栏的位置， 其二是侧栏显示的时机。 1.设置侧栏的位置，修改 sidebar.position 的值，支持的选项有： 12left - 靠左放置right - 靠右放置 目前仅 Pisces Scheme 支持 position 配置。影响版本5.0.0及更低版本。 12sidebar: position: left 2.设置侧栏显示的时机，修改 sidebar.display 的值，支持的选项有： post 默认行为，在文章页面（拥有目录列表）时显示 always 在所有页面中都显示 hide 在所有页面中都隐藏（可以手动展开） remove 完全移除 12sidebar: display: post 已知侧栏在 use motion: false 的情况下不会展示。 影响版本5.0.0及更低版本。 设置 头像编辑 主题配置文件， 修改字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是： 地址 值 完整的互联网URI http://example.com/avatar.png 站点内的地址 将头像放置主题目录下的 source/uploads/ (新建 uploads 目录若不存在)，配置为：avatar: /uploads/avatar.png；或者 放置在 source/images/ 目录下，配置为：avatar: /images/avatar.png 头像设置示例 1avatar: http://example.com/avatar.png 设置作者昵称编辑站点配置文件， 设置 author 为你的昵称。 站点描述编辑站点配置文件， 设置 description 字段为你的站点描述。站点描述可以是你喜欢的一句签名 : ) 主题配置设置 RSSNexT 中 RSS 有三个设置选项，满足特定的使用场景。 更改 主题配置文件，设定 rss 字段的值： 123false： 禁用 RSS，不在页面上显示 RSS 连接。留空： 使用 Hexo 生成的 Feed 链接。 你可以需要先安装 hexo-generator-feed 插件。具体的链接地址：适用于已经烧制过 Feed 的情形。 添加「标签」页面新建「标签」页面，并在菜单中显示「标签」链接。「标签」页面将展示站点的所有标签，若你的所有文章都未包含标签，此页面将是空的。 底下代码是一篇包含标签的文章的例子： 12345title: 标签测试文章tags: - Testing - Another Tag--- 请参阅 Hexo 的分类与标签文档，了解如何为文章添加标签或者分类。 新建页面在终端窗口下，定位到 Hexo 站点目录下。使用 hexo new page 新建一个页面，命名为 tags ： 12$ cd your-hexo-site$ hexo new page tags 设置页面类型编辑刚新建的页面，将页面的类型设置为 tags ，主题将自动为这个页面显示标签云。页面内容如下： 1234title: 标签date: 2014-12-22 12:39:04type: &quot;tags&quot;--- 在菜单中添加链接。编辑 主题配置文件 ， 添加 tags 到 menu 中，如下:1234menu: home: / archives: /archives tags: /tags 注意：如果有集成评论服务，页面也会带有评论。 若需要关闭的话，请添加字段 comments 并将值设置为 false，如： 禁用评论示例 12345title: 标签date: 2014-12-22 12:39:04type: &quot;tags&quot;comments: false--- 添加「分类」页面新建「分类」页面，并在菜单中显示「分类」链接。「分类」页面将展示站点的所有分类，若你的所有文章都未包含分类，此页面将是空的。 底下代码是一篇包含分类的文章的例子： 123title: 分类测试文章categories: Testing--- 请参阅 Hexo 的分类与标签文档，了解如何为文章添加标签或者分类。 新建页面在终端窗口下，定位到 Hexo 站点目录下。使用 hexo new page 新建一个页面，命名为 categories ： 12$ cd your-hexo-site$ hexo new page categories 设置页面类型编辑刚新建的页面，将页面的 type 设置为 categories ，主题将自动为这个页面显示分类。页面内容如下： 1234title: 分类date: 2014-12-22 12:39:04type: &quot;categories&quot;--- 修改菜单在菜单中添加链接。编辑 主题配置文件 ， 添加 categories 到 menu 中，如下: 1234menu: home: / archives: /archives categories: /categories 注意：如果有集成评论服务，页面也会带有评论。 若需要关闭的话，请添加字段 comments 并将值设置为 false，如： 禁用评论示例 12345title: 分类date: 2014-12-22 12:39:04type: &quot;categories&quot;comments: false--- 设置字体 注意： 此特性在版本 5.0.1 中引入，要使用此功能请确保所使用的 NexT 版本在此之后 为了解决 Google Fonts API 不稳定的问题，NexT 在 5.0.1 中引入此特性。 通过此特性，你可以指定所使用的字体库外链地址；与此同时，NexT 开放了 5 个特定范围的字体设定，他们是： 123456789全局字体：定义的字体将在全站范围使用标题字体：文章内标题的字体（h1, h2, h3, h4, h5, h6）文章字体：文章所使用的字体Logo字体：Logo 所使用的字体代码字体： 代码块所使用的字体各项所指定的字体将作为首选字体，当他们不可用时会自动 Fallback 到 NexT 设定的基础字体组：非代码类字体：Fallback 到 &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif代码类字体： Fallback 到 consolas, Menlo, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, monospace 另外，每一项都有一个额外的 external 属性，此属性用来控制是否使用外链字体库。 开放此属性方便你设定那些已经安装在系统中的字体，减少不必要的请求（请求大小）。 配置示例 12345678910111213141516171819202122232425262728293031font: enable: true # 外链字体库地址，例如 //fonts.googleapis.com (默认值) host: # 全局字体，应用在 body 元素上 global: external: true family: Monda # 标题字体 (h1, h2, h3, h4, h5, h6) headings: external: true family: Roboto Slab # 文章字体 posts: external: true family: # Logo 字体 logo: external: true family: Lobster Two size: 24 # 代码字体，应用于 code 以及代码块 codes: external: true family: PT Mono 设置代码高亮主题NexT 使用 Tomorrow Theme 作为代码高亮，共有5款主题供你选择。 NexT 默认使用的是 白色的 normal 主题，可选的值有 normal，night， night blue， night bright， night eighties。 更改 highlight_theme 字段，将其值设定成你所喜爱的高亮主题，例如： 高亮主题设置示例 1234# Code Highlight theme# Available value: normal | night | night eighties | night blue | night bright# https://github.com/chriskempson/tomorrow-themehighlight_theme: normal 侧边栏社交链接侧栏社交链接的修改包含两个部分，第一是链接，第二是链接图标。 两者配置均在 主题配置文件 中。 1.链接放置在 social 字段下，一行一个链接。其键值格式是 显示文本: 链接地址。 配置示例 1234567# Social linkssocial: GitHub: https://github.com/your-user-name Twitter: https://twitter.com/your-user-name 微博: http://weibo.com/your-user-name 豆瓣: http://douban.com/people/your-user-name 知乎: http://www.zhihu.com/people/your-user-name 2.设定链接的图标，对应的字段是 social_icons。其键值格式是 匹配键: Font Awesome 图标名称， 匹配键 与上一步所配置的链接的 显示文本 相同（大小写严格匹配），图标名称 是 Font Awesome 图标的名字（不必带 fa- 前缀）。 enable 选项用于控制是否显示图标，你可以设置成 false 来去掉图标。 配置示例 1234567# Social Iconssocial_icons: enable: true # Icon Mappings GitHub: github Twitter: twitter 微博: weibo 开启打赏功能 由 habren 贡献越来越多的平台（微信公众平台，新浪微博，简书，百度打赏等）支持打赏功能，付费阅读时代越来越近，特此增加了打赏功能，支持微信打赏和支付宝打赏。 只需要 主题配置文件 中填入 微信 和 支付宝 收款二维码图片地址 即可开启该功能。 打赏功能配置示例 123reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！wechatpay: /path/to/wechat-reward-imagealipay: /path/to/alipay-reward-image 友情链接 由 iamwent 贡献编辑 主题配置文件 添加： 友情链接配置示例 12345# titlelinks_title: Linkslinks: MacTalk: http://macshuo.com/ Title: http://example.com/ 站点建立时间这个时间将在站点的底部显示，例如 © 2013 - 2015。 编辑 主题配置文件，新增字段 since。 配置示例 1since: 2013 设置「动画效果」NexT 默认开启动画效果，效果使用 JavaScript 编写，因此需要等待 JavaScript 脚本完全加载完毕后才会显示内容。 如果您比较在乎速度，可以将设置此字段的值为 false 来关闭动画。 编辑 主题配置文件， 搜索 use_motion，根据您的需求设置值为 true 或者 false 即可： 12use_motion: true # 开启动画效果use_motion: false # 关闭动画效果 设置「背景动画」NexT 自带两种背景动画效果 编辑 主题配置文件， 搜索 canvas_nest 或 three_waves，根据您的需求设置值为 true 或者 false 即可： 注意： three_waves 在版本 5.1.1 中引入。只能同时开启一种背景动画效果。 canvas_nest 配置示例 1234567# canvas_nestcanvas_nest: true //开启动画canvas_nest: false //关闭动画three_waves 配置示例# three_wavesthree_waves: true //开启动画three_waves: false //关闭动画 腾讯公益 404 页面 由 xirong 贡献腾讯公益404页面，寻找丢失儿童，让大家一起关注此项公益事业！ 效果如下 使用方法，新建 404.html 页面，放到主题的 source 目录下，内容如下： 123456789101112131415161718&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8;&quot;/&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt; &lt;meta name=&quot;robots&quot; content=&quot;all&quot; /&gt; &lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot;/&gt; &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://qzone.qq.com/gy/404/style/404style.css&quot;&gt;&lt;/head&gt;&lt;body&gt; &lt;script type=&quot;text/plain&quot; src=&quot;http://www.qq.com/404/search_children.js&quot; charset=&quot;utf-8&quot; homePageUrl=&quot;/&quot; homePageName=&quot;回到我的主页&quot;&gt; &lt;/script&gt; &lt;script src=&quot;https://qzone.qq.com/gy/404/data.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; &lt;script src=&quot;https://qzone.qq.com/gy/404/page.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
       <categories>
@@ -87,8 +87,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>BCM94352z</tag>
       </tags>
   </entry>
@@ -113,9 +113,9 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
         <tag>AR956x</tag>
+        <tag>Hacintosh</tag>
         <tag>无线网卡</tag>
       </tags>
   </entry>
@@ -133,19 +133,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[加快黑苹果开机速度的一种方法]]></title>
-    <url>%2F2017%2F09%2F05%2F%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>Hacintosh</tag>
-        <tag>黑苹果</tag>
-        <tag>开机速度</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[利用 AppleIntelInfo 查看变频]]></title>
     <url>%2F2017%2F09%2F05%2F%E5%88%A9%E7%94%A8%20AppleIntelInfo%20%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%A2%91%2F</url>
     <content type="text"><![CDATA[很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频 开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：1cd ~/Desktop 回车继续敲： 1git clone https://github.com/athlonreg/AppleIntelInfo.git 回车后就把 AppleIntelInfo 源码下载在桌面了 然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)： 1http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/ 将编译后的 AppleIntelInfo.kext 放到桌面 然后开始利用命令行看变频数据打开终端，输入： 1cd ~/Desktop 回车后继续敲 1sudo chown -R root:wheel AppleIntelInfo.kext 回车会提示输入密码，输入之后回车继续敲： 1sudo kextutil AppleIntelInfo.kext 再回车，接着敲： 1sudo cat /tmp/AppleIntelInfo.dat 回车之后变频数据就出来了，例如我的机器： 一般我们只看最后一行就可以了哦 比如我的机器就是 800、 1000、 …… 、 2700 ，单位是MHz，正好符合我的机器，最低 800MHz ，最高2.4GHz，可超频到2.7GHz。 完工行胜于言，快去试试你的机器是不是变频正常吧！！]]></content>
@@ -153,10 +140,23 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>AppleIntelInfo</tag>
         <tag>变频</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[加快黑苹果开机速度的一种方法]]></title>
+    <url>%2F2017%2F09%2F05%2F%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
+        <tag>开机速度</tag>
       </tags>
   </entry>
   <entry>
@@ -186,19 +186,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[解决Lilu造成的一些问题]]></title>
-    <url>%2F2017%2F08%2F31%2F%E8%A7%A3%E5%86%B3Lilu%E9%80%A0%E6%88%90%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[解决Lilu造成的一些问题 众所周知，Lilu插件为黑果带来了巨大的影响，可以说 vit9696 在某种程度上改变了黑果界，但是有些朋友自己编译kext后发现会五国或者直接黑屏又或者直接重启，这是为什么呢，在和一些朋友一起测试后发现是由于操作不当引起的，这里我以 IntelGraphicsFixup 为例，简述一下编译过程 首先打开终端输入: 1cd ~/Desktop 回车即进入桌面目录，然后输入： 1git clone https://github.com/RehabMan/IntelGraphicsFixup.git 回车即可下载 IntelGraphicsFixup 源码到桌面上 然后将 Lilu 的 Debug 版放到 IntelGraphicsFixup 源码根目录 然后用 Xcode 打开 IntelGraphicsFixup 的工程文件 按如下所示操作即可编译 IntelGraphicsFixup 到桌面上 一层一层打开它，就会发现已经编译好的 IntelGraphicsFixup 将 Lilu 的 Release 版连同 IntelGraphicsFixup 一起放到你的驱动目录就可以用了 以上是依赖 Lilu 的一些驱动的编译方法。 但是我们往往要用到不止一个 Lilu 的插件，这时就有可能会造成其中一个无效甚至造成五国等问题，原因就在于你的这两个 Lilu 插件是用不同版本的 Lilu 源码编译出来的，要想使用多个Lilu插件而又避免这种情况的出现，你可以采取我提供的方法： 首先将 Lilu-1.1.6 保存到本地，所有的 Lilu 插件都用我上面叙述的方法来编译，而编译的时候由于我们使用的是 1.1.6 的 Debug 版 Lilu ，所以就可以避免出现那些奇怪的问题，这里有一点需要注意，我们最终需要用到的是 Lilu 的 Release 版和它的插件，而 Debug 版的Lilu我们只在编译的时候才用到了。 给大家提供下 Lilu-1.1.6 ，减少大家的工作量： 1链接:http://pan.baidu.com/s/1kUBEwgn 密码:9xuj 最后提一下10.13一些朋友更新时遇到的因为固件问题而升级失败的情况吧，在我和风铃大神遇到的不少升级 10.13 的朋友反馈情况来看，固件问题造成无法升级的几乎全是使用 APFS 的，而使用 HFS+ 的朋友则没有遇到这种问题，风铃大师遇到这种情况并解决了，经过研究后提出的观点是Apple的每次更新都会有固件的更新，而这些更新在引导中则体现在你的EFI下的 Apple 目录，也就是说使用 APFS 的朋友要想成功升级 10.13 ，这个文件夹千万不要动，如果你的这个文件夹没有动过但还是遇到这种问题，请尝试先安装 10.13 dp1 ，然后慢慢升级过去就可以了。（感谢风铃提出的思路） 这里提供一下我做的10.13的镜像吧 12345678910DP1：链接:http://pan.baidu.com/s/1eRYNXL4 密码:29b8DP2：链接:http://pan.baidu.com/s/1o7AReQI 密码:3hi2DP3：链接:http://pan.baidu.com/s/1o8UKbu6 密码:usioDP4：链接:http://pan.baidu.com/s/1qXSxV2W 密码:a9gvDP5：链接:http://pan.baidu.com/s/1kV9l6CZ 密码:7t93DP6：链接:http://pan.baidu.com/s/1kVsqV0j 密码:033cDP7：链接:http://pan.baidu.com/s/1qXKrARM 密码:lbj0DP8：链接:http://pan.baidu.com/s/1c1Z9kbQ 密码:9nmrDP9：链接:http://pan.baidu.com/s/1micaQ1M 密码:dp1zGM:：链接:http://pan.baidu.com/s/1qY9Jw1u 密码:zzoo]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>编译</tag>
-        <tag>Lilu</tag>
-        <tag>五国</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[字典序问题]]></title>
     <url>%2F2017%2F08%2F31%2F%E5%AD%97%E5%85%B8%E5%BA%8F%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[字典序问题 问题描述在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A由26个小写字母组成。该字母表产生的升序字符串中字母从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1次。例如，a,b,ab,bc,xyz等字符串都是升序字符串。现在对字母表中产生的所有长度不超过6的升序字符串，计算它在字典中的编码。 思路首先判断字符串长度为3，先算长度为1和2的所有情况，即从26个字母中选1个或两个字母，因为是升序，即sum=C（26，1）+C（26，2）； 之后再看字符串的第一个字符，为’d’,之前有以a,b,c开头的长度为3的字符串，以a开头，后边2位需要在25个字母中选择（除了a），以b开头的后2位需要在24个字母中选择（除了a,b），以c开头的在23个字母（除了a,,b,c）中选择，即sum+=(C(25,2)+C(24,2)+C(23,2)); 然后再看下一个字母’g’，d与g之间有e,f,需要算以de开头以及以df开头的所有情况，即sum+=(C(21,1)+C(20,1))； 最后再加上h-‘a’+1; 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include &lt;stdio.h&gt;#include &lt;string.h&gt;int getCombinatorialNumber(int m, int n) &#123; int n_Product=1, m_Product=1; int i; for(i=1; i&lt;=n; i++) n_Product*=i; for(i=m; i&gt;m-n; i--) &#123; m_Product*=i; return m_Product/n_Product; &#125;&#125;int main(int argc, const char * argv[]) &#123; int number; //要统计字符串的个数 int sum; //存放字符串的序号 int length; char str[10]; //存放字符串 int a[10]; //存放字符串的每一位字符的值 int i, j; scanf(&quot;%d&quot;, &amp;number); while(number--) &#123; getchar(); sum=1; scanf(&quot;%s&quot;, str); length=(int)strlen(str); for(i=1; i&lt;length; i++) &#123; sum += getCombinatorialNumber(26, i); //小于字符串长度的字符串个数 &#125; for(i=0; i&lt;length; i++) &#123; a[i]=str[i]-96; //计算每个字符从a开始的序号数值, a~z分别对应1~26 //printf(&quot;%d &quot;, a[i]); &#125; //printf(&quot;%d\n&quot;, f(26, 2)); int temp=1; for(i=length; i&gt;0; i--) &#123; for(j=temp; j&lt;a[length-i]; j++) &#123; sum += getCombinatorialNumber(26-j, i-1); //依次扫描字符，计算所有情况 &#125; temp=a[length-i]+1; &#125; printf(&quot;%d\n&quot;, sum); &#125; return 0;&#125;]]></content>
@@ -209,6 +196,19 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>字典序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[解决Lilu造成的一些问题]]></title>
+    <url>%2F2017%2F08%2F31%2F%E8%A7%A3%E5%86%B3Lilu%E9%80%A0%E6%88%90%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[解决Lilu造成的一些问题 众所周知，Lilu插件为黑果带来了巨大的影响，可以说 vit9696 在某种程度上改变了黑果界，但是有些朋友自己编译kext后发现会五国或者直接黑屏又或者直接重启，这是为什么呢，在和一些朋友一起测试后发现是由于操作不当引起的，这里我以 IntelGraphicsFixup 为例，简述一下编译过程 首先打开终端输入: 1cd ~/Desktop 回车即进入桌面目录，然后输入： 1git clone https://github.com/RehabMan/IntelGraphicsFixup.git 回车即可下载 IntelGraphicsFixup 源码到桌面上 然后将 Lilu 的 Debug 版放到 IntelGraphicsFixup 源码根目录 然后用 Xcode 打开 IntelGraphicsFixup 的工程文件 按如下所示操作即可编译 IntelGraphicsFixup 到桌面上 一层一层打开它，就会发现已经编译好的 IntelGraphicsFixup 将 Lilu 的 Release 版连同 IntelGraphicsFixup 一起放到你的驱动目录就可以用了 以上是依赖 Lilu 的一些驱动的编译方法。 但是我们往往要用到不止一个 Lilu 的插件，这时就有可能会造成其中一个无效甚至造成五国等问题，原因就在于你的这两个 Lilu 插件是用不同版本的 Lilu 源码编译出来的，要想使用多个Lilu插件而又避免这种情况的出现，你可以采取我提供的方法： 首先将 Lilu-1.1.6 保存到本地，所有的 Lilu 插件都用我上面叙述的方法来编译，而编译的时候由于我们使用的是 1.1.6 的 Debug 版 Lilu ，所以就可以避免出现那些奇怪的问题，这里有一点需要注意，我们最终需要用到的是 Lilu 的 Release 版和它的插件，而 Debug 版的Lilu我们只在编译的时候才用到了。 给大家提供下 Lilu-1.1.6 ，减少大家的工作量： 1链接:http://pan.baidu.com/s/1kUBEwgn 密码:9xuj 最后提一下10.13一些朋友更新时遇到的因为固件问题而升级失败的情况吧，在我和风铃大神遇到的不少升级 10.13 的朋友反馈情况来看，固件问题造成无法升级的几乎全是使用 APFS 的，而使用 HFS+ 的朋友则没有遇到这种问题，风铃大师遇到这种情况并解决了，经过研究后提出的观点是Apple的每次更新都会有固件的更新，而这些更新在引导中则体现在你的EFI下的 Apple 目录，也就是说使用 APFS 的朋友要想成功升级 10.13 ，这个文件夹千万不要动，如果你的这个文件夹没有动过但还是遇到这种问题，请尝试先安装 10.13 dp1 ，然后慢慢升级过去就可以了。（感谢风铃提出的思路） 这里提供一下我做的10.13的镜像吧 12345678910DP1：链接:http://pan.baidu.com/s/1eRYNXL4 密码:29b8DP2：链接:http://pan.baidu.com/s/1o7AReQI 密码:3hi2DP3：链接:http://pan.baidu.com/s/1o8UKbu6 密码:usioDP4：链接:http://pan.baidu.com/s/1qXSxV2W 密码:a9gvDP5：链接:http://pan.baidu.com/s/1kV9l6CZ 密码:7t93DP6：链接:http://pan.baidu.com/s/1kVsqV0j 密码:033cDP7：链接:http://pan.baidu.com/s/1qXKrARM 密码:lbj0DP8：链接:http://pan.baidu.com/s/1c1Z9kbQ 密码:9nmrDP9：链接:http://pan.baidu.com/s/1micaQ1M 密码:dp1zGM:：链接:http://pan.baidu.com/s/1qY9Jw1u 密码:zzoo]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>编译</tag>
+        <tag>Lilu</tag>
+        <tag>五国</tag>
       </tags>
   </entry>
   <entry>
@@ -225,6 +225,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[AppleALC-ALCPlugFix]]></title>
+    <url>%2F2017%2F08%2F29%2FAppleALC-ALCPlugFix%2F</url>
+    <content type="text"><![CDATA[简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题 首先下载 AppleALC 源码，打开终端输入： 1git clone https://github.com/vit9696/AppleALC 回车之后就将 AppleALC 下载到了你的用户根目录 然后下载 Lilu ： 1链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62 将下载的 Lilu 中 Debug 里面的 Lilu.kext 放进 AppleALC 源码根目录，然后删除 /AppleALC/Resources 中多余文件夹，只留下你的声卡型号文件夹、 Pinconfigs.kext 以及四个 plist 文件，以 cx20751 为例剩下如下文件 然后打开计算器，显示为编程器 打开你的 Codec ，找到 Vendor Id ，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开 /AppleALC/Resources/CX20751_2/Info.plist （此处的 CX20751_2 需要换成你的声卡型号），把 codecid 换成刚才拷贝的十进制数 保存退出，右键 PinConfigs.kext 显示包内容，打开里面的 Info.plist ，搜索刚才拷贝的十进制数，记下 LayoutID 数据，有几个记几个，都记下来，然后将 IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault 中的其他型号删除，（为避免出错，这里的删除可以不操作，删除只是为了精简做出来的 AppleALC ），保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的 export next where 填上桌面，点 export 就生成 AppleALC 在桌面上了，一层一层打开它，将其中的 AppleALC.kext 放到 clover 驱动目录，注意之前下载的 Lilu 里面的Release中 Lilu.kext 也要放到 clover 驱动目录，最后不要忘了在 config 注入 LayoutID ： 如图 Audio 处写上刚才记下的 LayoutID 到这里 AppleALC 的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有 ID ，如果能驱动但无法做到插入耳机自动切换，接着往下看： 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的 ALCPlugFix 中的 main.m 下拉到最下方，注意这一部分： 下载 had-tools ,将 codec 复制到 had-tools 目录，打开终端， cd 到此目录，输入 1./widget_dump.sh codec.txt 回车，此处 codec.txt 要根据你的 codec 名字来，回车可以看到以下输出： 找到 nid = 0x19 和 nid = 0x1a ,这里我的 19 为 line in ， 1a 为 mic in ，记录下最后两位，我的是 04 和 24 就这么改 保存退出，双击按照 AppleALC 的编译方法编译这个 然后将生成的 ALCPlugFix 替换 alc_fix 中的 ALCPlugFix ，终端 cd 到 alc_fix 目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh codec.txt 就可以发现之前的 19 和 1a 后面的数据反过来了 如果不行重启一次应该就好了。]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[统计数字问题]]></title>
     <url>%2F2017%2F08%2F29%2F%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[统计数字问题 问题描述一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 。 思路:暴力求解。本题关键在于将每一页码的数字进行分解，这种方式可以利用整数的除法和对10取余计算。 代码实现123456789101112131415161718192021222324252627282930313233343536#include &lt;stdio.h&gt;#include &lt;math.h&gt; int main(int argc, const char * argv[]) &#123; // insert code here... int array[10] = &#123;0&#125;; //存放0~9出现的次数 int low, temp, high; //以temp为分割点 将页数分为三部分 high和low分别代表高位和低位的数值 int paginations; //存放总页数 int i, j; printf(&quot;一共多少页: &quot;); scanf(&quot;%d&quot;, &amp;paginations); int count = 0; //存放除去最高位后总页码的位数 count = (int)log10(paginations); for(i = count; i &gt;= 0; i --) &#123; //i表示低位（low）的位数 low = paginations % (int)pow(10, i); //计算low的数值 temp = paginations / (int)pow(10, i) % 10; //计算temp的数值 high = paginations / (int)pow(10, i + 1); //计算high的数值 for(j = 0; j &lt; temp; j ++) array[j] += (high + 1) * pow(10, i); //计算 0&lt;中间位&lt;temp 出现的次数 array[temp] += high * pow(10, i) + low + 1; //计算 中间位=temp 出现的次数 for(j = temp + 1; j &lt; 10; j ++) //计算 temp&lt;中间位&lt;9 出现的次数 array[j] += high * pow(10, i); &#125; for(i = count; i &gt;= 0; i --) //除去多统计的a[0]出现的次数 array[0] -= pow(10, i); printf(&quot;0~9分别出现的次数为:\n&quot;); for(i = 0; i &lt; 10; i ++) //打印0~9分别出现的次数 printf(&quot;%d\n&quot;, array[i]); return 0;&#125;]]></content>
@@ -235,18 +247,6 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>统计数字</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[AppleALC-ALCPlugFix]]></title>
-    <url>%2F2017%2F08%2F29%2FAppleALC-ALCPlugFix%2F</url>
-    <content type="text"><![CDATA[简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题 首先下载 AppleALC 源码，打开终端输入： 1git clone https://github.com/vit9696/AppleALC 回车之后就将 AppleALC 下载到了你的用户根目录 然后下载 Lilu ： 1链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62 将下载的 Lilu 中 Debug 里面的 Lilu.kext 放进 AppleALC 源码根目录，然后删除 /AppleALC/Resources 中多余文件夹，只留下你的声卡型号文件夹、 Pinconfigs.kext 以及四个 plist 文件，以 cx20751 为例剩下如下文件 然后打开计算器，显示为编程器 打开你的 Codec ，找到 Vendor Id ，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开 /AppleALC/Resources/CX20751_2/Info.plist （此处的 CX20751_2 需要换成你的声卡型号），把 codecid 换成刚才拷贝的十进制数 保存退出，右键 PinConfigs.kext 显示包内容，打开里面的 Info.plist ，搜索刚才拷贝的十进制数，记下 LayoutID 数据，有几个记几个，都记下来，然后将 IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault 中的其他型号删除，（为避免出错，这里的删除可以不操作，删除只是为了精简做出来的 AppleALC ），保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的 export next where 填上桌面，点 export 就生成 AppleALC 在桌面上了，一层一层打开它，将其中的 AppleALC.kext 放到 clover 驱动目录，注意之前下载的 Lilu 里面的Release中 Lilu.kext 也要放到 clover 驱动目录，最后不要忘了在 config 注入 LayoutID ： 如图 Audio 处写上刚才记下的 LayoutID 到这里 AppleALC 的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有 ID ，如果能驱动但无法做到插入耳机自动切换，接着往下看： 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的 ALCPlugFix 中的 main.m 下拉到最下方，注意这一部分： 下载 had-tools ,将 codec 复制到 had-tools 目录，打开终端， cd 到此目录，输入 1./widget_dump.sh codec.txt 回车，此处 codec.txt 要根据你的 codec 名字来，回车可以看到以下输出： 找到 nid = 0x19 和 nid = 0x1a ,这里我的 19 为 line in ， 1a 为 mic in ，记录下最后两位，我的是 04 和 24 就这么改 保存退出，双击按照 AppleALC 的编译方法编译这个 然后将生成的 ALCPlugFix 替换 alc_fix 中的 ALCPlugFix ，终端 cd 到 alc_fix 目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh codec.txt 就可以发现之前的 19 和 1a 后面的数据反过来了 如果不行重启一次应该就好了。]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>Hacintosh</tag>
-        <tag>黑苹果</tag>
       </tags>
   </entry>
   <entry>
