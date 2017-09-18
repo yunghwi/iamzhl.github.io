@@ -47,8 +47,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>镜像</tag>
       </tags>
   </entry>
@@ -60,8 +60,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>终端</tag>
         <tag>任何来源</tag>
       </tags>
@@ -87,8 +87,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>BCM94352z</tag>
       </tags>
   </entry>
@@ -113,9 +113,9 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
+        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
         <tag>AR956x</tag>
-        <tag>Hacintosh</tag>
         <tag>无线网卡</tag>
       </tags>
   </entry>
@@ -140,8 +140,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>AppleIntelInfo</tag>
         <tag>变频</tag>
       </tags>
@@ -154,22 +154,9 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>开机速度</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[金币阵列问题]]></title>
-    <url>%2F2017%2F09%2F03%2F%E9%87%91%E5%B8%81%E9%98%B5%E5%88%97%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[金币阵列问题 问题描述有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 思路本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];nt number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
-      <categories>
-        <category>Arithmetics</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-        <tag>算法</tag>
-        <tag>金币阵列</tag>
       </tags>
   </entry>
   <entry>
@@ -183,6 +170,19 @@
         <tag>终端</tag>
         <tag>Mac</tag>
         <tag>Xcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[金币阵列问题]]></title>
+    <url>%2F2017%2F09%2F03%2F%E9%87%91%E5%B8%81%E9%98%B5%E5%88%97%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[金币阵列问题 问题描述有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 思路本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];nt number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>Arithmetics</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>金币阵列</tag>
       </tags>
   </entry>
   <entry>
@@ -232,8 +232,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
       </tags>
   </entry>
   <entry>
