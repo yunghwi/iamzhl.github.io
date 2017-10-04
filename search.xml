@@ -8,8 +8,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>Window Server Service only ran for 0 seconds</tag>
         <tag>Disable DGPU</tag>
         <tag>屏蔽独显</tag>
@@ -52,16 +52,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[派遣敢死队问题]]></title>
-    <url>%2F2017%2F09%2F18%2F%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[派遣敢死队问题 问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
+    <title><![CDATA[价牌翻转问题]]></title>
+    <url>%2F2017%2F09%2F18%2F%E4%BB%B7%E7%89%8C%E7%BF%BB%E8%BD%AC%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[价牌翻转问题 问题描述 思路1、已知是一个四位数，那么共有1001-9999种情况；2、一个数颠倒之后，数字顺序颠倒并且每个数字颠倒，例如1269颠倒之后就是6921；3、0不能是第一位也不能是最后一位。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;math.h&gt;int array[4]=&#123;0&#125;;int inverse(int a)&#123;//求一个数颠倒之后的结果 int b=0; int arr[4]=&#123;0&#125;; for(int i=0;i&lt;4;i++)&#123; arr[i]=(int)(a/pow(10,3-i))%10; if(arr[i]==9) b+=6*pow(10,i); else if(arr[i]==6) b+=9*pow(10,i); else b+=arr[i]*pow(10,i); &#125; return b;&#125;int main()&#123; int i,j; int k=0,l=0; int temp; int flag; int up[50]=&#123;0&#125;,down[50]=&#123;0&#125;;//分别存放赚钱和赔钱的价牌 for(i=1001;i&lt;10000;i++)&#123; temp=i; flag=1; for(j=0;j&lt;4;j++)&#123; array[j]=(int)(temp/pow(10,3-j))%10; if(array[j]==3||array[j]==4||array[j]==7)&#123;//分割数字排除不能翻转的数字 flag=0; break; &#125; &#125; if(flag)&#123; if(array[0]==0 || array[3]==0)//0不能位于第一位和最后一位 continue; if(inverse(i)-i&gt;800&amp;&amp;inverse(i)-i&lt;900) up[k++]=i; if(i-inverse(i)&gt;200&amp;&amp;i-inverse(i)&lt;300) down[l++]=i; &#125; &#125; for(i=0;i&lt;50;i++)&#123;//依次输出赚钱的原价，颠倒价、赚的钱、赔钱的原价、颠倒价、赔的钱 for(j=0;j&lt;50;j++)&#123; if((inverse(up[i])-up[i])-(down[j]-inverse(down[j]))==558)&#123; printf(&quot;%d\t%d\t%d\t&quot;,up[i],inverse(up[i]),inverse(up[i])-up[i]); printf(&quot;%d\t%d\t%d\n&quot;,down[j],inverse(down[j]),down[j]-inverse(down[j])); &#125; &#125; &#125; return 0;&#125; 运行结果：]]></content>
       <categories>
         <category>Arithmetics</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>C语言</tag>
-        <tag>派遣敢死队</tag>
+        <tag>算法</tag>
+        <tag>价牌翻转</tag>
       </tags>
   </entry>
   <entry>
@@ -72,22 +72,22 @@
         <category>Arithmetics</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>C语言</tag>
+        <tag>算法</tag>
         <tag>警匪110</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[价牌翻转问题]]></title>
-    <url>%2F2017%2F09%2F18%2F%E4%BB%B7%E7%89%8C%E7%BF%BB%E8%BD%AC%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[价牌翻转问题 问题描述 思路1、已知是一个四位数，那么共有1001-9999种情况；2、一个数颠倒之后，数字顺序颠倒并且每个数字颠倒，例如1269颠倒之后就是6921；3、0不能是第一位也不能是最后一位。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;math.h&gt;int array[4]=&#123;0&#125;;int inverse(int a)&#123;//求一个数颠倒之后的结果 int b=0; int arr[4]=&#123;0&#125;; for(int i=0;i&lt;4;i++)&#123; arr[i]=(int)(a/pow(10,3-i))%10; if(arr[i]==9) b+=6*pow(10,i); else if(arr[i]==6) b+=9*pow(10,i); else b+=arr[i]*pow(10,i); &#125; return b;&#125;int main()&#123; int i,j; int k=0,l=0; int temp; int flag; int up[50]=&#123;0&#125;,down[50]=&#123;0&#125;;//分别存放赚钱和赔钱的价牌 for(i=1001;i&lt;10000;i++)&#123; temp=i; flag=1; for(j=0;j&lt;4;j++)&#123; array[j]=(int)(temp/pow(10,3-j))%10; if(array[j]==3||array[j]==4||array[j]==7)&#123;//分割数字排除不能翻转的数字 flag=0; break; &#125; &#125; if(flag)&#123; if(array[0]==0 || array[3]==0)//0不能位于第一位和最后一位 continue; if(inverse(i)-i&gt;800&amp;&amp;inverse(i)-i&lt;900) up[k++]=i; if(i-inverse(i)&gt;200&amp;&amp;i-inverse(i)&lt;300) down[l++]=i; &#125; &#125; for(i=0;i&lt;50;i++)&#123;//依次输出赚钱的原价，颠倒价、赚的钱、赔钱的原价、颠倒价、赔的钱 for(j=0;j&lt;50;j++)&#123; if((inverse(up[i])-up[i])-(down[j]-inverse(down[j]))==558)&#123; printf(&quot;%d\t%d\t%d\t&quot;,up[i],inverse(up[i]),inverse(up[i])-up[i]); printf(&quot;%d\t%d\t%d\n&quot;,down[j],inverse(down[j]),down[j]-inverse(down[j])); &#125; &#125; &#125; return 0;&#125; 运行结果：]]></content>
+    <title><![CDATA[派遣敢死队问题]]></title>
+    <url>%2F2017%2F09%2F18%2F%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[派遣敢死队问题 问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
       <categories>
         <category>Arithmetics</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>C语言</tag>
-        <tag>价牌翻转</tag>
+        <tag>算法</tag>
+        <tag>派遣敢死队</tag>
       </tags>
   </entry>
   <entry>
@@ -98,8 +98,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>镜像</tag>
       </tags>
   </entry>
@@ -111,8 +111,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>终端</tag>
         <tag>任何来源</tag>
       </tags>
@@ -138,8 +138,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>BCM94352z</tag>
       </tags>
   </entry>
@@ -151,9 +151,9 @@
         <category>Arithmetics</category>
       </categories>
       <tags>
+        <tag>C语言</tag>
         <tag>算法</tag>
         <tag>低碳生活答题问题</tag>
-        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>
@@ -164,9 +164,9 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
         <tag>AR956x</tag>
+        <tag>Hacintosh</tag>
         <tag>无线网卡</tag>
       </tags>
   </entry>
@@ -191,8 +191,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>开机速度</tag>
       </tags>
   </entry>
@@ -204,10 +204,23 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>AppleIntelInfo</tag>
         <tag>变频</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[金币阵列问题]]></title>
+    <url>%2F2017%2F09%2F03%2F%E9%87%91%E5%B8%81%E9%98%B5%E5%88%97%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[金币阵列问题 问题描述有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 思路本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];nt number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>Arithmetics</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>金币阵列</tag>
       </tags>
   </entry>
   <entry>
@@ -224,19 +237,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[金币阵列问题]]></title>
-    <url>%2F2017%2F09%2F03%2F%E9%87%91%E5%B8%81%E9%98%B5%E5%88%97%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[金币阵列问题 问题描述有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 思路本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];nt number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
-      <categories>
-        <category>Arithmetics</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>C语言</tag>
-        <tag>金币阵列</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[字典序问题]]></title>
     <url>%2F2017%2F08%2F31%2F%E5%AD%97%E5%85%B8%E5%BA%8F%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[字典序问题 问题描述在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A由26个小写字母组成。该字母表产生的升序字符串中字母从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1次。例如，a,b,ab,bc,xyz等字符串都是升序字符串。现在对字母表中产生的所有长度不超过6的升序字符串，计算它在字典中的编码。 思路首先判断字符串长度为3，先算长度为1和2的所有情况，即从26个字母中选1个或两个字母，因为是升序，即sum=C（26，1）+C（26，2）； 之后再看字符串的第一个字符，为’d’,之前有以a,b,c开头的长度为3的字符串，以a开头，后边2位需要在25个字母中选择（除了a），以b开头的后2位需要在24个字母中选择（除了a,b），以c开头的在23个字母（除了a,,b,c）中选择，即sum+=(C(25,2)+C(24,2)+C(23,2)); 然后再看下一个字母’g’，d与g之间有e,f,需要算以de开头以及以df开头的所有情况，即sum+=(C(21,1)+C(20,1))； 最后再加上h-‘a’+1; 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include &lt;stdio.h&gt;#include &lt;string.h&gt;int getCombinatorialNumber(int m, int n) &#123; int n_Product=1, m_Product=1; int i; for(i=1; i&lt;=n; i++) n_Product*=i; for(i=m; i&gt;m-n; i--) &#123; m_Product*=i; return m_Product/n_Product; &#125;&#125;int main(int argc, const char * argv[]) &#123; int number; //要统计字符串的个数 int sum; //存放字符串的序号 int length; char str[10]; //存放字符串 int a[10]; //存放字符串的每一位字符的值 int i, j; scanf(&quot;%d&quot;, &amp;number); while(number--) &#123; getchar(); sum=1; scanf(&quot;%s&quot;, str); length=(int)strlen(str); for(i=1; i&lt;length; i++) &#123; sum += getCombinatorialNumber(26, i); //小于字符串长度的字符串个数 &#125; for(i=0; i&lt;length; i++) &#123; a[i]=str[i]-96; //计算每个字符从a开始的序号数值, a~z分别对应1~26 //printf(&quot;%d &quot;, a[i]); &#125; //printf(&quot;%d\n&quot;, f(26, 2)); int temp=1; for(i=length; i&gt;0; i--) &#123; for(j=temp; j&lt;a[length-i]; j++) &#123; sum += getCombinatorialNumber(26-j, i-1); //依次扫描字符，计算所有情况 &#125; temp=a[length-i]+1; &#125; printf(&quot;%d\n&quot;, sum); &#125; return 0;&#125;]]></content>
@@ -244,8 +244,8 @@
         <category>Arithmetics</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>C语言</tag>
+        <tag>算法</tag>
         <tag>字典序</tag>
       </tags>
   </entry>
@@ -263,19 +263,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[统计数字问题]]></title>
-    <url>%2F2017%2F08%2F29%2F%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[统计数字问题 问题描述一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 。 思路:暴力求解。本题关键在于将每一页码的数字进行分解，这种方式可以利用整数的除法和对10取余计算。 代码实现123456789101112131415161718192021222324252627282930313233343536#include &lt;stdio.h&gt;#include &lt;math.h&gt; int main(int argc, const char * argv[]) &#123; // insert code here... int array[10] = &#123;0&#125;; //存放0~9出现的次数 int low, temp, high; //以temp为分割点 将页数分为三部分 high和low分别代表高位和低位的数值 int paginations; //存放总页数 int i, j; printf(&quot;一共多少页: &quot;); scanf(&quot;%d&quot;, &amp;paginations); int count = 0; //存放除去最高位后总页码的位数 count = (int)log10(paginations); for(i = count; i &gt;= 0; i --) &#123; //i表示低位（low）的位数 low = paginations % (int)pow(10, i); //计算low的数值 temp = paginations / (int)pow(10, i) % 10; //计算temp的数值 high = paginations / (int)pow(10, i + 1); //计算high的数值 for(j = 0; j &lt; temp; j ++) array[j] += (high + 1) * pow(10, i); //计算 0&lt;中间位&lt;temp 出现的次数 array[temp] += high * pow(10, i) + low + 1; //计算 中间位=temp 出现的次数 for(j = temp + 1; j &lt; 10; j ++) //计算 temp&lt;中间位&lt;9 出现的次数 array[j] += high * pow(10, i); &#125; for(i = count; i &gt;= 0; i --) //除去多统计的a[0]出现的次数 array[0] -= pow(10, i); printf(&quot;0~9分别出现的次数为:\n&quot;); for(i = 0; i &lt; 10; i ++) //打印0~9分别出现的次数 printf(&quot;%d\n&quot;, array[i]); return 0;&#125;]]></content>
-      <categories>
-        <category>Arithmetics</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>C语言</tag>
-        <tag>统计数字</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[AppleALC-ALCPlugFix]]></title>
     <url>%2F2017%2F08%2F29%2FAppleALC-ALCPlugFix%2F</url>
     <content type="text"><![CDATA[简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题 首先下载 AppleALC 源码，打开终端输入： 1git clone https://github.com/vit9696/AppleALC 回车之后就将 AppleALC 下载到了你的用户根目录 然后下载 Lilu ： 1链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62 将下载的 Lilu 中 Debug 里面的 Lilu.kext 放进 AppleALC 源码根目录，然后删除 /AppleALC/Resources 中多余文件夹，只留下你的声卡型号文件夹、 Pinconfigs.kext 以及四个 plist 文件，以 cx20751 为例剩下如下文件 然后打开计算器，显示为编程器 打开你的 Codec ，找到 Vendor Id ，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开 /AppleALC/Resources/CX20751_2/Info.plist （此处的 CX20751_2 需要换成你的声卡型号），把 codecid 换成刚才拷贝的十进制数 保存退出，右键 PinConfigs.kext 显示包内容，打开里面的 Info.plist ，搜索刚才拷贝的十进制数，记下 LayoutID 数据，有几个记几个，都记下来，然后将 IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault 中的其他型号删除，（为避免出错，这里的删除可以不操作，删除只是为了精简做出来的 AppleALC ），保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的 export next where 填上桌面，点 export 就生成 AppleALC 在桌面上了，一层一层打开它，将其中的 AppleALC.kext 放到 clover 驱动目录，注意之前下载的 Lilu 里面的Release中 Lilu.kext 也要放到 clover 驱动目录，最后不要忘了在 config 注入 LayoutID ： 如图 Audio 处写上刚才记下的 LayoutID 到这里 AppleALC 的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有 ID ，如果能驱动但无法做到插入耳机自动切换，接着往下看： 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的 ALCPlugFix 中的 main.m 下拉到最下方，注意这一部分： 下载 had-tools ,将 codec 复制到 had-tools 目录，打开终端， cd 到此目录，输入 1./widget_dump.sh codec.txt 回车，此处 codec.txt 要根据你的 codec 名字来，回车可以看到以下输出： 找到 nid = 0x19 和 nid = 0x1a ,这里我的 19 为 line in ， 1a 为 mic in ，记录下最后两位，我的是 04 和 24 就这么改 保存退出，双击按照 AppleALC 的编译方法编译这个 然后将生成的 ALCPlugFix 替换 alc_fix 中的 ALCPlugFix ，终端 cd 到 alc_fix 目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh codec.txt 就可以发现之前的 19 和 1a 后面的数据反过来了 如果不行重启一次应该就好了。]]></content>
@@ -283,8 +270,21 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[统计数字问题]]></title>
+    <url>%2F2017%2F08%2F29%2F%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[统计数字问题 问题描述一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 。 思路:暴力求解。本题关键在于将每一页码的数字进行分解，这种方式可以利用整数的除法和对10取余计算。 代码实现123456789101112131415161718192021222324252627282930313233343536#include &lt;stdio.h&gt;#include &lt;math.h&gt; int main(int argc, const char * argv[]) &#123; // insert code here... int array[10] = &#123;0&#125;; //存放0~9出现的次数 int low, temp, high; //以temp为分割点 将页数分为三部分 high和low分别代表高位和低位的数值 int paginations; //存放总页数 int i, j; printf(&quot;一共多少页: &quot;); scanf(&quot;%d&quot;, &amp;paginations); int count = 0; //存放除去最高位后总页码的位数 count = (int)log10(paginations); for(i = count; i &gt;= 0; i --) &#123; //i表示低位（low）的位数 low = paginations % (int)pow(10, i); //计算low的数值 temp = paginations / (int)pow(10, i) % 10; //计算temp的数值 high = paginations / (int)pow(10, i + 1); //计算high的数值 for(j = 0; j &lt; temp; j ++) array[j] += (high + 1) * pow(10, i); //计算 0&lt;中间位&lt;temp 出现的次数 array[temp] += high * pow(10, i) + low + 1; //计算 中间位=temp 出现的次数 for(j = temp + 1; j &lt; 10; j ++) //计算 temp&lt;中间位&lt;9 出现的次数 array[j] += high * pow(10, i); &#125; for(i = count; i &gt;= 0; i --) //除去多统计的a[0]出现的次数 array[0] -= pow(10, i); printf(&quot;0~9分别出现的次数为:\n&quot;); for(i = 0; i &lt; 10; i ++) //打印0~9分别出现的次数 printf(&quot;%d\n&quot;, array[i]); return 0;&#125;]]></content>
+      <categories>
+        <category>Arithmetics</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>统计数字</tag>
       </tags>
   </entry>
   <entry>
