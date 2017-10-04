@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[test]]></title>
+    <url>%2F2017%2F10%2F04%2Ftest%2F</url>
+    <content type="text"><![CDATA[hello world]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Disable the discrete GPU to fix "Window Server Service only ran for 0 seconds" in High Sierra]]></title>
     <url>%2F2017%2F10%2F04%2FDisable%20the%20discrete%20GPU%20to%20fix%20%22Window%20Server%20Service%20only%20ran%20for%200%20seconds%22%20in%20High%20Sierra%2F</url>
     <content type="text"><![CDATA[Disable the discrete GPU to fix “Window Server Service only ran for 0 seconds” in High Sierra 写在前面最近我根据 RehabMan 的 hotpatch 添加了一些路径做了一个屏蔽独显得 hotpatch 来屏蔽独显解决一些升级 10.13 后因为 nv_disable 参数失效而卡在 Window Server Service only ran for 0 seconds 的错误，发现有些成功，有些失败。于是把我琢磨到的一种方法分享给大家！希望该帖子能帮助到各位！ 感谢： PCBETA (远景论坛) [yearjinheng 版主的帖子](http://bbs.pcbeta.com/viewthread-1760319-1-5.html) tonymacx86.com Rehabman 的帖子 转载请注明原贴地址 屏蔽独显方法不一： 第一种：直接在 DSDT SSDT 上做修改 第二种：手动制作一个适合自己机器的 hotpatch 屏蔽独显达到屏蔽独显的作用 开工 本帖大致思路如下： 提取 ACPI 原始表单 反编译这些文件 搜索一个名为 _OFF 的方法 检查文件的结果以确定 _OFF 的路径 修改 RehabMan 的 hotpatch 加入自己的路径 提取 ACPI 原始表单并提取 _OFF 路径 打开电脑进入四叶草引导界面，按下 F4 或者 FN+F4 即可提取原始表单到 /EFI/CLOVER/ACPI/origin ，然后进入 MAC 将 origin 拷贝到桌面删掉除 SSDT DSDT 之外的所有 aml 文件，打开终端： 1234$ cd ~/Desktop/origin $ iasl -da -dl *.aml $ rm *.aml $ grep -l Method.*_OFF *.dsl 以我修改的一个机器为例，上一条命令得到的结果如下 1234DSDT.dslSSDT-7.dslSSDT-8.dslSSDT-9.dsl 依次打开这四个表单搜索 _OFF ，找到一个类似于下面这个函数： 图片左下角的路径就是我们最终所需要的: 1_SB.PCI0.RP05.PEGP 修改 RehabMan 的 hotpatch 添加这个路径 首先去 RehanMan 的 GitHub 下载 hotpatch 包 1https://github.com/RehabMan/OS-X-Clover-Laptop-Config.git 我们只需要 SSDT-Disable_DGPU 这个文件，编译成 aml 文件 1$ iasl SSDT-Disable_DGPU.dsl 打开编译后得到的 aml 文件 按照这个格式添加自己的路径 保存放到 /EFI/CLOVER/ACPI/patched 一个注意点 如果在 Config.plist 中使用了 SortedOrder (通常 Clover 安装后默认没有设置)，需要在其内添加 SSDT-Disable_DGPU.aml 这一项。因为如果指定了 SortedOrder ，则 Clover 只加载其中指定的 SSDT 。如果没有出现在列表中,即使在 ACPI/patched 中，它也不会加载。 完工]]></content>
@@ -52,19 +57,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[警匪110问题]]></title>
-    <url>%2F2017%2F09%2F18%2F%E8%AD%A6%E5%8C%AA110%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[警匪110问题 问题描述 思路1、一共九个数字，八个操作符；2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；3、共有 3^8 种情况，遍历每种情况判断输出；4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1x10+2，然后下一次循环操作符为+，需要计算的就是12+3，同理在3、4之间的空需要计算的是3x10+4，而不是（12+3）x10+4，所以需要一个临时变量来记录上次的操作数，还需要一个变量来记录上次的操作符将上次的结果进行统计处理，原因就在于我们无法确定下次的操作符是不是留空。6、由于我们在统计和时，只有在下一次循环才能处理最后一个操作数，所以需要将9最后单独处理。 代码实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int a[9]=&#123;1,2,3,4,5,6,7,8,9&#125;; int sum; int temp; int oper,lastoper; int number; int i,j; for(i=0;i&lt;pow(3,8);i++) &#123; sum=0; temp=1; lastoper=1; number=i; for(j=1;j&lt;=8;j++) &#123; //操作八次 oper=number%3; number=number/3; if (!oper) temp=temp*10+a[j]; //留空单独处理 if (oper==1) &#123; //当前操作符 if(lastoper==1)&#123; //前一次操作符 sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; //更新上次操作符 &#125; if(oper==2)&#123; if(lastoper==1)&#123; sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; &#125; &#125; if(lastoper==1) //第九次操作单独处理 sum=sum+temp; if(lastoper==2) sum=sum-temp; if(sum==110) &#123; number=i; for(j=1;j&lt;=8;j++) &#123; printf(&quot;%d&quot;,a[j-1]); oper=number%3; number=number/3; if(oper==1) printf(&quot;+&quot;); if(oper==2) printf(&quot;-&quot;); else continue; &#125; printf(&quot;9\n&quot;); &#125; &#125; return 0;&#125; 运行结果]]></content>
-      <categories>
-        <category>Arithmetics</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>C语言</tag>
-        <tag>警匪110</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[派遣敢死队问题]]></title>
     <url>%2F2017%2F09%2F18%2F%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[派遣敢死队问题 问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
@@ -72,9 +64,22 @@
         <category>Arithmetics</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>C语言</tag>
+        <tag>算法</tag>
         <tag>派遣敢死队</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[警匪110问题]]></title>
+    <url>%2F2017%2F09%2F18%2F%E8%AD%A6%E5%8C%AA110%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[警匪110问题 问题描述 思路1、一共九个数字，八个操作符；2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；3、共有 3^8 种情况，遍历每种情况判断输出；4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1x10+2，然后下一次循环操作符为+，需要计算的就是12+3，同理在3、4之间的空需要计算的是3x10+4，而不是（12+3）x10+4，所以需要一个临时变量来记录上次的操作数，还需要一个变量来记录上次的操作符将上次的结果进行统计处理，原因就在于我们无法确定下次的操作符是不是留空。6、由于我们在统计和时，只有在下一次循环才能处理最后一个操作数，所以需要将9最后单独处理。 代码实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int a[9]=&#123;1,2,3,4,5,6,7,8,9&#125;; int sum; int temp; int oper,lastoper; int number; int i,j; for(i=0;i&lt;pow(3,8);i++) &#123; sum=0; temp=1; lastoper=1; number=i; for(j=1;j&lt;=8;j++) &#123; //操作八次 oper=number%3; number=number/3; if (!oper) temp=temp*10+a[j]; //留空单独处理 if (oper==1) &#123; //当前操作符 if(lastoper==1)&#123; //前一次操作符 sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; //更新上次操作符 &#125; if(oper==2)&#123; if(lastoper==1)&#123; sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; &#125; &#125; if(lastoper==1) //第九次操作单独处理 sum=sum+temp; if(lastoper==2) sum=sum-temp; if(sum==110) &#123; number=i; for(j=1;j&lt;=8;j++) &#123; printf(&quot;%d&quot;,a[j-1]); oper=number%3; number=number/3; if(oper==1) printf(&quot;+&quot;); if(oper==2) printf(&quot;-&quot;); else continue; &#125; printf(&quot;9\n&quot;); &#125; &#125; return 0;&#125; 运行结果]]></content>
+      <categories>
+        <category>Arithmetics</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>警匪110</tag>
       </tags>
   </entry>
   <entry>
@@ -85,8 +90,8 @@
         <category>Arithmetics</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>C语言</tag>
+        <tag>算法</tag>
         <tag>价牌翻转</tag>
       </tags>
   </entry>
@@ -151,9 +156,9 @@
         <category>Arithmetics</category>
       </categories>
       <tags>
+        <tag>C语言</tag>
         <tag>算法</tag>
         <tag>低碳生活答题问题</tag>
-        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>
@@ -218,8 +223,8 @@
         <category>Arithmetics</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>C语言</tag>
+        <tag>算法</tag>
         <tag>金币阵列</tag>
       </tags>
   </entry>
@@ -244,8 +249,8 @@
         <category>Arithmetics</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>C语言</tag>
+        <tag>算法</tag>
         <tag>字典序</tag>
       </tags>
   </entry>
@@ -282,8 +287,8 @@
         <category>Arithmetics</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>C语言</tag>
+        <tag>算法</tag>
         <tag>统计数字</tag>
       </tags>
   </entry>
