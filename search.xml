@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Disable the discrete GPU to fix "Window Server Service only ran for 0 seconds" in High Sierra.md]]></title>
     <url>%2F2017%2F10%2F04%2F%E5%B1%8F%E8%94%BD%E7%8B%AC%E6%98%BE%2F</url>
-    <content type="text"><![CDATA[Disable the discrete GPU to fix “Window Server Service only ran for 0 seconds” in High Sierra 写在前面最近我根据 RehabMan 的 hotpatch 添加了一些路径做了一个屏蔽独显得 hotpatch 来屏蔽独显解决一些升级 10.13 后因为 nv_disable 参数失效而卡在 Window Server Service only ran for 0 seconds 的错误，发现有些成功，有些失败。于是把我琢磨到的一种方法分享给大家！希望该帖子能帮助到各位！ 感谢： PCBETA (远景论坛) [yearjinheng 版主的帖子](http://bbs.pcbeta.com/viewthread-1760319-1-5.html) tonymacx86.com Rehabman 的帖子 转载请注明 原贴地址 屏蔽独显方法不一： 第一种：直接在 DSDT SSDT 上做修改 第二种：手动制作一个适合自己机器的 hotpatch 屏蔽独显达到屏蔽独显的作用 开工 本帖大致思路如下： 提取 ACPI 原始表单 反编译这些文件 搜索一个名为 _OFF 的方法 检查文件的结果以确定 _OFF 的路径 修改 RehabMan 的 hotpatch 加入自己的路径 提取 ACPI 原始表单并提取 _OFF 路径 打开电脑进入四叶草引导界面，按下 F4 或者 FN+F4 即可提取原始表单到 /EFI/CLOVER/ACPI/origin ，然后进入 MAC 将 origin 拷贝到桌面删掉除 SSDT DSDT 之外的所有 aml 文件，打开终端： 1234$ cd ~/Desktop/origin $ iasl -da -dl *.aml $ rm *.aml $ grep -l Method.*_OFF *.dsl 以我修改的一个机器为例，上一条命令得到的结果如下 1234DSDT.dslSSDT-7.dslSSDT-8.dslSSDT-9.dsl 依次打开这四个表单搜索 _OFF ，找到一个类似于下面这个函数： 图片左下角的路径就是我们最终所需要的: 1_SB.PCI0.RP05.PEGP 修改 RehabMan 的 hotpatch 添加这个路径 首先去 RehanMan 的 GitHub 下载 hotpatch 包 1https://github.com/RehabMan/OS-X-Clover-Laptop-Config.git 我们只需要 SSDT-Disable_DGPU 这个文件，编译成 aml 文件 1$ iasl SSDT-Disable_DGPU.dsl 打开编译后得到的 aml 文件 按照这个格式添加自己的路径 保存放到 /EFI/CLOVER/ACPI/patched 一个注意点 如果在 Config.plist 中使用了 SortedOrder (通常 Clover 安装后默认没有设置)，需要在其内添加 SSDT-Disable_DGPU.aml 这一项。因为如果指定了 SortedOrder ，则 Clover 只加载其中指定的 SSDT 。如果没有出现在列表中,即使在 ACPI/patched 中，它也不会加载。 完工]]></content>
+    <content type="text"><![CDATA[Disable the discrete GPU to fix “Window Server Service only ran for 0 seconds” in High Sierra 写在前面最近我根据 RehabMan 的 hotpatch 添加了一些路径做了一个屏蔽独显得 hotpatch 来屏蔽独显解决一些升级 10.13 后因为 nv_disable 参数失效而卡在 Window Server Service only ran for 0 seconds 的错误，发现有些成功，有些失败。于是把我琢磨到的一种方法分享给大家！希望该帖子能帮助到各位！ 感谢： PCBETA (远景论坛) yearjinheng 版主的帖子 tonymacx86.com Rehabman 的帖子 转载请注明 原贴地址 屏蔽独显方法不一： 第一种：直接在 DSDT SSDT 上做修改 第二种：手动制作一个适合自己机器的 hotpatch 屏蔽独显达到屏蔽独显的作用 开工 本帖大致思路如下： 提取 ACPI 原始表单 反编译这些文件 搜索一个名为 _OFF 的方法 检查文件的结果以确定 _OFF 的路径 修改 RehabMan 的 hotpatch 加入自己的路径 提取 ACPI 原始表单并提取 _OFF 路径 打开电脑进入四叶草引导界面，按下 F4 或者 FN+F4 即可提取原始表单到 /EFI/CLOVER/ACPI/origin ，然后进入 MAC 将 origin 拷贝到桌面删掉除 SSDT DSDT 之外的所有 aml 文件，打开终端： 1234$ cd ~/Desktop/origin $ iasl -da -dl *.aml $ rm *.aml $ grep -l Method.*_OFF *.dsl 以我修改的一个机器为例，上一条命令得到的结果如下 1234DSDT.dslSSDT-7.dslSSDT-8.dslSSDT-9.dsl 依次打开这四个表单搜索 _OFF ，找到一个类似于下面这个函数： 图片左下角的路径就是我们最终所需要的: 1_SB.PCI0.RP05.PEGP 修改 RehabMan 的 hotpatch 添加这个路径 首先去 RehanMan 的 GitHub 下载 hotpatch 包 1https://github.com/RehabMan/OS-X-Clover-Laptop-Config.git 我们只需要 SSDT-Disable_DGPU 这个文件，编译成 aml 文件 1$ iasl SSDT-Disable_DGPU.dsl 打开编译后得到的 aml 文件 按照这个格式添加自己的路径 保存放到 /EFI/CLOVER/ACPI/patched 一个注意点 如果在 Config.plist 中使用了 SortedOrder (通常 Clover 安装后默认没有设置)，需要在其内添加 SSDT-Disable_DGPU.aml 这一项。因为如果指定了 SortedOrder ，则 Clover 只加载其中指定的 SSDT 。如果没有出现在列表中,即使在 ACPI/patched 中，它也不会加载。 完工]]></content>
       <categories>
         <category>Hacintosh</category>
       </categories>
@@ -52,6 +52,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[派遣敢死队问题]]></title>
+    <url>%2F2017%2F09%2F18%2F%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[派遣敢死队问题 问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
+      <categories>
+        <category>Arithmetics</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>派遣敢死队</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[价牌翻转问题]]></title>
     <url>%2F2017%2F09%2F18%2F%E4%BB%B7%E7%89%8C%E7%BF%BB%E8%BD%AC%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[价牌翻转问题 问题描述 思路1、已知是一个四位数，那么共有1001-9999种情况；2、一个数颠倒之后，数字顺序颠倒并且每个数字颠倒，例如1269颠倒之后就是6921；3、0不能是第一位也不能是最后一位。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;math.h&gt;int array[4]=&#123;0&#125;;int inverse(int a)&#123;//求一个数颠倒之后的结果 int b=0; int arr[4]=&#123;0&#125;; for(int i=0;i&lt;4;i++)&#123; arr[i]=(int)(a/pow(10,3-i))%10; if(arr[i]==9) b+=6*pow(10,i); else if(arr[i]==6) b+=9*pow(10,i); else b+=arr[i]*pow(10,i); &#125; return b;&#125;int main()&#123; int i,j; int k=0,l=0; int temp; int flag; int up[50]=&#123;0&#125;,down[50]=&#123;0&#125;;//分别存放赚钱和赔钱的价牌 for(i=1001;i&lt;10000;i++)&#123; temp=i; flag=1; for(j=0;j&lt;4;j++)&#123; array[j]=(int)(temp/pow(10,3-j))%10; if(array[j]==3||array[j]==4||array[j]==7)&#123;//分割数字排除不能翻转的数字 flag=0; break; &#125; &#125; if(flag)&#123; if(array[0]==0 || array[3]==0)//0不能位于第一位和最后一位 continue; if(inverse(i)-i&gt;800&amp;&amp;inverse(i)-i&lt;900) up[k++]=i; if(i-inverse(i)&gt;200&amp;&amp;i-inverse(i)&lt;300) down[l++]=i; &#125; &#125; for(i=0;i&lt;50;i++)&#123;//依次输出赚钱的原价，颠倒价、赚的钱、赔钱的原价、颠倒价、赔的钱 for(j=0;j&lt;50;j++)&#123; if((inverse(up[i])-up[i])-(down[j]-inverse(down[j]))==558)&#123; printf(&quot;%d\t%d\t%d\t&quot;,up[i],inverse(up[i]),inverse(up[i])-up[i]); printf(&quot;%d\t%d\t%d\n&quot;,down[j],inverse(down[j]),down[j]-inverse(down[j])); &#125; &#125; &#125; return 0;&#125; 运行结果：]]></content>
@@ -75,19 +88,6 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>警匪110</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[派遣敢死队问题]]></title>
-    <url>%2F2017%2F09%2F18%2F%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[派遣敢死队问题 问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
-      <categories>
-        <category>Arithmetics</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-        <tag>算法</tag>
-        <tag>派遣敢死队</tag>
       </tags>
   </entry>
   <entry>
@@ -184,19 +184,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[加快黑苹果开机速度的一种方法]]></title>
-    <url>%2F2017%2F09%2F05%2F%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>黑苹果</tag>
-        <tag>Hacintosh</tag>
-        <tag>开机速度</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[利用 AppleIntelInfo 查看变频]]></title>
     <url>%2F2017%2F09%2F05%2F%E5%88%A9%E7%94%A8%20AppleIntelInfo%20%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%A2%91%2F</url>
     <content type="text"><![CDATA[很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频 开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：1cd ~/Desktop 回车继续敲： 1git clone https://github.com/athlonreg/AppleIntelInfo.git 回车后就把 AppleIntelInfo 源码下载在桌面了 然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)： 1http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/ 将编译后的 AppleIntelInfo.kext 放到桌面 然后开始利用命令行看变频数据打开终端，输入： 1cd ~/Desktop 回车后继续敲 1sudo chown -R root:wheel AppleIntelInfo.kext 回车会提示输入密码，输入之后回车继续敲： 1sudo kextutil AppleIntelInfo.kext 再回车，接着敲： 1sudo cat /tmp/AppleIntelInfo.dat 回车之后变频数据就出来了，例如我的机器： 一般我们只看最后一行就可以了哦 比如我的机器就是 800、 1000、 …… 、 2700 ，单位是MHz，正好符合我的机器，最低 800MHz ，最高2.4GHz，可超频到2.7GHz。 完工行胜于言，快去试试你的机器是不是变频正常吧！！]]></content>
@@ -208,6 +195,19 @@
         <tag>Hacintosh</tag>
         <tag>AppleIntelInfo</tag>
         <tag>变频</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[加快黑苹果开机速度的一种方法]]></title>
+    <url>%2F2017%2F09%2F05%2F%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
+        <tag>开机速度</tag>
       </tags>
   </entry>
   <entry>
