@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next pisces" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -101,7 +99,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="黑苹果,Hacintosh,Window Server Service only ran for 0 seconds,Disable DGPU,屏蔽独显," />
+  <meta name="keywords" content="Hacintosh,黑苹果,Window Server Service only ran for 0 seconds,Disable DGPU,屏蔽独显," />
 
 
 
@@ -130,7 +128,7 @@
 </script>
 
 <meta name="description" content="Disable the discrete GPU to fix “Window Server Service only ran for 0 seconds” in High Sierra  写在前面最近我根据 RehabMan 的 hotpatch 添加了一些路径做了一个屏蔽独显得 hotpatch 来屏蔽独显解决一些升级 10.13 后因为 nv_disable 参数失效而卡在 Window">
-<meta name="keywords" content="黑苹果,Hacintosh,Window Server Service only ran for 0 seconds,Disable DGPU,屏蔽独显">
+<meta name="keywords" content="Hacintosh,黑苹果,Window Server Service only ran for 0 seconds,Disable DGPU,屏蔽独显">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Disable the discrete GPU to fix &quot;Window Server Service only ran for 0 seconds&quot; in High Sierra.md">
 <meta property="og:url" content="http://yoursite.com/2017/10/04/屏蔽独显/index.html">
@@ -157,7 +155,7 @@
     sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -428,17 +426,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/04/屏蔽独显/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/04/屏蔽独显/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -632,9 +619,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/黑苹果/" rel="tag"><i class="fa fa-tag"></i> 黑苹果</a>
-          
             <a href="/tags/Hacintosh/" rel="tag"><i class="fa fa-tag"></i> Hacintosh</a>
+          
+            <a href="/tags/黑苹果/" rel="tag"><i class="fa fa-tag"></i> 黑苹果</a>
           
             <a href="/tags/Window-Server-Service-only-ran-for-0-seconds/" rel="tag"><i class="fa fa-tag"></i> Window Server Service only ran for 0 seconds</a>
           
@@ -697,12 +684,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      <div id="SOHUCS"></div>
     
   </div>
 
@@ -817,21 +799,9 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://coding.net/u/iamzhl" target="_blank" title="coding">
-                  
-                    <i class="fa fa-fw fa-spinner"></i>coding</a>
-              </span>
-            
-              <span class="links-of-author-item">
                 <a href="http://i.pcbeta.com/space-uid-157829.html" target="_blank" title="pcbeta">
                   
                     <i class="fa fa-fw fa-meh-o"></i>pcbeta</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.asiba.cn" target="_blank" title="Asiba">
-                  
-                    <i class="fa fa-fw fa-stack-overflow"></i>Asiba</a>
               </span>
             
           
@@ -865,7 +835,6 @@
         </section>
       <!--/noindex-->
       
-      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=34341360&auto=1&height=66"></iframe>
       
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
@@ -964,8 +933,6 @@
   
 
 
-  
-
 
 
 
@@ -993,9 +960,6 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
@@ -1039,26 +1003,6 @@
 
   
 
-    
-      <script id="dsq-count-scr" src="https://athlonreg.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/10/04/屏蔽独显/';
-          this.page.identifier = '2017/10/04/屏蔽独显/';
-          this.page.title = 'Disable the discrete GPU to fix \"Window Server Service only ran for 0 seconds\" in High Sierra.md';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://athlonreg.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
 
 
 
@@ -1071,6 +1015,10 @@
   
 
 
+
+
+
+  
 
 
 
