@@ -184,6 +184,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[加快黑苹果开机速度的一种方法]]></title>
+    <url>%2F2017%2F09%2F05%2F%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
+        <tag>开机速度</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[利用 AppleIntelInfo 查看变频]]></title>
     <url>%2F2017%2F09%2F05%2F%E5%88%A9%E7%94%A8%20AppleIntelInfo%20%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%A2%91%2F</url>
     <content type="text"><![CDATA[很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频 开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：1cd ~/Desktop 回车继续敲： 1git clone https://github.com/athlonreg/AppleIntelInfo.git 回车后就把 AppleIntelInfo 源码下载在桌面了 然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)： 1http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/ 将编译后的 AppleIntelInfo.kext 放到桌面 然后开始利用命令行看变频数据打开终端，输入： 1cd ~/Desktop 回车后继续敲 1sudo chown -R root:wheel AppleIntelInfo.kext 回车会提示输入密码，输入之后回车继续敲： 1sudo kextutil AppleIntelInfo.kext 再回车，接着敲： 1sudo cat /tmp/AppleIntelInfo.dat 回车之后变频数据就出来了，例如我的机器： 一般我们只看最后一行就可以了哦 比如我的机器就是 800、 1000、 …… 、 2700 ，单位是MHz，正好符合我的机器，最低 800MHz ，最高2.4GHz，可超频到2.7GHz。 完工行胜于言，快去试试你的机器是不是变频正常吧！！]]></content>
@@ -198,16 +211,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[加快黑苹果开机速度的一种方法]]></title>
-    <url>%2F2017%2F09%2F05%2F%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
+    <title><![CDATA[How to use xcode-select in terminal]]></title>
+    <url>%2F2017%2F09%2F03%2FHow%20to%20use%20xcode-select%20in%20terminal%2F</url>
+    <content type="text"><![CDATA[How to use xcode-select in terminal It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.The command line options are below: 1234xcode-select [-help]xcode-select [-switch xcode_folder_path]xcode-select [-print-path]xcode-select [-version] Here is how to print the current Xcode path:12$ xcode-select --print-path/Developer/Applications/Xcode.app Line number 2 shows the current version of Xcode that is ‘active.’ If you are accessing xcodebuild or other related tools from a script, –print-path is the preferred means to determine the current Xcode location.Use the -switch option to change to another version of Xcode on your system: 1$ sudo xcode-select --switch /Applications/Xcode-beta.app/Contents/Developer This changes to the Xcode-beta 9 on my system. Note that root access is required to set the Xcode location, thus I have used sudo to execute the command as root.Printing the path now looks as follows: 12$ xcode-select --print-path/Applications/Xcode-beta.app/Contents/Developer To switch back to Xcode installed in the /Applications directory:1$ sudo xcode-select -switch /Applications/Xcode.app/ You can read more about xcode-select by view the man page from a terminal:1$ man xcode-select]]></content>
       <categories>
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
-        <tag>黑苹果</tag>
-        <tag>开机速度</tag>
+        <tag>终端</tag>
+        <tag>Mac</tag>
+        <tag>Xcode</tag>
       </tags>
   </entry>
   <entry>
@@ -221,19 +234,6 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>金币阵列</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[How to use xcode-select in terminal]]></title>
-    <url>%2F2017%2F09%2F03%2FHow%20to%20use%20xcode-select%20in%20terminal%2F</url>
-    <content type="text"><![CDATA[How to use xcode-select in terminal It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.The command line options are below: 1234xcode-select [-help]xcode-select [-switch xcode_folder_path]xcode-select [-print-path]xcode-select [-version] Here is how to print the current Xcode path:12$ xcode-select --print-path/Developer/Applications/Xcode.app Line number 2 shows the current version of Xcode that is ‘active.’ If you are accessing xcodebuild or other related tools from a script, –print-path is the preferred means to determine the current Xcode location.Use the -switch option to change to another version of Xcode on your system: 1$ sudo xcode-select --switch /Applications/Xcode-beta.app/Contents/Developer This changes to the Xcode-beta 9 on my system. Note that root access is required to set the Xcode location, thus I have used sudo to execute the command as root.Printing the path now looks as follows: 12$ xcode-select --print-path/Applications/Xcode-beta.app/Contents/Developer To switch back to Xcode installed in the /Applications directory:1$ sudo xcode-select -switch /Applications/Xcode.app/ You can read more about xcode-select by view the man page from a terminal:1$ man xcode-select]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>终端</tag>
-        <tag>Mac</tag>
-        <tag>Xcode</tag>
       </tags>
   </entry>
   <entry>
