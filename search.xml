@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Sync your hexo with several terminal]]></title>
+    <url>%2F2017%2F10%2F14%2FSync-your-hexo-with-several-terminal%2F</url>
+    <content type="text"><![CDATA[Sync your hexo with several terminal转载请注明原出处 准备工作 首先在 GitHub 建立一个分支用于存储 hexo 本地源文件 本地 hexo 源上到 GitHub 在本地博客根目录下使用 git 指令上传项目到 GitHub 的 hexo 分支 123456$ git init $ git remote add origin 仓库地址 $ git checkout -b hexo $ git add . $ git commit -m &quot;&quot; $ git push origin hexo 其它设备同步建立同步目录1$ mkdir blog 同步 hexo 源1234$ cd blog/$ git init$ git remote add origin 仓库地址$ git pull -r origin hexo 本地搭建 hexo 环境 需要安装 Git 和 Node.js 12$ npm install hexo --save$ npm install 第一次运行需要验证 GitHub 和 coding 账号 ( 取决于你用什么部署的 blog ) 12$ git config --global user.email &quot;you@example.com&quot;$ git config --global user.name &quot;Your Name&quot; 完工 做完上面的步骤就可以在这一台设备继续发博文了 1234$ hexo new post &quot;新建博客名字&quot; $ hexo clean $ hexo g$ hexo d -g]]></content>
+      <categories>
+        <category>Study</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>同步</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Resolve short duration lag after wake and after login on haswell or broadwell]]></title>
     <url>%2F2017%2F10%2F07%2FResolve%20short%20duration%20lag%20after%20wake%20and%20after%20login%20on%20haswell%20or%20broadwell%2F</url>
-    <content type="text"><![CDATA[写在前面 本文来自 tonymacx86.com原作者 RehabMan转载请注明原出处 开工 在 macOS Sierra 10.12.4 中，有不少 Haswell 和 Broadwell 机器出现了一种情况，就是在开机后的登录界面会有大约 20s 的无响应延迟状态，这种情况在之前是没有出现的，如果你的机器恰好是这两个平台的一种并且出现了这种情况，那么请注意，你会需要对你的 config.plist 做一些调整，如下: 123Comment: 0x0a260006 9MB cursor bytes (vbo), 2 ports only (RehabMan)Find: &lt;0600260a 01030303 00000002 00003001 00006000&gt;Replace: &lt;0600260a 01030202 00000002 00003001 00009000&gt; 123Comment: 0x0a260006 disable 0204 port, change 0105 DP port to 0204 HDMI (RehabMan)Find: &lt;01050900 00040000 87000000 02040900 00040000 87000000&gt;Replace: &lt;02040900 00080000 87000000 FF000000 01000000 40000000&gt; 将这两个 patch 打到 config.plist -&gt; Kernel and Kext Patches -&gt; KextsToPatch 处，保存即可，如果你的机器是 Haswell 的 HD4600 并且上面的 patch 不能解决这个问题，请尝试放 AzulPatcher4600.kext 到 /EFI/CLOVER/Kexts/Other ，此项目 GitHub 地址: 1https://github.com/coderobe/AzulPatcher4600]]></content>
+    <content type="text"><![CDATA[写在前面 本文来自 tonymacx86.com原作者 RehabMan转载请注明 原出处 开工 在 macOS Sierra 10.12.4 中，有不少 Haswell 和 Broadwell 机器出现了一种情况，就是在开机后的登录界面会有大约 20s 的无响应延迟状态，这种情况在之前是没有出现的，如果你的机器恰好是这两个平台的一种并且出现了这种情况，那么请注意，你会需要对你的 config.plist 做一些调整，如下: 123Comment: 0x0a260006 9MB cursor bytes (vbo), 2 ports only (RehabMan)Find: &lt;0600260a 01030303 00000002 00003001 00006000&gt;Replace: &lt;0600260a 01030202 00000002 00003001 00009000&gt; 123Comment: 0x0a260006 disable 0204 port, change 0105 DP port to 0204 HDMI (RehabMan)Find: &lt;01050900 00040000 87000000 02040900 00040000 87000000&gt;Replace: &lt;02040900 00080000 87000000 FF000000 01000000 40000000&gt; 将这两个 patch 打到 config.plist -&gt; Kernel and Kext Patches -&gt; KextsToPatch 处，保存即可，如果你的机器是 Haswell 的 HD4600 并且上面的 patch 不能解决这个问题，请尝试放 AzulPatcher4600.kext 到 /EFI/CLOVER/Kexts/Other ，此项目 GitHub 地址: 1https://github.com/coderobe/AzulPatcher4600]]></content>
       <categories>
         <category>Hacintosh</category>
       </categories>
@@ -14,7 +27,7 @@
   </entry>
   <entry>
     <title><![CDATA[Disable the discrete GPU to fix "Window Server Service only ran for 0 seconds" in High Sierra]]></title>
-    <url>%2F2017%2F10%2F04%2F%E5%B1%8F%E8%94%BD%E7%8B%AC%E6%98%BE%2F</url>
+    <url>%2F2017%2F10%2F04%2FDisable%20the%20discrete%20GPU%20in%20laptop%2F</url>
     <content type="text"><![CDATA[Disable the discrete GPU to fix “Window Server Service only ran for 0 seconds” in High Sierra 写在前面最近我根据 RehabMan 的 hotpatch 添加了一些路径做了一个屏蔽独显得 hotpatch 来屏蔽独显解决一些升级 10.13 后因为 nv_disable 参数失效而卡在 Window Server Service only ran for 0 seconds 的错误，发现有些成功，有些失败。于是把我琢磨到的一种方法分享给大家！希望该帖子能帮助到各位！ 感谢： PCBETA (远景论坛) yearjinheng 版主的帖子 tonymacx86.com Rehabman 的帖子 转载请注明 原贴地址 屏蔽独显方法不一： 第一种：直接在 DSDT SSDT 上做修改 第二种：手动制作一个适合自己机器的 hotpatch 屏蔽独显达到屏蔽独显的作用 开工 本帖大致思路如下： 提取 ACPI 原始表单 反编译这些文件 搜索一个名为 _OFF 的方法 检查文件的结果以确定 _OFF 的路径 修改 RehabMan 的 hotpatch 加入自己的路径 提取 ACPI 原始表单并提取 _OFF 路径 打开电脑进入四叶草引导界面，按下 F4 或者 FN+F4 即可提取原始表单到 /EFI/CLOVER/ACPI/origin ，然后进入 MAC 将 origin 拷贝到桌面删掉除 SSDT DSDT 之外的所有 aml 文件，打开终端： 1234$ cd ~/Desktop/origin $ iasl -da -dl *.aml $ rm *.aml $ grep -l Method.*_OFF *.dsl 以我修改的一个机器为例，上一条命令得到的结果如下 1234DSDT.dslSSDT-7.dslSSDT-8.dslSSDT-9.dsl 依次打开这四个表单搜索 _OFF ，找到一个类似于下面这个函数： 图片左下角的路径就是我们最终所需要的: 1_SB.PCI0.RP05.PEGP 修改 RehabMan 的 hotpatch 添加这个路径 首先去 RehanMan 的 GitHub 下载 hotpatch 包 1https://github.com/RehabMan/OS-X-Clover-Laptop-Config.git 我们只需要 SSDT-Disable_DGPU 这个文件，编译成 aml 文件 1$ iasl SSDT-Disable_DGPU.dsl 打开编译后得到的 aml 文件 按照这个格式添加自己的路径 保存放到 /EFI/CLOVER/ACPI/patched 一个注意点 如果在 Config.plist 中使用了 SortedOrder (通常 Clover 安装后默认没有设置)，需要在其内添加 SSDT-Disable_DGPU.aml 这一项。因为如果指定了 SortedOrder ，则 Clover 只加载其中指定的 SSDT 。如果没有出现在列表中,即使在 ACPI/patched 中，它也不会加载。 完工]]></content>
       <categories>
         <category>Hacintosh</category>
@@ -28,9 +41,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[git代码本地远程之间的同步]]></title>
-    <url>%2F2017%2F09%2F27%2Fgit%20%E4%BB%A3%E7%A0%81%E6%9C%AC%E5%9C%B0%E8%BF%9C%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%90%8C%E6%AD%A5%2F</url>
-    <content type="text"><![CDATA[git代码本地远程之间的同步转载请注明原出处 代码放到 git 仓库，然后本地修改同步至仓库，这在生活中是很常见的，下面是一个最简单的案例远程仓库内容同步到本地仓库 新建一个本地仓库用于后续工作 123$ cd ~/Desktop/$ mkdir test $ cd test 初始化这个本地目录 1$ git init 关联到远程仓库(以我新建的 Test 这个仓库为例) 1$ git remote add origin https://github.com/athlonreg/Test.git 合并远程仓库的文件到本地 1$ git pull --rebase origin master 修改本地仓库并推送到远程仓库 对本地仓库的一些修改 123$ mkdir inner $ cd inner $ touch a.txt 现在将我新建的 inner 目录和 a.txt 文档推送到远程仓库 git add 命令添加新建目录与文件 1$ git add . git commit 提交修改，引号内为修改的概要 1$ git commit -m &quot;add some files&quot; 这里会提示配置用户身份(两条命令的引号内分别为你 github 账号绑定的邮箱和用户名) 12$ git config --global user.email &quot;15563836030@163.com&quot; $ git config --global user.name &quot;athlonreg&quot; 这是继续提交修改就可以了 1$ git commit -m &quot;add some files&quot; 推送修改后的本地仓库到远程仓库 1$ git push -u origin master 这时终端会让你输入你的 github 用户名和密码，根据提示输入完，就推送完成了，再去 github 网页端就发现仓库已经更新至和本地相同了。 Windows 用户安装好 git 可以利用 git bash 来操作 下面是我在 Windows 下利用 git bash 工具的一些截图，大家可以作参考]]></content>
+    <title><![CDATA[Sync the codes between native and remote by git]]></title>
+    <url>%2F2017%2F09%2F27%2FSync%20the%20codes%20between%20native%20and%20remote%20by%20git%2F</url>
+    <content type="text"><![CDATA[Sync the codes between native and remote by git转载请注明原出处 代码放到 git 仓库，然后本地修改同步至仓库，这在生活中是很常见的，下面是一个最简单的案例远程仓库内容同步到本地仓库 新建一个本地仓库用于后续工作 123$ cd ~/Desktop/$ mkdir test $ cd test 初始化这个本地目录 1$ git init 关联到远程仓库(以我新建的 Test 这个仓库为例) 1$ git remote add origin https://github.com/athlonreg/Test.git 合并远程仓库的文件到本地 1$ git pull --rebase origin master 修改本地仓库并推送到远程仓库 对本地仓库的一些修改 123$ mkdir inner $ cd inner $ touch a.txt 现在将我新建的 inner 目录和 a.txt 文档推送到远程仓库 git add 命令添加新建目录与文件 1$ git add . git commit 提交修改，引号内为修改的概要 1$ git commit -m &quot;add some files&quot; 这里会提示配置用户身份(两条命令的引号内分别为你 github 账号绑定的邮箱和用户名) 12$ git config --global user.email &quot;15563836030@163.com&quot; $ git config --global user.name &quot;athlonreg&quot; 这是继续提交修改就可以了 1$ git commit -m &quot;add some files&quot; 推送修改后的本地仓库到远程仓库 1$ git push -u origin master 这时终端会让你输入你的 github 用户名和密码，根据提示输入完，就推送完成了，再去 github 网页端就发现仓库已经更新至和本地相同了。 Windows 用户安装好 git 可以利用 git bash 来操作 下面是我在 Windows 下利用 git bash 工具的一些截图，大家可以作参考]]></content>
       <categories>
         <category>Study</category>
       </categories>
