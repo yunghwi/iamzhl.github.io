@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Windows 10 开机自动连接宽带]]></title>
+    <url>%2F2017%2F10%2F15%2FWindows-10%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%9E%E6%8E%A5%E5%AE%BD%E5%B8%A6%2F</url>
+    <content type="text"><![CDATA[Windows 10 开机自动连接宽带 开工 首先右击我的电脑-&gt;管理-&gt;任务计划程序-&gt;任务计划程序 中间窗口空白处右键 -&gt; 创建基本任务 弹出的下列窗口名称处输入 1234![2017-10-15-03](http://ovefvi4g3.bkt.clouddn.com/2017-10-15-03.png)* 继续选择 ```当用户登录时 选择 1234![2017-10-15-05](http://ovefvi4g3.bkt.clouddn.com/2017-10-15-05.png)* 在 ```程序或脚本``` 处按照以下格式输入你的本地宽带连接账号 rasdial 宽带连接 宽带账号 宽带密码``` 比如我的则为 一路下一步直到完成]]></content>
+      <categories>
+        <category>Study</category>
+      </categories>
+      <tags>
+        <tag>加密</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[不需要制作安装盘！教你在MacOS系统下安装High-Sierra系统到另一个分区]]></title>
     <url>%2F2017%2F10%2F15%2F%E4%B8%8D%E9%9C%80%E8%A6%81%E5%88%B6%E4%BD%9C%E5%AE%89%E8%A3%85%E7%9B%98%EF%BC%81%E6%95%99%E4%BD%A0%E5%9C%A8MacOS%E7%B3%BB%E7%BB%9F%E4%B8%8B%E5%AE%89%E8%A3%85High-Sierra%E7%B3%BB%E7%BB%9F%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%88%86%E5%8C%BA%2F</url>
     <content type="text"><![CDATA[不需要制作安装盘！教你在 MacOS 系统下安装 High Sierra 系统到另一个分区 此方法不支持APFS分区。 只有HFS分区才能通过此安装 High Sierra 。 而且，您还需要一个 GUID 分区表来安装它。 我无法通过我的安装 USB 启动 macOS High Sierra 安装程序。 尝试了很多方法，但没有一个实际上使其启动，所以我发现一种新的方式通过我现在使用的实际引导的 macOS 在 HFS 日志分区上安装 macOS High Sierra 成功。 通过这种方式，您不需要创建可引导的U盘，甚至不需要重新启动。 开始 通过 App Store 下载 macOS High Sierra Developer Beta / Public Beta 安装程序。 在要使用磁盘实用程序安装测试版的驱动器上创建HFS日志分区（名称不能包含空格）。 打开应用程序目录，右键单击macOS Beta安装程序，然后单击显示包内容。 转到 Contents/Shared Support ，然后双击 InstallESD.dmg 和 BaseSystem.dmg 挂载它们。 打开安装的 InstallESD.dmg ，打开Packages文件夹，然后打开 OSInstall.mpkg 文件。 这将打开 macOS 安装程序。 是的，现在您可以从启动的 MacOS 系统桌面安装 High Sierra Beta 。 选择您创建的分区以安装它，安装完成后，按照步骤5。 备注：如果无法安装请执行(其中 HighSierra 是指卷名)： diskutil umount HighSierradiskutil mount HighSierra 打开已安装的 BaseSystem.dmg 并将 boot.efi 从 /System/Library/CoreServices 复制到同一位置的 High Sierra 分区 (/System/Library/CoreServices) 虽然安装了HS测试版，但它尚不可启动。 要使其可引导，请打开 终端 并键入以下命令(假设安装分区为：HighSierra)： 命令1：1$ sudo bless --folder &quot;/Volumes/HighSierra/System/Library/CoreServices&quot; 命令2：1$ sudo bless --mount &quot;/Volumes/HighSierra&quot; --setBoot 命令3：检查分区是否可引导。 为此，键入以下命令：1$ bless --info /Volumes/HighSierra 收工]]></content>
@@ -84,21 +95,8 @@
         <category>Study</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>加密</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[派遣敢死队问题]]></title>
-    <url>%2F2017%2F09%2F18%2F%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[派遣敢死队问题 问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
-      <categories>
-        <category>Arithmetics</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-        <tag>算法</tag>
-        <tag>派遣敢死队</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -112,6 +110,19 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>警匪110</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[派遣敢死队问题]]></title>
+    <url>%2F2017%2F09%2F18%2F%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[派遣敢死队问题 问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
+      <categories>
+        <category>Arithmetics</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>派遣敢死队</tag>
       </tags>
   </entry>
   <entry>
@@ -221,6 +232,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[加快黑苹果开机速度的一种方法]]></title>
+    <url>%2F2017%2F09%2F05%2F%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
+        <tag>开机速度</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[利用 AppleIntelInfo 查看变频]]></title>
     <url>%2F2017%2F09%2F05%2F%E5%88%A9%E7%94%A8%20AppleIntelInfo%20%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%A2%91%2F</url>
     <content type="text"><![CDATA[很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频 开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：1cd ~/Desktop 回车继续敲： 1git clone https://github.com/athlonreg/AppleIntelInfo.git 回车后就把 AppleIntelInfo 源码下载在桌面了 然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)： 1http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/ 将编译后的 AppleIntelInfo.kext 放到桌面 然后开始利用命令行看变频数据打开终端，输入： 1cd ~/Desktop 回车后继续敲 1sudo chown -R root:wheel AppleIntelInfo.kext 回车会提示输入密码，输入之后回车继续敲： 1sudo kextutil AppleIntelInfo.kext 再回车，接着敲： 1sudo cat /tmp/AppleIntelInfo.dat 回车之后变频数据就出来了，例如我的机器： 一般我们只看最后一行就可以了哦 比如我的机器就是 800、 1000、 …… 、 2700 ，单位是MHz，正好符合我的机器，最低 800MHz ，最高2.4GHz，可超频到2.7GHz。 完工行胜于言，快去试试你的机器是不是变频正常吧！！]]></content>
@@ -232,19 +256,6 @@
         <tag>Hacintosh</tag>
         <tag>AppleIntelInfo</tag>
         <tag>变频</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[加快黑苹果开机速度的一种方法]]></title>
-    <url>%2F2017%2F09%2F05%2F%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>黑苹果</tag>
-        <tag>Hacintosh</tag>
-        <tag>开机速度</tag>
       </tags>
   </entry>
   <entry>
@@ -300,18 +311,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[AppleALC-ALCPlugFix]]></title>
-    <url>%2F2017%2F08%2F29%2FAppleALC-ALCPlugFix%2F</url>
-    <content type="text"><![CDATA[简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题 首先下载 AppleALC 源码，打开终端输入： 1git clone https://github.com/vit9696/AppleALC 回车之后就将 AppleALC 下载到了你的用户根目录 然后下载 Lilu ： 1链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62 将下载的 Lilu 中 Debug 里面的 Lilu.kext 放进 AppleALC 源码根目录，然后删除 /AppleALC/Resources 中多余文件夹，只留下你的声卡型号文件夹、 Pinconfigs.kext 以及四个 plist 文件，以 cx20751 为例剩下如下文件 然后打开计算器，显示为编程器 打开你的 Codec ，找到 Vendor Id ，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开 /AppleALC/Resources/CX20751_2/Info.plist （此处的 CX20751_2 需要换成你的声卡型号），把 codecid 换成刚才拷贝的十进制数 保存退出，右键 PinConfigs.kext 显示包内容，打开里面的 Info.plist ，搜索刚才拷贝的十进制数，记下 LayoutID 数据，有几个记几个，都记下来，然后将 IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault 中的其他型号删除，（为避免出错，这里的删除可以不操作，删除只是为了精简做出来的 AppleALC ），保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的 export next where 填上桌面，点 export 就生成 AppleALC 在桌面上了，一层一层打开它，将其中的 AppleALC.kext 放到 clover 驱动目录，注意之前下载的 Lilu 里面的Release中 Lilu.kext 也要放到 clover 驱动目录，最后不要忘了在 config 注入 LayoutID ： 如图 Audio 处写上刚才记下的 LayoutID 到这里 AppleALC 的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有 ID ，如果能驱动但无法做到插入耳机自动切换，接着往下看： 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的 ALCPlugFix 中的 main.m 下拉到最下方，注意这一部分： 下载 had-tools ,将 codec 复制到 had-tools 目录，打开终端， cd 到此目录，输入 1./widget_dump.sh codec.txt 回车，此处 codec.txt 要根据你的 codec 名字来，回车可以看到以下输出： 找到 nid = 0x19 和 nid = 0x1a ,这里我的 19 为 line in ， 1a 为 mic in ，记录下最后两位，我的是 04 和 24 就这么改 保存退出，双击按照 AppleALC 的编译方法编译这个 然后将生成的 ALCPlugFix 替换 alc_fix 中的 ALCPlugFix ，终端 cd 到 alc_fix 目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh codec.txt 就可以发现之前的 19 和 1a 后面的数据反过来了 如果不行重启一次应该就好了。]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>黑苹果</tag>
-        <tag>Hacintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[统计数字问题]]></title>
     <url>%2F2017%2F08%2F29%2F%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[统计数字问题 问题描述一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 。 思路:暴力求解。本题关键在于将每一页码的数字进行分解，这种方式可以利用整数的除法和对10取余计算。 代码实现123456789101112131415161718192021222324252627282930313233343536#include &lt;stdio.h&gt;#include &lt;math.h&gt; int main(int argc, const char * argv[]) &#123; // insert code here... int array[10] = &#123;0&#125;; //存放0~9出现的次数 int low, temp, high; //以temp为分割点 将页数分为三部分 high和low分别代表高位和低位的数值 int paginations; //存放总页数 int i, j; printf(&quot;一共多少页: &quot;); scanf(&quot;%d&quot;, &amp;paginations); int count = 0; //存放除去最高位后总页码的位数 count = (int)log10(paginations); for(i = count; i &gt;= 0; i --) &#123; //i表示低位（low）的位数 low = paginations % (int)pow(10, i); //计算low的数值 temp = paginations / (int)pow(10, i) % 10; //计算temp的数值 high = paginations / (int)pow(10, i + 1); //计算high的数值 for(j = 0; j &lt; temp; j ++) array[j] += (high + 1) * pow(10, i); //计算 0&lt;中间位&lt;temp 出现的次数 array[temp] += high * pow(10, i) + low + 1; //计算 中间位=temp 出现的次数 for(j = temp + 1; j &lt; 10; j ++) //计算 temp&lt;中间位&lt;9 出现的次数 array[j] += high * pow(10, i); &#125; for(i = count; i &gt;= 0; i --) //除去多统计的a[0]出现的次数 array[0] -= pow(10, i); printf(&quot;0~9分别出现的次数为:\n&quot;); for(i = 0; i &lt; 10; i ++) //打印0~9分别出现的次数 printf(&quot;%d\n&quot;, array[i]); return 0;&#125;]]></content>
@@ -322,6 +321,18 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>统计数字</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[AppleALC-ALCPlugFix]]></title>
+    <url>%2F2017%2F08%2F29%2FAppleALC-ALCPlugFix%2F</url>
+    <content type="text"><![CDATA[简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题 首先下载 AppleALC 源码，打开终端输入： 1git clone https://github.com/vit9696/AppleALC 回车之后就将 AppleALC 下载到了你的用户根目录 然后下载 Lilu ： 1链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62 将下载的 Lilu 中 Debug 里面的 Lilu.kext 放进 AppleALC 源码根目录，然后删除 /AppleALC/Resources 中多余文件夹，只留下你的声卡型号文件夹、 Pinconfigs.kext 以及四个 plist 文件，以 cx20751 为例剩下如下文件 然后打开计算器，显示为编程器 打开你的 Codec ，找到 Vendor Id ，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开 /AppleALC/Resources/CX20751_2/Info.plist （此处的 CX20751_2 需要换成你的声卡型号），把 codecid 换成刚才拷贝的十进制数 保存退出，右键 PinConfigs.kext 显示包内容，打开里面的 Info.plist ，搜索刚才拷贝的十进制数，记下 LayoutID 数据，有几个记几个，都记下来，然后将 IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault 中的其他型号删除，（为避免出错，这里的删除可以不操作，删除只是为了精简做出来的 AppleALC ），保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的 export next where 填上桌面，点 export 就生成 AppleALC 在桌面上了，一层一层打开它，将其中的 AppleALC.kext 放到 clover 驱动目录，注意之前下载的 Lilu 里面的Release中 Lilu.kext 也要放到 clover 驱动目录，最后不要忘了在 config 注入 LayoutID ： 如图 Audio 处写上刚才记下的 LayoutID 到这里 AppleALC 的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有 ID ，如果能驱动但无法做到插入耳机自动切换，接着往下看： 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的 ALCPlugFix 中的 main.m 下拉到最下方，注意这一部分： 下载 had-tools ,将 codec 复制到 had-tools 目录，打开终端， cd 到此目录，输入 1./widget_dump.sh codec.txt 回车，此处 codec.txt 要根据你的 codec 名字来，回车可以看到以下输出： 找到 nid = 0x19 和 nid = 0x1a ,这里我的 19 为 line in ， 1a 为 mic in ，记录下最后两位，我的是 04 和 24 就这么改 保存退出，双击按照 AppleALC 的编译方法编译这个 然后将生成的 ALCPlugFix 替换 alc_fix 中的 ALCPlugFix ，终端 cd 到 alc_fix 目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh codec.txt 就可以发现之前的 19 和 1a 后面的数据反过来了 如果不行重启一次应该就好了。]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
       </tags>
   </entry>
   <entry>
