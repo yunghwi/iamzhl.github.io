@@ -136,7 +136,7 @@
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
 <meta property="og:description" content="不需要制作安装盘！教你在 MacOS 系统下安装 High Sierra 系统到另一个分区 此方法不支持APFS分区。 只有HFS分区才能通过此安装 High Sierra 。 而且，您还需要一个 GUID 分区表来安装它。  我无法通过我的安装 USB 启动 macOS High Sierra 安装程序。 尝试了很多方法，但没有一个实际上使其启动，所以我发现一种新的方式通过我现在使用的实际引导的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-15T12:16:49.170Z">
+<meta property="og:updated_time" content="2017-10-15T12:19:18.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不需要制作安装盘！教你在MacOS系统下安装High-Sierra系统到另一个分区">
 <meta name="twitter:description" content="不需要制作安装盘！教你在 MacOS 系统下安装 High Sierra 系统到另一个分区 此方法不支持APFS分区。 只有HFS分区才能通过此安装 High Sierra 。 而且，您还需要一个 GUID 分区表来安装它。  我无法通过我的安装 USB 启动 macOS High Sierra 安装程序。 尝试了很多方法，但没有一个实际上使其启动，所以我发现一种新的方式通过我现在使用的实际引导的">
@@ -431,7 +431,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  503 字
+                  502 字
                 </span>
               
 
@@ -486,7 +486,7 @@
 <li><p>打开安装的 InstallESD.dmg ，打开Packages文件夹，然后打开 OSInstall.mpkg 文件。 这将打开 macOS 安装程序。 是的，现在您可以从启动的 MacOS 系统桌面安装 High Sierra Beta 。 选择您创建的分区以安装它，安装完成后，按照步骤5。</p>
 <blockquote>
 <p>备注：如果无法安装请执行(其中 HighSierra 是指卷名)：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; diskutil umount HighSierra</div><div class="line">&gt; </div><div class="line">&gt; diskutil mount HighSierra</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<p>diskutil umount HighSierra<br>diskutil mount HighSierra</p>
 </blockquote>
 </li>
 <li><p>打开已安装的 BaseSystem.dmg 并将 boot.efi 从 /System/Library/CoreServices 复制到同一位置的 High Sierra 分区 (/System/Library/CoreServices)</p>
