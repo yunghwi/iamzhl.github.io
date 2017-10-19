@@ -1,5 +1,5 @@
 ---
-title: Disable the discrete GPU to fix "Window Server Service only ran for 0 seconds" in High Sierra
+title: Disable the discrete GPU in laptop
 date: 2017-10-04
 categories: Hacintosh
 description: Disable the discrete GPU to fix "Window Server Service only ran for 0 seconds" in High Sierra
@@ -32,7 +32,7 @@ tags:
 
 ## 开工
 
-> 本帖大致思路如下：
+> 本帖主要采用第二种方法，大致思路如下：
 
 * 提取 ACPI 原始表单
 * 反编译这些文件

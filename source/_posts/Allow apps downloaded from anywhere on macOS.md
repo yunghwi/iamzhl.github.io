@@ -1,7 +1,8 @@
 ---
-title: macOS 打开任何来源
+title: Allow apps downloaded from anywhere on macOS
 date: 2017-09-15 21:16:31
 categories: Hacintosh
+description: Allow apps downloaded from anywhere on macOS.md
 tags:
     - 黑苹果
     - 终端

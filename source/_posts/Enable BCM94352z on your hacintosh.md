@@ -1,7 +1,8 @@
 ---
-title:      BCM94352z 驱动教程
-date:       2017-09-13
+title: Enable BCM94352z on your hacintosh
+date: 2017-09-13
 categories: Hacintosh
+description: Enable BCM94352z on your hacintosh
 tags:
     - Hacintosh
     - 黑苹果

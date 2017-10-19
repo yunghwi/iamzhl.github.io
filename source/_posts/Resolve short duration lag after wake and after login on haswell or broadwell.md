@@ -12,7 +12,7 @@ tags:
 
 > 本文来自 [tonymacx86.com](https://www.tonymacx86.com/threads/readme-common-some-unsolved-problems-in-10-12-sierra.202316/page-94#post-1485104) 
 > 原作者 [RehabMan](https://www.tonymacx86.com/members/rehabman.429483/)
-> 转载请注明原出处
+> 转载请注明 [原出处](https://blog.iamzhl.top/2017/10/07/Resolve%20short%20duration%20lag%20after%20wake%20and%20after%20login%20on%20haswell%20or%20broadwell/)
 
 ### 开工
 
