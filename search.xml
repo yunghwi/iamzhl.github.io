@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MAC 常用快捷键整理]]></title>
+    <url>%2F2017%2F10%2F26%2FMAC-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%B4%E7%90%86%2F</url>
+    <content type="text"><![CDATA[写在前面 苹果Mac系统常用快捷键有很多，但是很多童鞋对于这些mac快捷键都不是很熟悉，今天小编为大家整理了一份Mac系统常用快捷键大全，大家快收藏起来吧!平时在使用mac系统的时候可以提高不少工作效率哦! 本文转自 Xclient.info，转载请注明原出处 小普及 Mac中主要有四个修饰键，分别是 Command，Control，Option 和Shift。 这四个键分别有自己的图案，他们经常出现在Mac应用程序中的菜单栏里，方便你随时学习新的快捷键。 如下 正文通用快捷键 Command是Mac里最重要的修饰键，在大多数情况下相当于Windows下的Ctrl。 Command + Z 撤销 Command + X 剪切 Command + C 拷贝（Copy） Command + V 粘贴 Command + A 全选（All） Command + S 保存（Save) Command + F 查找（Find） 系统快捷键 Option 开机后立即按下，将显示启动管理器。 Command + R 开机后立即按下，可打开OS X的恢复功能。 Command + Option + P + R 开机后立即按下，重置NVRAM。有些时候电脑会出现些小问题，重置NVRAM是你除了重新启动，尝试修复的第一选择。 Command + Option + Control + Power 退出所有应用程序，允许你进行文稿储存，然后关机。 按住 Power 按钮5秒 强制Mac关机。 截图 Command + Shift + 3 截取全部屏幕到文件 Command + Shift + Control + 3 截取全部屏幕到剪贴板 Command + Shift + 4 截取所选屏幕区域到一个文件，或按空格键仅捕捉一个窗口 Command + Shift + Control + 4 截取所选屏幕区域到剪贴板，或按空格键仅捕捉一个窗口 文件管理器 Command + Shift + N (New) 新建文件夹。 Command + Shift + G (Go) 调出窗口，可输入绝对路径直达文件夹。 return 这个其实不算快捷键，点击文件，按下可重命名文件。 Command + O 打开所选项。在Mac里打开文件不像Windows里直接按Enter。 Command + Option + V 作用相当于Windows里的文件剪切。在其它位置上对文件复制(Command-C)，在目的位置按下这个快捷键，文件将被剪切到此位置. Command + ↑ 打开包含当前文件夹的文件夹，相当于Windows里的“向上”。 Command + Delete 将文件移至废纸篓。 Command + Shift + Delete 清倒废纸篓。 Space 快速查看选中的文件，也就是预览功能 切换 Command + Tab 在应用程序间切换 Command + Shift + Tab 在应用程序间切换(反向) Command + ~ 在各应用中的窗口间切换 浏览器 Command + L 光标直接跳至地址栏 Control + Tab 转向下一个标签页 Control + Shift + Tab 转向上一个标签页 Command + ‘+’或’=’ 放大页面 Command + ‘-‘ 缩小页面 应用程序中 Command + H 隐藏（Hide）当前正在运行的应用程序窗口 Command + Option + H 隐藏（Hide）其他应用程序窗口 Command + Q 退出（Quit）最前面的应用程序 Command + Shift + Z 重做，也就是撤销的逆向操作 Command + Tab 在打开的应用程序列表中转到下一个最近使用的应用程序，相当于Windows中（Alt+Tab） Command + Option + esc 打开“强制退出”窗口，如果有应用程序无响应，可在窗口列表中选择强制退出 文本处理 Command + B 切换所选文字粗体（Bold）显示 fn + Delete 相当于PC全尺寸键盘上的Delete，也就是向后删除 fn + ↑ 向上滚动一页（Page Up） fn + ↓ 向下滚动一页（Page Down） fn + ← 滚动至文稿开头（Home） fn + → 滚动至文稿末尾（End） Command + → 将光标移至当前行的行尾 Command + ← 将光标移至当前行的行首 Command + ↓ 将光标移至文稿末尾 Command + ↑ 将光标移至文稿开头 Option + → 将光标移至下一个单词的末尾 Option + ← 将光标移至上一个单词的开头 Control + A 移至行或段落的开头 更多快捷键如果你还想学习更多快捷键，请点击这里查看苹果官方的快捷键帮助文档。]]></content>
+      <categories>
+        <category>Study</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>快捷键</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Windows 10 开机自动连接宽带]]></title>
     <url>%2F2017%2F10%2F15%2FWindows-10%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%9E%E6%8E%A5%E5%AE%BD%E5%B8%A6%2F</url>
     <content type="text"><![CDATA[Windows 10 开机自动连接宽带 开工 首先右击我的电脑-&gt;管理-&gt;任务计划程序-&gt;任务计划程序 中间窗口空白处右键 -&gt; 创建基本任务 弹出的下列窗口名称处输入 PPPOE 继续选择 当用户登录时 选择 启动程序 在 程序或脚本 处按照以下格式输入你的本地宽带连接账号 1rasdial 宽带连接 宽带账号 宽带密码 比如我的则为 经网友反馈，发现图中“宽带连接”后少了一个空格，请大家自主添加 一路下一步直到完成]]></content>
@@ -101,19 +113,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[派遣敢死队问题]]></title>
-    <url>%2F2017%2F09%2F18%2F%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[派遣敢死队问题 问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
-      <categories>
-        <category>Arithmetics</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-        <tag>算法</tag>
-        <tag>派遣敢死队</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[价牌翻转问题]]></title>
     <url>%2F2017%2F09%2F18%2F%E4%BB%B7%E7%89%8C%E7%BF%BB%E8%BD%AC%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[价牌翻转问题 问题描述 思路1、已知是一个四位数，那么共有1001-9999种情况；2、一个数颠倒之后，数字顺序颠倒并且每个数字颠倒，例如1269颠倒之后就是6921；3、0不能是第一位也不能是最后一位。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;math.h&gt;int array[4]=&#123;0&#125;;int inverse(int a)&#123;//求一个数颠倒之后的结果 int b=0; int arr[4]=&#123;0&#125;; for(int i=0;i&lt;4;i++)&#123; arr[i]=(int)(a/pow(10,3-i))%10; if(arr[i]==9) b+=6*pow(10,i); else if(arr[i]==6) b+=9*pow(10,i); else b+=arr[i]*pow(10,i); &#125; return b;&#125;int main()&#123; int i,j; int k=0,l=0; int temp; int flag; int up[50]=&#123;0&#125;,down[50]=&#123;0&#125;;//分别存放赚钱和赔钱的价牌 for(i=1001;i&lt;10000;i++)&#123; temp=i; flag=1; for(j=0;j&lt;4;j++)&#123; array[j]=(int)(temp/pow(10,3-j))%10; if(array[j]==3||array[j]==4||array[j]==7)&#123;//分割数字排除不能翻转的数字 flag=0; break; &#125; &#125; if(flag)&#123; if(array[0]==0 || array[3]==0)//0不能位于第一位和最后一位 continue; if(inverse(i)-i&gt;800&amp;&amp;inverse(i)-i&lt;900) up[k++]=i; if(i-inverse(i)&gt;200&amp;&amp;i-inverse(i)&lt;300) down[l++]=i; &#125; &#125; for(i=0;i&lt;50;i++)&#123;//依次输出赚钱的原价，颠倒价、赚的钱、赔钱的原价、颠倒价、赔的钱 for(j=0;j&lt;50;j++)&#123; if((inverse(up[i])-up[i])-(down[j]-inverse(down[j]))==558)&#123; printf(&quot;%d\t%d\t%d\t&quot;,up[i],inverse(up[i]),inverse(up[i])-up[i]); printf(&quot;%d\t%d\t%d\n&quot;,down[j],inverse(down[j]),down[j]-inverse(down[j])); &#125; &#125; &#125; return 0;&#125; 运行结果：]]></content>
@@ -124,6 +123,19 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>价牌翻转</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[派遣敢死队问题]]></title>
+    <url>%2F2017%2F09%2F18%2F%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[派遣敢死队问题 问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
+      <categories>
+        <category>Arithmetics</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>派遣敢死队</tag>
       </tags>
   </entry>
   <entry>
@@ -272,18 +284,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[AppleALC-ALCPlugFix]]></title>
-    <url>%2F2017%2F08%2F29%2FAppleALC-ALCPlugFix%2F</url>
-    <content type="text"><![CDATA[简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题 首先下载 AppleALC 源码，打开终端输入： 1git clone https://github.com/vit9696/AppleALC 回车之后就将 AppleALC 下载到了你的用户根目录 然后下载 Lilu ： 1链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62 将下载的 Lilu 中 Debug 里面的 Lilu.kext 放进 AppleALC 源码根目录，然后删除 /AppleALC/Resources 中多余文件夹，只留下你的声卡型号文件夹、 Pinconfigs.kext 以及四个 plist 文件，以 cx20751 为例剩下如下文件 然后打开计算器，显示为编程器 打开你的 Codec ，找到 Vendor Id ，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开 /AppleALC/Resources/CX20751_2/Info.plist （此处的 CX20751_2 需要换成你的声卡型号），把 codecid 换成刚才拷贝的十进制数 保存退出，右键 PinConfigs.kext 显示包内容，打开里面的 Info.plist ，搜索刚才拷贝的十进制数，记下 LayoutID 数据，有几个记几个，都记下来，然后将 IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault 中的其他型号删除，（为避免出错，这里的删除可以不操作，删除只是为了精简做出来的 AppleALC ），保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的 export next where 填上桌面，点 export 就生成 AppleALC 在桌面上了，一层一层打开它，将其中的 AppleALC.kext 放到 clover 驱动目录，注意之前下载的 Lilu 里面的Release中 Lilu.kext 也要放到 clover 驱动目录，最后不要忘了在 config 注入 LayoutID ： 如图 Audio 处写上刚才记下的 LayoutID 到这里 AppleALC 的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有 ID ，如果能驱动但无法做到插入耳机自动切换，接着往下看： 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的 ALCPlugFix 中的 main.m 下拉到最下方，注意这一部分： 下载 had-tools ,将 codec 复制到 had-tools 目录，打开终端， cd 到此目录，输入 1./widget_dump.sh codec.txt 回车，此处 codec.txt 要根据你的 codec 名字来，回车可以看到以下输出： 找到 nid = 0x19 和 nid = 0x1a ,这里我的 19 为 line in ， 1a 为 mic in ，记录下最后两位，我的是 04 和 24 就这么改 保存退出，双击按照 AppleALC 的编译方法编译这个 然后将生成的 ALCPlugFix 替换 alc_fix 中的 ALCPlugFix ，终端 cd 到 alc_fix 目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh codec.txt 就可以发现之前的 19 和 1a 后面的数据反过来了 如果不行重启一次应该就好了。]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>黑苹果</tag>
-        <tag>Hacintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[统计数字问题]]></title>
     <url>%2F2017%2F08%2F29%2F%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[统计数字问题 问题描述一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 。 思路:暴力求解。本题关键在于将每一页码的数字进行分解，这种方式可以利用整数的除法和对10取余计算。 代码实现123456789101112131415161718192021222324252627282930313233343536#include &lt;stdio.h&gt;#include &lt;math.h&gt; int main(int argc, const char * argv[]) &#123; // insert code here... int array[10] = &#123;0&#125;; //存放0~9出现的次数 int low, temp, high; //以temp为分割点 将页数分为三部分 high和low分别代表高位和低位的数值 int paginations; //存放总页数 int i, j; printf(&quot;一共多少页: &quot;); scanf(&quot;%d&quot;, &amp;paginations); int count = 0; //存放除去最高位后总页码的位数 count = (int)log10(paginations); for(i = count; i &gt;= 0; i --) &#123; //i表示低位（low）的位数 low = paginations % (int)pow(10, i); //计算low的数值 temp = paginations / (int)pow(10, i) % 10; //计算temp的数值 high = paginations / (int)pow(10, i + 1); //计算high的数值 for(j = 0; j &lt; temp; j ++) array[j] += (high + 1) * pow(10, i); //计算 0&lt;中间位&lt;temp 出现的次数 array[temp] += high * pow(10, i) + low + 1; //计算 中间位=temp 出现的次数 for(j = temp + 1; j &lt; 10; j ++) //计算 temp&lt;中间位&lt;9 出现的次数 array[j] += high * pow(10, i); &#125; for(i = count; i &gt;= 0; i --) //除去多统计的a[0]出现的次数 array[0] -= pow(10, i); printf(&quot;0~9分别出现的次数为:\n&quot;); for(i = 0; i &lt; 10; i ++) //打印0~9分别出现的次数 printf(&quot;%d\n&quot;, array[i]); return 0;&#125;]]></content>
@@ -294,6 +294,18 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>统计数字</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[AppleALC-ALCPlugFix]]></title>
+    <url>%2F2017%2F08%2F29%2FAppleALC-ALCPlugFix%2F</url>
+    <content type="text"><![CDATA[简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音问题 首先下载 AppleALC 源码，打开终端输入： 1git clone https://github.com/vit9696/AppleALC 回车之后就将 AppleALC 下载到了你的用户根目录 然后下载 Lilu ： 1链接:http://pan.baidu.com/s/1c2yB3vq 密码:if62 将下载的 Lilu 中 Debug 里面的 Lilu.kext 放进 AppleALC 源码根目录，然后删除 /AppleALC/Resources 中多余文件夹，只留下你的声卡型号文件夹、 Pinconfigs.kext 以及四个 plist 文件，以 cx20751 为例剩下如下文件 然后打开计算器，显示为编程器 打开你的 Codec ，找到 Vendor Id ，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开 /AppleALC/Resources/CX20751_2/Info.plist （此处的 CX20751_2 需要换成你的声卡型号），把 codecid 换成刚才拷贝的十进制数 保存退出，右键 PinConfigs.kext 显示包内容，打开里面的 Info.plist ，搜索刚才拷贝的十进制数，记下 LayoutID 数据，有几个记几个，都记下来，然后将 IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault 中的其他型号删除，（为避免出错，这里的删除可以不操作，删除只是为了精简做出来的 AppleALC ），保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的 export next where 填上桌面，点 export 就生成 AppleALC 在桌面上了，一层一层打开它，将其中的 AppleALC.kext 放到 clover 驱动目录，注意之前下载的 Lilu 里面的Release中 Lilu.kext 也要放到 clover 驱动目录，最后不要忘了在 config 注入 LayoutID ： 如图 Audio 处写上刚才记下的 LayoutID 到这里 AppleALC 的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有 ID ，如果能驱动但无法做到插入耳机自动切换，接着往下看： 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的 ALCPlugFix 中的 main.m 下拉到最下方，注意这一部分： 下载 had-tools ,将 codec 复制到 had-tools 目录，打开终端， cd 到此目录，输入 1./widget_dump.sh codec.txt 回车，此处 codec.txt 要根据你的 codec 名字来，回车可以看到以下输出： 找到 nid = 0x19 和 nid = 0x1a ,这里我的 19 为 line in ， 1a 为 mic in ，记录下最后两位，我的是 04 和 24 就这么改 保存退出，双击按照 AppleALC 的编译方法编译这个 然后将生成的 ALCPlugFix 替换 alc_fix 中的 ALCPlugFix ，终端 cd 到 alc_fix 目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh codec.txt 就可以发现之前的 19 和 1a 后面的数据反过来了 如果不行重启一次应该就好了。]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
       </tags>
   </entry>
   <entry>
