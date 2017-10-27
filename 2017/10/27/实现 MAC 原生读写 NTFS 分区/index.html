@@ -101,7 +101,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="黑苹果,Hacintosh,NTFS," />
 
 
 
@@ -129,16 +129,20 @@
   })();
 </script>
 
-<meta name="description" content="欢迎来到我的博客，我会在这里分享我的黑苹果经验和一些算法！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Athlonreg&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/Mac/index.html">
+<meta name="description" content="实现 MAC 原生读写 NTFS 分区">
+<meta name="keywords" content="黑苹果,Hacintosh,NTFS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实现 MAC 原生读写 NTFS 分区">
+<meta property="og:url" content="http://yoursite.com/2017/10/27/实现 MAC 原生读写 NTFS 分区/index.html">
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
-<meta property="og:description" content="欢迎来到我的博客，我会在这里分享我的黑苹果经验和一些算法！">
+<meta property="og:description" content="实现 MAC 原生读写 NTFS 分区">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-10-27-01.png">
+<meta property="og:updated_time" content="2017-10-27T05:12:14.778Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Athlonreg&#39;s Blog">
-<meta name="twitter:description" content="欢迎来到我的博客，我会在这里分享我的黑苹果经验和一些算法！">
+<meta name="twitter:title" content="实现 MAC 原生读写 NTFS 分区">
+<meta name="twitter:description" content="实现 MAC 原生读写 NTFS 分区">
+<meta name="twitter:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-10-27-01.png">
 
 
 
@@ -168,13 +172,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Mac/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/27/实现 MAC 原生读写 NTFS 分区/"/>
 
 
 
 
 
-  <title>标签: Mac | Athlonreg's Blog</title>
+  <title>实现 MAC 原生读写 NTFS 分区 | Athlonreg's Blog</title>
   
 
 
@@ -203,7 +207,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <a href="https://github.com/athlonreg"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
@@ -343,110 +347,291 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Mac<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/实现 MAC 原生读写 NTFS 分区/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="athlonreg/套陆">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Athlonreg's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/10/26/MAC-常用快捷键整理/" itemprop="url">
-              
-                <span itemprop="name">MAC 常用快捷键整理</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">实现 MAC 原生读写 NTFS 分区</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-26T08:14:21+08:00"
-              content="2017-10-26" >
-          10-26
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T00:00:00+08:00">
+                2017-10-27
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hacintosh/" itemprop="url" rel="index">
+                    <span itemprop="name">Hacintosh</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/10/27/实现 MAC 原生读写 NTFS 分区/" class="leancloud_visitors" data-flag-title="实现 MAC 原生读写 NTFS 分区">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  114 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  实现 MAC 原生读写 NTFS 分区
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/03/How to use xcode-select in terminal/" itemprop="url">
-              
-                <span itemprop="name">How to use xcode-select in terminal</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-03T00:00:00+08:00"
-              content="2017-09-03" >
-          09-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/28/MAC搭建Java开发环境/" itemprop="url">
-              
-                <span itemprop="name">Mac下搭建 Java 开发环境</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-28T00:00:00+08:00"
-              content="2017-08-28" >
-          08-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p><strong>实现 MAC 原生读写 NTFS 分区</strong></p>
+<blockquote>
+<p>打开终端，输入命令</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ diskutil list</div></pre></td></tr></table></figure>
+<blockquote>
+<p>输入命令</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo vim /etc/fstab</div></pre></td></tr></table></figure>
+<blockquote>
+<p>编辑内容如下</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LABEL=Win\040Ntfs\040Drive none ntfs rw,auto,nobrowse</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意</p>
+</blockquote>
+<p><strong><code>Win\040Ntfs\040Drive</code> 这串字符中<code>\040</code>代表空格，<code>Win\040Ntfs\040Drive</code> 这一串出现在<code>diskutil list</code>那个屏幕里面，比如下图就是<code>HD-E1</code></strong></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-27-01.png" alt="2017-10-27-01"></p>
+<blockquote>
+<p>最后一步</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo ln -s /Volumes ~/Desktop/Volumes</div></pre></td></tr></table></figure>
+<p><strong>Credit</strong></p>
+<blockquote>
+<p>转自<a href="https://www.waitsun.com" target="_blank" rel="external">爱情守望者</a></p>
+<p>转载请注明<a href="https://www.waitsun.com/aboutus/help" target="_blank" rel="external">原帖地址</a></p>
+</blockquote>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持站长</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="athlonreg/套陆 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="athlonreg/套陆 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/黑苹果/" rel="tag"><i class="fa fa-tag"></i> 黑苹果</a>
+          
+            <a href="/tags/Hacintosh/" rel="tag"><i class="fa fa-tag"></i> Hacintosh</a>
+          
+            <a href="/tags/NTFS/" rel="tag"><i class="fa fa-tag"></i> NTFS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/26/Change launchpad icon grid layout in your MAC/" rel="next" title="Change launchpad icon grid layout in your MAC">
+                <i class="fa fa-chevron-left"></i> Change launchpad icon grid layout in your MAC
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -454,6 +639,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
 
         </div>
         
@@ -727,6 +918,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -1216,26 +1411,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
