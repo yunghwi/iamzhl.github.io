@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-27T05:12:14.778Z</updated>
+  <updated>2017-11-05T14:15:05.897Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>基于 JSP 的网站博客系统</title>
+    <link href="http://yoursite.com/2017/11/05/%E5%9F%BA%E4%BA%8E%20JSP%20%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://yoursite.com/2017/11/05/基于 JSP 实现的博客网站系统/</id>
+    <published>2017-11-04T16:00:00.000Z</published>
+    <updated>2017-11-05T14:15:05.897Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote><p>在日新月异的今天，类似微博这种平台上庞大的信息量让我们找不到自己想要的知识，甚至越来越多的小孩子也加入了这种平台，反而被越来越多的广告信息和毫无营养的东西影响，这让我们无法忍受；</p><p>除此以外，一些静态博客平台例如<code>hexo</code>搭建出来的博客站点虽然不错，但是庞大的知识量也令人头疼；</p><p>鉴于此，本站希望保留博客系统最核心的功能，并省去庞大的工作才能搭建的站点，实现最经典的网站博客系统。</p><p>尊重别人劳动成果，转载请注明来源。</p></blockquote><h2 id="系统实现"><a href="#系统实现" class="headerlink" title="系统实现"></a>系统实现</h2><ul><li>本网站基于<code>JSP</code>实现。</li><li>主要实现博主的日常生活中博文发表、博文浏览、博文和留言板管理以及后台管理。</li><li>实现用户的注册登录(支持第三方登录接口)、博文浏览(支持收藏、转发、评论以及打赏)和留言板留言。</li><li>在博文的发表中实现支持<code>MarkDown</code>文本编辑器在线编辑。</li><li>涉及<code>Web</code>前端、<code>JQuery</code>、 <code>BootStrap+</code>、 <code>JavaScript</code>等实现页面的制作，<code>MySQL</code>实现数据库操作(包括常见的增删查改等)</li></ul><h2 id="本站主要功能脑图如下"><a href="#本站主要功能脑图如下" class="headerlink" title="本站主要功能脑图如下"></a>本站主要功能脑图如下</h2><p><strong>备注：会持续更新</strong></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-11-05-01-1.png" alt="2017-11-05-01"></p><h2 id="关于其他知识创新的使用"><a href="#关于其他知识创新的使用" class="headerlink" title="关于其他知识创新的使用"></a>关于其他知识创新的使用</h2><blockquote><p>在做这个网站的过程中，以不影响网站浏览为前提，尽量使用较多的新技术，将本站做成更适合年轻一代人使用的博客站点系统。</p><p>为体现创新知识的使用，本站的开发文档将会放到博客主站的首页，相关文件也会放到我本人的<a href="https://github.com/athlonreg/Blog-JSP-MySQL" target="_blank" rel="external"><code>GitHub</code>仓库</a>。</p></blockquote><h2 id="关于更新"><a href="#关于更新" class="headerlink" title="关于更新"></a>关于更新</h2><blockquote><p>如果对此项目有兴趣的朋友有更好的建议或者希望加入的经典功能，可以<a href="https://github.com/athlonreg/Blog-JSP-MySQL" target="_blank" rel="external">点击这里</a>来给我留言，我会酌情添加更新站点，做出适合更多人用的博客系统。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      基于 JSP 的网站博客系统
+    
+    </summary>
+    
+      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
+    
+    
+      <category term="博客系统" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="网站" scheme="http://yoursite.com/tags/%E7%BD%91%E7%AB%99/"/>
+    
+      <category term="JSP" scheme="http://yoursite.com/tags/JSP/"/>
+    
+      <category term="Blog" scheme="http://yoursite.com/tags/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>将 NetBeans 的项目导入 MyEclipse 并减少错误与乱码现象</title>
+    <link href="http://yoursite.com/2017/10/30/%E5%B0%86%20NetBeans%20%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%AF%BC%E5%85%A5%20MyEclipse%20%E5%B9%B6%E5%87%8F%E5%B0%91%E9%94%99%E8%AF%AF%E4%B8%8E%E4%B9%B1%E7%A0%81%E7%8E%B0%E8%B1%A1/"/>
+    <id>http://yoursite.com/2017/10/30/将 NetBeans 的项目导入 MyEclipse 并减少错误与乱码现象/</id>
+    <published>2017-10-30T08:03:27.000Z</published>
+    <updated>2017-11-01T03:06:28.351Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>最近，在一次网络编程课中，实验室的 <code>PC</code> 机有好多 <code>NetBeans</code> 打不开，经过一节课的摸索和董老师的帮助，终于找到一种方法将 <code>NetBeans</code> 写的项目导入 <code>MyEclipse</code> 中，并且可以减少很多错误以及乱码的情况出现</p><h3 id="进入主题"><a href="#进入主题" class="headerlink" title="进入主题"></a>进入主题</h3><blockquote><p>将 <code>NetBeans</code> 写的项目导入 <code>MyEclipse</code> 中的时候最常见的错误有以下三种：</p></blockquote><ul><li>在 <code>NetBeans</code> 中如果一条语句过长会有自动换行的情况，但在 <code>MyEclipse</code> 中并不能识别这种换行，于是像 <code>try-catch</code> 和 <code>if</code> 语句这种代码往往在导入工程之后跑到了注释后面，造成语法错误；</li><li><code>MyEclipse</code> 默认编码方式为 <code>GBK</code>,所以将 <code>NetBeans</code> 写的项目导入 <code>MyEclipse</code> 中的时候，项目代码里面的中文注释将会出现乱码；</li><li>如果 <code>NetBeans</code> 中的 <code>Java</code> 代码在一个自己建的 <code>package</code> 下，会出现很多需要将代码移动到这个 <code>package</code> 下的错误。</li></ul><h3 id="针对这些常见的情况，可以找到下面一种方法进行导入操作"><a href="#针对这些常见的情况，可以找到下面一种方法进行导入操作" class="headerlink" title="针对这些常见的情况，可以找到下面一种方法进行导入操作"></a>针对这些常见的情况，可以找到下面一种方法进行导入操作</h3><ul><li>在 <code>MyEclipse</code> 新建一个 <code>Java Project</code>；</li><li>右键这个 <code>Project</code> -&gt; 属性 -&gt; Text file encoding，将编码方式设置为 <code>UTF-8</code>；</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-30-05.png" alt="2017-10-30-05"></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-30-04.png" alt="2017-10-30-04"></p><ul><li>展开这个 <code>Project</code>，右键其下面的 <code>src</code> 包，新建一个 <code>Package</code>，这里我用 <code>cn.edu.ldu</code> 来表示；</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-30-06.png" alt="2017-10-30-06"></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-30-07.png" alt="2017-10-30-07"></p><ul><li>右键新建的 <code>cn.edu.ldu</code> 包 -&gt; Import -&gt; General -&gt; File System -&gt; Next，在 <code>From directory</code> 中选择要导入的项目，然后在弹出的对话框中勾选这个项目，选择 <code>Finish</code> 就可以了。</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-30-01.png" alt="2017-10-30-01"></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-30-02.png" alt="2017-10-30-02"></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-30-03.png" alt="2017-10-30-03"></p><ul><li>操作完成之后只剩下一些内部包的导入工作需要额外操作，其余均比较完美</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-30-08.png" alt="2017-10-30-08"></p><ul><li>运行结果也很好</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-30-09.png" alt="2017-10-30-09"></p><ul><li>大家快去试一下吧</li></ul><h3 id="收工咯"><a href="#收工咯" class="headerlink" title="收工咯"></a>收工咯</h3>]]></content>
+    
+    <summary type="html">
+    
+      将 NetBeans 的项目导入 MyEclipse 并减少错误与乱码现象
+    
+    </summary>
+    
+      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
+    
+    
+      <category term="NetBeans" scheme="http://yoursite.com/tags/NetBeans/"/>
+    
+      <category term="MyEclipse" scheme="http://yoursite.com/tags/MyEclipse/"/>
+    
+  </entry>
+  
+  <entry>
     <title>实现 MAC 原生读写 NTFS 分区</title>
     <link href="http://yoursite.com/2017/10/27/%E5%AE%9E%E7%8E%B0%20MAC%20%E5%8E%9F%E7%94%9F%E8%AF%BB%E5%86%99%20NTFS%20%E5%88%86%E5%8C%BA/"/>
     <id>http://yoursite.com/2017/10/27/实现 MAC 原生读写 NTFS 分区/</id>
     <published>2017-10-26T16:00:00.000Z</published>
-    <updated>2017-10-27T05:12:14.778Z</updated>
+    <updated>2017-10-27T05:12:14.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>实现 MAC 原生读写 NTFS 分区</strong></p><blockquote><p>打开终端，输入命令</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ diskutil list</div></pre></td></tr></table></figure><blockquote><p>输入命令</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo vim /etc/fstab</div></pre></td></tr></table></figure><blockquote><p>编辑内容如下</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LABEL=Win\040Ntfs\040Drive none ntfs rw,auto,nobrowse</div></pre></td></tr></table></figure><blockquote><p>注意</p></blockquote><p><strong><code>Win\040Ntfs\040Drive</code> 这串字符中<code>\040</code>代表空格，<code>Win\040Ntfs\040Drive</code> 这一串出现在<code>diskutil list</code>那个屏幕里面，比如下图就是<code>HD-E1</code></strong></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-27-01.png" alt="2017-10-27-01"></p><blockquote><p>最后一步</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo ln -s /Volumes ~/Desktop/Volumes</div></pre></td></tr></table></figure><p><strong>Credit</strong></p><blockquote><p>转自<a href="https://www.waitsun.com" target="_blank" rel="external">爱情守望者</a></p><p>转载请注明<a href="https://www.waitsun.com/aboutus/help" target="_blank" rel="external">原帖地址</a></p></blockquote>]]></content>
     
@@ -47,7 +99,7 @@
     <link href="http://yoursite.com/2017/10/26/Change%20launchpad%20icon%20grid%20layout%20in%20your%20MAC/"/>
     <id>http://yoursite.com/2017/10/26/Change launchpad icon grid layout in your MAC/</id>
     <published>2017-10-26T01:32:26.000Z</published>
-    <updated>2017-10-26T01:57:23.664Z</updated>
+    <updated>2017-10-26T01:57:23.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="preface"><a href="#preface" class="headerlink" title="preface"></a>preface</h3><p>Launchpad is the quick application launcher available from the Mac OS X Dock and a keystroke that looks quite a bit like the Homescreen of iOS. By default, the Launchpad app grid usually displays icons in 7 rows and 5 columns of apps, but with a little adjustment from the command line of OS X you can switch and customize the Launchpad icon grid to any number of apps you’d like to see on the Mac.</p><p>This uses the command line and defaults strings to customize the Launchpad grid layout, if you’re not comfortable with Terminal you’re probably better off leaving this alone and enjoying the default Launchpad app icon grid. We’ll combine the commands into a single syntax string for ease of use first, but you can break them apart as we show you a bit further below.</p><h3 id="How-to-Adjust-the-Icon-Grid-Count-of-Launchpad-in-Mac-OS-X"><a href="#How-to-Adjust-the-Icon-Grid-Count-of-Launchpad-in-Mac-OS-X" class="headerlink" title="How to Adjust the Icon Grid Count of Launchpad in Mac OS X"></a>How to Adjust the Icon Grid Count of Launchpad in Mac OS X</h3><ul><li>Open the Terminal found in /Applications/Utilities/ and enter the following command syntax, replacing the X numbers for the appropriate columns and grid icon counts</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.dock springboard-columns -int X;defaults write com.apple.dock springboard-rows -int X;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</div></pre></td></tr></table></figure><blockquote><p>It is:</p><p>$ defaults write com.apple.dock springboard-columns -int X;defaults write com.apple.dock springboard-rows -int X;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</p></blockquote><p>For example, to set the Launchpad grid to 6×7 you’d use the following syntax:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.dock springboard-columns -int 7;defaults write com.apple.dock springboard-rows -int 6;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</div></pre></td></tr></table></figure><blockquote><p>It is:</p><p>$ defaults write com.apple.dock springboard-columns -int 7;defaults write com.apple.dock springboard-rows -int 6;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</p></blockquote><ul><li><p>Hit Return and wait for the Dock and Launchpad to refresh</p></li><li><p>Open Launchpad as usual to see the layout change</p></li></ul><blockquote><p>The settings change is immediate after the Dock refreshes:</p></blockquote><p><img src="http://ovefvi4g3.bkt.clouddn.com//2017-10-26-09.png" alt="2017-10-26-09"></p><h3 id="How-to-return-to-the-default-setting"><a href="#How-to-return-to-the-default-setting" class="headerlink" title="How to return to the default setting"></a>How to return to the default setting</h3><p>If you want to return to the default setting, just change the column and row counts back to what yours was originally. The default on my MacBook Pro Retina display is a 5 x 7 grid, but yours may be different depending on screen size and screen resolution.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.dock springboard-columns -int 7;defaults write com.apple.dock springboard-rows -int 5;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</div></pre></td></tr></table></figure><blockquote><p>It is:</p><p>$ defaults write com.apple.dock springboard-columns -int 7;defaults write com.apple.dock springboard-rows -int 5;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</p></blockquote><p><img src="http://ovefvi4g3.bkt.clouddn.com//2017-10-26-10.png" alt="2017-10-26-10"></p><h4 id="The-commands-for-customizing-the-Launchpad-layout-can-also-be-split-apart-if-desired-like-so"><a href="#The-commands-for-customizing-the-Launchpad-layout-can-also-be-split-apart-if-desired-like-so" class="headerlink" title="The commands for customizing the Launchpad layout can also be split apart if desired like so:"></a><strong>The commands for customizing the Launchpad layout can also be split apart if desired like so:</strong></h4><p><strong>Set the Launchpad Column Icon Count</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.dock springboard-columns -int 3</div></pre></td></tr></table></figure><p><strong>Set the Launchpad Row App Icon Count</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.dock springboard-rows -int 4</div></pre></td></tr></table></figure><p><strong>Reset Launchpad</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.dock ResetLaunchPad -bool TRUE;</div></pre></td></tr></table></figure><p><strong>Relaunch the Dock with killall</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ killall Dock</div></pre></td></tr></table></figure><h3 id="Credit"><a href="#Credit" class="headerlink" title="Credit:"></a>Credit:</h3><p>Original Source: <a href="http://osxdaily.com/2016/03/09/change-launchpad-icon-grid-layout-mac-os-x/" target="_blank" rel="external">OSXDaily</a></p>]]></content>
     
@@ -69,7 +121,7 @@
     <link href="http://yoursite.com/2017/10/26/MAC-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%B4%E7%90%86/"/>
     <id>http://yoursite.com/2017/10/26/MAC-常用快捷键整理/</id>
     <published>2017-10-26T00:14:21.000Z</published>
-    <updated>2017-10-26T00:47:56.554Z</updated>
+    <updated>2017-10-26T00:47:56.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote><p>苹果 Mac 系统常用快捷键有很多，但是很多童鞋对于这些 Mac 快捷键都不是很熟悉，今天小编为大家整理了一份 Mac 系统常用快捷键大全，大家快收藏起来吧!平时在使用 Mac 系统的时候可以提高不少工作效率哦!</p><p>本文转自 <a href="http://xclient.info/a/36952668-9577-8ec9-4412-111ae375fde7.html?_=905734269077aa284ba54b095a93d187" target="_blank" rel="external">Xclient.info</a>，转载请注明原出处</p></blockquote><h2 id="小普及"><a href="#小普及" class="headerlink" title="小普及"></a>小普及</h2><ul><li><p>Mac中主要有四个修饰键，分别是 Command，Control，Option 和 Shift。</p></li><li><p>这四个键分别有自己的图案，他们经常出现在Mac应用程序中的菜单栏里，方便你随时学习新的快捷键。</p></li></ul><blockquote><p>如下</p></blockquote><p><img src="http://ovefvi4g3.bkt.clouddn.com//2017-10-26-01.png" alt="2017-10-26-01"></p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="通用快捷键"><a href="#通用快捷键" class="headerlink" title="通用快捷键"></a>通用快捷键</h3><blockquote><p>Command 是 Mac 里最重要的修饰键，在大多数情况下相当于 Windows 下的 Ctrl，黑果通常是 Alt 键。</p></blockquote><ul><li>Command + Z 撤销。</li><li>Command + X 剪切。</li><li>Command + C 拷贝(Copy)。</li><li>Command + V 粘贴。</li><li>Command + A 全选(All)。</li><li>Command + S 保存(Save)。</li><li>Command + F 查找(Find)。</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com//2017-10-26-02.png" alt="2017-10-26-02"></p><h3 id="系统快捷键"><a href="#系统快捷键" class="headerlink" title="系统快捷键"></a>系统快捷键</h3><ul><li>Option 开机后立即按下，将显示启动管理器。</li><li>Command + R 开机后立即按下，可打开OS X 的恢复功能。</li><li>Command + Option + P + R 开机后立即按下，重置 NVRAM。有些时候电脑会出现些小问题，重置 NVRAM 是你除了重新启动，尝试修复的第一选择。</li><li>Command + Option + Control + Power 退出所有应用程序，允许你进行文稿储存，然后关机。</li><li>按住 Power 按钮 5 秒 强制 Mac 关机。</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com//2017-10-26-03.png" alt="2017-10-26-03"></p><h3 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h3><ul><li>Command + Shift + 3 截取全部屏幕到文件。</li><li>Command + Shift + Control + 3 截取全部屏幕到剪贴板。</li><li>Command + Shift + 4 截取所选屏幕区域到一个文件，或按空格键仅捕捉一个窗口。</li><li>Command + Shift + Control + 4 截取所选屏幕区域到剪贴板，或按空格键仅捕捉一个窗口。</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com//2017-10-26-04.png" alt="2017-10-26-04"></p><h3 id="文件管理器"><a href="#文件管理器" class="headerlink" title="文件管理器"></a>文件管理器</h3><ul><li>Command + Shift + N (New) 新建文件夹。</li><li>Command + Shift + G (Go) 调出窗口，可输入绝对路径直达文件夹。</li><li>return 这个其实不算快捷键，点击文件，按下可重命名文件。</li><li>Command + O 打开所选项。在 Mac 里打开文件不像 Windows 里直接按 Enter。</li><li>Command + Option + V 作用相当于Windows里的文件剪切。在其它位置上对文件复制(Command-C)，在目的位置按下这个快捷键，文件将被剪切到此位置。</li><li>Command + ↑ 打开包含当前文件夹的文件夹，相当于 Windows 里的“向上”。</li><li>Command + Delete 将文件移至废纸篓。</li><li>Command + Shift + Delete 清倒废纸篓。</li><li>Space 快速查看选中的文件，也就是预览功能。</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com//2017-10-26-05.png" alt="2017-10-26-05"></p><h3 id="切换"><a href="#切换" class="headerlink" title="切换"></a>切换</h3><ul><li>Command + Tab 在应用程序间切换。</li><li>Command + Shift + Tab 在应用程序间切换(反向)。</li><li>Command + ~ 在各应用中的窗口间切换。</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com//2017-10-26-06.png" alt="2017-10-26-06"></p><h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><ul><li>Command + L 光标直接跳至地址栏。</li><li>Control + Tab 转向下一个标签页。</li><li>Control + Shift + Tab 转向上一个标签页。</li><li>Command + ‘+’或’=’ 放大页面。</li><li>Command + ‘-‘ 缩小页面。</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com//2017-10-26-07.png" alt="2017-10-26-07"></p><h3 id="应用程序中"><a href="#应用程序中" class="headerlink" title="应用程序中"></a>应用程序中</h3><ul><li>Command + H 隐藏(Hide)当前正在运行的应用程序窗口。</li><li>Command + Option + H 隐藏(Hide)其他应用程序窗口。</li><li>Command + Q 退出(Quit)最前面的应用程序。</li><li>Command + Shift + Z 重做，也就是撤销的逆向操作。</li><li>Command + Tab 在打开的应用程序列表中转到下一个最近使用的应用程序，相当于 Windows 中(Alt+Tab)。</li><li>Command + Option + esc 打开“强制退出”窗口，如果有应用程序无响应，可在窗口列表中选择强制退出。</li></ul><h3 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h3><ul><li>Command + B 切换所选文字粗体(Bold)显示。</li><li>fn + Delete 相当于 PC 全尺寸键盘上的 Delete，也就是向后删除。</li><li>fn + ↑ 向上滚动一页(Page Up)。</li><li>fn + ↓ 向下滚动一页(Page Down)。</li><li>fn + ← 滚动至文稿开头(Home)。</li><li>fn + → 滚动至文稿末尾(End)。</li><li>Command + → 将光标移至当前行的行尾。</li><li>Command + ← 将光标移至当前行的行首。</li><li>Command + ↓ 将光标移至文稿末尾。</li><li>Command + ↑ 将光标移至文稿开头。</li><li>Option + → 将光标移至下一个单词的末尾。</li><li>Option + ← 将光标移至上一个单词的开头。</li><li>Control + A 移至行或段落的开头。</li></ul><h3 id="更多快捷键"><a href="#更多快捷键" class="headerlink" title="更多快捷键"></a>更多快捷键</h3><p>如果你还想学习更多快捷键，请点击这里查看<a href="https://support.apple.com/zh-cn/HT201236" target="_blank" rel="external">苹果官方的快捷键帮助文档</a>。</p>]]></content>
     
@@ -93,7 +145,7 @@
     <link href="http://yoursite.com/2017/10/15/Windows-10%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%9E%E6%8E%A5%E5%AE%BD%E5%B8%A6/"/>
     <id>http://yoursite.com/2017/10/15/Windows-10开机自动连接宽带/</id>
     <published>2017-10-15T13:59:01.000Z</published>
-    <updated>2017-10-15T14:19:23.511Z</updated>
+    <updated>2017-10-15T14:19:23.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>Windows 10 开机自动连接宽带</p></blockquote><h3 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h3><ul><li>首先右击我的电脑-&gt;管理-&gt;任务计划程序-&gt;任务计划程序</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-15-01.png" alt="2017-10-15-01"></p><ul><li>中间窗口空白处右键 -&gt; 创建基本任务</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-15-02.png" alt="2017-10-15-02"></p><ul><li>弹出的下列窗口名称处输入 PPPOE</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-15-03.png" alt="2017-10-15-03"></p><ul><li>继续选择 当用户登录时</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-15-04.png" alt="2017-10-15-04"></p><ul><li>选择 启动程序</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-15-05.png" alt="2017-10-15-05"></p><ul><li>在 程序或脚本 处按照以下格式输入你的本地宽带连接账号</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rasdial 宽带连接 宽带账号 宽带密码</div></pre></td></tr></table></figure><blockquote><p>比如我的则为</p><p>经网友反馈，发现图中“宽带连接”后少了一个空格，请大家自主添加</p></blockquote><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-15-06.png" alt="2017-10-15-06"></p><ul><li>一路下一步直到完成</li></ul>]]></content>
     
@@ -141,7 +193,7 @@
     <link href="http://yoursite.com/2017/10/07/Resolve%20short%20duration%20lag%20after%20wake%20and%20after%20login%20on%20haswell%20or%20broadwell/"/>
     <id>http://yoursite.com/2017/10/07/Resolve short duration lag after wake and after login on haswell or broadwell/</id>
     <published>2017-10-06T19:06:04.000Z</published>
-    <updated>2017-10-14T16:17:20.678Z</updated>
+    <updated>2017-10-14T16:17:20.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><blockquote><p>本文来自 <a href="https://www.tonymacx86.com/threads/readme-common-some-unsolved-problems-in-10-12-sierra.202316/page-94#post-1485104" target="_blank" rel="external">tonymacx86.com</a><br>原作者 <a href="https://www.tonymacx86.com/members/rehabman.429483/" target="_blank" rel="external">RehabMan</a><br>转载请注明 <a href="https://blog.iamzhl.top/2017/10/07/Resolve%20short%20duration%20lag%20after%20wake%20and%20after%20login%20on%20haswell%20or%20broadwell/" target="_blank" rel="external">原出处</a></p></blockquote><h3 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h3><blockquote><p>在 macOS Sierra 10.12.4 中，有不少 Haswell 和 Broadwell 机器出现了一种情况，就是在开机后的登录界面会有大约 20s 的无响应延迟状态，这种情况在之前是没有出现的，如果你的机器恰好是这两个平台的一种并且出现了这种情况，那么请注意，你会需要对你的 config.plist 做一些调整，如下: </p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Comment: 0x0a260006 9MB cursor bytes (vbo), 2 ports only (RehabMan)</div><div class="line">Find: &lt;0600260a 01030303 00000002 00003001 00006000&gt;</div><div class="line">Replace: &lt;0600260a 01030202 00000002 00003001 00009000&gt;</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Comment: 0x0a260006 disable 0204 port, change 0105 DP port to 0204 HDMI (RehabMan)</div><div class="line">Find: &lt;01050900 00040000 87000000 02040900 00040000 87000000&gt;</div><div class="line">Replace: &lt;02040900 00080000 87000000 FF000000 01000000 40000000&gt;</div></pre></td></tr></table></figure><p>将这两个 patch 打到 config.plist -&gt; Kernel and Kext Patches -&gt; KextsToPatch 处，保存即可，如果你的机器是 Haswell 的 HD4600 并且上面的 patch 不能解决这个问题，请尝试放 AzulPatcher4600.kext 到 /EFI/CLOVER/Kexts/Other ，此项目 GitHub 地址: </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/coderobe/AzulPatcher4600</div></pre></td></tr></table></figure>]]></content>
     
@@ -165,7 +217,7 @@
     <link href="http://yoursite.com/2017/10/04/Disable%20the%20discrete%20GPU%20in%20laptop/"/>
     <id>http://yoursite.com/2017/10/04/Disable the discrete GPU in laptop/</id>
     <published>2017-10-03T16:00:00.000Z</published>
-    <updated>2017-10-19T01:17:16.826Z</updated>
+    <updated>2017-10-19T01:17:16.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>Disable the discrete GPU to fix “Window Server Service only ran for 0 seconds” in High Sierra</p></blockquote><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>最近我根据 RehabMan 的 hotpatch 添加了一些路径做了一个屏蔽独显得 hotpatch 来屏蔽独显解决一些升级 10.13 后因为 nv_disable 参数失效而卡在 Window Server Service only ran for 0 seconds 的错误，发现有些成功，有些失败。于是把我琢磨到的一种方法分享给大家！希望该帖子能帮助到各位！</p><blockquote><p>感谢：</p></blockquote><ul><li><p>PCBETA (远景论坛) <a href="http://bbs.pcbeta.com/viewthread-1760319-1-5.html" target="_blank" rel="external">yearjinheng 版主的帖子</a></p></li><li><p>tonymacx86.com <a href="https://www.tonymacx86.com/threads/fix-window-server-service-only-ran-for-0-seconds-with-dual-gpu.233092/" target="_blank" rel="external">Rehabman 的帖子</a></p></li><li><p>转载请注明 <a href="https://blog.iamzhl.top/2017/10/04/%E5%B1%8F%E8%94%BD%E7%8B%AC%E6%98%BE/" target="_blank" rel="external">原贴地址</a></p></li></ul><blockquote><p>屏蔽独显方法不一：</p></blockquote><ul><li>第一种：直接在 DSDT SSDT 上做修改</li><li>第二种：手动制作一个适合自己机器的 hotpatch 屏蔽独显达到屏蔽独显的作用</li></ul><h2 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h2><blockquote><p>本帖主要采用第二种方法，大致思路如下：</p></blockquote><ul><li>提取 ACPI 原始表单</li><li>反编译这些文件</li><li>搜索一个名为 _OFF 的方法</li><li>检查文件的结果以确定 _OFF 的路径</li><li>修改 RehabMan 的 hotpatch 加入自己的路径</li></ul><h3 id="提取-ACPI-原始表单并提取-OFF-路径"><a href="#提取-ACPI-原始表单并提取-OFF-路径" class="headerlink" title="提取 ACPI 原始表单并提取 _OFF 路径"></a>提取 ACPI 原始表单并提取 _OFF 路径</h3><ul><li>打开电脑进入四叶草引导界面，按下 F4 或者 FN+F4 即可提取原始表单到 /EFI/CLOVER/ACPI/origin ，然后进入 MAC 将 origin 拷贝到桌面删掉除 SSDT DSDT 之外的所有 aml 文件，打开终端：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cd ~/Desktop/origin </div><div class="line">$ iasl -da -dl *.aml </div><div class="line">$ rm *.aml </div><div class="line">$ grep -l Method.*_OFF *.dsl</div></pre></td></tr></table></figure><ul><li>以我修改的一个机器为例，上一条命令得到的结果如下</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DSDT.dsl</div><div class="line">SSDT-7.dsl</div><div class="line">SSDT-8.dsl</div><div class="line">SSDT-9.dsl</div></pre></td></tr></table></figure><ul><li>依次打开这四个表单搜索 _OFF ，找到一个类似于下面这个函数：</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-04-01.png" alt="2017-10-04-01"></p><ul><li>图片左下角的路径就是我们最终所需要的: </li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_SB.PCI0.RP05.PEGP</div></pre></td></tr></table></figure><h3 id="修改-RehabMan-的-hotpatch-添加这个路径"><a href="#修改-RehabMan-的-hotpatch-添加这个路径" class="headerlink" title="修改 RehabMan 的 hotpatch 添加这个路径"></a>修改 RehabMan 的 hotpatch 添加这个路径</h3><ul><li>首先去 RehanMan 的 GitHub 下载 hotpatch 包</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/RehabMan/OS-X-Clover-Laptop-Config.git</div></pre></td></tr></table></figure><ul><li>我们只需要 SSDT-Disable_DGPU 这个文件，编译成 aml 文件</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ iasl SSDT-Disable_DGPU.dsl</div></pre></td></tr></table></figure><ul><li>打开编译后得到的 aml 文件</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-04-02.png" alt="2017-10-04-02"></p><ul><li>按照这个格式添加自己的路径</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-04-03.png" alt="2017-10-04-03"></p><ul><li>保存放到 /EFI/CLOVER/ACPI/patched </li></ul><h3 id="一个注意点"><a href="#一个注意点" class="headerlink" title="一个注意点"></a>一个注意点</h3><ul><li>如果在 Config.plist 中使用了 SortedOrder (通常 Clover 安装后默认没有设置)，需要在其内添加 SSDT-Disable_DGPU.aml 这一项。因为如果指定了 SortedOrder ，则 Clover 只加载其中指定的 SSDT 。如果没有出现在列表中,即使在 ACPI/patched 中，它也不会加载。</li></ul><h2 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h2>]]></content>
     
@@ -195,7 +247,7 @@
     <link href="http://yoursite.com/2017/09/27/Sync%20the%20codes%20between%20native%20and%20remote%20by%20git/"/>
     <id>http://yoursite.com/2017/09/27/Sync the codes between native and remote by git/</id>
     <published>2017-09-27T14:54:26.000Z</published>
-    <updated>2017-10-14T16:18:09.266Z</updated>
+    <updated>2017-10-14T16:18:09.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>Sync the codes between native and remote by git<br>转载请注明<a href="https://blog.iamzhl.top/2017/09/27/Sync%20the%20codes%20between%20native%20and%20remote%20by%20git/" target="_blank" rel="external">原出处</a></p></blockquote><h2 id="代码放到-git-仓库，然后本地修改同步至仓库，这在生活中是很常见的，下面是一个最简单的案例"><a href="#代码放到-git-仓库，然后本地修改同步至仓库，这在生活中是很常见的，下面是一个最简单的案例" class="headerlink" title="代码放到 git 仓库，然后本地修改同步至仓库，这在生活中是很常见的，下面是一个最简单的案例"></a>代码放到 git 仓库，然后本地修改同步至仓库，这在生活中是很常见的，下面是一个最简单的案例</h2><h3 id="远程仓库内容同步到本地仓库"><a href="#远程仓库内容同步到本地仓库" class="headerlink" title="远程仓库内容同步到本地仓库"></a>远程仓库内容同步到本地仓库</h3><blockquote><p>新建一个本地仓库用于后续工作</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cd ~/Desktop/</div><div class="line">$ mkdir test </div><div class="line">$ cd test</div></pre></td></tr></table></figure><blockquote><p>初始化这个本地目录</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure><blockquote><p>关联到远程仓库(以我新建的 Test 这个仓库为例)</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin https://github.com/athlonreg/Test.git</div></pre></td></tr></table></figure><blockquote><p>合并远程仓库的文件到本地</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git pull --rebase origin master</div></pre></td></tr></table></figure><hr><h3 id="修改本地仓库并推送到远程仓库"><a href="#修改本地仓库并推送到远程仓库" class="headerlink" title="修改本地仓库并推送到远程仓库"></a>修改本地仓库并推送到远程仓库</h3><blockquote><p>对本地仓库的一些修改</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir inner </div><div class="line">$ cd inner </div><div class="line">$ touch a.txt</div></pre></td></tr></table></figure><h4 id="现在将我新建的-inner-目录和-a-txt-文档推送到远程仓库"><a href="#现在将我新建的-inner-目录和-a-txt-文档推送到远程仓库" class="headerlink" title="现在将我新建的 inner 目录和 a.txt 文档推送到远程仓库"></a>现在将我新建的 inner 目录和 a.txt 文档推送到远程仓库</h4><blockquote><p>git add 命令添加新建目录与文件</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add .</div></pre></td></tr></table></figure><blockquote><p>git commit 提交修改，引号内为修改的概要</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m &quot;add some files&quot;</div></pre></td></tr></table></figure><blockquote><p>这里会提示配置用户身份(两条命令的引号内分别为你 github 账号绑定的邮箱和用户名)</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.email &quot;15563836030@163.com&quot; </div><div class="line">$ git config --global user.name &quot;athlonreg&quot;</div></pre></td></tr></table></figure><blockquote><p>这是继续提交修改就可以了</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m &quot;add some files&quot;</div></pre></td></tr></table></figure><blockquote><p>推送修改后的本地仓库到远程仓库</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure><blockquote><p>这时终端会让你输入你的 github 用户名和密码，根据提示输入完，就推送完成了，再去 github 网页端就发现仓库已经更新至和本地相同了。</p></blockquote><h3 id="Windows-用户安装好-git-可以利用-git-bash-来操作"><a href="#Windows-用户安装好-git-可以利用-git-bash-来操作" class="headerlink" title="Windows 用户安装好 git 可以利用 git bash 来操作"></a>Windows 用户安装好 git 可以利用 git bash 来操作</h3><blockquote><p>下面是我在 Windows 下利用 git bash 工具的一些截图，大家可以作参考</p></blockquote><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-27-2017-09-27-03.PNG" alt="2017-09-27"></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-27-2017-09-27-04.PNG" alt="2017-09-27-04"></p>]]></content>
     
@@ -259,6 +311,38 @@
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
       <category term="加密" scheme="http://yoursite.com/tags/%E5%8A%A0%E5%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>派遣敢死队问题</title>
+    <link href="http://yoursite.com/2017/09/18/%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2017/09/18/派遣敢死队问题/</id>
+    <published>2017-09-17T16:00:00.000Z</published>
+    <updated>2017-09-18T11:04:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>派遣敢死队问题</p></blockquote><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-03-1.png" alt="2017-09-18-03"></p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>1、首先将所有士兵直属上级的编号放于数组a；<br>2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；<br>3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 </p><h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt; </div><div class="line">#include &lt;math.h&gt; </div><div class="line"></div><div class="line">int main() &#123;</div><div class="line">int number;</div><div class="line">int count=0;</div><div class="line">int flag;</div><div class="line">scanf(&quot;%d&quot;,&amp;number);//派遣的人数 </div><div class="line"></div><div class="line">int i,j;</div><div class="line">int temp; </div><div class="line">int a[number],b[number];//a</div><div class="line">a[0]=0;//将军 </div><div class="line"></div><div class="line">for(i=1;i&lt;number;i++)&#123;</div><div class="line">scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 </div><div class="line">&#125;</div><div class="line"></div><div class="line">for(i=1;i&lt;pow(2,number);i++)&#123;</div><div class="line">temp=i;</div><div class="line">for(j=0;j&lt;number;j++)&#123;</div><div class="line">//遍历所有情况 </div><div class="line">b[j]=temp%2;</div><div class="line">temp/=2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">flag=1;</div><div class="line">for(j=1;j&lt;number;j++)&#123;</div><div class="line">//将军没有上级，不用判断</div><div class="line">if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123;</div><div class="line">//判断是否士兵和上级同时执行任务 </div><div class="line">//b[j]为编号为j+1的士兵去不去</div><div class="line">//b[a[j]-1]为编号为j+1的士兵的直接上级去不去</div><div class="line">flag=0;</div><div class="line">break;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">if(flag==1)</div><div class="line">count++;</div><div class="line">&#125;</div><div class="line"></div><div class="line">printf(&quot;%d\n&quot;,count);</div><div class="line">return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-04-1.png" alt="2017-09-18-04"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;派遣敢死队问题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://ove
+      
+    
+    </summary>
+    
+      <category term="Arithmetics" scheme="http://yoursite.com/categories/Arithmetics/"/>
+    
+    
+      <category term="C语言" scheme="http://yoursite.com/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="派遣敢死队" scheme="http://yoursite.com/tags/%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F/"/>
     
   </entry>
   
@@ -327,43 +411,11 @@
   </entry>
   
   <entry>
-    <title>派遣敢死队问题</title>
-    <link href="http://yoursite.com/2017/09/18/%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2017/09/18/派遣敢死队问题/</id>
-    <published>2017-09-17T16:00:00.000Z</published>
-    <updated>2017-09-18T11:04:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>派遣敢死队问题</p></blockquote><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-03-1.png" alt="2017-09-18-03"></p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>1、首先将所有士兵直属上级的编号放于数组a；<br>2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；<br>3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 </p><h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt; </div><div class="line">#include &lt;math.h&gt; </div><div class="line"></div><div class="line">int main() &#123;</div><div class="line">int number;</div><div class="line">int count=0;</div><div class="line">int flag;</div><div class="line">scanf(&quot;%d&quot;,&amp;number);//派遣的人数 </div><div class="line"></div><div class="line">int i,j;</div><div class="line">int temp; </div><div class="line">int a[number],b[number];//a</div><div class="line">a[0]=0;//将军 </div><div class="line"></div><div class="line">for(i=1;i&lt;number;i++)&#123;</div><div class="line">scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 </div><div class="line">&#125;</div><div class="line"></div><div class="line">for(i=1;i&lt;pow(2,number);i++)&#123;</div><div class="line">temp=i;</div><div class="line">for(j=0;j&lt;number;j++)&#123;</div><div class="line">//遍历所有情况 </div><div class="line">b[j]=temp%2;</div><div class="line">temp/=2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">flag=1;</div><div class="line">for(j=1;j&lt;number;j++)&#123;</div><div class="line">//将军没有上级，不用判断</div><div class="line">if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123;</div><div class="line">//判断是否士兵和上级同时执行任务 </div><div class="line">//b[j]为编号为j+1的士兵去不去</div><div class="line">//b[a[j]-1]为编号为j+1的士兵的直接上级去不去</div><div class="line">flag=0;</div><div class="line">break;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">if(flag==1)</div><div class="line">count++;</div><div class="line">&#125;</div><div class="line"></div><div class="line">printf(&quot;%d\n&quot;,count);</div><div class="line">return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-04-1.png" alt="2017-09-18-04"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;派遣敢死队问题&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://ove
-      
-    
-    </summary>
-    
-      <category term="Arithmetics" scheme="http://yoursite.com/categories/Arithmetics/"/>
-    
-    
-      <category term="C语言" scheme="http://yoursite.com/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="派遣敢死队" scheme="http://yoursite.com/tags/%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Allow apps downloaded from anywhere on macOS</title>
     <link href="http://yoursite.com/2017/09/15/Allow%20apps%20downloaded%20from%20anywhere%20on%20macOS/"/>
     <id>http://yoursite.com/2017/09/15/Allow apps downloaded from anywhere on macOS/</id>
     <published>2017-09-15T13:16:31.000Z</published>
-    <updated>2017-10-19T01:07:16.046Z</updated>
+    <updated>2017-10-19T01:07:16.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>macOS 打开任何来源</p></blockquote><p>许多朋友升级到 macOS Sierra 后在”安全性与隐私”中找不到”任何来源”选项，这里我教给大家怎么打开”任何来源”。</p><p>打开终端，输入以下代码回车：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo spctl --master-disable</div></pre></td></tr></table></figure><p>会提示输入密码，根据提示输入密码回车之后就可以在”安全性与隐私”中打开”任何来源”选项了</p>]]></content>
     
@@ -422,7 +474,7 @@
     <link href="http://yoursite.com/2017/09/13/Enable%20BCM94352z%20on%20your%20hacintosh/"/>
     <id>http://yoursite.com/2017/09/13/Enable BCM94352z on your hacintosh/</id>
     <published>2017-09-12T16:00:00.000Z</published>
-    <updated>2017-10-19T01:04:19.785Z</updated>
+    <updated>2017-10-19T01:04:19.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>黑苹果无线网卡 BCM94352z 驱动教程</p></blockquote><h1 id="添加仿冒-ID-启用蓝牙："><a href="#添加仿冒-ID-启用蓝牙：" class="headerlink" title="添加仿冒 ID 启用蓝牙："></a>添加仿冒 ID 启用蓝牙：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">config.plist -&gt; Device -&gt; FakeID -&gt; WIFI 中填写 0x43a014e4</div></pre></td></tr></table></figure><h1 id="在-Clover-的配置文件-config-plist-gt-Kernel-and-Kext-Patches-添加以下代码块"><a href="#在-Clover-的配置文件-config-plist-gt-Kernel-and-Kext-Patches-添加以下代码块" class="headerlink" title="在 Clover 的配置文件 config.plist -&gt; Kernel and Kext Patches 添加以下代码块"></a>在 Clover 的配置文件 config.plist -&gt; Kernel and Kext Patches 添加以下代码块</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;dict&gt;</div><div class="line">    &lt;key&gt;Comment&lt;/key&gt;</div><div class="line">    &lt;string&gt;10.11+-BT4LE-Handoff-Hotspot-lisai9093&lt;/string&gt;</div><div class="line">    &lt;key&gt;Disabled&lt;/key&gt;</div><div class="line">    &lt;false/&gt;</div><div class="line">    &lt;key&gt;Find&lt;/key&gt;</div><div class="line">    &lt;data&gt;</div><div class="line">    SIX/dEdIiwc=</div><div class="line">    &lt;/data&gt;</div><div class="line">    &lt;key&gt;Name&lt;/key&gt;</div><div class="line">    &lt;string&gt;IOBluetoothFamily&lt;/string&gt;</div><div class="line">    &lt;key&gt;Replace&lt;/key&gt;</div><div class="line">    &lt;data&gt;</div><div class="line">    Qb4PAAAA60Q=</div><div class="line">    &lt;/data&gt;</div><div class="line">&lt;/dict&gt;</div></pre></td></tr></table></figure><h1 id="下载并安装驱动"><a href="#下载并安装驱动" class="headerlink" title="下载并安装驱动"></a>下载并安装驱动</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">https://github.com/vit9696/Lilu/releases</div><div class="line">https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/   </div><div class="line">https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/</div><div class="line">https://sourceforge.net/projects/airportbrcmfixup/files/?source=navbar</div></pre></td></tr></table></figure><p>   将以下驱动拷贝到 CLOVER/EFI/CLOVER/kexts/Other 文件夹下(由于 AirportBrcmFixup.kext 是依赖于 Lilu 运行的插件，所以还需要确保该目录下必须存在 Lilu.kext)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">AirportBrcmFixup.kext </div><div class="line">FakePCIID.kext </div><div class="line">FakePCIID_Broadcom_WiFi.kext </div><div class="line">BrcmPatchRAM2.kext </div><div class="line">BrcmFirmwareData.kext</div><div class="line">Lilu.kext</div></pre></td></tr></table></figure><h1 id="重建缓存"><a href="#重建缓存" class="headerlink" title="重建缓存"></a>重建缓存</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo rm -rf /System/Library/Caches/com.apple.kext.caches/Startup/kernelcache</div><div class="line">sudo rm -rf /System/Library/PrelinkedKernels/prelinkedkernel</div><div class="line">sudo touch /System/Library/Extensions/ &amp;&amp; sudo kextcache -u /</div></pre></td></tr></table></figure><h1 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h1>]]></content>
     
@@ -498,72 +550,6 @@
       <category term="网络编程" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
       <category term="客户机与服务器" scheme="http://yoursite.com/tags/%E5%AE%A2%E6%88%B7%E6%9C%BA%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>加快黑苹果开机速度的一种方法</title>
-    <link href="http://yoursite.com/2017/09/05/%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2017/09/05/加快黑苹果开机速度的一种方法/</id>
-    <published>2017-09-04T16:00:00.000Z</published>
-    <updated>2017-09-15T13:35:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>加快黑苹果开机速度的一种方法</p></blockquote><h1 id="知识普及"><a href="#知识普及" class="headerlink" title="知识普及"></a>知识普及</h1><p>有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。</p><p>这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。</p><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin </p><h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><h2 id="提取-Reset-Address-和-Reset-Value-值"><a href="#提取-Reset-Address-和-Reset-Value-值" class="headerlink" title="提取 Reset Address 和 Reset Value 值"></a>提取 Reset Address 和 Reset Value 值</h2><p>用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处：</p><p>  <img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-07-1.png" alt="2017-09-05-07"></p><h2 id="设定Reset-Address-和-Reset-Value-值"><a href="#设定Reset-Address-和-Reset-Value-值" class="headerlink" title="设定Reset Address 和 Reset Value 值"></a>设定Reset Address 和 Reset Value 值</h2><p>提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值：</p><p>  <img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-08-1.png" alt="2017-09-05-08"></p><p>保存重启就可以了.</p><h1 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h1>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;加快黑苹果开机速度的一种方法&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;知识普及&quot;&gt;&lt;a href=&quot;#知识普及&quot; class=&quot;headerlink&quot; title=&quot;知识普及&quot;&gt;&lt;/a&gt;知识普及&lt;/h1&gt;&lt;p&gt;有的黑苹果重启速度特别慢（
-      
-    
-    </summary>
-    
-      <category term="Hacintosh" scheme="http://yoursite.com/categories/Hacintosh/"/>
-    
-    
-      <category term="黑苹果" scheme="http://yoursite.com/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
-    
-      <category term="Hacintosh" scheme="http://yoursite.com/tags/Hacintosh/"/>
-    
-      <category term="开机速度" scheme="http://yoursite.com/tags/%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用 AppleIntelInfo 查看变频</title>
-    <link href="http://yoursite.com/2017/09/05/%E5%88%A9%E7%94%A8%20AppleIntelInfo%20%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%A2%91/"/>
-    <id>http://yoursite.com/2017/09/05/利用 AppleIntelInfo 查看变频/</id>
-    <published>2017-09-04T16:00:00.000Z</published>
-    <updated>2017-09-15T14:15:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频</p></blockquote><h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><h2 id="首先下载-AppleIntelInfo-源码编译，打开终端，输入："><a href="#首先下载-AppleIntelInfo-源码编译，打开终端，输入：" class="headerlink" title="首先下载 AppleIntelInfo 源码编译，打开终端，输入："></a>首先下载 AppleIntelInfo 源码编译，打开终端，输入：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd ~/Desktop</div></pre></td></tr></table></figure><p>回车继续敲：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/athlonreg/AppleIntelInfo.git</div></pre></td></tr></table></figure><p>回车后就把 AppleIntelInfo 源码下载在桌面了</p><p>然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/</div></pre></td></tr></table></figure><p>将编译后的 AppleIntelInfo.kext 放到桌面</p><h2 id="然后开始利用命令行看变频数据"><a href="#然后开始利用命令行看变频数据" class="headerlink" title="然后开始利用命令行看变频数据"></a>然后开始利用命令行看变频数据</h2><p>打开终端，输入：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd ~/Desktop</div></pre></td></tr></table></figure><p>回车后继续敲</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R root:wheel AppleIntelInfo.kext</div></pre></td></tr></table></figure><p>回车会提示输入密码，输入之后回车继续敲：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo kextutil AppleIntelInfo.kext</div></pre></td></tr></table></figure><p>再回车，接着敲：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cat /tmp/AppleIntelInfo.dat</div></pre></td></tr></table></figure><p>回车之后变频数据就出来了，例如我的机器：</p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-01-1.png" alt="2017-09-05-01"></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-02-1.png" alt="2017-09-05-02"></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-03-1.png" alt="2017-09-05-03"></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-04-1.png" alt="2017-09-05-04"></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-05-1.png" alt="2017-09-05-05"></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-06-1.png" alt="2017-09-05-06"></p><p>一般我们只看最后一行就可以了哦</p><p>比如我的机器就是 800、 1000、 …… 、 2700 ，单位是MHz，正好符合我的机器，最低 800MHz ，最高2.4GHz，可超频到2.7GHz。</p><h1 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h1><p>行胜于言，快去试试你的机器是不是变频正常吧！！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;开工&quot;&gt;&lt;a href=&quot;#开工&quot; class=&quot;he
-      
-    
-    </summary>
-    
-      <category term="Hacintosh" scheme="http://yoursite.com/categories/Hacintosh/"/>
-    
-    
-      <category term="黑苹果" scheme="http://yoursite.com/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
-    
-      <category term="Hacintosh" scheme="http://yoursite.com/tags/Hacintosh/"/>
-    
-      <category term="AppleIntelInfo" scheme="http://yoursite.com/tags/AppleIntelInfo/"/>
-    
-      <category term="变频" scheme="http://yoursite.com/tags/%E5%8F%98%E9%A2%91/"/>
     
   </entry>
   
