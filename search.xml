@@ -3,13 +3,13 @@
   <entry>
     <title><![CDATA[AppleALC-ALCPlugFix]]></title>
     <url>%2F2017%2F11%2F06%2FAppleALC-ALCPlugFix%2F</url>
-    <content type="text"><![CDATA[前言 在vit9696推出AppleALC后，经过越来越多人仿冒声卡得到的数据的提交整理，AppleALC的数据越来越集中，也使声卡驱动变得越来越简单。 本文提供使用AppleALC驱动声卡的思路以及常见错误和驱动后的问题进行修复。 知识小普及 首先要知道声卡仿冒的原理 前期准备 需要下载Xcode 在AppleStore下载 下载AppleALC 通过终端执行下面的命令，会下载到你的用户根目录 1$ git clone https://github.com/vit9696/AppleALC 下载Lilu 在下面的网址下载DEBUG和RELEASE 1https://github.com/vit9696/Lilu/releases 提取Codec 这一步需要用到Linux环境，首先下载Ubuntu镜像，我个人提供一个 1链接:http://pan.baidu.com/s/1i47I0jN 密码:de4v 当然也可以去官网下载，下载好镜像之后，将U盘格式化为Fat32，然后将镜像解压到U盘，重启以U盘启动，选择试用进入Ubuntu系统界面，打开终端输入 1$ cat /proc/asound/card0/codec#0 &gt; ~/Desktop/Codec.txt 执行完后会将Codec.txt提取到桌面，将其保存到U盘 PS: 一般来说提取的Codec会有10k左右大小，如果大小不够，很有可能提取错误，可以尝试以下命令 1$ cat /proc/asound/card0/codec#1 &gt; ~/Desktop/Codec.txt 或者 1$ cat /proc/asound/card0/codec#2 &gt; ~/Desktop/Codec.txt 或者 1$ cat /proc/asound/card1/codec#0 &gt; ~/Desktop/Codec.txt Codec.txt的数据整理 记录Address和Vendor Id值 Codec.txt开头部分 提取节点信息 搜索Pin Default记录Node和节点描述，以我的为例 PS: N/A节点无效无需整理，如下面的不需要整理 记录HP Out at Ext Left节点的tag和enable值 PS: Unsolicited Response的设定是为了解决耳机和外放切换的问题。需设定 HP Out at Ext 所在的节点，并且节点信息中有Unsolicited: tag=xx, enabled=1 这一行。设定命令为Address+NodeID+708+&lt;设定值&gt; 设定值是8位的一个二进制数，记作a7 a6 a5 a4 a3 a2 a1 a0，推算出此二进制数之后，四四拆分转换为2位的十进制数加1即为此设定值 a7表示enabled。a6=0，没具体应用，不用管。a5~a0，存放tag。** 记录Mic at Ext节点的Pin-ctls值 PS: Pin Control Widget的设定是为了解决耳机杂音的。 需要设定的是 Mic at Ext 所在的节点，设定的值可以从codec dump中读取。 设定命令是 Address+NodeID+707+Pin-ctls值。 整理完后，会得到如下所示的数据集合 PS: 常见的节点设备描述如下： Mic at Ext–线路输入(耳麦) Mic at In–内建输入 HP Out–耳机扬声器 Speaker–内建扬声器(外放) 至此，Codec数据的整理到此结束 AppleALC中数据的筛选 依次打开下载的AppleALC源码里面/AppleALC/Resources/PinConfigs.kext/Contents下的Info.plist 搜索之前记录的CodecID 记录搜索到的所有的ID中的configdata，如下整理 每一行的每一串的第一个字符代表Address值 每一行的第三串倒数第二个字符代表这个节点的设备描述，具体对应关系如下 根据上图设备对应关系和Address值排除掉无效的ID数据 开工 将下载的Debug的Lilu.kext放进 AppleALC 源码根目录； 删除/AppleALC/Resources中多余文件夹，只留下你的声卡型号文件夹、Pinconfigs.kext以及四个plist文件，以cx20751这个声卡为例剩下如下文件 然后打开计算器，显示为编程器 打开你整理的Codec，找到Vendor Id，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开/AppleALC/Resources/CX20751_2/Info.plist(此处的CX20751_2需要换成你的声卡型号)，把codecid换成刚才拷贝的十进制数 保存退出，右键PinConfigs.kext显示包内容，打开里面的Info.plist，搜索刚才拷贝的十进制数，记下LayoutID数据，有几个记几个，都记下来，然后将IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault中的其他型号删除，(为避免出错，这里的删除可以不操作，删除只是为了精简做出来的AppleALC)，保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的export next where填上桌面，点export就生成AppleALC在桌面上了，一层一层打开它，将其中的AppleALC.kext放到clover驱动目录，注意之前下载的Release的Lilu也要放到clover驱动目录，最后不要忘了在config注入LayoutID： 如图Audio处写上刚才记下的LayoutID，如果重启后你的声卡不能驱动，或者已驱动但是没有输入或输出，这时很有可能是该LayoutID对应的configdata数据有错误，这时就挨个尝试刚才记录的所有ID。 至此， AppleALC 驱动声卡部分结束。 关于解决耳机与内建输入的切换 如果驱动工作完成后，声卡可以工作，但不能自动切换，请接着往下看 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的ALCPlugFix中的main.m下拉到最下方，注意这一部分： 下载had-tools,将codec复制到had-tools目录，打开终端，cd到此目录，输入 1./widget_dump.sh 回车 找到nid = 0x19和nid = 0x1a，这里我的19为 line in，1a为mic in，记录下最后两位，我的是04和24就这么改 PS: 这里需要设定的节点数据分别是line in和mic in，其他节点无效，思想就是捕获系统在不插耳机时由于其输入输出正常的这两个节点的输出值，然后就可以知道插耳机正常应该输出的值，进而利用AppleALC守护进程动态守护。如果出现插耳机正常，不插无效的情况，请按照这个思路反过来操作，思想都是一样的。其中图上的高亮处最上面一部分是默认情况，中间是耳机移除，最下面是耳机插入，请结合自身使用情况合理设定 保存退出，双击按照AppleALC的编译方法编译这个 然后将生成的ALCPlugFix替换alc_fix中的ALCPlugFix，终端cd到alc_fix目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh 就可以发现之前的19和1a后面的数据反过来了 其实这里的数据就是侦测耳机插拔状态，向系统发送相关指令来做到切换正常 需要设定的就是两个节点Mic at Ext(有时是Line In)和Mic at In Mic at Ext(有时是Line In)表示线路输入，即耳麦，多为0x19节点 Mic at In为内建输入 PS: 如果widget_dump.sh脚本得不到想要的结果，请在点击这里下载CodecCommander，将Release里面的hda-verb利用命令拷贝到/usr/bin/ 如果不行重启一次应该就好了。 至此，解决耳机与内建输入的切换部分结束。 关于唤醒无声 可以先尝试下面两个驱动 CodecCommanderEAPDFix 提取密码:w4yr PS: 关于CodecCommander，可以点击这里参考RehabMan的说明 另外四叶草助手中也提供了相关选项(ResetHDA和dartweak)，但是本人没有亲自尝试，大家可以自行尝试这些组合： 本人对唤醒无声研究不多，至此，解决耳机与内建输入的切换部分结束，欢迎补充。 关于万能声卡 很多人不喜欢万能声卡，说万能有杂音(但是有一些人的AppleALC也可能有杂音)，甚至说用万能声卡是不完美的表现，其实我认为不然，万能是一种很好的渠道，有不少人用万能声卡，他们的切换、输入甚至HDMI都能很好的输出，而且杂音也是可以减小的。 这里我给出官方的项目地址，有兴趣的可以试一下 https://sourceforge.net/projects/voodoohda/ PS: 需要注意的是有人用的是VoodooHDA.pkg安装的，这种情况需要将AppleHDADisabler.kext放到Clover的驱动目录来禁用AppleHDA，否则很有可能会造成KP五果，所以我建议直接用kext，让Clover注入器注入即可。 Creditvit9696goodwinRehabManDolnordalianskyVoodooHDA 写在最后 码字不易，如果觉得文章不错，欢迎打赏，你们的支持是我最大的动力。]]></content>
+    <content type="text"><![CDATA[前言 在vit9696推出AppleALC后，经过越来越多人仿冒声卡得到的数据的提交整理，AppleALC的数据越来越集中，也使声卡驱动变得越来越简单。 本文提供使用AppleALC驱动声卡的思路以及常见错误和驱动后的问题进行修复。 知识小普及 首先要知道声卡仿冒的原理 前期准备 需要下载Xcode 在AppleStore下载 下载AppleALC 通过终端执行下面的命令，会下载到你的用户根目录 1$ git clone https://github.com/vit9696/AppleALC 下载Lilu 在下面的网址下载DEBUG和RELEASE 1https://github.com/vit9696/Lilu/releases 提取Codec 这一步需要用到Linux环境，首先下载Ubuntu镜像，我个人提供一个 1链接:http://pan.baidu.com/s/1i47I0jN 密码:de4v 当然也可以去官网下载，下载好镜像之后，将U盘格式化为Fat32，然后将镜像解压到U盘，重启以U盘启动，选择试用进入Ubuntu系统界面，打开终端输入 1$ cat /proc/asound/card0/codec#0 &gt; ~/Desktop/Codec.txt 执行完后会将Codec.txt提取到桌面，将其保存到U盘 PS: 一般来说提取的Codec会有10k左右大小，如果大小不够，很有可能提取错误，可以尝试以下命令 1$ cat /proc/asound/card0/codec#1 &gt; ~/Desktop/Codec.txt 或者 1$ cat /proc/asound/card0/codec#2 &gt; ~/Desktop/Codec.txt 或者 1$ cat /proc/asound/card1/codec#0 &gt; ~/Desktop/Codec.txt Codec.txt的数据整理 记录Address和Vendor Id值 Codec.txt开头部分 提取节点信息 搜索Pin Default记录Node和节点描述，以我的为例 PS: N/A节点无效无需整理，如下面的不需要整理 记录HP Out at Ext Left节点的tag和enable值 PS: Unsolicited Response的设定是为了解决耳机和外放切换的问题。需设定 HP Out at Ext 所在的节点，并且节点信息中有Unsolicited: tag=xx, enabled=1 这一行。设定命令为Address+NodeID+708+&lt;设定值&gt; 设定值是8位的一个二进制数，记作a7 a6 a5 a4 a3 a2 a1 a0，推算出此二进制数之后，四四拆分转换为2位的十进制数加1即为此设定值 a7表示enabled。a6=0，没具体应用，不用管。a5~a0，存放tag。** 记录Mic at Ext节点的Pin-ctls值 PS: Pin Control Widget的设定是为了解决耳机杂音的。 需要设定的是 Mic at Ext 所在的节点，设定的值可以从codec dump中读取。 设定命令是 Address+NodeID+707+Pin-ctls值。 整理完后，会得到如下所示的数据集合 PS: 常见的节点设备描述如下： Mic at Ext–线路输入(耳麦) Mic at In–内建输入 HP Out–耳机扬声器 Speaker–内建扬声器(外放) 至此，Codec数据的整理到此结束 AppleALC中数据的筛选 依次打开下载的AppleALC源码里面/AppleALC/Resources/PinConfigs.kext/Contents下的Info.plist 搜索之前记录的CodecID 记录搜索到的所有的ID中的configdata，如下整理 每一行的每一串的第一个字符代表Address值 每一行的第三串倒数第二个字符代表这个节点的设备描述，具体对应关系如下 根据上图设备对应关系和Address值排除掉无效的ID数据 开工 将下载的Debug的Lilu.kext放进 AppleALC 源码根目录； 删除/AppleALC/Resources中多余文件夹，只留下你的声卡型号文件夹、Pinconfigs.kext以及四个plist文件，以cx20751这个声卡为例剩下如下文件 然后打开计算器，显示为编程器 打开你整理的Codec，找到Vendor Id，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开/AppleALC/Resources/CX20751_2/Info.plist(此处的CX20751_2需要换成你的声卡型号)，把codecid换成刚才拷贝的十进制数 保存退出，右键PinConfigs.kext显示包内容，打开里面的Info.plist，搜索刚才拷贝的十进制数，记下LayoutID数据，有几个记几个，都记下来，然后将IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault中的其他型号删除，(为避免出错，这里的删除可以不操作，删除只是为了精简做出来的AppleALC)，保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的export next where填上桌面，点export就生成AppleALC在桌面上了，一层一层打开它，将其中的AppleALC.kext放到clover驱动目录，注意之前下载的Release的Lilu也要放到clover驱动目录，最后不要忘了在config注入LayoutID： 如图Audio处写上刚才记下的LayoutID，如果重启后你的声卡不能驱动，或者已驱动但是没有输入或输出，这时很有可能是该LayoutID对应的configdata数据有错误，这时就挨个尝试刚才记录的所有ID。 至此， AppleALC 驱动声卡部分结束。 关于解决耳机与内建输入的切换 如果驱动工作完成后，声卡可以工作，但不能自动切换，请接着往下看 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的ALCPlugFix中的main.m下拉到最下方，注意这一部分： 下载had-tools,将codec复制到had-tools目录，打开终端，cd到此目录，输入 1./widget_dump.sh 回车 找到nid = 0x19和nid = 0x1a，这里我的19为 line in，1a为mic in，记录下最后两位，我的是04和24就这么改 PS: 这里需要设定的节点数据分别是line in和mic in，其他节点无效，思想就是捕获系统在不插耳机时由于其输入输出正常的这两个节点的输出值，然后就可以知道插耳机正常应该输出的值，进而利用AppleALC守护进程动态守护。如果出现插耳机正常，不插无效的情况，请按照这个思路反过来操作，思想都是一样的。其中图上的高亮处最上面一部分是默认情况，中间是耳机移除，最下面是耳机插入，请结合自身使用情况合理设定 保存退出，双击按照AppleALC的编译方法编译这个 然后将生成的ALCPlugFix替换alc_fix中的ALCPlugFix，终端cd到alc_fix目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh 就可以发现之前的19和1a后面的数据反过来了 其实这里的数据就是侦测耳机插拔状态，向系统发送相关指令来做到切换正常 需要设定的就是两个节点Mic at Ext(有时是Line In)和Mic at In Mic at Ext(有时是Line In)表示线路输入，即耳麦，多为0x19节点 Mic at In为内建输入 PS: 如果widget_dump.sh脚本得不到想要的结果，请在点击这里下载CodecCommander，将Release里面的hda-verb利用命令拷贝到/usr/bin/ 如果不行重启一次应该就好了。 至此，解决耳机与内建输入的切换部分结束。 关于唤醒无声 可以先尝试下面两个驱动 CodecCommanderEAPDFix 提取密码:w4yr PS: 关于CodecCommander，可以点击这里参考RehabMan的说明 另外四叶草助手中也提供了相关选项(ResetHDA和dartweak)，但是本人没有亲自尝试，大家可以自行尝试这些组合： 本人对唤醒无声研究不多，至此，解决耳机与内建输入的切换部分结束，欢迎补充。 关于万能声卡 很多人不喜欢万能声卡，说万能有杂音(但是有一些人的AppleALC也可能有杂音)，甚至说用万能声卡是不完美的表现，其实我认为不然，万能是一种很好的渠道，有不少人用万能声卡，他们的切换、输入甚至HDMI都能很好的输出，而且杂音也是可以减小的。 这里我给出官方的项目地址，有兴趣的可以试一下 https://sourceforge.net/projects/voodoohda/ PS: 需要注意的是有人用的是VoodooHDA.pkg安装的，这种情况需要将AppleHDADisabler.kext放到Clover的驱动目录来禁用AppleHDA，否则很有可能会造成KP五果，所以我建议直接用kext，让Clover注入器注入即可。 关于完整仿冒前言 声卡型号众多，虽然AppleALC让数据更集中了，但还是有些声卡不在目前的AppleALC支持的列表里面，对于这种情况来说，我们只能完整制作仿冒声卡。 接下来以我的CX20751为例简述仿冒声卡制作过程。 完整制作仿冒声卡思路 整理Codec，提取所有有效Node值 将整理出的所有Node的Pin Default值进行转换得出需要的值 根据某些规律或者规则得出ConfigData PathMap的获取和整理 知识普及 每一个Node的ConfigData值都是由四个八位的字符串组成，这四个串的最后两位分别是一个八位的设定值的1 2、3 4、5 6、7 8位，这四个八位的字符串的设定规则分别是是Address+Node+71C+1 2位设定值、Address+Node+71D+3 4位设定值、Address+Node+71E+5 6位设定值、Address+Node+71F+7 8位设定值。 这里需要注意，有两个不同的八位被提及，其中一个八位(这八位每一位都有特定的含义，也是仿冒成功最关键的地方，在后面我称之为设定值)是被均分四份从而放到ConfigData的各个节点所对应的四个串的七八位 而这个八位的设定值每一位的含义如下： 第一位：代表节点设定值(Address)，一般不需要改变； 第二位：同组装置的优先顺序，一般为 0~3，不可出现字母； 第三位：插口颜色，笔记本忽略，不作处理； 第四位：插孔侦测，0为开启(外设基本为0)，1为关闭(内建基本为1)； 第五位：装置类型，笔记本忽略； 第六位：连接类型，圆口为1，内接为0，基本可以忽略； 第七位：代表是否有插孔及插孔位置0=外接，9=内建，耳机扬声器和耳麦均为外接； 第八位：代表插孔所在位置，0=内建，1=外接； 开始整理Codec，提取所有有效Node值 与上面利用AppleALC的思路不同，这里我们需要提取的数据有设备描述、Node值和Pin Default值。具体提取方法上文已有说明，这里不再赘述，下面是我的CX20751提取的数据： 将整理出的所有Node的Pin Default值进行转换修正得出需要的设定值 对于Pin Default值，我们的处理方法为八位四分、二二逆置，例如0x16节点，首先得出40 10 21 03，同理得出： 12340x16: 40 10 21 030x17: 10 01 17 900x19: 30 10 A1 030x1a: 20 01 A7 95 根据八位设定值的规则描述，对上面得出的设定值进行修正。 拿0x16为例，这是一个耳机扬声器节点。 第1、2、3位没什么好说的保持不变；第4位插孔侦测，耳机设备属于外接设备，所以应当是0，这里是0不用动；第5位装置类型笔记本忽略；第6位连接类型，插口为圆口，所以是1，这里是1，保持不变；第7位代表是否有插孔，耳机是外接设备，所以是0，这里是0，保持不变；第8位插孔所在位置，耳机是外接设备，所以是1； 其他Node节点也是如此设定； 修正后的数据如下： 12340x16: 40 10 21 010x17: 10 01 17 900x19: 30 10 81 010x1a: 20 01 A0 90 根据规律或者规则得出ConfigData 根据上面得出的设定值，我可以得出以下ConfigData值： 123401671C40 01671D10 01671E21 01671F0101771C10 01771D01 01771E17 01771F9001971C30 01971D10 01971E81 01971F0101a71C20 01a71D01 01a71EA0 01a71F90 PathMap的获取和整理Creditvit9696goodwinRehabManDolnordalianskyVoodooHDA 写在最后 码字不易，如果觉得文章不错，欢迎打赏，你们的支持是我最大的动力。]]></content>
       <categories>
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
       </tags>
   </entry>
   <entry>
@@ -46,8 +46,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>NTFS</tag>
       </tags>
   </entry>
@@ -118,8 +118,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>Window Server Service only ran for 0 seconds</tag>
         <tag>Disable DGPU</tag>
         <tag>屏蔽独显</tag>
@@ -162,19 +162,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[价牌翻转问题]]></title>
-    <url>%2F2017%2F09%2F18%2F%E4%BB%B7%E7%89%8C%E7%BF%BB%E8%BD%AC%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[价牌翻转问题 问题描述 思路1、已知是一个四位数，那么共有1001-9999种情况；2、一个数颠倒之后，数字顺序颠倒并且每个数字颠倒，例如1269颠倒之后就是6921；3、0不能是第一位也不能是最后一位。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;math.h&gt;int array[4]=&#123;0&#125;;int inverse(int a)&#123;//求一个数颠倒之后的结果 int b=0; int arr[4]=&#123;0&#125;; for(int i=0;i&lt;4;i++)&#123; arr[i]=(int)(a/pow(10,3-i))%10; if(arr[i]==9) b+=6*pow(10,i); else if(arr[i]==6) b+=9*pow(10,i); else b+=arr[i]*pow(10,i); &#125; return b;&#125;int main()&#123; int i,j; int k=0,l=0; int temp; int flag; int up[50]=&#123;0&#125;,down[50]=&#123;0&#125;;//分别存放赚钱和赔钱的价牌 for(i=1001;i&lt;10000;i++)&#123; temp=i; flag=1; for(j=0;j&lt;4;j++)&#123; array[j]=(int)(temp/pow(10,3-j))%10; if(array[j]==3||array[j]==4||array[j]==7)&#123;//分割数字排除不能翻转的数字 flag=0; break; &#125; &#125; if(flag)&#123; if(array[0]==0 || array[3]==0)//0不能位于第一位和最后一位 continue; if(inverse(i)-i&gt;800&amp;&amp;inverse(i)-i&lt;900) up[k++]=i; if(i-inverse(i)&gt;200&amp;&amp;i-inverse(i)&lt;300) down[l++]=i; &#125; &#125; for(i=0;i&lt;50;i++)&#123;//依次输出赚钱的原价，颠倒价、赚的钱、赔钱的原价、颠倒价、赔的钱 for(j=0;j&lt;50;j++)&#123; if((inverse(up[i])-up[i])-(down[j]-inverse(down[j]))==558)&#123; printf(&quot;%d\t%d\t%d\t&quot;,up[i],inverse(up[i]),inverse(up[i])-up[i]); printf(&quot;%d\t%d\t%d\n&quot;,down[j],inverse(down[j]),down[j]-inverse(down[j])); &#125; &#125; &#125; return 0;&#125; 运行结果：]]></content>
-      <categories>
-        <category>Arithmetics</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-        <tag>算法</tag>
-        <tag>价牌翻转</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[派遣敢死队问题]]></title>
     <url>%2F2017%2F09%2F18%2F%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[派遣敢死队问题 问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
@@ -185,6 +172,19 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>派遣敢死队</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[价牌翻转问题]]></title>
+    <url>%2F2017%2F09%2F18%2F%E4%BB%B7%E7%89%8C%E7%BF%BB%E8%BD%AC%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[价牌翻转问题 问题描述 思路1、已知是一个四位数，那么共有1001-9999种情况；2、一个数颠倒之后，数字顺序颠倒并且每个数字颠倒，例如1269颠倒之后就是6921；3、0不能是第一位也不能是最后一位。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;math.h&gt;int array[4]=&#123;0&#125;;int inverse(int a)&#123;//求一个数颠倒之后的结果 int b=0; int arr[4]=&#123;0&#125;; for(int i=0;i&lt;4;i++)&#123; arr[i]=(int)(a/pow(10,3-i))%10; if(arr[i]==9) b+=6*pow(10,i); else if(arr[i]==6) b+=9*pow(10,i); else b+=arr[i]*pow(10,i); &#125; return b;&#125;int main()&#123; int i,j; int k=0,l=0; int temp; int flag; int up[50]=&#123;0&#125;,down[50]=&#123;0&#125;;//分别存放赚钱和赔钱的价牌 for(i=1001;i&lt;10000;i++)&#123; temp=i; flag=1; for(j=0;j&lt;4;j++)&#123; array[j]=(int)(temp/pow(10,3-j))%10; if(array[j]==3||array[j]==4||array[j]==7)&#123;//分割数字排除不能翻转的数字 flag=0; break; &#125; &#125; if(flag)&#123; if(array[0]==0 || array[3]==0)//0不能位于第一位和最后一位 continue; if(inverse(i)-i&gt;800&amp;&amp;inverse(i)-i&lt;900) up[k++]=i; if(i-inverse(i)&gt;200&amp;&amp;i-inverse(i)&lt;300) down[l++]=i; &#125; &#125; for(i=0;i&lt;50;i++)&#123;//依次输出赚钱的原价，颠倒价、赚的钱、赔钱的原价、颠倒价、赔的钱 for(j=0;j&lt;50;j++)&#123; if((inverse(up[i])-up[i])-(down[j]-inverse(down[j]))==558)&#123; printf(&quot;%d\t%d\t%d\t&quot;,up[i],inverse(up[i]),inverse(up[i])-up[i]); printf(&quot;%d\t%d\t%d\n&quot;,down[j],inverse(down[j]),down[j]-inverse(down[j])); &#125; &#125; &#125; return 0;&#125; 运行结果：]]></content>
+      <categories>
+        <category>Arithmetics</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>价牌翻转</tag>
       </tags>
   </entry>
   <entry>
@@ -208,9 +208,9 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
+        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
         <tag>终端</tag>
-        <tag>Hacintosh</tag>
         <tag>任何来源</tag>
       </tags>
   </entry>
@@ -235,8 +235,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>BCM94352z</tag>
       </tags>
   </entry>
@@ -274,8 +274,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>AppleIntelInfo</tag>
         <tag>变频</tag>
       </tags>
@@ -288,22 +288,9 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>开机速度</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[金币阵列问题]]></title>
-    <url>%2F2017%2F09%2F03%2F%E9%87%91%E5%B8%81%E9%98%B5%E5%88%97%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[金币阵列问题 问题描述有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 思路本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];nt number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
-      <categories>
-        <category>Arithmetics</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-        <tag>算法</tag>
-        <tag>金币阵列</tag>
       </tags>
   </entry>
   <entry>
@@ -317,6 +304,19 @@
         <tag>终端</tag>
         <tag>Mac</tag>
         <tag>Xcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[金币阵列问题]]></title>
+    <url>%2F2017%2F09%2F03%2F%E9%87%91%E5%B8%81%E9%98%B5%E5%88%97%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[金币阵列问题 问题描述有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 思路本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];nt number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>Arithmetics</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>金币阵列</tag>
       </tags>
   </entry>
   <entry>
