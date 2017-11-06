@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[AppleALC-ALCPlugFix]]></title>
+    <url>%2F2017%2F11%2F06%2FAppleALC-ALCPlugFix%2F</url>
+    <content type="text"><![CDATA[前言 在vit9696推出AppleALC后，经过越来越多人仿冒声卡得到的数据的提交整理，AppleALC的数据越来越集中，也使声卡驱动变得越来越简单。 本文提供使用AppleALC驱动声卡的思路以及常见错误和驱动后的问题进行修复。 知识小普及 首先要知道声卡仿冒的原理 前期准备 需要下载Xcode 在AppleStore下载 下载AppleALC 通过终端执行下面的命令，会下载到你的用户根目录 1$ git clone https://github.com/vit9696/AppleALC 下载Lilu 在下面的网址下载DEBUG和RELEASE 1https://github.com/vit9696/Lilu/releases 提取Codec 这一步需要用到Linux环境，首先下载Ubuntu镜像，我个人提供一个 1链接:http://pan.baidu.com/s/1i47I0jN 密码:de4v 当然也可以去官网下载，下载好镜像之后，将U盘格式化为Fat32，然后将镜像解压到U盘，重启以U盘启动，选择试用进入Ubuntu系统界面，打开终端输入 1$ cat /proc/asound/card0/codec#0 &gt; ~/Desktop/Codec.txt 执行完后会将Codec.txt提取到桌面，将其保存到U盘 PS: 一般来说提取的Codec会有10k左右大小，如果大小不够，很有可能提取错误，可以尝试以下命令 1$ cat /proc/asound/card0/codec#1 &gt; ~/Desktop/Codec.txt 或者 1$ cat /proc/asound/card0/codec#2 &gt; ~/Desktop/Codec.txt 或者 1$ cat /proc/asound/card1/codec#0 &gt; ~/Desktop/Codec.txt Codec.txt的数据整理 记录Address和Vendor Id值 Codec.txt开头部分 提取节点信息 搜索Pin Default记录Node和节点描述，以我的为例 PS: N/A节点无效无需整理，如下面的不需要整理 记录HP Out at Ext Left节点的tag和enable值 PS: Unsolicited Response的设定是为了解决耳机和外放切换的问题。需设定 HP Out at Ext 所在的节点，并且节点信息中有Unsolicited: tag=xx, enabled=1 这一行。设定命令为Address+NodeID+708+&lt;设定值&gt; 设定值是8位的一个二进制数，记作a7 a6 a5 a4 a3 a2 a1 a0，推算出此二进制数之后，四四拆分转换为2位的十进制数加1即为此设定值 a7表示enabled。a6=0，没具体应用，不用管。a5~a0，存放tag。** 记录Mic at Ext节点的Pin-ctls值 PS: Pin Control Widget的设定是为了解决耳机杂音的。 需要设定的是 Mic at Ext 所在的节点，设定的值可以从codec dump中读取。 设定命令是 Address+NodeID+707+Pin-ctls值。 整理完后，会得到如下所示的数据集合 PS: 常见的节点设备描述如下： Mic at Ext–线路输入(耳麦) Mic at In–内建输入 HP Out–耳机扬声器 Speaker–内建扬声器(外放) 至此，Codec数据的整理到此结束 AppleALC中数据的筛选 依次打开下载的AppleALC源码里面/AppleALC/Resources/PinConfigs.kext/Contents下的Info.plist 搜索之前记录的CodecID 记录搜索到的所有的ID中的configdata，如下整理 每一行的每一串的第一个字符代表Address值 每一行的第三串倒数第二个字符代表这个节点的设备描述，具体对应关系如下 根据上图设备对应关系和Address值排除掉无效的ID数据 开工 将下载的Debug的Lilu.kext放进 AppleALC 源码根目录； 删除/AppleALC/Resources中多余文件夹，只留下你的声卡型号文件夹、Pinconfigs.kext以及四个plist文件，以cx20751这个声卡为例剩下如下文件 然后打开计算器，显示为编程器 打开你整理的Codec，找到Vendor Id，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开/AppleALC/Resources/CX20751_2/Info.plist(此处的CX20751_2需要换成你的声卡型号)，把codecid换成刚才拷贝的十进制数 保存退出，右键PinConfigs.kext显示包内容，打开里面的Info.plist，搜索刚才拷贝的十进制数，记下LayoutID数据，有几个记几个，都记下来，然后将IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault中的其他型号删除，(为避免出错，这里的删除可以不操作，删除只是为了精简做出来的AppleALC)，保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的export next where填上桌面，点export就生成AppleALC在桌面上了，一层一层打开它，将其中的AppleALC.kext放到clover驱动目录，注意之前下载的Release的Lilu也要放到clover驱动目录，最后不要忘了在config注入LayoutID： 如图Audio处写上刚才记下的LayoutID到这里AppleALC的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有ID。 至此，AppleALC驱动声卡部分结束。 关于解决耳机与内建输入的切换 如果驱动工作完成后，声卡可以工作，但不能自动切换，请接着往下看 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的ALCPlugFix中的main.m下拉到最下方，注意这一部分： 下载had-tools,将codec复制到had-tools目录，打开终端，cd到此目录，输入 1./widget_dump.sh 回车 找到nid = 0x19和nid = 0x1a，这里我的19为 line in，1a为mic in，记录下最后两位，我的是04和24就这么改 PS: 这里需要设定的节点数据分别是line in和mic in，其他节点无效，思想就是捕获系统在不插耳机时由于其输入输出正常的这两个节点的输出值，然后就可以知道插耳机正常应该输出的值，进而利用AppleALC守护进程动态守护。如果出现插耳机正常，不插无效的情况，请按照这个思路反过来操作，思想都是一样的。其中图上的高亮处最上面一部分是默认情况，中间是耳机移除，最下面是耳机插入，请结合自身使用情况合理设定 保存退出，双击按照AppleALC的编译方法编译这个 然后将生成的ALCPlugFix替换alc_fix中的ALCPlugFix，终端cd到alc_fix目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh 就可以发现之前的19和1a后面的数据反过来了 其实这里的数据就是侦测耳机插拔状态，向系统发送相关指令来做到切换正常 需要设定的就是两个节点Mic at Ext(有时是Line In)和Mic at In Mic at Ext(有时是Line In)表示线路输入，即耳麦，多为0x19节点 Mic at In为内建输入 PS: 如果widget_dump.sh脚本得不到想要的结果，请在点击这里下载CodecCommander，将Release里面的hda-verb利用命令拷贝到/usr/bin/ 如果不行重启一次应该就好了。 至此，解决耳机与内建输入的切换部分结束。 关于唤醒无声 可以先尝试下面两个驱动 CodecCommanderEAPDFix 提取密码:w4yr PS: 关于CodecCommander，可以点击这里参考RehabMan的说明 另外四叶草助手中也提供了相关选项(ResetHDA和dartweak)，但是本人没有亲自尝试，大家可以自行尝试这些组合： 本人对唤醒无声研究不多，至此，解决耳机与内建输入的切换部分结束，欢迎补充。 关于万能声卡 很多人不喜欢万能声卡，说万能有杂音(但是有一些人的AppleALC也可能有杂音)，甚至说用万能声卡是不完美的表现，其实我认为不然，万能是一种很好的渠道，有不少人用万能声卡，他们的切换、输入甚至HDMI都能很好的输出，而且杂音也是可以减小的。 这里我给出官方的项目地址，有兴趣的可以试一下 https://sourceforge.net/projects/voodoohda/ PS: 需要注意的是有人用的是VoodooHDA.pkg安装的，这种情况需要将AppleHDADisabler.kext放到Clover的驱动目录来禁用AppleHDA，否则很有可能会造成KP五果，所以我建议直接用kext，让Clover注入器注入即可。 Creditvit9696goodwinRehabManDolnordalianskyVoodooHDA 写在最后 码字不易，如果觉得文章不错，欢迎打赏，你们的支持是我最大的动力。]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[基于 JSP 的网站博客系统]]></title>
     <url>%2F2017%2F11%2F05%2F%E5%9F%BA%E4%BA%8E%20JSP%20%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%B3%BB%E7%BB%9F%2F</url>
     <content type="text"><![CDATA[前言 在日新月异的今天，类似微博这种平台上庞大的信息量让我们找不到自己想要的知识，甚至越来越多的小孩子也加入了这种平台，反而被越来越多的广告信息和毫无营养的东西影响，这让我们无法忍受； 除此以外，一些静态博客平台例如hexo搭建出来的博客站点虽然不错，但是庞大的知识量也令人头疼； 鉴于此，本站希望保留博客系统最核心的功能，并省去庞大的工作才能搭建的站点，实现最经典的网站博客系统。 尊重别人劳动成果，转载请注明来源。 系统实现 本网站基于JSP实现。 主要实现博主的日常生活中博文发表、博文浏览、博文和留言板管理以及后台管理。 实现用户的注册登录(支持第三方登录接口)、博文浏览(支持收藏、转发、评论以及打赏)和留言板留言。 在博文的发表中实现支持MarkDown文本编辑器在线编辑。 涉及Web前端、JQuery、 BootStrap+、 JavaScript等实现页面的制作，MySQL实现数据库操作(包括常见的增删查改等) 本站主要功能脑图如下备注：会持续更新 关于其他知识创新的使用 在做这个网站的过程中，以不影响网站浏览为前提，尽量使用较多的新技术，将本站做成更适合年轻一代人使用的博客站点系统。 为体现创新知识的使用，本站的开发文档将会放到博客主站的首页，相关文件也会放到我本人的GitHub仓库。 关于更新 如果对此项目有兴趣的朋友有更好的建议或者希望加入的经典功能，可以点击这里来给我留言，我会酌情添加更新站点，做出适合更多人用的博客系统。]]></content>
@@ -34,8 +46,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>NTFS</tag>
       </tags>
   </entry>
@@ -106,8 +118,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>Window Server Service only ran for 0 seconds</tag>
         <tag>Disable DGPU</tag>
         <tag>屏蔽独显</tag>
@@ -150,19 +162,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[警匪110问题]]></title>
-    <url>%2F2017%2F09%2F18%2F%E8%AD%A6%E5%8C%AA110%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[警匪110问题 问题描述 思路1、一共九个数字，八个操作符；2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；3、共有 3^8 种情况，遍历每种情况判断输出；4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1x10+2，然后下一次循环操作符为+，需要计算的就是12+3，同理在3、4之间的空需要计算的是3x10+4，而不是（12+3）x10+4，所以需要一个临时变量来记录上次的操作数，还需要一个变量来记录上次的操作符将上次的结果进行统计处理，原因就在于我们无法确定下次的操作符是不是留空。6、由于我们在统计和时，只有在下一次循环才能处理最后一个操作数，所以需要将9最后单独处理。 代码实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int a[9]=&#123;1,2,3,4,5,6,7,8,9&#125;; int sum; int temp; int oper,lastoper; int number; int i,j; for(i=0;i&lt;pow(3,8);i++) &#123; sum=0; temp=1; lastoper=1; number=i; for(j=1;j&lt;=8;j++) &#123; //操作八次 oper=number%3; number=number/3; if (!oper) temp=temp*10+a[j]; //留空单独处理 if (oper==1) &#123; //当前操作符 if(lastoper==1)&#123; //前一次操作符 sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; //更新上次操作符 &#125; if(oper==2)&#123; if(lastoper==1)&#123; sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; &#125; &#125; if(lastoper==1) //第九次操作单独处理 sum=sum+temp; if(lastoper==2) sum=sum-temp; if(sum==110) &#123; number=i; for(j=1;j&lt;=8;j++) &#123; printf(&quot;%d&quot;,a[j-1]); oper=number%3; number=number/3; if(oper==1) printf(&quot;+&quot;); if(oper==2) printf(&quot;-&quot;); else continue; &#125; printf(&quot;9\n&quot;); &#125; &#125; return 0;&#125; 运行结果]]></content>
-      <categories>
-        <category>Arithmetics</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-        <tag>算法</tag>
-        <tag>警匪110</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[派遣敢死队问题]]></title>
     <url>%2F2017%2F09%2F18%2F%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[派遣敢死队问题 问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
@@ -189,6 +188,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[警匪110问题]]></title>
+    <url>%2F2017%2F09%2F18%2F%E8%AD%A6%E5%8C%AA110%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[警匪110问题 问题描述 思路1、一共九个数字，八个操作符；2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；3、共有 3^8 种情况，遍历每种情况判断输出；4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1x10+2，然后下一次循环操作符为+，需要计算的就是12+3，同理在3、4之间的空需要计算的是3x10+4，而不是（12+3）x10+4，所以需要一个临时变量来记录上次的操作数，还需要一个变量来记录上次的操作符将上次的结果进行统计处理，原因就在于我们无法确定下次的操作符是不是留空。6、由于我们在统计和时，只有在下一次循环才能处理最后一个操作数，所以需要将9最后单独处理。 代码实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int a[9]=&#123;1,2,3,4,5,6,7,8,9&#125;; int sum; int temp; int oper,lastoper; int number; int i,j; for(i=0;i&lt;pow(3,8);i++) &#123; sum=0; temp=1; lastoper=1; number=i; for(j=1;j&lt;=8;j++) &#123; //操作八次 oper=number%3; number=number/3; if (!oper) temp=temp*10+a[j]; //留空单独处理 if (oper==1) &#123; //当前操作符 if(lastoper==1)&#123; //前一次操作符 sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; //更新上次操作符 &#125; if(oper==2)&#123; if(lastoper==1)&#123; sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; &#125; &#125; if(lastoper==1) //第九次操作单独处理 sum=sum+temp; if(lastoper==2) sum=sum-temp; if(sum==110) &#123; number=i; for(j=1;j&lt;=8;j++) &#123; printf(&quot;%d&quot;,a[j-1]); oper=number%3; number=number/3; if(oper==1) printf(&quot;+&quot;); if(oper==2) printf(&quot;-&quot;); else continue; &#125; printf(&quot;9\n&quot;); &#125; &#125; return 0;&#125; 运行结果]]></content>
+      <categories>
+        <category>Arithmetics</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>警匪110</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Allow apps downloaded from anywhere on macOS]]></title>
     <url>%2F2017%2F09%2F15%2FAllow%20apps%20downloaded%20from%20anywhere%20on%20macOS%2F</url>
     <content type="text"><![CDATA[macOS 打开任何来源 许多朋友升级到 macOS Sierra 后在”安全性与隐私”中找不到”任何来源”选项，这里我教给大家怎么打开”任何来源”。 打开终端，输入以下代码回车： 1sudo spctl --master-disable 会提示输入密码，根据提示输入密码回车之后就可以在”安全性与隐私”中打开”任何来源”选项了]]></content>
@@ -196,9 +208,9 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
         <tag>终端</tag>
+        <tag>Hacintosh</tag>
         <tag>任何来源</tag>
       </tags>
   </entry>
@@ -223,8 +235,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>BCM94352z</tag>
       </tags>
   </entry>
@@ -255,20 +267,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[利用 AppleIntelInfo 查看变频]]></title>
-    <url>%2F2017%2F09%2F05%2F%E5%88%A9%E7%94%A8%20AppleIntelInfo%20%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%A2%91%2F</url>
-    <content type="text"><![CDATA[很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频 开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：1cd ~/Desktop 回车继续敲： 1git clone https://github.com/athlonreg/AppleIntelInfo.git 回车后就把 AppleIntelInfo 源码下载在桌面了 然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)： 1http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/ 将编译后的 AppleIntelInfo.kext 放到桌面 然后开始利用命令行看变频数据打开终端，输入： 1cd ~/Desktop 回车后继续敲 1sudo chown -R root:wheel AppleIntelInfo.kext 回车会提示输入密码，输入之后回车继续敲： 1sudo kextutil AppleIntelInfo.kext 再回车，接着敲： 1sudo cat /tmp/AppleIntelInfo.dat 回车之后变频数据就出来了，例如我的机器： 一般我们只看最后一行就可以了哦 比如我的机器就是 800、 1000、 …… 、 2700 ，单位是MHz，正好符合我的机器，最低 800MHz ，最高2.4GHz，可超频到2.7GHz。 完工行胜于言，快去试试你的机器是不是变频正常吧！！]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>Hacintosh</tag>
-        <tag>黑苹果</tag>
-        <tag>AppleIntelInfo</tag>
-        <tag>变频</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[加快黑苹果开机速度的一种方法]]></title>
     <url>%2F2017%2F09%2F05%2F%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
@@ -276,9 +274,23 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>开机速度</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[利用 AppleIntelInfo 查看变频]]></title>
+    <url>%2F2017%2F09%2F05%2F%E5%88%A9%E7%94%A8%20AppleIntelInfo%20%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%A2%91%2F</url>
+    <content type="text"><![CDATA[很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频 开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：1cd ~/Desktop 回车继续敲： 1git clone https://github.com/athlonreg/AppleIntelInfo.git 回车后就把 AppleIntelInfo 源码下载在桌面了 然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)： 1http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/ 将编译后的 AppleIntelInfo.kext 放到桌面 然后开始利用命令行看变频数据打开终端，输入： 1cd ~/Desktop 回车后继续敲 1sudo chown -R root:wheel AppleIntelInfo.kext 回车会提示输入密码，输入之后回车继续敲： 1sudo kextutil AppleIntelInfo.kext 再回车，接着敲： 1sudo cat /tmp/AppleIntelInfo.dat 回车之后变频数据就出来了，例如我的机器： 一般我们只看最后一行就可以了哦 比如我的机器就是 800、 1000、 …… 、 2700 ，单位是MHz，正好符合我的机器，最低 800MHz ，最高2.4GHz，可超频到2.7GHz。 完工行胜于言，快去试试你的机器是不是变频正常吧！！]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
+        <tag>AppleIntelInfo</tag>
+        <tag>变频</tag>
       </tags>
   </entry>
   <entry>
@@ -331,18 +343,6 @@
         <tag>DSDT</tag>
         <tag>SSDT</tag>
         <tag>编译</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[AppleALC-ALCPlugFix]]></title>
-    <url>%2F2017%2F08%2F29%2FAppleALC-ALCPlugFix%2F</url>
-    <content type="text"><![CDATA[前言 在vit9696推出AppleALC后，经过越来越多人仿冒声卡得到的数据的提交整理，AppleALC的数据越来越集中，也使声卡驱动变得越来越简单。 本文提供使用AppleALC驱动声卡的思路以及常见错误和驱动后的问题进行修复。 知识小普及 首先要知道声卡仿冒的原理 前期准备 需要下载Xcode 在AppleStore下载 下载AppleALC 通过终端执行下面的命令，会下载到你的用户根目录 1$ git clone https://github.com/vit9696/AppleALC 下载Lilu 在下面的网址下载DEBUG和RELEASE 1https://github.com/vit9696/Lilu/releases 提取Codec 这一步需要用到Linux环境，首先下载Ubuntu镜像，我个人提供一个 1链接:http://pan.baidu.com/s/1i47I0jN 密码:de4v 当然也可以去官网下载，下载好镜像之后，将U盘格式化为Fat32，然后将镜像解压到U盘，重启以U盘启动，选择试用进入Ubuntu系统界面，打开终端输入 1$ cat /proc/asound/card0/codec#0 &gt; ~/Desktop/Codec.txt 执行完后会将Codec.txt提取到桌面，将其保存到U盘 PS: 一般来说提取的Codec会有10k左右大小，如果大小不够，很有可能提取错误，可以尝试以下命令 1$ cat /proc/asound/card0/codec#1 &gt; ~/Desktop/Codec.txt 或者 1$ cat /proc/asound/card0/codec#2 &gt; ~/Desktop/Codec.txt 或者 1$ cat /proc/asound/card1/codec#0 &gt; ~/Desktop/Codec.txt Codec.txt的数据整理 记录Address和Vendor Id值 Codec.txt开头部分 提取节点信息 搜索Pin Default记录Node和节点描述，以我的为例 PS: N/A节点无效无需整理，如下面的不需要整理 记录HP Out at Ext Left节点的tag和enable值 PS: Unsolicited Response的设定是为了解决耳机和外放切换的问题。需设定 HP Out at Ext 所在的节点，并且节点信息中有Unsolicited: tag=xx, enabled=1 这一行。设定命令为Address+NodeID+708+&lt;设定值&gt; 设定值是8位的一个二进制数，记作a7 a6 a5 a4 a3 a2 a1 a0，推算出此二进制数之后，四四拆分转换为2位的十进制数加1即为此设定值 a7表示enabled。a6=0，没具体应用，不用管。a5~a0，存放tag。** 记录Mic at Ext节点的Pin-ctls值 PS: Pin Control Widget的设定是为了解决耳机杂音的。 需要设定的是 Mic at Ext 所在的节点，设定的值可以从codec dump中读取。 设定命令是 Address+NodeID+707+Pin-ctls值。 整理完后，会得到如下所示的数据集合 PS: 常见的节点设备描述如下： Mic at Ext–线路输入(耳麦) Mic at In–内建输入 HP Out–耳机扬声器 Speaker–内建扬声器(外放) 至此，Codec数据的整理到此结束 AppleALC中数据的筛选 依次打开下载的AppleALC源码里面/AppleALC/Resources/PinConfigs.kext/Contents下的Info.plist 搜索之前记录的CodecID 记录搜索到的所有的ID中的configdata，如下整理 每一行的每一串的第一个字符代表Address值 每一行的第三串倒数第二个字符代表这个节点的设备描述，具体对应关系如下 根据上图设备对应关系和Address值排除掉无效的ID数据 开工 将下载的Debug的Lilu.kext放进 AppleALC 源码根目录； 删除/AppleALC/Resources中多余文件夹，只留下你的声卡型号文件夹、Pinconfigs.kext以及四个plist文件，以cx20751这个声卡为例剩下如下文件 然后打开计算器，显示为编程器 打开你整理的Codec，找到Vendor Id，拷贝后面的字符串，在计算器选中十六进制，粘贴这个字符串 然后选中十进制，就换转换成十进制形式 拷贝这个十进制数，打开/AppleALC/Resources/CX20751_2/Info.plist(此处的CX20751_2需要换成你的声卡型号)，把codecid换成刚才拷贝的十进制数 保存退出，右键PinConfigs.kext显示包内容，打开里面的Info.plist，搜索刚才拷贝的十进制数，记下LayoutID数据，有几个记几个，都记下来，然后将IOKitPersonalities-&gt;HDA Hardware Config Resource-&gt;HDAConfigDefault中的其他型号删除，(为避免出错，这里的删除可以不操作，删除只是为了精简做出来的AppleALC)，保存退出。 然后双击打开 AppleALC 中的工程文件： 按图示操作 点击右面的export next where填上桌面，点export就生成AppleALC在桌面上了，一层一层打开它，将其中的AppleALC.kext放到clover驱动目录，注意之前下载的Release的Lilu也要放到clover驱动目录，最后不要忘了在config注入LayoutID： 如图Audio处写上刚才记下的LayoutID到这里AppleALC的制作就完了，如果重启后你的声卡不能驱动，就挨个试刚才记录的所有ID。 至此，AppleALC驱动声卡部分结束。 关于解决耳机与内建输入的切换 如果驱动工作完成后，声卡可以工作，但不能自动切换，请接着往下看 打开终端，输入 1git clone https://github.com/goodwin/ALCPlugFix 回车就将ALCPlugFix下载到了你的用户目录，打开此目录中的ALCPlugFix中的main.m下拉到最下方，注意这一部分： 下载had-tools,将codec复制到had-tools目录，打开终端，cd到此目录，输入 1./widget_dump.sh 回车 找到nid = 0x19和nid = 0x1a，这里我的19为 line in，1a为mic in，记录下最后两位，我的是04和24就这么改 PS: 这里需要设定的节点数据分别是line in和mic in，其他节点无效，思想就是捕获系统在不插耳机时由于其输入输出正常的这两个节点的输出值，然后就可以知道插耳机正常应该输出的值，进而利用AppleALC守护进程动态守护。如果出现插耳机正常，不插无效的情况，请按照这个思路反过来操作，思想都是一样的。其中图上的高亮处最上面一部分是默认情况，中间是耳机移除，最下面是耳机插入，请结合自身使用情况合理设定 保存退出，双击按照AppleALC的编译方法编译这个 然后将生成的ALCPlugFix替换alc_fix中的ALCPlugFix，终端cd到alc_fix目录，执行 1./install.sh 耳机就可以自动切换了，三节点的朋友运气好的话杂音应该也解决了，这时插入耳机在执行 1./widget_dump.sh 就可以发现之前的19和1a后面的数据反过来了 其实这里的数据就是侦测耳机插拔状态，向系统发送相关指令来做到切换正常 需要设定的就是两个节点Mic at Ext(有时是Line In)和Mic at In Mic at Ext(有时是Line In)表示线路输入，即耳麦，多为0x19节点 Mic at In为内建输入 PS: 如果widget_dump.sh脚本得不到想要的结果，请在点击这里下载CodecCommander，将Release里面的hda-verb利用命令拷贝到/usr/bin/ 如果不行重启一次应该就好了。 至此，解决耳机与内建输入的切换部分结束。 关于唤醒无声 可以先尝试下面两个驱动 CodecCommanderEAPDFix 提取密码:w4yr PS: 关于CodecCommander，可以点击这里参考RehabMan的说明 另外四叶草助手中也提供了相关选项(ResetHDA和dartweak)，但是本人没有亲自尝试，大家可以自行尝试这些组合： 本人对唤醒无声研究不多，至此，解决耳机与内建输入的切换部分结束，欢迎补充。 关于万能声卡 很多人不喜欢万能声卡，说万能有杂音(但是有一些人的AppleALC也可能有杂音)，甚至说用万能声卡是不完美的表现，其实我认为不然，万能是一种很好的渠道，有不少人用万能声卡，他们的切换、输入甚至HDMI都能很好的输出，而且杂音也是可以减小的。 这里我给出官方的项目地址，有兴趣的可以试一下 https://sourceforge.net/projects/voodoohda/ PS: 需要注意的是有人用的是VoodooHDA.pkg安装的，这种情况需要将AppleHDADisabler.kext放到Clover的驱动目录来禁用AppleHDA，否则很有可能会造成KP五果，所以我建议直接用kext，让Clover注入器注入即可。 Creditvit9696goodwinRehabManDolnordalianskyVoodooHDA 写在最后 码字不易，如果觉得文章不错，欢迎打赏，你们的支持是我最大的动力。]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>Hacintosh</tag>
-        <tag>黑苹果</tag>
       </tags>
   </entry>
   <entry>
