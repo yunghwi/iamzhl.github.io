@@ -162,7 +162,10 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-11-06-09.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-11-06-10.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-11-07-01.png">
-<meta property="og:updated_time" content="2017-11-08T13:52:22.772Z">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/codec.txt.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-11-08-03.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-11-08-04.png">
+<meta property="og:updated_time" content="2017-11-08T15:52:46.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="     谈谈黑果的声卡">
 <meta name="twitter:description" content="简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音、唤醒无声等问题">
@@ -480,7 +483,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,101 字
+                  3,527 字
                 </span>
               
 
@@ -496,7 +499,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  12 分钟
+                  13 分钟
                 </span>
               
             </div>
@@ -795,7 +798,67 @@
 <p>根据上面得出的设定值，我可以得出以下<code>ConfigData</code>值：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">01671C40 01671D10 01671E21 01671F01</div><div class="line">01771C10 01771D01 01771E17 01771F90</div><div class="line">01971C30 01971D10 01971E81 01971F01</div><div class="line">01a71C20 01a71D01 01a71EA0 01a71F90</div></pre></td></tr></table></figure>
-<h4 id="PathMap的获取和整理"><a href="#PathMap的获取和整理" class="headerlink" title="PathMap的获取和整理"></a><code>PathMap</code>的获取和整理</h4><h2 id="Credit"><a href="#Credit" class="headerlink" title="Credit"></a>Credit</h2><p><a href="https://github.com/vit9696" target="_blank" rel="external">vit9696</a><br><a href="https://github.com/goodwin/ALCPlugFix" target="_blank" rel="external">goodwin</a><br><a href="https://github.com/RehabMan" target="_blank" rel="external">RehabMan</a><br><a href="https://github.com/Dolnor/EAPD-Codec-Commander" target="_blank" rel="external">Dolnor</a><br><a href="https://github.com/daliansky" target="_blank" rel="external">daliansky</a><br><a href="https://sourceforge.net/projects/voodoohda/" target="_blank" rel="external">VoodooHDA</a></p>
+<p><strong>PS: 搜索一下codec里面有没有<code>EAPD</code>这个字符串，有的话就在<code>ConfigData</code>的最后面加上一串<code>01470C02</code>这组数字。</strong></p>
+<h4 id="PathMap的获取和整理"><a href="#PathMap的获取和整理" class="headerlink" title="PathMap的获取和整理"></a><code>PathMap</code>的获取和整理</h4><blockquote>
+<p>在声卡仿冒的过程中这一步是最麻烦的。有几个需要注意的地方。</p>
+<p>对于声音节点来说，节点路径的推断遵循一个规律：</p>
+<p>输入是从后往前推断节点，输出是从前往后推。</p>
+</blockquote>
+<ul>
+<li>首先利用<code>codecgraph</code>得到路径图，该操作需要安装<code>graphviz</code>，这里我推荐利用终端<code>npm install graphviz</code>安装即可，然后执行下面的命令下载<code>codecgraph</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/athlonreg/codecgraph.git</div></pre></td></tr></table></figure>
+<ul>
+<li>这样就下载到了你的用户根目录，将你的<code>Codec.txt</code>拷贝到下载的<code>codecgraph</code>目录下，然后</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd codecgraph</div><div class="line">$ ./codecgraph Codec.txt</div></pre></td></tr></table></figure>
+<ul>
+<li>就在<code>codecgraph</code>目录下生成了你的声卡路径图，格式为<code>svg</code>，用<code>safari</code>即可打开，当然也可以转换为其他格式，这里我转换成了<code>png</code>格式，例如我的</li>
+</ul>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/codec.txt.png" alt="codec.txt"></p>
+<ul>
+<li>可以看到<code>0x16</code>节点只连接了<code>0x10</code>，<code>HP Out</code>为输出，从前往后推，转换为十进制得到<code>0x22 -&gt; 0x16</code>;</li>
+<li><code>0x17</code>节点只连接了<code>0x11</code>，<code>Speaker</code>为输出，从前往后推，转换为十进制得到<code>0x23 -&gt; 0x17</code>;</li>
+<li><code>0x19</code>节点只连接了<code>0x14</code>，<code>Mic at Int</code>为输入，从后往前推，转换为十进制得到<code>0x20 -&gt; 0x25</code>;</li>
+<li><code>0x1a</code>节点只连接了<code>0x13</code>，<code>Mic at Ext</code>为输入，从后往前推，转换为十进制得到<code>0x19 -&gt; 0x26</code>;</li>
+</ul>
+<blockquote>
+<p>整理得到路径如下：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>设备名称</th>
+<th>有效节点</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HP Out</td>
+<td>0x16</td>
+<td>0x22-&gt;0x16</td>
+</tr>
+<tr>
+<td>Speaker Out</td>
+<td>0x17</td>
+<td>0x23-&gt;0x17</td>
+</tr>
+<tr>
+<td>Mic In</td>
+<td>0x1a</td>
+<td>0x26&lt;-0x19  0x26&lt;-0x20</td>
+</tr>
+<tr>
+<td>Line In</td>
+<td>0x19</td>
+<td>0x25&lt;-0x20  0x26&lt;-0x19</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PS: 我的声卡比较奇葩，对于多数声卡来说，输入一般为<code>0x8 -&gt; 0x35 -&gt; 0x18</code>，输出一般为<code>0x33 -&gt; 0x13 -&gt; 0x3</code>，看下图：</strong><br><img src="http://ovefvi4g3.bkt.clouddn.com/2017-11-08-03.png" alt="2017-11-08-03"></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-11-08-04.png" alt="2017-11-08-04"></p>
+<h2 id="AppleHDA-修改"><a href="#AppleHDA-修改" class="headerlink" title="AppleHDA 修改"></a>AppleHDA 修改</h2><h2 id="Credit"><a href="#Credit" class="headerlink" title="Credit"></a>Credit</h2><p><a href="https://github.com/vit9696" target="_blank" rel="external">vit9696</a><br><a href="https://github.com/goodwin/ALCPlugFix" target="_blank" rel="external">goodwin</a><br><a href="https://github.com/RehabMan" target="_blank" rel="external">RehabMan</a><br><a href="https://github.com/Dolnor/EAPD-Codec-Commander" target="_blank" rel="external">Dolnor</a><br><a href="https://github.com/daliansky" target="_blank" rel="external">daliansky</a><br><a href="https://sourceforge.net/projects/voodoohda/" target="_blank" rel="external">VoodooHDA</a></p>
 <h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><blockquote>
 <p>码字不易，如果觉得文章不错，欢迎打赏，你们的支持是我最大的动力。</p>
 </blockquote>
@@ -1058,7 +1121,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前期准备"><span class="nav-number">2.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Codec-txt的数据整理"><span class="nav-number">3.</span> <span class="nav-text">Codec.txt的数据整理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AppleALC中数据的筛选"><span class="nav-number">4.</span> <span class="nav-text">AppleALC中数据的筛选</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开工"><span class="nav-number">5.</span> <span class="nav-text">开工</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于解决耳机与内建输入的切换"><span class="nav-number">6.</span> <span class="nav-text">关于解决耳机与内建输入的切换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于唤醒无声"><span class="nav-number">7.</span> <span class="nav-text">关于唤醒无声</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于万能声卡"><span class="nav-number">8.</span> <span class="nav-text">关于万能声卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于完整仿冒"><span class="nav-number">9.</span> <span class="nav-text">关于完整仿冒</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言-1"><span class="nav-number">9.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整制作仿冒声卡思路"><span class="nav-number">9.2.</span> <span class="nav-text">完整制作仿冒声卡思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知识普及"><span class="nav-number">9.3.</span> <span class="nav-text">知识普及</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始"><span class="nav-number">9.4.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整理Codec，提取所有有效Node值"><span class="nav-number">9.4.1.</span> <span class="nav-text">整理Codec，提取所有有效Node值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将整理出的所有Node的Pin-Default值进行转换修正得出需要的设定值"><span class="nav-number">9.4.2.</span> <span class="nav-text">将整理出的所有Node的Pin Default值进行转换修正得出需要的设定值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据规律或者规则得出ConfigData"><span class="nav-number">9.4.3.</span> <span class="nav-text">根据规律或者规则得出ConfigData</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PathMap的获取和整理"><span class="nav-number">9.4.4.</span> <span class="nav-text">PathMap的获取和整理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Credit"><span class="nav-number">10.</span> <span class="nav-text">Credit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最后"><span class="nav-number">11.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前期准备"><span class="nav-number">2.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Codec-txt的数据整理"><span class="nav-number">3.</span> <span class="nav-text">Codec.txt的数据整理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AppleALC中数据的筛选"><span class="nav-number">4.</span> <span class="nav-text">AppleALC中数据的筛选</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开工"><span class="nav-number">5.</span> <span class="nav-text">开工</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于解决耳机与内建输入的切换"><span class="nav-number">6.</span> <span class="nav-text">关于解决耳机与内建输入的切换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于唤醒无声"><span class="nav-number">7.</span> <span class="nav-text">关于唤醒无声</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于万能声卡"><span class="nav-number">8.</span> <span class="nav-text">关于万能声卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于完整仿冒"><span class="nav-number">9.</span> <span class="nav-text">关于完整仿冒</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言-1"><span class="nav-number">9.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整制作仿冒声卡思路"><span class="nav-number">9.2.</span> <span class="nav-text">完整制作仿冒声卡思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知识普及"><span class="nav-number">9.3.</span> <span class="nav-text">知识普及</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始"><span class="nav-number">9.4.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整理Codec，提取所有有效Node值"><span class="nav-number">9.4.1.</span> <span class="nav-text">整理Codec，提取所有有效Node值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将整理出的所有Node的Pin-Default值进行转换修正得出需要的设定值"><span class="nav-number">9.4.2.</span> <span class="nav-text">将整理出的所有Node的Pin Default值进行转换修正得出需要的设定值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据规律或者规则得出ConfigData"><span class="nav-number">9.4.3.</span> <span class="nav-text">根据规律或者规则得出ConfigData</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PathMap的获取和整理"><span class="nav-number">9.4.4.</span> <span class="nav-text">PathMap的获取和整理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AppleHDA-修改"><span class="nav-number">10.</span> <span class="nav-text">AppleHDA 修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Credit"><span class="nav-number">11.</span> <span class="nav-text">Credit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最后"><span class="nav-number">12.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
             
 
           </div>
@@ -1103,7 +1166,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      18.8k
+      19.2k
     </span>
   
 </div>
@@ -1125,7 +1188,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.8k字</span>
+  <span class="post-count">博客全站共19.2k字</span>
 </div>
 
         
