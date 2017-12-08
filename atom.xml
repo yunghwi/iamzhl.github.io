@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-08T15:52:46.000Z</updated>
+  <updated>2017-12-08T18:49:04.352Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Change NetBeans&#39;s language to Chinese in macOS</title>
+    <link href="http://yoursite.com/2017/12/09/Change%20NetBeans&#39;s%20language%20to%20Chinese%20in%20macOS/"/>
+    <id>http://yoursite.com/2017/12/09/Change NetBeans&#39;s language to Chinese in macOS/</id>
+    <published>2017-12-08T18:36:23.000Z</published>
+    <updated>2017-12-08T18:49:04.352Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="macOS下修改NetBeans的界面语言"><a href="#macOS下修改NetBeans的界面语言" class="headerlink" title="macOS下修改NetBeans的界面语言"></a><code>macOS</code>下修改<code>NetBeans</code>的界面语言</h2><p>在<code>Applications</code>中找到<code>NetBeans</code>的安装目录：<code>/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/etc/netbeans.conf</code>，以纯文本文档格式打开，搜索<code>netbeans_default_options</code>，在最后加上<code>--locale zh:CN</code>，改为英文则是<code>--locale en:US</code>，如图所示：</p><p><img src="http://ovefvi4g3.bkt.clouddn.com/20171209-0.png" alt="20171209-0"></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/20171209-1.png" alt="20171209-1"></p>]]></content>
+    
+    <summary type="html">
+    
+      macOS 下修改 NetBeans 的界面语言
+    
+    </summary>
+    
+      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
+    
+    
+      <category term="NetBeans" scheme="http://yoursite.com/tags/NetBeans/"/>
+    
+  </entry>
   
   <entry>
     <title>     谈谈黑果的声卡</title>
@@ -339,38 +361,6 @@
   </entry>
   
   <entry>
-    <title>派遣敢死队问题</title>
-    <link href="http://yoursite.com/2017/09/18/%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2017/09/18/派遣敢死队问题/</id>
-    <published>2017-09-17T16:00:00.000Z</published>
-    <updated>2017-09-18T11:04:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>派遣敢死队问题</p></blockquote><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-03-1.png" alt="2017-09-18-03"></p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>1、首先将所有士兵直属上级的编号放于数组a；<br>2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；<br>3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 </p><h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt; </div><div class="line">#include &lt;math.h&gt; </div><div class="line"></div><div class="line">int main() &#123;</div><div class="line">int number;</div><div class="line">int count=0;</div><div class="line">int flag;</div><div class="line">scanf(&quot;%d&quot;,&amp;number);//派遣的人数 </div><div class="line"></div><div class="line">int i,j;</div><div class="line">int temp; </div><div class="line">int a[number],b[number];//a</div><div class="line">a[0]=0;//将军 </div><div class="line"></div><div class="line">for(i=1;i&lt;number;i++)&#123;</div><div class="line">scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 </div><div class="line">&#125;</div><div class="line"></div><div class="line">for(i=1;i&lt;pow(2,number);i++)&#123;</div><div class="line">temp=i;</div><div class="line">for(j=0;j&lt;number;j++)&#123;</div><div class="line">//遍历所有情况 </div><div class="line">b[j]=temp%2;</div><div class="line">temp/=2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">flag=1;</div><div class="line">for(j=1;j&lt;number;j++)&#123;</div><div class="line">//将军没有上级，不用判断</div><div class="line">if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123;</div><div class="line">//判断是否士兵和上级同时执行任务 </div><div class="line">//b[j]为编号为j+1的士兵去不去</div><div class="line">//b[a[j]-1]为编号为j+1的士兵的直接上级去不去</div><div class="line">flag=0;</div><div class="line">break;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">if(flag==1)</div><div class="line">count++;</div><div class="line">&#125;</div><div class="line"></div><div class="line">printf(&quot;%d\n&quot;,count);</div><div class="line">return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-04-1.png" alt="2017-09-18-04"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;派遣敢死队问题&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://ove
-      
-    
-    </summary>
-    
-      <category term="Arithmetics" scheme="http://yoursite.com/categories/Arithmetics/"/>
-    
-    
-      <category term="C语言" scheme="http://yoursite.com/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="派遣敢死队" scheme="http://yoursite.com/tags/%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>警匪110问题</title>
     <link href="http://yoursite.com/2017/09/18/%E8%AD%A6%E5%8C%AA110%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2017/09/18/警匪110问题/</id>
@@ -431,6 +421,38 @@
       <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="价牌翻转" scheme="http://yoursite.com/tags/%E4%BB%B7%E7%89%8C%E7%BF%BB%E8%BD%AC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>派遣敢死队问题</title>
+    <link href="http://yoursite.com/2017/09/18/%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2017/09/18/派遣敢死队问题/</id>
+    <published>2017-09-17T16:00:00.000Z</published>
+    <updated>2017-09-18T11:04:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>派遣敢死队问题</p></blockquote><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-03-1.png" alt="2017-09-18-03"></p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>1、首先将所有士兵直属上级的编号放于数组a；<br>2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；<br>3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 </p><h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt; </div><div class="line">#include &lt;math.h&gt; </div><div class="line"></div><div class="line">int main() &#123;</div><div class="line">int number;</div><div class="line">int count=0;</div><div class="line">int flag;</div><div class="line">scanf(&quot;%d&quot;,&amp;number);//派遣的人数 </div><div class="line"></div><div class="line">int i,j;</div><div class="line">int temp; </div><div class="line">int a[number],b[number];//a</div><div class="line">a[0]=0;//将军 </div><div class="line"></div><div class="line">for(i=1;i&lt;number;i++)&#123;</div><div class="line">scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 </div><div class="line">&#125;</div><div class="line"></div><div class="line">for(i=1;i&lt;pow(2,number);i++)&#123;</div><div class="line">temp=i;</div><div class="line">for(j=0;j&lt;number;j++)&#123;</div><div class="line">//遍历所有情况 </div><div class="line">b[j]=temp%2;</div><div class="line">temp/=2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">flag=1;</div><div class="line">for(j=1;j&lt;number;j++)&#123;</div><div class="line">//将军没有上级，不用判断</div><div class="line">if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123;</div><div class="line">//判断是否士兵和上级同时执行任务 </div><div class="line">//b[j]为编号为j+1的士兵去不去</div><div class="line">//b[a[j]-1]为编号为j+1的士兵的直接上级去不去</div><div class="line">flag=0;</div><div class="line">break;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">if(flag==1)</div><div class="line">count++;</div><div class="line">&#125;</div><div class="line"></div><div class="line">printf(&quot;%d\n&quot;,count);</div><div class="line">return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-04-1.png" alt="2017-09-18-04"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;派遣敢死队问题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://ove
+      
+    
+    </summary>
+    
+      <category term="Arithmetics" scheme="http://yoursite.com/categories/Arithmetics/"/>
+    
+    
+      <category term="C语言" scheme="http://yoursite.com/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="派遣敢死队" scheme="http://yoursite.com/tags/%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F/"/>
     
   </entry>
   
@@ -516,38 +538,6 @@
       <category term="Hacintosh" scheme="http://yoursite.com/tags/Hacintosh/"/>
     
       <category term="BCM94352z" scheme="http://yoursite.com/tags/BCM94352z/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>低碳生活答题问题</title>
-    <link href="http://yoursite.com/2017/09/12/%E4%BD%8E%E7%A2%B3%E7%94%9F%E6%B4%BB%E7%AD%94%E9%A2%98%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2017/09/12/低碳生活答题问题/</id>
-    <published>2017-09-11T16:00:00.000Z</published>
-    <updated>2017-09-18T14:40:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>低碳生活答题问题</p></blockquote><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>某电视台举办了低碳生活大奖赛。题目的计分规则相当奇怪：</p><p>1、每位选手需要回答10个问题（其编号为1到10），越后面越有难度。答对的，当前分数翻倍；答错了则扣掉与题号相同的分数（选手必须回答问题，不回答按错误处理）。</p><p>2、每位选手都有一个起步的分数为10分。 某获胜选手最终得分刚好是100分，如果不让你看比赛过程，你能推断出他（她）哪个题目答对了，哪个题目答错了吗？</p><p>3、如果把答对的记为1，答错的记为0，则10个题目的回答情况可以用仅含有1和0的串来表示。例如：0010110011 就是可能的情况。</p><p>4、你的任务是算出所有可能情况。每个答案占一行。</p><h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>一共十个问题，每个问题两种情况，要么对要么错，那么结果就会有 0000000000 ~ 1111111111 = pow（2，10）种，就可以用暴力搜索将所有情况枚举出来然后判断符合要求的情况；</p><p>分数的控制可以直接利用遍历所有情况的 for 循环分别判断两种情况； </p><p>如果用输出 1 代表回答正确， 0 代表错误，不难想到任何一个正整数对 2 取余结果只有 1 和 0 两种情况， 输出的时候也就成了进制转换问题； </p><h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt; </div><div class="line">#include &lt;math.h&gt; </div><div class="line">int main() &#123;</div><div class="line">    int i,j;</div><div class="line">    int score,temp;</div><div class="line"></div><div class="line">    for(i=0;i&lt;pow(2,10);i++)&#123;</div><div class="line">        temp=i;</div><div class="line">        score=10;</div><div class="line">            </div><div class="line">        for(j=0;j&lt;10;j++)&#123; </div><div class="line">            if(temp%2 == 1)</div><div class="line">                score*=2;</div><div class="line">            else</div><div class="line">                score-=j+1; </div><div class="line">            temp/=2;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        if(score==100)&#123;</div><div class="line">            temp=i;</div><div class="line">            for(j=0;j&lt;10;j++)&#123;</div><div class="line">                printf(&quot;%d &quot;, temp%2);</div><div class="line">                temp/=2;</div><div class="line">            &#125;</div><div class="line">            printf(&quot;\n&quot;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1 0 1 1 0 1 0 0 0 0 </div><div class="line">0 1 1 1 0 1 0 0 0 0 </div><div class="line">0 0 1 0 1 1 0 0 1 1</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;低碳生活答题问题&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;某电视台举办了低碳生活大奖赛。题目的计
-      
-    
-    </summary>
-    
-      <category term="Arithmetics" scheme="http://yoursite.com/categories/Arithmetics/"/>
-    
-    
-      <category term="C语言" scheme="http://yoursite.com/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="低碳生活答题问题" scheme="http://yoursite.com/tags/%E4%BD%8E%E7%A2%B3%E7%94%9F%E6%B4%BB%E7%AD%94%E9%A2%98%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
