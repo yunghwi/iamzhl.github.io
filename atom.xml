@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-11T17:16:06.567Z</updated>
+  <updated>2017-12-12T06:27:00.192Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回溯法求子集和问题</title>
+    <link href="http://yoursite.com/2017/12/12/%E5%9B%9E%E6%BA%AF%E6%B3%95%E6%B1%82%E5%AD%90%E9%9B%86%E5%92%8C%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2017/12/12/回溯法求子集和问题/</id>
+    <published>2017-12-12T06:12:40.000Z</published>
+    <updated>2017-12-12T06:27:00.192Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="回溯法：子集和问题"><a href="#回溯法：子集和问题" class="headerlink" title="回溯法：子集和问题"></a>回溯法：子集和问题</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>子集和问题的一个实例为<s,t>。其中，S={x<sub>1</sub>,x<sub>2</sub>,x<sub>3</sub>,&hellip;,x<sub>n</sub>}是一个正整数的集合，c是一个正整数。子集和问题判定是否存在S的一个子集S<sub>1</sub>，使得 S<sub>1</sub>中的所有元素之和等于c。<br>试设计一个解子集和问题的回溯法。</s,t></p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>第1行有2个正整数n和c，n表示S的大小，c是子集和的目标值。接下来的1行中，有n个正整数，表示集合S中的元素。</p><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>输出子集和问题的解。当问题无解时，输出<code>No solution!</code>。</p><h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">5 10</div><div class="line">2 2 6 5 4</div></pre></td></tr></table></figure><h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2 2 6</div></pre></td></tr></table></figure><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">#define n 5</div><div class="line">#define c 10</div><div class="line"></div><div class="line">int array[n]=&#123;2,2,6,5,4&#125;;</div><div class="line">int a[n]=&#123;0&#125;;</div><div class="line">int sum=0;</div><div class="line">int flag=0;</div><div class="line"></div><div class="line">void traceback(int t)</div><div class="line">&#123;</div><div class="line">    if(t==n)&#123;</div><div class="line">        if(sum==c)&#123;</div><div class="line">            flag=1;</div><div class="line">            for(int i=0;i&lt;n;i++)&#123;</div><div class="line">                if(a[i])&#123;</div><div class="line">                    printf(&quot;%3d&quot;,array[i]);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            printf(&quot;\n&quot;);</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        sum+=array[t];</div><div class="line">        a[t]=1;</div><div class="line">        traceback(t+1);</div><div class="line">        a[t]=0;</div><div class="line">        sum-=array[t];</div><div class="line">        traceback(t+1);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    traceback(0);</div><div class="line">    if(!flag)&#123;</div><div class="line">        printf(&quot;No Solutions!\n&quot;);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h3 id="结果输出"><a href="#结果输出" class="headerlink" title="结果输出"></a>结果输出</h3><p><img src="http://ovefvi4g3.bkt.clouddn.com/Screen Shot 2017-12-12 at 2.26.24 PM.png" alt="Screen Shot 2017-12-12 at 2.26.24 PM"></p>]]></content>
+    
+    <summary type="html">
+    
+      回溯法求子集和问题
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
+    
+      <category term="子集和问题" scheme="http://yoursite.com/tags/%E5%AD%90%E9%9B%86%E5%92%8C%E9%97%AE%E9%A2%98/"/>
+    
+      <category term="回溯" scheme="http://yoursite.com/tags/%E5%9B%9E%E6%BA%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Install macOS on laptop</title>
@@ -441,38 +465,6 @@
   </entry>
   
   <entry>
-    <title>派遣敢死队问题</title>
-    <link href="http://yoursite.com/2017/09/18/%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2017/09/18/派遣敢死队问题/</id>
-    <published>2017-09-17T16:00:00.000Z</published>
-    <updated>2017-09-18T11:04:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>派遣敢死队问题</p></blockquote><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-03-1.png" alt="2017-09-18-03"></p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>1、首先将所有士兵直属上级的编号放于数组a；<br>2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；<br>3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 </p><h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt; </div><div class="line">#include &lt;math.h&gt; </div><div class="line"></div><div class="line">int main() &#123;</div><div class="line">int number;</div><div class="line">int count=0;</div><div class="line">int flag;</div><div class="line">scanf(&quot;%d&quot;,&amp;number);//派遣的人数 </div><div class="line"></div><div class="line">int i,j;</div><div class="line">int temp; </div><div class="line">int a[number],b[number];//a</div><div class="line">a[0]=0;//将军 </div><div class="line"></div><div class="line">for(i=1;i&lt;number;i++)&#123;</div><div class="line">scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 </div><div class="line">&#125;</div><div class="line"></div><div class="line">for(i=1;i&lt;pow(2,number);i++)&#123;</div><div class="line">temp=i;</div><div class="line">for(j=0;j&lt;number;j++)&#123;</div><div class="line">//遍历所有情况 </div><div class="line">b[j]=temp%2;</div><div class="line">temp/=2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">flag=1;</div><div class="line">for(j=1;j&lt;number;j++)&#123;</div><div class="line">//将军没有上级，不用判断</div><div class="line">if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123;</div><div class="line">//判断是否士兵和上级同时执行任务 </div><div class="line">//b[j]为编号为j+1的士兵去不去</div><div class="line">//b[a[j]-1]为编号为j+1的士兵的直接上级去不去</div><div class="line">flag=0;</div><div class="line">break;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">if(flag==1)</div><div class="line">count++;</div><div class="line">&#125;</div><div class="line"></div><div class="line">printf(&quot;%d\n&quot;,count);</div><div class="line">return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-04-1.png" alt="2017-09-18-04"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;派遣敢死队问题&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://ove
-      
-    
-    </summary>
-    
-      <category term="Arithmetics" scheme="http://yoursite.com/categories/Arithmetics/"/>
-    
-    
-      <category term="C语言" scheme="http://yoursite.com/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="派遣敢死队" scheme="http://yoursite.com/tags/%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>警匪110问题</title>
     <link href="http://yoursite.com/2017/09/18/%E8%AD%A6%E5%8C%AA110%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2017/09/18/警匪110问题/</id>
@@ -505,30 +497,34 @@
   </entry>
   
   <entry>
-    <title>Allow apps downloaded from anywhere on macOS</title>
-    <link href="http://yoursite.com/2017/09/15/Allow%20apps%20downloaded%20from%20anywhere%20on%20macOS/"/>
-    <id>http://yoursite.com/2017/09/15/Allow apps downloaded from anywhere on macOS/</id>
-    <published>2017-09-15T13:16:31.000Z</published>
-    <updated>2017-10-19T01:07:16.000Z</updated>
+    <title>派遣敢死队问题</title>
+    <link href="http://yoursite.com/2017/09/18/%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2017/09/18/派遣敢死队问题/</id>
+    <published>2017-09-17T16:00:00.000Z</published>
+    <updated>2017-09-18T11:04:22.000Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>macOS 打开任何来源</p></blockquote><p>许多朋友升级到 macOS Sierra 后在”安全性与隐私”中找不到”任何来源”选项，这里我教给大家怎么打开”任何来源”。</p><p>打开终端，输入以下代码回车：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo spctl --master-disable</div></pre></td></tr></table></figure><p>会提示输入密码，根据提示输入密码回车之后就可以在”安全性与隐私”中打开”任何来源”选项了</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>派遣敢死队问题</p></blockquote><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-03-1.png" alt="2017-09-18-03"></p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>1、首先将所有士兵直属上级的编号放于数组a；<br>2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；<br>3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 </p><h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt; </div><div class="line">#include &lt;math.h&gt; </div><div class="line"></div><div class="line">int main() &#123;</div><div class="line">int number;</div><div class="line">int count=0;</div><div class="line">int flag;</div><div class="line">scanf(&quot;%d&quot;,&amp;number);//派遣的人数 </div><div class="line"></div><div class="line">int i,j;</div><div class="line">int temp; </div><div class="line">int a[number],b[number];//a</div><div class="line">a[0]=0;//将军 </div><div class="line"></div><div class="line">for(i=1;i&lt;number;i++)&#123;</div><div class="line">scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 </div><div class="line">&#125;</div><div class="line"></div><div class="line">for(i=1;i&lt;pow(2,number);i++)&#123;</div><div class="line">temp=i;</div><div class="line">for(j=0;j&lt;number;j++)&#123;</div><div class="line">//遍历所有情况 </div><div class="line">b[j]=temp%2;</div><div class="line">temp/=2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">flag=1;</div><div class="line">for(j=1;j&lt;number;j++)&#123;</div><div class="line">//将军没有上级，不用判断</div><div class="line">if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123;</div><div class="line">//判断是否士兵和上级同时执行任务 </div><div class="line">//b[j]为编号为j+1的士兵去不去</div><div class="line">//b[a[j]-1]为编号为j+1的士兵的直接上级去不去</div><div class="line">flag=0;</div><div class="line">break;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">if(flag==1)</div><div class="line">count++;</div><div class="line">&#125;</div><div class="line"></div><div class="line">printf(&quot;%d\n&quot;,count);</div><div class="line">return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-04-1.png" alt="2017-09-18-04"></p>]]></content>
     
     <summary type="html">
     
-      Allow apps downloaded from anywhere on macOS.md
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;派遣敢死队问题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://ove
+      
     
     </summary>
     
-      <category term="Hacintosh" scheme="http://yoursite.com/categories/Hacintosh/"/>
+      <category term="Arithmetics" scheme="http://yoursite.com/categories/Arithmetics/"/>
     
     
-      <category term="黑苹果" scheme="http://yoursite.com/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
+      <category term="C语言" scheme="http://yoursite.com/tags/C%E8%AF%AD%E8%A8%80/"/>
     
-      <category term="终端" scheme="http://yoursite.com/tags/%E7%BB%88%E7%AB%AF/"/>
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="Hacintosh" scheme="http://yoursite.com/tags/Hacintosh/"/>
-    
-      <category term="任何来源" scheme="http://yoursite.com/tags/%E4%BB%BB%E4%BD%95%E6%9D%A5%E6%BA%90/"/>
+      <category term="派遣敢死队" scheme="http://yoursite.com/tags/%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F/"/>
     
   </entry>
   
