@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[HP OMEN by HP Laptop]]></title>
+    <url>%2F2017%2F12%2F13%2FHP-OMEN-by-HP-Laptop%2F</url>
+    <content type="text"><![CDATA[Laptop Configuration123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159----------------------------------以下信息由电脑管家提供导出时间：2017-12-13 19:6:32----------------------------------电脑概览电脑型号 HP OMEN by HP Laptop操作系统 Microsoft Windows 10 家庭中文版 (64位)CPU (英特尔)Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz(2304 MHz)主板 HP 8257内存 8.00 GB ( 2133 MHz)主硬盘 130 GB ( S2HUNX0H463693 已使用时间: 3745小时)显卡 NVIDIA GeForce GTX 960M显示器 (Standard monitor types) 32位真彩色 60Hz声卡 Realtek High Definition Audio网卡 Intel(R) Dual Band Wireless-AC 7265----------------------------------------------------------------------------------------------------------------------------CPU详情CPU厂商 GenuineIntelCPU (英特尔)Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHzCPU核心数 4CPU默认频率 2304 MHzCPU外频 100 MHzCPU当前频率 2304 MHz二级缓存 1024 KB三级缓存 6144 KBCPU电压 0.800 VCPU序列号 BFEBFBFF000506E3数据宽度 64bit指令集 MMX,SSE,SSE2,SSE3,SSSE3,SSE4.1,SSE4.2,EM64T扩展版本 Ext.Family 0 Ext.Model 5----------------------------------------------------------------------------------------------------------------------------主板详情制造商 HP主板型号 8257制造日期 2016/07/04主板序列号 5CD62862N1BIOS厂商 InsydeBIOS版本 HPQOEM - 0 F.08BIOS大小 0 Bytes芯片组 英特尔 电脑厂商 HP电脑型号 OMEN by HP Laptop系统安装日期 2017/04/14最近启动时间 2017/11/13----------------------------------------------------------------------------------------------------------------------------内存1详情内存名称 2133 MHz内存大小 4 GB内存频率 2133 MHz插槽 Bottom-Slot 1(left) 数据宽度 64bit内存2详情内存名称 2133 MHz内存大小 4 GB内存频率 2133 MHz插槽 Bottom-Slot 2(right)数据宽度 64bit----------------------------------------------------------------------------------------------------------------------------显卡1详情显卡名称 Intel(R) HD Graphics 530显存大小 1024 MB内核名称 Intel(R) HD Graphics Family显卡2详情显卡名称 NVIDIA GeForce GTX 960M显存大小 2048 MB内核名称 GeForce GTX 960M----------------------------------------------------------------------------------------------------------------------------显示器详情显示器厂商 (Standard monitor types)显示器代号 LGD0532屏幕尺寸 15.3 英寸 (34厘米X19厘米)屏幕比例 16:9当前分辨率 1920 * 1080 (32位真彩色@60Hz)最大分辨率 1920 * 1080制造时间 2016/1----------------------------------------------------------------------------------------------------------------------------硬盘1详情硬盘名称 SAMSUNG MZNLF128HCHP-000H1硬盘大小 130 GB硬盘已使用时间 3745小时 (S.M.A.R.T.)硬盘序列号 SAMSUNG MZNLF128HCHP-000H1 (BIOS 版本: FXT21H)硬盘2详情硬盘名称 HGST HTS721010A9E630硬盘大小 1000 GB硬盘缓存 32 MB硬盘已使用时间 3743小时 (S.M.A.R.T.)硬盘序列号 HGST HTS721010A9E630 (BIOS 版本: JB0OA3)----------------------------------------------------------------------------------------------------------------------------声卡1详情声卡名称 Realtek High Definition Audio声卡厂商 Realtek声卡2详情声卡名称 英特尔(R) 显示器音频声卡厂商 Intel(R) Corporation----------------------------------------------------------------------------------------------------------------------------网卡1详情网卡名称 Intel(R) Dual Band Wireless-AC 7265网卡厂商 Intel CorporationMac地址 A4:02:B9:44:77:AD网卡2详情网卡名称 Realtek PCIe GBE Family Controller网卡厂商 RealtekMac地址 EC:8E:B5:4E:C7:F8----------------------------------------------------------------------------------------------------------------------------键盘详情名称 增强型(101 或 102 键)类型 USB Input Device----------------------------------------------------------------------------------------------------------------------------其它硬件1详情名称 USB Input Device其它硬件2详情名称 USB Composite Device其它硬件3详情名称 英特尔(R) 无线 Bluetooth(R)---------------------------------------------------------------------------------------------------------------------------- WorkingClover EFI bootloaderHP OMEN by HP Laptop FinallyPlease respect the author’s work and please indicate the address of the original post if you want reprint the repo!]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>Hacintosh</tag>
+        <tag>光影精灵</tag>
+        <tag>暗影精灵</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ASUS-X455LD-i5-4210u]]></title>
     <url>%2F2017%2F12%2F13%2FASUS-X455LD-i5-4210u%2F</url>
     <content type="text"><![CDATA[Laptop Configuration123456789101112131415161718Computer model Asus F455LD NotebookCPU Intel Core i5-4210uOperate System Windows10 Education 64bit + macOS High Sierra 17B25c + Windows7 Ultimate + ElementaryOS base on Ubuntu 16.04Main board Asus X455LD Intel Haswell-ULT - Lynx Point-LPDiscret egraphics Nvidia GeForce 820M 2G Integrated graphics HD4400Audio Realtek @ Intel Lynx Point-LP High Definition Audio (CX20751)Ethernet Realtek RTL8168/8111/8112 Gigabit Ethernet Controller / AsusWireless network adapter Atheros AR956X Working NotesAbout ALCPlugFixFirstly，Unzip ALCPlugFix to your desktop after you have installed Hackintosh。Secondly，open terminal：123$ cd ~/Desktop/ALCPlugFix/alc_fix$ chmod +x install.sh$ ./install.sh The script can fix your audio with good input and switch。 About 一键开启HIDPI并注入EDID Just double click 双击.command，and input your password。 Then it can working as Macintosh。 Clover EFI bootloaderASUS-F455LD-i5-4210u FinallyPlease respect the author’s work and please indicate the address of the original post if you want reprint the repo!]]></content>
@@ -221,19 +234,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[价牌翻转问题]]></title>
-    <url>%2F2017%2F09%2F18%2F%E4%BB%B7%E7%89%8C%E7%BF%BB%E8%BD%AC%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[价牌翻转问题 问题描述 思路1、已知是一个四位数，那么共有1001-9999种情况；2、一个数颠倒之后，数字顺序颠倒并且每个数字颠倒，例如1269颠倒之后就是6921；3、0不能是第一位也不能是最后一位。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;math.h&gt;int array[4]=&#123;0&#125;;int inverse(int a)&#123;//求一个数颠倒之后的结果 int b=0; int arr[4]=&#123;0&#125;; for(int i=0;i&lt;4;i++)&#123; arr[i]=(int)(a/pow(10,3-i))%10; if(arr[i]==9) b+=6*pow(10,i); else if(arr[i]==6) b+=9*pow(10,i); else b+=arr[i]*pow(10,i); &#125; return b;&#125;int main()&#123; int i,j; int k=0,l=0; int temp; int flag; int up[50]=&#123;0&#125;,down[50]=&#123;0&#125;;//分别存放赚钱和赔钱的价牌 for(i=1001;i&lt;10000;i++)&#123; temp=i; flag=1; for(j=0;j&lt;4;j++)&#123; array[j]=(int)(temp/pow(10,3-j))%10; if(array[j]==3||array[j]==4||array[j]==7)&#123;//分割数字排除不能翻转的数字 flag=0; break; &#125; &#125; if(flag)&#123; if(array[0]==0 || array[3]==0)//0不能位于第一位和最后一位 continue; if(inverse(i)-i&gt;800&amp;&amp;inverse(i)-i&lt;900) up[k++]=i; if(i-inverse(i)&gt;200&amp;&amp;i-inverse(i)&lt;300) down[l++]=i; &#125; &#125; for(i=0;i&lt;50;i++)&#123;//依次输出赚钱的原价，颠倒价、赚的钱、赔钱的原价、颠倒价、赔的钱 for(j=0;j&lt;50;j++)&#123; if((inverse(up[i])-up[i])-(down[j]-inverse(down[j]))==558)&#123; printf(&quot;%d\t%d\t%d\t&quot;,up[i],inverse(up[i]),inverse(up[i])-up[i]); printf(&quot;%d\t%d\t%d\n&quot;,down[j],inverse(down[j]),down[j]-inverse(down[j])); &#125; &#125; &#125; return 0;&#125; 运行结果：]]></content>
-      <categories>
-        <category>algorithm</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-        <tag>算法</tag>
-        <tag>价牌翻转</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[派遣敢死队问题]]></title>
     <url>%2F2017%2F09%2F18%2F%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[派遣敢死队问题 问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
@@ -244,6 +244,19 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>派遣敢死队</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[价牌翻转问题]]></title>
+    <url>%2F2017%2F09%2F18%2F%E4%BB%B7%E7%89%8C%E7%BF%BB%E8%BD%AC%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[价牌翻转问题 问题描述 思路1、已知是一个四位数，那么共有1001-9999种情况；2、一个数颠倒之后，数字顺序颠倒并且每个数字颠倒，例如1269颠倒之后就是6921；3、0不能是第一位也不能是最后一位。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;math.h&gt;int array[4]=&#123;0&#125;;int inverse(int a)&#123;//求一个数颠倒之后的结果 int b=0; int arr[4]=&#123;0&#125;; for(int i=0;i&lt;4;i++)&#123; arr[i]=(int)(a/pow(10,3-i))%10; if(arr[i]==9) b+=6*pow(10,i); else if(arr[i]==6) b+=9*pow(10,i); else b+=arr[i]*pow(10,i); &#125; return b;&#125;int main()&#123; int i,j; int k=0,l=0; int temp; int flag; int up[50]=&#123;0&#125;,down[50]=&#123;0&#125;;//分别存放赚钱和赔钱的价牌 for(i=1001;i&lt;10000;i++)&#123; temp=i; flag=1; for(j=0;j&lt;4;j++)&#123; array[j]=(int)(temp/pow(10,3-j))%10; if(array[j]==3||array[j]==4||array[j]==7)&#123;//分割数字排除不能翻转的数字 flag=0; break; &#125; &#125; if(flag)&#123; if(array[0]==0 || array[3]==0)//0不能位于第一位和最后一位 continue; if(inverse(i)-i&gt;800&amp;&amp;inverse(i)-i&lt;900) up[k++]=i; if(i-inverse(i)&gt;200&amp;&amp;i-inverse(i)&lt;300) down[l++]=i; &#125; &#125; for(i=0;i&lt;50;i++)&#123;//依次输出赚钱的原价，颠倒价、赚的钱、赔钱的原价、颠倒价、赔的钱 for(j=0;j&lt;50;j++)&#123; if((inverse(up[i])-up[i])-(down[j]-inverse(down[j]))==558)&#123; printf(&quot;%d\t%d\t%d\t&quot;,up[i],inverse(up[i]),inverse(up[i])-up[i]); printf(&quot;%d\t%d\t%d\n&quot;,down[j],inverse(down[j]),down[j]-inverse(down[j])); &#125; &#125; &#125; return 0;&#125; 运行结果：]]></content>
+      <categories>
+        <category>algorithm</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>价牌翻转</tag>
       </tags>
   </entry>
   <entry>
@@ -353,19 +366,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[金币阵列问题]]></title>
-    <url>%2F2017%2F09%2F03%2F%E9%87%91%E5%B8%81%E9%98%B5%E5%88%97%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[金币阵列问题 问题描述有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 思路本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];nt number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
-      <categories>
-        <category>algorithm</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-        <tag>算法</tag>
-        <tag>金币阵列</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[How to use xcode-select in terminal]]></title>
     <url>%2F2017%2F09%2F03%2FHow%20to%20use%20xcode-select%20in%20terminal%2F</url>
     <content type="text"><![CDATA[How to use xcode-select in terminal It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.The command line options are below: 1234xcode-select [-help]xcode-select [-switch xcode_folder_path]xcode-select [-print-path]xcode-select [-version] Here is how to print the current Xcode path:12$ xcode-select --print-path/Developer/Applications/Xcode.app Line number 2 shows the current version of Xcode that is ‘active.’ If you are accessing xcodebuild or other related tools from a script, –print-path is the preferred means to determine the current Xcode location.Use the -switch option to change to another version of Xcode on your system: 1$ sudo xcode-select --switch /Applications/Xcode-beta.app/Contents/Developer This changes to the Xcode-beta 9 on my system. Note that root access is required to set the Xcode location, thus I have used sudo to execute the command as root.Printing the path now looks as follows: 12$ xcode-select --print-path/Applications/Xcode-beta.app/Contents/Developer To switch back to Xcode installed in the /Applications directory:1$ sudo xcode-select -switch /Applications/Xcode.app/ You can read more about xcode-select by view the man page from a terminal:1$ man xcode-select]]></content>
@@ -376,6 +376,19 @@
         <tag>终端</tag>
         <tag>Mac</tag>
         <tag>Xcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[金币阵列问题]]></title>
+    <url>%2F2017%2F09%2F03%2F%E9%87%91%E5%B8%81%E9%98%B5%E5%88%97%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[金币阵列问题 问题描述有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 思路本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];nt number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>algorithm</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>金币阵列</tag>
       </tags>
   </entry>
   <entry>
