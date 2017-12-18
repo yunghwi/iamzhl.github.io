@@ -139,7 +139,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/batthot_diffmerge_initial.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/ssd_with_nodes_expanded.png">
-<meta property="og:updated_time" content="2017-12-17T17:43:04.987Z">
+<meta property="og:updated_time" content="2017-12-18T17:37:59.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Clover ACPI hotpatch">
 <meta name="twitter:description" content="Using Clover to &quot;hotpatch&quot; ACPI">
@@ -457,7 +457,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  17,158 字
+                  18,192 字
                 </span>
               
 
@@ -473,7 +473,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  106 分钟
+                  110 分钟
                 </span>
               
             </div>
@@ -535,26 +535,86 @@
 <p>这个<code>SSDT</code>是一个可选的<code>SSDT</code>,它可以配合<code>SSDT-IGPU.dsl</code>使用。<code>SSDT-IGPU</code>使用这些数据对<code>KabyLake</code>图形设备的数据进行覆盖重写，把<code>KabyLake</code>仿冒成<code>Skylake</code>。10.12.6之前,<code>KabyLake</code>只有仿冒成’SkyLake’驱动核显，即使在10.12.6之后(或者更新的版本，包括10.13.x)，将<code>KabyLake</code>仿冒成’SkyLake’仍然是很有用的，需要注意的是完整的仿冒需要<code>FakePCIID.kext + FakePCIID_Intel_HD_Graphics.kext</code>。</p>
 </blockquote>
 <p><code>SSDT-IMEI.dsl</code>: This SSDT injects fake device-id as required for IMEI when using mixed HD3000/7-series or HD4000/6-series. Be sure to read the comments within carefully, as customization is required if your system already has an IMEI identity in ACPI.</p>
+<blockquote>
+<p>当使用混合的hd3000/7系或hd4000/6系时，该SSDT为IMEI注入了仿冒的设备id。一定要仔细阅读注释，因为如果您的系统已经在ACPI中有了IMEI标识，那么就需要进行定制。</p>
+</blockquote>
 <p><code>SSDT-PNLF.dsl</code>: This SSDT injects a PNLF device that works with IntelBacklight.kext or AppleBacklight.kext. Configured with RMCF.BKLT, RMCF.LMAX, RMCF.FBTP. See guide for more information: <a href="https://www.tonymacx86.com/threads/guide-laptop-backlight-control-using-applebacklightinjector-kext.218222/" target="_blank" rel="external">https://www.tonymacx86.com/threads/guide-laptop-backlight-control-using-applebacklightinjector-kext.218222/</a></p>
-<p><code>SSDT-LPC.dsl This SSDT</code>: injects properties to force AppleLPC to load for various unsupported LPC device-ids. It assumes the LPC device is named LPCB.</p>
+<blockquote>
+<p>这个SSDT注入了一个<code>PNLF</code>设备，它可以与<code>IntelBacklight.kext</code> 或者<code>AppleBacklight.kext</code>一起工作。通过<code>RMCF.BKLT</code> ,<code>RMCF.LMAX</code> <code>RMCF.FBTP</code>。更多信息参见指南:</p>
+</blockquote>
+<p><code>SSDT-LPC.dsl</code>:This SSDT injects properties to force AppleLPC to load for various unsupported LPC device-ids. It assumes the LPC device is named LPCB.</p>
+<blockquote>
+<p>这个SSDT:注入属性以强制<code>AppleLPC</code>加载各种不支持的<code>LPC</code>设备id。需要<code>LPC</code>设备被命名为<code>LPCB</code>。</p>
+</blockquote>
 <p><code>SSDT-SATA.dsl</code>: This SSDT injects properties (fake device-id, compatible) to enable the SATA controller with certain unsupported SATA controllers. It assumes the SATA device is named SATA (typical is SAT0, thus requiring SAT0-&gt;SATA rename).</p>
+<blockquote>
+<p>这个SSDT注入了一些属性(仿冒的设备id，兼容的)，以使某些不受支持的<code>SATA</code>控制器启用<code>SATA</code>控制器。它假设<code>SATA</code>设备被命名为<code>SATA</code>(常见的是<code>SAT0</code>，因此需要<code>SAT0-SATA</code>重命名)。</p>
+</blockquote>
 <p><code>SSDT-Disable_DGPU.dsl</code>: This SSDT provides an _INI method that will call _OFF for a couple of common paths for a discrete GPU in a switched/dual GPU scenario. This SSDT can work to disable the Nvidia or AMD graphics device, if the path matches (or is modified to math) and your _OFF method code path has no EC related code. Refer to the hotpatch guide for a complete example.</p>
+<blockquote>
+<p>这个SSDT提供了一个<code>INI</code>方法，它将在可切换的/双<code>GPU</code>中为独立显卡提供一些通用的路径来调用<code>_OFF</code>。如果路径匹配(或被自定义来匹配)而且你的<code>_OFF</code>方法代码路径则没有与<code>EC</code>相关的代码，那么这个<code>SSDT</code>可以禁用<code>Nvidia</code>或<code>AMD</code>图形设备。有关一个完整的示例，请参阅热补丁指南。</p>
+</blockquote>
 <p><code>SSDT-SMBUS.dsl</code>:This SSDT injects the missing DVL0 device. Mostly used with Sandy Bridge and Ivy Bridge systems.</p>
-<p><code>SSDT-GPRW.dsl</code> and <code>SSDT-UPRW.dsl</code>: This SSDT is used in conjuction with the GPRW-&gt;XPRW or UPRW-&gt;XPRW patch. Used together this SSDT can fix “instant-wake” by disabling “wake on USB”. It overrides the _PRW package return for GPE indexes 0x0d or 0x6d. Potential companion patches are provided in hotpatch/config.plist</p>
+<blockquote>
+<p>这个SSDT注入了丢失的<code>DVL0</code>设备。主要用于<code>Sandy Bridge</code>和<code>Ivy Bridge</code>平台。</p>
+</blockquote>
+<p><code>SSDT-GPRW.dsl</code> and <code>SSDT-UPRW.dsl</code>: These SSDTs is used in conjuction with the GPRW-&gt;XPRW or UPRW-&gt;XPRW patch. Used together this SSDT can fix “instant-wake” by disabling “wake on USB”. It overrides the _PRW package return for GPE indexes 0x0d or 0x6d. Potential companion patches are provided in hotpatch/config.plist</p>
+<blockquote>
+<p>这些SSDT与<code>GPRW-XPRW</code>或<code>UPRW-XPRW</code>补丁一起使用。通过使用这些<code>SSDT</code>，可以通过禁用<code>wake on USB</code>来修复<code>instant wake</code>。它重写了<code>GPE</code>的索引<code>0x0d</code>或<code>0x6d</code>的<code>PRW</code>包返回值。在<code>hotpatch</code>/<code>config.plist</code>中提供了潜在的伙伴补丁。</p>
+</blockquote>
 <p><code>SSDT-LANC_PRW.dsl</code>: Also part of fixing “instant wake”, but this is for _PRW on the Ethernet device. Potential companion patches are provided in hotpatch/config.plist.</p>
+<blockquote>
+<p>这也是修复<code>instant wake</code>的一部分，但这是在以太网设备上进行修复的。在<code>hotpatch</code>/<code>config.plist</code>中提供了潜在的伙伴补丁。</p>
+</blockquote>
 <p><code>SSDT-PTSWAK.dsl</code>: This SSDT provides overrides for both _PTS and _WAK. When combined with the appropriate companion patches from hotpatch/config.plist, these methods can provide various fixes. The actions are controlled by RMCF.DPTS, RMCF.SHUT, RMCF.XPEE, RMCF.SSTF. Refer to SSDT-Config.dsl for more information on those options.</p>
-<p><code>SSDT-Disable_EHCI.dsl</code>: This SSDT can disable both EHCI controllers. It is assumed both have been renamed to EH01/EH02 (typically original names are EHC1/EHC2)</p>
+<blockquote>
+<p>这个SSDT提供了对<code>_PTS</code>和<code>_WAK</code>的重写。当与来自<code>hotpatch</code>/<code>config.plist</code>的适当的补丁相结合使用时，这些方法可以提供一系列的修复。这些行为是由<code>RMCF.DPTS</code>, <code>RMCF.SHUT</code>,<code>RMCF.XPEE</code>,<code>RMCF.XPEE</code> ,<code>RMCF.SSTF</code>.更多关于这些选项的信息参阅<code>SSDT-Config</code>。</p>
+</blockquote>
+<p><code>SSDT-Disable_EHCI.dsl</code>: This SSDT can disable both EHCI controllers. It is assumed both have been renamed to EH01/EH02 (typically original names are EHC1/EHC2).</p>
+<blockquote>
+<p>这个SSDT可以禁用<code>EHCI</code>控制器。要求这两种情况都被重新命名为<code>EH01/EH02</code>(通常原来的名字是<code>EHC1/EHC2</code>).</p>
+</blockquote>
 <p><code>SSDT-Disable_EH01.dsl</code>, <code>SSDT-Disable_EH02.dsl</code>: Each of these SSDTs is just SSDT-Disable_EHCI.dsl broken down to only disable EH01 or only EH02. Use as appropriate depending on which EHCI controllers are active/present in your ACPI set.</p>
+<blockquote>
+<p>这些SSDT每一个都是<code>SSDT-Disable_EHCI.dsl</code>分解的，仅仅用以禁用<code>EH01</code>或<code>EH02</code>。取决于在你的<code>ACPI</code>集合中使用哪个<code>EHCI</code>控制器是合适的。</p>
+</blockquote>
 <p><code>SSDT-XWAK.dsl</code>, <code>SSDT-XSEL.dsl</code>, <code>SSDT-ESEL.dsl</code>: Each of these SSDTs provides an empty XWAK, XSEL, and ESEL methods (respectively). Use with the appropriate companion patch from hotpatch/config.plist. Typically, these methods are disabled (by having no code in them) to disable certain actions native ACPI may be doing on wake from sleep or during startup that cause problems with the xHCI/EHCI configuration.</p>
-<p><code>SSDT-PluginType1.dsl</code>: This SSDT injects “plugin-type”=1 on CPU0. It assumes ACPI Processor objects are in Scope(_PR). It can be used to enable native CPU power management on Haswell and later CPUs. See guide for more information: <a href="https://www.tonymacx86.com/threads/guide-native-power-management-for-laptops.175801/" target="_blank" rel="external">https://www.tonymacx86.com/threads/guide-native-power-management-for-laptops.175801/</a></p>
-<p><code>SSDT-HDEF.dsl</code> and <code>SSDT-HDAU.dsl</code>: Injects layout-id, hda-gfx, and PinConfiguration properties on HDEF and HDAU in order to implement audio with patched AppleHDA.kext Configured with: RMCF.AUDL</p>
+<blockquote>
+<p>这些SSDT分别提供了一个空的<code>XWAK</code>、<code>XSEL</code>和<code>ESEL</code>方法(独立地)。配合<code>hotpatch/config.plist</code>中适当的补丁一起使用。通常情况下，这些方法被禁用(因为在它们中没有代码)，以禁用本地<code>ACPI</code>可能在唤醒睡眠或在启动时导致<code>xHCI/EHCI</code>i配置问题的某些动作。</p>
+</blockquote>
+<p><code>SSDT-PluginType1.dsl</code>: This SSDT injects “plugin-type”=1 on CPU0. It assumes ACPI Processor objects are in Scope(_PR). It can be used to enable native CPU power management on Haswell and later CPUs. See guide for more information: <a href="https://www.tonymacx86.com/threads/guide-native-power-management-for-laptops.175801/" target="_blank" rel="external">https://www.tonymacx86.com/threads/guide-native-power-management-for-laptops.175801/</a>.</p>
+<blockquote>
+<p>这个SSDT在<code>CPU0</code>注入<code>“plugin-type”=1</code>。它要求<code>ACPI</code>处理器对象在<code>Scope(_PR)</code>范围内。它可以用于在<code>Haswell</code>和更新的<code>CPU</code>启用原生电源管理。更多信息见指南：<a href="https://www.tonymacx86.com/threads/guide-native-power-management-for-laptops.175801/" target="_blank" rel="external">https://www.tonymacx86.com/threads/guide-native-power-management-for-laptops.175801/</a>.</p>
+</blockquote>
+<p><code>SSDT-HDEF.dsl</code> and <code>SSDT-HDAU.dsl</code>: Injects layout-id, hda-gfx, and PinConfiguration properties on HDEF and HDAU in order to implement audio with patched AppleHDA.kext Configured with: RMCF.AUDL.</p>
+<blockquote>
+<p>在<code>HDEF</code>和<code>HDAU</code>上注入<code>layout-id</code>、<code>hda-gfx</code>和<code>PinConfiguration</code>属性，以通过对<code>AppleHDA</code>的<code>patch</code>实现音频。通过<code>RMCF.AUDL</code>配置.</p>
+</blockquote>
 <p><code>SSDT-EH01.dsl</code>,<code>SSDT-EH02.dsl</code>, and <code>SSDT-XHC.dsl</code>:These SSDTs inject USB power properties and control over FakePCIID_XHCIMux (dending on SSDT-Disable_EH*.dsl).</p>
-<p><code>SSDT-ALS0.dsl</code> Injects a fake ALS device (ambient light sensor). This SSDT is used to fix problems with restoring brightness upon reboot.</p>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Patching ACPI is always necessary to enable (near) full functionality when installing OS X on non-Apple hardware.</p>
+<blockquote>
+<p>这些SSDT注入<code>USB</code>电源属性并通过<code>FakePCIID_XHCIMux</code>控制(取决于<code>SSDT-Disable_EH*.dsl</code>)。</p>
+</blockquote>
+<p><code>SSDT-ALS0.dsl</code>: Injects a fake ALS device (ambient light sensor). This SSDT is used to fix problems with restoring brightness upon reboot.</p>
+<blockquote>
+<p>注入仿冒<code>ALS</code>设备(环境光传感器)。这个<code>SSDT</code>用于修复重新启动时还原亮度的问题。</p>
+</blockquote>
+<h2 id="Introduction-说明文档"><a href="#Introduction-说明文档" class="headerlink" title="Introduction-说明文档"></a>Introduction-说明文档</h2><p>Patching ACPI is always necessary to enable (near) full functionality when installing OS X on non-Apple hardware.</p>
+<blockquote>
+<p>在非苹果硬件上安装OS X时，修补<code>ACPI</code>以启用(接近)完整的功能总是必要的。</p>
+</blockquote>
 <p>There is a complete guide here: <a href="http://www.tonymacx86.com/threads/guide-patching-laptop-dsdt-ssdts.152573/" target="_blank" rel="external">http://www.tonymacx86.com/threads/guide-patching-laptop-dsdt-ssdts.152573/</a></p>
+<blockquote>
+<p>这里有一个完整的指南: <a href="http://www.tonymacx86.com/threads/guide-patching-laptop-dsdt-ssdts.152573/" target="_blank" rel="external">http://www.tonymacx86.com/threads/guide-patching-laptop-dsdt-ssdts.152573/</a></p>
+</blockquote>
 <p>That guide uses what is known as “static patching”. In order to inject patched ACPI files, we extract native ACPI, disassemble them, make changes, then recompile and place the files in ACPI/patched, so that Clover injects the patched ACPI instead of native ACPI. With the techniques detailed in this guide, the changes can be made directly to the ACPI binaries provided by BIOS, skipping the extract, disassembly, and recompilation steps.</p>
+<blockquote>
+<p>该指南使用了所谓的“静态补丁”。为了注入打了补丁的<code>ACPI</code>文件，我们提取本地的ACPI，将它们反编译，进行修改，然后重新编译，并将文件放在<code>ACPI/patched</code>中，这样Clover就注入了打过补丁的<code>ACPI</code>，而不是原生的<code>ACPI</code>。通过本指南中详细介绍的技术，可以直接对<code>BIOS</code>提供的<code>ACPI</code>二进制文件进行更改，跳过提取、分解和重新编译步骤。</p>
+</blockquote>
 <p>You should have a solid understanding of static ACPI patching before attempting to hotpatch. You should also have an understanding of the ACPI spec, binary patching, programming, and ACPI concepts. Don’t expect step-by-step and spoon feeding in this thread.</p>
-<h3 id="Clover-mechanisms"><a href="#Clover-mechanisms" class="headerlink" title="Clover mechanisms"></a>Clover mechanisms</h3><p>Clover provides a few methods for accomplishing ACPI hotpatch:</p>
+<blockquote>
+<p>在尝试<code>hotpatch</code>之前，你应该对静态的<code>ACPI</code>补丁有一定的了解。你还应该了解<code>ACPI</code>规范、二进制补丁、语法和<code>ACPI</code>概念。不要指望在这个过程中循序渐进地学习。</p>
+</blockquote>
+<h3 id="Clover-mechanisms-Clover机制"><a href="#Clover-mechanisms-Clover机制" class="headerlink" title="Clover mechanisms-Clover机制"></a>Clover mechanisms-<code>Clover</code>机制</h3><p>Clover provides a few methods for accomplishing ACPI hotpatch:</p>
 <ul>
 <li>config.plist/ACPI/DSDT/Fixes</li>
 <li>config.plist/ACPI/DSDT/Patches</li>
@@ -2845,7 +2905,8 @@ D2C5: 70 69 45 43 46 4C
 
 03D8: 70 00 5C 2F 05 5F 53 42 5F 50 43 49 30 52 50 30  // p.\/._SB_PCI0RP0
 03E8: 35 50 45 47 50 5F 41 44 52                       // 5PEGP_ADR
-</code></pre><p>Resulting patch…</p>
+</code></pre><p>​            </p>
+<p>Resulting patch…</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Find: &lt;5F 49 4E 49 00 70 00 5C 2F 05 5F 53 42 5F 50 43 49 30 52 50 30 35 50 45 47 50&gt;</div><div class="line">Replace: &lt;58 49 4E 49 00 70 00 5C 2F 05 5F 53 42 5F 50 43 49 30 52 50 30 35 50 45 47 50&gt;</div></pre></td></tr></table></figure>
 <p>And the _OFF in SSDT-8.dsl:</p>
 <pre><code>    Method (_OFF, 0, Serialized)  // _OFF: Power Off
@@ -3189,7 +3250,7 @@ Method (FAOF, 0, Serialized)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preface–序言"><span class="nav-number">1.</span> <span class="nav-text">Preface–序言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Brief-description-for-hotpatch–hotpatch概要"><span class="nav-number">2.</span> <span class="nav-text">Brief description for hotpatch–hotpatch概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-brief-description-of-each-hotpatch-SSDT-is-provided-below–下面是每一个-hotpatch-SSDT-的概要"><span class="nav-number">3.</span> <span class="nav-text">A brief description of each hotpatch SSDT is provided below–下面是每一个 hotpatch SSDT 的概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">4.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Clover-mechanisms"><span class="nav-number">4.1.</span> <span class="nav-text">Clover mechanisms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-ACPI-objects"><span class="nav-number">4.2.</span> <span class="nav-text">Renaming ACPI objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Removing-methods"><span class="nav-number">4.3.</span> <span class="nav-text">Removing methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redirect-and-Replace"><span class="nav-number">4.4.</span> <span class="nav-text">Redirect and Replace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rename-and-Replace"><span class="nav-number">4.5.</span> <span class="nav-text">Rename and Replace</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips-for-complex-Rename-and-Replace"><span class="nav-number">4.5.1.</span> <span class="nav-text">Tips for complex Rename and Replace</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-value-patching"><span class="nav-number">4.6.</span> <span class="nav-text">Code value patching</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clover-ACPI-configuration"><span class="nav-number">4.7.</span> <span class="nav-text">Clover ACPI configuration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Troubleshooting"><span class="nav-number">4.8.</span> <span class="nav-text">Troubleshooting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Battery-Status-Hotpatch"><span class="nav-number">5.</span> <span class="nav-text">Battery Status Hotpatch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-diffmerge-to-find-patched-vs-native-differences"><span class="nav-number">5.1.</span> <span class="nav-text">Using diffmerge to find patched vs. native differences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Constructing-the-initial-SSDT"><span class="nav-number">5.2.</span> <span class="nav-text">Constructing the initial SSDT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resolving-errors"><span class="nav-number">5.3.</span> <span class="nav-text">Resolving errors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-existing-methods"><span class="nav-number">5.4.</span> <span class="nav-text">Renaming existing methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion"><span class="nav-number">5.5.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Disabling-discrete-switched-GPU-with-Hotpatch"><span class="nav-number">6.</span> <span class="nav-text">Disabling discrete/switched GPU with Hotpatch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-the-replacement-INI-OFF-REG-methods"><span class="nav-number">6.1.</span> <span class="nav-text">Building the replacement _INI/_OFF/_REG methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-the-methods"><span class="nav-number">6.2.</span> <span class="nav-text">Renaming the methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-simple-example"><span class="nav-number">6.3.</span> <span class="nav-text">A simple example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion-1"><span class="nav-number">6.4.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Credits"><span class="nav-number">7.</span> <span class="nav-text">Credits</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preface–序言"><span class="nav-number">1.</span> <span class="nav-text">Preface–序言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Brief-description-for-hotpatch–hotpatch概要"><span class="nav-number">2.</span> <span class="nav-text">Brief description for hotpatch–hotpatch概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-brief-description-of-each-hotpatch-SSDT-is-provided-below–下面是每一个-hotpatch-SSDT-的概要"><span class="nav-number">3.</span> <span class="nav-text">A brief description of each hotpatch SSDT is provided below–下面是每一个 hotpatch SSDT 的概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-说明文档"><span class="nav-number">4.</span> <span class="nav-text">Introduction-说明文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Clover-mechanisms-Clover机制"><span class="nav-number">4.1.</span> <span class="nav-text">Clover mechanisms-Clover机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-ACPI-objects"><span class="nav-number">4.2.</span> <span class="nav-text">Renaming ACPI objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Removing-methods"><span class="nav-number">4.3.</span> <span class="nav-text">Removing methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redirect-and-Replace"><span class="nav-number">4.4.</span> <span class="nav-text">Redirect and Replace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rename-and-Replace"><span class="nav-number">4.5.</span> <span class="nav-text">Rename and Replace</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips-for-complex-Rename-and-Replace"><span class="nav-number">4.5.1.</span> <span class="nav-text">Tips for complex Rename and Replace</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-value-patching"><span class="nav-number">4.6.</span> <span class="nav-text">Code value patching</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clover-ACPI-configuration"><span class="nav-number">4.7.</span> <span class="nav-text">Clover ACPI configuration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Troubleshooting"><span class="nav-number">4.8.</span> <span class="nav-text">Troubleshooting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Battery-Status-Hotpatch"><span class="nav-number">5.</span> <span class="nav-text">Battery Status Hotpatch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-diffmerge-to-find-patched-vs-native-differences"><span class="nav-number">5.1.</span> <span class="nav-text">Using diffmerge to find patched vs. native differences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Constructing-the-initial-SSDT"><span class="nav-number">5.2.</span> <span class="nav-text">Constructing the initial SSDT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resolving-errors"><span class="nav-number">5.3.</span> <span class="nav-text">Resolving errors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-existing-methods"><span class="nav-number">5.4.</span> <span class="nav-text">Renaming existing methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion"><span class="nav-number">5.5.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Disabling-discrete-switched-GPU-with-Hotpatch"><span class="nav-number">6.</span> <span class="nav-text">Disabling discrete/switched GPU with Hotpatch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-the-replacement-INI-OFF-REG-methods"><span class="nav-number">6.1.</span> <span class="nav-text">Building the replacement _INI/_OFF/_REG methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-the-methods"><span class="nav-number">6.2.</span> <span class="nav-text">Renaming the methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-simple-example"><span class="nav-number">6.3.</span> <span class="nav-text">A simple example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion-1"><span class="nav-number">6.4.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Credits"><span class="nav-number">7.</span> <span class="nav-text">Credits</span></a></li></ol></div>
             
 
           </div>
@@ -3234,7 +3295,7 @@ Method (FAOF, 0, Serialized)
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      39.9k
+      40.9k
     </span>
   
 </div>
@@ -3256,7 +3317,7 @@ Method (FAOF, 0, Serialized)
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.9k字</span>
+  <span class="post-count">博客全站共40.9k字</span>
 </div>
 
         
