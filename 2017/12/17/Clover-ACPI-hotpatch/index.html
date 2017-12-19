@@ -139,7 +139,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/batthot_diffmerge_initial.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/ssd_with_nodes_expanded.png">
-<meta property="og:updated_time" content="2017-12-19T06:25:28.175Z">
+<meta property="og:updated_time" content="2017-12-19T15:19:29.776Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Clover ACPI hotpatch">
 <meta name="twitter:description" content="Using Clover to &quot;hotpatch&quot; ACPI">
@@ -457,7 +457,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  18,599 字
+                  19,640 字
                 </span>
               
 
@@ -473,7 +473,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  111 分钟
+                  115 分钟
                 </span>
               
             </div>
@@ -640,37 +640,103 @@
 <p>在某些情况下，必须使用不止一个机制来完成某一个目标。例如，你可能使用二进制补丁来禁用或重命名本地<code>ACPI</code>集合中的组件，然后用额外的<code>SSDT</code>替换它。</p>
 </blockquote>
 <h3 id="Renaming-ACPI-objects-重命名ACPI对象"><a href="#Renaming-ACPI-objects-重命名ACPI对象" class="headerlink" title="Renaming ACPI objects-重命名ACPI对象"></a>Renaming ACPI objects-重命名<code>ACPI</code>对象</h3><p>Since OS X can depend on specific ACPI object names used by Macs, a common patch is to rename an object in the native ACPI set. For example, most PC laptops use GFX0 for the integrated Intel GPU object (Intel HD Graphics). In OS X, power management for Intel graphics is not enabled unless this device is named IGPU. Using static patching, we apply “Rename IGPU to GFX0” in order to rename this object. The patch must be applied to the DSDT and all SSDTs that reference it.</p>
+<blockquote>
+<p>由于<code>OS X</code>可以依赖于<code>Mac</code>所使用的特定的<code>ACPI</code>对象名称，一个常见的补丁是在本地的ACPI集合中重命名一个对象，例如，大多数<code>PC</code>笔记本使用<code>GFX0</code>作为集成的<code>Intel GPU</code>对象(<code>Intel HD</code>显卡)。在<code>OS X</code>中，除非这个设备被命名为<code>IGPU</code>，否则英特尔图形的电源管理是不能启用的。使用静态补丁，我们应用<code>Rename IGPU to GFX0</code>来重命名这个对象。这个补丁必须应用到<code>DSDT</code>和所有有引用<code>GFX0</code>的<code>SSDT</code>上。</p>
+</blockquote>
 <p>With hotpatch, we can rename GFX0 to IGPU using a simple Clover patch in ACPI/DSDT/Patches. Such patches apply to DSDT and all native SSDTs (DSDT/Patches do not apply to SSDTs that are added via ACPI/patched). The patch for the rename would be:</p>
+<blockquote>
+<p>使用<code>hotpatch</code>，我们可以在<code>ACPI/DSDT/Patches</code>使用一个简单的四叶草补丁将<code>GFX0</code>重命名为<code>IGPU</code>。这些补丁适用于<code>DSDT</code>和所有本地的<code>SSDTs</code>(<code>(DSDT/Patches</code>不能被应用到通过<code>ACPI/patched</code>添加的<code>SSDT</code>)。重命名的补丁是:</p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Comment: Rename GFX0 to IGPU</div><div class="line">Find: &lt;4746 5830&gt;</div><div class="line">Replace: &lt;4947 5055&gt;</div></pre></td></tr></table></figure>
 <p>The hex values in Find and Replaces are the ASCII codes for GFX0 and IGPU, respectively.</p>
+<blockquote>
+<p>查找和替换的十六进制值分别是<code>GFX0</code>和<code>IGPU</code>的<code>ASCII</code>码,分别是：</p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ echo -n GFX0|xxd</div><div class="line">0000000: 4746 5830                                GFX0</div><div class="line">$ echo -n IGPU|xxd</div><div class="line">0000000: 4947 5055                                IGPU</div></pre></td></tr></table></figure>
 <p>There are number of common renames, and most are in the config.plist that are part of my Clover/hoptpatch project:</p>
 <p><a href="https://github.com/RehabMan/OS-X-Clover-Laptop-Config/tree/master/hotpatch" target="_blank" rel="external">https://github.com/RehabMan/OS-X-Clover-Laptop-Config/tree/master/hotpatch</a></p>
+<blockquote>
+<p>有许多通用的重命名，而且很多都在<code>config.plist</code>里，这个<code>config.plist</code>是我的<code>Clover/hotpatch</code>项目的一部分:<a href="https://github.com/RehabMan/OS-X-Clover-Laptop-Config/tree/master/hotpatch" target="_blank" rel="external">https://github.com/RehabMan/OS-X-Clover-Laptop-Config/tree/master/hotpatch</a></p>
+</blockquote>
 <p>In fact, the hotpatch SSDTs that are part of the same project depend on the renames being implemented.</p>
+<blockquote>
+<p>事实上，这些<code>hotpach</code>的<code>SSDT</code>也是上面那个项目的一部分，并且它们要求这些重命名必须被实现。</p>
+</blockquote>
 <p>Common renames:</p>
+<blockquote>
+<p>通用的重命名：</p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">GFX0 -&gt; IGPU</div><div class="line">SAT0 -&gt; SATA</div><div class="line">EHC1 -&gt; EH01</div><div class="line">EHC2 -&gt; EH02</div><div class="line">XHCI -&gt; XHC</div><div class="line">HECI -&gt; IMEI</div><div class="line">MEI -&gt; IMEI</div><div class="line">LPC -&gt; LPCB</div><div class="line">HDAS -&gt; HDEF</div><div class="line">AZAL -&gt; HDEF</div></pre></td></tr></table></figure>
 <p>Note: All ACPI identifiers are 4 characters. Shorter names are padded with underscore. So, for example, XHC is represented in the AML binary as XHC<em>, EC would be EC__, EC0 would be EC</em>, MEI would be MEI_, etc.</p>
-<h3 id="Removing-methods"><a href="#Removing-methods" class="headerlink" title="Removing methods"></a>Removing methods</h3><p>It is very difficult to remove ACPI objects, (methods, names, devices, etc) using Clover binary patches. Commonly, we must add _DSM methods to inject properties that describe various hardware properties. But added _DSM methods can conflict with existing _DSM methods that may already be in the native ACPI files. With static patching, “Remove _DSM methods” would be used.</p>
+<blockquote>
+<p>注意：所有的<code>ACPI</code>标识符都是4个字符。较短的名字用下划线填充。例如，<code>XHC</code>在<code>AML</code>二进制文件中被表示为<code>XHC_</code>，<code>EC</code>是<code>EC__</code>，<code>EC0</code>是<code>EC0_</code>，<code>MEI</code>是<code>MEI_</code>，等等。</p>
+</blockquote>
+<h3 id="Removing-methods-移除方法"><a href="#Removing-methods-移除方法" class="headerlink" title="Removing methods-移除方法"></a>Removing methods-移除方法</h3><p>It is very difficult to remove ACPI objects, (methods, names, devices, etc) using Clover binary patches. Commonly, we must add _DSM methods to inject properties that describe various hardware properties. But added _DSM methods can conflict with existing _DSM methods that may already be in the native ACPI files. With static patching, “Remove _DSM methods” would be used.</p>
+<blockquote>
+<p>使用<code>Clover</code>二进制补丁来移除<code>ACPI</code>对象(方法、名称、设备等等)是非常困难的。通常，我们必须添加<code>_DSM</code>方法来注入各种描述硬件属性的属性。但是，添加<code>_DSM</code>方法可能与本地<code>ACPI</code>文件现有的<code>_DSM</code>方法冲突。这时，就会用到静态补丁<code>Remove _DSM methods</code>。</p>
+</blockquote>
 <p>Since it is difficult to remove the methods, but we don’t want the native methods to conflict with new _DSM methods that are added, the fix is to rename the native methods to something else.</p>
+<blockquote>
+<p>由于很难删除这些方法，但是我们又不希望本地方法与添加的新<code>_DSM</code>方法相冲突，所以就将本地方法重命名为其他名字来修复这个问题。</p>
+</blockquote>
 <p>So… again, we use a simple rename patch:</p>
+<blockquote>
+<p>那么…同样地，我们使用一个简单的重命名补丁:</p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Comment: Rename _DSM to XDSM</div><div class="line">Find: &lt;5f44534d&gt;</div><div class="line">Replace: &lt;5844534d&gt;</div></pre></td></tr></table></figure>
 <p>Sometimes, you might rename an object to effectively disable it so it does not cause problems. For example, my Intel DH67GD DSDT defines an APSS object. If this object is left in the DSDT it interferes with power management (causes panic). I use a rename from APSS -&gt; APXX. Because AppleIntelCPUPowerManagement is looking for APSS, it does not cause a problem once renamed to APXX.</p>
-<h3 id="Redirect-and-Replace"><a href="#Redirect-and-Replace" class="headerlink" title="Redirect and Replace"></a>Redirect and Replace</h3><p>In some cases, we would like to replace code to change the behavior. For this, we can rename the object and provide an alternate implementation in an SSDT.</p>
+<blockquote>
+<p>有时，你可能会重命名一个对象，以便有效地禁用它，这样它就不会造成问题。例如，我的<code>Intel DH67GD</code>的 <code>DSDT</code>定义了<code>APSS</code>对象。如果这个对象留在<code>DSDT</code>中，它会干扰电源管理(引起<code>KP</code>)。我使用<code>APSS-&gt;APXX</code>的重命名。因为<code>AppleIntelCPUPowerManagement</code>会查找<code>APSS</code>,只要改名为<code>APXX</code>就不会引起问题。</p>
+</blockquote>
+<h3 id="Redirect-and-Replace-重定向和替换"><a href="#Redirect-and-Replace-重定向和替换" class="headerlink" title="Redirect and Replace-重定向和替换"></a>Redirect and Replace-重定向和替换</h3><p>In some cases, we would like to replace code to change the behavior. For this, we can rename the object and provide an alternate implementation in an SSDT.</p>
+<blockquote>
+<p>在某些情况下，我们希望替换代码来改变某些动作。为此，我们可以重命名这个对象，并在<code>SSDT</code>中提供一个用来替代的对象以达到目的。</p>
+</blockquote>
 <p>A common fix is spoofing the ACPI code in DSDT and SSDTs such that it behaves as if a certain version of Windows is the ACPI host. When static patching, we might use “OS Check Fix (Windows 8)”. When applied, it changes code from:</p>
-<p><code>If (_OSI(&quot;Windows 2012&quot;))</code></p>
+<blockquote>
+<p>一个常见的修复是在<code>DSDT</code>和<code>SSDT</code>中仿冒<code>ACPI</code>代码，使其表现得就像是<code>ACPI</code>主机的某个版本的<code>Windows</code>一样。当利用静态补丁时，我们可能会使用<code>OS Check Fix (Windows 8)</code>。当应用这个补丁时，它会将代码从:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">If (_OSI(&quot;Windows 2012&quot;))</div></pre></td></tr></table></figure>
 <p>To:</p>
-<p><code>If (LOr(_OSI(&quot;Darwin&quot;),_OSI(&quot;Windows 2012&quot;))</code></p>
+<blockquote>
+<p>改为：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">If (LOr(_OSI(&quot;Darwin&quot;),_OSI(&quot;Windows 2012&quot;))</div></pre></td></tr></table></figure>
 <p>Since the _OSI implementation in OS X only responds to “Darwin” the code is changed so that this specific _OSI check also accomodates “Darwin”.</p>
+<blockquote>
+<p>由于<code>OS X</code>中<code>_OSI</code>方法的实现只对被修改了代码的<code>Darwin</code>作出响应，所以这个特定的<code>_OSI check</code>补丁也能响应<code>Darwin</code>。</p>
+</blockquote>
 <p>With hotpatching, the opposite approach is taken. Instead of changing the code using _OSI, we change the code so it calls a different method that emulates the _OSI implementation that would be in the Windows ACPI host.</p>
+<blockquote>
+<p>而热补丁则采用相反的方法，我们不使用<code>_OSI</code>修改代码，而是改变代码让它调用一种不同的方法来模拟在<code>Windows ACPI</code>主机上的<code>_OSI</code>实现。</p>
+</blockquote>
 <p>This technique relies on two of the techniques… a patch to change all calls from _OSI to XOSI… and an implementation of XOSI that emulates what Windows would do for a certain Windows version.</p>
+<blockquote>
+<p>这项技术依赖于两种技术，一个补丁来改变从<code>_OSI</code>到<code>XOSI</code>的所有调用。另一个是<code>XOSI</code>的实现，即模拟<code>Windows</code>对某个<code>Windows</code>版本的操作。</p>
+</blockquote>
 <p>First, changing the code to call XOSI instead of _OSI:</p>
+<blockquote>
+<p>首先，改变代码来调用<code>XOSI</code>而不是<code>_OSI</code>:</p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Comment: Change _OSI to XOSI</div><div class="line">Find: &lt;5f4f 5349&gt;</div><div class="line">Replace: &lt;584f 5349&gt;</div></pre></td></tr></table></figure>
 <p>The hex codes above should be no mystery (they are ASCII for _OSI and XOSI, respectively).</p>
+<blockquote>
+<p>上面的十六进制代码没有什么神秘的(它们分别是<code>_OSI</code>和<code>XOSI</code>的<code>ASCII</code>码)。</p>
+</blockquote>
 <p>Now the code mentioned above, after patching by Clover, will read:</p>
-<p><code>If (XOSI(&quot;Windows 2012&quot;))</code></p>
+<blockquote>
+<p>现在，上面提到的代码，在通过<code>Clover</code>打了补丁之后，将会读到:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">If (XOSI(&quot;Windows 2012&quot;))</div></pre></td></tr></table></figure>
 <p>Now we need an SSDT that implements XOSI. You will find such an implementation in the repository (SSDT-XOSI.dsl).</p>
+<blockquote>
+<p>现在我们需要一个实现<code>XOSI</code>的<code>SSDT</code>。你可以我的<code>GitHub</code>仓库中找到这样的实现(SSDT-XOSI.dsl).</p>
+</blockquote>
 <p>Note that without the SSDT that implements the XOSI method, the (patched) calls to XOSI would cause an ACPI abort (ACPI abort causes execution of the ACPI method to be terminated immediately with an error). Don’t use the _OSI-&gt;XOSI patch without the XOSI method.</p>
-<h3 id="Rename-and-Replace"><a href="#Rename-and-Replace" class="headerlink" title="Rename and Replace"></a>Rename and Replace</h3><p>A second pattern, similar to “Redirect and Replace” is “Rename and Replace”. In this case, instead of changing all the call sites, we change the method definition such that the method is named something different than it was originally, but leave the original method name at the call sites. This allows the method that is the target of the calls to be replaced.</p>
+<blockquote>
+<p>注意，如果没有实现<code>XOSI</code>方法的<code>SSDT</code>，这个补丁对<code>XOSI</code>的调用将导致<code>ACPI</code>的加载被终止(<code>ACPI</code>中止导致<code>ACPI</code>方法的执行被错误立即终止)。如果没有<code>XOSI</code>方法不要使用<code>_OSI</code>-&gt;<code>XOSI</code>补丁。</p>
+</blockquote>
+<h3 id="Rename-and-Replace-重命名和替换"><a href="#Rename-and-Replace-重命名和替换" class="headerlink" title="Rename and Replace-重命名和替换"></a>Rename and Replace-重命名和替换</h3><p>A second pattern, similar to “Redirect and Replace” is “Rename and Replace”. In this case, instead of changing all the call sites, we change the method definition such that the method is named something different than it was originally, but leave the original method name at the call sites. This allows the method that is the target of the calls to be replaced.</p>
 <p>For example, it is very common for USB devices to cause “instant wake”. As a work around, wake on USB can be disabled. Most laptops don’t have a BIOS option for it, so instead the _PRW methods that control this feature are patched.</p>
 <p>For example, the native _SB.PCI0.EHC1._PRW method might read:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake</div><div class="line">&#123;</div><div class="line">	Return (GPRW (0x6D, 0x03))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -3265,7 +3331,7 @@ Method (FAOF, 0, Serialized)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preface–序言"><span class="nav-number">1.</span> <span class="nav-text">Preface–序言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Brief-description-for-hotpatch–hotpatch概要"><span class="nav-number">2.</span> <span class="nav-text">Brief description for hotpatch–hotpatch概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-brief-description-of-each-hotpatch-SSDT-is-provided-below–下面是每一个-hotpatch-SSDT-的概要"><span class="nav-number">3.</span> <span class="nav-text">A brief description of each hotpatch SSDT is provided below–下面是每一个 hotpatch SSDT 的概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-说明文档"><span class="nav-number">4.</span> <span class="nav-text">Introduction-说明文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Clover-mechanisms-Clover机制"><span class="nav-number">4.1.</span> <span class="nav-text">Clover mechanisms-Clover机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-ACPI-objects-重命名ACPI对象"><span class="nav-number">4.2.</span> <span class="nav-text">Renaming ACPI objects-重命名ACPI对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Removing-methods"><span class="nav-number">4.3.</span> <span class="nav-text">Removing methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redirect-and-Replace"><span class="nav-number">4.4.</span> <span class="nav-text">Redirect and Replace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rename-and-Replace"><span class="nav-number">4.5.</span> <span class="nav-text">Rename and Replace</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips-for-complex-Rename-and-Replace"><span class="nav-number">4.5.1.</span> <span class="nav-text">Tips for complex Rename and Replace</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-value-patching"><span class="nav-number">4.6.</span> <span class="nav-text">Code value patching</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clover-ACPI-configuration"><span class="nav-number">4.7.</span> <span class="nav-text">Clover ACPI configuration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Troubleshooting"><span class="nav-number">4.8.</span> <span class="nav-text">Troubleshooting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Battery-Status-Hotpatch"><span class="nav-number">5.</span> <span class="nav-text">Battery Status Hotpatch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-diffmerge-to-find-patched-vs-native-differences"><span class="nav-number">5.1.</span> <span class="nav-text">Using diffmerge to find patched vs. native differences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Constructing-the-initial-SSDT"><span class="nav-number">5.2.</span> <span class="nav-text">Constructing the initial SSDT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resolving-errors"><span class="nav-number">5.3.</span> <span class="nav-text">Resolving errors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-existing-methods"><span class="nav-number">5.4.</span> <span class="nav-text">Renaming existing methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion"><span class="nav-number">5.5.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Disabling-discrete-switched-GPU-with-Hotpatch"><span class="nav-number">6.</span> <span class="nav-text">Disabling discrete/switched GPU with Hotpatch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-the-replacement-INI-OFF-REG-methods"><span class="nav-number">6.1.</span> <span class="nav-text">Building the replacement _INI/_OFF/_REG methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-the-methods"><span class="nav-number">6.2.</span> <span class="nav-text">Renaming the methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-simple-example"><span class="nav-number">6.3.</span> <span class="nav-text">A simple example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion-1"><span class="nav-number">6.4.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Credits"><span class="nav-number">7.</span> <span class="nav-text">Credits</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preface–序言"><span class="nav-number">1.</span> <span class="nav-text">Preface–序言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Brief-description-for-hotpatch–hotpatch概要"><span class="nav-number">2.</span> <span class="nav-text">Brief description for hotpatch–hotpatch概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-brief-description-of-each-hotpatch-SSDT-is-provided-below–下面是每一个-hotpatch-SSDT-的概要"><span class="nav-number">3.</span> <span class="nav-text">A brief description of each hotpatch SSDT is provided below–下面是每一个 hotpatch SSDT 的概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-说明文档"><span class="nav-number">4.</span> <span class="nav-text">Introduction-说明文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Clover-mechanisms-Clover机制"><span class="nav-number">4.1.</span> <span class="nav-text">Clover mechanisms-Clover机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-ACPI-objects-重命名ACPI对象"><span class="nav-number">4.2.</span> <span class="nav-text">Renaming ACPI objects-重命名ACPI对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Removing-methods-移除方法"><span class="nav-number">4.3.</span> <span class="nav-text">Removing methods-移除方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redirect-and-Replace-重定向和替换"><span class="nav-number">4.4.</span> <span class="nav-text">Redirect and Replace-重定向和替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rename-and-Replace-重命名和替换"><span class="nav-number">4.5.</span> <span class="nav-text">Rename and Replace-重命名和替换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips-for-complex-Rename-and-Replace"><span class="nav-number">4.5.1.</span> <span class="nav-text">Tips for complex Rename and Replace</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-value-patching"><span class="nav-number">4.6.</span> <span class="nav-text">Code value patching</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clover-ACPI-configuration"><span class="nav-number">4.7.</span> <span class="nav-text">Clover ACPI configuration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Troubleshooting"><span class="nav-number">4.8.</span> <span class="nav-text">Troubleshooting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Battery-Status-Hotpatch"><span class="nav-number">5.</span> <span class="nav-text">Battery Status Hotpatch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-diffmerge-to-find-patched-vs-native-differences"><span class="nav-number">5.1.</span> <span class="nav-text">Using diffmerge to find patched vs. native differences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Constructing-the-initial-SSDT"><span class="nav-number">5.2.</span> <span class="nav-text">Constructing the initial SSDT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resolving-errors"><span class="nav-number">5.3.</span> <span class="nav-text">Resolving errors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-existing-methods"><span class="nav-number">5.4.</span> <span class="nav-text">Renaming existing methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion"><span class="nav-number">5.5.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Disabling-discrete-switched-GPU-with-Hotpatch"><span class="nav-number">6.</span> <span class="nav-text">Disabling discrete/switched GPU with Hotpatch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-the-replacement-INI-OFF-REG-methods"><span class="nav-number">6.1.</span> <span class="nav-text">Building the replacement _INI/_OFF/_REG methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-the-methods"><span class="nav-number">6.2.</span> <span class="nav-text">Renaming the methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-simple-example"><span class="nav-number">6.3.</span> <span class="nav-text">A simple example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion-1"><span class="nav-number">6.4.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Credits"><span class="nav-number">7.</span> <span class="nav-text">Credits</span></a></li></ol></div>
             
 
           </div>
@@ -3310,7 +3376,7 @@ Method (FAOF, 0, Serialized)
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      41.3k
+      42.4k
     </span>
   
 </div>
@@ -3332,7 +3398,7 @@ Method (FAOF, 0, Serialized)
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共41.3k字</span>
+  <span class="post-count">博客全站共42.4k字</span>
 </div>
 
         
