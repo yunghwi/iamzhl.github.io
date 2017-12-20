@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-19T15:19:29.776Z</updated>
+  <updated>2017-12-20T09:27:14.684Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Install and config mysql on mac</title>
+    <link href="http://yoursite.com/2017/12/20/Install-and-config-mysql-on-mac/"/>
+    <id>http://yoursite.com/2017/12/20/Install-and-config-mysql-on-mac/</id>
+    <published>2017-12-20T09:01:00.000Z</published>
+    <updated>2017-12-20T09:27:14.684Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="安装HomeBrew"><a href="#安装HomeBrew" class="headerlink" title="安装HomeBrew"></a>安装<code>HomeBrew</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure><p>等待安装完成即可</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装<code>MySQL</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install mysql</div></pre></td></tr></table></figure><p>等待安装完成，如下图</p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-12-20-1.png" alt="2017-12-20-1"></p><h3 id="检查安装是否正常"><a href="#检查安装是否正常" class="headerlink" title="检查安装是否正常"></a>检查安装是否正常</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysql --version</div></pre></td></tr></table></figure><p>如果出现版本号，则正常，如下图</p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-12-20-2.png" alt="2017-12-20-2"></p><p>若提示<code>command not found</code>，则依次执行下面两条命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd /usr/local/bin/</div><div class="line">$ sudo ln -fs /usr/local/mysql/bin/mysql mysql</div></pre></td></tr></table></figure><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="配置root账号的密码，默认无密码"><a href="#配置root账号的密码，默认无密码" class="headerlink" title="配置root账号的密码，默认无密码"></a>配置root账号的密码，默认无密码</h3><h4 id="开启安全模式启动mysql"><a href="#开启安全模式启动mysql" class="headerlink" title="开启安全模式启动mysql"></a>开启安全模式启动<code>mysql</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo /usr/local/mysql/bin/mysqld_safe --skip-grant-tables</div></pre></td></tr></table></figure><h3 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h3><h4 id="首先登录mysql"><a href="#首先登录mysql" class="headerlink" title="首先登录mysql"></a>首先登录<code>mysql</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysql -u root</div></pre></td></tr></table></figure><h4 id="配置root账号的密码"><a href="#配置root账号的密码" class="headerlink" title="配置root账号的密码"></a>配置<code>root</code>账号的密码</h4><blockquote><p>命令中的<code>****</code>为要修改的密码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ UPDATE mysql.user SET authentication_string=PASSWORD(&apos;****&apos;) WHERE User=&apos;root&apos;;</div></pre></td></tr></table></figure></p></blockquote><h4 id="刷新权限"><a href="#刷新权限" class="headerlink" title="刷新权限"></a>刷新权限</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ FLUSH PRIVILEGES;</div></pre></td></tr></table></figure><h4 id="退出mysql"><a href="#退出mysql" class="headerlink" title="退出mysql"></a>退出<code>mysql</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ \q</div></pre></td></tr></table></figure><h2 id="验证密码"><a href="#验证密码" class="headerlink" title="验证密码"></a>验证密码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysql -u root -p</div></pre></td></tr></table></figure><p>会提示输入密码，输入刚才设定的密码后如果能够进入<code>mysql</code>则说明配置成功。</p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-12-20-3.png" alt="2017-12-20-3"></p><h2 id="终端开启和关闭mysql服务"><a href="#终端开启和关闭mysql服务" class="headerlink" title="终端开启和关闭mysql服务"></a>终端开启和关闭<code>mysql</code>服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo /usr/local/mysql/support-files/mysql.server start</div><div class="line">$ sudo /usr/local/mysql/support-files/mysql.server stop</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      在 Mac 安装和配置`MySQL`
+    
+    </summary>
+    
+      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
+    
+    
+      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
+    
+      <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
+    
+  </entry>
   
   <entry>
     <title>Clover ACPI hotpatch</title>
@@ -483,30 +507,6 @@
     
     
       <category term="Clover" scheme="http://yoursite.com/tags/Clover/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开拓者开发团队启动会议</title>
-    <link href="http://yoursite.com/2017/09/19/%E5%BC%80%E6%8B%93%E8%80%85%E5%BC%80%E5%8F%91%E5%9B%A2%E9%98%9F%E5%90%AF%E5%8A%A8%E4%BC%9A%E8%AE%AE/"/>
-    <id>http://yoursite.com/2017/09/19/开拓者开发团队启动会议/</id>
-    <published>2017-09-19T11:58:18.000Z</published>
-    <updated>2017-09-19T12:25:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>开拓者开发团队启动会议</p></blockquote><h1 id="团队启动会议"><a href="#团队启动会议" class="headerlink" title="团队启动会议"></a>团队启动会议</h1><h2 id="开拓者开发团队工作章程"><a href="#开拓者开发团队工作章程" class="headerlink" title="开拓者开发团队工作章程"></a>开拓者开发团队工作章程</h2><h3 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h3><p>1、开拓者开发团队组员：团队由孙永辉，张海陆，罗中运组成，其中罗中运担任团队组长。<br>2、团队宗旨：开发中进步，进步中开发。</p><h3 id="团队开发"><a href="#团队开发" class="headerlink" title="团队开发"></a>团队开发</h3><p>1、由于组内成员为舍友关系，每周周二晚上和周末为开发时间，地点在宿舍和图书馆，以便随时分享个人成果为团队作积极贡献。<br>2、每周二晚上开始团队开发工作前的半个小时召开团队例会，总结上周成果并确定本周任务，各成员简述遇到的开发困难和开发心得，并对项目的开发提出切合实际的想法，最后由组长总结例会内容，制定每周开发计划。</p><h3 id="团队管理"><a href="#团队管理" class="headerlink" title="团队管理"></a>团队管理</h3><p>1、所有团队成员必须参加每次的团队例会，每次的例会计划由组长提前一天通知，如有意外情况需要调整计划，组长务必提前通知。因特殊情况不能参加例会的需要向组长请假。<br>2、为了提高团队的开发积极性和开发效率，所有成员应做好自己的任务，不许迟到早退。<br>3、团队成员应当具有自学和互学的能力和素质，团队之间提倡交流，综合提高团队成员的综合素质，进而使团队成员共同进步。<br>4、组长应积极与老师进行交流，将项目的要求理解到位，并在团队遇到开发困难时主动向老师寻求帮助。<br>5、每周的团体例会应当简短精悍，组长通知后团队成员应当事先认真准备。会议中应当认真做会议内容整理，确保每次会议的意义所在。</p><h3 id="团队建设"><a href="#团队建设" class="headerlink" title="团队建设"></a>团队建设</h3><p>1、为了保证团队成员身体健康，每名组员每周至少三次参加体育锻炼，让自己时刻保持足够的精力进行团队共同建设。<br>2、团队之间要有足够的交流时间，积极分享学习成果和经验，促进团队的共同进步。<br>3、在每次阶段性目标达成之后，团队都要组织一次出游或者聚餐，提高团队的贡献积极性，由组长组织安排。</p>]]></content>
-    
-    <summary type="html">
-    
-      开拓者开发团队启动会议
-    
-    </summary>
-    
-      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
-    
-    
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-      <category term="加密" scheme="http://yoursite.com/tags/%E5%8A%A0%E5%AF%86/"/>
     
   </entry>
   
