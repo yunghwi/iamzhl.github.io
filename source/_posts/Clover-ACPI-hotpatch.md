@@ -156,7 +156,11 @@ In some cases, more than one mechanism must be used to accomplish a single goal.
 
 Since OS X can depend on specific ACPI object names used by Macs, a common patch is to rename an object in the native ACPI set. For example, most PC laptops use GFX0 for the integrated Intel GPU object (Intel HD Graphics). In OS X, power management for Intel graphics is not enabled unless this device is named IGPU. Using static patching, we apply "Rename IGPU to GFX0" in order to rename this object. The patch must be applied to the DSDT and all SSDTs that reference it.
 
+> 由于`OS X`可以依赖于`Mac`所使用的特定的`ACPI`对象名称，一个常见的补丁是在本地的ACPI集合中重命名一个对象，例如，大多数`PC`笔记本使用`GFX0`作为集成的`Intel GPU`对象(`Intel HD`显卡)。在`OS X`中，除非这个设备被命名为`IGPU`，否则英特尔图形的电源管理是不能启用的。使用静态补丁，我们应用`Rename IGPU to GFX0`来重命名这个对象。这个补丁必须应用到`DSDT`和所有有引用`GFX0`的`SSDT`上。
+
 With hotpatch, we can rename GFX0 to IGPU using a simple Clover patch in ACPI/DSDT/Patches. Such patches apply to DSDT and all native SSDTs (DSDT/Patches do not apply to SSDTs that are added via ACPI/patched). The patch for the rename would be:
+
+> 使用`hotpatch`，我们可以在`ACPI/DSDT/Patches`使用一个简单的四叶草补丁将`GFX0`重命名为`IGPU`。这些补丁适用于`DSDT`和所有本地的`SSDTs`(`(DSDT/Patches`不能被应用到通过`ACPI/patched`添加的`SSDT`)。重命名的补丁是:
 
 ```
 Comment: Rename GFX0 to IGPU
@@ -165,6 +169,8 @@ Replace: <4947 5055>
 ```
 
 The hex values in Find and Replaces are the ASCII codes for GFX0 and IGPU, respectively.
+
+> 查找和替换的十六进制值分别是`GFX0`和`IGPU`的`ASCII`码,分别是：
 
 ```
 $ echo -n GFX0|xxd
@@ -177,9 +183,15 @@ There are number of common renames, and most are in the config.plist that are pa
 
 [https://github.com/RehabMan/OS-X-Clover-Laptop-Config/tree/master/hotpatch](https://github.com/RehabMan/OS-X-Clover-Laptop-Config/tree/master/hotpatch)
 
+> 有许多通用的重命名，而且很多都在`config.plist`里，这个`config.plist`是我的`Clover/hotpatch`项目的一部分:[https://github.com/RehabMan/OS-X-Clover-Laptop-Config/tree/master/hotpatch](https://github.com/RehabMan/OS-X-Clover-Laptop-Config/tree/master/hotpatch)
+
 In fact, the hotpatch SSDTs that are part of the same project depend on the renames being implemented.
 
+> 事实上，这些`hotpach`的`SSDT`也是上面那个项目的一部分，并且它们要求这些重命名必须被实现。
+
 Common renames:
+
+> 通用的重命名：
 
 ```
 GFX0 -> IGPU
@@ -196,13 +208,21 @@ AZAL -> HDEF
 
 Note: All ACPI identifiers are 4 characters. Shorter names are padded with underscore. So, for example, XHC is represented in the AML binary as XHC_, EC would be EC__, EC0 would be EC_, MEI would be MEI_, etc.
 
-### Removing methods
+> 注意：所有的`ACPI`标识符都是4个字符。较短的名字用下划线填充。例如，`XHC`在`AML`二进制文件中被表示为`XHC_`，`EC`是`EC__`，`EC0`是`EC0_`，`MEI`是`MEI_`，等等。
+
+### Removing methods-移除方法
 
 It is very difficult to remove ACPI objects, (methods, names, devices, etc) using Clover binary patches. Commonly, we must add _DSM methods to inject properties that describe various hardware properties. But added _DSM methods can conflict with existing _DSM methods that may already be in the native ACPI files. With static patching, "Remove _DSM methods" would be used.
 
+> 使用`Clover`二进制补丁来移除`ACPI`对象(方法、名称、设备等等)是非常困难的。通常，我们必须添加`_DSM`方法来注入各种描述硬件属性的属性。但是，添加`_DSM`方法可能与本地`ACPI`文件现有的`_DSM`方法冲突。这时，就会用到静态补丁`Remove _DSM methods`。
+
 Since it is difficult to remove the methods, but we don't want the native methods to conflict with new _DSM methods that are added, the fix is to rename the native methods to something else.
 
+> 由于很难删除这些方法，但是我们又不希望本地方法与添加的新`_DSM`方法相冲突，所以就将本地方法重命名为其他名字来修复这个问题。
+
 So... again, we use a simple rename patch:
+
+> 那么…同样地，我们使用一个简单的重命名补丁:
 
 ```
 Comment: Rename _DSM to XDSM
@@ -212,25 +232,45 @@ Replace: <5844534d>
 
 Sometimes, you might rename an object to effectively disable it so it does not cause problems. For example, my Intel DH67GD DSDT defines an APSS object. If this object is left in the DSDT it interferes with power management (causes panic). I use a rename from APSS -> APXX. Because AppleIntelCPUPowerManagement is looking for APSS, it does not cause a problem once renamed to APXX.
 
-### Redirect and Replace
+> 有时，你可能会重命名一个对象，以便有效地禁用它，这样它就不会造成问题。例如，我的`Intel DH67GD`的 `DSDT`定义了`APSS`对象。如果这个对象留在`DSDT`中，它会干扰电源管理(引起`KP`)。我使用`APSS->APXX`的重命名。因为`AppleIntelCPUPowerManagement`会查找`APSS`,只要改名为`APXX`就不会引起问题。
+
+### Redirect and Replace-重定向和替换
 
 In some cases, we would like to replace code to change the behavior. For this, we can rename the object and provide an alternate implementation in an SSDT.
 
+> 在某些情况下，我们希望替换代码来改变某些动作。为此，我们可以重命名这个对象，并在`SSDT`中提供一个用来替代的对象以达到目的。
+
 A common fix is spoofing the ACPI code in DSDT and SSDTs such that it behaves as if a certain version of Windows is the ACPI host. When static patching, we might use "OS Check Fix (Windows 8)". When applied, it changes code from:
 
-`If (_OSI("Windows 2012"))`
+> 一个常见的修复是在`DSDT`和`SSDT`中仿冒`ACPI`代码，使其表现得就像是`ACPI`主机的某个版本的`Windows`一样。当利用静态补丁时，我们可能会使用`OS Check Fix (Windows 8)`。当应用这个补丁时，它会将代码从:
+
+```
+If (_OSI("Windows 2012"))
+```
 
 To:
 
-`If (LOr(_OSI("Darwin"),_OSI("Windows 2012"))`
+> 改为：
+
+```
+If (LOr(_OSI("Darwin"),_OSI("Windows 2012"))
+```
 
 Since the _OSI implementation in OS X only responds to "Darwin" the code is changed so that this specific _OSI check also accomodates "Darwin".
 
+> 由于`OS X`中`_OSI`方法的实现只对被修改了代码的`Darwin`作出响应，所以这个特定的`_OSI check`补丁也能响应`Darwin`。
+
 With hotpatching, the opposite approach is taken. Instead of changing the code using _OSI, we change the code so it calls a different method that emulates the _OSI implementation that would be in the Windows ACPI host.
+
+> 而热补丁则采用相反的方法，我们不使用`_OSI`修改代码，而是改变代码让它调用一种不同的方法来模拟在`Windows ACPI`主机上的`_OSI`实现。
 
 This technique relies on two of the techniques... a patch to change all calls from _OSI to XOSI... and an implementation of XOSI that emulates what Windows would do for a certain Windows version.
 
+> 这项技术依赖于两种技术，一个补丁来改变从`_OSI`到`XOSI`的所有调用。另一个是`XOSI`的实现，即模拟`Windows`对某个`Windows`版本的操作。
+
 First, changing the code to call XOSI instead of _OSI:
+
+> 首先，改变代码来调用`XOSI`而不是`_OSI`:
 
 ```
 Comment: Change _OSI to XOSI
@@ -240,15 +280,25 @@ Replace: <584f 5349>
 
 The hex codes above should be no mystery (they are ASCII for _OSI and XOSI, respectively).
 
+> 上面的十六进制代码没有什么神秘的(它们分别是`_OSI`和`XOSI`的`ASCII`码)。
+
 Now the code mentioned above, after patching by Clover, will read:
 
-`If (XOSI("Windows 2012"))`
+> 现在，上面提到的代码，在通过`Clover`打了补丁之后，将会读到:
+
+```
+If (XOSI("Windows 2012"))
+```
 
 Now we need an SSDT that implements XOSI. You will find such an implementation in the repository (SSDT-XOSI.dsl).
 
+> 现在我们需要一个实现`XOSI`的`SSDT`。你可以我的`GitHub`仓库中找到这样的实现(SSDT-XOSI.dsl).
+
 Note that without the SSDT that implements the XOSI method, the (patched) calls to XOSI would cause an ACPI abort (ACPI abort causes execution of the ACPI method to be terminated immediately with an error). Don't use the _OSI->XOSI patch without the XOSI method.
 
-### Rename and Replace
+> 注意，如果没有实现`XOSI`方法的`SSDT`，这个补丁对`XOSI`的调用将导致`ACPI`的加载被终止(`ACPI`中止导致`ACPI`方法的执行被错误立即终止)。如果没有`XOSI`方法不要使用`_OSI`->`XOSI`补丁。
+
+### Rename and Replace-重命名和替换
 
 A second pattern, similar to "Redirect and Replace" is "Rename and Replace". In this case, instead of changing all the call sites, we change the method definition such that the method is named something different than it was originally, but leave the original method name at the call sites. This allows the method that is the target of the calls to be replaced.
 
