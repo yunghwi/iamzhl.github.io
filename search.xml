@@ -8,8 +8,8 @@
         <category>Study</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
         <tag>Mac</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -71,8 +71,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
       </tags>
   </entry>
   <entry>
@@ -106,8 +106,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
       </tags>
   </entry>
   <entry>
@@ -144,8 +144,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>NTFS</tag>
       </tags>
   </entry>
@@ -216,8 +216,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>Window Server Service only ran for 0 seconds</tag>
         <tag>Disable DGPU</tag>
         <tag>屏蔽独显</tag>
@@ -255,8 +255,8 @@
         <category>Study</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>加密</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -306,9 +306,9 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
+        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
         <tag>终端</tag>
-        <tag>Hacintosh</tag>
         <tag>任何来源</tag>
       </tags>
   </entry>
@@ -333,8 +333,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>BCM94352z</tag>
       </tags>
   </entry>
@@ -372,8 +372,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>开机速度</tag>
       </tags>
   </entry>
@@ -385,23 +385,10 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>黑苹果</tag>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>AppleIntelInfo</tag>
         <tag>变频</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[How to use xcode-select in terminal]]></title>
-    <url>%2F2017%2F09%2F03%2FHow%20to%20use%20xcode-select%20in%20terminal%2F</url>
-    <content type="text"><![CDATA[How to use xcode-select in terminal It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.The command line options are below: 1234xcode-select [-help]xcode-select [-switch xcode_folder_path]xcode-select [-print-path]xcode-select [-version] Here is how to print the current Xcode path:12$ xcode-select --print-path/Developer/Applications/Xcode.app Line number 2 shows the current version of Xcode that is ‘active.’ If you are accessing xcodebuild or other related tools from a script, –print-path is the preferred means to determine the current Xcode location.Use the -switch option to change to another version of Xcode on your system: 1$ sudo xcode-select --switch /Applications/Xcode-beta.app/Contents/Developer This changes to the Xcode-beta 9 on my system. Note that root access is required to set the Xcode location, thus I have used sudo to execute the command as root.Printing the path now looks as follows: 12$ xcode-select --print-path/Applications/Xcode-beta.app/Contents/Developer To switch back to Xcode installed in the /Applications directory:1$ sudo xcode-select -switch /Applications/Xcode.app/ You can read more about xcode-select by view the man page from a terminal:1$ man xcode-select]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>终端</tag>
-        <tag>Mac</tag>
-        <tag>Xcode</tag>
       </tags>
   </entry>
   <entry>
@@ -415,6 +402,19 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>金币阵列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[How to use xcode-select in terminal]]></title>
+    <url>%2F2017%2F09%2F03%2FHow%20to%20use%20xcode-select%20in%20terminal%2F</url>
+    <content type="text"><![CDATA[How to use xcode-select in terminal It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.The command line options are below: 1234xcode-select [-help]xcode-select [-switch xcode_folder_path]xcode-select [-print-path]xcode-select [-version] Here is how to print the current Xcode path:12$ xcode-select --print-path/Developer/Applications/Xcode.app Line number 2 shows the current version of Xcode that is ‘active.’ If you are accessing xcodebuild or other related tools from a script, –print-path is the preferred means to determine the current Xcode location.Use the -switch option to change to another version of Xcode on your system: 1$ sudo xcode-select --switch /Applications/Xcode-beta.app/Contents/Developer This changes to the Xcode-beta 9 on my system. Note that root access is required to set the Xcode location, thus I have used sudo to execute the command as root.Printing the path now looks as follows: 12$ xcode-select --print-path/Applications/Xcode-beta.app/Contents/Developer To switch back to Xcode installed in the /Applications directory:1$ sudo xcode-select -switch /Applications/Xcode.app/ You can read more about xcode-select by view the man page from a terminal:1$ man xcode-select]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>终端</tag>
+        <tag>Mac</tag>
+        <tag>Xcode</tag>
       </tags>
   </entry>
   <entry>
