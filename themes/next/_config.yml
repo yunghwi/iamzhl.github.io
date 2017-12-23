@@ -97,9 +97,9 @@ social:
   E-Mail: mailto:qingyingairen@gmail.com || envelope
   简书: http://www.jianshu.com/u/a918c9e67dc2 || heartbeat
   pcbeta: http://i.pcbeta.com/space-uid-157829.html || meh-o
-  #coding: https://coding.net/u/iamzhl || spinner
+  coding: https://coding.net/u/iamzhl || spinner
   #Asiba: http://www.asiba.cn || stack-overflow
-  #FB Page: https://www.facebook.com/15563836030@163.com || facebook
+  FB Page: https://www.facebook.com/15563836030@163.com || facebook
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -247,7 +247,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: night 
+highlight_theme: normal 
 
 
 # ---------------------------------------------------------------
@@ -596,7 +596,7 @@ pace: false
 pace_theme: pace-theme-minimal
 
 # Canvas-nest
-canvas_nest: false
+canvas_nest: true
 
 # three_waves
 three_waves: false
