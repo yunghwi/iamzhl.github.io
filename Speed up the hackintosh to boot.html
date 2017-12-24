@@ -502,7 +502,7 @@
       
 
       
-        <h1 id="知识普及"><a href="#知识普及" class="headerlink" title="知识普及"></a>知识普及</h1><p>有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h1 id="知识普及"><a href="#知识普及" class="headerlink" title="知识普及"></a>知识普及</h1><p>有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。</p>
 <p>这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。</p>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin </p>
 <h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><h2 id="提取-Reset-Address-和-Reset-Value-值"><a href="#提取-Reset-Address-和-Reset-Value-值" class="headerlink" title="提取 Reset Address 和 Reset Value 值"></a>提取 Reset Address 和 Reset Value 值</h2><p>用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处：</p>
@@ -685,7 +685,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -794,6 +794,12 @@
         </section>
       <!--/noindex-->
       
+
+      <div id="music163player">
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66">
+          </iframe>
+      </div>
+
       
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>

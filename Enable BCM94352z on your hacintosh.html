@@ -499,7 +499,7 @@
       
 
       
-        <h1 id="添加仿冒-ID-启用蓝牙："><a href="#添加仿冒-ID-启用蓝牙：" class="headerlink" title="添加仿冒 ID 启用蓝牙："></a>添加仿冒 ID 启用蓝牙：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">config.plist -&gt; Device -&gt; FakeID -&gt; WIFI 中填写 0x43a014e4</div></pre></td></tr></table></figure>
+        <script src="/assets/js/APlayer.min.js"> </script><h1 id="添加仿冒-ID-启用蓝牙："><a href="#添加仿冒-ID-启用蓝牙：" class="headerlink" title="添加仿冒 ID 启用蓝牙："></a>添加仿冒 ID 启用蓝牙：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">config.plist -&gt; Device -&gt; FakeID -&gt; WIFI 中填写 0x43a014e4</div></pre></td></tr></table></figure>
 <h1 id="在-Clover-的配置文件-config-plist-gt-Kernel-and-Kext-Patches-添加以下代码块"><a href="#在-Clover-的配置文件-config-plist-gt-Kernel-and-Kext-Patches-添加以下代码块" class="headerlink" title="在 Clover 的配置文件 config.plist -&gt; Kernel and Kext Patches 添加以下代码块"></a>在 Clover 的配置文件 config.plist -&gt; Kernel and Kext Patches 添加以下代码块</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;dict&gt;</div><div class="line">    &lt;key&gt;Comment&lt;/key&gt;</div><div class="line">    &lt;string&gt;10.11+-BT4LE-Handoff-Hotspot-lisai9093&lt;/string&gt;</div><div class="line">    &lt;key&gt;Disabled&lt;/key&gt;</div><div class="line">    &lt;false/&gt;</div><div class="line">    &lt;key&gt;Find&lt;/key&gt;</div><div class="line">    &lt;data&gt;</div><div class="line">    SIX/dEdIiwc=</div><div class="line">    &lt;/data&gt;</div><div class="line">    &lt;key&gt;Name&lt;/key&gt;</div><div class="line">    &lt;string&gt;IOBluetoothFamily&lt;/string&gt;</div><div class="line">    &lt;key&gt;Replace&lt;/key&gt;</div><div class="line">    &lt;data&gt;</div><div class="line">    Qb4PAAAA60Q=</div><div class="line">    &lt;/data&gt;</div><div class="line">&lt;/dict&gt;</div></pre></td></tr></table></figure>
 <h1 id="下载并安装驱动"><a href="#下载并安装驱动" class="headerlink" title="下载并安装驱动"></a>下载并安装驱动</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">https://github.com/vit9696/Lilu/releases</div><div class="line">https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/   </div><div class="line">https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/</div><div class="line">https://sourceforge.net/projects/airportbrcmfixup/files/?source=navbar</div></pre></td></tr></table></figure>
 <p>   将以下驱动拷贝到 CLOVER/EFI/CLOVER/kexts/Other 文件夹下(由于 AirportBrcmFixup.kext 是依赖于 Lilu 运行的插件，所以还需要确保该目录下必须存在 Lilu.kext)</p>
@@ -680,7 +680,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -789,6 +789,12 @@
         </section>
       <!--/noindex-->
       
+
+      <div id="music163player">
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66">
+          </iframe>
+      </div>
+
       
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>

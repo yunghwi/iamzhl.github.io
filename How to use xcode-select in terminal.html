@@ -499,7 +499,7 @@
       
 
       
-        <h2 id="It’s-not-uncommon-developers-to-have-multiple-versions-of-Xcode-installed-For-example-I-typically-have-the-latest-beta-as-well-as-the-most-current-production-release-installed"><a href="#It’s-not-uncommon-developers-to-have-multiple-versions-of-Xcode-installed-For-example-I-typically-have-the-latest-beta-as-well-as-the-most-current-production-release-installed" class="headerlink" title="It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed."></a>It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.</h2><p>However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.<br>Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.<br>The command line options are below:</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="It’s-not-uncommon-developers-to-have-multiple-versions-of-Xcode-installed-For-example-I-typically-have-the-latest-beta-as-well-as-the-most-current-production-release-installed"><a href="#It’s-not-uncommon-developers-to-have-multiple-versions-of-Xcode-installed-For-example-I-typically-have-the-latest-beta-as-well-as-the-most-current-production-release-installed" class="headerlink" title="It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed."></a>It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.</h2><p>However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.<br>Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.<br>The command line options are below:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">xcode-select [-help]</div><div class="line">xcode-select [-switch xcode_folder_path]</div><div class="line">xcode-select [-print-path]</div><div class="line">xcode-select [-version]</div></pre></td></tr></table></figure>
 <h2 id="Here-is-how-to-print-the-current-Xcode-path"><a href="#Here-is-how-to-print-the-current-Xcode-path" class="headerlink" title="Here is how to print the current Xcode path:"></a>Here is how to print the current Xcode path:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ xcode-select --print-path</div><div class="line">/Developer/Applications/Xcode.app</div></pre></td></tr></table></figure>
 <p>Line number 2 shows the current version of Xcode that is ‘active.’ If you are accessing xcodebuild or other related tools from a script, –print-path is the preferred means to determine the current Xcode location.<br>Use the -switch option to change to another version of Xcode on your system:</p>
@@ -683,7 +683,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -792,6 +792,12 @@
         </section>
       <!--/noindex-->
       
+
+      <div id="music163player">
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66">
+          </iframe>
+      </div>
+
       
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
