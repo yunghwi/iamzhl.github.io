@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.iamzhl.top/"/>
-  <updated>2017-12-20T09:31:46.131Z</updated>
+  <updated>2017-12-24T12:44:51.940Z</updated>
   <id>https://blog.iamzhl.top/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://blog.iamzhl.top/test.html"/>
+    <id>https://blog.iamzhl.top/test.html</id>
+    <published>2017-12-24T12:44:51.000Z</published>
+    <updated>2017-12-24T12:44:51.940Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Install and config mysql on mac</title>
@@ -481,32 +495,6 @@
     
     
       <category term="Clover" scheme="https://blog.iamzhl.top/tags/Clover/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Problem about Sending out death squads</title>
-    <link href="https://blog.iamzhl.top/Problem%20about%20Sending%20out%20death%20squads.html"/>
-    <id>https://blog.iamzhl.top/Problem about Sending out death squads.html</id>
-    <published>2017-09-17T16:00:00.000Z</published>
-    <updated>2017-12-24T11:26:02.509Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-03-1.png" alt="2017-09-18-03"></p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>1、首先将所有士兵直属上级的编号放于数组a；<br>2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；<br>3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 </p><h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt; </div><div class="line">#include &lt;math.h&gt; </div><div class="line"></div><div class="line">int main() &#123;</div><div class="line">int number;</div><div class="line">int count=0;</div><div class="line">int flag;</div><div class="line">scanf(&quot;%d&quot;,&amp;number);//派遣的人数 </div><div class="line"></div><div class="line">int i,j;</div><div class="line">int temp; </div><div class="line">int a[number],b[number];//a</div><div class="line">a[0]=0;//将军 </div><div class="line"></div><div class="line">for(i=1;i&lt;number;i++)&#123;</div><div class="line">scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 </div><div class="line">&#125;</div><div class="line"></div><div class="line">for(i=1;i&lt;pow(2,number);i++)&#123;</div><div class="line">temp=i;</div><div class="line">for(j=0;j&lt;number;j++)&#123;</div><div class="line">//遍历所有情况 </div><div class="line">b[j]=temp%2;</div><div class="line">temp/=2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">flag=1;</div><div class="line">for(j=1;j&lt;number;j++)&#123;</div><div class="line">//将军没有上级，不用判断</div><div class="line">if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123;</div><div class="line">//判断是否士兵和上级同时执行任务 </div><div class="line">//b[j]为编号为j+1的士兵去不去</div><div class="line">//b[a[j]-1]为编号为j+1的士兵的直接上级去不去</div><div class="line">flag=0;</div><div class="line">break;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">if(flag==1)</div><div class="line">count++;</div><div class="line">&#125;</div><div class="line"></div><div class="line">printf(&quot;%d\n&quot;,count);</div><div class="line">return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-04-1.png" alt="2017-09-18-04"></p>]]></content>
-    
-    <summary type="html">
-    
-      派遣敢死队问题
-    
-    </summary>
-    
-      <category term="algorithm" scheme="https://blog.iamzhl.top/categories/algorithm/"/>
-    
-    
-      <category term="C语言" scheme="https://blog.iamzhl.top/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-      <category term="算法" scheme="https://blog.iamzhl.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="派遣敢死队" scheme="https://blog.iamzhl.top/tags/%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F/"/>
     
   </entry>
   
