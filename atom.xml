@@ -5,9 +5,9 @@
   <subtitle>套陆的博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://blog.iamzhl.top/"/>
   <updated>2017-12-20T09:31:46.131Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://blog.iamzhl.top/</id>
   
   <author>
     <name>athlonreg/套陆</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Install and config mysql on mac</title>
-    <link href="http://yoursite.com/2017/12/20/Install-and-config-mysql-on-mac/"/>
-    <id>http://yoursite.com/2017/12/20/Install-and-config-mysql-on-mac/</id>
+    <link href="https://blog.iamzhl.top/Install-and-config-mysql-on-mac.html"/>
+    <id>https://blog.iamzhl.top/Install-and-config-mysql-on-mac.html</id>
     <published>2017-12-20T09:01:00.000Z</published>
     <updated>2017-12-20T09:31:46.131Z</updated>
     
@@ -31,19 +31,19 @@
     
     </summary>
     
-      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
+      <category term="Study" scheme="https://blog.iamzhl.top/categories/Study/"/>
     
     
-      <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
+      <category term="Mac" scheme="https://blog.iamzhl.top/tags/Mac/"/>
     
-      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
+      <category term="MySQL" scheme="https://blog.iamzhl.top/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>Clover ACPI hotpatch</title>
-    <link href="http://yoursite.com/2017/12/17/Clover-ACPI-hotpatch/"/>
-    <id>http://yoursite.com/2017/12/17/Clover-ACPI-hotpatch/</id>
+    <link href="https://blog.iamzhl.top/Clover-ACPI-hotpatch.html"/>
+    <id>https://blog.iamzhl.top/Clover-ACPI-hotpatch.html</id>
     <published>2017-12-17T07:30:15.000Z</published>
     <updated>2017-12-19T15:19:29.776Z</updated>
     
@@ -55,23 +55,23 @@
     
     </summary>
     
-      <category term="Hacintosh" scheme="http://yoursite.com/categories/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/categories/Hacintosh/"/>
     
     
-      <category term="Hacintosh" scheme="http://yoursite.com/tags/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/tags/Hacintosh/"/>
     
-      <category term="SSDT" scheme="http://yoursite.com/tags/SSDT/"/>
+      <category term="SSDT" scheme="https://blog.iamzhl.top/tags/SSDT/"/>
     
-      <category term="hotpatch" scheme="http://yoursite.com/tags/hotpatch/"/>
+      <category term="hotpatch" scheme="https://blog.iamzhl.top/tags/hotpatch/"/>
     
-      <category term="ACPI" scheme="http://yoursite.com/tags/ACPI/"/>
+      <category term="ACPI" scheme="https://blog.iamzhl.top/tags/ACPI/"/>
     
   </entry>
   
   <entry>
     <title>HP OMEN by HP Laptop</title>
-    <link href="http://yoursite.com/2017/12/13/HP-OMEN-by-HP-Laptop/"/>
-    <id>http://yoursite.com/2017/12/13/HP-OMEN-by-HP-Laptop/</id>
+    <link href="https://blog.iamzhl.top/HP-OMEN-by-HP-Laptop.html"/>
+    <id>https://blog.iamzhl.top/HP-OMEN-by-HP-Laptop.html</id>
     <published>2017-12-13T11:25:35.000Z</published>
     <updated>2017-12-13T11:27:04.144Z</updated>
     
@@ -83,21 +83,21 @@
     
     </summary>
     
-      <category term="Hacintosh" scheme="http://yoursite.com/categories/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/categories/Hacintosh/"/>
     
     
-      <category term="Hacintosh" scheme="http://yoursite.com/tags/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/tags/Hacintosh/"/>
     
-      <category term="光影精灵" scheme="http://yoursite.com/tags/%E5%85%89%E5%BD%B1%E7%B2%BE%E7%81%B5/"/>
+      <category term="光影精灵" scheme="https://blog.iamzhl.top/tags/%E5%85%89%E5%BD%B1%E7%B2%BE%E7%81%B5/"/>
     
-      <category term="暗影精灵" scheme="http://yoursite.com/tags/%E6%9A%97%E5%BD%B1%E7%B2%BE%E7%81%B5/"/>
+      <category term="暗影精灵" scheme="https://blog.iamzhl.top/tags/%E6%9A%97%E5%BD%B1%E7%B2%BE%E7%81%B5/"/>
     
   </entry>
   
   <entry>
     <title>ASUS-X455LD-i5-4210u</title>
-    <link href="http://yoursite.com/2017/12/13/ASUS-X455LD-i5-4210u/"/>
-    <id>http://yoursite.com/2017/12/13/ASUS-X455LD-i5-4210u/</id>
+    <link href="https://blog.iamzhl.top/ASUS-X455LD-i5-4210u.html"/>
+    <id>https://blog.iamzhl.top/ASUS-X455LD-i5-4210u.html</id>
     <published>2017-12-13T06:51:34.000Z</published>
     <updated>2017-12-13T06:53:08.272Z</updated>
     
@@ -109,19 +109,19 @@
     
     </summary>
     
-      <category term="Hacintosh" scheme="http://yoursite.com/categories/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/categories/Hacintosh/"/>
     
     
-      <category term="Hacintosh" scheme="http://yoursite.com/tags/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/tags/Hacintosh/"/>
     
-      <category term="X455LD" scheme="http://yoursite.com/tags/X455LD/"/>
+      <category term="X455LD" scheme="https://blog.iamzhl.top/tags/X455LD/"/>
     
   </entry>
   
   <entry>
     <title>回溯法求子集和问题</title>
-    <link href="http://yoursite.com/2017/12/12/%E5%9B%9E%E6%BA%AF%E6%B3%95%E6%B1%82%E5%AD%90%E9%9B%86%E5%92%8C%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2017/12/12/回溯法求子集和问题/</id>
+    <link href="https://blog.iamzhl.top/%E5%9B%9E%E6%BA%AF%E6%B3%95%E6%B1%82%E5%AD%90%E9%9B%86%E5%92%8C%E9%97%AE%E9%A2%98.html"/>
+    <id>https://blog.iamzhl.top/回溯法求子集和问题.html</id>
     <published>2017-12-12T06:12:40.000Z</published>
     <updated>2017-12-12T06:32:06.939Z</updated>
     
@@ -133,23 +133,23 @@
     
     </summary>
     
-      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+      <category term="algorithm" scheme="https://blog.iamzhl.top/categories/algorithm/"/>
     
     
-      <category term="子集和问题" scheme="http://yoursite.com/tags/%E5%AD%90%E9%9B%86%E5%92%8C%E9%97%AE%E9%A2%98/"/>
+      <category term="子集和问题" scheme="https://blog.iamzhl.top/tags/%E5%AD%90%E9%9B%86%E5%92%8C%E9%97%AE%E9%A2%98/"/>
     
-      <category term="回溯" scheme="http://yoursite.com/tags/%E5%9B%9E%E6%BA%AF/"/>
+      <category term="回溯" scheme="https://blog.iamzhl.top/tags/%E5%9B%9E%E6%BA%AF/"/>
     
   </entry>
   
   <entry>
     <title>Install macOS on laptop</title>
-    <link href="http://yoursite.com/2017/12/12/Install-macOS-on-laptop/"/>
-    <id>http://yoursite.com/2017/12/12/Install-macOS-on-laptop/</id>
+    <link href="https://blog.iamzhl.top/Install-macOS-on-laptop.html"/>
+    <id>https://blog.iamzhl.top/Install-macOS-on-laptop.html</id>
     <published>2017-12-11T16:28:15.000Z</published>
     <updated>2017-12-12T06:32:50.609Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>对于支持<code>UEFI</code>的机器，我们通常用<code>CLOVER</code>引导原版安装，这种方式最大的优点就是有恢复分区可以正常升级，当然前提要把引导做好。</p><h3 id="前期知识储备"><a href="#前期知识储备" class="headerlink" title="前期知识储备"></a>前期知识储备</h3><h4 id="CLOVER的目录结构"><a href="#CLOVER的目录结构" class="headerlink" title="CLOVER的目录结构"></a><code>CLOVER</code>的目录结构</h4><h4 id="根据机器配置定制kext"><a href="#根据机器配置定制kext" class="headerlink" title="根据机器配置定制kext"></a>根据机器配置定制<code>kext</code></h4><h4 id="根据机器配置定制config"><a href="#根据机器配置定制config" class="headerlink" title="根据机器配置定制config"></a>根据机器配置定制<code>config</code></h4><h4 id="了解drivers64UEFI各个-EFI文件的作用，精简引导"><a href="#了解drivers64UEFI各个-EFI文件的作用，精简引导" class="headerlink" title="了解drivers64UEFI各个.EFI文件的作用，精简引导"></a>了解<code>drivers64UEFI</code>各个<code>.EFI</code>文件的作用，精简引导</h4><h4 id="了解acpi的工作原理，完美黑苹果-进阶篇"><a href="#了解acpi的工作原理，完美黑苹果-进阶篇" class="headerlink" title="了解acpi的工作原理，完美黑苹果(进阶篇)"></a>了解<code>acpi</code>的工作原理，完美黑苹果(进阶篇)</h4><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul><li>集成<code>CLOVER</code>的原版镜像<blockquote><p>链接:<a href="https://pan.baidu.com/s/1kVmXVh1" target="_blank" rel="external">https://pan.baidu.com/s/1kVmXVh1</a>  密码:ryn9</p></blockquote></li><li><code>Transmac</code><blockquote><p>链接:<a href="https://pan.baidu.com/s/1nuFJNz7" target="_blank" rel="external">https://pan.baidu.com/s/1nuFJNz7</a>  密码:w3xw</p></blockquote></li><li><code>easyUEFI</code><blockquote><p>链接:<a href="https://pan.baidu.com/s/1eSnNWB4" target="_blank" rel="external">https://pan.baidu.com/s/1eSnNWB4</a>  密码:vzbh</p></blockquote></li><li><code>Clover Configurator</code>四叶草助手<blockquote><p>链接:<a href="https://pan.baidu.com/s/1bUZrjg" target="_blank" rel="external">https://pan.baidu.com/s/1bUZrjg</a>  密码:0752</p></blockquote></li><li><code>DiskGenius</code><blockquote><p>链接:<a href="https://pan.baidu.com/s/1dESlt8P" target="_blank" rel="external">https://pan.baidu.com/s/1dESlt8P</a>  密码:2yp2</p></blockquote></li><li>鲁大师/<code>AIDA64</code>(推荐)/也可以用设备管理器<blockquote><p>自行度娘</p></blockquote></li></ul><h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><h4 id="利用Transmac将原版镜像写入u盘"><a href="#利用Transmac将原版镜像写入u盘" class="headerlink" title="利用Transmac将原版镜像写入u盘"></a>利用<code>Transmac</code>将原版镜像写入u盘</h4><h4 id="利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext"><a href="#利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext" class="headerlink" title="利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext"></a>利用鲁大师等软件查看自己机器的配置信息，来定制<code>config</code>和需要用的<code>kext</code></h4><h4 id="重启利用U盘启动选择安装盘"><a href="#重启利用U盘启动选择安装盘" class="headerlink" title="重启利用U盘启动选择安装盘"></a>重启利用<code>U</code>盘启动选择安装盘</h4><h4 id="选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs"><a href="#选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs" class="headerlink" title="选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs"></a>选择磁盘工具，并将事先分好的分区抹成扩展日志式或者<code>apfs</code></h4><h4 id="退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装"><a href="#退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装" class="headerlink" title="退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装"></a>退出磁盘工具，选择安装<code>macos</code>选中刚才抹掉的分区开始安装</h4><h3 id="转移CLOVER到硬盘ESP，摆脱U盘引导"><a href="#转移CLOVER到硬盘ESP，摆脱U盘引导" class="headerlink" title="转移CLOVER到硬盘ESP，摆脱U盘引导"></a>转移<code>CLOVER</code>到硬盘<code>ESP</code>，摆脱<code>U</code>盘引导</h3><h3 id="后期的驱动安装以及优化"><a href="#后期的驱动安装以及优化" class="headerlink" title="后期的驱动安装以及优化"></a>后期的驱动安装以及优化</h3><h4 id="屏蔽无用的独显降低温度"><a href="#屏蔽无用的独显降低温度" class="headerlink" title="屏蔽无用的独显降低温度"></a>屏蔽无用的独显降低温度</h4><p>参考我之前的帖子：<a href="https://blog.iamzhl.top/2017/10/04/Disable%20the%20discrete%20GPU%20in%20laptop/" target="_blank" rel="external">Disable the discrete GPU in laptop</a></p><h4 id="摆脱万能声卡，利用AppleALC加载原生声卡"><a href="#摆脱万能声卡，利用AppleALC加载原生声卡" class="headerlink" title="摆脱万能声卡，利用AppleALC加载原生声卡"></a>摆脱万能声卡，利用<code>AppleALC</code>加载原生声卡</h4><p>参考我之前的帖子：<a href="https://blog.iamzhl.top/2017/11/06/%E8%B0%88%E8%B0%88%E9%BB%91%E6%9E%9C%E7%9A%84%E5%A3%B0%E5%8D%A1/" target="_blank" rel="external">谈谈黑果的声卡</a></p><h4 id="通过对DSDT打补丁完善电池显示"><a href="#通过对DSDT打补丁完善电池显示" class="headerlink" title="通过对DSDT打补丁完善电池显示"></a>通过对<code>DSDT</code>打补丁完善电池显示</h4><p>参考<code>pcbeta</code><a href="http://bbs.pcbeta.com/viewthread-1595139-1-1.html" target="_blank" rel="external">daxuexinsheng的帖子</a><br><code>tonymacx86</code><a href="https://www.tonymacx86.com/threads/guide-how-to-patch-dsdt-for-working-battery-status.116102/" target="_blank" rel="external">RehabMan的帖子</a></p><h4 id="加载x86实现变频和原生电源管理，完善节能器信息"><a href="#加载x86实现变频和原生电源管理，完善节能器信息" class="headerlink" title="加载x86实现变频和原生电源管理，完善节能器信息"></a>加载<code>x86</code>实现变频和原生电源管理，完善节能器信息</h4><ul><li>对于<code>Haswell</code>以及<code>Broadwell</code>平台，利用<code>ssdtPRGen</code>生成<code>SSDT</code>，在<code>config</code>中<code>drop</code>掉<code>CpuPm</code>和<code>Cpu0Ist</code>两个表，并利用<code>FakeSMC</code>或<code>DSDT</code>或<code>hotpatch</code>加载<code>AppleLPC</code></li><li>对于<code>Skylake</code>及以上平台，选择支持<code>HWP</code>的合适的机型，并勾选<code>HWPEnable</code>即可开启完整电源特性</li></ul><h4 id="修复八苹果二阶段花屏等问题完善显卡驱动"><a href="#修复八苹果二阶段花屏等问题完善显卡驱动" class="headerlink" title="修复八苹果二阶段花屏等问题完善显卡驱动"></a>修复八苹果二阶段花屏等问题完善显卡驱动</h4><h4 id="注入HiDPI和显示器信息完善唤醒后的花屏问题"><a href="#注入HiDPI和显示器信息完善唤醒后的花屏问题" class="headerlink" title="注入HiDPI和显示器信息完善唤醒后的花屏问题"></a>注入<code>HiDPI</code>和显示器信息完善唤醒后的花屏问题</h4>]]></content>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>对于支持<code>UEFI</code>的机器，我们通常用<code>CLOVER</code>引导原版安装，这种方式最大的优点就是有恢复分区可以正常升级，当然前提要把引导做好。</p><h3 id="前期知识储备"><a href="#前期知识储备" class="headerlink" title="前期知识储备"></a>前期知识储备</h3><h4 id="CLOVER的目录结构"><a href="#CLOVER的目录结构" class="headerlink" title="CLOVER的目录结构"></a><code>CLOVER</code>的目录结构</h4><h4 id="根据机器配置定制kext"><a href="#根据机器配置定制kext" class="headerlink" title="根据机器配置定制kext"></a>根据机器配置定制<code>kext</code></h4><h4 id="根据机器配置定制config"><a href="#根据机器配置定制config" class="headerlink" title="根据机器配置定制config"></a>根据机器配置定制<code>config</code></h4><h4 id="了解drivers64UEFI各个-EFI文件的作用，精简引导"><a href="#了解drivers64UEFI各个-EFI文件的作用，精简引导" class="headerlink" title="了解drivers64UEFI各个.EFI文件的作用，精简引导"></a>了解<code>drivers64UEFI</code>各个<code>.EFI</code>文件的作用，精简引导</h4><h4 id="了解acpi的工作原理，完美黑苹果-进阶篇"><a href="#了解acpi的工作原理，完美黑苹果-进阶篇" class="headerlink" title="了解acpi的工作原理，完美黑苹果(进阶篇)"></a>了解<code>acpi</code>的工作原理，完美黑苹果(进阶篇)</h4><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul><li>集成<code>CLOVER</code>的原版镜像<blockquote><p>链接:<a href="https://pan.baidu.com/s/1kVmXVh1" target="_blank" rel="external">https://pan.baidu.com/s/1kVmXVh1</a>  密码:ryn9</p></blockquote></li><li><code>Transmac</code><blockquote><p>链接:<a href="https://pan.baidu.com/s/1nuFJNz7" target="_blank" rel="external">https://pan.baidu.com/s/1nuFJNz7</a>  密码:w3xw</p></blockquote></li><li><code>easyUEFI</code><blockquote><p>链接:<a href="https://pan.baidu.com/s/1eSnNWB4" target="_blank" rel="external">https://pan.baidu.com/s/1eSnNWB4</a>  密码:vzbh</p></blockquote></li><li><code>Clover Configurator</code>四叶草助手<blockquote><p>链接:<a href="https://pan.baidu.com/s/1bUZrjg" target="_blank" rel="external">https://pan.baidu.com/s/1bUZrjg</a>  密码:0752</p></blockquote></li><li><code>DiskGenius</code><blockquote><p>链接:<a href="https://pan.baidu.com/s/1dESlt8P" target="_blank" rel="external">https://pan.baidu.com/s/1dESlt8P</a>  密码:2yp2</p></blockquote></li><li>鲁大师/<code>AIDA64</code>(推荐)/也可以用设备管理器<blockquote><p>自行度娘</p></blockquote></li></ul><h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><h4 id="利用Transmac将原版镜像写入u盘"><a href="#利用Transmac将原版镜像写入u盘" class="headerlink" title="利用Transmac将原版镜像写入u盘"></a>利用<code>Transmac</code>将原版镜像写入u盘</h4><h4 id="利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext"><a href="#利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext" class="headerlink" title="利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext"></a>利用鲁大师等软件查看自己机器的配置信息，来定制<code>config</code>和需要用的<code>kext</code></h4><h4 id="重启利用U盘启动选择安装盘"><a href="#重启利用U盘启动选择安装盘" class="headerlink" title="重启利用U盘启动选择安装盘"></a>重启利用<code>U</code>盘启动选择安装盘</h4><h4 id="选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs"><a href="#选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs" class="headerlink" title="选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs"></a>选择磁盘工具，并将事先分好的分区抹成扩展日志式或者<code>apfs</code></h4><h4 id="退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装"><a href="#退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装" class="headerlink" title="退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装"></a>退出磁盘工具，选择安装<code>macos</code>选中刚才抹掉的分区开始安装</h4><h3 id="转移CLOVER到硬盘ESP，摆脱U盘引导"><a href="#转移CLOVER到硬盘ESP，摆脱U盘引导" class="headerlink" title="转移CLOVER到硬盘ESP，摆脱U盘引导"></a>转移<code>CLOVER</code>到硬盘<code>ESP</code>，摆脱<code>U</code>盘引导</h3><h3 id="后期的驱动安装以及优化"><a href="#后期的驱动安装以及优化" class="headerlink" title="后期的驱动安装以及优化"></a>后期的驱动安装以及优化</h3><h4 id="屏蔽无用的独显降低温度"><a href="#屏蔽无用的独显降低温度" class="headerlink" title="屏蔽无用的独显降低温度"></a>屏蔽无用的独显降低温度</h4><p>参考我之前的帖子：<a href="https://blog.iamzhl.top/2017/10/04/Disable%20the%20discrete%20GPU%20in%20laptop/">Disable the discrete GPU in laptop</a></p><h4 id="摆脱万能声卡，利用AppleALC加载原生声卡"><a href="#摆脱万能声卡，利用AppleALC加载原生声卡" class="headerlink" title="摆脱万能声卡，利用AppleALC加载原生声卡"></a>摆脱万能声卡，利用<code>AppleALC</code>加载原生声卡</h4><p>参考我之前的帖子：<a href="https://blog.iamzhl.top/2017/11/06/%E8%B0%88%E8%B0%88%E9%BB%91%E6%9E%9C%E7%9A%84%E5%A3%B0%E5%8D%A1/">谈谈黑果的声卡</a></p><h4 id="通过对DSDT打补丁完善电池显示"><a href="#通过对DSDT打补丁完善电池显示" class="headerlink" title="通过对DSDT打补丁完善电池显示"></a>通过对<code>DSDT</code>打补丁完善电池显示</h4><p>参考<code>pcbeta</code><a href="http://bbs.pcbeta.com/viewthread-1595139-1-1.html" target="_blank" rel="external">daxuexinsheng的帖子</a><br><code>tonymacx86</code><a href="https://www.tonymacx86.com/threads/guide-how-to-patch-dsdt-for-working-battery-status.116102/" target="_blank" rel="external">RehabMan的帖子</a></p><h4 id="加载x86实现变频和原生电源管理，完善节能器信息"><a href="#加载x86实现变频和原生电源管理，完善节能器信息" class="headerlink" title="加载x86实现变频和原生电源管理，完善节能器信息"></a>加载<code>x86</code>实现变频和原生电源管理，完善节能器信息</h4><ul><li>对于<code>Haswell</code>以及<code>Broadwell</code>平台，利用<code>ssdtPRGen</code>生成<code>SSDT</code>，在<code>config</code>中<code>drop</code>掉<code>CpuPm</code>和<code>Cpu0Ist</code>两个表，并利用<code>FakeSMC</code>或<code>DSDT</code>或<code>hotpatch</code>加载<code>AppleLPC</code></li><li>对于<code>Skylake</code>及以上平台，选择支持<code>HWP</code>的合适的机型，并勾选<code>HWPEnable</code>即可开启完整电源特性</li></ul><h4 id="修复八苹果二阶段花屏等问题完善显卡驱动"><a href="#修复八苹果二阶段花屏等问题完善显卡驱动" class="headerlink" title="修复八苹果二阶段花屏等问题完善显卡驱动"></a>修复八苹果二阶段花屏等问题完善显卡驱动</h4><h4 id="注入HiDPI和显示器信息完善唤醒后的花屏问题"><a href="#注入HiDPI和显示器信息完善唤醒后的花屏问题" class="headerlink" title="注入HiDPI和显示器信息完善唤醒后的花屏问题"></a>注入<code>HiDPI</code>和显示器信息完善唤醒后的花屏问题</h4>]]></content>
     
     <summary type="html">
     
@@ -157,19 +157,19 @@
     
     </summary>
     
-      <category term="Hacintosh" scheme="http://yoursite.com/categories/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/categories/Hacintosh/"/>
     
     
-      <category term="Hacintosh" scheme="http://yoursite.com/tags/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/tags/Hacintosh/"/>
     
-      <category term="黑苹果" scheme="http://yoursite.com/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
+      <category term="黑苹果" scheme="https://blog.iamzhl.top/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
     
   </entry>
   
   <entry>
     <title>Dell-Inspiron-15-7000-i7-8550u</title>
-    <link href="http://yoursite.com/2017/12/10/Dell-Inspiron-15-7000-i7-8550u/"/>
-    <id>http://yoursite.com/2017/12/10/Dell-Inspiron-15-7000-i7-8550u/</id>
+    <link href="https://blog.iamzhl.top/Dell-Inspiron-15-7000-i7-8550u.html"/>
+    <id>https://blog.iamzhl.top/Dell-Inspiron-15-7000-i7-8550u.html</id>
     <published>2017-12-10T14:16:01.000Z</published>
     <updated>2017-12-10T14:20:53.090Z</updated>
     
@@ -181,19 +181,19 @@
     
     </summary>
     
-      <category term="Hacintosh" scheme="http://yoursite.com/categories/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/categories/Hacintosh/"/>
     
     
-      <category term="Hacintosh" scheme="http://yoursite.com/tags/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/tags/Hacintosh/"/>
     
-      <category term="燃7000" scheme="http://yoursite.com/tags/%E7%87%837000/"/>
+      <category term="燃7000" scheme="https://blog.iamzhl.top/tags/%E7%87%837000/"/>
     
   </entry>
   
   <entry>
     <title>Change NetBeans&#39;s language to Chinese in macOS</title>
-    <link href="http://yoursite.com/2017/12/09/Change%20NetBeans&#39;s%20language%20to%20Chinese%20in%20macOS/"/>
-    <id>http://yoursite.com/2017/12/09/Change NetBeans&#39;s language to Chinese in macOS/</id>
+    <link href="https://blog.iamzhl.top/Change%20NetBeans&#39;s%20language%20to%20Chinese%20in%20macOS.html"/>
+    <id>https://blog.iamzhl.top/Change NetBeans&#39;s language to Chinese in macOS.html</id>
     <published>2017-12-08T18:36:23.000Z</published>
     <updated>2017-12-08T18:49:04.352Z</updated>
     
@@ -205,17 +205,17 @@
     
     </summary>
     
-      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
+      <category term="Study" scheme="https://blog.iamzhl.top/categories/Study/"/>
     
     
-      <category term="NetBeans" scheme="http://yoursite.com/tags/NetBeans/"/>
+      <category term="NetBeans" scheme="https://blog.iamzhl.top/tags/NetBeans/"/>
     
   </entry>
   
   <entry>
     <title>     谈谈黑果的声卡</title>
-    <link href="http://yoursite.com/2017/11/06/%E8%B0%88%E8%B0%88%E9%BB%91%E6%9E%9C%E7%9A%84%E5%A3%B0%E5%8D%A1/"/>
-    <id>http://yoursite.com/2017/11/06/谈谈黑果的声卡/</id>
+    <link href="https://blog.iamzhl.top/%E8%B0%88%E8%B0%88%E9%BB%91%E6%9E%9C%E7%9A%84%E5%A3%B0%E5%8D%A1.html"/>
+    <id>https://blog.iamzhl.top/谈谈黑果的声卡.html</id>
     <published>2017-11-05T16:00:00.000Z</published>
     <updated>2017-11-08T15:52:46.000Z</updated>
     
@@ -227,19 +227,19 @@
     
     </summary>
     
-      <category term="Hacintosh" scheme="http://yoursite.com/categories/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/categories/Hacintosh/"/>
     
     
-      <category term="Hacintosh" scheme="http://yoursite.com/tags/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/tags/Hacintosh/"/>
     
-      <category term="黑苹果" scheme="http://yoursite.com/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
+      <category term="黑苹果" scheme="https://blog.iamzhl.top/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
     
   </entry>
   
   <entry>
     <title>基于 JSP 的网站博客系统</title>
-    <link href="http://yoursite.com/2017/11/05/%E5%9F%BA%E4%BA%8E%20JSP%20%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%B3%BB%E7%BB%9F/"/>
-    <id>http://yoursite.com/2017/11/05/基于 JSP 实现的博客网站系统/</id>
+    <link href="https://blog.iamzhl.top/%E5%9F%BA%E4%BA%8E%20JSP%20%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%B3%BB%E7%BB%9F.html"/>
+    <id>https://blog.iamzhl.top/基于 JSP 实现的博客网站系统.html</id>
     <published>2017-11-04T16:00:00.000Z</published>
     <updated>2017-11-05T14:15:05.000Z</updated>
     
@@ -251,23 +251,23 @@
     
     </summary>
     
-      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
+      <category term="Study" scheme="https://blog.iamzhl.top/categories/Study/"/>
     
     
-      <category term="博客系统" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/"/>
+      <category term="博客系统" scheme="https://blog.iamzhl.top/tags/%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/"/>
     
-      <category term="网站" scheme="http://yoursite.com/tags/%E7%BD%91%E7%AB%99/"/>
+      <category term="网站" scheme="https://blog.iamzhl.top/tags/%E7%BD%91%E7%AB%99/"/>
     
-      <category term="JSP" scheme="http://yoursite.com/tags/JSP/"/>
+      <category term="JSP" scheme="https://blog.iamzhl.top/tags/JSP/"/>
     
-      <category term="Blog" scheme="http://yoursite.com/tags/Blog/"/>
+      <category term="Blog" scheme="https://blog.iamzhl.top/tags/Blog/"/>
     
   </entry>
   
   <entry>
     <title>将 NetBeans 的项目导入 MyEclipse 并减少错误与乱码现象</title>
-    <link href="http://yoursite.com/2017/10/30/%E5%B0%86%20NetBeans%20%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%AF%BC%E5%85%A5%20MyEclipse%20%E5%B9%B6%E5%87%8F%E5%B0%91%E9%94%99%E8%AF%AF%E4%B8%8E%E4%B9%B1%E7%A0%81%E7%8E%B0%E8%B1%A1/"/>
-    <id>http://yoursite.com/2017/10/30/将 NetBeans 的项目导入 MyEclipse 并减少错误与乱码现象/</id>
+    <link href="https://blog.iamzhl.top/%E5%B0%86%20NetBeans%20%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%AF%BC%E5%85%A5%20MyEclipse%20%E5%B9%B6%E5%87%8F%E5%B0%91%E9%94%99%E8%AF%AF%E4%B8%8E%E4%B9%B1%E7%A0%81%E7%8E%B0%E8%B1%A1.html"/>
+    <id>https://blog.iamzhl.top/将 NetBeans 的项目导入 MyEclipse 并减少错误与乱码现象.html</id>
     <published>2017-10-30T08:03:27.000Z</published>
     <updated>2017-11-01T03:06:28.000Z</updated>
     
@@ -279,19 +279,19 @@
     
     </summary>
     
-      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
+      <category term="Study" scheme="https://blog.iamzhl.top/categories/Study/"/>
     
     
-      <category term="NetBeans" scheme="http://yoursite.com/tags/NetBeans/"/>
+      <category term="NetBeans" scheme="https://blog.iamzhl.top/tags/NetBeans/"/>
     
-      <category term="MyEclipse" scheme="http://yoursite.com/tags/MyEclipse/"/>
+      <category term="MyEclipse" scheme="https://blog.iamzhl.top/tags/MyEclipse/"/>
     
   </entry>
   
   <entry>
     <title>实现 MAC 原生读写 NTFS 分区</title>
-    <link href="http://yoursite.com/2017/10/27/%E5%AE%9E%E7%8E%B0%20MAC%20%E5%8E%9F%E7%94%9F%E8%AF%BB%E5%86%99%20NTFS%20%E5%88%86%E5%8C%BA/"/>
-    <id>http://yoursite.com/2017/10/27/实现 MAC 原生读写 NTFS 分区/</id>
+    <link href="https://blog.iamzhl.top/%E5%AE%9E%E7%8E%B0%20MAC%20%E5%8E%9F%E7%94%9F%E8%AF%BB%E5%86%99%20NTFS%20%E5%88%86%E5%8C%BA.html"/>
+    <id>https://blog.iamzhl.top/实现 MAC 原生读写 NTFS 分区.html</id>
     <published>2017-10-26T16:00:00.000Z</published>
     <updated>2017-10-27T05:12:14.000Z</updated>
     
@@ -303,21 +303,21 @@
     
     </summary>
     
-      <category term="Hacintosh" scheme="http://yoursite.com/categories/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/categories/Hacintosh/"/>
     
     
-      <category term="Hacintosh" scheme="http://yoursite.com/tags/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/tags/Hacintosh/"/>
     
-      <category term="黑苹果" scheme="http://yoursite.com/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
+      <category term="黑苹果" scheme="https://blog.iamzhl.top/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
     
-      <category term="NTFS" scheme="http://yoursite.com/tags/NTFS/"/>
+      <category term="NTFS" scheme="https://blog.iamzhl.top/tags/NTFS/"/>
     
   </entry>
   
   <entry>
     <title>Change launchpad icon grid layout in your MAC</title>
-    <link href="http://yoursite.com/2017/10/26/Change%20launchpad%20icon%20grid%20layout%20in%20your%20MAC/"/>
-    <id>http://yoursite.com/2017/10/26/Change launchpad icon grid layout in your MAC/</id>
+    <link href="https://blog.iamzhl.top/Change%20launchpad%20icon%20grid%20layout%20in%20your%20MAC.html"/>
+    <id>https://blog.iamzhl.top/Change launchpad icon grid layout in your MAC.html</id>
     <published>2017-10-26T01:32:26.000Z</published>
     <updated>2017-10-26T01:57:23.000Z</updated>
     
@@ -329,17 +329,17 @@
     
     </summary>
     
-      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
+      <category term="Study" scheme="https://blog.iamzhl.top/categories/Study/"/>
     
     
-      <category term="launchpad" scheme="http://yoursite.com/tags/launchpad/"/>
+      <category term="launchpad" scheme="https://blog.iamzhl.top/tags/launchpad/"/>
     
   </entry>
   
   <entry>
     <title>MAC 常用快捷键整理</title>
-    <link href="http://yoursite.com/2017/10/26/MAC-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%B4%E7%90%86/"/>
-    <id>http://yoursite.com/2017/10/26/MAC-常用快捷键整理/</id>
+    <link href="https://blog.iamzhl.top/MAC-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%B4%E7%90%86.html"/>
+    <id>https://blog.iamzhl.top/MAC-常用快捷键整理.html</id>
     <published>2017-10-26T00:14:21.000Z</published>
     <updated>2017-10-26T00:47:56.000Z</updated>
     
@@ -351,19 +351,19 @@
     
     </summary>
     
-      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
+      <category term="Study" scheme="https://blog.iamzhl.top/categories/Study/"/>
     
     
-      <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
+      <category term="Mac" scheme="https://blog.iamzhl.top/tags/Mac/"/>
     
-      <category term="快捷键" scheme="http://yoursite.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+      <category term="快捷键" scheme="https://blog.iamzhl.top/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     
   </entry>
   
   <entry>
     <title>Windows 10 开机自动连接宽带</title>
-    <link href="http://yoursite.com/2017/10/15/Windows-10%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%9E%E6%8E%A5%E5%AE%BD%E5%B8%A6/"/>
-    <id>http://yoursite.com/2017/10/15/Windows-10开机自动连接宽带/</id>
+    <link href="https://blog.iamzhl.top/Windows-10%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%9E%E6%8E%A5%E5%AE%BD%E5%B8%A6.html"/>
+    <id>https://blog.iamzhl.top/Windows-10开机自动连接宽带.html</id>
     <published>2017-10-15T13:59:01.000Z</published>
     <updated>2017-10-15T14:19:23.000Z</updated>
     
@@ -375,21 +375,21 @@
     
     </summary>
     
-      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
+      <category term="Study" scheme="https://blog.iamzhl.top/categories/Study/"/>
     
     
-      <category term="加密" scheme="http://yoursite.com/tags/%E5%8A%A0%E5%AF%86/"/>
+      <category term="加密" scheme="https://blog.iamzhl.top/tags/%E5%8A%A0%E5%AF%86/"/>
     
   </entry>
   
   <entry>
     <title>Sync your hexo with several terminal</title>
-    <link href="http://yoursite.com/2017/10/14/Sync-your-hexo-with-several-terminal/"/>
-    <id>http://yoursite.com/2017/10/14/Sync-your-hexo-with-several-terminal/</id>
+    <link href="https://blog.iamzhl.top/Sync-your-hexo-with-several-terminal.html"/>
+    <id>https://blog.iamzhl.top/Sync-your-hexo-with-several-terminal.html</id>
     <published>2017-10-14T15:35:54.000Z</published>
     <updated>2017-10-14T16:04:37.000Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>Sync your hexo with several terminal<br>转载请注明<a href="https://blog.iamzhl.top/2017/10/14/Sync-your-hexo-with-several-terminal/" target="_blank" rel="external">原出处</a></p></blockquote><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li>首先在 GitHub 建立一个分支用于存储 hexo 本地源文件</li></ul><h2 id="本地-hexo-源上到-GitHub"><a href="#本地-hexo-源上到-GitHub" class="headerlink" title="本地 hexo 源上到 GitHub"></a>本地 hexo 源上到 GitHub</h2><ul><li>在本地博客根目录下使用 git 指令上传项目到 GitHub 的 hexo 分支</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git init           </div><div class="line">$ git remote add origin 仓库地址    </div><div class="line">$ git checkout -b hexo     </div><div class="line">$ git add .       </div><div class="line">$ git commit -m &quot;&quot;        </div><div class="line">$ git push origin hexo</div></pre></td></tr></table></figure><hr><h2 id="其它设备同步"><a href="#其它设备同步" class="headerlink" title="其它设备同步"></a>其它设备同步</h2><h3 id="建立同步目录"><a href="#建立同步目录" class="headerlink" title="建立同步目录"></a>建立同步目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mkdir blog</div></pre></td></tr></table></figure><h3 id="同步-hexo-源"><a href="#同步-hexo-源" class="headerlink" title="同步 hexo 源"></a>同步 hexo 源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cd blog/</div><div class="line">$ git init</div><div class="line">$ git remote add origin 仓库地址</div><div class="line">$ git pull -r origin hexo</div></pre></td></tr></table></figure><h3 id="本地搭建-hexo-环境"><a href="#本地搭建-hexo-环境" class="headerlink" title="本地搭建 hexo 环境"></a>本地搭建 hexo 环境</h3><ul><li>需要安装 Git 和 Node.js </li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo --save</div><div class="line">$ npm install</div></pre></td></tr></table></figure><ul><li>第一次运行需要验证 GitHub 和 coding 账号 ( 取决于你用什么部署的 blog )</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.email &quot;you@example.com&quot;</div><div class="line">$ git config --global user.name &quot;Your Name&quot;</div></pre></td></tr></table></figure><hr><h2 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h2><ul><li>做完上面的步骤就可以在这一台设备继续发博文了</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo new post &quot;新建博客名字&quot; </div><div class="line">$ hexo clean </div><div class="line">$ hexo g</div><div class="line">$ hexo d -g</div></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>Sync your hexo with several terminal<br>转载请注明<a href="https://blog.iamzhl.top/2017/10/14/Sync-your-hexo-with-several-terminal/">原出处</a></p></blockquote><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li>首先在 GitHub 建立一个分支用于存储 hexo 本地源文件</li></ul><h2 id="本地-hexo-源上到-GitHub"><a href="#本地-hexo-源上到-GitHub" class="headerlink" title="本地 hexo 源上到 GitHub"></a>本地 hexo 源上到 GitHub</h2><ul><li>在本地博客根目录下使用 git 指令上传项目到 GitHub 的 hexo 分支</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git init           </div><div class="line">$ git remote add origin 仓库地址    </div><div class="line">$ git checkout -b hexo     </div><div class="line">$ git add .       </div><div class="line">$ git commit -m &quot;&quot;        </div><div class="line">$ git push origin hexo</div></pre></td></tr></table></figure><hr><h2 id="其它设备同步"><a href="#其它设备同步" class="headerlink" title="其它设备同步"></a>其它设备同步</h2><h3 id="建立同步目录"><a href="#建立同步目录" class="headerlink" title="建立同步目录"></a>建立同步目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mkdir blog</div></pre></td></tr></table></figure><h3 id="同步-hexo-源"><a href="#同步-hexo-源" class="headerlink" title="同步 hexo 源"></a>同步 hexo 源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cd blog/</div><div class="line">$ git init</div><div class="line">$ git remote add origin 仓库地址</div><div class="line">$ git pull -r origin hexo</div></pre></td></tr></table></figure><h3 id="本地搭建-hexo-环境"><a href="#本地搭建-hexo-环境" class="headerlink" title="本地搭建 hexo 环境"></a>本地搭建 hexo 环境</h3><ul><li>需要安装 Git 和 Node.js </li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo --save</div><div class="line">$ npm install</div></pre></td></tr></table></figure><ul><li>第一次运行需要验证 GitHub 和 coding 账号 ( 取决于你用什么部署的 blog )</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.email &quot;you@example.com&quot;</div><div class="line">$ git config --global user.name &quot;Your Name&quot;</div></pre></td></tr></table></figure><hr><h2 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h2><ul><li>做完上面的步骤就可以在这一台设备继续发博文了</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo new post &quot;新建博客名字&quot; </div><div class="line">$ hexo clean </div><div class="line">$ hexo g</div><div class="line">$ hexo d -g</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -397,25 +397,25 @@
     
     </summary>
     
-      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
+      <category term="Study" scheme="https://blog.iamzhl.top/categories/Study/"/>
     
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+      <category term="git" scheme="https://blog.iamzhl.top/tags/git/"/>
     
-      <category term="同步" scheme="http://yoursite.com/tags/%E5%90%8C%E6%AD%A5/"/>
+      <category term="同步" scheme="https://blog.iamzhl.top/tags/%E5%90%8C%E6%AD%A5/"/>
     
-      <category term="github" scheme="http://yoursite.com/tags/github/"/>
+      <category term="github" scheme="https://blog.iamzhl.top/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>Resolve short duration lag after wake and after login on haswell or broadwell</title>
-    <link href="http://yoursite.com/2017/10/07/Resolve%20short%20duration%20lag%20after%20wake%20and%20after%20login%20on%20haswell%20or%20broadwell/"/>
-    <id>http://yoursite.com/2017/10/07/Resolve short duration lag after wake and after login on haswell or broadwell/</id>
+    <link href="https://blog.iamzhl.top/Resolve%20short%20duration%20lag%20after%20wake%20and%20after%20login%20on%20haswell%20or%20broadwell.html"/>
+    <id>https://blog.iamzhl.top/Resolve short duration lag after wake and after login on haswell or broadwell.html</id>
     <published>2017-10-06T19:06:04.000Z</published>
     <updated>2017-10-14T16:17:20.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><blockquote><p>本文来自 <a href="https://www.tonymacx86.com/threads/readme-common-some-unsolved-problems-in-10-12-sierra.202316/page-94#post-1485104" target="_blank" rel="external">tonymacx86.com</a><br>原作者 <a href="https://www.tonymacx86.com/members/rehabman.429483/" target="_blank" rel="external">RehabMan</a><br>转载请注明 <a href="https://blog.iamzhl.top/2017/10/07/Resolve%20short%20duration%20lag%20after%20wake%20and%20after%20login%20on%20haswell%20or%20broadwell/" target="_blank" rel="external">原出处</a></p></blockquote><h3 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h3><blockquote><p>在 macOS Sierra 10.12.4 中，有不少 Haswell 和 Broadwell 机器出现了一种情况，就是在开机后的登录界面会有大约 20s 的无响应延迟状态，这种情况在之前是没有出现的，如果你的机器恰好是这两个平台的一种并且出现了这种情况，那么请注意，你会需要对你的 config.plist 做一些调整，如下: </p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Comment: 0x0a260006 9MB cursor bytes (vbo), 2 ports only (RehabMan)</div><div class="line">Find: &lt;0600260a 01030303 00000002 00003001 00006000&gt;</div><div class="line">Replace: &lt;0600260a 01030202 00000002 00003001 00009000&gt;</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Comment: 0x0a260006 disable 0204 port, change 0105 DP port to 0204 HDMI (RehabMan)</div><div class="line">Find: &lt;01050900 00040000 87000000 02040900 00040000 87000000&gt;</div><div class="line">Replace: &lt;02040900 00080000 87000000 FF000000 01000000 40000000&gt;</div></pre></td></tr></table></figure><p>将这两个 patch 打到 config.plist -&gt; Kernel and Kext Patches -&gt; KextsToPatch 处，保存即可，如果你的机器是 Haswell 的 HD4600 并且上面的 patch 不能解决这个问题，请尝试放 AzulPatcher4600.kext 到 /EFI/CLOVER/Kexts/Other ，此项目 GitHub 地址: </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/coderobe/AzulPatcher4600</div></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><blockquote><p>本文来自 <a href="https://www.tonymacx86.com/threads/readme-common-some-unsolved-problems-in-10-12-sierra.202316/page-94#post-1485104" target="_blank" rel="external">tonymacx86.com</a><br>原作者 <a href="https://www.tonymacx86.com/members/rehabman.429483/" target="_blank" rel="external">RehabMan</a><br>转载请注明 <a href="https://blog.iamzhl.top/2017/10/07/Resolve%20short%20duration%20lag%20after%20wake%20and%20after%20login%20on%20haswell%20or%20broadwell/">原出处</a></p></blockquote><h3 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h3><blockquote><p>在 macOS Sierra 10.12.4 中，有不少 Haswell 和 Broadwell 机器出现了一种情况，就是在开机后的登录界面会有大约 20s 的无响应延迟状态，这种情况在之前是没有出现的，如果你的机器恰好是这两个平台的一种并且出现了这种情况，那么请注意，你会需要对你的 config.plist 做一些调整，如下: </p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Comment: 0x0a260006 9MB cursor bytes (vbo), 2 ports only (RehabMan)</div><div class="line">Find: &lt;0600260a 01030303 00000002 00003001 00006000&gt;</div><div class="line">Replace: &lt;0600260a 01030202 00000002 00003001 00009000&gt;</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Comment: 0x0a260006 disable 0204 port, change 0105 DP port to 0204 HDMI (RehabMan)</div><div class="line">Find: &lt;01050900 00040000 87000000 02040900 00040000 87000000&gt;</div><div class="line">Replace: &lt;02040900 00080000 87000000 FF000000 01000000 40000000&gt;</div></pre></td></tr></table></figure><p>将这两个 patch 打到 config.plist -&gt; Kernel and Kext Patches -&gt; KextsToPatch 处，保存即可，如果你的机器是 Haswell 的 HD4600 并且上面的 patch 不能解决这个问题，请尝试放 AzulPatcher4600.kext 到 /EFI/CLOVER/Kexts/Other ，此项目 GitHub 地址: </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/coderobe/AzulPatcher4600</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -423,23 +423,23 @@
     
     </summary>
     
-      <category term="Hacintosh" scheme="http://yoursite.com/categories/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/categories/Hacintosh/"/>
     
     
-      <category term="黑苹果" scheme="http://yoursite.com/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
+      <category term="黑苹果" scheme="https://blog.iamzhl.top/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
     
-      <category term="short duration lag" scheme="http://yoursite.com/tags/short-duration-lag/"/>
+      <category term="short duration lag" scheme="https://blog.iamzhl.top/tags/short-duration-lag/"/>
     
   </entry>
   
   <entry>
     <title>Disable the discrete GPU in laptop</title>
-    <link href="http://yoursite.com/2017/10/04/Disable%20the%20discrete%20GPU%20in%20laptop/"/>
-    <id>http://yoursite.com/2017/10/04/Disable the discrete GPU in laptop/</id>
+    <link href="https://blog.iamzhl.top/Disable%20the%20discrete%20GPU%20in%20laptop.html"/>
+    <id>https://blog.iamzhl.top/Disable the discrete GPU in laptop.html</id>
     <published>2017-10-03T16:00:00.000Z</published>
     <updated>2017-12-10T14:20:14.751Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>Disable the discrete GPU to fix “Window Server Service only ran for 0 seconds” in High Sierra</p></blockquote><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>最近我根据 RehabMan 的 hotpatch 添加了一些路径做了一个屏蔽独显得 hotpatch 来屏蔽独显解决一些升级 10.13 后因为 nv_disable 参数失效而卡在 Window Server Service only ran for 0 seconds 的错误，发现有些成功，有些失败。于是把我琢磨到的一种方法分享给大家！希望该帖子能帮助到各位！</p><blockquote><p>感谢：</p></blockquote><ul><li><p>PCBETA (远景论坛) <a href="http://bbs.pcbeta.com/viewthread-1760319-1-5.html" target="_blank" rel="external">yearjinheng 版主的帖子</a></p></li><li><p>tonymacx86.com <a href="https://www.tonymacx86.com/threads/fix-window-server-service-only-ran-for-0-seconds-with-dual-gpu.233092/" target="_blank" rel="external">Rehabman 的帖子</a></p></li><li><p>转载请注明 <a href="https://blog.iamzhl.top/2017/10/04/%E5%B1%8F%E8%94%BD%E7%8B%AC%E6%98%BE/" target="_blank" rel="external">原贴地址</a></p></li></ul><blockquote><p>屏蔽独显方法不一：</p></blockquote><ul><li>第一种：直接在 DSDT SSDT 上做修改</li><li>第二种：手动制作一个适合自己机器的 hotpatch 屏蔽独显达到屏蔽独显的作用</li></ul><h2 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h2><blockquote><p>本帖主要采用第二种方法，大致思路如下：</p></blockquote><ul><li>提取 ACPI 原始表单</li><li>反编译这些文件</li><li>搜索一个名为 _OFF 的方法</li><li>检查文件的结果以确定 _OFF 的路径</li><li>修改 RehabMan 的 hotpatch 加入自己的路径</li></ul><h3 id="提取-ACPI-原始表单并提取-OFF-路径"><a href="#提取-ACPI-原始表单并提取-OFF-路径" class="headerlink" title="提取 ACPI 原始表单并提取 _OFF 路径"></a>提取 ACPI 原始表单并提取 _OFF 路径</h3><ul><li>打开电脑进入四叶草引导界面，按下 F4 或者 FN+F4 即可提取原始表单到 /EFI/CLOVER/ACPI/origin ，然后进入 MAC 将 origin 拷贝到桌面删掉除 SSDT DSDT 之外的所有 aml 文件，打开终端：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cd ~/Desktop/origin </div><div class="line">$ iasl -da -dl *.aml </div><div class="line">$ rm *.aml </div><div class="line">$ grep -l Method.*_OFF *.dsl</div></pre></td></tr></table></figure><ul><li>以我修改的一个机器为例，上一条命令得到的结果如下</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DSDT.dsl</div><div class="line">SSDT-7.dsl</div><div class="line">SSDT-8.dsl</div><div class="line">SSDT-9.dsl</div></pre></td></tr></table></figure><ul><li>依次打开这四个表单搜索 _OFF ，找到一个类似于下面这个函数：</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-04-01.png" alt="2017-10-04-01"></p><ul><li>图片左下角的路径就是我们最终所需要的: </li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_SB.PCI0.RP05.PEGP</div></pre></td></tr></table></figure><h3 id="修改-RehabMan-的-hotpatch-添加这个路径"><a href="#修改-RehabMan-的-hotpatch-添加这个路径" class="headerlink" title="修改 RehabMan 的 hotpatch 添加这个路径"></a>修改 RehabMan 的 hotpatch 添加这个路径</h3><ul><li>首先去 RehanMan 的 GitHub 下载 hotpatch 包</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/RehabMan/OS-X-Clover-Laptop-Config.git</div></pre></td></tr></table></figure><ul><li>我们只需要 SSDT-Disable_DGPU 这个文件，编译成 aml 文件</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ iasl SSDT-Disable_DGPU.dsl</div></pre></td></tr></table></figure><ul><li>打开编译后得到的 aml 文件</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-04-02.png" alt="2017-10-04-02"></p><ul><li>按照这个格式添加自己的路径</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-04-03.png" alt="2017-10-04-03"></p><ul><li>保存放到 /EFI/CLOVER/ACPI/patched </li></ul><h3 id="一个注意点"><a href="#一个注意点" class="headerlink" title="一个注意点"></a>一个注意点</h3><ul><li>如果在 Config.plist 中使用了 SortedOrder (通常 Clover 安装后默认没有设置)，需要在其内添加 SSDT-Disable_DGPU.aml 这一项。因为如果指定了 SortedOrder ，则 Clover 只加载其中指定的 SSDT 。如果没有出现在列表中,即使在 ACPI/patched 中，它也不会加载。</li></ul><h2 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h2>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>Disable the discrete GPU to fix “Window Server Service only ran for 0 seconds” in High Sierra</p></blockquote><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>最近我根据 RehabMan 的 hotpatch 添加了一些路径做了一个屏蔽独显得 hotpatch 来屏蔽独显解决一些升级 10.13 后因为 nv_disable 参数失效而卡在 Window Server Service only ran for 0 seconds 的错误，发现有些成功，有些失败。于是把我琢磨到的一种方法分享给大家！希望该帖子能帮助到各位！</p><blockquote><p>感谢：</p></blockquote><ul><li><p>PCBETA (远景论坛) <a href="http://bbs.pcbeta.com/viewthread-1760319-1-5.html" target="_blank" rel="external">yearjinheng 版主的帖子</a></p></li><li><p>tonymacx86.com <a href="https://www.tonymacx86.com/threads/fix-window-server-service-only-ran-for-0-seconds-with-dual-gpu.233092/" target="_blank" rel="external">Rehabman 的帖子</a></p></li><li><p>转载请注明 <a href="https://blog.iamzhl.top/2017/10/04/%E5%B1%8F%E8%94%BD%E7%8B%AC%E6%98%BE/">原贴地址</a></p></li></ul><blockquote><p>屏蔽独显方法不一：</p></blockquote><ul><li>第一种：直接在 DSDT SSDT 上做修改</li><li>第二种：手动制作一个适合自己机器的 hotpatch 屏蔽独显达到屏蔽独显的作用</li></ul><h2 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h2><blockquote><p>本帖主要采用第二种方法，大致思路如下：</p></blockquote><ul><li>提取 ACPI 原始表单</li><li>反编译这些文件</li><li>搜索一个名为 _OFF 的方法</li><li>检查文件的结果以确定 _OFF 的路径</li><li>修改 RehabMan 的 hotpatch 加入自己的路径</li></ul><h3 id="提取-ACPI-原始表单并提取-OFF-路径"><a href="#提取-ACPI-原始表单并提取-OFF-路径" class="headerlink" title="提取 ACPI 原始表单并提取 _OFF 路径"></a>提取 ACPI 原始表单并提取 _OFF 路径</h3><ul><li>打开电脑进入四叶草引导界面，按下 F4 或者 FN+F4 即可提取原始表单到 /EFI/CLOVER/ACPI/origin ，然后进入 MAC 将 origin 拷贝到桌面删掉除 SSDT DSDT 之外的所有 aml 文件，打开终端：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cd ~/Desktop/origin </div><div class="line">$ iasl -da -dl *.aml </div><div class="line">$ rm *.aml </div><div class="line">$ grep -l Method.*_OFF *.dsl</div></pre></td></tr></table></figure><ul><li>以我修改的一个机器为例，上一条命令得到的结果如下</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DSDT.dsl</div><div class="line">SSDT-7.dsl</div><div class="line">SSDT-8.dsl</div><div class="line">SSDT-9.dsl</div></pre></td></tr></table></figure><ul><li>依次打开这四个表单搜索 _OFF ，找到一个类似于下面这个函数：</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-04-01.png" alt="2017-10-04-01"></p><ul><li>图片左下角的路径就是我们最终所需要的: </li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_SB.PCI0.RP05.PEGP</div></pre></td></tr></table></figure><h3 id="修改-RehabMan-的-hotpatch-添加这个路径"><a href="#修改-RehabMan-的-hotpatch-添加这个路径" class="headerlink" title="修改 RehabMan 的 hotpatch 添加这个路径"></a>修改 RehabMan 的 hotpatch 添加这个路径</h3><ul><li>首先去 RehanMan 的 GitHub 下载 hotpatch 包</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/RehabMan/OS-X-Clover-Laptop-Config.git</div></pre></td></tr></table></figure><ul><li>我们只需要 SSDT-Disable_DGPU 这个文件，编译成 aml 文件</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ iasl SSDT-Disable_DGPU.dsl</div></pre></td></tr></table></figure><ul><li>打开编译后得到的 aml 文件</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-04-02.png" alt="2017-10-04-02"></p><ul><li>按照这个格式添加自己的路径</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-04-03.png" alt="2017-10-04-03"></p><ul><li>保存放到 /EFI/CLOVER/ACPI/patched </li></ul><h3 id="一个注意点"><a href="#一个注意点" class="headerlink" title="一个注意点"></a>一个注意点</h3><ul><li>如果在 Config.plist 中使用了 SortedOrder (通常 Clover 安装后默认没有设置)，需要在其内添加 SSDT-Disable_DGPU.aml 这一项。因为如果指定了 SortedOrder ，则 Clover 只加载其中指定的 SSDT 。如果没有出现在列表中,即使在 ACPI/patched 中，它也不会加载。</li></ul><h2 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h2>]]></content>
     
     <summary type="html">
     
@@ -447,29 +447,29 @@
     
     </summary>
     
-      <category term="Hacintosh" scheme="http://yoursite.com/categories/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/categories/Hacintosh/"/>
     
     
-      <category term="Hacintosh" scheme="http://yoursite.com/tags/Hacintosh/"/>
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/tags/Hacintosh/"/>
     
-      <category term="黑苹果" scheme="http://yoursite.com/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
+      <category term="黑苹果" scheme="https://blog.iamzhl.top/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
     
-      <category term="Window Server Service only ran for 0 seconds" scheme="http://yoursite.com/tags/Window-Server-Service-only-ran-for-0-seconds/"/>
+      <category term="Window Server Service only ran for 0 seconds" scheme="https://blog.iamzhl.top/tags/Window-Server-Service-only-ran-for-0-seconds/"/>
     
-      <category term="Disable DGPU" scheme="http://yoursite.com/tags/Disable-DGPU/"/>
+      <category term="Disable DGPU" scheme="https://blog.iamzhl.top/tags/Disable-DGPU/"/>
     
-      <category term="屏蔽独显" scheme="http://yoursite.com/tags/%E5%B1%8F%E8%94%BD%E7%8B%AC%E6%98%BE/"/>
+      <category term="屏蔽独显" scheme="https://blog.iamzhl.top/tags/%E5%B1%8F%E8%94%BD%E7%8B%AC%E6%98%BE/"/>
     
   </entry>
   
   <entry>
     <title>Sync the codes between native and remote by git</title>
-    <link href="http://yoursite.com/2017/09/27/Sync%20the%20codes%20between%20native%20and%20remote%20by%20git/"/>
-    <id>http://yoursite.com/2017/09/27/Sync the codes between native and remote by git/</id>
+    <link href="https://blog.iamzhl.top/Sync%20the%20codes%20between%20native%20and%20remote%20by%20git.html"/>
+    <id>https://blog.iamzhl.top/Sync the codes between native and remote by git.html</id>
     <published>2017-09-27T14:54:26.000Z</published>
     <updated>2017-10-14T16:18:09.000Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>Sync the codes between native and remote by git<br>转载请注明<a href="https://blog.iamzhl.top/2017/09/27/Sync%20the%20codes%20between%20native%20and%20remote%20by%20git/" target="_blank" rel="external">原出处</a></p></blockquote><h2 id="代码放到-git-仓库，然后本地修改同步至仓库，这在生活中是很常见的，下面是一个最简单的案例"><a href="#代码放到-git-仓库，然后本地修改同步至仓库，这在生活中是很常见的，下面是一个最简单的案例" class="headerlink" title="代码放到 git 仓库，然后本地修改同步至仓库，这在生活中是很常见的，下面是一个最简单的案例"></a>代码放到 git 仓库，然后本地修改同步至仓库，这在生活中是很常见的，下面是一个最简单的案例</h2><h3 id="远程仓库内容同步到本地仓库"><a href="#远程仓库内容同步到本地仓库" class="headerlink" title="远程仓库内容同步到本地仓库"></a>远程仓库内容同步到本地仓库</h3><blockquote><p>新建一个本地仓库用于后续工作</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cd ~/Desktop/</div><div class="line">$ mkdir test </div><div class="line">$ cd test</div></pre></td></tr></table></figure><blockquote><p>初始化这个本地目录</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure><blockquote><p>关联到远程仓库(以我新建的 Test 这个仓库为例)</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin https://github.com/athlonreg/Test.git</div></pre></td></tr></table></figure><blockquote><p>合并远程仓库的文件到本地</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git pull --rebase origin master</div></pre></td></tr></table></figure><hr><h3 id="修改本地仓库并推送到远程仓库"><a href="#修改本地仓库并推送到远程仓库" class="headerlink" title="修改本地仓库并推送到远程仓库"></a>修改本地仓库并推送到远程仓库</h3><blockquote><p>对本地仓库的一些修改</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir inner </div><div class="line">$ cd inner </div><div class="line">$ touch a.txt</div></pre></td></tr></table></figure><h4 id="现在将我新建的-inner-目录和-a-txt-文档推送到远程仓库"><a href="#现在将我新建的-inner-目录和-a-txt-文档推送到远程仓库" class="headerlink" title="现在将我新建的 inner 目录和 a.txt 文档推送到远程仓库"></a>现在将我新建的 inner 目录和 a.txt 文档推送到远程仓库</h4><blockquote><p>git add 命令添加新建目录与文件</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add .</div></pre></td></tr></table></figure><blockquote><p>git commit 提交修改，引号内为修改的概要</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m &quot;add some files&quot;</div></pre></td></tr></table></figure><blockquote><p>这里会提示配置用户身份(两条命令的引号内分别为你 github 账号绑定的邮箱和用户名)</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.email &quot;15563836030@163.com&quot; </div><div class="line">$ git config --global user.name &quot;athlonreg&quot;</div></pre></td></tr></table></figure><blockquote><p>这是继续提交修改就可以了</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m &quot;add some files&quot;</div></pre></td></tr></table></figure><blockquote><p>推送修改后的本地仓库到远程仓库</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure><blockquote><p>这时终端会让你输入你的 github 用户名和密码，根据提示输入完，就推送完成了，再去 github 网页端就发现仓库已经更新至和本地相同了。</p></blockquote><h3 id="Windows-用户安装好-git-可以利用-git-bash-来操作"><a href="#Windows-用户安装好-git-可以利用-git-bash-来操作" class="headerlink" title="Windows 用户安装好 git 可以利用 git bash 来操作"></a>Windows 用户安装好 git 可以利用 git bash 来操作</h3><blockquote><p>下面是我在 Windows 下利用 git bash 工具的一些截图，大家可以作参考</p></blockquote><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-27-2017-09-27-03.PNG" alt="2017-09-27"></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-27-2017-09-27-04.PNG" alt="2017-09-27-04"></p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>Sync the codes between native and remote by git<br>转载请注明<a href="https://blog.iamzhl.top/2017/09/27/Sync%20the%20codes%20between%20native%20and%20remote%20by%20git/">原出处</a></p></blockquote><h2 id="代码放到-git-仓库，然后本地修改同步至仓库，这在生活中是很常见的，下面是一个最简单的案例"><a href="#代码放到-git-仓库，然后本地修改同步至仓库，这在生活中是很常见的，下面是一个最简单的案例" class="headerlink" title="代码放到 git 仓库，然后本地修改同步至仓库，这在生活中是很常见的，下面是一个最简单的案例"></a>代码放到 git 仓库，然后本地修改同步至仓库，这在生活中是很常见的，下面是一个最简单的案例</h2><h3 id="远程仓库内容同步到本地仓库"><a href="#远程仓库内容同步到本地仓库" class="headerlink" title="远程仓库内容同步到本地仓库"></a>远程仓库内容同步到本地仓库</h3><blockquote><p>新建一个本地仓库用于后续工作</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cd ~/Desktop/</div><div class="line">$ mkdir test </div><div class="line">$ cd test</div></pre></td></tr></table></figure><blockquote><p>初始化这个本地目录</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure><blockquote><p>关联到远程仓库(以我新建的 Test 这个仓库为例)</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin https://github.com/athlonreg/Test.git</div></pre></td></tr></table></figure><blockquote><p>合并远程仓库的文件到本地</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git pull --rebase origin master</div></pre></td></tr></table></figure><hr><h3 id="修改本地仓库并推送到远程仓库"><a href="#修改本地仓库并推送到远程仓库" class="headerlink" title="修改本地仓库并推送到远程仓库"></a>修改本地仓库并推送到远程仓库</h3><blockquote><p>对本地仓库的一些修改</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir inner </div><div class="line">$ cd inner </div><div class="line">$ touch a.txt</div></pre></td></tr></table></figure><h4 id="现在将我新建的-inner-目录和-a-txt-文档推送到远程仓库"><a href="#现在将我新建的-inner-目录和-a-txt-文档推送到远程仓库" class="headerlink" title="现在将我新建的 inner 目录和 a.txt 文档推送到远程仓库"></a>现在将我新建的 inner 目录和 a.txt 文档推送到远程仓库</h4><blockquote><p>git add 命令添加新建目录与文件</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add .</div></pre></td></tr></table></figure><blockquote><p>git commit 提交修改，引号内为修改的概要</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m &quot;add some files&quot;</div></pre></td></tr></table></figure><blockquote><p>这里会提示配置用户身份(两条命令的引号内分别为你 github 账号绑定的邮箱和用户名)</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.email &quot;15563836030@163.com&quot; </div><div class="line">$ git config --global user.name &quot;athlonreg&quot;</div></pre></td></tr></table></figure><blockquote><p>这是继续提交修改就可以了</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m &quot;add some files&quot;</div></pre></td></tr></table></figure><blockquote><p>推送修改后的本地仓库到远程仓库</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure><blockquote><p>这时终端会让你输入你的 github 用户名和密码，根据提示输入完，就推送完成了，再去 github 网页端就发现仓库已经更新至和本地相同了。</p></blockquote><h3 id="Windows-用户安装好-git-可以利用-git-bash-来操作"><a href="#Windows-用户安装好-git-可以利用-git-bash-来操作" class="headerlink" title="Windows 用户安装好 git 可以利用 git bash 来操作"></a>Windows 用户安装好 git 可以利用 git bash 来操作</h3><blockquote><p>下面是我在 Windows 下利用 git bash 工具的一些截图，大家可以作参考</p></blockquote><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-27-2017-09-27-03.PNG" alt="2017-09-27"></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-27-2017-09-27-04.PNG" alt="2017-09-27-04"></p>]]></content>
     
     <summary type="html">
     
@@ -477,21 +477,21 @@
     
     </summary>
     
-      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
+      <category term="Study" scheme="https://blog.iamzhl.top/categories/Study/"/>
     
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+      <category term="git" scheme="https://blog.iamzhl.top/tags/git/"/>
     
-      <category term="同步" scheme="http://yoursite.com/tags/%E5%90%8C%E6%AD%A5/"/>
+      <category term="同步" scheme="https://blog.iamzhl.top/tags/%E5%90%8C%E6%AD%A5/"/>
     
-      <category term="github" scheme="http://yoursite.com/tags/github/"/>
+      <category term="github" scheme="https://blog.iamzhl.top/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>How to build Clover from source</title>
-    <link href="http://yoursite.com/2017/09/20/How-to-build-Clover-from-source/"/>
-    <id>http://yoursite.com/2017/09/20/How-to-build-Clover-from-source/</id>
+    <link href="https://blog.iamzhl.top/How-to-build-Clover-from-source.html"/>
+    <id>https://blog.iamzhl.top/How-to-build-Clover-from-source.html</id>
     <published>2017-09-20T12:30:51.000Z</published>
     <updated>2017-09-20T12:43:35.000Z</updated>
     
@@ -503,10 +503,10 @@
     
     </summary>
     
-      <category term="Study" scheme="http://yoursite.com/categories/Study/"/>
+      <category term="Study" scheme="https://blog.iamzhl.top/categories/Study/"/>
     
     
-      <category term="Clover" scheme="http://yoursite.com/tags/Clover/"/>
+      <category term="Clover" scheme="https://blog.iamzhl.top/tags/Clover/"/>
     
   </entry>
   
