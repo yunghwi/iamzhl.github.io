@@ -2,51 +2,240 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.iamzhl.top/Install%20jdk%20on%20macOS.html</loc>
+    <loc>https://blog.iamzhl.top/Check%20CPU%20frequences%20by%20using%20AppleIntelInfo.html</loc>
     
-    <lastmod>2017-12-24T11:02:01.159Z</lastmod>
+    <lastmod>2017-12-24T11:38:37.178Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Change%20NetBeans's%20language%20to%20Chinese%20in%20macOS.html</loc>
+    
+    <lastmod>2017-12-24T11:38:11.811Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Change%20launchpad%20icon%20grid%20layout%20in%20your%20MAC.html</loc>
+    
+    <lastmod>2017-12-24T11:37:57.407Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/ASUS-X455LD-i5-4210u.html</loc>
+    
+    <lastmod>2017-12-24T11:37:25.434Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Allow%20apps%20downloaded%20from%20anywhere%20on%20macOS.html</loc>
+    
+    <lastmod>2017-12-24T11:37:05.945Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Clover-ACPI-hotpatch.html</loc>
+    
+    <lastmod>2017-12-24T11:36:15.107Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog.iamzhl.top/Common%20Keyboard%20%20shortcut%20on%20MAC.html</loc>
     
-    <lastmod>2017-12-24T11:00:54.909Z</lastmod>
+    <lastmod>2017-12-24T11:35:48.719Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.iamzhl.top/Extract%20and%20fix%20DSDT%20SSDT%20simply.html</loc>
+    <loc>https://blog.iamzhl.top/Config%20NexT%20to%20beautify%20your%20blog%20with%20hexo.html</loc>
     
-    <lastmod>2017-12-24T10:59:33.752Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Disable%20the%20discrete%20GPU%20in%20laptop.html</loc>
-    
-    <lastmod>2017-12-24T10:57:00.041Z</lastmod>
+    <lastmod>2017-12-24T11:35:17.122Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog.iamzhl.top/Connect%20Network%20in%20Windows%2010.html</loc>
     
-    <lastmod>2017-12-24T10:56:33.367Z</lastmod>
+    <lastmod>2017-12-24T11:35:11.053Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Dell-Inspiron-15-7000-i7-8550u.html</loc>
+    
+    <lastmod>2017-12-24T11:35:03.170Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Disable%20the%20discrete%20GPU%20in%20laptop.html</loc>
+    
+    <lastmod>2017-12-24T11:34:54.075Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Enable%20BCM94352z%20on%20your%20hacintosh.html</loc>
+    
+    <lastmod>2017-12-24T11:34:23.229Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Extract%20and%20fix%20DSDT%20SSDT%20simply.html</loc>
+    
+    <lastmod>2017-12-24T11:33:55.565Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/hello-world.html</loc>
+    
+    <lastmod>2017-12-24T11:33:24.101Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/How%20to%20use%20xcode-select%20in%20terminal.html</loc>
+    
+    <lastmod>2017-12-24T11:32:40.809Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/How-to-build-Clover-from-source.html</loc>
+    
+    <lastmod>2017-12-24T11:32:09.073Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Install%20jdk%20on%20macOS.html</loc>
+    
+    <lastmod>2017-12-24T11:31:44.076Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Install-macOS-on-laptop.html</loc>
+    
+    <lastmod>2017-12-24T11:31:16.066Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Problem%20about%20coin%20array.html</loc>
+    
+    <lastmod>2017-12-24T11:30:59.412Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Problem%20about%20dictionary%20order.html</loc>
+    
+    <lastmod>2017-12-24T11:30:43.581Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Problem%20about%20low-carbon%20lifestyle%20answering.html</loc>
+    
+    <lastmod>2017-12-24T11:30:38.330Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Problem%20about%20rollover%20price%20tag.html</loc>
+    
+    <lastmod>2017-12-24T11:30:27.415Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Resolve%20short%20duration%20lag%20after%20wake%20and%20after%20login%20on%20haswell%20or%20broadwell.html</loc>
+    
+    <lastmod>2017-12-24T11:30:14.944Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog.iamzhl.top/Solve%20problem%20of%20subset%20sum%20with%20backtracking%20method.html</loc>
     
-    <lastmod>2017-12-24T10:53:34.765Z</lastmod>
+    <lastmod>2017-12-24T11:30:02.939Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.iamzhl.top/%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98.html</loc>
+    <loc>https://blog.iamzhl.top/Speed%20up%20the%20hackintosh%20to%20boot.html</loc>
     
-    <lastmod>2017-12-23T07:13:39.768Z</lastmod>
+    <lastmod>2017-12-24T11:29:42.228Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Sync%20the%20codes%20between%20native%20and%20remote%20by%20git.html</loc>
+    
+    <lastmod>2017-12-24T11:29:24.905Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Sync-your-hexo-with-several-terminal.html</loc>
+    
+    <lastmod>2017-12-24T11:28:54.359Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Problem%20about%20police%20and%20gangster%20110.html</loc>
+    
+    <lastmod>2017-12-24T11:27:40.257Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Problem%20about%20Sending%20out%20death%20squads.html</loc>
+    
+    <lastmod>2017-12-24T11:26:02.509Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Statistical%20problem.html</loc>
+    
+    <lastmod>2017-12-24T11:25:10.821Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/The%20simplest%20case%20demo%20about%20client%20and%20server.html</loc>
+    
+    <lastmod>2017-12-24T11:20:14.522Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/How%20to%20import%20a%20project%20from%20NetBeans%20to%20MyEclipse%20faultlessly.html</loc>
+    
+    <lastmod>2017-12-24T11:14:38.955Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/RW%20NTFS%20partition%20natively%20on%20macOS.html</loc>
+    
+    <lastmod>2017-12-24T11:10:06.424Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Driver%20audio%20for%20hackintosh.html</loc>
+    
+    <lastmod>2017-12-24T11:07:12.793Z</lastmod>
     
   </url>
   
@@ -58,13 +247,6 @@
   </url>
   
   <url>
-    <loc>https://blog.iamzhl.top/Clover-ACPI-hotpatch.html</loc>
-    
-    <lastmod>2017-12-19T15:19:29.776Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.iamzhl.top/HP-OMEN-by-HP-Laptop.html</loc>
     
     <lastmod>2017-12-13T11:27:04.144Z</lastmod>
@@ -72,205 +254,9 @@
   </url>
   
   <url>
-    <loc>https://blog.iamzhl.top/ASUS-X455LD-i5-4210u.html</loc>
-    
-    <lastmod>2017-12-13T06:53:08.272Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/%E4%BB%B7%E7%89%8C%E7%BF%BB%E8%BD%AC%E9%97%AE%E9%A2%98.html</loc>
-    
-    <lastmod>2017-12-12T06:34:40.075Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/%E4%BD%8E%E7%A2%B3%E7%94%9F%E6%B4%BB%E7%AD%94%E9%A2%98%E9%97%AE%E9%A2%98.html</loc>
-    
-    <lastmod>2017-12-12T06:34:34.141Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/%E5%AD%97%E5%85%B8%E5%BA%8F%E9%97%AE%E9%A2%98.html</loc>
-    
-    <lastmod>2017-12-12T06:34:12.777Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/%E6%B4%BE%E9%81%A3%E6%95%A2%E6%AD%BB%E9%98%9F%E9%97%AE%E9%A2%98.html</loc>
-    
-    <lastmod>2017-12-12T06:34:04.047Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/%E8%AD%A6%E5%8C%AA110%E9%97%AE%E9%A2%98.html</loc>
-    
-    <lastmod>2017-12-12T06:33:52.224Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/%E9%87%91%E5%B8%81%E9%98%B5%E5%88%97%E9%97%AE%E9%A2%98.html</loc>
-    
-    <lastmod>2017-12-12T06:33:46.585Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Install-macOS-on-laptop.html</loc>
-    
-    <lastmod>2017-12-12T06:32:50.609Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Dell-Inspiron-15-7000-i7-8550u.html</loc>
-    
-    <lastmod>2017-12-10T14:20:53.090Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Change%20NetBeans's%20language%20to%20Chinese%20in%20macOS.html</loc>
-    
-    <lastmod>2017-12-08T18:49:04.352Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/%E8%B0%88%E8%B0%88%E9%BB%91%E6%9E%9C%E7%9A%84%E5%A3%B0%E5%8D%A1.html</loc>
-    
-    <lastmod>2017-11-08T15:52:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/%E5%9F%BA%E4%BA%8E%20JSP%20%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%B3%BB%E7%BB%9F.html</loc>
-    
-    <lastmod>2017-11-05T14:15:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/%E5%B0%86%20NetBeans%20%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%AF%BC%E5%85%A5%20MyEclipse%20%E5%B9%B6%E5%87%8F%E5%B0%91%E9%94%99%E8%AF%AF%E4%B8%8E%E4%B9%B1%E7%A0%81%E7%8E%B0%E8%B1%A1.html</loc>
-    
-    <lastmod>2017-11-01T03:06:28.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/%E5%AE%9E%E7%8E%B0%20MAC%20%E5%8E%9F%E7%94%9F%E8%AF%BB%E5%86%99%20NTFS%20%E5%88%86%E5%8C%BA.html</loc>
-    
-    <lastmod>2017-10-27T05:12:14.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Change%20launchpad%20icon%20grid%20layout%20in%20your%20MAC.html</loc>
-    
-    <lastmod>2017-10-26T01:57:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Allow%20apps%20downloaded%20from%20anywhere%20on%20macOS.html</loc>
-    
-    <lastmod>2017-10-19T01:07:16.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Enable%20BCM94352z%20on%20your%20hacintosh.html</loc>
-    
-    <lastmod>2017-10-19T01:04:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Sync%20the%20codes%20between%20native%20and%20remote%20by%20git.html</loc>
-    
-    <lastmod>2017-10-14T16:18:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Resolve%20short%20duration%20lag%20after%20wake%20and%20after%20login%20on%20haswell%20or%20broadwell.html</loc>
-    
-    <lastmod>2017-10-14T16:17:20.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Sync-your-hexo-with-several-terminal.html</loc>
-    
-    <lastmod>2017-10-14T16:04:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/How-to-build-Clover-from-source.html</loc>
-    
-    <lastmod>2017-09-20T12:43:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/%E5%BC%80%E6%8B%93%E8%80%85%E5%BC%80%E5%8F%91%E5%9B%A2%E9%98%9F%E5%90%AF%E5%8A%A8%E4%BC%9A%E8%AE%AE.html</loc>
-    
-    <lastmod>2017-09-19T12:25:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/NexT%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3.html</loc>
-    
-    <lastmod>2017-09-18T14:50:25.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%A2%E6%88%B7%E6%9C%BA%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A1%88%E4%BE%8B%E6%BC%94%E7%A4%BA.html</loc>
-    
-    <lastmod>2017-09-15T16:20:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.iamzhl.top/about/index.html</loc>
     
     <lastmod>2017-09-15T16:18:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/%E5%88%A9%E7%94%A8%20AppleIntelInfo%20%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%A2%91.html</loc>
-    
-    <lastmod>2017-09-15T14:15:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/%E5%8A%A0%E5%BF%AB%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E6%9C%BA%E9%80%9F%E5%BA%A6%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95.html</loc>
-    
-    <lastmod>2017-09-15T13:35:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/How%20to%20use%20xcode-select%20in%20terminal.html</loc>
-    
-    <lastmod>2017-09-15T13:22:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/hello-world.html</loc>
-    
-    <lastmod>2017-09-14T05:33:02.000Z</lastmod>
     
   </url>
   

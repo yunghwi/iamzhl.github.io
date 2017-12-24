@@ -105,7 +105,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hacintosh,黑苹果,NTFS," />
+  <meta name="keywords" content="C语言,算法,字典序," />
 
 
 
@@ -133,20 +133,20 @@
   })();
 </script>
 
-<meta name="description" content="实现 MAC 原生读写 NTFS 分区">
-<meta name="keywords" content="Hacintosh,黑苹果,NTFS">
+<meta name="description" content="字典序问题">
+<meta name="keywords" content="C语言,算法,字典序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实现 MAC 原生读写 NTFS 分区">
-<meta property="og:url" content="https://blog.iamzhl.top/实现 MAC 原生读写 NTFS 分区.html">
+<meta property="og:title" content="Problem about dictionary order">
+<meta property="og:url" content="https://blog.iamzhl.top/Problem about dictionary order.html">
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
-<meta property="og:description" content="实现 MAC 原生读写 NTFS 分区">
+<meta property="og:description" content="字典序问题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-10-27-01.png">
-<meta property="og:updated_time" content="2017-10-27T05:12:14.000Z">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/20170831-zidianxu-1.png">
+<meta property="og:updated_time" content="2017-12-24T11:30:43.581Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="实现 MAC 原生读写 NTFS 分区">
-<meta name="twitter:description" content="实现 MAC 原生读写 NTFS 分区">
-<meta name="twitter:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-10-27-01.png">
+<meta name="twitter:title" content="Problem about dictionary order">
+<meta name="twitter:description" content="字典序问题">
+<meta name="twitter:image" content="http://ovefvi4g3.bkt.clouddn.com/20170831-zidianxu-1.png">
 
 
 
@@ -176,13 +176,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.iamzhl.top/实现 MAC 原生读写 NTFS 分区.html"/>
+  <link rel="canonical" href="https://blog.iamzhl.top/Problem about dictionary order.html"/>
 
 
 
 
 
-  <title>实现 MAC 原生读写 NTFS 分区 | Athlonreg's Blog</title>
+  <title>Problem about dictionary order | Athlonreg's Blog</title>
   
 
 
@@ -365,7 +365,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.iamzhl.top/实现 MAC 原生读写 NTFS 分区.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.iamzhl.top/Problem about dictionary order.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="athlonreg/套陆">
@@ -382,7 +382,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">实现 MAC 原生读写 NTFS 分区</h1>
+          <h1 class="post-title" itemprop="name headline">Problem about dictionary order</h1>
         
 
         <div class="post-meta">
@@ -394,8 +394,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T00:00:00+08:00">
-                2017-10-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-31T00:00:00+08:00">
+                2017-08-31
               </time>
             
 
@@ -417,8 +417,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hacintosh/" itemprop="url" rel="index">
-                    <span itemprop="name">Hacintosh</span>
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
                   </a>
                 </span>
 
@@ -434,7 +434,7 @@
 
           
           
-             <span id="/实现 MAC 原生读写 NTFS 分区.html" class="leancloud_visitors" data-flag-title="实现 MAC 原生读写 NTFS 分区">
+             <span id="/Problem about dictionary order.html" class="leancloud_visitors" data-flag-title="Problem about dictionary order">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -460,7 +460,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  114 字
+                  575 字
                 </span>
               
 
@@ -476,7 +476,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -484,7 +484,7 @@
 
           
               <div class="post-description">
-                  实现 MAC 原生读写 NTFS 分区
+                  字典序问题
               </div>
           
 
@@ -501,33 +501,13 @@
       
 
       
-        <p><strong>实现 MAC 原生读写 NTFS 分区</strong></p>
-<blockquote>
-<p>打开终端，输入命令</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ diskutil list</div></pre></td></tr></table></figure>
-<blockquote>
-<p>输入命令</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo vim /etc/fstab</div></pre></td></tr></table></figure>
-<blockquote>
-<p>编辑内容如下</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LABEL=Win\040Ntfs\040Drive none ntfs rw,auto,nobrowse</div></pre></td></tr></table></figure>
-<blockquote>
-<p>注意</p>
-</blockquote>
-<p><strong><code>Win\040Ntfs\040Drive</code> 这串字符中<code>\040</code>代表空格，<code>Win\040Ntfs\040Drive</code> 这一串出现在<code>diskutil list</code>那个屏幕里面，比如下图就是<code>HD-E1</code></strong></p>
-<p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-27-01.png" alt="2017-10-27-01"></p>
-<blockquote>
-<p>最后一步</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo ln -s /Volumes ~/Desktop/Volumes</div></pre></td></tr></table></figure>
-<p><strong>Credit</strong></p>
-<blockquote>
-<p>转自<a href="https://www.waitsun.com" target="_blank" rel="external">爱情守望者</a></p>
-<p>转载请注明<a href="https://www.waitsun.com/aboutus/help" target="_blank" rel="external">原帖地址</a></p>
-</blockquote>
+        <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A由26个小写字母组成。该字母表产生的升序字符串中字母从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1次。例如，a,b,ab,bc,xyz等字符串都是升序字符串。现在对字母表中产生的所有长度不超过6的升序字符串，计算它在字典中的编码。</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>首先判断字符串长度为3，先算长度为1和2的所有情况，即从26个字母中选1个或两个字母，因为是升序，即sum=C（26，1）+C（26，2）；</p>
+<p>之后再看字符串的第一个字符，为’d’,之前有以a,b,c开头的长度为3的字符串，以a开头，后边2位需要在25个字母中选择（除了a），以b开头的后2位需要在24个字母中选择（除了a,b），以c开头的在23个字母（除了a,,b,c）中选择，即sum+=(C(25,2)+C(24,2)+C(23,2));</p>
+<p>然后再看下一个字母’g’，d与g之间有e,f,需要算以de开头以及以df开头的所有情况，即sum+=(C(21,1)+C(20,1))；</p>
+<p>最后再加上h-‘a’+1;</p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;string.h&gt;</div><div class="line"></div><div class="line">int getCombinatorialNumber(int m, int n) &#123;</div><div class="line">    int n_Product=1, m_Product=1;</div><div class="line">    int i;</div><div class="line">    </div><div class="line">    for(i=1; i&lt;=n; i++) </div><div class="line">        n_Product*=i;</div><div class="line">    for(i=m; i&gt;m-n; i--) &#123;</div><div class="line">        m_Product*=i;</div><div class="line">        return m_Product/n_Product;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main(int argc, const char * argv[]) &#123;</div><div class="line">    int number;                                             		//要统计字符串的个数</div><div class="line">    int sum;                                                		//存放字符串的序号</div><div class="line">    int length;</div><div class="line">    char str[10];                                           		//存放字符串</div><div class="line">    int a[10];                                              		//存放字符串的每一位字符的值</div><div class="line">    int i, j;</div><div class="line">    scanf(&quot;%d&quot;, &amp;number);</div><div class="line">    </div><div class="line">    while(number--) &#123;</div><div class="line">        getchar();</div><div class="line">        sum=1;</div><div class="line">        scanf(&quot;%s&quot;, str);</div><div class="line">        length=(int)strlen(str);</div><div class="line">        </div><div class="line">        for(i=1; i&lt;length; i++) &#123;</div><div class="line">            sum += getCombinatorialNumber(26, i);             	//小于字符串长度的字符串个数</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(i=0; i&lt;length; i++) &#123;</div><div class="line">            a[i]=str[i]-96;                                 	//计算每个字符从a开始的序号数值, a~z分别对应1~26</div><div class="line">            //printf(&quot;%d &quot;, a[i]);</div><div class="line">        &#125;</div><div class="line">        //printf(&quot;%d\n&quot;, f(26, 2));</div><div class="line">        </div><div class="line">        int temp=1;</div><div class="line">        for(i=length; i&gt;0; i--) &#123;</div><div class="line">            for(j=temp; j&lt;a[length-i]; j++) &#123;</div><div class="line">                sum += getCombinatorialNumber(26-j, i-1);     //依次扫描字符，计算所有情况</div><div class="line">            &#125;</div><div class="line">            temp=a[length-i]+1;</div><div class="line">        &#125;</div><div class="line">        printf(&quot;%d\n&quot;, sum);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/20170831-zidianxu-1.png" alt="20170831-zidianxu"></p>
 
       
     </div>
@@ -584,11 +564,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hacintosh/" rel="tag"><i class="fa fa-tag"></i> Hacintosh</a>
+            <a href="/tags/C语言/" rel="tag"><i class="fa fa-tag"></i> C语言</a>
           
-            <a href="/tags/黑苹果/" rel="tag"><i class="fa fa-tag"></i> 黑苹果</a>
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
-            <a href="/tags/NTFS/" rel="tag"><i class="fa fa-tag"></i> NTFS</a>
+            <a href="/tags/字典序/" rel="tag"><i class="fa fa-tag"></i> 字典序</a>
           
         </div>
       
@@ -601,8 +581,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Change launchpad icon grid layout in your MAC.html" rel="next" title="Change launchpad icon grid layout in your MAC">
-                <i class="fa fa-chevron-left"></i> Change launchpad icon grid layout in your MAC
+              <a href="/Extract and fix DSDT SSDT simply.html" rel="next" title="Extract and fix DSDT SSDT simply">
+                <i class="fa fa-chevron-left"></i> Extract and fix DSDT SSDT simply
               </a>
             
           </div>
@@ -611,8 +591,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/将 NetBeans 的项目导入 MyEclipse 并减少错误与乱码现象.html" rel="prev" title="将 NetBeans 的项目导入 MyEclipse 并减少错误与乱码现象">
-                将 NetBeans 的项目导入 MyEclipse 并减少错误与乱码现象 <i class="fa fa-chevron-right"></i>
+              <a href="/Problem about coin array.html" rel="prev" title="Problem about coin array">
+                Problem about coin array <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -675,8 +655,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -694,7 +683,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -716,7 +705,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -787,6 +776,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
       
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
@@ -825,7 +830,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      42.6k
+      41.4k
     </span>
   
 </div>
@@ -847,7 +852,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共42.6k字</span>
+  <span class="post-count">博客全站共41.4k字</span>
 </div>
 
         
