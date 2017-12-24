@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.iamzhl.top/Install%20jdk%20on%20macOS.html</loc>
+    
+    <lastmod>2017-12-24T11:02:01.159Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Common%20Keyboard%20%20shortcut%20on%20MAC.html</loc>
+    
+    <lastmod>2017-12-24T11:00:54.909Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Extract%20and%20fix%20DSDT%20SSDT%20simply.html</loc>
+    
+    <lastmod>2017-12-24T10:59:33.752Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Disable%20the%20discrete%20GPU%20in%20laptop.html</loc>
+    
+    <lastmod>2017-12-24T10:57:00.041Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Connect%20Network%20in%20Windows%2010.html</loc>
+    
+    <lastmod>2017-12-24T10:56:33.367Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Solve%20problem%20of%20subset%20sum%20with%20backtracking%20method.html</loc>
+    
+    <lastmod>2017-12-24T10:53:34.765Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.iamzhl.top/%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98.html</loc>
     
     <lastmod>2017-12-23T07:13:39.768Z</lastmod>
@@ -86,23 +128,9 @@
   </url>
   
   <url>
-    <loc>https://blog.iamzhl.top/%E5%9B%9E%E6%BA%AF%E6%B3%95%E6%B1%82%E5%AD%90%E9%9B%86%E5%92%8C%E9%97%AE%E9%A2%98.html</loc>
-    
-    <lastmod>2017-12-12T06:32:06.939Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.iamzhl.top/Dell-Inspiron-15-7000-i7-8550u.html</loc>
     
     <lastmod>2017-12-10T14:20:53.090Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Disable%20the%20discrete%20GPU%20in%20laptop.html</loc>
-    
-    <lastmod>2017-12-10T14:20:14.751Z</lastmod>
     
   </url>
   
@@ -149,13 +177,6 @@
   </url>
   
   <url>
-    <loc>https://blog.iamzhl.top/MAC-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%B4%E7%90%86.html</loc>
-    
-    <lastmod>2017-10-26T00:47:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.iamzhl.top/Allow%20apps%20downloaded%20from%20anywhere%20on%20macOS.html</loc>
     
     <lastmod>2017-10-19T01:07:16.000Z</lastmod>
@@ -166,13 +187,6 @@
     <loc>https://blog.iamzhl.top/Enable%20BCM94352z%20on%20your%20hacintosh.html</loc>
     
     <lastmod>2017-10-19T01:04:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Windows-10%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%9E%E6%8E%A5%E5%AE%BD%E5%B8%A6.html</loc>
-    
-    <lastmod>2017-10-15T14:19:23.000Z</lastmod>
     
   </url>
   
@@ -236,20 +250,6 @@
     <loc>https://blog.iamzhl.top/%E5%88%A9%E7%94%A8%20AppleIntelInfo%20%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%A2%91.html</loc>
     
     <lastmod>2017-09-15T14:15:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/MAC%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html</loc>
-    
-    <lastmod>2017-09-15T14:11:12.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/DSDT%20SSDT%E7%AE%80%E5%8D%95%E6%8F%90%E5%8F%96%E4%BF%AE%E5%A4%8D.html</loc>
-    
-    <lastmod>2017-09-15T13:50:39.000Z</lastmod>
     
   </url>
   

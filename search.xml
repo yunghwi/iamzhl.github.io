@@ -52,8 +52,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[回溯法求子集和问题]]></title>
-    <url>%2F%E5%9B%9E%E6%BA%AF%E6%B3%95%E6%B1%82%E5%AD%90%E9%9B%86%E5%92%8C%E9%97%AE%E9%A2%98.html</url>
+    <title><![CDATA[Solve problem of subset sum with backtracking method]]></title>
+    <url>%2FSolve%20problem%20of%20subset%20sum%20with%20backtracking%20method.html</url>
     <content type="text"><![CDATA[回溯法：子集和问题问题描述子集和问题的一个实例为。其中，S={x1,x2,x3,&hellip;,xn}是一个正整数的集合，c是一个正整数。子集和问题判定是否存在S的一个子集S1，使得 S1中的所有元素之和等于c。试设计一个解子集和问题的回溯法。 输入第1行有2个正整数n和c，n表示S的大小，c是子集和的目标值。接下来的1行中，有n个正整数，表示集合S中的元素。 输出输出子集和问题的解。当问题无解时，输出No solution!。 样例输入125 102 2 6 5 4 样例输出12 2 6 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142#include &lt;stdio.h&gt;#define n 5#define c 10int array[n]=&#123;2,2,6,5,4&#125;;int a[n]=&#123;0&#125;;int sum=0;int flag=0;void traceback(int t)&#123; if(t==n)&#123; if(sum==c)&#123; flag=1; for(int i=0;i&lt;n;i++)&#123; if(a[i])&#123; printf(&quot;%3d&quot;,array[i]); &#125; &#125; printf(&quot;\n&quot;); return; &#125; &#125; else&#123; sum+=array[t]; a[t]=1; traceback(t+1); a[t]=0; sum-=array[t]; traceback(t+1); &#125;&#125;int main()&#123; traceback(0); if(!flag)&#123; printf(&quot;No Solutions!\n&quot;); &#125; return 0;&#125; 结果输出]]></content>
       <categories>
         <category>algorithm</category>
@@ -161,26 +161,27 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[MAC 常用快捷键整理]]></title>
-    <url>%2FMAC-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%B4%E7%90%86.html</url>
+    <title><![CDATA[Common Keyboard shortcut on MAC]]></title>
+    <url>%2FCommon%20Keyboard%20%20shortcut%20on%20MAC.html</url>
     <content type="text"><![CDATA[写在前面 苹果 Mac 系统常用快捷键有很多，但是很多童鞋对于这些 Mac 快捷键都不是很熟悉，今天小编为大家整理了一份 Mac 系统常用快捷键大全，大家快收藏起来吧!平时在使用 Mac 系统的时候可以提高不少工作效率哦! 本文转自 Xclient.info，转载请注明原出处 小普及 Mac中主要有四个修饰键，分别是 Command，Control，Option 和 Shift。 这四个键分别有自己的图案，他们经常出现在Mac应用程序中的菜单栏里，方便你随时学习新的快捷键。 如下 正文通用快捷键 Command 是 Mac 里最重要的修饰键，在大多数情况下相当于 Windows 下的 Ctrl，黑果通常是 Alt 键。 Command + Z 撤销。 Command + X 剪切。 Command + C 拷贝(Copy)。 Command + V 粘贴。 Command + A 全选(All)。 Command + S 保存(Save)。 Command + F 查找(Find)。 系统快捷键 Option 开机后立即按下，将显示启动管理器。 Command + R 开机后立即按下，可打开OS X 的恢复功能。 Command + Option + P + R 开机后立即按下，重置 NVRAM。有些时候电脑会出现些小问题，重置 NVRAM 是你除了重新启动，尝试修复的第一选择。 Command + Option + Control + Power 退出所有应用程序，允许你进行文稿储存，然后关机。 按住 Power 按钮 5 秒 强制 Mac 关机。 截图 Command + Shift + 3 截取全部屏幕到文件。 Command + Shift + Control + 3 截取全部屏幕到剪贴板。 Command + Shift + 4 截取所选屏幕区域到一个文件，或按空格键仅捕捉一个窗口。 Command + Shift + Control + 4 截取所选屏幕区域到剪贴板，或按空格键仅捕捉一个窗口。 文件管理器 Command + Shift + N (New) 新建文件夹。 Command + Shift + G (Go) 调出窗口，可输入绝对路径直达文件夹。 return 这个其实不算快捷键，点击文件，按下可重命名文件。 Command + O 打开所选项。在 Mac 里打开文件不像 Windows 里直接按 Enter。 Command + Option + V 作用相当于Windows里的文件剪切。在其它位置上对文件复制(Command-C)，在目的位置按下这个快捷键，文件将被剪切到此位置。 Command + ↑ 打开包含当前文件夹的文件夹，相当于 Windows 里的“向上”。 Command + Delete 将文件移至废纸篓。 Command + Shift + Delete 清倒废纸篓。 Space 快速查看选中的文件，也就是预览功能。 切换 Command + Tab 在应用程序间切换。 Command + Shift + Tab 在应用程序间切换(反向)。 Command + ~ 在各应用中的窗口间切换。 浏览器 Command + L 光标直接跳至地址栏。 Control + Tab 转向下一个标签页。 Control + Shift + Tab 转向上一个标签页。 Command + ‘+’或’=’ 放大页面。 Command + ‘-‘ 缩小页面。 应用程序中 Command + H 隐藏(Hide)当前正在运行的应用程序窗口。 Command + Option + H 隐藏(Hide)其他应用程序窗口。 Command + Q 退出(Quit)最前面的应用程序。 Command + Shift + Z 重做，也就是撤销的逆向操作。 Command + Tab 在打开的应用程序列表中转到下一个最近使用的应用程序，相当于 Windows 中(Alt+Tab)。 Command + Option + esc 打开“强制退出”窗口，如果有应用程序无响应，可在窗口列表中选择强制退出。 文本处理 Command + B 切换所选文字粗体(Bold)显示。 fn + Delete 相当于 PC 全尺寸键盘上的 Delete，也就是向后删除。 fn + ↑ 向上滚动一页(Page Up)。 fn + ↓ 向下滚动一页(Page Down)。 fn + ← 滚动至文稿开头(Home)。 fn + → 滚动至文稿末尾(End)。 Command + → 将光标移至当前行的行尾。 Command + ← 将光标移至当前行的行首。 Command + ↓ 将光标移至文稿末尾。 Command + ↑ 将光标移至文稿开头。 Option + → 将光标移至下一个单词的末尾。 Option + ← 将光标移至上一个单词的开头。 Control + A 移至行或段落的开头。 更多快捷键如果你还想学习更多快捷键，请点击这里查看苹果官方的快捷键帮助文档。]]></content>
       <categories>
         <category>Study</category>
       </categories>
       <tags>
-        <tag>Mac</tag>
         <tag>快捷键</tag>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Windows 10 开机自动连接宽带]]></title>
-    <url>%2FWindows-10%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%9E%E6%8E%A5%E5%AE%BD%E5%B8%A6.html</url>
-    <content type="text"><![CDATA[Windows 10 开机自动连接宽带 开工 首先右击我的电脑-&gt;管理-&gt;任务计划程序-&gt;任务计划程序 中间窗口空白处右键 -&gt; 创建基本任务 弹出的下列窗口名称处输入 PPPOE 继续选择 当用户登录时 选择 启动程序 在 程序或脚本 处按照以下格式输入你的本地宽带连接账号 1rasdial 宽带连接 宽带账号 宽带密码 比如我的则为 经网友反馈，发现图中“宽带连接”后少了一个空格，请大家自主添加 一路下一步直到完成]]></content>
+    <title><![CDATA[Connect Network in Windows 10]]></title>
+    <url>%2FConnect%20Network%20in%20Windows%2010.html</url>
+    <content type="text"><![CDATA[开工 首先右击我的电脑-&gt;管理-&gt;任务计划程序-&gt;任务计划程序 中间窗口空白处右键 -&gt; 创建基本任务 弹出的下列窗口名称处输入 PPPOE 继续选择 当用户登录时 选择 启动程序 在 程序或脚本 处按照以下格式输入你的本地宽带连接账号 1rasdial 宽带连接 宽带账号 宽带密码 比如我的则为 经网友反馈，发现图中“宽带连接”后少了一个空格，请大家自主添加 一路下一步直到完成]]></content>
       <categories>
         <category>Study</category>
       </categories>
       <tags>
-        <tag>加密</tag>
+        <tag>自动连接</tag>
+        <tag>宽带</tag>
       </tags>
   </entry>
   <entry>
@@ -211,7 +212,7 @@
   <entry>
     <title><![CDATA[Disable the discrete GPU in laptop]]></title>
     <url>%2FDisable%20the%20discrete%20GPU%20in%20laptop.html</url>
-    <content type="text"><![CDATA[Disable the discrete GPU to fix “Window Server Service only ran for 0 seconds” in High Sierra 写在前面最近我根据 RehabMan 的 hotpatch 添加了一些路径做了一个屏蔽独显得 hotpatch 来屏蔽独显解决一些升级 10.13 后因为 nv_disable 参数失效而卡在 Window Server Service only ran for 0 seconds 的错误，发现有些成功，有些失败。于是把我琢磨到的一种方法分享给大家！希望该帖子能帮助到各位！ 感谢： PCBETA (远景论坛) yearjinheng 版主的帖子 tonymacx86.com Rehabman 的帖子 转载请注明 原贴地址 屏蔽独显方法不一： 第一种：直接在 DSDT SSDT 上做修改 第二种：手动制作一个适合自己机器的 hotpatch 屏蔽独显达到屏蔽独显的作用 开工 本帖主要采用第二种方法，大致思路如下： 提取 ACPI 原始表单 反编译这些文件 搜索一个名为 _OFF 的方法 检查文件的结果以确定 _OFF 的路径 修改 RehabMan 的 hotpatch 加入自己的路径 提取 ACPI 原始表单并提取 _OFF 路径 打开电脑进入四叶草引导界面，按下 F4 或者 FN+F4 即可提取原始表单到 /EFI/CLOVER/ACPI/origin ，然后进入 MAC 将 origin 拷贝到桌面删掉除 SSDT DSDT 之外的所有 aml 文件，打开终端： 1234$ cd ~/Desktop/origin $ iasl -da -dl *.aml $ rm *.aml $ grep -l Method.*_OFF *.dsl 以我修改的一个机器为例，上一条命令得到的结果如下 1234DSDT.dslSSDT-7.dslSSDT-8.dslSSDT-9.dsl 依次打开这四个表单搜索 _OFF ，找到一个类似于下面这个函数： 图片左下角的路径就是我们最终所需要的: 1_SB.PCI0.RP05.PEGP 修改 RehabMan 的 hotpatch 添加这个路径 首先去 RehanMan 的 GitHub 下载 hotpatch 包 1https://github.com/RehabMan/OS-X-Clover-Laptop-Config.git 我们只需要 SSDT-Disable_DGPU 这个文件，编译成 aml 文件 1$ iasl SSDT-Disable_DGPU.dsl 打开编译后得到的 aml 文件 按照这个格式添加自己的路径 保存放到 /EFI/CLOVER/ACPI/patched 一个注意点 如果在 Config.plist 中使用了 SortedOrder (通常 Clover 安装后默认没有设置)，需要在其内添加 SSDT-Disable_DGPU.aml 这一项。因为如果指定了 SortedOrder ，则 Clover 只加载其中指定的 SSDT 。如果没有出现在列表中,即使在 ACPI/patched 中，它也不会加载。 完工]]></content>
+    <content type="text"><![CDATA[写在前面最近我根据 RehabMan 的 hotpatch 添加了一些路径做了一个屏蔽独显得 hotpatch 来屏蔽独显解决一些升级 10.13 后因为 nv_disable 参数失效而卡在 Window Server Service only ran for 0 seconds 的错误，发现有些成功，有些失败。于是把我琢磨到的一种方法分享给大家！希望该帖子能帮助到各位！ 感谢： PCBETA (远景论坛) yearjinheng 版主的帖子 tonymacx86.com Rehabman 的帖子 转载请注明 原贴地址 屏蔽独显方法不一： 第一种：直接在 DSDT SSDT 上做修改 第二种：手动制作一个适合自己机器的 hotpatch 屏蔽独显达到屏蔽独显的作用 开工 本帖主要采用第二种方法，大致思路如下： 提取 ACPI 原始表单 反编译这些文件 搜索一个名为 _OFF 的方法 检查文件的结果以确定 _OFF 的路径 修改 RehabMan 的 hotpatch 加入自己的路径 提取 ACPI 原始表单并提取 _OFF 路径 打开电脑进入四叶草引导界面，按下 F4 或者 FN+F4 即可提取原始表单到 /EFI/CLOVER/ACPI/origin ，然后进入 MAC 将 origin 拷贝到桌面删掉除 SSDT DSDT 之外的所有 aml 文件，打开终端： 1234$ cd ~/Desktop/origin $ iasl -da -dl *.aml $ rm *.aml $ grep -l Method.*_OFF *.dsl 以我修改的一个机器为例，上一条命令得到的结果如下 1234DSDT.dslSSDT-7.dslSSDT-8.dslSSDT-9.dsl 依次打开这四个表单搜索 _OFF ，找到一个类似于下面这个函数： 图片左下角的路径就是我们最终所需要的: 1_SB.PCI0.RP05.PEGP 修改 RehabMan 的 hotpatch 添加这个路径 首先去 RehanMan 的 GitHub 下载 hotpatch 包 1https://github.com/RehabMan/OS-X-Clover-Laptop-Config.git 我们只需要 SSDT-Disable_DGPU 这个文件，编译成 aml 文件 1$ iasl SSDT-Disable_DGPU.dsl 打开编译后得到的 aml 文件 按照这个格式添加自己的路径 保存放到 /EFI/CLOVER/ACPI/patched 一个注意点 如果在 Config.plist 中使用了 SortedOrder (通常 Clover 安装后默认没有设置)，需要在其内添加 SSDT-Disable_DGPU.aml 这一项。因为如果指定了 SortedOrder ，则 Clover 只加载其中指定的 SSDT 。如果没有出现在列表中,即使在 ACPI/patched 中，它也不会加载。 完工]]></content>
       <categories>
         <category>Hacintosh</category>
       </categories>
@@ -260,19 +261,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[价牌翻转问题]]></title>
-    <url>%2F%E4%BB%B7%E7%89%8C%E7%BF%BB%E8%BD%AC%E9%97%AE%E9%A2%98.html</url>
-    <content type="text"><![CDATA[价牌翻转问题 问题描述 思路1、已知是一个四位数，那么共有1001-9999种情况；2、一个数颠倒之后，数字顺序颠倒并且每个数字颠倒，例如1269颠倒之后就是6921；3、0不能是第一位也不能是最后一位。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;math.h&gt;int array[4]=&#123;0&#125;;int inverse(int a)&#123;//求一个数颠倒之后的结果 int b=0; int arr[4]=&#123;0&#125;; for(int i=0;i&lt;4;i++)&#123; arr[i]=(int)(a/pow(10,3-i))%10; if(arr[i]==9) b+=6*pow(10,i); else if(arr[i]==6) b+=9*pow(10,i); else b+=arr[i]*pow(10,i); &#125; return b;&#125;int main()&#123; int i,j; int k=0,l=0; int temp; int flag; int up[50]=&#123;0&#125;,down[50]=&#123;0&#125;;//分别存放赚钱和赔钱的价牌 for(i=1001;i&lt;10000;i++)&#123; temp=i; flag=1; for(j=0;j&lt;4;j++)&#123; array[j]=(int)(temp/pow(10,3-j))%10; if(array[j]==3||array[j]==4||array[j]==7)&#123;//分割数字排除不能翻转的数字 flag=0; break; &#125; &#125; if(flag)&#123; if(array[0]==0 || array[3]==0)//0不能位于第一位和最后一位 continue; if(inverse(i)-i&gt;800&amp;&amp;inverse(i)-i&lt;900) up[k++]=i; if(i-inverse(i)&gt;200&amp;&amp;i-inverse(i)&lt;300) down[l++]=i; &#125; &#125; for(i=0;i&lt;50;i++)&#123;//依次输出赚钱的原价，颠倒价、赚的钱、赔钱的原价、颠倒价、赔的钱 for(j=0;j&lt;50;j++)&#123; if((inverse(up[i])-up[i])-(down[j]-inverse(down[j]))==558)&#123; printf(&quot;%d\t%d\t%d\t&quot;,up[i],inverse(up[i]),inverse(up[i])-up[i]); printf(&quot;%d\t%d\t%d\n&quot;,down[j],inverse(down[j]),down[j]-inverse(down[j])); &#125; &#125; &#125; return 0;&#125; 运行结果：]]></content>
-      <categories>
-        <category>algorithm</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-        <tag>算法</tag>
-        <tag>价牌翻转</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[警匪110问题]]></title>
     <url>%2F%E8%AD%A6%E5%8C%AA110%E9%97%AE%E9%A2%98.html</url>
     <content type="text"><![CDATA[警匪110问题 问题描述 思路1、一共九个数字，八个操作符；2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；3、共有 3^8 种情况，遍历每种情况判断输出；4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1x10+2，然后下一次循环操作符为+，需要计算的就是12+3，同理在3、4之间的空需要计算的是3x10+4，而不是（12+3）x10+4，所以需要一个临时变量来记录上次的操作数，还需要一个变量来记录上次的操作符将上次的结果进行统计处理，原因就在于我们无法确定下次的操作符是不是留空。6、由于我们在统计和时，只有在下一次循环才能处理最后一个操作数，所以需要将9最后单独处理。 代码实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int a[9]=&#123;1,2,3,4,5,6,7,8,9&#125;; int sum; int temp; int oper,lastoper; int number; int i,j; for(i=0;i&lt;pow(3,8);i++) &#123; sum=0; temp=1; lastoper=1; number=i; for(j=1;j&lt;=8;j++) &#123; //操作八次 oper=number%3; number=number/3; if (!oper) temp=temp*10+a[j]; //留空单独处理 if (oper==1) &#123; //当前操作符 if(lastoper==1)&#123; //前一次操作符 sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; //更新上次操作符 &#125; if(oper==2)&#123; if(lastoper==1)&#123; sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; &#125; &#125; if(lastoper==1) //第九次操作单独处理 sum=sum+temp; if(lastoper==2) sum=sum-temp; if(sum==110) &#123; number=i; for(j=1;j&lt;=8;j++) &#123; printf(&quot;%d&quot;,a[j-1]); oper=number%3; number=number/3; if(oper==1) printf(&quot;+&quot;); if(oper==2) printf(&quot;-&quot;); else continue; &#125; printf(&quot;9\n&quot;); &#125; &#125; return 0;&#125; 运行结果]]></content>
@@ -296,6 +284,19 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>派遣敢死队</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[价牌翻转问题]]></title>
+    <url>%2F%E4%BB%B7%E7%89%8C%E7%BF%BB%E8%BD%AC%E9%97%AE%E9%A2%98.html</url>
+    <content type="text"><![CDATA[价牌翻转问题 问题描述 思路1、已知是一个四位数，那么共有1001-9999种情况；2、一个数颠倒之后，数字顺序颠倒并且每个数字颠倒，例如1269颠倒之后就是6921；3、0不能是第一位也不能是最后一位。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;math.h&gt;int array[4]=&#123;0&#125;;int inverse(int a)&#123;//求一个数颠倒之后的结果 int b=0; int arr[4]=&#123;0&#125;; for(int i=0;i&lt;4;i++)&#123; arr[i]=(int)(a/pow(10,3-i))%10; if(arr[i]==9) b+=6*pow(10,i); else if(arr[i]==6) b+=9*pow(10,i); else b+=arr[i]*pow(10,i); &#125; return b;&#125;int main()&#123; int i,j; int k=0,l=0; int temp; int flag; int up[50]=&#123;0&#125;,down[50]=&#123;0&#125;;//分别存放赚钱和赔钱的价牌 for(i=1001;i&lt;10000;i++)&#123; temp=i; flag=1; for(j=0;j&lt;4;j++)&#123; array[j]=(int)(temp/pow(10,3-j))%10; if(array[j]==3||array[j]==4||array[j]==7)&#123;//分割数字排除不能翻转的数字 flag=0; break; &#125; &#125; if(flag)&#123; if(array[0]==0 || array[3]==0)//0不能位于第一位和最后一位 continue; if(inverse(i)-i&gt;800&amp;&amp;inverse(i)-i&lt;900) up[k++]=i; if(i-inverse(i)&gt;200&amp;&amp;i-inverse(i)&lt;300) down[l++]=i; &#125; &#125; for(i=0;i&lt;50;i++)&#123;//依次输出赚钱的原价，颠倒价、赚的钱、赔钱的原价、颠倒价、赔的钱 for(j=0;j&lt;50;j++)&#123; if((inverse(up[i])-up[i])-(down[j]-inverse(down[j]))==558)&#123; printf(&quot;%d\t%d\t%d\t&quot;,up[i],inverse(up[i]),inverse(up[i])-up[i]); printf(&quot;%d\t%d\t%d\n&quot;,down[j],inverse(down[j]),down[j]-inverse(down[j])); &#125; &#125; &#125; return 0;&#125; 运行结果：]]></content>
+      <categories>
+        <category>algorithm</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+        <tag>价牌翻转</tag>
       </tags>
   </entry>
   <entry>
@@ -431,9 +432,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[DSDT SSDT 简单提取修复]]></title>
-    <url>%2FDSDT%20SSDT%E7%AE%80%E5%8D%95%E6%8F%90%E5%8F%96%E4%BF%AE%E5%A4%8D.html</url>
-    <content type="text"><![CDATA[DSDT SSDT 简单提取修复 开工准备工作首先在 CLOVER 引导界面按 F4 或者 FN + F4 提取原始表单，然后进入 Mac ，利用 Clover Configurator 挂载ESP分区，提取的表单就在 /EFI/CLOVER/ACPI/origin ,将 origin 整个拷贝到桌面，并删除 origin 中除 DSDT SSDT 以外的所有文件 然后下载要用到的工具 12iasl：https://bitbucket.org/RehabMan/acpica/downloads/MaciASL：链接:http://pan.baidu.com/s/1pKAksR5 密码:nxyr 将 iasl 放到 /usr/bin 然后安装 MaciASL 并添加补丁源： Rehabman 补丁源： 12Name：RehabMan Laptop URL：http://raw.github.com/RehabMan/Laptop-DSDT-Patch/master 打开终端，输入： 1cd ~/Desktop/origin 回车 然后输入: 1iasl –da –dl *.aml 回车 这时打开桌面的 origin 文件夹会发现多出了很多 .dsl 文件，我们要用到的就是这些文件 先不要急，终端继续执行 1rm –rf *.aml 回车 然后执行: 1rm –rf *x.dsl 回车，这时就会发现终端只剩下了不带 x 的 dsl 文件 开始操作然后用 MaciASL 打开 DSDT.dsl 点 Compile 编译后会弹出错误的窗口： 点这些错误就会定位到错误的代码位置 这里说一下常见的错误修复方法: 1、 PARSEOP_ZERO 错误，定位后会发现一堆 zero 代码，直接将他们删掉即可2、 Unexpected ‘}’ 错误： 定位后是这样： 我们会发现这个错误位于 ADBG 的方法下，这时只需打个补丁即可： 点Patch 找到 Fix ADBG Error 点一下，然后 Apply 应用即可，这时我们会发现再编译就没有错误了(警告可以不用管)，然后保存成aml文件 Save 即可，其他 SSDT 文件也是一样的操作 修改完成在修改完所有表单的错误并保存成aml格式后，将这些 aml 文件放到 /EFI/CLOVER/ACPI/patched 就可以了 完工]]></content>
+    <title><![CDATA[Extract and fix DSDT SSDT simply]]></title>
+    <url>%2FExtract%20and%20fix%20DSDT%20SSDT%20simply.html</url>
+    <content type="text"><![CDATA[开工准备工作首先在 CLOVER 引导界面按 F4 或者 FN + F4 提取原始表单，然后进入 Mac ，利用 Clover Configurator 挂载ESP分区，提取的表单就在 /EFI/CLOVER/ACPI/origin ,将 origin 整个拷贝到桌面，并删除 origin 中除 DSDT SSDT 以外的所有文件 然后下载要用到的工具 12iasl：https://bitbucket.org/RehabMan/acpica/downloads/MaciASL：链接:http://pan.baidu.com/s/1pKAksR5 密码:nxyr 将 iasl 放到 /usr/bin 然后安装 MaciASL 并添加补丁源： Rehabman 补丁源： 12Name：RehabMan Laptop URL：http://raw.github.com/RehabMan/Laptop-DSDT-Patch/master 打开终端，输入： 1cd ~/Desktop/origin 回车 然后输入: 1iasl –da –dl *.aml 回车 这时打开桌面的 origin 文件夹会发现多出了很多 .dsl 文件，我们要用到的就是这些文件 先不要急，终端继续执行 1rm –rf *.aml 回车 然后执行: 1rm –rf *x.dsl 回车，这时就会发现终端只剩下了不带 x 的 dsl 文件 开始操作然后用 MaciASL 打开 DSDT.dsl 点 Compile 编译后会弹出错误的窗口： 点这些错误就会定位到错误的代码位置 这里说一下常见的错误修复方法: 1、 PARSEOP_ZERO 错误，定位后会发现一堆 zero 代码，直接将他们删掉即可2、 Unexpected ‘}’ 错误： 定位后是这样： 我们会发现这个错误位于 ADBG 的方法下，这时只需打个补丁即可： 点Patch 找到 Fix ADBG Error 点一下，然后 Apply 应用即可，这时我们会发现再编译就没有错误了(警告可以不用管)，然后保存成aml文件 Save 即可，其他 SSDT 文件也是一样的操作 修改完成在修改完所有表单的错误并保存成aml格式后，将这些 aml 文件放到 /EFI/CLOVER/ACPI/patched 就可以了 完工]]></content>
       <categories>
         <category>Hacintosh</category>
       </categories>
@@ -457,9 +458,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Mac下搭建 Java 开发环境]]></title>
-    <url>%2FMAC%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html</url>
-    <content type="text"><![CDATA[Mac 下搭建 Java 开发环境 安装 jdkMac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。 配置 jdk 环境变量打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容： 1234567JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/HomePATH=$JAVA_HOME/bin:$PATH:.CLASSPATH=JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.export JAVA_HOMEexport PATHexport CLASSPATH 按下 esc ，然后输入 :wq 回车，保存退出 然后输入 source ~/.bash_profile 回车文件修改就生效了。 输入 java -version 回车可以查看 Java 版本，whereis java 可以查看 Java 位置，echo $JAVA_HOME 可以打印出 JAVA_HOME 。 安装eclipse为了更方便的进行开发工作，我们还需要安装Eclipse，去官网下载完成后解压，把.app文件拖进应用程序(Application)就可以了，然后创建一个workspace，也就是工作目录，用来存放工作代码。]]></content>
+    <title><![CDATA[Install jdk on macOS境]]></title>
+    <url>%2FInstall%20jdk%20on%20macOS.html</url>
+    <content type="text"><![CDATA[安装 jdkMac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。 配置 jdk 环境变量打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容： 1234567JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/HomePATH=$JAVA_HOME/bin:$PATH:.CLASSPATH=JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.export JAVA_HOMEexport PATHexport CLASSPATH 按下 esc ，然后输入 :wq 回车，保存退出 然后输入 source ~/.bash_profile 回车文件修改就生效了。 输入 java -version 回车可以查看 Java 版本，whereis java 可以查看 Java 位置，echo $JAVA_HOME 可以打印出 JAVA_HOME 。 安装eclipse为了更方便的进行开发工作，我们还需要安装Eclipse，去官网下载完成后解压，把.app文件拖进应用程序(Application)就可以了，然后创建一个workspace，也就是工作目录，用来存放工作代码。]]></content>
       <categories>
         <category>Study</category>
       </categories>

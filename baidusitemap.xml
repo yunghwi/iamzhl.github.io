@@ -4,6 +4,150 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/Install%20jdk%20on%20macOS.html</loc>
+    <lastmod>2017-12-24T11:02:01.159Z</lastmod>
+    <data>
+        <display>
+        <title>Install jdk on macOS境</title>
+        <pubTime>2017-08-27T16:00:00.000Z</pubTime>
+        
+        <tag>Mac</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>搭建</tag>
+         
+        <tag>环境</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Common%20Keyboard%20%20shortcut%20on%20MAC.html</loc>
+    <lastmod>2017-12-24T11:00:54.909Z</lastmod>
+    <data>
+        <display>
+        <title>Common Keyboard  shortcut on MAC</title>
+        <pubTime>2017-10-26T00:14:21.000Z</pubTime>
+        
+        <tag>快捷键</tag>
+         
+        <tag>Mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Extract%20and%20fix%20DSDT%20SSDT%20simply.html</loc>
+    <lastmod>2017-12-24T10:59:33.752Z</lastmod>
+    <data>
+        <display>
+        <title>Extract and fix DSDT SSDT simply</title>
+        <pubTime>2017-08-29T16:00:00.000Z</pubTime>
+        
+        <tag>DSDT</tag>
+         
+        <tag>SSDT</tag>
+         
+        <tag>编译</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hacintosh" url="https://blog.iamzhl.top/categories/Hacintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Disable%20the%20discrete%20GPU%20in%20laptop.html</loc>
+    <lastmod>2017-12-24T10:57:00.041Z</lastmod>
+    <data>
+        <display>
+        <title>Disable the discrete GPU in laptop</title>
+        <pubTime>2017-10-03T16:00:00.000Z</pubTime>
+        
+        <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
+         
+        <tag>Window Server Service only ran for 0 seconds</tag>
+         
+        <tag>Disable DGPU</tag>
+         
+        <tag>屏蔽独显</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hacintosh" url="https://blog.iamzhl.top/categories/Hacintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Connect%20Network%20in%20Windows%2010.html</loc>
+    <lastmod>2017-12-24T10:56:33.367Z</lastmod>
+    <data>
+        <display>
+        <title>Connect Network in Windows 10</title>
+        <pubTime>2017-10-15T13:59:01.000Z</pubTime>
+        
+        <tag>自动连接</tag>
+         
+        <tag>宽带</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Solve%20problem%20of%20subset%20sum%20with%20backtracking%20method.html</loc>
+    <lastmod>2017-12-24T10:53:34.765Z</lastmod>
+    <data>
+        <display>
+        <title>Solve problem of subset sum with backtracking method</title>
+        <pubTime>2017-12-12T06:12:40.000Z</pubTime>
+        
+        <tag>子集和问题</tag>
+         
+        <tag>回溯</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/%E7%BB%9F%E8%AE%A1%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98.html</loc>
     <lastmod>2017-12-23T07:13:39.768Z</lastmod>
     <data>
@@ -288,28 +432,6 @@
 
     
   <url>
-    <loc>https://blog.iamzhl.top/%E5%9B%9E%E6%BA%AF%E6%B3%95%E6%B1%82%E5%AD%90%E9%9B%86%E5%92%8C%E9%97%AE%E9%A2%98.html</loc>
-    <lastmod>2017-12-12T06:32:06.939Z</lastmod>
-    <data>
-        <display>
-        <title>回溯法求子集和问题</title>
-        <pubTime>2017-12-12T06:12:40.000Z</pubTime>
-        
-        <tag>子集和问题</tag>
-         
-        <tag>回溯</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.iamzhl.top/Dell-Inspiron-15-7000-i7-8550u.html</loc>
     <lastmod>2017-12-10T14:20:53.090Z</lastmod>
     <data>
@@ -320,34 +442,6 @@
         <tag>Hacintosh</tag>
          
         <tag>燃7000</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hacintosh" url="https://blog.iamzhl.top/categories/Hacintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Disable%20the%20discrete%20GPU%20in%20laptop.html</loc>
-    <lastmod>2017-12-10T14:20:14.751Z</lastmod>
-    <data>
-        <display>
-        <title>Disable the discrete GPU in laptop</title>
-        <pubTime>2017-10-03T16:00:00.000Z</pubTime>
-        
-        <tag>Hacintosh</tag>
-         
-        <tag>黑苹果</tag>
-         
-        <tag>Window Server Service only ran for 0 seconds</tag>
-         
-        <tag>Disable DGPU</tag>
-         
-        <tag>屏蔽独显</tag>
          
          
            
@@ -494,28 +588,6 @@
 
     
   <url>
-    <loc>https://blog.iamzhl.top/MAC-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%B4%E7%90%86.html</loc>
-    <lastmod>2017-10-26T00:47:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>MAC 常用快捷键整理</title>
-        <pubTime>2017-10-26T00:14:21.000Z</pubTime>
-        
-        <tag>Mac</tag>
-         
-        <tag>快捷键</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.iamzhl.top/Allow%20apps%20downloaded%20from%20anywhere%20on%20macOS.html</loc>
     <lastmod>2017-10-19T01:07:16.000Z</lastmod>
     <data>
@@ -559,26 +631,6 @@
            
              
               <breadCrumb title="Hacintosh" url="https://blog.iamzhl.top/categories/Hacintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Windows-10%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%9E%E6%8E%A5%E5%AE%BD%E5%B8%A6.html</loc>
-    <lastmod>2017-10-15T14:19:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>Windows 10 开机自动连接宽带</title>
-        <pubTime>2017-10-15T13:59:01.000Z</pubTime>
-        
-        <tag>加密</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
           
         </display>
     </data>
@@ -761,56 +813,6 @@
         <tag>AppleIntelInfo</tag>
          
         <tag>变频</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hacintosh" url="https://blog.iamzhl.top/categories/Hacintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/MAC%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html</loc>
-    <lastmod>2017-09-15T14:11:12.000Z</lastmod>
-    <data>
-        <display>
-        <title>Mac下搭建 Java 开发环境</title>
-        <pubTime>2017-08-27T16:00:00.000Z</pubTime>
-        
-        <tag>Mac</tag>
-         
-        <tag>Java</tag>
-         
-        <tag>搭建</tag>
-         
-        <tag>环境</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/DSDT%20SSDT%E7%AE%80%E5%8D%95%E6%8F%90%E5%8F%96%E4%BF%AE%E5%A4%8D.html</loc>
-    <lastmod>2017-09-15T13:50:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>DSDT SSDT 简单提取修复</title>
-        <pubTime>2017-08-29T16:00:00.000Z</pubTime>
-        
-        <tag>DSDT</tag>
-         
-        <tag>SSDT</tag>
-         
-        <tag>编译</tag>
          
          
            
