@@ -1,19 +1,16 @@
 ---
-title:      DSDT SSDT 简单提取修复
-date:       2017-08-30
+title: Extract and fix DSDT SSDT simply
+date: 2017-08-30
 categories: Hacintosh
+description: DSDT SSDT 简单提取修复
 tags:
-    - DSDT
-    - SSDT
-    - 编译
+- DSDT
+- SSDT
+- 编译
 ---
 
->  DSDT SSDT 简单提取修复
-
 # 开工
-
 ## 准备工作
-
 首先在 CLOVER 引导界面按 F4 或者 FN + F4 提取原始表单，然后进入 Mac ，利用 Clover Configurator 挂载ESP分区，提取的表单就在 /EFI/CLOVER/ACPI/origin ,将 origin 整个拷贝到桌面，并删除 origin 中除 DSDT SSDT 以外的所有文件
 
 然后下载要用到的工具
@@ -87,7 +84,6 @@ rm –rf *x.dsl
 ![170830-9](http://ovefvi4g3.bkt.clouddn.com/170830-9-1.png)
 
 ## 开始操作
-
 然后用 MaciASL 打开 DSDT.dsl 
 
 ![170830-10](http://ovefvi4g3.bkt.clouddn.com/170830-10-1.png)
@@ -124,7 +120,6 @@ rm –rf *x.dsl
  Save 即可，其他 SSDT 文件也是一样的操作
 
 ## 修改完成
-
 在修改完所有表单的错误并保存成aml格式后，将这些 aml 文件放到 /EFI/CLOVER/ACPI/patched 就可以了
 
 # 完工

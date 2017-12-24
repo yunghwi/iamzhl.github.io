@@ -1,14 +1,13 @@
 ---
-title: 字典序问题
+title: Problem about dictionary order
 date: 2017-08-31
 categories: algorithm
+description: 字典序问题
 tags:
-    - C语言
-    - 算法
-    - 字典序
+- C语言
+- 算法
+- 字典序
 ---
-
-> 字典序问题
 
 # 问题描述
 

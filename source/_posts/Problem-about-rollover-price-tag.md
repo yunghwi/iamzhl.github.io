@@ -1,14 +1,13 @@
 ---
-title: 价牌翻转问题
+title: Problem about rollover price tag
 date: 2017-09-18
 categories: algorithm
+description: 价牌翻转问题
 tags:
-    - C语言
-    - 算法
-    - 价牌翻转
+- C语言
+- 算法
+- 价牌翻转
 ---
-
-> 价牌翻转问题
 
 # 问题描述
 

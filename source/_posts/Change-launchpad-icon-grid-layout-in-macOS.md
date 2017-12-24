@@ -4,7 +4,7 @@ date: 2017-10-26 09:32:26
 description: Change launchpad icon grid layout in your MAC
 categories: Study
 tags:
-    - launchpad
+- launchpad
 ---
 
 ### preface
@@ -13,7 +13,6 @@ Launchpad is the quick application launcher available from the Mac OS X Dock and
 This uses the command line and defaults strings to customize the Launchpad grid layout, if you’re not comfortable with Terminal you’re probably better off leaving this alone and enjoying the default Launchpad app icon grid. We’ll combine the commands into a single syntax string for ease of use first, but you can break them apart as we show you a bit further below.
 
 ### How to Adjust the Icon Grid Count of Launchpad in Mac OS X
-
 - Open the Terminal found in /Applications/Utilities/ and enter the following command syntax, replacing the X numbers for the appropriate columns and grid icon counts
 
 ```
@@ -55,7 +54,7 @@ $ defaults write com.apple.dock springboard-columns -int 7;defaults write com.ap
 
 ![2017-10-26-10](http://ovefvi4g3.bkt.clouddn.com//2017-10-26-10.png)
 
-#### **The commands for customizing the Launchpad layout can also be split apart if desired like so:**
+#### The commands for customizing the Launchpad layout can also be split apart if desired like so:
 
 **Set the Launchpad Column Icon Count**
 

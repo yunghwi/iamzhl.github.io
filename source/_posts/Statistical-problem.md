@@ -1,14 +1,13 @@
 ---
-title: 统计数字问题
+title: Statistical problem
 date: 2017-08-29
 categories: algorithm
+description: 统计数字问题
 tags:
-    - C语言
-    - 算法
-    - 统计数字
+- C语言
+- 算法
+- 统计数字
 ---
-
-> 统计数字问题
 
 # 问题描述
 

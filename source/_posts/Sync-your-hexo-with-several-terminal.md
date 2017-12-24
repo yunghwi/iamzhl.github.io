@@ -4,11 +4,12 @@ date: 2017-10-14 23:35:54
 categories: Study
 description: Sync your hexo with several terminal（对多设备之间 hexo 搭建的 blog 进行同步）
 tags: 
-    - git 
-    - 同步 
-    - github
+- git 
+- 同步 
+- github
 ---
 
+## 前言
 > Sync your hexo with several terminal
 > 转载请注明[原出处](https://blog.iamzhl.top/2017/10/14/Sync-your-hexo-with-several-terminal/)
 
@@ -18,7 +19,7 @@ tags:
 
 ## 本地 hexo 源上到 GitHub 
 
-* 在本地博客根目录下使用 git 指令上传项目到 GitHub 的 hexo 分支
+在本地博客根目录下使用 git 指令上传项目到 GitHub 的 hexo 分支
 
 ```
 $ git init           
@@ -76,3 +77,4 @@ $ hexo clean
 $ hexo g
 $ hexo d -g
 ```
+

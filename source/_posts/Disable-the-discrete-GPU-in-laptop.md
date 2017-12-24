@@ -4,17 +4,14 @@ date: 2017-10-04
 categories: Hacintosh
 description: Disable the discrete GPU to fix "Window Server Service only ran for 0 seconds" in High Sierra
 tags:
-    - Hacintosh
-    - 黑苹果
-    - Window Server Service only ran for 0 seconds
-    - Disable DGPU
-    - 屏蔽独显
+- Hacintosh
+- 黑苹果
+- Window Server Service only ran for 0 seconds
+- Disable DGPU
+- 屏蔽独显
 ---
 
-> Disable the discrete GPU to fix "Window Server Service only ran for 0 seconds" in High Sierra
-
 ## 写在前面
-
 最近我根据 RehabMan 的 hotpatch 添加了一些路径做了一个屏蔽独显得 hotpatch 来屏蔽独显解决一些升级 10.13 后因为 nv_disable 参数失效而卡在 Window Server Service only ran for 0 seconds 的错误，发现有些成功，有些失败。于是把我琢磨到的一种方法分享给大家！希望该帖子能帮助到各位！
 
 > 感谢：
@@ -31,7 +28,6 @@ tags:
 * 第二种：手动制作一个适合自己机器的 hotpatch 屏蔽独显达到屏蔽独显的作用
 
 ## 开工
-
 > 本帖主要采用第二种方法，大致思路如下：
 
 * 提取 ACPI 原始表单
@@ -41,7 +37,6 @@ tags:
 * 修改 RehabMan 的 hotpatch 加入自己的路径
 
 ### 提取 ACPI 原始表单并提取 _OFF 路径
-
 * 打开电脑进入四叶草引导界面，按下 F4 或者 FN+F4 即可提取原始表单到 /EFI/CLOVER/ACPI/origin ，然后进入 MAC 将 origin 拷贝到桌面删掉除 SSDT DSDT 之外的所有 aml 文件，打开终端：
 
 ```
@@ -71,7 +66,6 @@ _SB.PCI0.RP05.PEGP
 ```
 
 ### 修改 RehabMan 的 hotpatch 添加这个路径
-
 * 首先去 RehanMan 的 GitHub 下载 hotpatch 包
 
 ```
@@ -95,7 +89,6 @@ $ iasl SSDT-Disable_DGPU.dsl
 * 保存放到 /EFI/CLOVER/ACPI/patched 
 
 ### 一个注意点
-
 * 如果在 Config.plist 中使用了 SortedOrder (通常 Clover 安装后默认没有设置)，需要在其内添加 SSDT-Disable_DGPU.aml 这一项。因为如果指定了 SortedOrder ，则 Clover 只加载其中指定的 SSDT 。如果没有出现在列表中,即使在 ACPI/patched 中，它也不会加载。
 
 ## 完工

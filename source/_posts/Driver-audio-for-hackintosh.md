@@ -1,11 +1,11 @@
 ---
-title:      谈谈黑果的声卡
-date:       2017-11-06
+title: Driver audio for hackintosh
+date: 2017-11-06
 categories: Hacintosh
-description: 简单制作 AppleALC 驱动声卡并解决耳机、外放切换、麦克风无输入以及耳机杂音、唤醒无声等问题
+description: 利用 AppleALC 驱动声卡
 tags:
-    - Hacintosh
-    - 黑苹果
+- Hacintosh
+- 黑苹果
 ---
 
 ## 前言

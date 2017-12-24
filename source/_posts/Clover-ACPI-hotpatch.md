@@ -11,12 +11,10 @@ tags:
 ---
 
 ## Preface--序言
-
 This blog is created by me to introduce how to using Clover to hotpatch ACPI，and provide an Chinese version。
 > 我写这篇博客是为了介绍如何使用`Clover`对`ACPI`使用`hotpatch`，并翻译原贴提供中文参考帖。
 
 ## Brief description for hotpatch--`hotpatch`概要
-
 In RehabMan's GitHub homepage, a repository named `OS-X-Clover-Laptop-Config` Contains some Clover `config.plist` for common Intel graphics and hotpatch for common configurations.More information in [here](https://github.com/RehabMan/OS-X-Clover-Laptop-Config).
 > `RehabMan`的`GitHub`有一个仓库--`OS-X-Clover-Laptop-Config`,里面包含了一些适用于常见的英特尔核芯显卡的`config.plist`,还有`hotpatch`。点击[这里](https://github.com/RehabMan/OS-X-Clover-Laptop-Config)了解更多。
 

@@ -1,14 +1,13 @@
 ---
-title: Windows 10 开机自动连接宽带
+title: Connect Network in Windows 10
 date: 2017-10-15 21:59:01
 categories: Study
 password: password
-description: 开拓者开发团队启动会议
+description: Windows 10 开机自动连接宽带
 tags: 
-    - 加密
+- 自动连接
+- 宽带
 ---
-
-> Windows 10 开机自动连接宽带
 
 ### 开工
 

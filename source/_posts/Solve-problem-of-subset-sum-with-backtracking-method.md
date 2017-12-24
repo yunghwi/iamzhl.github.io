@@ -1,5 +1,5 @@
 ---
-title: 回溯法求子集和问题
+title: Solve problem of subset sum with backtracking method
 date: 2017-12-12 14:12:40
 categories: algorithm
 description: 回溯法求子集和问题
@@ -7,8 +7,6 @@ tags:
 - 子集和问题
 - 回溯
 ---
-
-## 回溯法：子集和问题
 
 ### 问题描述
 子集和问题的一个实例为<S,t>。其中，S={x<sub>1</sub>,x<sub>2</sub>,x<sub>3</sub>,&hellip;,x<sub>n</sub>}是一个正整数的集合，c是一个正整数。子集和问题判定是否存在S的一个子集S<sub>1</sub>，使得 S<sub>1</sub>中的所有元素之和等于c。

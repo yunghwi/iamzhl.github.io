@@ -1,21 +1,20 @@
 ---
-title:      利用 AppleIntelInfo 查看变频
-date:       2017-09-05
+title: Check CPU frequences by using AppleIntelInfo
+date: 2017-09-05
 categories: Hacintosh
+description: 利用 AppleIntelInfo 查看变频
 tags:
-    - AppleIntelInfo
-    - 变频
-    - Hacintosh
-    - 黑苹果
+- AppleIntelInfo
+- 变频
+- Hacintosh
+- 黑苹果
 ---
 
-> 很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法----利用 AppleIntelInfo 查看变频
+# 前言
+很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法----利用 AppleIntelInfo 查看变频
 
 # 开工
-
-
 ## 首先下载 AppleIntelInfo 源码编译，打开终端，输入：
-
 ```
 cd ~/Desktop 
 ```
@@ -37,7 +36,6 @@ http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/
 将编译后的 AppleIntelInfo.kext 放到桌面
     
 ## 然后开始利用命令行看变频数据
-
 打开终端，输入：
 
 ```
@@ -82,8 +80,6 @@ sudo cat /tmp/AppleIntelInfo.dat
 
 
 # 完工
-
-
 行胜于言，快去试试你的机器是不是变频正常吧！！
 
 

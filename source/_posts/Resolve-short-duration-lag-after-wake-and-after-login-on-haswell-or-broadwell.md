@@ -4,8 +4,8 @@ date: 2017-10-07 03:06:04
 categories: Hacintosh
 description: Resolve short duration lag after wake and after login on haswell or broadwell
 tags: 
-    - short duration lag
-    - 黑苹果
+- short duration lag
+- 黑苹果
 ---
 
 ### 写在前面

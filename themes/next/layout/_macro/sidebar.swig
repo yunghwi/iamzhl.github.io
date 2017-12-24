@@ -159,6 +159,9 @@
         </section>
       <!--/noindex-->
       {% endif %}
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=3399899&auto=1&height=430"></iframe>
+
       {% if theme.sidebar.b2t %}
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>

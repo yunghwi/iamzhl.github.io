@@ -1,14 +1,13 @@
 ---
-title:      加快黑苹果开机速度的一种方法
-date:       2017-09-05
+title: Speed up the hackintosh to boot
+date: 2017-09-05
 categories: Hacintosh
+description: 加快黑苹果开机速度的一种方法
 tags:
-    - 黑苹果
-    - 开机速度
-    - Hacintosh
+- 黑苹果
+- 开机速度
+- Hacintosh
 ---
-
-> 加快黑苹果开机速度的一种方法
 
 # 知识普及
 

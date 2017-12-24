@@ -1,13 +1,12 @@
 ---
-title:      最简单的客户机与服务器案例演示
-date:       2017-09-07
+title: The simplest case demo about client and server
+date: 2017-09-07
 categories: Study
-keywords: Java, 网络编程, 客户机与服务器
-description: 最简单的客户机(Client)与服务器(Server)案例演示
+description: 最简单的客户机与服务器案例演示
 tags:
-    - Java
-    - 网络编程
-    - 客户机与服务器
+- Java
+- 网络编程
+- 客户机与服务器
 ---
 
 # EchoClient.java

@@ -4,12 +4,11 @@ date: 2017-12-13 14:51:34
 categories: Hacintosh
 description: Install macOS High Sierra on ASUS X455LD i5 4210u
 tags:
-    - Hacintosh
-    - X455LD
+- Hacintosh
+- X455LD
 ---
 
 ### Laptop Configuration
-
 ```
 Computer model              Asus F455LD Notebook
 
@@ -72,7 +71,6 @@ $ ./install.sh
 The script can fix your audio with good input and switch。
 
 #### About `一键开启HIDPI并注入EDID`
-
 ![2017-12-13-15](http://ovefvi4g3.bkt.clouddn.com/2017-12-13-15.png)
 
 Just double click `双击.command`，and input your password。

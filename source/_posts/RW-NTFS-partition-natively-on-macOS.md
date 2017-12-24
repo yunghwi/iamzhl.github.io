@@ -1,15 +1,15 @@
 ---
-title: 实现 MAC 原生读写 NTFS 分区
+title: RW NTFS partition natively on macOS
 date: 2017-10-27
 categories: Hacintosh
 description: 实现 MAC 原生读写 NTFS 分区
 tags:
-    - Hacintosh
-    - 黑苹果
-    - NTFS
+- Hacintosh
+- 黑苹果
+- NTFS
 ---
 
-**实现 MAC 原生读写 NTFS 分区**
+### 实现 MAC 原生读写 NTFS 分区
 
 > 打开终端，输入命令
 
@@ -41,7 +41,7 @@ LABEL=Win\040Ntfs\040Drive none ntfs rw,auto,nobrowse
 $ sudo ln -s /Volumes ~/Desktop/Volumes
 ```
 
-**Credit**
+### Credit
 
 > 转自[爱情守望者](https://www.waitsun.com)
 > 

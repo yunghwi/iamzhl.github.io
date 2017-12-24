@@ -1,21 +1,19 @@
 ---
-title: MAC 常用快捷键整理
+title: Common Keyboard  shortcut on MAC
 date: 2017-10-26 08:14:21
 categories: Study
 description: MAC 常用快捷键整理
 tags: 
-    - 快捷键 
-    - Mac
+- 快捷键 
+- Mac
 ---
 
 ## 写在前面
-
 > 苹果 Mac 系统常用快捷键有很多，但是很多童鞋对于这些 Mac 快捷键都不是很熟悉，今天小编为大家整理了一份 Mac 系统常用快捷键大全，大家快收藏起来吧!平时在使用 Mac 系统的时候可以提高不少工作效率哦!
 > 
 > 本文转自 [Xclient.info](http://xclient.info/a/36952668-9577-8ec9-4412-111ae375fde7.html?_=905734269077aa284ba54b095a93d187)，转载请注明原出处
 
 ## 小普及
-
 * Mac中主要有四个修饰键，分别是 Command，Control，Option 和 Shift。
 
 * 这四个键分别有自己的图案，他们经常出现在Mac应用程序中的菜单栏里，方便你随时学习新的快捷键。
@@ -25,9 +23,7 @@ tags:
 ![2017-10-26-01](http://ovefvi4g3.bkt.clouddn.com//2017-10-26-01.png)
 
 ## 正文
-
 ### 通用快捷键
-
 > Command 是 Mac 里最重要的修饰键，在大多数情况下相当于 Windows 下的 Ctrl，黑果通常是 Alt 键。
 
 * Command + Z 撤销。
@@ -41,7 +37,6 @@ tags:
 ![2017-10-26-02](http://ovefvi4g3.bkt.clouddn.com//2017-10-26-02.png)
 
 ### 系统快捷键
-
 * Option 开机后立即按下，将显示启动管理器。
 * Command + R 开机后立即按下，可打开OS X 的恢复功能。
 * Command + Option + P + R 开机后立即按下，重置 NVRAM。有些时候电脑会出现些小问题，重置 NVRAM 是你除了重新启动，尝试修复的第一选择。
@@ -51,7 +46,6 @@ tags:
 ![2017-10-26-03](http://ovefvi4g3.bkt.clouddn.com//2017-10-26-03.png)
 
 ### 截图
-
 * Command + Shift + 3 截取全部屏幕到文件。
 * Command + Shift + Control + 3 截取全部屏幕到剪贴板。
 * Command + Shift + 4 截取所选屏幕区域到一个文件，或按空格键仅捕捉一个窗口。
@@ -60,7 +54,6 @@ tags:
 ![2017-10-26-04](http://ovefvi4g3.bkt.clouddn.com//2017-10-26-04.png)
 
 ### 文件管理器
-
 * Command + Shift + N (New) 新建文件夹。
 * Command + Shift + G (Go) 调出窗口，可输入绝对路径直达文件夹。
 * return 这个其实不算快捷键，点击文件，按下可重命名文件。
@@ -74,7 +67,6 @@ tags:
 ![2017-10-26-05](http://ovefvi4g3.bkt.clouddn.com//2017-10-26-05.png)
 
 ### 切换
-
 * Command + Tab 在应用程序间切换。
 * Command + Shift + Tab 在应用程序间切换(反向)。
 * Command + ~ 在各应用中的窗口间切换。
@@ -82,7 +74,6 @@ tags:
 ![2017-10-26-06](http://ovefvi4g3.bkt.clouddn.com//2017-10-26-06.png)
 
 ### 浏览器
-
 * Command + L 光标直接跳至地址栏。
 * Control + Tab 转向下一个标签页。
 * Control + Shift + Tab 转向上一个标签页。
@@ -92,7 +83,6 @@ tags:
 ![2017-10-26-07](http://ovefvi4g3.bkt.clouddn.com//2017-10-26-07.png)
 
 ### 应用程序中
-
 * Command + H 隐藏(Hide)当前正在运行的应用程序窗口。
 * Command + Option + H 隐藏(Hide)其他应用程序窗口。
 * Command + Q 退出(Quit)最前面的应用程序。
@@ -101,7 +91,6 @@ tags:
 * Command + Option + esc 打开“强制退出”窗口，如果有应用程序无响应，可在窗口列表中选择强制退出。
 
 ### 文本处理
-
 * Command + B 切换所选文字粗体(Bold)显示。
 * fn + Delete 相当于 PC 全尺寸键盘上的 Delete，也就是向后删除。
 * fn + ↑ 向上滚动一页(Page Up)。
@@ -117,7 +106,6 @@ tags:
 * Control + A 移至行或段落的开头。
 
 ### 更多快捷键
-
 如果你还想学习更多快捷键，请点击这里查看[苹果官方的快捷键帮助文档](https://support.apple.com/zh-cn/HT201236)。
 
 

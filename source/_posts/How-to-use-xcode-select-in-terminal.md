@@ -1,14 +1,13 @@
 ---
-title:      How to use xcode-select in terminal
-date:       2017-09-03
+title: How to use xcode-select in terminal
+date: 2017-09-03
 categories: Hacintosh
+description: How to use xcode-select in terminal
 tags:
-    - 终端
-    - Mac
-    - Xcode
+- 终端
+- Mac
+- Xcode
 ---
-
-> How to use xcode-select in terminal
 
 ## It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.
 

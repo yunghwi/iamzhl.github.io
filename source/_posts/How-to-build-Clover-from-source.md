@@ -4,9 +4,10 @@ date: 2017-09-20 20:30:51
 categories: Study
 description: How to build Clover from source
 tags: 
-    - Clover
+- Clover
 ---
 
+# Perface
 > How to build Clover from source
 > [原出处](https://clover-wiki.zetam.org/Development#Compiling-from-source)
 

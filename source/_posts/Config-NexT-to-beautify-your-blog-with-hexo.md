@@ -1,15 +1,13 @@
 ---
-title: NexT使用详解
+title: Config NexT to beautify your blog with hexo
 date: 2017-09-14 19:04:36
 categories: Study
+description: NexT使用详解
 tags:
 - 静态博客
 - NexT
 - hexo
 ---
-
-> NexT基本使用
-> 转自[官方说明文档](http://theme-next.iissnan.com/getting-started.html)
 
 ## 前言
 Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。
@@ -547,4 +545,7 @@ three_waves: false //关闭动画
 </html>
 ```
 
+## Credits
+> NexT基本使用
+> 转自[官方说明文档](http://theme-next.iissnan.com/getting-started.html)
 

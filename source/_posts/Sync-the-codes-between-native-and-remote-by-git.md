@@ -2,13 +2,14 @@
 title: Sync the codes between native and remote by git 
 date: 2017-09-27 22:54:26
 categories: Study
-description: Sync the codes between native and remote by git (利用 git 实现本地和远程之间代码的同步)
+description: 利用 git 实现本地和远程之间代码的同步
 tags: 
-    - git 
-    - 同步 
-    - github 
+- git 
+- 同步 
+- github 
 ---
 
+## 前言
 > Sync the codes between native and remote by git
 > 转载请注明[原出处](https://blog.iamzhl.top/2017/09/27/Sync%20the%20codes%20between%20native%20and%20remote%20by%20git/)
 

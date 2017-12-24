@@ -2,15 +2,12 @@
 title: Enable BCM94352z on your hacintosh
 date: 2017-09-13
 categories: Hacintosh
-description: Enable BCM94352z on your hacintosh
+description: 黑苹果无线网卡 BCM94352z 驱动教程
 tags:
-    - Hacintosh
-    - 黑苹果
-    - BCM94352z
+- Hacintosh
+- 黑苹果
+- BCM94352z
 ---
-
-> 黑苹果无线网卡 BCM94352z 驱动教程
-
 
 # 添加仿冒 ID 启用蓝牙：
 
