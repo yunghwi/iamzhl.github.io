@@ -1,4 +1,3 @@
-https://blog.iamzhl.top/test-blog.html
 https://blog.iamzhl.top/Install-and-config-mysql-on-mac.html
 https://blog.iamzhl.top/Clover-ACPI-hotpatch.html
 https://blog.iamzhl.top/HP-OMEN-by-HP-Laptop.html
@@ -28,10 +27,9 @@ https://blog.iamzhl.top/Problem-about-low-carbon-lifestyle-answering.html
 https://blog.iamzhl.top/The-simplest-case-demo-about-client-and-server.html
 https://blog.iamzhl.top/Speed-up-the-hackintosh-to-boot.html
 https://blog.iamzhl.top/Check-CPU-frequences-by-using-AppleIntelInfo.html
-https://blog.iamzhl.top/Problem-about-coin-array.html
 https://blog.iamzhl.top/How-to-use-xcode-select-in-terminal.html
+https://blog.iamzhl.top/Problem-about-coin-array.html
 https://blog.iamzhl.top/Problem-about-dictionary-order.html
 https://blog.iamzhl.top/Extract-and-fix-DSDT-SSDT-simply.html
 https://blog.iamzhl.top/Statistical-problem.html
 https://blog.iamzhl.top/Install-jdk-on-macOS.html
-https://blog.iamzhl.top/hello-world.html
