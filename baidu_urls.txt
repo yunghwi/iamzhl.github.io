@@ -19,9 +19,9 @@ https://blog.iamzhl.top/Disable the discrete GPU in laptop.html
 https://blog.iamzhl.top/Sync the codes between native and remote by git.html
 https://blog.iamzhl.top/How-to-build-Clover-from-source.html
 https://blog.iamzhl.top/开拓者开发团队启动会议.html
+https://blog.iamzhl.top/价牌翻转问题.html
 https://blog.iamzhl.top/警匪110问题.html
 https://blog.iamzhl.top/派遣敢死队问题.html
-https://blog.iamzhl.top/价牌翻转问题.html
 https://blog.iamzhl.top/Allow apps downloaded from anywhere on macOS.html
 https://blog.iamzhl.top/NexT使用详解.html
 https://blog.iamzhl.top/Enable BCM94352z on your hacintosh.html
@@ -29,8 +29,8 @@ https://blog.iamzhl.top/低碳生活答题问题.html
 https://blog.iamzhl.top/最简单的客户机与服务器案例演示.html
 https://blog.iamzhl.top/加快黑苹果开机速度的一种方法.html
 https://blog.iamzhl.top/利用 AppleIntelInfo 查看变频.html
-https://blog.iamzhl.top/金币阵列问题.html
 https://blog.iamzhl.top/How to use xcode-select in terminal.html
+https://blog.iamzhl.top/金币阵列问题.html
 https://blog.iamzhl.top/字典序问题.html
 https://blog.iamzhl.top/DSDT SSDT简单提取修复.html
 https://blog.iamzhl.top/统计数字问题.html
