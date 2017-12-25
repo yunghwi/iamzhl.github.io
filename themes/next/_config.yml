@@ -28,7 +28,7 @@ rss: /atom.xml
 authoricon: heart
 
 # Footer `powered-by` and `theme-info` copyright
-copyright: true
+copyright: false
 
 
 # ---------------------------------------------------------------
@@ -96,7 +96,6 @@ social:
   GitHub: https://github.com/athlonreg || github
   E-Mail: mailto:qingyingairen@gmail.com || envelope
   简书: http://www.jianshu.com/u/a918c9e67dc2 || heartbeat
-  pcbeta: http://i.pcbeta.com/space-uid-157829.html || meh-o
   coding: https://coding.net/u/iamzhl || spinner
   #Asiba: http://www.asiba.cn || stack-overflow
   FB Page: https://www.facebook.com/15563836030@163.com || facebook
@@ -133,7 +132,7 @@ toc:
   number: true
 
   # If true, all words will placed on next lines if header width longer then sidebar width.
-  wrap: false
+  wrap: true
 
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
