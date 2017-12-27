@@ -177,7 +177,7 @@ sidebar:
 scroll_to_more: true
 
 # Automatically saving scroll position on each post/page in cookies.
-save_scroll: false
+save_scroll: true
 
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
@@ -239,8 +239,8 @@ android_chrome_color: "#222"
 #   enabled: [true/false] - Replace with specific image
 #   image: url-of-image   - Images's url
 custom_logo:
-  enabled: false
-  image:
+  enabled: true
+  image: /uploads/avatar.jpg
 
 # Code Highlight theme
 # Available value:
@@ -362,7 +362,7 @@ livere_uid: MTAyMC8zMjY0OC85MjA5
 #  type: button 
 
 #Share
-sharesdk: true
+sharesdk: false
 shareSDKappkey: 23454ee8eaed0
 
 # Share
