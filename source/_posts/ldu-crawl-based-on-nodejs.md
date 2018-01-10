@@ -13,20 +13,20 @@ tags:
 基于Nodejs实现的网络爬虫，爬取鲁东大学官网指定数量的新闻保存至本地
 
 ### 项目目录结构
-项目目录共有 data 、 image 、 node_modules 三个文件夹，其中 node_modules 为项目用到的 node 模块包， data 和 image 分别用以存储抓取到的所有新闻， data 用以保存文本内容， image 用以保存所有文章内的图片，以文章标题命名。如下图所示：
+项目目录共有`data`、`image`、`node_modules`三个文件夹，其中`node_modules`为项目用到的`node`模块包，`data`和`image`分别用以存储抓取到的所有新闻，`data`用以保存文本内容，`image`用以保存所有文章内的图片，以文章标题命名。如下图所示：
 
 ![15155845693616](http://ovefvi4g3.bkt.clouddn.com/15155845693616.jpg)
 
-index.html 是程序的 web 主页面；
-server.js 用以启动服务器；
-spider.js 是爬虫主程序；
-test.sh 用以启动爬虫开始抓取工作。
+`index.html`是程序的`web`主页面；
+`server.js`用以启动服务器；
+`spider.js`是爬虫主程序；
+`test.sh`用以启动爬虫开始抓取工作。
 
 ### 程序运行方法
 #### For Windows
 > 两种方式：
 
-1、项目根目录利用 cmd 或者 Git Bash 执行：
+1、项目根目录利用`cmd`或者`Git Bash`执行：
 
 ```
 $ node spider.js
@@ -34,7 +34,7 @@ $ node spider.js
 
 爬虫程序即开始执行。
 
-2、双击 test.sh 或者利用 Git Bash 执行：
+2、双击`test.sh`或者利用`Git Bash`执行：
 
 ```
 $ ./test.sh
