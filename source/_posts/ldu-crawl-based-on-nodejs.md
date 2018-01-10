@@ -15,7 +15,7 @@ tags:
 ### 项目目录结构
 项目目录共有 data 、 image 、 node_modules 三个文件夹，其中 node_modules 为项目用到的 node 模块包， data 和 image 分别用以存储抓取到的所有新闻， data 用以保存文本内容， image 用以保存所有文章内的图片，以文章标题命名。如下图所示：
 
-![](http://ovefvi4g3.bkt.clouddn.com/15155845693616.jpg)
+![15155845693616](http://ovefvi4g3.bkt.clouddn.com/15155845693616.jpg)
 
 index.html 是程序的 web 主页面；
 server.js 用以启动服务器；
@@ -81,9 +81,9 @@ http://127.0.0.1:8080/
 
 即可打开项目首页。如图所示：
 
-![](http://ovefvi4g3.bkt.clouddn.com/15155856514536.jpg)
+![15155856514536](http://ovefvi4g3.bkt.clouddn.com/15155856514536.jpg)
 
-![](http://ovefvi4g3.bkt.clouddn.com/15155856857593.jpg)
+![15155856857593](http://ovefvi4g3.bkt.clouddn.com/15155856857593.jpg)
 
 点击了解使用方法即可查看详细使用说明。
 
