@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Ldu-crawl-based-on-nodejs]]></title>
+    <title><![CDATA[Ldu crawl based on nodejs]]></title>
     <url>%2FLdu-crawl-based-on-nodejs.html</url>
-    <content type="text"><![CDATA[项目目录结构项目目录共有data、image、node_modules三个文件夹，其中node_modules为项目用到的node模块包，data和image分别用以存储抓取到的所有新闻，data用以保存文本内容，image用以保存所有文章内的图片，以文章标题命名。如下图所示： index.html是程序的web主页面；server.js用以启动服务器；spider.js是爬虫主程序；test.sh用以启动爬虫开始抓取工作。 程序运行方法For Windows 两种方式： 1、项目根目录利用cmd或者Git Bash执行： 1$ node spider.js 爬虫程序即开始执行。 2、双击test.sh或者利用Git Bash执行： 1$ ./test.sh 即可自动完成所有工作，抓取工作完成后，命令行自动退出。 For macOS 两种方式 1、假设项目放于桌面，打开终端执行： 123$ cd ~/Desktop/ldu_crawl/$ chmod +x test.sh$ ./test.sh 即可自动完成所有工作，抓取工作完成后，命令行自动退出。 2、假设项目放于桌面，打开终端执行： 12$ cd ~/Desktop/ldu_crawl/$ node spider.js 预设界面查看启动服务器1$ node server.js 打开浏览器网址输入：http://127.0.0.1:8080/即可打开项目首页。如图所示： 点击了解使用方法即可查看详细使用说明。]]></content>
+    <content type="text"><![CDATA[简介基于Nodejs实现的网络爬虫，爬取鲁东大学官网指定数量的新闻保存至本地 项目目录结构项目目录共有data、image、node_modules三个文件夹，其中node_modules为项目用到的node模块包，data和image分别用以存储抓取到的所有新闻，data用以保存文本内容，image用以保存所有文章内的图片，以文章标题命名。如下图所示： index.html是程序的web主页面；server.js用以启动服务器；spider.js是爬虫主程序；test.sh用以启动爬虫开始抓取工作。 程序运行方法For Windows 两种方式： 1、项目根目录利用cmd或者Git Bash执行： 1$ node spider.js 爬虫程序即开始执行。 2、双击test.sh或者利用Git Bash执行： 1$ ./test.sh 即可自动完成所有工作，抓取工作完成后，命令行自动退出。 For macOS 两种方式 1、假设项目放于桌面，打开终端执行： 123$ cd ~/Desktop/ldu_crawl/$ chmod +x test.sh$ ./test.sh 即可自动完成所有工作，抓取工作完成后，命令行自动退出。 2、假设项目放于桌面，打开终端执行： 12$ cd ~/Desktop/ldu_crawl/$ node spider.js 预设界面查看启动服务器1$ node server.js 打开浏览器网址输入：http://127.0.0.1:8080/即可打开项目首页。如图所示： 点击了解使用方法即可查看详细使用说明。]]></content>
       <categories>
         <category>Study</category>
       </categories>
@@ -445,7 +445,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Install jdk on macOS境]]></title>
+    <title><![CDATA[Install jdk on macOS]]></title>
     <url>%2FInstall-jdk-on-macOS.html</url>
     <content type="text"><![CDATA[安装 jdkMac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。 配置 jdk 环境变量打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容： 1234567JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/HomePATH=$JAVA_HOME/bin:$PATH:.CLASSPATH=JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.export JAVA_HOMEexport PATHexport CLASSPATH 按下 esc ，然后输入 :wq 回车，保存退出 然后输入 source ~/.bash_profile 回车文件修改就生效了。 输入 java -version 回车可以查看 Java 版本，whereis java 可以查看 Java 位置，echo $JAVA_HOME 可以打印出 JAVA_HOME 。 安装eclipse为了更方便的进行开发工作，我们还需要安装Eclipse，去官网下载完成后解压，把.app文件拖进应用程序(Application)就可以了，然后创建一个workspace，也就是工作目录，用来存放工作代码。]]></content>
       <categories>

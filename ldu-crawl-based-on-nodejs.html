@@ -133,22 +133,22 @@
   })();
 </script>
 
-<meta name="description" content="基于Nodejs实现的网络爬虫，爬取鲁东大学官网指定数量的新闻保存至本地">
+<meta name="description" content="基于Nodejs实现的网络爬虫">
 <meta name="keywords" content="Nodejs,crawl,爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ldu-crawl-based-on-nodejs">
+<meta property="og:title" content="Ldu crawl based on nodejs">
 <meta property="og:url" content="https://blog.iamzhl.top/Ldu-crawl-based-on-nodejs.html">
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
-<meta property="og:description" content="基于Nodejs实现的网络爬虫，爬取鲁东大学官网指定数量的新闻保存至本地">
+<meta property="og:description" content="基于Nodejs实现的网络爬虫">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15155845693616.jpg">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018-01-10.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15155856514536.jpg">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15155856857593.jpg">
-<meta property="og:updated_time" content="2018-01-10T12:10:05.062Z">
+<meta property="og:updated_time" content="2018-01-10T12:13:34.714Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ldu-crawl-based-on-nodejs">
-<meta name="twitter:description" content="基于Nodejs实现的网络爬虫，爬取鲁东大学官网指定数量的新闻保存至本地">
+<meta name="twitter:title" content="Ldu crawl based on nodejs">
+<meta name="twitter:description" content="基于Nodejs实现的网络爬虫">
 <meta name="twitter:image" content="http://ovefvi4g3.bkt.clouddn.com/15155845693616.jpg">
 
 
@@ -185,7 +185,7 @@
 
 
 
-  <title>Ldu-crawl-based-on-nodejs | Athlonreg's Blog</title>
+  <title>Ldu crawl based on nodejs | Athlonreg's Blog</title>
   
 
 
@@ -385,7 +385,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ldu-crawl-based-on-nodejs</h1>
+          <h1 class="post-title" itemprop="name headline">Ldu crawl based on nodejs</h1>
         
 
         <div class="post-meta">
@@ -437,7 +437,7 @@
 
           
           
-             <span id="/Ldu-crawl-based-on-nodejs.html" class="leancloud_visitors" data-flag-title="Ldu-crawl-based-on-nodejs">
+             <span id="/Ldu-crawl-based-on-nodejs.html" class="leancloud_visitors" data-flag-title="Ldu crawl based on nodejs">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -463,7 +463,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  337 字
+                  369 字
                 </span>
               
 
@@ -487,7 +487,7 @@
 
           
               <div class="post-description">
-                  基于Nodejs实现的网络爬虫，爬取鲁东大学官网指定数量的新闻保存至本地
+                  基于Nodejs实现的网络爬虫
               </div>
           
 
@@ -504,7 +504,8 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><h3 id="项目目录结构"><a href="#项目目录结构" class="headerlink" title="项目目录结构"></a>项目目录结构</h3><p>项目目录共有<code>data</code>、<code>image</code>、<code>node_modules</code>三个文件夹，其中<code>node_modules</code>为项目用到的<code>node</code>模块包，<code>data</code>和<code>image</code>分别用以存储抓取到的所有新闻，<code>data</code>用以保存文本内容，<code>image</code>用以保存所有文章内的图片，以文章标题命名。如下图所示：</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>基于Nodejs实现的网络爬虫，爬取鲁东大学官网指定数量的新闻保存至本地</p>
+<h3 id="项目目录结构"><a href="#项目目录结构" class="headerlink" title="项目目录结构"></a>项目目录结构</h3><p>项目目录共有<code>data</code>、<code>image</code>、<code>node_modules</code>三个文件夹，其中<code>node_modules</code>为项目用到的<code>node</code>模块包，<code>data</code>和<code>image</code>分别用以存储抓取到的所有新闻，<code>data</code>用以保存文本内容，<code>image</code>用以保存所有文章内的图片，以文章标题命名。如下图所示：</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/15155845693616.jpg" alt=""></p>
 <p><code>index.html</code>是程序的<code>web</code>主页面；<br><code>server.js</code>用以启动服务器；<br><code>spider.js</code>是爬虫主程序；<br><code>test.sh</code>用以启动爬虫开始抓取工作。</p>
 <h3 id="程序运行方法"><a href="#程序运行方法" class="headerlink" title="程序运行方法"></a>程序运行方法</h3><h4 id="For-Windows"><a href="#For-Windows" class="headerlink" title="For Windows"></a>For Windows</h4><blockquote>
@@ -795,7 +796,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目目录结构"><span class="nav-number">1.</span> <span class="nav-text">项目目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序运行方法"><span class="nav-number">2.</span> <span class="nav-text">程序运行方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#For-Windows"><span class="nav-number">2.1.</span> <span class="nav-text">For Windows</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#For-macOS"><span class="nav-number">2.2.</span> <span class="nav-text">For macOS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预设界面查看"><span class="nav-number">3.</span> <span class="nav-text">预设界面查看</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#启动服务器"><span class="nav-number">3.1.</span> <span class="nav-text">启动服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打开浏览器"><span class="nav-number">3.2.</span> <span class="nav-text">打开浏览器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目目录结构"><span class="nav-number">2.</span> <span class="nav-text">项目目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序运行方法"><span class="nav-number">3.</span> <span class="nav-text">程序运行方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#For-Windows"><span class="nav-number">3.1.</span> <span class="nav-text">For Windows</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#For-macOS"><span class="nav-number">3.2.</span> <span class="nav-text">For macOS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预设界面查看"><span class="nav-number">4.</span> <span class="nav-text">预设界面查看</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#启动服务器"><span class="nav-number">4.1.</span> <span class="nav-text">启动服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打开浏览器"><span class="nav-number">4.2.</span> <span class="nav-text">打开浏览器</span></a></li></ol></li></ol></div>
             
 
           </div>
