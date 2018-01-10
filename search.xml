@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[ldu-crawl-based-on-nodejs]]></title>
+    <title><![CDATA[Ldu-crawl-based-on-nodejs]]></title>
     <url>%2FLdu-crawl-based-on-nodejs.html</url>
     <content type="text"><![CDATA[项目目录结构项目目录共有data、image、node_modules三个文件夹，其中node_modules为项目用到的node模块包，data和image分别用以存储抓取到的所有新闻，data用以保存文本内容，image用以保存所有文章内的图片，以文章标题命名。如下图所示： index.html是程序的web主页面；server.js用以启动服务器；spider.js是爬虫主程序；test.sh用以启动爬虫开始抓取工作。 程序运行方法For Windows 两种方式： 1、项目根目录利用cmd或者Git Bash执行： 1$ node spider.js 爬虫程序即开始执行。 2、双击test.sh或者利用Git Bash执行： 1$ ./test.sh 即可自动完成所有工作，抓取工作完成后，命令行自动退出。 For macOS 两种方式 1、假设项目放于桌面，打开终端执行： 123$ cd ~/Desktop/ldu_crawl/$ chmod +x test.sh$ ./test.sh 即可自动完成所有工作，抓取工作完成后，命令行自动退出。 2、假设项目放于桌面，打开终端执行： 12$ cd ~/Desktop/ldu_crawl/$ node spider.js 预设界面查看启动服务器1$ node server.js 打开浏览器网址输入：http://127.0.0.1:8080/即可打开项目首页。如图所示： 点击了解使用方法即可查看详细使用说明。]]></content>
       <categories>
