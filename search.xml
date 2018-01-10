@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Ldu crawl based on nodejs]]></title>
     <url>%2Fldu-crawl-based-on-nodejs.html</url>
-    <content type="text"><![CDATA[简介基于Nodejs实现的网络爬虫，爬取鲁东大学官网指定数量的新闻保存至本地 项目目录结构项目目录共有 data 、 image 、 node_modules 三个文件夹，其中 node_modules 为项目用到的 node 模块包， data 和 image 分别用以存储抓取到的所有新闻， data 用以保存文本内容， image 用以保存所有文章内的图片，以文章标题命名。如下图所示： index.html 是程序的 web 主页面；server.js 用以启动服务器；spider.js 是爬虫主程序；test.sh 用以启动爬虫开始抓取工作。 程序运行方法For Windows 两种方式： 1、项目根目录利用 cmd 或者 Git Bash 执行： 1$ node spider.js 爬虫程序即开始执行。 2、双击 test.sh 或者利用 Git Bash 执行： 1$ ./test.sh 即可自动完成所有工作，抓取工作完成后，命令行自动退出。 For macOS 两种方式 1、假设项目放于桌面，打开终端执行： 123$ cd ~/Desktop/ldu_crawl/$ chmod +x test.sh$ ./test.sh 即可自动完成所有工作，抓取工作完成后，命令行自动退出。 2、假设项目放于桌面，打开终端执行： 12$ cd ~/Desktop/ldu_crawl/$ node spider.js 预设界面查看启动服务器终端执行： 1$ node server.js 打开浏览器网址输入： 1http://127.0.0.1:8080/ 即可打开项目首页。如图所示： 点击了解使用方法即可查看详细使用说明。]]></content>
+    <content type="text"><![CDATA[简介基于Nodejs实现的网络爬虫，爬取鲁东大学官网指定数量的新闻保存至本地 项目目录结构项目目录共有data、image、node_modules三个文件夹，其中node_modules为项目用到的node模块包，data和image分别用以存储抓取到的所有新闻，data用以保存文本内容，image用以保存所有文章内的图片，以文章标题命名。如下图所示： index.html是程序的web主页面；server.js用以启动服务器；spider.js是爬虫主程序；test.sh用以启动爬虫开始抓取工作。 程序运行方法For Windows 两种方式： 1、项目根目录利用cmd或者Git Bash执行： 1$ node spider.js 爬虫程序即开始执行。 2、双击test.sh或者利用Git Bash执行： 1$ ./test.sh 即可自动完成所有工作，抓取工作完成后，命令行自动退出。 For macOS 两种方式 1、假设项目放于桌面，打开终端执行： 123$ cd ~/Desktop/ldu_crawl/$ chmod +x test.sh$ ./test.sh 即可自动完成所有工作，抓取工作完成后，命令行自动退出。 2、假设项目放于桌面，打开终端执行： 12$ cd ~/Desktop/ldu_crawl/$ node spider.js 预设界面查看启动服务器终端执行： 1$ node server.js 打开浏览器网址输入： 1http://127.0.0.1:8080/ 即可打开项目首页。如图所示： 点击了解使用方法即可查看详细使用说明。]]></content>
       <categories>
         <category>Study</category>
       </categories>
@@ -84,8 +84,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -119,8 +119,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -143,8 +143,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>NTFS</tag>
       </tags>
   </entry>
@@ -216,8 +216,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>Window Server Service only ran for 0 seconds</tag>
         <tag>Disable DGPU</tag>
         <tag>屏蔽独显</tag>
@@ -294,9 +294,9 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
         <tag>终端</tag>
+        <tag>Hacintosh</tag>
         <tag>任何来源</tag>
       </tags>
   </entry>
@@ -321,8 +321,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>BCM94352z</tag>
       </tags>
   </entry>
@@ -360,8 +360,8 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>开机速度</tag>
       </tags>
   </entry>
@@ -373,23 +373,10 @@
         <category>Hacintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>AppleIntelInfo</tag>
         <tag>变频</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[How to use xcode-select in terminal]]></title>
-    <url>%2FHow-to-use-xcode-select-in-terminal.html</url>
-    <content type="text"><![CDATA[It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.The command line options are below: 1234xcode-select [-help]xcode-select [-switch xcode_folder_path]xcode-select [-print-path]xcode-select [-version] Here is how to print the current Xcode path:12$ xcode-select --print-path/Developer/Applications/Xcode.app Line number 2 shows the current version of Xcode that is ‘active.’ If you are accessing xcodebuild or other related tools from a script, –print-path is the preferred means to determine the current Xcode location.Use the -switch option to change to another version of Xcode on your system: 1$ sudo xcode-select --switch /Applications/Xcode-beta.app/Contents/Developer This changes to the Xcode-beta 9 on my system. Note that root access is required to set the Xcode location, thus I have used sudo to execute the command as root.Printing the path now looks as follows: 12$ xcode-select --print-path/Applications/Xcode-beta.app/Contents/Developer To switch back to Xcode installed in the /Applications directory:1$ sudo xcode-select -switch /Applications/Xcode.app/ You can read more about xcode-select by view the man page from a terminal:1$ man xcode-select]]></content>
-      <categories>
-        <category>Hacintosh</category>
-      </categories>
-      <tags>
-        <tag>终端</tag>
-        <tag>Mac</tag>
-        <tag>Xcode</tag>
       </tags>
   </entry>
   <entry>
@@ -403,6 +390,19 @@
         <tag>C语言</tag>
         <tag>算法</tag>
         <tag>金币阵列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[How to use xcode-select in terminal]]></title>
+    <url>%2FHow-to-use-xcode-select-in-terminal.html</url>
+    <content type="text"><![CDATA[It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.The command line options are below: 1234xcode-select [-help]xcode-select [-switch xcode_folder_path]xcode-select [-print-path]xcode-select [-version] Here is how to print the current Xcode path:12$ xcode-select --print-path/Developer/Applications/Xcode.app Line number 2 shows the current version of Xcode that is ‘active.’ If you are accessing xcodebuild or other related tools from a script, –print-path is the preferred means to determine the current Xcode location.Use the -switch option to change to another version of Xcode on your system: 1$ sudo xcode-select --switch /Applications/Xcode-beta.app/Contents/Developer This changes to the Xcode-beta 9 on my system. Note that root access is required to set the Xcode location, thus I have used sudo to execute the command as root.Printing the path now looks as follows: 12$ xcode-select --print-path/Applications/Xcode-beta.app/Contents/Developer To switch back to Xcode installed in the /Applications directory:1$ sudo xcode-select -switch /Applications/Xcode.app/ You can read more about xcode-select by view the man page from a terminal:1$ man xcode-select]]></content>
+      <categories>
+        <category>Hacintosh</category>
+      </categories>
+      <tags>
+        <tag>终端</tag>
+        <tag>Mac</tag>
+        <tag>Xcode</tag>
       </tags>
   </entry>
   <entry>
