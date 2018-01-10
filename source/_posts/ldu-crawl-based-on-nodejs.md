@@ -1,13 +1,16 @@
 ---
-title: Ldu-crawl-based-on-nodejs
+title: Ldu crawl based on nodejs
 date: 2018-01-10 19:40:02
 categories: Study
-description: 基于Nodejs实现的网络爬虫，爬取鲁东大学官网指定数量的新闻保存至本地
+description: 基于Nodejs实现的网络爬虫
 tags:
 - Nodejs
 - crawl
 - 爬虫
 ---
+
+### 简介
+基于Nodejs实现的网络爬虫，爬取鲁东大学官网指定数量的新闻保存至本地
 
 ### 项目目录结构
 项目目录共有`data`、`image`、`node_modules`三个文件夹，其中`node_modules`为项目用到的`node`模块包，`data`和`image`分别用以存储抓取到的所有新闻，`data`用以保存文本内容，`image`用以保存所有文章内的图片，以文章标题命名。如下图所示：
