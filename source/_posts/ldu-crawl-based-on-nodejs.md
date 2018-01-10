@@ -35,9 +35,9 @@ $ git clone https://github.com/athlonreg/ldu-crawl-based-on-nodejs.git
 
 ### 程序运行方法
 #### For Windows
-> 两种方式：
+> 两种方式，首先将项目放到桌面：
 
-1、项目根目录利用`cmd`或者`Git Bash`执行：
+1、在根目录利用`cmd`或者`Git Bash`执行：
 
 ```
 $ node spider.js
@@ -45,9 +45,10 @@ $ node spider.js
 
 爬虫程序即开始执行。
 
-2、双击`test.sh`或者利用`Git Bash`执行：
+2、双击`test.sh`或者利用`Git Bash`执行(若执行闪退请在`Git Bash`执行)：
 
 ```
+$ chmod +x test.sh
 $ ./test.sh
 ```
 
