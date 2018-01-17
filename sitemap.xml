@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.iamzhl.top/BinarySearch.html</loc>
+    
+    <lastmod>2018-01-17T07:32:27.811Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.iamzhl.top/ldu-crawl-based-on-nodejs.html</loc>
     
     <lastmod>2018-01-10T14:36:24.865Z</lastmod>

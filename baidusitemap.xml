@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/BinarySearch.html</loc>
+    <lastmod>2018-01-17T07:32:27.811Z</lastmod>
+    <data>
+        <display>
+        <title>BinarySearch</title>
+        <pubTime>2018-01-17T07:29:36.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>二分查找</tag>
+         
+        <tag>algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/ldu-crawl-based-on-nodejs.html</loc>
     <lastmod>2018-01-10T14:36:24.865Z</lastmod>
     <data>
@@ -433,9 +457,9 @@
         <title>Problem about coin array</title>
         <pubTime>2017-09-02T16:00:00.000Z</pubTime>
         
-        <tag>C语言</tag>
-         
         <tag>算法</tag>
+         
+        <tag>C语言</tag>
          
         <tag>金币阵列</tag>
          
@@ -457,9 +481,9 @@
         <title>Problem about dictionary order</title>
         <pubTime>2017-08-30T16:00:00.000Z</pubTime>
         
-        <tag>C语言</tag>
-         
         <tag>算法</tag>
+         
+        <tag>C语言</tag>
          
         <tag>字典序</tag>
          
@@ -481,9 +505,9 @@
         <title>Problem about low-carbon lifestyle answering</title>
         <pubTime>2017-09-11T16:00:00.000Z</pubTime>
         
-        <tag>C语言</tag>
-         
         <tag>算法</tag>
+         
+        <tag>C语言</tag>
          
         <tag>低碳生活答题问题</tag>
          
@@ -505,9 +529,9 @@
         <title>Problem about rollover price tag</title>
         <pubTime>2017-09-17T16:00:00.000Z</pubTime>
         
-        <tag>C语言</tag>
-         
         <tag>算法</tag>
+         
+        <tag>C语言</tag>
          
         <tag>价牌翻转</tag>
          
@@ -645,9 +669,9 @@
         <title>Problem about police and gangster 110</title>
         <pubTime>2017-09-17T16:00:00.000Z</pubTime>
         
-        <tag>C语言</tag>
-         
         <tag>算法</tag>
+         
+        <tag>C语言</tag>
          
         <tag>警匪110</tag>
          
@@ -669,9 +693,9 @@
         <title>Problem about Sending out death squads</title>
         <pubTime>2017-09-17T16:00:00.000Z</pubTime>
         
-        <tag>C语言</tag>
-         
         <tag>算法</tag>
+         
+        <tag>C语言</tag>
          
         <tag>派遣敢死队</tag>
          
@@ -693,9 +717,9 @@
         <title>Statistical problem</title>
         <pubTime>2017-08-28T16:00:00.000Z</pubTime>
         
-        <tag>C语言</tag>
-         
         <tag>算法</tag>
+         
+        <tag>C语言</tag>
          
         <tag>统计数字</tag>
          
