@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/0-1-backpack.html</loc>
+    <lastmod>2018-01-17T09:25:12.164Z</lastmod>
+    <data>
+        <display>
+        <title>0-1 backpack</title>
+        <pubTime>2018-01-17T08:51:25.000Z</pubTime>
+        
+        <tag>0-1背包问题</tag>
+         
+        <tag>algorithm</tag>
+         
+        <tag>算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/Reverse-part-of-array.html</loc>
     <lastmod>2018-01-17T08:27:36.058Z</lastmod>
     <data>
@@ -11,9 +35,9 @@
         <title>Reverse part of array</title>
         <pubTime>2018-01-17T08:23:37.000Z</pubTime>
         
-        <tag>算法</tag>
-         
         <tag>algorithm</tag>
+         
+        <tag>算法</tag>
          
         <tag>逆置</tag>
          
@@ -35,9 +59,9 @@
         <title>n queen</title>
         <pubTime>2018-01-17T08:04:05.000Z</pubTime>
         
-        <tag>算法</tag>
-         
         <tag>algorithm</tag>
+         
+        <tag>算法</tag>
          
         <tag>n皇后问题</tag>
          
@@ -59,9 +83,9 @@
         <title>RecurMatrix</title>
         <pubTime>2018-01-17T07:54:02.000Z</pubTime>
         
-        <tag>算法</tag>
-         
         <tag>algorithm</tag>
+         
+        <tag>算法</tag>
          
         <tag>矩阵连乘问题</tag>
          
@@ -83,11 +107,11 @@
         <title>BinarySearch</title>
         <pubTime>2018-01-17T07:29:36.000Z</pubTime>
         
+        <tag>algorithm</tag>
+         
         <tag>算法</tag>
          
         <tag>二分查找</tag>
-         
-        <tag>algorithm</tag>
          
          
            

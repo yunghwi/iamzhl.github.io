@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.iamzhl.top/"/>
-  <updated>2018-01-17T08:27:36.058Z</updated>
+  <updated>2018-01-17T09:25:12.164Z</updated>
   <id>https://blog.iamzhl.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>0-1 backpack</title>
+    <link href="https://blog.iamzhl.top/0-1-backpack.html"/>
+    <id>https://blog.iamzhl.top/0-1-backpack.html</id>
+    <published>2018-01-17T08:51:25.000Z</published>
+    <updated>2018-01-17T09:25:12.164Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">//</div><div class="line">//  main.c</div><div class="line">//  algorithm</div><div class="line">//</div><div class="line">//  Created by athlonreg on 17/01/2018.</div><div class="line">//  Copyright © 2018 athlonreg. All rights reserved.</div><div class="line">//</div><div class="line"></div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">#define n 5</div><div class="line">#define c 10</div><div class="line"></div><div class="line">int weight[n]=&#123;2,2,6,5,4&#125;, value[n]=&#123;6,3,5,4,6&#125;;</div><div class="line"></div><div class="line">int f(int i,int j)&#123;</div><div class="line">    int m1,m2;</div><div class="line">    if(i==n-1)&#123;</div><div class="line">        if(j&gt;=weight[i])</div><div class="line">            return value[i];</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">    if(j&lt;weight[i])</div><div class="line">        return f(i+1,j);</div><div class="line">    m1=f(i+1,j);</div><div class="line">    m2=f(i+1,j-weight[i])+value[i];</div><div class="line">    return m1&gt;m2?m1:m2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main(int argc, const char * argv[]) &#123;</div><div class="line">    printf(&quot;%d\n&quot;,f(0,c));</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p><img src="http://ovefvi4g3.bkt.clouddn.com/2018-01-17-05.png" alt="2018-01-17-05"></p><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">//</div><div class="line">//  main.c</div><div class="line">//  algorithm</div><div class="line">//</div><div class="line">//  Created by athlonreg on 17/01/2018.</div><div class="line">//  Copyright © 2018 athlonreg. All rights reserved.</div><div class="line">//</div><div class="line"></div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">#define n 5</div><div class="line">#define c 10</div><div class="line"></div><div class="line">int weight[n]=&#123;2,2,6,5,4&#125;, value[n]=&#123;6,3,5,4,6&#125;;</div><div class="line"></div><div class="line">int main(int argc, const char * argv[]) &#123;</div><div class="line">    int s[n][c+1];</div><div class="line">    int i,j;</div><div class="line">    for(j=0;j&lt;=c;j++)&#123;</div><div class="line">        if(j&gt;weight[n-1])</div><div class="line">            s[n-1][j]=value[n-1];</div><div class="line">        else</div><div class="line">            s[n-1][j]=0;</div><div class="line">    &#125;</div><div class="line">    for(i=n-2;i&gt;=0;i--)&#123;</div><div class="line">        for(j=0;j&lt;=c;j++)&#123;</div><div class="line">            if(j&lt;weight[i])</div><div class="line">                s[i][j]=s[i+1][j];</div><div class="line">            else</div><div class="line">                s[i][j]=s[i+1][j]&gt;(s[i+1][j-weight[i]]+value[i])?s[i+1][j]:(s[i+1][j-weight[i]]+value[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    printf(&quot;%d\n&quot;,s[0][c]);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h3 id="运行结果-1"><a href="#运行结果-1" class="headerlink" title="运行结果"></a>运行结果</h3><p><img src="http://ovefvi4g3.bkt.clouddn.com/2018-01-17-07.png" alt="2018-01-17-07"></p><h3 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">//</div><div class="line">//  main.c</div><div class="line">//  algorithm</div><div class="line">//</div><div class="line">//  Created by athlonreg on 17/01/2018.</div><div class="line">//  Copyright © 2018 athlonreg. All rights reserved.</div><div class="line">//</div><div class="line"></div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">#define n 5</div><div class="line">#define c 10</div><div class="line"></div><div class="line">int weight[n]=&#123;2,2,6,5,4&#125;, value[n]=&#123;6,3,5,4,6&#125;;</div><div class="line">int maxvalue, tempvalue, tempweight;</div><div class="line"></div><div class="line">void traceback(int t)&#123;</div><div class="line">    if(t==n)&#123;</div><div class="line">        if(tempvalue&gt;maxvalue)</div><div class="line">            maxvalue=tempvalue;</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">    if(tempweight+weight[t]&lt;=c)&#123;</div><div class="line">        tempweight+=weight[t];</div><div class="line">        tempvalue+=value[t];</div><div class="line">        traceback(t+1);</div><div class="line">        tempweight-=weight[t];</div><div class="line">        tempvalue-=value[t];</div><div class="line">    &#125;</div><div class="line">    traceback(t+1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main(int argc, const char * argv[]) &#123;</div><div class="line">    traceback(0);</div><div class="line">    printf(&quot;%d\n&quot;,maxvalue);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h3 id="运行结果-2"><a href="#运行结果-2" class="headerlink" title="运行结果"></a>运行结果</h3><p><img src="http://ovefvi4g3.bkt.clouddn.com/2018-01-17-06.png" alt="2018-01-17-06"></p>]]></content>
+    
+    <summary type="html">
+    
+      0-1背包问题
+    
+    </summary>
+    
+      <category term="algorithm" scheme="https://blog.iamzhl.top/categories/algorithm/"/>
+    
+    
+      <category term="0-1背包问题" scheme="https://blog.iamzhl.top/tags/0-1%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
+    
+      <category term="algorithm" scheme="https://blog.iamzhl.top/tags/algorithm/"/>
+    
+      <category term="算法" scheme="https://blog.iamzhl.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Reverse part of array</title>
@@ -34,9 +60,9 @@
       <category term="algorithm" scheme="https://blog.iamzhl.top/categories/algorithm/"/>
     
     
-      <category term="算法" scheme="https://blog.iamzhl.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="algorithm" scheme="https://blog.iamzhl.top/tags/algorithm/"/>
+    
+      <category term="算法" scheme="https://blog.iamzhl.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="逆置" scheme="https://blog.iamzhl.top/tags/%E9%80%86%E7%BD%AE/"/>
     
@@ -60,9 +86,9 @@
       <category term="algorithm" scheme="https://blog.iamzhl.top/categories/algorithm/"/>
     
     
-      <category term="算法" scheme="https://blog.iamzhl.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="algorithm" scheme="https://blog.iamzhl.top/tags/algorithm/"/>
+    
+      <category term="算法" scheme="https://blog.iamzhl.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="n皇后问题" scheme="https://blog.iamzhl.top/tags/n%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/"/>
     
@@ -86,9 +112,9 @@
       <category term="algorithm" scheme="https://blog.iamzhl.top/categories/algorithm/"/>
     
     
-      <category term="算法" scheme="https://blog.iamzhl.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="algorithm" scheme="https://blog.iamzhl.top/tags/algorithm/"/>
+    
+      <category term="算法" scheme="https://blog.iamzhl.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="矩阵连乘问题" scheme="https://blog.iamzhl.top/tags/%E7%9F%A9%E9%98%B5%E8%BF%9E%E4%B9%98%E9%97%AE%E9%A2%98/"/>
     
@@ -112,11 +138,11 @@
       <category term="algorithm" scheme="https://blog.iamzhl.top/categories/algorithm/"/>
     
     
+      <category term="algorithm" scheme="https://blog.iamzhl.top/tags/algorithm/"/>
+    
       <category term="算法" scheme="https://blog.iamzhl.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="二分查找" scheme="https://blog.iamzhl.top/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
-    
-      <category term="algorithm" scheme="https://blog.iamzhl.top/tags/algorithm/"/>
     
   </entry>
   
@@ -483,32 +509,6 @@
       <category term="自动连接" scheme="https://blog.iamzhl.top/tags/%E8%87%AA%E5%8A%A8%E8%BF%9E%E6%8E%A5/"/>
     
       <category term="宽带" scheme="https://blog.iamzhl.top/tags/%E5%AE%BD%E5%B8%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Sync your hexo with several terminal</title>
-    <link href="https://blog.iamzhl.top/Sync-your-hexo-with-several-terminal.html"/>
-    <id>https://blog.iamzhl.top/Sync-your-hexo-with-several-terminal.html</id>
-    <published>2017-10-14T15:35:54.000Z</published>
-    <updated>2017-12-24T11:28:54.359Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote><p>Sync your hexo with several terminal<br>转载请注明<a href="https://blog.iamzhl.top/2017/10/14/Sync-your-hexo-with-several-terminal/">原出处</a></p></blockquote><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li>首先在 GitHub 建立一个分支用于存储 hexo 本地源文件</li></ul><h2 id="本地-hexo-源上到-GitHub"><a href="#本地-hexo-源上到-GitHub" class="headerlink" title="本地 hexo 源上到 GitHub"></a>本地 hexo 源上到 GitHub</h2><p>在本地博客根目录下使用 git 指令上传项目到 GitHub 的 hexo 分支</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git init           </div><div class="line">$ git remote add origin 仓库地址    </div><div class="line">$ git checkout -b hexo     </div><div class="line">$ git add .       </div><div class="line">$ git commit -m &quot;&quot;        </div><div class="line">$ git push origin hexo</div></pre></td></tr></table></figure><hr><h2 id="其它设备同步"><a href="#其它设备同步" class="headerlink" title="其它设备同步"></a>其它设备同步</h2><h3 id="建立同步目录"><a href="#建立同步目录" class="headerlink" title="建立同步目录"></a>建立同步目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mkdir blog</div></pre></td></tr></table></figure><h3 id="同步-hexo-源"><a href="#同步-hexo-源" class="headerlink" title="同步 hexo 源"></a>同步 hexo 源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cd blog/</div><div class="line">$ git init</div><div class="line">$ git remote add origin 仓库地址</div><div class="line">$ git pull -r origin hexo</div></pre></td></tr></table></figure><h3 id="本地搭建-hexo-环境"><a href="#本地搭建-hexo-环境" class="headerlink" title="本地搭建 hexo 环境"></a>本地搭建 hexo 环境</h3><ul><li>需要安装 Git 和 Node.js </li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo --save</div><div class="line">$ npm install</div></pre></td></tr></table></figure><ul><li>第一次运行需要验证 GitHub 和 coding 账号 ( 取决于你用什么部署的 blog )</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.email &quot;you@example.com&quot;</div><div class="line">$ git config --global user.name &quot;Your Name&quot;</div></pre></td></tr></table></figure><hr><h2 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h2><ul><li>做完上面的步骤就可以在这一台设备继续发博文了</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo new post &quot;新建博客名字&quot; </div><div class="line">$ hexo clean </div><div class="line">$ hexo g</div><div class="line">$ hexo d -g</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      Sync your hexo with several terminal（对多设备之间 hexo 搭建的 blog 进行同步）
-    
-    </summary>
-    
-      <category term="Study" scheme="https://blog.iamzhl.top/categories/Study/"/>
-    
-    
-      <category term="git" scheme="https://blog.iamzhl.top/tags/git/"/>
-    
-      <category term="同步" scheme="https://blog.iamzhl.top/tags/%E5%90%8C%E6%AD%A5/"/>
-    
-      <category term="github" scheme="https://blog.iamzhl.top/tags/github/"/>
     
   </entry>
   
