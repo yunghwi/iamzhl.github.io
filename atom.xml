@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.iamzhl.top/"/>
-  <updated>2018-01-17T07:55:50.454Z</updated>
+  <updated>2018-01-17T08:05:58.637Z</updated>
   <id>https://blog.iamzhl.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>n queen</title>
+    <link href="https://blog.iamzhl.top/n-queen.html"/>
+    <id>https://blog.iamzhl.top/n-queen.html</id>
+    <published>2018-01-17T08:04:05.000Z</published>
+    <updated>2018-01-17T08:05:58.637Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">//</div><div class="line">//  main.c</div><div class="line">//  algorithm</div><div class="line">//</div><div class="line">//  Created by athlonreg on 17/01/2018.</div><div class="line">//  Copyright © 2018 athlonreg. All rights reserved.</div><div class="line">//</div><div class="line"></div><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;math.h&gt;</div><div class="line"></div><div class="line">#define n 8</div><div class="line"></div><div class="line">int a[n];</div><div class="line">int count=0;</div><div class="line"></div><div class="line">int judge(int t)&#123;</div><div class="line">    if(t==n)</div><div class="line">        return 0;</div><div class="line">    for(int i=0;i&lt;t;i++)&#123;</div><div class="line">        for(int j=i+1;j&lt;=t;j++)&#123;</div><div class="line">            if(a[i]==a[j])</div><div class="line">                return 0;</div><div class="line">            if(abs(i-j)==abs(a[i]-a[j]))</div><div class="line">                return 0;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return 1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void traceback(int t)&#123;</div><div class="line">    int i;</div><div class="line">    if(t==n)&#123;</div><div class="line">        count++;</div><div class="line">        for(i=0;i&lt;n;i++)</div><div class="line">            printf(&quot;%3d&quot;, a[i]);</div><div class="line">        printf(&quot;\n&quot;);</div><div class="line">    &#125;</div><div class="line">    for(i=0;i&lt;n;i++)&#123;</div><div class="line">        a[t]=i;</div><div class="line">        if(judge(t))</div><div class="line">            traceback(t+1);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main(int argc, const char * argv[]) &#123;</div><div class="line">    traceback(0);</div><div class="line">    printf(&quot;%d\n&quot;, count);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p><img src="http://ovefvi4g3.bkt.clouddn.com/2018-01-17-03.png" alt="2018-01-17-03"></p>]]></content>
+    
+    <summary type="html">
+    
+      n皇后问题
+    
+    </summary>
+    
+      <category term="algorithm" scheme="https://blog.iamzhl.top/categories/algorithm/"/>
+    
+    
+      <category term="算法" scheme="https://blog.iamzhl.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="algorithm" scheme="https://blog.iamzhl.top/tags/algorithm/"/>
+    
+      <category term="n皇后问题" scheme="https://blog.iamzhl.top/tags/n%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>RecurMatrix</title>
@@ -481,36 +507,6 @@
       <category term="黑苹果" scheme="https://blog.iamzhl.top/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
     
       <category term="short duration lag" scheme="https://blog.iamzhl.top/tags/short-duration-lag/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Disable the discrete GPU in laptop</title>
-    <link href="https://blog.iamzhl.top/Disable-the-discrete-GPU-in-laptop.html"/>
-    <id>https://blog.iamzhl.top/Disable-the-discrete-GPU-in-laptop.html</id>
-    <published>2017-10-03T16:00:00.000Z</published>
-    <updated>2017-12-24T11:34:54.075Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>最近我根据 RehabMan 的 hotpatch 添加了一些路径做了一个屏蔽独显得 hotpatch 来屏蔽独显解决一些升级 10.13 后因为 nv_disable 参数失效而卡在 Window Server Service only ran for 0 seconds 的错误，发现有些成功，有些失败。于是把我琢磨到的一种方法分享给大家！希望该帖子能帮助到各位！</p><blockquote><p>感谢：</p></blockquote><ul><li><p>PCBETA (远景论坛) <a href="http://bbs.pcbeta.com/viewthread-1760319-1-5.html" target="_blank" rel="external">yearjinheng 版主的帖子</a></p></li><li><p>tonymacx86.com <a href="https://www.tonymacx86.com/threads/fix-window-server-service-only-ran-for-0-seconds-with-dual-gpu.233092/" target="_blank" rel="external">Rehabman 的帖子</a></p></li><li><p>转载请注明 <a href="https://blog.iamzhl.top/2017/10/04/%E5%B1%8F%E8%94%BD%E7%8B%AC%E6%98%BE/">原贴地址</a></p></li></ul><blockquote><p>屏蔽独显方法不一：</p></blockquote><ul><li>第一种：直接在 DSDT SSDT 上做修改</li><li>第二种：手动制作一个适合自己机器的 hotpatch 屏蔽独显达到屏蔽独显的作用</li></ul><h2 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h2><blockquote><p>本帖主要采用第二种方法，大致思路如下：</p></blockquote><ul><li>提取 ACPI 原始表单</li><li>反编译这些文件</li><li>搜索一个名为 _OFF 的方法</li><li>检查文件的结果以确定 _OFF 的路径</li><li>修改 RehabMan 的 hotpatch 加入自己的路径</li></ul><h3 id="提取-ACPI-原始表单并提取-OFF-路径"><a href="#提取-ACPI-原始表单并提取-OFF-路径" class="headerlink" title="提取 ACPI 原始表单并提取 _OFF 路径"></a>提取 ACPI 原始表单并提取 _OFF 路径</h3><ul><li>打开电脑进入四叶草引导界面，按下 F4 或者 FN+F4 即可提取原始表单到 /EFI/CLOVER/ACPI/origin ，然后进入 MAC 将 origin 拷贝到桌面删掉除 SSDT DSDT 之外的所有 aml 文件，打开终端：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cd ~/Desktop/origin </div><div class="line">$ iasl -da -dl *.aml </div><div class="line">$ rm *.aml </div><div class="line">$ grep -l Method.*_OFF *.dsl</div></pre></td></tr></table></figure><ul><li>以我修改的一个机器为例，上一条命令得到的结果如下</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DSDT.dsl</div><div class="line">SSDT-7.dsl</div><div class="line">SSDT-8.dsl</div><div class="line">SSDT-9.dsl</div></pre></td></tr></table></figure><ul><li>依次打开这四个表单搜索 _OFF ，找到一个类似于下面这个函数：</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-04-01.png" alt="2017-10-04-01"></p><ul><li>图片左下角的路径就是我们最终所需要的: </li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_SB.PCI0.RP05.PEGP</div></pre></td></tr></table></figure><h3 id="修改-RehabMan-的-hotpatch-添加这个路径"><a href="#修改-RehabMan-的-hotpatch-添加这个路径" class="headerlink" title="修改 RehabMan 的 hotpatch 添加这个路径"></a>修改 RehabMan 的 hotpatch 添加这个路径</h3><ul><li>首先去 RehanMan 的 GitHub 下载 hotpatch 包</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/RehabMan/OS-X-Clover-Laptop-Config.git</div></pre></td></tr></table></figure><ul><li>我们只需要 SSDT-Disable_DGPU 这个文件，编译成 aml 文件</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ iasl SSDT-Disable_DGPU.dsl</div></pre></td></tr></table></figure><ul><li>打开编译后得到的 aml 文件</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-04-02.png" alt="2017-10-04-02"></p><ul><li>按照这个格式添加自己的路径</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-04-03.png" alt="2017-10-04-03"></p><ul><li>保存放到 /EFI/CLOVER/ACPI/patched </li></ul><h3 id="一个注意点"><a href="#一个注意点" class="headerlink" title="一个注意点"></a>一个注意点</h3><ul><li>如果在 Config.plist 中使用了 SortedOrder (通常 Clover 安装后默认没有设置)，需要在其内添加 SSDT-Disable_DGPU.aml 这一项。因为如果指定了 SortedOrder ，则 Clover 只加载其中指定的 SSDT 。如果没有出现在列表中,即使在 ACPI/patched 中，它也不会加载。</li></ul><h2 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h2>]]></content>
-    
-    <summary type="html">
-    
-      Disable the discrete GPU to fix &quot;Window Server Service only ran for 0 seconds&quot; in High Sierra
-    
-    </summary>
-    
-      <category term="Hacintosh" scheme="https://blog.iamzhl.top/categories/Hacintosh/"/>
-    
-    
-      <category term="Hacintosh" scheme="https://blog.iamzhl.top/tags/Hacintosh/"/>
-    
-      <category term="黑苹果" scheme="https://blog.iamzhl.top/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
-    
-      <category term="Window Server Service only ran for 0 seconds" scheme="https://blog.iamzhl.top/tags/Window-Server-Service-only-ran-for-0-seconds/"/>
-    
-      <category term="Disable DGPU" scheme="https://blog.iamzhl.top/tags/Disable-DGPU/"/>
-    
-      <category term="屏蔽独显" scheme="https://blog.iamzhl.top/tags/%E5%B1%8F%E8%94%BD%E7%8B%AC%E6%98%BE/"/>
     
   </entry>
   
