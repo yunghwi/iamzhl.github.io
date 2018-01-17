@@ -105,7 +105,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git,同步,github," />
+  <meta name="keywords" content="算法,algorithm,逆置," />
 
 
 
@@ -133,18 +133,20 @@
   })();
 </script>
 
-<meta name="description" content="Sync your hexo with several terminal（对多设备之间 hexo 搭建的 blog 进行同步）">
-<meta name="keywords" content="git,同步,github">
+<meta name="description" content="将数组从指定位置逆置，如从4开始逆置{1，4，2，6，8，5，7，3}，则输出{8，5，7，3，1，4，2，6}。">
+<meta name="keywords" content="算法,algorithm,逆置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sync your hexo with several terminal">
-<meta property="og:url" content="https://blog.iamzhl.top/Sync-your-hexo-with-several-terminal.html">
+<meta property="og:title" content="Reverse part of array">
+<meta property="og:url" content="https://blog.iamzhl.top/Reverse-part-of-array.html">
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
-<meta property="og:description" content="Sync your hexo with several terminal（对多设备之间 hexo 搭建的 blog 进行同步）">
+<meta property="og:description" content="将数组从指定位置逆置，如从4开始逆置{1，4，2，6，8，5，7，3}，则输出{8，5，7，3，1，4，2，6}。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-24T11:28:54.359Z">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018-01-17-04.png">
+<meta property="og:updated_time" content="2018-01-17T08:27:36.058Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sync your hexo with several terminal">
-<meta name="twitter:description" content="Sync your hexo with several terminal（对多设备之间 hexo 搭建的 blog 进行同步）">
+<meta name="twitter:title" content="Reverse part of array">
+<meta name="twitter:description" content="将数组从指定位置逆置，如从4开始逆置{1，4，2，6，8，5，7，3}，则输出{8，5，7，3，1，4，2，6}。">
+<meta name="twitter:image" content="http://ovefvi4g3.bkt.clouddn.com/2018-01-17-04.png">
 
 
 
@@ -174,13 +176,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.iamzhl.top/Sync-your-hexo-with-several-terminal.html"/>
+  <link rel="canonical" href="https://blog.iamzhl.top/Reverse-part-of-array.html"/>
 
 
 
 
 
-  <title>Sync your hexo with several terminal | Athlonreg's Blog</title>
+  <title>Reverse part of array | Athlonreg's Blog</title>
   
 
 
@@ -363,7 +365,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.iamzhl.top/Sync-your-hexo-with-several-terminal.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.iamzhl.top/Reverse-part-of-array.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="athlonreg/套陆">
@@ -380,7 +382,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Sync your hexo with several terminal</h1>
+          <h1 class="post-title" itemprop="name headline">Reverse part of array</h1>
         
 
         <div class="post-meta">
@@ -392,8 +394,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-14T23:35:54+08:00">
-                2017-10-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-17T16:23:37+08:00">
+                2018-01-17
               </time>
             
 
@@ -415,8 +417,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Study/" itemprop="url" rel="index">
-                    <span itemprop="name">Study</span>
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
                   </a>
                 </span>
 
@@ -432,7 +434,7 @@
 
           
           
-             <span id="/Sync-your-hexo-with-several-terminal.html" class="leancloud_visitors" data-flag-title="Sync your hexo with several terminal">
+             <span id="/Reverse-part-of-array.html" class="leancloud_visitors" data-flag-title="Reverse part of array">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -458,7 +460,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  236 字
+                  148 字
                 </span>
               
 
@@ -482,7 +484,7 @@
 
           
               <div class="post-description">
-                  Sync your hexo with several terminal（对多设备之间 hexo 搭建的 blog 进行同步）
+                  将数组从指定位置逆置，如从4开始逆置{1，4，2，6，8，5，7，3}，则输出{8，5，7，3，1，4，2，6}。
               </div>
           
 
@@ -499,30 +501,8 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>Sync your hexo with several terminal<br>转载请注明<a href="https://blog.iamzhl.top/2017/10/14/Sync-your-hexo-with-several-terminal/">原出处</a></p>
-</blockquote>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>首先在 GitHub 建立一个分支用于存储 hexo 本地源文件</li>
-</ul>
-<h2 id="本地-hexo-源上到-GitHub"><a href="#本地-hexo-源上到-GitHub" class="headerlink" title="本地 hexo 源上到 GitHub"></a>本地 hexo 源上到 GitHub</h2><p>在本地博客根目录下使用 git 指令上传项目到 GitHub 的 hexo 分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git init           </div><div class="line">$ git remote add origin 仓库地址    </div><div class="line">$ git checkout -b hexo     </div><div class="line">$ git add .       </div><div class="line">$ git commit -m &quot;&quot;        </div><div class="line">$ git push origin hexo</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="其它设备同步"><a href="#其它设备同步" class="headerlink" title="其它设备同步"></a>其它设备同步</h2><h3 id="建立同步目录"><a href="#建立同步目录" class="headerlink" title="建立同步目录"></a>建立同步目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mkdir blog</div></pre></td></tr></table></figure>
-<h3 id="同步-hexo-源"><a href="#同步-hexo-源" class="headerlink" title="同步 hexo 源"></a>同步 hexo 源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cd blog/</div><div class="line">$ git init</div><div class="line">$ git remote add origin 仓库地址</div><div class="line">$ git pull -r origin hexo</div></pre></td></tr></table></figure>
-<h3 id="本地搭建-hexo-环境"><a href="#本地搭建-hexo-环境" class="headerlink" title="本地搭建 hexo 环境"></a>本地搭建 hexo 环境</h3><ul>
-<li>需要安装 Git 和 Node.js </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo --save</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
-<ul>
-<li>第一次运行需要验证 GitHub 和 coding 账号 ( 取决于你用什么部署的 blog )</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.email &quot;you@example.com&quot;</div><div class="line">$ git config --global user.name &quot;Your Name&quot;</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h2><ul>
-<li>做完上面的步骤就可以在这一台设备继续发博文了</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo new post &quot;新建博客名字&quot; </div><div class="line">$ hexo clean </div><div class="line">$ hexo g</div><div class="line">$ hexo d -g</div></pre></td></tr></table></figure>
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">//</div><div class="line">//  main.c</div><div class="line">//  algorithm</div><div class="line">//</div><div class="line">//  Created by athlonreg on 17/01/2018.</div><div class="line">//  Copyright © 2018 athlonreg. All rights reserved.</div><div class="line">//</div><div class="line"></div><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;math.h&gt;</div><div class="line"></div><div class="line">#define n 8</div><div class="line"></div><div class="line">int a[n]=&#123;1,4,2,6,8,5,7,3&#125;;</div><div class="line"></div><div class="line">void print()&#123;</div><div class="line">    for(int i=0;i&lt;n;i++)&#123;</div><div class="line">        printf(&quot;%3d&quot;, a[i]);</div><div class="line">    &#125;</div><div class="line">    putchar(&apos;\n&apos;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">void swap(int *a, int *b)&#123;</div><div class="line">    int temp=*a;</div><div class="line">    *a=*b;</div><div class="line">    *b=temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void swapposition(int a[], int low, int high, int k)&#123;</div><div class="line">    int i, j;</div><div class="line">    for(i=low,j=k-1;i&lt;j;i++,j--)</div><div class="line">        swap(&amp;a[i], &amp;a[j]);</div><div class="line">    for(i=k,j=high;i&lt;j;i++,j--)</div><div class="line">        swap(&amp;a[i], &amp;a[j]);</div><div class="line">    for(i=low,j=high;i&lt;j;i++,j--)</div><div class="line">        swap(&amp;a[i], &amp;a[j]);</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main(int argc, const char * argv[]) &#123;</div><div class="line">    int k;</div><div class="line">    print();</div><div class="line">    scanf(&quot;%d&quot;, &amp;k);</div><div class="line">    swapposition(a, 0, n-1, k);</div><div class="line">    print();</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p><img src="http://ovefvi4g3.bkt.clouddn.com/2018-01-17-04.png" alt="2018-01-17-04"></p>
 
       
     </div>
@@ -579,11 +559,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
-            <a href="/tags/同步/" rel="tag"><i class="fa fa-tag"></i> 同步</a>
+            <a href="/tags/algorithm/" rel="tag"><i class="fa fa-tag"></i> algorithm</a>
           
-            <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
+            <a href="/tags/逆置/" rel="tag"><i class="fa fa-tag"></i> 逆置</a>
           
         </div>
       
@@ -596,8 +576,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Resolve-short-duration-lag-after-wake-and-after-login-on-haswell-or-broadwell.html" rel="next" title="Resolve short duration lag after wake and after login on haswell or broadwell">
-                <i class="fa fa-chevron-left"></i> Resolve short duration lag after wake and after login on haswell or broadwell
+              <a href="/n-queen.html" rel="next" title="n queen">
+                <i class="fa fa-chevron-left"></i> n queen
               </a>
             
           </div>
@@ -605,10 +585,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Connect-Network-in-Windows-10.html" rel="prev" title="Connect Network in Windows 10">
-                Connect Network in Windows 10 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -792,7 +768,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地-hexo-源上到-GitHub"><span class="nav-number">3.</span> <span class="nav-text">本地 hexo 源上到 GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它设备同步"><span class="nav-number">4.</span> <span class="nav-text">其它设备同步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立同步目录"><span class="nav-number">4.1.</span> <span class="nav-text">建立同步目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步-hexo-源"><span class="nav-number">4.2.</span> <span class="nav-text">同步 hexo 源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地搭建-hexo-环境"><span class="nav-number">4.3.</span> <span class="nav-text">本地搭建 hexo 环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完工"><span class="nav-number">5.</span> <span class="nav-text">完工</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行结果"><span class="nav-number">2.</span> <span class="nav-text">运行结果</span></a></li></ol></div>
             
 
           </div>
