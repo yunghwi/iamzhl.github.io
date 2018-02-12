@@ -105,7 +105,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hacintosh,黑苹果," />
+  <meta name="keywords" content="黑苹果,Hacintosh," />
 
 
 
@@ -134,17 +134,20 @@
 </script>
 
 <meta name="description" content="Install macOS on laptop 原版黑苹果安装参考贴">
-<meta name="keywords" content="Hacintosh,黑苹果">
+<meta name="keywords" content="黑苹果,Hacintosh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Install macOS on laptop">
 <meta property="og:url" content="https://blog.iamzhl.top/Install-macOS-on-laptop.html">
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
 <meta property="og:description" content="Install macOS on laptop 原版黑苹果安装参考贴">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-24T11:31:16.066Z">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018-02-12-01.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018-02-12-02.png">
+<meta property="og:updated_time" content="2018-02-12T03:30:25.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Install macOS on laptop">
 <meta name="twitter:description" content="Install macOS on laptop 原版黑苹果安装参考贴">
+<meta name="twitter:image" content="http://ovefvi4g3.bkt.clouddn.com/2018-02-12-01.png">
 
 
 
@@ -458,7 +461,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  537 字
+                  956 字
                 </span>
               
 
@@ -474,7 +477,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -500,25 +503,35 @@
 
       
         <script src="/assets/js/APlayer.min.js"> </script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>对于支持<code>UEFI</code>的机器，我们通常用<code>CLOVER</code>引导原版安装，这种方式最大的优点就是有恢复分区可以正常升级，当然前提要把引导做好。</p>
-<h3 id="前期知识储备"><a href="#前期知识储备" class="headerlink" title="前期知识储备"></a>前期知识储备</h3><h4 id="CLOVER的目录结构"><a href="#CLOVER的目录结构" class="headerlink" title="CLOVER的目录结构"></a><code>CLOVER</code>的目录结构</h4><h4 id="根据机器配置定制kext"><a href="#根据机器配置定制kext" class="headerlink" title="根据机器配置定制kext"></a>根据机器配置定制<code>kext</code></h4><h4 id="根据机器配置定制config"><a href="#根据机器配置定制config" class="headerlink" title="根据机器配置定制config"></a>根据机器配置定制<code>config</code></h4><h4 id="了解drivers64UEFI各个-EFI文件的作用，精简引导"><a href="#了解drivers64UEFI各个-EFI文件的作用，精简引导" class="headerlink" title="了解drivers64UEFI各个.EFI文件的作用，精简引导"></a>了解<code>drivers64UEFI</code>各个<code>.EFI</code>文件的作用，精简引导</h4><h4 id="了解acpi的工作原理，完美黑苹果-进阶篇"><a href="#了解acpi的工作原理，完美黑苹果-进阶篇" class="headerlink" title="了解acpi的工作原理，完美黑苹果(进阶篇)"></a>了解<code>acpi</code>的工作原理，完美黑苹果(进阶篇)</h4><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<h3 id="前期知识储备"><a href="#前期知识储备" class="headerlink" title="前期知识储备"></a>前期知识储备</h3><h4 id="CLOVER的目录结构"><a href="#CLOVER的目录结构" class="headerlink" title="CLOVER的目录结构"></a><code>CLOVER</code>的目录结构</h4><p><code>CLOVER</code>正常工作需要的完整目录包括<code>config.plist</code>、<code>CLOVERX64.efi</code>两个文件以及<code>ACPI</code>、<code>drivers64UEFI</code>、<code>kexts</code>、和<code>themes</code>几个目录，如图所示：</p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/2018-02-12-01.png" alt="2018-02-12-01"></p>
+<p>其中，<code>config.plist</code>是最核心的文件—-配置文件，<code>CLOVER</code>所实现的多数功能都是通过这个文件进行配置的，对其进行配置修改的最好用的工具就是<code>Clover Configurator</code>，主页面如下：</p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/2018-02-12-02.png" alt="2018-02-12-02"></p>
+<p>详细的配置方法下面会有介绍。</p>
+<p>另外一个文件是<code>CLOVERX64.efi</code>，这个文件用以启动<code>CLOVER</code>引导，通过<code>EasyUEFI</code>或者<code>BIOS</code>对启动项进行添加操作时，就是指向的这个文件。</p>
+<p><code>ACPI</code>是用以存放机器<code>ACPI</code>表单的，全称是”高级配置和电源管理接口”<code>(Advanced Configuration and Power Interface)</code>，其子目录由<code>origin</code>、<code>patched</code>、<code>WINDOWS</code>构成，其中<code>origin</code>用以保存通过在<code>CLOVER</code>引导界面按<code>F4</code>或<code>Fn F4</code>提取的原始表单，此目录的所有表文件是不加载的，需要对其进行编译得到<code>.dsl</code>文件，然后对其进行修改拍错，最后保存成<code>.aml</code>文件保存至<code>patched</code>目录才会在启动时加载，而<code>WINDOWS</code>目录则可以忽略不计。在黑果中，我们用到的表单文件只有<code>SSDT</code>和<code>DSDT</code>，其中<code>DSDT</code>主要是对各种设备的描述，而<code>SSDT</code>则主要是用以实现某个功能。</p>
+<p><code>drivers64UEFI</code>是由各种<code>EFI</code>驱动组成，在笔记本黑果需要用到的有<code>FSInject-64.efi</code>、<code>HFSPlus-64.efi</code>、<code>OsxAptioFixDrv-64.efi</code>、<code>APFS.efi</code>以及<code>OsxFatBinaryDrv-64.efi</code>，在新版<code>CLOVER</code>中只需要<code>FSInject-64.efi</code>、<code>HFSPlus-64.efi</code>、<code>OsxAptioFixDrv-64.efi</code>、以及<code>APFS.efi</code></p>
+<p><code>kexts</code>主要用于存储各种驱动(<code>OS X</code>称为内核扩展)</p>
+<p><code>themes</code>用以存储<code>CLOVER</code>引导界面的主题</p>
+<h4 id="根据机器配置定制kext"><a href="#根据机器配置定制kext" class="headerlink" title="根据机器配置定制kext"></a>根据机器配置定制<code>kext</code></h4><h4 id="根据机器配置定制config"><a href="#根据机器配置定制config" class="headerlink" title="根据机器配置定制config"></a>根据机器配置定制<code>config</code></h4><h4 id="了解drivers64UEFI各个-EFI文件的作用，精简引导"><a href="#了解drivers64UEFI各个-EFI文件的作用，精简引导" class="headerlink" title="了解drivers64UEFI各个.EFI文件的作用，精简引导"></a>了解<code>drivers64UEFI</code>各个<code>.EFI</code>文件的作用，精简引导</h4><h4 id="了解acpi的工作原理，完美黑苹果-进阶篇"><a href="#了解acpi的工作原理，完美黑苹果-进阶篇" class="headerlink" title="了解acpi的工作原理，完美黑苹果(进阶篇)"></a>了解<code>acpi</code>的工作原理，完美黑苹果(进阶篇)</h4><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
 <li>集成<code>CLOVER</code>的原版镜像<blockquote>
-<p>链接:<a href="https://pan.baidu.com/s/1kVmXVh1" target="_blank" rel="external">https://pan.baidu.com/s/1kVmXVh1</a>  密码:ryn9</p>
+<p>链接:<a href="https://pan.baidu.com/s/1gfTmRj9" target="_blank" rel="external">https://pan.baidu.com/s/1gfTmRj9</a>  密码:s3dv</p>
 </blockquote>
 </li>
 <li><code>Transmac</code><blockquote>
-<p>链接:<a href="https://pan.baidu.com/s/1nuFJNz7" target="_blank" rel="external">https://pan.baidu.com/s/1nuFJNz7</a>  密码:w3xw</p>
+<p>链接:<a href="https://pan.baidu.com/s/1oAn79Zc" target="_blank" rel="external">https://pan.baidu.com/s/1oAn79Zc</a>  密码:yafn</p>
 </blockquote>
 </li>
 <li><code>easyUEFI</code><blockquote>
-<p>链接:<a href="https://pan.baidu.com/s/1eSnNWB4" target="_blank" rel="external">https://pan.baidu.com/s/1eSnNWB4</a>  密码:vzbh</p>
+<p>链接:<a href="https://pan.baidu.com/s/1nwqbnMp" target="_blank" rel="external">https://pan.baidu.com/s/1nwqbnMp</a>  密码:gxoc</p>
 </blockquote>
 </li>
 <li><code>Clover Configurator</code>四叶草助手<blockquote>
-<p>链接:<a href="https://pan.baidu.com/s/1bUZrjg" target="_blank" rel="external">https://pan.baidu.com/s/1bUZrjg</a>  密码:0752</p>
+<p>链接:<a href="https://pan.baidu.com/s/1ht2wFQW" target="_blank" rel="external">https://pan.baidu.com/s/1ht2wFQW</a>  密码:tbce</p>
 </blockquote>
 </li>
 <li><code>DiskGenius</code><blockquote>
-<p>链接:<a href="https://pan.baidu.com/s/1dESlt8P" target="_blank" rel="external">https://pan.baidu.com/s/1dESlt8P</a>  密码:2yp2</p>
+<p>链接:<a href="https://pan.baidu.com/s/1cVyULo" target="_blank" rel="external">https://pan.baidu.com/s/1cVyULo</a>  密码:pfrm</p>
 </blockquote>
 </li>
 <li>鲁大师/<code>AIDA64</code>(推荐)/也可以用设备管理器<blockquote>
@@ -589,9 +602,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hacintosh/" rel="tag"><i class="fa fa-tag"></i> Hacintosh</a>
-          
             <a href="/tags/黑苹果/" rel="tag"><i class="fa fa-tag"></i> 黑苹果</a>
+          
+            <a href="/tags/Hacintosh/" rel="tag"><i class="fa fa-tag"></i> Hacintosh</a>
           
         </div>
       
@@ -848,7 +861,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      42.6k
+      43.0k
     </span>
   
 </div>
@@ -864,7 +877,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共42.6k字</span>
+  <span class="post-count">博客全站共43.0k字</span>
 </div>
 
         

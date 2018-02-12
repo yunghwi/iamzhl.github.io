@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.iamzhl.top/Install-macOS-on-laptop.html</loc>
+    
+    <lastmod>2018-02-12T03:30:25.777Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.iamzhl.top/0-1-backpack.html</loc>
     
     <lastmod>2018-01-17T09:25:12.164Z</lastmod>
@@ -152,13 +159,6 @@
     <loc>https://blog.iamzhl.top/How-to-build-Clover-from-source.html</loc>
     
     <lastmod>2017-12-24T11:32:09.073Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Install-macOS-on-laptop.html</loc>
-    
-    <lastmod>2017-12-24T11:31:16.066Z</lastmod>
     
   </url>
   
