@@ -107,7 +107,8 @@ theme: next
 deploy:
 - type: git
   repository: 
-    github: https://git.coding.net/iamzhl/iamzhl.coding.me.git
-    coding: https://github.com/athlonreg/iamzhl.github.io
+    coding: https://git.coding.net/iamzhl/iamzhl.coding.me.git
+    github: https://github.com/athlonreg/iamzhl.github.io.git
+    gitee: https://gitee.com/athlonreg/athlonreg.gitee.cc.git
   branch: master
 - type: baidu_url_submitter
