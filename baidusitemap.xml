@@ -4,16 +4,31 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/test.html</loc>
+    <lastmod>2018-03-15T01:37:37.093Z</lastmod>
+    <data>
+        <display>
+        <title>test</title>
+        <pubTime>2018-03-15T01:37:17.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/Install-macOS-on-laptop.html</loc>
-    <lastmod>2018-02-12T03:30:25.777Z</lastmod>
+    <lastmod>2018-02-12T03:30:25.000Z</lastmod>
     <data>
         <display>
         <title>Install macOS on laptop</title>
         <pubTime>2017-12-11T16:28:15.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
          
            
@@ -27,7 +42,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/0-1-backpack.html</loc>
-    <lastmod>2018-01-17T09:25:12.164Z</lastmod>
+    <lastmod>2018-01-17T09:25:12.000Z</lastmod>
     <data>
         <display>
         <title>0-1 backpack</title>
@@ -51,7 +66,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Reverse-part-of-array.html</loc>
-    <lastmod>2018-01-17T08:27:36.058Z</lastmod>
+    <lastmod>2018-01-17T08:27:36.000Z</lastmod>
     <data>
         <display>
         <title>Reverse part of array</title>
@@ -75,7 +90,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/n-queen.html</loc>
-    <lastmod>2018-01-17T08:05:58.637Z</lastmod>
+    <lastmod>2018-01-17T08:05:58.000Z</lastmod>
     <data>
         <display>
         <title>n queen</title>
@@ -99,7 +114,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/RecurMatrix.html</loc>
-    <lastmod>2018-01-17T07:55:50.454Z</lastmod>
+    <lastmod>2018-01-17T07:55:50.000Z</lastmod>
     <data>
         <display>
         <title>RecurMatrix</title>
@@ -123,7 +138,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/BinarySearch.html</loc>
-    <lastmod>2018-01-17T07:32:27.811Z</lastmod>
+    <lastmod>2018-01-17T07:32:27.000Z</lastmod>
     <data>
         <display>
         <title>BinarySearch</title>
@@ -147,7 +162,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/ldu-crawl-based-on-nodejs.html</loc>
-    <lastmod>2018-01-10T14:36:24.865Z</lastmod>
+    <lastmod>2018-01-10T14:36:24.000Z</lastmod>
     <data>
         <display>
         <title>Ldu crawl based on nodejs</title>
@@ -171,7 +186,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Install-jdk-on-macOS.html</loc>
-    <lastmod>2018-01-10T12:13:19.693Z</lastmod>
+    <lastmod>2018-01-10T12:13:19.000Z</lastmod>
     <data>
         <display>
         <title>Install jdk on macOS</title>
@@ -197,15 +212,15 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Check-CPU-frequences-by-using-AppleIntelInfo.html</loc>
-    <lastmod>2017-12-24T11:38:37.178Z</lastmod>
+    <lastmod>2017-12-24T11:38:37.000Z</lastmod>
     <data>
         <display>
         <title>Check CPU frequences by using AppleIntelInfo</title>
         <pubTime>2017-09-04T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>AppleIntelInfo</tag>
          
@@ -223,7 +238,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Change-NetBeans's-language-to-Chinese-in-macOS.html</loc>
-    <lastmod>2017-12-24T11:38:11.811Z</lastmod>
+    <lastmod>2017-12-24T11:38:11.000Z</lastmod>
     <data>
         <display>
         <title>Change NetBeans's language to Chinese in macOS</title>
@@ -243,7 +258,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Change-launchpad-icon-grid-layout-in-macOS.html</loc>
-    <lastmod>2017-12-24T11:37:57.407Z</lastmod>
+    <lastmod>2017-12-24T11:37:57.000Z</lastmod>
     <data>
         <display>
         <title>Change launchpad icon grid layout in your MAC</title>
@@ -263,7 +278,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/ASUS-X455LD-i5-4210u.html</loc>
-    <lastmod>2017-12-24T11:37:25.434Z</lastmod>
+    <lastmod>2017-12-24T11:37:25.000Z</lastmod>
     <data>
         <display>
         <title>ASUS-X455LD-i5-4210u</title>
@@ -285,17 +300,17 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Allow-apps-downloaded-from-anywhere-in-macOS.html</loc>
-    <lastmod>2017-12-24T11:37:05.945Z</lastmod>
+    <lastmod>2017-12-24T11:37:05.000Z</lastmod>
     <data>
         <display>
         <title>Allow apps downloaded from anywhere on macOS</title>
         <pubTime>2017-09-15T13:16:31.000Z</pubTime>
         
+        <tag>Hacintosh</tag>
+         
         <tag>黑苹果</tag>
          
         <tag>终端</tag>
-         
-        <tag>Hacintosh</tag>
          
         <tag>任何来源</tag>
          
@@ -311,7 +326,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Clover-ACPI-hotpatch.html</loc>
-    <lastmod>2017-12-24T11:36:15.107Z</lastmod>
+    <lastmod>2017-12-24T11:36:15.000Z</lastmod>
     <data>
         <display>
         <title>Clover ACPI hotpatch</title>
@@ -337,7 +352,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Common-Keyboard-shortcut-in-macOS.html</loc>
-    <lastmod>2017-12-24T11:35:48.719Z</lastmod>
+    <lastmod>2017-12-24T11:35:48.000Z</lastmod>
     <data>
         <display>
         <title>Common Keyboard  shortcut on MAC</title>
@@ -359,7 +374,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Config-NexT-to-beautify-your-blog-with-hexo.html</loc>
-    <lastmod>2017-12-24T11:35:17.122Z</lastmod>
+    <lastmod>2017-12-24T11:35:17.000Z</lastmod>
     <data>
         <display>
         <title>Config NexT to beautify your blog with hexo</title>
@@ -383,7 +398,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Connect-Network-in-Windows-10.html</loc>
-    <lastmod>2017-12-24T11:35:11.053Z</lastmod>
+    <lastmod>2017-12-24T11:35:11.000Z</lastmod>
     <data>
         <display>
         <title>Connect Network in Windows 10</title>
@@ -405,7 +420,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Dell-Inspiron-15-7000-i7-8550u.html</loc>
-    <lastmod>2017-12-24T11:35:03.170Z</lastmod>
+    <lastmod>2017-12-24T11:35:03.000Z</lastmod>
     <data>
         <display>
         <title>Dell-Inspiron-15-7000-i7-8550u</title>
@@ -427,15 +442,15 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Disable-the-discrete-GPU-in-laptop.html</loc>
-    <lastmod>2017-12-24T11:34:54.075Z</lastmod>
+    <lastmod>2017-12-24T11:34:54.000Z</lastmod>
     <data>
         <display>
         <title>Disable the discrete GPU in laptop</title>
         <pubTime>2017-10-03T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>Window Server Service only ran for 0 seconds</tag>
          
@@ -455,15 +470,15 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Enable-BCM94352z-on-hacintosh.html</loc>
-    <lastmod>2017-12-24T11:34:23.229Z</lastmod>
+    <lastmod>2017-12-24T11:34:23.000Z</lastmod>
     <data>
         <display>
         <title>Enable BCM94352z on your hacintosh</title>
         <pubTime>2017-09-12T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>BCM94352z</tag>
          
@@ -479,7 +494,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Extract-and-fix-DSDT-SSDT-simply.html</loc>
-    <lastmod>2017-12-24T11:33:55.565Z</lastmod>
+    <lastmod>2017-12-24T11:33:55.000Z</lastmod>
     <data>
         <display>
         <title>Extract and fix DSDT SSDT simply</title>
@@ -503,7 +518,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/How-to-use-xcode-select-in-terminal.html</loc>
-    <lastmod>2017-12-24T11:32:40.809Z</lastmod>
+    <lastmod>2017-12-24T11:32:40.000Z</lastmod>
     <data>
         <display>
         <title>How to use xcode-select in terminal</title>
@@ -527,7 +542,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/How-to-build-Clover-from-source.html</loc>
-    <lastmod>2017-12-24T11:32:09.073Z</lastmod>
+    <lastmod>2017-12-24T11:32:09.000Z</lastmod>
     <data>
         <display>
         <title>How to build Clover from source</title>
@@ -547,7 +562,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Problem-about-coin-array.html</loc>
-    <lastmod>2017-12-24T11:30:59.412Z</lastmod>
+    <lastmod>2017-12-24T11:30:59.000Z</lastmod>
     <data>
         <display>
         <title>Problem about coin array</title>
@@ -571,7 +586,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Problem-about-dictionary-order.html</loc>
-    <lastmod>2017-12-24T11:30:43.581Z</lastmod>
+    <lastmod>2017-12-24T11:30:43.000Z</lastmod>
     <data>
         <display>
         <title>Problem about dictionary order</title>
@@ -595,7 +610,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Problem-about-low-carbon-lifestyle-answering.html</loc>
-    <lastmod>2017-12-24T11:30:38.330Z</lastmod>
+    <lastmod>2017-12-24T11:30:38.000Z</lastmod>
     <data>
         <display>
         <title>Problem about low-carbon lifestyle answering</title>
@@ -619,7 +634,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Problem-about-rollover-price-tag.html</loc>
-    <lastmod>2017-12-24T11:30:27.415Z</lastmod>
+    <lastmod>2017-12-24T11:30:27.000Z</lastmod>
     <data>
         <display>
         <title>Problem about rollover price tag</title>
@@ -643,7 +658,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Resolve-short-duration-lag-after-wake-and-after-login-on-haswell-or-broadwell.html</loc>
-    <lastmod>2017-12-24T11:30:14.944Z</lastmod>
+    <lastmod>2017-12-24T11:30:14.000Z</lastmod>
     <data>
         <display>
         <title>Resolve short duration lag after wake and after login on haswell or broadwell</title>
@@ -665,7 +680,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Solve-problem-of-subset-sum-with-backtracking-method.html</loc>
-    <lastmod>2017-12-24T11:30:02.939Z</lastmod>
+    <lastmod>2017-12-24T11:30:02.000Z</lastmod>
     <data>
         <display>
         <title>Solve problem of subset sum with backtracking method</title>
@@ -687,15 +702,15 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Speed-up-the-hackintosh-to-boot.html</loc>
-    <lastmod>2017-12-24T11:29:42.228Z</lastmod>
+    <lastmod>2017-12-24T11:29:42.000Z</lastmod>
     <data>
         <display>
         <title>Speed up the hackintosh to boot</title>
         <pubTime>2017-09-04T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>开机速度</tag>
          
@@ -711,7 +726,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Sync-the-codes-between-native-and-remote-by-git.html</loc>
-    <lastmod>2017-12-24T11:29:24.905Z</lastmod>
+    <lastmod>2017-12-24T11:29:24.000Z</lastmod>
     <data>
         <display>
         <title>Sync the codes between native and remote by git</title>
@@ -735,7 +750,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Sync-your-hexo-with-several-terminal.html</loc>
-    <lastmod>2017-12-24T11:28:54.359Z</lastmod>
+    <lastmod>2017-12-24T11:28:54.000Z</lastmod>
     <data>
         <display>
         <title>Sync your hexo with several terminal</title>
@@ -759,7 +774,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Problem-about-police-and-gangster-110.html</loc>
-    <lastmod>2017-12-24T11:27:40.257Z</lastmod>
+    <lastmod>2017-12-24T11:27:40.000Z</lastmod>
     <data>
         <display>
         <title>Problem about police and gangster 110</title>
@@ -783,7 +798,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Problem-about-Sending-out-death-squads.html</loc>
-    <lastmod>2017-12-24T11:26:02.509Z</lastmod>
+    <lastmod>2017-12-24T11:26:02.000Z</lastmod>
     <data>
         <display>
         <title>Problem about Sending out death squads</title>
@@ -807,7 +822,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Statistical-problem.html</loc>
-    <lastmod>2017-12-24T11:25:10.821Z</lastmod>
+    <lastmod>2017-12-24T11:25:10.000Z</lastmod>
     <data>
         <display>
         <title>Statistical problem</title>
@@ -831,7 +846,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/The-simplest-case-demo-about-client-and-server.html</loc>
-    <lastmod>2017-12-24T11:20:14.522Z</lastmod>
+    <lastmod>2017-12-24T11:20:14.000Z</lastmod>
     <data>
         <display>
         <title>The simplest case demo about client and server</title>
@@ -855,7 +870,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/How-to-import-a-project-from-NetBeans-to-MyEclipse-faultlessly.html</loc>
-    <lastmod>2017-12-24T11:14:38.955Z</lastmod>
+    <lastmod>2017-12-24T11:14:38.000Z</lastmod>
     <data>
         <display>
         <title>How to import a project from NetBeans to MyEclipse faultlessly</title>
@@ -877,15 +892,15 @@
     
   <url>
     <loc>https://blog.iamzhl.top/RW-NTFS-partition-natively-on-macOS.html</loc>
-    <lastmod>2017-12-24T11:10:06.424Z</lastmod>
+    <lastmod>2017-12-24T11:10:06.000Z</lastmod>
     <data>
         <display>
         <title>RW NTFS partition natively on macOS</title>
         <pubTime>2017-10-26T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>NTFS</tag>
          
@@ -901,15 +916,15 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Driver-audio-for-hackintosh.html</loc>
-    <lastmod>2017-12-24T11:07:12.793Z</lastmod>
+    <lastmod>2017-12-24T11:07:12.000Z</lastmod>
     <data>
         <display>
         <title>Driver audio for hackintosh</title>
         <pubTime>2017-11-05T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
          
            
@@ -923,7 +938,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Install-and-config-mysql-on-mac.html</loc>
-    <lastmod>2017-12-20T09:31:46.131Z</lastmod>
+    <lastmod>2017-12-20T09:31:46.000Z</lastmod>
     <data>
         <display>
         <title>Install and config mysql on mac</title>
@@ -945,7 +960,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/HP-OMEN-by-HP-Laptop.html</loc>
-    <lastmod>2017-12-13T11:27:04.144Z</lastmod>
+    <lastmod>2017-12-13T11:27:04.000Z</lastmod>
     <data>
         <display>
         <title>HP OMEN by HP Laptop</title>
