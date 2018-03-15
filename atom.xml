@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.iamzhl.top/"/>
-  <updated>2018-03-15T01:37:37.093Z</updated>
+  <updated>2018-01-17T09:25:12.000Z</updated>
   <id>https://blog.iamzhl.top/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="https://blog.iamzhl.top/test.html"/>
-    <id>https://blog.iamzhl.top/test.html</id>
-    <published>2018-03-15T01:37:17.000Z</published>
-    <updated>2018-03-15T01:37:37.093Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>test</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;test&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>0-1 backpack</title>
@@ -507,6 +485,30 @@
       <category term="快捷键" scheme="https://blog.iamzhl.top/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     
       <category term="Mac" scheme="https://blog.iamzhl.top/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Connect Network in Windows 10</title>
+    <link href="https://blog.iamzhl.top/Connect-Network-in-Windows-10.html"/>
+    <id>https://blog.iamzhl.top/Connect-Network-in-Windows-10.html</id>
+    <published>2017-10-15T13:59:01.000Z</published>
+    <updated>2017-12-24T11:35:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h3 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h3><ul><li>首先右击我的电脑-&gt;管理-&gt;任务计划程序-&gt;任务计划程序</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-15-01.png" alt="2017-10-15-01"></p><ul><li>中间窗口空白处右键 -&gt; 创建基本任务</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-15-02.png" alt="2017-10-15-02"></p><ul><li>弹出的下列窗口名称处输入 PPPOE</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-15-03.png" alt="2017-10-15-03"></p><ul><li>继续选择 当用户登录时</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-15-04.png" alt="2017-10-15-04"></p><ul><li>选择 启动程序</li></ul><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-15-05.png" alt="2017-10-15-05"></p><ul><li>在 程序或脚本 处按照以下格式输入你的本地宽带连接账号</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rasdial 宽带连接 宽带账号 宽带密码</div></pre></td></tr></table></figure><blockquote><p>比如我的则为</p><p>经网友反馈，发现图中“宽带连接”后少了一个空格，请大家自主添加</p></blockquote><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-15-06.png" alt="2017-10-15-06"></p><ul><li>一路下一步直到完成</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      Windows 10 开机自动连接宽带
+    
+    </summary>
+    
+      <category term="Study" scheme="https://blog.iamzhl.top/categories/Study/"/>
+    
+    
+      <category term="自动连接" scheme="https://blog.iamzhl.top/tags/%E8%87%AA%E5%8A%A8%E8%BF%9E%E6%8E%A5/"/>
+    
+      <category term="宽带" scheme="https://blog.iamzhl.top/tags/%E5%AE%BD%E5%B8%A6/"/>
     
   </entry>
   
