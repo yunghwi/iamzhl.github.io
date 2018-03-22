@@ -34,7 +34,54 @@ tags:
 `themes`用以存储`CLOVER`引导界面的主题
 
 #### 根据机器配置定制`kext`
+`kext`在`EFI`的配置中是相当重要的，好的`kext`配置可以弥补`config`的不足，不好的`kext`配置也会让本应完美的`config`发挥不出作用。
 
+`FakeSMC.kext`:`FakeSMC`是现今的⿊黑苹果过程中唯⼀一的”必要性”内核扩展程序。对于⿊黑苹果有着⽆与伦比的重要性，但是很多⼈并不知道`FakeSMC`为什么重要，只是知道必须有它才⾏行，。简⽽而⾔言之就是: `FakeSMC`是⽤用于将`PC`主板上的各种控制芯⽚片伪装成Mac独有的硬件控制芯片`SMC`以骗过系统从⽽而是系统正常启动的⼀一个内核扩展(其实很复杂,这⾥里不多说了)。在系统启动的阶段，`FakeSMC`负责告知系统有关主板上`SMC`芯⽚片(伪装出来的)的各种加密信息，欺骗系统。也就是说呢，无论你笔记本是什么配置，此驱动是必须的。
+
+`ApplePS2SmartTouchPad.kext`、`VoodooI2C.kext`和`VoodooPS2Controller.kext`:此驱动用以驱动键盘鼠标以及触摸板，两者选择一个即可，两者区别就是适用的类型不一样，有`PS/2`、`Synaptics`、`alps`、`i2c`等等，其中`Synaptics`、`alps`用`ApplePS2SmartTouchPad.kext`适配性好一些，`VoodooI2C.kext`比较麻烦，仅适用于`i2c`触摸板。具体怎么确定走的总线类型，大家参考百度就好了，这里就不再赘述。
+
+`FakePCIID.kext`:这个kext的目的是与`IOPCIDevice`设备建立连接，以便当另一个驱动程序连接到同一设备时，它可以提供备用的`PCI ID`。也就是说，如果用到`Fake-PCI-ID`中的其他任何`kext`的话，此驱动都是必要的。
+
+`FakePCIID_Intel_HD_Graphics.kext `:此驱动主要用于核显`HD4200 HD4400 HD4600 P4600`、`Iris 540 Iris 550 Iris Pro 580`、`HD510 HD515 HD520 HD530 P530`（多数530不需要这个）、`P4000`、`P6300 - 162a`、`UHD620 KabyLake-R `、`UHD630 CoffeeLake`。
+
+`FakePCIID_Intel_HDMI_Audio.kext`:其目的是为不支持的`HDAU`提供支持(通常称为`B0D3`，但需要将其重命名为`HDAU`，以满足`Apple`的期望值)在`Haswell`以上的系统中提供`HDMI-audio`的设备。
+
+`FakePCIID_BCM57XX_as_BCM57765.kext`:这个`kext`将与众多不受支持的`BCM57XX`以太网设备建立连接，以使本机驱动程序为兼容的更广泛的`BCM`以太网芯片组工作。
+
+`FakePCIID_Intel_GbX.kext`:这个`kext`将与一些`Intel`以太网设备建立连接，以使基于`Intel`芯片组的驱动程序工作。
+
+`FakePCIID_XHCIMux.kext`:将会连接到8086:1e31, 8086:9c31, 8086:9cb1, 8086:9c31, 8086:8cb1这个注入器是正常的`FakePCIID`任务的一部分。它实际上并没有伪造任何`PCI id`。相反，它将某些值强加于`Intel XHCI USB3`控制器上的`XUSB2PR` (PCI配置偏移`0xD0`)。其效果是将任何`USB2`设备与`XHC`端口上的`USB2`引脚连接到`EHC1`。换句话说，使用USB2驱动而不是`USB3`驱动程序(`AppleUSBEHCI vs AppleUSBXHCI`)处理`USB2`设备。
+
+`FakePCIID_AR9280_as_AR946x`:这是`FakePCIID.kext`的特殊应用，是在一个`AR9280`被重新命名为其他设备的情况下使用的。例如，在联想`u430`中，将一个`AR9280`作为`AR946x`重新命名是很有用的，因为该设备可以被`BIOS`白名单所允许，而`AR9280`不是。通过使用`FakePCIID`，我们可以将`PCI id`重新映射回`AR9280` (168c:002a)，即使该设备本身报告的是168c:0034。
+
+`FakePCIID_Broadcom_WiFi.kext`:这个`kext`将连接到14e4:43b1, 14e4:4357, 14e4:4331, 14e4:4353, 14e4:432b, 14e4 . 432b, 14e4:43a3，或14e4:43a0。以及106b:4e, 14e4:4312, 14e4:4313, 14e4:4318, 14e4:431a, 14e4:4320, 14e4:4324, 14e4:4324, 14e4:4328, 14e4:432d。
+最初是为`BCM94352Z`创建的，这个特殊的FakePCIID应用程序。在使用多种支持的Broadcom WiFi设备时，kext被用来模拟真正的`Apple Airport`(苹果无线网卡)。
+
+`ACPIBatteryManager.kext`:用以使笔记本正确显示电量，但通常需要配合`DSDT`的`patch`才能发挥作用。
+
+`VoodooHDA.kext`:万能声卡驱动，用以禁用`AppleHDA`来驱动声卡。
+
+`AppleALC.kext`:通过对`AppleHDA`的动态`patch`实现对`AppleHDA`的完整加载。
+
+`Lilu.kext`:一个开放源码的内核扩展，为macOS系统提供了一个任意的kext、库和程序补丁的平台。
+
+`IntelGraphicsDVMTFixup.kext`:修复因`BIOS`显存分配不足造成的`KP`。建议`broadwell+`平台使用。
+
+`IntelGraphicsFixup.kext`:动态修复核显的各种问题(例如腾讯视频死机，开机二阶段花屏等)，建议`Haswell+`平台使用。
+
+`CoreDisplayFixup.kext`:为不受支持的4K机器(非`Iris`)开启高分辨率支持。
+
+`AzulPatcher4600.kext`:针对`HD4600`的额外修复，仅推荐`HD4600`使用。
+
+`HibernationFixup.kext`:修复睡眠，以支持某些机器在3和28休眠模式下的正常休眠。
+
+`NvidiaGraphicsFixup.kext`:修复某些n卡的黑屏。
+
+`WhateverGreen.kext`:用以驱动A卡。
+
+`RealtekRTL8111.kext`:用以驱动`RealtekRTL8111.kext`以太网卡设备。
+
+`AppleIGB.kext`、`IntelMausiEthernet.kext`:用以驱动`Intel`板载网卡设备。
 
 #### 根据机器配置定制`config`
 
