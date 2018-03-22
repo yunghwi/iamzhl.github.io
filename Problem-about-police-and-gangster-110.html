@@ -461,7 +461,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  508 字
+                  583 字
                 </span>
               
 
@@ -477,7 +477,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -504,7 +504,7 @@
       
         <script src="/assets/js/APlayer.min.js"> </script><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-05-1.png" alt="2017-09-18-05"></p>
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>1、一共九个数字，八个操作符；<br>2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；<br>3、共有 3^8 种情况，遍历每种情况判断输出；<br>4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。<br>5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1x10+2，然后下一次循环操作符为+，需要计算的就是12+3，同理在3、4之间的空需要计算的是3x10+4，而不是（12+3）x10+4，所以需要一个临时变量来记录上次的操作数，还需要一个变量来记录上次的操作符将上次的结果进行统计处理，原因就在于我们无法确定下次的操作符是不是留空。<br>6、由于我们在统计和时，只有在下一次循环才能处理最后一个操作数，所以需要将9最后单独处理。 </p>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt; </div><div class="line">#include &lt;math.h&gt; </div><div class="line"></div><div class="line">int main() &#123;</div><div class="line">	int a[9]=&#123;1,2,3,4,5,6,7,8,9&#125;;</div><div class="line">	int sum; </div><div class="line">	int temp; </div><div class="line">	int oper,lastoper;  </div><div class="line">    int number; </div><div class="line">    int i,j;</div><div class="line">    </div><div class="line">	for(i=0;i&lt;pow(3,8);i++)  </div><div class="line">    &#123;  </div><div class="line">        sum=0; </div><div class="line">		temp=1; </div><div class="line">		lastoper=1;  </div><div class="line">        number=i;  </div><div class="line">        </div><div class="line">        for(j=1;j&lt;=8;j++)  </div><div class="line">        &#123;  //操作八次 </div><div class="line">            oper=number%3; </div><div class="line">			number=number/3;  </div><div class="line">            </div><div class="line">			if (!oper) </div><div class="line">				temp=temp*10+a[j];  //留空单独处理 </div><div class="line">				</div><div class="line">            if (oper==1) &#123;  //当前操作符 </div><div class="line">                if(lastoper==1)&#123; //前一次操作符 </div><div class="line">					sum=sum+temp; </div><div class="line">					temp=a[j];</div><div class="line">				&#125;  </div><div class="line">                if(lastoper==2)&#123;</div><div class="line">					sum=sum-temp; </div><div class="line">					temp=a[j];</div><div class="line">				&#125;  </div><div class="line">                lastoper=oper;  //更新上次操作符 </div><div class="line">            &#125;  </div><div class="line">            </div><div class="line">            if(oper==2)&#123;  </div><div class="line">                if(lastoper==1)&#123;</div><div class="line">					sum=sum+temp; </div><div class="line">					temp=a[j];</div><div class="line">				&#125;  </div><div class="line">                if(lastoper==2)&#123;</div><div class="line">					sum=sum-temp; </div><div class="line">					temp=a[j];</div><div class="line">				&#125;  </div><div class="line">                lastoper=oper;  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">  </div><div class="line">        if(lastoper==1) 	//第九次操作单独处理 </div><div class="line">			sum=sum+temp;  </div><div class="line">        if(lastoper==2) </div><div class="line">			sum=sum-temp;     </div><div class="line">  </div><div class="line">        if(sum==110)  </div><div class="line">        &#123;  </div><div class="line">            number=i;  </div><div class="line">            for(j=1;j&lt;=8;j++)  </div><div class="line">            &#123;  </div><div class="line">                printf(&quot;%d&quot;,a[j-1]);  </div><div class="line">                oper=number%3; </div><div class="line">				number=number/3;  </div><div class="line">                if(oper==1) </div><div class="line">					printf(&quot;+&quot;);  </div><div class="line">                if(oper==2) </div><div class="line">					printf(&quot;-&quot;);</div><div class="line">				else</div><div class="line">					continue;</div><div class="line">            &#125;             </div><div class="line">            printf(&quot;9\n&quot;);  </div><div class="line">        &#125;  </div><div class="line">    &#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt; </span><br><span class="line">#include &lt;math.h&gt; </span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">	int a[9]=&#123;1,2,3,4,5,6,7,8,9&#125;;</span><br><span class="line">	int sum; </span><br><span class="line">	int temp; </span><br><span class="line">	int oper,lastoper;  </span><br><span class="line">    int number; </span><br><span class="line">    int i,j;</span><br><span class="line">    </span><br><span class="line">	for(i=0;i&lt;pow(3,8);i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        sum=0; </span><br><span class="line">		temp=1; </span><br><span class="line">		lastoper=1;  </span><br><span class="line">        number=i;  </span><br><span class="line">        </span><br><span class="line">        for(j=1;j&lt;=8;j++)  </span><br><span class="line">        &#123;  //操作八次 </span><br><span class="line">            oper=number%3; </span><br><span class="line">			number=number/3;  </span><br><span class="line">            </span><br><span class="line">			if (!oper) </span><br><span class="line">				temp=temp*10+a[j];  //留空单独处理 </span><br><span class="line">				</span><br><span class="line">            if (oper==1) &#123;  //当前操作符 </span><br><span class="line">                if(lastoper==1)&#123; //前一次操作符 </span><br><span class="line">					sum=sum+temp; </span><br><span class="line">					temp=a[j];</span><br><span class="line">				&#125;  </span><br><span class="line">                if(lastoper==2)&#123;</span><br><span class="line">					sum=sum-temp; </span><br><span class="line">					temp=a[j];</span><br><span class="line">				&#125;  </span><br><span class="line">                lastoper=oper;  //更新上次操作符 </span><br><span class="line">            &#125;  </span><br><span class="line">            </span><br><span class="line">            if(oper==2)&#123;  </span><br><span class="line">                if(lastoper==1)&#123;</span><br><span class="line">					sum=sum+temp; </span><br><span class="line">					temp=a[j];</span><br><span class="line">				&#125;  </span><br><span class="line">                if(lastoper==2)&#123;</span><br><span class="line">					sum=sum-temp; </span><br><span class="line">					temp=a[j];</span><br><span class="line">				&#125;  </span><br><span class="line">                lastoper=oper;  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">        if(lastoper==1) 	//第九次操作单独处理 </span><br><span class="line">			sum=sum+temp;  </span><br><span class="line">        if(lastoper==2) </span><br><span class="line">			sum=sum-temp;     </span><br><span class="line">  </span><br><span class="line">        if(sum==110)  </span><br><span class="line">        &#123;  </span><br><span class="line">            number=i;  </span><br><span class="line">            for(j=1;j&lt;=8;j++)  </span><br><span class="line">            &#123;  </span><br><span class="line">                printf(&quot;%d&quot;,a[j-1]);  </span><br><span class="line">                oper=number%3; </span><br><span class="line">				number=number/3;  </span><br><span class="line">                if(oper==1) </span><br><span class="line">					printf(&quot;+&quot;);  </span><br><span class="line">                if(oper==2) </span><br><span class="line">					printf(&quot;-&quot;);</span><br><span class="line">				else</span><br><span class="line">					continue;</span><br><span class="line">            &#125;             </span><br><span class="line">            printf(&quot;9\n&quot;);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-18-06-1.png" alt="2017-09-18-06"></p>
 
       
@@ -579,8 +579,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Allow-apps-downloaded-from-anywhere-in-macOS.html" rel="next" title="Allow apps downloaded from anywhere on macOS">
-                <i class="fa fa-chevron-left"></i> Allow apps downloaded from anywhere on macOS
+              <a href="/Problem-about-rollover-price-tag.html" rel="next" title="Problem about rollover price tag">
+                <i class="fa fa-chevron-left"></i> Problem about rollover price tag
               </a>
             
           </div>
@@ -589,8 +589,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Problem-about-Sending-out-death-squads.html" rel="prev" title="Problem about Sending out death squads">
-                Problem about Sending out death squads <i class="fa fa-chevron-right"></i>
+              <a href="/How-to-build-Clover-from-source.html" rel="prev" title="How to build Clover from source">
+                How to build Clover from source <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -679,7 +679,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -690,7 +690,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -701,7 +701,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -821,7 +821,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      43.0k
+      46.8k
     </span>
   
 </div>
@@ -837,7 +837,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共43.0k字</span>
+  <span class="post-count">博客全站共46.8k字</span>
 </div>
 
         

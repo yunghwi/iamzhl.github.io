@@ -460,7 +460,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  575 字
+                  624 字
                 </span>
               
 
@@ -506,7 +506,7 @@
 <p>之后再看字符串的第一个字符，为’d’,之前有以a,b,c开头的长度为3的字符串，以a开头，后边2位需要在25个字母中选择（除了a），以b开头的后2位需要在24个字母中选择（除了a,b），以c开头的在23个字母（除了a,,b,c）中选择，即sum+=(C(25,2)+C(24,2)+C(23,2));</p>
 <p>然后再看下一个字母’g’，d与g之间有e,f,需要算以de开头以及以df开头的所有情况，即sum+=(C(21,1)+C(20,1))；</p>
 <p>最后再加上h-‘a’+1;</p>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;string.h&gt;</div><div class="line"></div><div class="line">int getCombinatorialNumber(int m, int n) &#123;</div><div class="line">    int n_Product=1, m_Product=1;</div><div class="line">    int i;</div><div class="line">    </div><div class="line">    for(i=1; i&lt;=n; i++) </div><div class="line">        n_Product*=i;</div><div class="line">    for(i=m; i&gt;m-n; i--) &#123;</div><div class="line">        m_Product*=i;</div><div class="line">        return m_Product/n_Product;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main(int argc, const char * argv[]) &#123;</div><div class="line">    int number;                                             		//要统计字符串的个数</div><div class="line">    int sum;                                                		//存放字符串的序号</div><div class="line">    int length;</div><div class="line">    char str[10];                                           		//存放字符串</div><div class="line">    int a[10];                                              		//存放字符串的每一位字符的值</div><div class="line">    int i, j;</div><div class="line">    scanf(&quot;%d&quot;, &amp;number);</div><div class="line">    </div><div class="line">    while(number--) &#123;</div><div class="line">        getchar();</div><div class="line">        sum=1;</div><div class="line">        scanf(&quot;%s&quot;, str);</div><div class="line">        length=(int)strlen(str);</div><div class="line">        </div><div class="line">        for(i=1; i&lt;length; i++) &#123;</div><div class="line">            sum += getCombinatorialNumber(26, i);             	//小于字符串长度的字符串个数</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(i=0; i&lt;length; i++) &#123;</div><div class="line">            a[i]=str[i]-96;                                 	//计算每个字符从a开始的序号数值, a~z分别对应1~26</div><div class="line">            //printf(&quot;%d &quot;, a[i]);</div><div class="line">        &#125;</div><div class="line">        //printf(&quot;%d\n&quot;, f(26, 2));</div><div class="line">        </div><div class="line">        int temp=1;</div><div class="line">        for(i=length; i&gt;0; i--) &#123;</div><div class="line">            for(j=temp; j&lt;a[length-i]; j++) &#123;</div><div class="line">                sum += getCombinatorialNumber(26-j, i-1);     //依次扫描字符，计算所有情况</div><div class="line">            &#125;</div><div class="line">            temp=a[length-i]+1;</div><div class="line">        &#125;</div><div class="line">        printf(&quot;%d\n&quot;, sum);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int getCombinatorialNumber(int m, int n) &#123;</span><br><span class="line">    int n_Product=1, m_Product=1;</span><br><span class="line">    int i;</span><br><span class="line">    </span><br><span class="line">    for(i=1; i&lt;=n; i++) </span><br><span class="line">        n_Product*=i;</span><br><span class="line">    for(i=m; i&gt;m-n; i--) &#123;</span><br><span class="line">        m_Product*=i;</span><br><span class="line">        return m_Product/n_Product;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main(int argc, const char * argv[]) &#123;</span><br><span class="line">    int number;                                             		//要统计字符串的个数</span><br><span class="line">    int sum;                                                		//存放字符串的序号</span><br><span class="line">    int length;</span><br><span class="line">    char str[10];                                           		//存放字符串</span><br><span class="line">    int a[10];                                              		//存放字符串的每一位字符的值</span><br><span class="line">    int i, j;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;number);</span><br><span class="line">    </span><br><span class="line">    while(number--) &#123;</span><br><span class="line">        getchar();</span><br><span class="line">        sum=1;</span><br><span class="line">        scanf(&quot;%s&quot;, str);</span><br><span class="line">        length=(int)strlen(str);</span><br><span class="line">        </span><br><span class="line">        for(i=1; i&lt;length; i++) &#123;</span><br><span class="line">            sum += getCombinatorialNumber(26, i);             	//小于字符串长度的字符串个数</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        for(i=0; i&lt;length; i++) &#123;</span><br><span class="line">            a[i]=str[i]-96;                                 	//计算每个字符从a开始的序号数值, a~z分别对应1~26</span><br><span class="line">            //printf(&quot;%d &quot;, a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        //printf(&quot;%d\n&quot;, f(26, 2));</span><br><span class="line">        </span><br><span class="line">        int temp=1;</span><br><span class="line">        for(i=length; i&gt;0; i--) &#123;</span><br><span class="line">            for(j=temp; j&lt;a[length-i]; j++) &#123;</span><br><span class="line">                sum += getCombinatorialNumber(26-j, i-1);     //依次扫描字符，计算所有情况</span><br><span class="line">            &#125;</span><br><span class="line">            temp=a[length-i]+1;</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;%d\n&quot;, sum);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/20170831-zidianxu-1.png" alt="20170831-zidianxu"></p>
 
       
@@ -591,8 +591,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Problem-about-coin-array.html" rel="prev" title="Problem about coin array">
-                Problem about coin array <i class="fa fa-chevron-right"></i>
+              <a href="/How-to-use-xcode-select-in-terminal.html" rel="prev" title="How to use xcode-select in terminal">
+                How to use xcode-select in terminal <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -681,7 +681,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -692,7 +692,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -703,7 +703,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -823,7 +823,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      43.0k
+      46.8k
     </span>
   
 </div>
@@ -839,7 +839,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共43.0k字</span>
+  <span class="post-count">博客全站共46.8k字</span>
 </div>
 
         

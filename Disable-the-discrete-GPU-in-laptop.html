@@ -462,7 +462,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  588 字
+                  597 字
                 </span>
               
 
@@ -508,9 +508,9 @@
 <p>感谢：</p>
 </blockquote>
 <ul>
-<li><p>PCBETA (远景论坛) <a href="http://bbs.pcbeta.com/viewthread-1760319-1-5.html" target="_blank" rel="external">yearjinheng 版主的帖子</a></p>
+<li><p>PCBETA (远景论坛) <a href="http://bbs.pcbeta.com/viewthread-1760319-1-5.html" target="_blank" rel="noopener">yearjinheng 版主的帖子</a></p>
 </li>
-<li><p>tonymacx86.com <a href="https://www.tonymacx86.com/threads/fix-window-server-service-only-ran-for-0-seconds-with-dual-gpu.233092/" target="_blank" rel="external">Rehabman 的帖子</a></p>
+<li><p>tonymacx86.com <a href="https://www.tonymacx86.com/threads/fix-window-server-service-only-ran-for-0-seconds-with-dual-gpu.233092/" target="_blank" rel="noopener">Rehabman 的帖子</a></p>
 </li>
 <li><p>转载请注明 <a href="https://blog.iamzhl.top/2017/10/04/%E5%B1%8F%E8%94%BD%E7%8B%AC%E6%98%BE/">原贴地址</a></p>
 </li>
@@ -535,11 +535,11 @@
 <h3 id="提取-ACPI-原始表单并提取-OFF-路径"><a href="#提取-ACPI-原始表单并提取-OFF-路径" class="headerlink" title="提取 ACPI 原始表单并提取 _OFF 路径"></a>提取 ACPI 原始表单并提取 _OFF 路径</h3><ul>
 <li>打开电脑进入四叶草引导界面，按下 F4 或者 FN+F4 即可提取原始表单到 /EFI/CLOVER/ACPI/origin ，然后进入 MAC 将 origin 拷贝到桌面删掉除 SSDT DSDT 之外的所有 aml 文件，打开终端：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cd ~/Desktop/origin </div><div class="line">$ iasl -da -dl *.aml </div><div class="line">$ rm *.aml </div><div class="line">$ grep -l Method.*_OFF *.dsl</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/Desktop/origin </span><br><span class="line">$ iasl -da -dl *.aml </span><br><span class="line">$ rm *.aml </span><br><span class="line">$ grep -l Method.*_OFF *.dsl</span><br></pre></td></tr></table></figure>
 <ul>
 <li>以我修改的一个机器为例，上一条命令得到的结果如下</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DSDT.dsl</div><div class="line">SSDT-7.dsl</div><div class="line">SSDT-8.dsl</div><div class="line">SSDT-9.dsl</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DSDT.dsl</span><br><span class="line">SSDT-7.dsl</span><br><span class="line">SSDT-8.dsl</span><br><span class="line">SSDT-9.dsl</span><br></pre></td></tr></table></figure>
 <ul>
 <li>依次打开这四个表单搜索 _OFF ，找到一个类似于下面这个函数：</li>
 </ul>
@@ -547,15 +547,15 @@
 <ul>
 <li>图片左下角的路径就是我们最终所需要的: </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_SB.PCI0.RP05.PEGP</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_SB.PCI0.RP05.PEGP</span><br></pre></td></tr></table></figure>
 <h3 id="修改-RehabMan-的-hotpatch-添加这个路径"><a href="#修改-RehabMan-的-hotpatch-添加这个路径" class="headerlink" title="修改 RehabMan 的 hotpatch 添加这个路径"></a>修改 RehabMan 的 hotpatch 添加这个路径</h3><ul>
 <li>首先去 RehanMan 的 GitHub 下载 hotpatch 包</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/RehabMan/OS-X-Clover-Laptop-Config.git</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/RehabMan/OS-X-Clover-Laptop-Config.git</span><br></pre></td></tr></table></figure>
 <ul>
 <li>我们只需要 SSDT-Disable_DGPU 这个文件，编译成 aml 文件</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ iasl SSDT-Disable_DGPU.dsl</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ iasl SSDT-Disable_DGPU.dsl</span><br></pre></td></tr></table></figure>
 <ul>
 <li>打开编译后得到的 aml 文件</li>
 </ul>
@@ -747,7 +747,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -758,7 +758,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -769,7 +769,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -889,7 +889,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      43.0k
+      46.8k
     </span>
   
 </div>
@@ -905,7 +905,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共43.0k字</span>
+  <span class="post-count">博客全站共46.8k字</span>
 </div>
 
         

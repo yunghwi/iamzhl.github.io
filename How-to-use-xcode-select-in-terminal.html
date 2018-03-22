@@ -458,7 +458,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  275 字
+                  280 字
                 </span>
               
 
@@ -500,14 +500,14 @@
 
       
         <script src="/assets/js/APlayer.min.js"> </script><h2 id="It’s-not-uncommon-developers-to-have-multiple-versions-of-Xcode-installed-For-example-I-typically-have-the-latest-beta-as-well-as-the-most-current-production-release-installed"><a href="#It’s-not-uncommon-developers-to-have-multiple-versions-of-Xcode-installed-For-example-I-typically-have-the-latest-beta-as-well-as-the-most-current-production-release-installed" class="headerlink" title="It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed."></a>It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.</h2><p>However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.<br>Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.<br>The command line options are below:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">xcode-select [-help]</div><div class="line">xcode-select [-switch xcode_folder_path]</div><div class="line">xcode-select [-print-path]</div><div class="line">xcode-select [-version]</div></pre></td></tr></table></figure>
-<h2 id="Here-is-how-to-print-the-current-Xcode-path"><a href="#Here-is-how-to-print-the-current-Xcode-path" class="headerlink" title="Here is how to print the current Xcode path:"></a>Here is how to print the current Xcode path:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ xcode-select --print-path</div><div class="line">/Developer/Applications/Xcode.app</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xcode-select [-help]</span><br><span class="line">xcode-select [-switch xcode_folder_path]</span><br><span class="line">xcode-select [-print-path]</span><br><span class="line">xcode-select [-version]</span><br></pre></td></tr></table></figure>
+<h2 id="Here-is-how-to-print-the-current-Xcode-path"><a href="#Here-is-how-to-print-the-current-Xcode-path" class="headerlink" title="Here is how to print the current Xcode path:"></a>Here is how to print the current Xcode path:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ xcode-select --print-path</span><br><span class="line">/Developer/Applications/Xcode.app</span><br></pre></td></tr></table></figure>
 <p>Line number 2 shows the current version of Xcode that is ‘active.’ If you are accessing xcodebuild or other related tools from a script, –print-path is the preferred means to determine the current Xcode location.<br>Use the -switch option to change to another version of Xcode on your system:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo xcode-select --switch /Applications/Xcode-beta.app/Contents/Developer</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo xcode-select --switch /Applications/Xcode-beta.app/Contents/Developer</span><br></pre></td></tr></table></figure>
 <p>This changes to the Xcode-beta 9 on my system. Note that root access is required to set the Xcode location, thus I have used sudo to execute the command as root.<br>Printing the path now looks as follows:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ xcode-select --print-path</div><div class="line">/Applications/Xcode-beta.app/Contents/Developer</div></pre></td></tr></table></figure>
-<h2 id="To-switch-back-to-Xcode-installed-in-the-Applications-directory"><a href="#To-switch-back-to-Xcode-installed-in-the-Applications-directory" class="headerlink" title="To switch back to Xcode installed in the /Applications directory:"></a>To switch back to Xcode installed in the /Applications directory:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo xcode-select -switch /Applications/Xcode.app/</div></pre></td></tr></table></figure>
-<h2 id="You-can-read-more-about-xcode-select-by-view-the-man-page-from-a-terminal"><a href="#You-can-read-more-about-xcode-select-by-view-the-man-page-from-a-terminal" class="headerlink" title="You can read more about xcode-select by view the man page from a terminal:"></a>You can read more about xcode-select by view the man page from a terminal:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ man xcode-select</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ xcode-select --print-path</span><br><span class="line">/Applications/Xcode-beta.app/Contents/Developer</span><br></pre></td></tr></table></figure>
+<h2 id="To-switch-back-to-Xcode-installed-in-the-Applications-directory"><a href="#To-switch-back-to-Xcode-installed-in-the-Applications-directory" class="headerlink" title="To switch back to Xcode installed in the /Applications directory:"></a>To switch back to Xcode installed in the /Applications directory:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo xcode-select -switch /Applications/Xcode.app/</span><br></pre></td></tr></table></figure>
+<h2 id="You-can-read-more-about-xcode-select-by-view-the-man-page-from-a-terminal"><a href="#You-can-read-more-about-xcode-select-by-view-the-man-page-from-a-terminal" class="headerlink" title="You can read more about xcode-select by view the man page from a terminal:"></a>You can read more about xcode-select by view the man page from a terminal:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ man xcode-select</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -581,8 +581,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Problem-about-coin-array.html" rel="next" title="Problem about coin array">
-                <i class="fa fa-chevron-left"></i> Problem about coin array
+              <a href="/Problem-about-dictionary-order.html" rel="next" title="Problem about dictionary order">
+                <i class="fa fa-chevron-left"></i> Problem about dictionary order
               </a>
             
           </div>
@@ -591,8 +591,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Check-CPU-frequences-by-using-AppleIntelInfo.html" rel="prev" title="Check CPU frequences by using AppleIntelInfo">
-                Check CPU frequences by using AppleIntelInfo <i class="fa fa-chevron-right"></i>
+              <a href="/Problem-about-coin-array.html" rel="prev" title="Problem about coin array">
+                Problem about coin array <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -681,7 +681,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -692,7 +692,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -703,7 +703,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -823,7 +823,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      43.0k
+      46.8k
     </span>
   
 </div>
@@ -839,7 +839,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共43.0k字</span>
+  <span class="post-count">博客全站共46.8k字</span>
 </div>
 
         

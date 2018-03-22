@@ -458,7 +458,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  483 字
+                  513 字
                 </span>
               
 
@@ -507,8 +507,8 @@
 <h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>一共十个问题，每个问题两种情况，要么对要么错，那么结果就会有 0000000000 ~ 1111111111 = pow（2，10）种，就可以用暴力搜索将所有情况枚举出来然后判断符合要求的情况；</p>
 <p>分数的控制可以直接利用遍历所有情况的 for 循环分别判断两种情况； </p>
 <p>如果用输出 1 代表回答正确， 0 代表错误，不难想到任何一个正整数对 2 取余结果只有 1 和 0 两种情况， 输出的时候也就成了进制转换问题； </p>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt; </div><div class="line">#include &lt;math.h&gt; </div><div class="line">int main() &#123;</div><div class="line">    int i,j;</div><div class="line">    int score,temp;</div><div class="line">		</div><div class="line">    for(i=0;i&lt;pow(2,10);i++)&#123;</div><div class="line">        temp=i;</div><div class="line">        score=10;</div><div class="line">            </div><div class="line">        for(j=0;j&lt;10;j++)&#123; </div><div class="line">            if(temp%2 == 1)</div><div class="line">                score*=2;</div><div class="line">            else</div><div class="line">                score-=j+1; </div><div class="line">            temp/=2;		</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        if(score==100)&#123;	</div><div class="line">            temp=i;</div><div class="line">            for(j=0;j&lt;10;j++)&#123;</div><div class="line">                printf(&quot;%d &quot;, temp%2);</div><div class="line">                temp/=2;</div><div class="line">            &#125;</div><div class="line">            printf(&quot;\n&quot;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1 0 1 1 0 1 0 0 0 0 </div><div class="line">0 1 1 1 0 1 0 0 0 0 </div><div class="line">0 0 1 0 1 1 0 0 1 1</div></pre></td></tr></table></figure>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt; </span><br><span class="line">#include &lt;math.h&gt; </span><br><span class="line">int main() &#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    int score,temp;</span><br><span class="line">		</span><br><span class="line">    for(i=0;i&lt;pow(2,10);i++)&#123;</span><br><span class="line">        temp=i;</span><br><span class="line">        score=10;</span><br><span class="line">            </span><br><span class="line">        for(j=0;j&lt;10;j++)&#123; </span><br><span class="line">            if(temp%2 == 1)</span><br><span class="line">                score*=2;</span><br><span class="line">            else</span><br><span class="line">                score-=j+1; </span><br><span class="line">            temp/=2;		</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if(score==100)&#123;	</span><br><span class="line">            temp=i;</span><br><span class="line">            for(j=0;j&lt;10;j++)&#123;</span><br><span class="line">                printf(&quot;%d &quot;, temp%2);</span><br><span class="line">                temp/=2;</span><br><span class="line">            &#125;</span><br><span class="line">            printf(&quot;\n&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 0 1 1 0 1 0 0 0 0 </span><br><span class="line">0 1 1 1 0 1 0 0 0 0 </span><br><span class="line">0 0 1 0 1 1 0 0 1 1</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -682,7 +682,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -693,7 +693,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -704,7 +704,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -824,7 +824,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      43.0k
+      46.8k
     </span>
   
 </div>
@@ -840,7 +840,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共43.0k字</span>
+  <span class="post-count">博客全站共46.8k字</span>
 </div>
 
         

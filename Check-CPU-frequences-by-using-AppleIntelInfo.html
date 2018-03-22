@@ -507,21 +507,21 @@
 
       
         <script src="/assets/js/APlayer.min.js"> </script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频</p>
-<h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><h2 id="首先下载-AppleIntelInfo-源码编译，打开终端，输入："><a href="#首先下载-AppleIntelInfo-源码编译，打开终端，输入：" class="headerlink" title="首先下载 AppleIntelInfo 源码编译，打开终端，输入："></a>首先下载 AppleIntelInfo 源码编译，打开终端，输入：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd ~/Desktop</div></pre></td></tr></table></figure>
+<h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><h2 id="首先下载-AppleIntelInfo-源码编译，打开终端，输入："><a href="#首先下载-AppleIntelInfo-源码编译，打开终端，输入：" class="headerlink" title="首先下载 AppleIntelInfo 源码编译，打开终端，输入："></a>首先下载 AppleIntelInfo 源码编译，打开终端，输入：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Desktop</span><br></pre></td></tr></table></figure>
 <p>回车继续敲：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/athlonreg/AppleIntelInfo.git</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/athlonreg/AppleIntelInfo.git</span><br></pre></td></tr></table></figure>
 <p>回车后就把 AppleIntelInfo 源码下载在桌面了</p>
 <p>然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/</span><br></pre></td></tr></table></figure>
 <p>将编译后的 AppleIntelInfo.kext 放到桌面</p>
 <h2 id="然后开始利用命令行看变频数据"><a href="#然后开始利用命令行看变频数据" class="headerlink" title="然后开始利用命令行看变频数据"></a>然后开始利用命令行看变频数据</h2><p>打开终端，输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd ~/Desktop</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Desktop</span><br></pre></td></tr></table></figure>
 <p>回车后继续敲</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R root:wheel AppleIntelInfo.kext</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R root:wheel AppleIntelInfo.kext</span><br></pre></td></tr></table></figure>
 <p>回车会提示输入密码，输入之后回车继续敲：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo kextutil AppleIntelInfo.kext</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo kextutil AppleIntelInfo.kext</span><br></pre></td></tr></table></figure>
 <p>再回车，接着敲：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cat /tmp/AppleIntelInfo.dat</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cat /tmp/AppleIntelInfo.dat</span><br></pre></td></tr></table></figure>
 <p>回车之后变频数据就出来了，例如我的机器：</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-01-1.png" alt="2017-09-05-01"></p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-02-1.png" alt="2017-09-05-02"></p>
@@ -607,8 +607,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/How-to-use-xcode-select-in-terminal.html" rel="next" title="How to use xcode-select in terminal">
-                <i class="fa fa-chevron-left"></i> How to use xcode-select in terminal
+              <a href="/Problem-about-coin-array.html" rel="next" title="Problem about coin array">
+                <i class="fa fa-chevron-left"></i> Problem about coin array
               </a>
             
           </div>
@@ -707,7 +707,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -718,7 +718,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -729,7 +729,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -849,7 +849,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      43.0k
+      46.8k
     </span>
   
 </div>
@@ -865,7 +865,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共43.0k字</span>
+  <span class="post-count">博客全站共46.8k字</span>
 </div>
 
         

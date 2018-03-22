@@ -507,13 +507,13 @@
 <h3 id="How-to-Adjust-the-Icon-Grid-Count-of-Launchpad-in-Mac-OS-X"><a href="#How-to-Adjust-the-Icon-Grid-Count-of-Launchpad-in-Mac-OS-X" class="headerlink" title="How to Adjust the Icon Grid Count of Launchpad in Mac OS X"></a>How to Adjust the Icon Grid Count of Launchpad in Mac OS X</h3><ul>
 <li>Open the Terminal found in /Applications/Utilities/ and enter the following command syntax, replacing the X numbers for the appropriate columns and grid icon counts</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.dock springboard-columns -int X;defaults write com.apple.dock springboard-rows -int X;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ defaults write com.apple.dock springboard-columns -int X;defaults write com.apple.dock springboard-rows -int X;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>It is:</p>
 <p>$ defaults write com.apple.dock springboard-columns -int X;defaults write com.apple.dock springboard-rows -int X;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</p>
 </blockquote>
 <p>For example, to set the Launchpad grid to 6×7 you’d use the following syntax:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.dock springboard-columns -int 7;defaults write com.apple.dock springboard-rows -int 6;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ defaults write com.apple.dock springboard-columns -int 7;defaults write com.apple.dock springboard-rows -int 6;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>It is:</p>
 <p>$ defaults write com.apple.dock springboard-columns -int 7;defaults write com.apple.dock springboard-rows -int 6;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</p>
@@ -529,21 +529,21 @@
 </blockquote>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com//2017-10-26-09.png" alt="2017-10-26-09"></p>
 <h3 id="How-to-return-to-the-default-setting"><a href="#How-to-return-to-the-default-setting" class="headerlink" title="How to return to the default setting"></a>How to return to the default setting</h3><p>If you want to return to the default setting, just change the column and row counts back to what yours was originally. The default on my MacBook Pro Retina display is a 5 x 7 grid, but yours may be different depending on screen size and screen resolution.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.dock springboard-columns -int 7;defaults write com.apple.dock springboard-rows -int 5;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ defaults write com.apple.dock springboard-columns -int 7;defaults write com.apple.dock springboard-rows -int 5;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>It is:</p>
 <p>$ defaults write com.apple.dock springboard-columns -int 7;defaults write com.apple.dock springboard-rows -int 5;defaults write com.apple.dock ResetLaunchPad -bool TRUE;killall Dock</p>
 </blockquote>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com//2017-10-26-10.png" alt="2017-10-26-10"></p>
 <h4 id="The-commands-for-customizing-the-Launchpad-layout-can-also-be-split-apart-if-desired-like-so"><a href="#The-commands-for-customizing-the-Launchpad-layout-can-also-be-split-apart-if-desired-like-so" class="headerlink" title="The commands for customizing the Launchpad layout can also be split apart if desired like so:"></a>The commands for customizing the Launchpad layout can also be split apart if desired like so:</h4><p><strong>Set the Launchpad Column Icon Count</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.dock springboard-columns -int 3</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ defaults write com.apple.dock springboard-columns -int 3</span><br></pre></td></tr></table></figure>
 <p><strong>Set the Launchpad Row App Icon Count</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.dock springboard-rows -int 4</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ defaults write com.apple.dock springboard-rows -int 4</span><br></pre></td></tr></table></figure>
 <p><strong>Reset Launchpad</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.dock ResetLaunchPad -bool TRUE;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ defaults write com.apple.dock ResetLaunchPad -bool TRUE;</span><br></pre></td></tr></table></figure>
 <p><strong>Relaunch the Dock with killall</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ killall Dock</div></pre></td></tr></table></figure>
-<h3 id="Credit"><a href="#Credit" class="headerlink" title="Credit:"></a>Credit:</h3><p>Original Source: <a href="http://osxdaily.com/2016/03/09/change-launchpad-icon-grid-layout-mac-os-x/" target="_blank" rel="external">OSXDaily</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ killall Dock</span><br></pre></td></tr></table></figure>
+<h3 id="Credit"><a href="#Credit" class="headerlink" title="Credit:"></a>Credit:</h3><p>Original Source: <a href="http://osxdaily.com/2016/03/09/change-launchpad-icon-grid-layout-mac-os-x/" target="_blank" rel="noopener">OSXDaily</a></p>
 
       
     </div>
@@ -713,7 +713,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -724,7 +724,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -735,7 +735,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -855,7 +855,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      43.0k
+      46.8k
     </span>
   
 </div>
@@ -871,7 +871,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共43.0k字</span>
+  <span class="post-count">博客全站共46.8k字</span>
 </div>
 
         

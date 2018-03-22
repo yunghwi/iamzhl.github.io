@@ -458,7 +458,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  207 字
+                  236 字
                 </span>
               
 
@@ -499,12 +499,12 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><h1 id="添加仿冒-ID-启用蓝牙："><a href="#添加仿冒-ID-启用蓝牙：" class="headerlink" title="添加仿冒 ID 启用蓝牙："></a>添加仿冒 ID 启用蓝牙：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">config.plist -&gt; Device -&gt; FakeID -&gt; WIFI 中填写 0x43a014e4</div></pre></td></tr></table></figure>
-<h1 id="在-Clover-的配置文件-config-plist-gt-Kernel-and-Kext-Patches-添加以下代码块"><a href="#在-Clover-的配置文件-config-plist-gt-Kernel-and-Kext-Patches-添加以下代码块" class="headerlink" title="在 Clover 的配置文件 config.plist -&gt; Kernel and Kext Patches 添加以下代码块"></a>在 Clover 的配置文件 config.plist -&gt; Kernel and Kext Patches 添加以下代码块</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;dict&gt;</div><div class="line">    &lt;key&gt;Comment&lt;/key&gt;</div><div class="line">    &lt;string&gt;10.11+-BT4LE-Handoff-Hotspot-lisai9093&lt;/string&gt;</div><div class="line">    &lt;key&gt;Disabled&lt;/key&gt;</div><div class="line">    &lt;false/&gt;</div><div class="line">    &lt;key&gt;Find&lt;/key&gt;</div><div class="line">    &lt;data&gt;</div><div class="line">    SIX/dEdIiwc=</div><div class="line">    &lt;/data&gt;</div><div class="line">    &lt;key&gt;Name&lt;/key&gt;</div><div class="line">    &lt;string&gt;IOBluetoothFamily&lt;/string&gt;</div><div class="line">    &lt;key&gt;Replace&lt;/key&gt;</div><div class="line">    &lt;data&gt;</div><div class="line">    Qb4PAAAA60Q=</div><div class="line">    &lt;/data&gt;</div><div class="line">&lt;/dict&gt;</div></pre></td></tr></table></figure>
-<h1 id="下载并安装驱动"><a href="#下载并安装驱动" class="headerlink" title="下载并安装驱动"></a>下载并安装驱动</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">https://github.com/vit9696/Lilu/releases</div><div class="line">https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/   </div><div class="line">https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/</div><div class="line">https://sourceforge.net/projects/airportbrcmfixup/files/?source=navbar</div></pre></td></tr></table></figure>
+        <script src="/assets/js/APlayer.min.js"> </script><h1 id="添加仿冒-ID-启用蓝牙："><a href="#添加仿冒-ID-启用蓝牙：" class="headerlink" title="添加仿冒 ID 启用蓝牙："></a>添加仿冒 ID 启用蓝牙：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.plist -&gt; Device -&gt; FakeID -&gt; WIFI 中填写 0x43a014e4</span><br></pre></td></tr></table></figure>
+<h1 id="在-Clover-的配置文件-config-plist-gt-Kernel-and-Kext-Patches-添加以下代码块"><a href="#在-Clover-的配置文件-config-plist-gt-Kernel-and-Kext-Patches-添加以下代码块" class="headerlink" title="在 Clover 的配置文件 config.plist -&gt; Kernel and Kext Patches 添加以下代码块"></a>在 Clover 的配置文件 config.plist -&gt; Kernel and Kext Patches 添加以下代码块</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;dict&gt;</span><br><span class="line">    &lt;key&gt;Comment&lt;/key&gt;</span><br><span class="line">    &lt;string&gt;10.11+-BT4LE-Handoff-Hotspot-lisai9093&lt;/string&gt;</span><br><span class="line">    &lt;key&gt;Disabled&lt;/key&gt;</span><br><span class="line">    &lt;false/&gt;</span><br><span class="line">    &lt;key&gt;Find&lt;/key&gt;</span><br><span class="line">    &lt;data&gt;</span><br><span class="line">    SIX/dEdIiwc=</span><br><span class="line">    &lt;/data&gt;</span><br><span class="line">    &lt;key&gt;Name&lt;/key&gt;</span><br><span class="line">    &lt;string&gt;IOBluetoothFamily&lt;/string&gt;</span><br><span class="line">    &lt;key&gt;Replace&lt;/key&gt;</span><br><span class="line">    &lt;data&gt;</span><br><span class="line">    Qb4PAAAA60Q=</span><br><span class="line">    &lt;/data&gt;</span><br><span class="line">&lt;/dict&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="下载并安装驱动"><a href="#下载并安装驱动" class="headerlink" title="下载并安装驱动"></a>下载并安装驱动</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/vit9696/Lilu/releases</span><br><span class="line">https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/   </span><br><span class="line">https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/</span><br><span class="line">https://sourceforge.net/projects/airportbrcmfixup/files/?source=navbar</span><br></pre></td></tr></table></figure>
 <p>   将以下驱动拷贝到 CLOVER/EFI/CLOVER/kexts/Other 文件夹下(由于 AirportBrcmFixup.kext 是依赖于 Lilu 运行的插件，所以还需要确保该目录下必须存在 Lilu.kext)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">AirportBrcmFixup.kext </div><div class="line">FakePCIID.kext </div><div class="line">FakePCIID_Broadcom_WiFi.kext </div><div class="line">BrcmPatchRAM2.kext </div><div class="line">BrcmFirmwareData.kext</div><div class="line">Lilu.kext</div></pre></td></tr></table></figure>
-<h1 id="重建缓存"><a href="#重建缓存" class="headerlink" title="重建缓存"></a>重建缓存</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo rm -rf /System/Library/Caches/com.apple.kext.caches/Startup/kernelcache</div><div class="line">sudo rm -rf /System/Library/PrelinkedKernels/prelinkedkernel</div><div class="line">sudo touch /System/Library/Extensions/ &amp;&amp; sudo kextcache -u /</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">AirportBrcmFixup.kext </span><br><span class="line">FakePCIID.kext </span><br><span class="line">FakePCIID_Broadcom_WiFi.kext </span><br><span class="line">BrcmPatchRAM2.kext </span><br><span class="line">BrcmFirmwareData.kext</span><br><span class="line">Lilu.kext</span><br></pre></td></tr></table></figure>
+<h1 id="重建缓存"><a href="#重建缓存" class="headerlink" title="重建缓存"></a>重建缓存</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /System/Library/Caches/com.apple.kext.caches/Startup/kernelcache</span><br><span class="line">sudo rm -rf /System/Library/PrelinkedKernels/prelinkedkernel</span><br><span class="line">sudo touch /System/Library/Extensions/ &amp;&amp; sudo kextcache -u /</span><br></pre></td></tr></table></figure>
 <h1 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h1>
       
     </div>
@@ -678,7 +678,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -689,7 +689,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -700,7 +700,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -774,7 +774,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#添加仿冒-ID-启用蓝牙："><span class="nav-number">1.</span> <span class="nav-text">添加仿冒 ID 启用蓝牙：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在-Clover-的配置文件-config-plist-gt-Kernel-and-Kext-Patches-添加以下代码块"><span class="nav-number">2.</span> <span class="nav-text">在 Clover 的配置文件 config.plist -> Kernel and Kext Patches 添加以下代码块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载并安装驱动"><span class="nav-number">3.</span> <span class="nav-text">下载并安装驱动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重建缓存"><span class="nav-number">4.</span> <span class="nav-text">重建缓存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重启"><span class="nav-number">5.</span> <span class="nav-text">重启</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#添加仿冒-ID-启用蓝牙："><span class="nav-number">1.</span> <span class="nav-text">添加仿冒 ID 启用蓝牙：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在-Clover-的配置文件-config-plist-gt-Kernel-and-Kext-Patches-添加以下代码块"><span class="nav-number">2.</span> <span class="nav-text">在 Clover 的配置文件 config.plist -&gt; Kernel and Kext Patches 添加以下代码块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载并安装驱动"><span class="nav-number">3.</span> <span class="nav-text">下载并安装驱动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重建缓存"><span class="nav-number">4.</span> <span class="nav-text">重建缓存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重启"><span class="nav-number">5.</span> <span class="nav-text">重启</span></a></li></ol></div>
             
 
           </div>
@@ -820,7 +820,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      43.0k
+      46.8k
     </span>
   
 </div>
@@ -836,7 +836,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共43.0k字</span>
+  <span class="post-count">博客全站共46.8k字</span>
 </div>
 
         

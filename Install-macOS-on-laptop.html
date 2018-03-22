@@ -143,7 +143,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018-02-12-01.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018-02-12-02.png">
-<meta property="og:updated_time" content="2018-02-12T03:30:25.000Z">
+<meta property="og:updated_time" content="2018-03-22T03:13:26.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Install macOS on laptop">
 <meta name="twitter:description" content="Install macOS on laptop 原版黑苹果安装参考贴">
@@ -461,7 +461,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  956 字
+                  2,123 字
                 </span>
               
 
@@ -477,7 +477,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  8 分钟
                 </span>
               
             </div>
@@ -513,25 +513,49 @@
 <p><code>drivers64UEFI</code>是由各种<code>EFI</code>驱动组成，在笔记本黑果需要用到的有<code>FSInject-64.efi</code>、<code>HFSPlus-64.efi</code>、<code>OsxAptioFixDrv-64.efi</code>、<code>APFS.efi</code>以及<code>OsxFatBinaryDrv-64.efi</code>，在新版<code>CLOVER</code>中只需要<code>FSInject-64.efi</code>、<code>HFSPlus-64.efi</code>、<code>OsxAptioFixDrv-64.efi</code>、以及<code>APFS.efi</code></p>
 <p><code>kexts</code>主要用于存储各种驱动(<code>OS X</code>称为内核扩展)</p>
 <p><code>themes</code>用以存储<code>CLOVER</code>引导界面的主题</p>
-<h4 id="根据机器配置定制kext"><a href="#根据机器配置定制kext" class="headerlink" title="根据机器配置定制kext"></a>根据机器配置定制<code>kext</code></h4><h4 id="根据机器配置定制config"><a href="#根据机器配置定制config" class="headerlink" title="根据机器配置定制config"></a>根据机器配置定制<code>config</code></h4><h4 id="了解drivers64UEFI各个-EFI文件的作用，精简引导"><a href="#了解drivers64UEFI各个-EFI文件的作用，精简引导" class="headerlink" title="了解drivers64UEFI各个.EFI文件的作用，精简引导"></a>了解<code>drivers64UEFI</code>各个<code>.EFI</code>文件的作用，精简引导</h4><h4 id="了解acpi的工作原理，完美黑苹果-进阶篇"><a href="#了解acpi的工作原理，完美黑苹果-进阶篇" class="headerlink" title="了解acpi的工作原理，完美黑苹果(进阶篇)"></a>了解<code>acpi</code>的工作原理，完美黑苹果(进阶篇)</h4><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<h4 id="根据机器配置定制kext"><a href="#根据机器配置定制kext" class="headerlink" title="根据机器配置定制kext"></a>根据机器配置定制<code>kext</code></h4><p><code>kext</code>在<code>EFI</code>的配置中是相当重要的，好的<code>kext</code>配置可以弥补<code>config</code>的不足，不好的<code>kext</code>配置也会让本应完美的<code>config</code>发挥不出作用。</p>
+<p><code>FakeSMC.kext</code>:<code>FakeSMC</code>是现今的⿊黑苹果过程中唯⼀一的”必要性”内核扩展程序。对于⿊黑苹果有着⽆与伦比的重要性，但是很多⼈并不知道<code>FakeSMC</code>为什么重要，只是知道必须有它才⾏行，。简⽽而⾔言之就是: <code>FakeSMC</code>是⽤用于将<code>PC</code>主板上的各种控制芯⽚片伪装成Mac独有的硬件控制芯片<code>SMC</code>以骗过系统从⽽而是系统正常启动的⼀一个内核扩展(其实很复杂,这⾥里不多说了)。在系统启动的阶段，<code>FakeSMC</code>负责告知系统有关主板上<code>SMC</code>芯⽚片(伪装出来的)的各种加密信息，欺骗系统。也就是说呢，无论你笔记本是什么配置，此驱动是必须的。</p>
+<p><code>ApplePS2SmartTouchPad.kext</code>、<code>VoodooI2C.kext</code>和<code>VoodooPS2Controller.kext</code>:此驱动用以驱动键盘鼠标以及触摸板，两者选择一个即可，两者区别就是适用的类型不一样，有<code>PS/2</code>、<code>Synaptics</code>、<code>alps</code>、<code>i2c</code>等等，其中<code>Synaptics</code>、<code>alps</code>用<code>ApplePS2SmartTouchPad.kext</code>适配性好一些，<code>VoodooI2C.kext</code>比较麻烦，仅适用于<code>i2c</code>触摸板。具体怎么确定走的总线类型，大家参考百度就好了，这里就不再赘述。</p>
+<p><code>FakePCIID.kext</code>:这个kext的目的是与<code>IOPCIDevice</code>设备建立连接，以便当另一个驱动程序连接到同一设备时，它可以提供备用的<code>PCI ID</code>。也就是说，如果用到<code>Fake-PCI-ID</code>中的其他任何<code>kext</code>的话，此驱动都是必要的。</p>
+<p><code>FakePCIID_Intel_HD_Graphics.kext</code>:此驱动主要用于核显<code>HD4200 HD4400 HD4600 P4600</code>、<code>Iris 540 Iris 550 Iris Pro 580</code>、<code>HD510 HD515 HD520 HD530 P530</code>（多数530不需要这个）、<code>P4000</code>、<code>P6300 - 162a</code>、<code>UHD620 KabyLake-R</code>、<code>UHD630 CoffeeLake</code>。</p>
+<p><code>FakePCIID_Intel_HDMI_Audio.kext</code>:其目的是为不支持的<code>HDAU</code>提供支持(通常称为<code>B0D3</code>，但需要将其重命名为<code>HDAU</code>，以满足<code>Apple</code>的期望值)在<code>Haswell</code>以上的系统中提供<code>HDMI-audio</code>的设备。</p>
+<p><code>FakePCIID_BCM57XX_as_BCM57765.kext</code>:这个<code>kext</code>将与众多不受支持的<code>BCM57XX</code>以太网设备建立连接，以使本机驱动程序为兼容的更广泛的<code>BCM</code>以太网芯片组工作。</p>
+<p><code>FakePCIID_Intel_GbX.kext</code>:这个<code>kext</code>将与一些<code>Intel</code>以太网设备建立连接，以使基于<code>Intel</code>芯片组的驱动程序工作。</p>
+<p><code>FakePCIID_XHCIMux.kext</code>:将会连接到8086:1e31, 8086:9c31, 8086:9cb1, 8086:9c31, 8086:8cb1这个注入器是正常的<code>FakePCIID</code>任务的一部分。它实际上并没有伪造任何<code>PCI id</code>。相反，它将某些值强加于<code>Intel XHCI USB3</code>控制器上的<code>XUSB2PR</code> (PCI配置偏移<code>0xD0</code>)。其效果是将任何<code>USB2</code>设备与<code>XHC</code>端口上的<code>USB2</code>引脚连接到<code>EHC1</code>。换句话说，使用USB2驱动而不是<code>USB3</code>驱动程序(<code>AppleUSBEHCI vs AppleUSBXHCI</code>)处理<code>USB2</code>设备。</p>
+<p><code>FakePCIID_AR9280_as_AR946x</code>:这是<code>FakePCIID.kext</code>的特殊应用，是在一个<code>AR9280</code>被重新命名为其他设备的情况下使用的。例如，在联想<code>u430</code>中，将一个<code>AR9280</code>作为<code>AR946x</code>重新命名是很有用的，因为该设备可以被<code>BIOS</code>白名单所允许，而<code>AR9280</code>不是。通过使用<code>FakePCIID</code>，我们可以将<code>PCI id</code>重新映射回<code>AR9280</code> (168c:002a)，即使该设备本身报告的是168c:0034。</p>
+<p><code>FakePCIID_Broadcom_WiFi.kext</code>:这个<code>kext</code>将连接到14e4:43b1, 14e4:4357, 14e4:4331, 14e4:4353, 14e4:432b, 14e4 . 432b, 14e4:43a3，或14e4:43a0。以及106b:4e, 14e4:4312, 14e4:4313, 14e4:4318, 14e4:431a, 14e4:4320, 14e4:4324, 14e4:4324, 14e4:4328, 14e4:432d。<br>最初是为<code>BCM94352Z</code>创建的，这个特殊的FakePCIID应用程序。在使用多种支持的Broadcom WiFi设备时，kext被用来模拟真正的<code>Apple Airport</code>(苹果无线网卡)。</p>
+<p><code>ACPIBatteryManager.kext</code>:用以使笔记本正确显示电量，但通常需要配合<code>DSDT</code>的<code>patch</code>才能发挥作用。</p>
+<p><code>VoodooHDA.kext</code>:万能声卡驱动，用以禁用<code>AppleHDA</code>来驱动声卡。</p>
+<p><code>AppleALC.kext</code>:通过对<code>AppleHDA</code>的动态<code>patch</code>实现对<code>AppleHDA</code>的完整加载。</p>
+<p><code>Lilu.kext</code>:一个开放源码的内核扩展，为macOS系统提供了一个任意的kext、库和程序补丁的平台。</p>
+<p><code>IntelGraphicsDVMTFixup.kext</code>:修复因<code>BIOS</code>显存分配不足造成的<code>KP</code>。建议<code>broadwell+</code>平台使用。</p>
+<p><code>IntelGraphicsFixup.kext</code>:动态修复核显的各种问题(例如腾讯视频死机，开机二阶段花屏等)，建议<code>Haswell+</code>平台使用。</p>
+<p><code>CoreDisplayFixup.kext</code>:为不受支持的4K机器(非<code>Iris</code>)开启高分辨率支持。</p>
+<p><code>AzulPatcher4600.kext</code>:针对<code>HD4600</code>的额外修复，仅推荐<code>HD4600</code>使用。</p>
+<p><code>HibernationFixup.kext</code>:修复睡眠，以支持某些机器在3和28休眠模式下的正常休眠。</p>
+<p><code>NvidiaGraphicsFixup.kext</code>:修复某些n卡的黑屏。</p>
+<p><code>WhateverGreen.kext</code>:用以驱动A卡。</p>
+<p><code>RealtekRTL8111.kext</code>:用以驱动<code>RealtekRTL8111.kext</code>以太网卡设备。</p>
+<p><code>AppleIGB.kext</code>、<code>IntelMausiEthernet.kext</code>:用以驱动<code>Intel</code>板载网卡设备。</p>
+<h4 id="根据机器配置定制config"><a href="#根据机器配置定制config" class="headerlink" title="根据机器配置定制config"></a>根据机器配置定制<code>config</code></h4><h4 id="了解drivers64UEFI各个-EFI文件的作用，精简引导"><a href="#了解drivers64UEFI各个-EFI文件的作用，精简引导" class="headerlink" title="了解drivers64UEFI各个.EFI文件的作用，精简引导"></a>了解<code>drivers64UEFI</code>各个<code>.EFI</code>文件的作用，精简引导</h4><h4 id="了解acpi的工作原理，完美黑苹果-进阶篇"><a href="#了解acpi的工作原理，完美黑苹果-进阶篇" class="headerlink" title="了解acpi的工作原理，完美黑苹果(进阶篇)"></a>了解<code>acpi</code>的工作原理，完美黑苹果(进阶篇)</h4><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
 <li>集成<code>CLOVER</code>的原版镜像<blockquote>
-<p>链接:<a href="https://pan.baidu.com/s/1gfTmRj9" target="_blank" rel="external">https://pan.baidu.com/s/1gfTmRj9</a>  密码:s3dv</p>
+<p>链接:<a href="https://pan.baidu.com/s/1gfTmRj9" target="_blank" rel="noopener">https://pan.baidu.com/s/1gfTmRj9</a>  密码:s3dv</p>
 </blockquote>
 </li>
 <li><code>Transmac</code><blockquote>
-<p>链接:<a href="https://pan.baidu.com/s/1oAn79Zc" target="_blank" rel="external">https://pan.baidu.com/s/1oAn79Zc</a>  密码:yafn</p>
+<p>链接:<a href="https://pan.baidu.com/s/1oAn79Zc" target="_blank" rel="noopener">https://pan.baidu.com/s/1oAn79Zc</a>  密码:yafn</p>
 </blockquote>
 </li>
 <li><code>easyUEFI</code><blockquote>
-<p>链接:<a href="https://pan.baidu.com/s/1nwqbnMp" target="_blank" rel="external">https://pan.baidu.com/s/1nwqbnMp</a>  密码:gxoc</p>
+<p>链接:<a href="https://pan.baidu.com/s/1nwqbnMp" target="_blank" rel="noopener">https://pan.baidu.com/s/1nwqbnMp</a>  密码:gxoc</p>
 </blockquote>
 </li>
 <li><code>Clover Configurator</code>四叶草助手<blockquote>
-<p>链接:<a href="https://pan.baidu.com/s/1ht2wFQW" target="_blank" rel="external">https://pan.baidu.com/s/1ht2wFQW</a>  密码:tbce</p>
+<p>链接:<a href="https://pan.baidu.com/s/1ht2wFQW" target="_blank" rel="noopener">https://pan.baidu.com/s/1ht2wFQW</a>  密码:tbce</p>
 </blockquote>
 </li>
 <li><code>DiskGenius</code><blockquote>
-<p>链接:<a href="https://pan.baidu.com/s/1cVyULo" target="_blank" rel="external">https://pan.baidu.com/s/1cVyULo</a>  密码:pfrm</p>
+<p>链接:<a href="https://pan.baidu.com/s/1cVyULo" target="_blank" rel="noopener">https://pan.baidu.com/s/1cVyULo</a>  密码:pfrm</p>
 </blockquote>
 </li>
 <li>鲁大师/<code>AIDA64</code>(推荐)/也可以用设备管理器<blockquote>
@@ -541,7 +565,7 @@
 </ul>
 <h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><h4 id="利用Transmac将原版镜像写入u盘"><a href="#利用Transmac将原版镜像写入u盘" class="headerlink" title="利用Transmac将原版镜像写入u盘"></a>利用<code>Transmac</code>将原版镜像写入u盘</h4><h4 id="利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext"><a href="#利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext" class="headerlink" title="利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext"></a>利用鲁大师等软件查看自己机器的配置信息，来定制<code>config</code>和需要用的<code>kext</code></h4><h4 id="重启利用U盘启动选择安装盘"><a href="#重启利用U盘启动选择安装盘" class="headerlink" title="重启利用U盘启动选择安装盘"></a>重启利用<code>U</code>盘启动选择安装盘</h4><h4 id="选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs"><a href="#选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs" class="headerlink" title="选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs"></a>选择磁盘工具，并将事先分好的分区抹成扩展日志式或者<code>apfs</code></h4><h4 id="退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装"><a href="#退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装" class="headerlink" title="退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装"></a>退出磁盘工具，选择安装<code>macos</code>选中刚才抹掉的分区开始安装</h4><h3 id="转移CLOVER到硬盘ESP，摆脱U盘引导"><a href="#转移CLOVER到硬盘ESP，摆脱U盘引导" class="headerlink" title="转移CLOVER到硬盘ESP，摆脱U盘引导"></a>转移<code>CLOVER</code>到硬盘<code>ESP</code>，摆脱<code>U</code>盘引导</h3><h3 id="后期的驱动安装以及优化"><a href="#后期的驱动安装以及优化" class="headerlink" title="后期的驱动安装以及优化"></a>后期的驱动安装以及优化</h3><h4 id="屏蔽无用的独显降低温度"><a href="#屏蔽无用的独显降低温度" class="headerlink" title="屏蔽无用的独显降低温度"></a>屏蔽无用的独显降低温度</h4><p>参考我之前的帖子：<a href="https://blog.iamzhl.top/2017/10/04/Disable%20the%20discrete%20GPU%20in%20laptop/">Disable the discrete GPU in laptop</a></p>
 <h4 id="摆脱万能声卡，利用AppleALC加载原生声卡"><a href="#摆脱万能声卡，利用AppleALC加载原生声卡" class="headerlink" title="摆脱万能声卡，利用AppleALC加载原生声卡"></a>摆脱万能声卡，利用<code>AppleALC</code>加载原生声卡</h4><p>参考我之前的帖子：<a href="https://blog.iamzhl.top/2017/11/06/%E8%B0%88%E8%B0%88%E9%BB%91%E6%9E%9C%E7%9A%84%E5%A3%B0%E5%8D%A1/">谈谈黑果的声卡</a></p>
-<h4 id="通过对DSDT打补丁完善电池显示"><a href="#通过对DSDT打补丁完善电池显示" class="headerlink" title="通过对DSDT打补丁完善电池显示"></a>通过对<code>DSDT</code>打补丁完善电池显示</h4><p>参考<code>pcbeta</code><a href="http://bbs.pcbeta.com/viewthread-1595139-1-1.html" target="_blank" rel="external">daxuexinsheng的帖子</a><br><code>tonymacx86</code><a href="https://www.tonymacx86.com/threads/guide-how-to-patch-dsdt-for-working-battery-status.116102/" target="_blank" rel="external">RehabMan的帖子</a></p>
+<h4 id="通过对DSDT打补丁完善电池显示"><a href="#通过对DSDT打补丁完善电池显示" class="headerlink" title="通过对DSDT打补丁完善电池显示"></a>通过对<code>DSDT</code>打补丁完善电池显示</h4><p>参考<code>pcbeta</code><a href="http://bbs.pcbeta.com/viewthread-1595139-1-1.html" target="_blank" rel="noopener">daxuexinsheng的帖子</a><br><code>tonymacx86</code><a href="https://www.tonymacx86.com/threads/guide-how-to-patch-dsdt-for-working-battery-status.116102/" target="_blank" rel="noopener">RehabMan的帖子</a></p>
 <h4 id="加载x86实现变频和原生电源管理，完善节能器信息"><a href="#加载x86实现变频和原生电源管理，完善节能器信息" class="headerlink" title="加载x86实现变频和原生电源管理，完善节能器信息"></a>加载<code>x86</code>实现变频和原生电源管理，完善节能器信息</h4><ul>
 <li>对于<code>Haswell</code>以及<code>Broadwell</code>平台，利用<code>ssdtPRGen</code>生成<code>SSDT</code>，在<code>config</code>中<code>drop</code>掉<code>CpuPm</code>和<code>Cpu0Ist</code>两个表，并利用<code>FakeSMC</code>或<code>DSDT</code>或<code>hotpatch</code>加载<code>AppleLPC</code></li>
 <li>对于<code>Skylake</code>及以上平台，选择支持<code>HWP</code>的合适的机型，并勾选<code>HWPEnable</code>即可开启完整电源特性</li>
@@ -717,7 +741,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -728,7 +752,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -739,7 +763,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -859,7 +883,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      43.0k
+      46.8k
     </span>
   
 </div>
@@ -875,7 +899,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共43.0k字</span>
+  <span class="post-count">博客全站共46.8k字</span>
 </div>
 
         
