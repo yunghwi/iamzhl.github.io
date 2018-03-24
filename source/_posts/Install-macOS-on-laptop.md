@@ -42,7 +42,7 @@ tags:
 
 `FakePCIID.kext`:这个kext的目的是与`IOPCIDevice`设备建立连接，以便当另一个驱动程序连接到同一设备时，它可以提供备用的`PCI ID`。也就是说，如果用到`Fake-PCI-ID`中的其他任何`kext`的话，此驱动都是必要的。
 
-`FakePCIID_Intel_HD_Graphics.kext `:此驱动主要用于核显`HD4200 HD4400 HD4600 P4600`、`Iris 540 Iris 550 Iris Pro 580`、`HD510 HD515 HD520 HD530 P530`（多数530不需要这个）、`P4000`、`P6300 - 162a`、`UHD620 KabyLake-R `、`UHD630 CoffeeLake`。
+`FakePCIID_Intel_HD_Graphics.kext`:此驱动主要用于核显`HD4200 HD4400 HD4600 P4600`、`Iris 540 Iris 550 Iris Pro 580`、`HD510 HD515 HD520 HD530 P530`（多数530不需要这个）、`P4000`、`P6300 - 162a`、`UHD620 KabyLake-R `、`UHD630 CoffeeLake`。
 
 `FakePCIID_Intel_HDMI_Audio.kext`:其目的是为不支持的`HDAU`提供支持(通常称为`B0D3`，但需要将其重命名为`HDAU`，以满足`Apple`的期望值)在`Haswell`以上的系统中提供`HDMI-audio`的设备。
 
@@ -84,6 +84,7 @@ tags:
 `AppleIGB.kext`、`IntelMausiEthernet.kext`:用以驱动`Intel`板载网卡设备。
 
 #### 根据机器配置定制`config`
+这里遵循一个原则，尽可能简单的设置`config`，不知道具体作用的就让他空着好了。
 
 #### 了解`drivers64UEFI`各个`.EFI`文件的作用，精简引导
 
@@ -105,14 +106,101 @@ tags:
 
 ### 安装步骤
 #### 利用`Transmac`将原版镜像写入u盘
+打开`TransMac`,右键选择欲制作的`USB`盘符，选择Restore with Disk Image,选择下载好的dmg文件,会弹出窗口,提示将要格式化USB磁盘,点击OK按钮继续，耐心等待写盘的完成。写入完成，若弹出对话框提示将其格式化，点击取消。
+![TransMac1](http://ovefvi4g3.bkt.clouddn.com/TransMac1.png)
+
+![TransMac2](http://ovefvi4g3.bkt.clouddn.com/TransMac2.png)
+
+![TransMac3](http://ovefvi4g3.bkt.clouddn.com/TransMac3.png)
+
+![TransMac4](http://ovefvi4g3.bkt.clouddn.com/TransMac4.png)
+
 
 #### 利用鲁大师等软件查看自己机器的配置信息，来定制`config`和需要用的`kext`
+这一步想必不用我多说，大家利用鲁大师或者`AIDA64`看一下自己配置好了。有一点提示，尽量在安装过程中不考虑各种`kext`，尽量用少的驱动去安装，安装完成后再完善驱动，这样可以减少许多安装中的错误，也利于排错，但需要注意的必备的驱动一定要放，例如`FakeSMC.kext`、还有就是键盘驱动。当然老鸟无所谓了，直接把需要用到的都放上就`OK`了。以我自己机器为例，配置如下：
+
+```
+主板       Asus X455LD Intel Haswell-ULT - Lynx Point-LP
+
+独立显卡    Nvidia GeForce 820M 2G 
+
+核心显卡    HD4400
+
+声卡        Realtek @ Intel Lynx Point-LP  High Definition Audio (CX20751)
+
+以太网卡    Realtek RTL8168/8111/8112 Gigabit Ethernet Controller / Asus
+
+无线网卡    Atheros AR956X
+```
+
+按照上面的驱动简要说明，我以太网卡是`RTL8111`，那么需要`RTL8111.kext`、核心显卡是`HD4400`，就需要`FakePCIID.kext`、`FakePCIID_Intel_HD_Graphics.kext`，声卡比较麻烦，暂时不考虑，无线网卡是`Atheros AR956X`，那么我需要`ATH9KFixup.kext`，又要依赖`Lilu.kext`，所以需要`Lilu.kext`，四代低压机器，我需要`IntelGraphicsFixup.kext`来解决腾讯视频死机的问题，所以放上这个。暂时只考虑这些驱动吧，下面就进入安装阶段。
 
 #### 重启利用`U`盘启动选择安装盘
+开机按`esc`键进入启动项列表，不同厂商热键不同，参考下图：
+![BIOS](http://ovefvi4g3.bkt.clouddn.com/BIOS.JPG)
+
+选择`U`盘进入，这里就不介绍太多了，大家玩黑果的想必对`BIOS`不会陌生，不过需要注意的是需要将`BIOS`中的安全启动关掉。
+
+接下来就会进入`CLOVER`引导界面
+![XiaoMiCloverboot](http://ovefvi4g3.bkt.clouddn.com/XiaoMiCloverboot.png)
+
+通过键盘方向键选中`Boot OS X Install from ***`，`***`代表你的镜像名字，然后回车。
+![ParallelsPicture](http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture.png)
+
+
+等待进入安装界面。
+![ParallelsPicture1](http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture1.png)
+
+这里选择自己擅长的语言好啦。
 
 #### 选择磁盘工具，并将事先分好的分区抹成扩展日志式或者`apfs`
+选择磁盘工具，并继续
+![ParallelsPicture0](http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture0.png)
+
+选择`显示所有设备`
+![ParallelsPicture2](http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture2.png)
+
+选择SSD Media,点击抹掉按钮,选择默认的`Mac OS`扩展(日志型)，在`10.13`中如果装在`SSD`上，也可以选择`APFS`,将名称修改为`Macintosh HD`（名字随意啦，自己喜欢就好，但要是英文）,点击抹掉按钮，抹掉完成后，点击完成按钮。
+![ParallelsPicture7](http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture7.png)
+
+然后退出磁盘工具，到这里，磁盘工具的动作就已经结束了。
 
 #### 退出磁盘工具，选择安装`macos`选中刚才抹掉的分区开始安装
+选择安装`macOS`，并继续
+![ParallelsPicture8](http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture8.png)
+
+接下来按照提示一步一步来就好了，有一步需要注意的就是选择安装分区时，选择自己之前抹掉的那个分区。
+![ParallelsPicture 14](http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture 14.png)
+
+接下来静静等待，会有一次自动重启，依然用`U`盘启动，注意这次会在引导界面多出一个图标，选择除第一次选的图标外的另一个图标。然后继续等待
+![](http://ovefvi4g3.bkt.clouddn.com/15218990390224.png)
+
+系统安装完成后,重启进入系统设置向导，接下来根据下面的图一步一步设置就好了
+![](http://ovefvi4g3.bkt.clouddn.com/15218990840183.png)
+
+![](http://ovefvi4g3.bkt.clouddn.com/15218990903045.png)
+
+![](http://ovefvi4g3.bkt.clouddn.com/15218990970841.png)
+
+这里选择现在不传输任何信息
+![](http://ovefvi4g3.bkt.clouddn.com/15218991032937.png)
+
+![](http://ovefvi4g3.bkt.clouddn.com/15218991134189.png)
+
+![](http://ovefvi4g3.bkt.clouddn.com/15218991182539.png)
+
+![](http://ovefvi4g3.bkt.clouddn.com/15218991276552.png)
+
+![](http://ovefvi4g3.bkt.clouddn.com/15218991350935.png)
+
+![](http://ovefvi4g3.bkt.clouddn.com/15218991452868.png)
+
+这里注意，一定不要选择加密！！！
+![](http://ovefvi4g3.bkt.clouddn.com/15218991526744.png)
+
+![](http://ovefvi4g3.bkt.clouddn.com/15218991591740.png)
+
+![](http://ovefvi4g3.bkt.clouddn.com/15218991634647.png)
 
 ### 转移`CLOVER`到硬盘`ESP`，摆脱`U`盘引导
 
