@@ -105,7 +105,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="黑苹果,Hacintosh," />
+  <meta name="keywords" content="Hacintosh,黑苹果," />
 
 
 
@@ -134,7 +134,7 @@
 </script>
 
 <meta name="description" content="Install macOS on laptop 原版黑苹果安装参考贴">
-<meta name="keywords" content="黑苹果,Hacintosh">
+<meta name="keywords" content="Hacintosh,黑苹果">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Install macOS on laptop">
 <meta property="og:url" content="https://blog.iamzhl.top/Install-macOS-on-laptop.html">
@@ -143,7 +143,33 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018-02-12-01.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018-02-12-02.png">
-<meta property="og:updated_time" content="2018-03-22T03:13:26.841Z">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/TransMac1.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/TransMac2.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/TransMac3.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/TransMac4.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/BIOS.JPG">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/XiaoMiCloverboot.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture1.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture0.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture2.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture7.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture8.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture 14.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218990390224.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218990840183.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218990903045.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218990970841.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991032937.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991134189.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991182539.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991276552.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991350935.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991452868.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991526744.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991591740.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991634647.png">
+<meta property="og:updated_time" content="2018-03-24T13:52:08.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Install macOS on laptop">
 <meta name="twitter:description" content="Install macOS on laptop 原版黑苹果安装参考贴">
@@ -461,7 +487,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,123 字
+                  2,994 字
                 </span>
               
 
@@ -477,7 +503,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8 分钟
+                  11 分钟
                 </span>
               
             </div>
@@ -537,7 +563,8 @@
 <p><code>WhateverGreen.kext</code>:用以驱动A卡。</p>
 <p><code>RealtekRTL8111.kext</code>:用以驱动<code>RealtekRTL8111.kext</code>以太网卡设备。</p>
 <p><code>AppleIGB.kext</code>、<code>IntelMausiEthernet.kext</code>:用以驱动<code>Intel</code>板载网卡设备。</p>
-<h4 id="根据机器配置定制config"><a href="#根据机器配置定制config" class="headerlink" title="根据机器配置定制config"></a>根据机器配置定制<code>config</code></h4><h4 id="了解drivers64UEFI各个-EFI文件的作用，精简引导"><a href="#了解drivers64UEFI各个-EFI文件的作用，精简引导" class="headerlink" title="了解drivers64UEFI各个.EFI文件的作用，精简引导"></a>了解<code>drivers64UEFI</code>各个<code>.EFI</code>文件的作用，精简引导</h4><h4 id="了解acpi的工作原理，完美黑苹果-进阶篇"><a href="#了解acpi的工作原理，完美黑苹果-进阶篇" class="headerlink" title="了解acpi的工作原理，完美黑苹果(进阶篇)"></a>了解<code>acpi</code>的工作原理，完美黑苹果(进阶篇)</h4><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<h4 id="根据机器配置定制config"><a href="#根据机器配置定制config" class="headerlink" title="根据机器配置定制config"></a>根据机器配置定制<code>config</code></h4><p>这里遵循一个原则，尽可能简单的设置<code>config</code>，不知道具体作用的就让他空着好了。</p>
+<h4 id="了解drivers64UEFI各个-EFI文件的作用，精简引导"><a href="#了解drivers64UEFI各个-EFI文件的作用，精简引导" class="headerlink" title="了解drivers64UEFI各个.EFI文件的作用，精简引导"></a>了解<code>drivers64UEFI</code>各个<code>.EFI</code>文件的作用，精简引导</h4><h4 id="了解acpi的工作原理，完美黑苹果-进阶篇"><a href="#了解acpi的工作原理，完美黑苹果-进阶篇" class="headerlink" title="了解acpi的工作原理，完美黑苹果(进阶篇)"></a>了解<code>acpi</code>的工作原理，完美黑苹果(进阶篇)</h4><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
 <li>集成<code>CLOVER</code>的原版镜像<blockquote>
 <p>链接:<a href="https://pan.baidu.com/s/1gfTmRj9" target="_blank" rel="noopener">https://pan.baidu.com/s/1gfTmRj9</a>  密码:s3dv</p>
 </blockquote>
@@ -563,7 +590,39 @@
 </blockquote>
 </li>
 </ul>
-<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><h4 id="利用Transmac将原版镜像写入u盘"><a href="#利用Transmac将原版镜像写入u盘" class="headerlink" title="利用Transmac将原版镜像写入u盘"></a>利用<code>Transmac</code>将原版镜像写入u盘</h4><h4 id="利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext"><a href="#利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext" class="headerlink" title="利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext"></a>利用鲁大师等软件查看自己机器的配置信息，来定制<code>config</code>和需要用的<code>kext</code></h4><h4 id="重启利用U盘启动选择安装盘"><a href="#重启利用U盘启动选择安装盘" class="headerlink" title="重启利用U盘启动选择安装盘"></a>重启利用<code>U</code>盘启动选择安装盘</h4><h4 id="选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs"><a href="#选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs" class="headerlink" title="选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs"></a>选择磁盘工具，并将事先分好的分区抹成扩展日志式或者<code>apfs</code></h4><h4 id="退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装"><a href="#退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装" class="headerlink" title="退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装"></a>退出磁盘工具，选择安装<code>macos</code>选中刚才抹掉的分区开始安装</h4><h3 id="转移CLOVER到硬盘ESP，摆脱U盘引导"><a href="#转移CLOVER到硬盘ESP，摆脱U盘引导" class="headerlink" title="转移CLOVER到硬盘ESP，摆脱U盘引导"></a>转移<code>CLOVER</code>到硬盘<code>ESP</code>，摆脱<code>U</code>盘引导</h3><h3 id="后期的驱动安装以及优化"><a href="#后期的驱动安装以及优化" class="headerlink" title="后期的驱动安装以及优化"></a>后期的驱动安装以及优化</h3><h4 id="屏蔽无用的独显降低温度"><a href="#屏蔽无用的独显降低温度" class="headerlink" title="屏蔽无用的独显降低温度"></a>屏蔽无用的独显降低温度</h4><p>参考我之前的帖子：<a href="https://blog.iamzhl.top/2017/10/04/Disable%20the%20discrete%20GPU%20in%20laptop/">Disable the discrete GPU in laptop</a></p>
+<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><h4 id="利用Transmac将原版镜像写入u盘"><a href="#利用Transmac将原版镜像写入u盘" class="headerlink" title="利用Transmac将原版镜像写入u盘"></a>利用<code>Transmac</code>将原版镜像写入u盘</h4><p>打开<code>TransMac</code>,右键选择欲制作的<code>USB</code>盘符，选择Restore with Disk Image,选择下载好的dmg文件,会弹出窗口,提示将要格式化USB磁盘,点击OK按钮继续，耐心等待写盘的完成。写入完成，若弹出对话框提示将其格式化，点击取消。<br><img src="http://ovefvi4g3.bkt.clouddn.com/TransMac1.png" alt="TransMac1"></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/TransMac2.png" alt="TransMac2"></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/TransMac3.png" alt="TransMac3"></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/TransMac4.png" alt="TransMac4"></p>
+<h4 id="利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext"><a href="#利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext" class="headerlink" title="利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext"></a>利用鲁大师等软件查看自己机器的配置信息，来定制<code>config</code>和需要用的<code>kext</code></h4><p>这一步想必不用我多说，大家利用鲁大师或者<code>AIDA64</code>看一下自己配置好了。有一点提示，尽量在安装过程中不考虑各种<code>kext</code>，尽量用少的驱动去安装，安装完成后再完善驱动，这样可以减少许多安装中的错误，也利于排错，但需要注意的必备的驱动一定要放，例如<code>FakeSMC.kext</code>、还有就是键盘驱动。当然老鸟无所谓了，直接把需要用到的都放上就<code>OK</code>了。以我自己机器为例，配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">主板       Asus X455LD Intel Haswell-ULT - Lynx Point-LP</span><br><span class="line"></span><br><span class="line">独立显卡    Nvidia GeForce 820M 2G </span><br><span class="line"></span><br><span class="line">核心显卡    HD4400</span><br><span class="line"></span><br><span class="line">声卡        Realtek @ Intel Lynx Point-LP  High Definition Audio (CX20751)</span><br><span class="line"></span><br><span class="line">以太网卡    Realtek RTL8168/8111/8112 Gigabit Ethernet Controller / Asus</span><br><span class="line"></span><br><span class="line">无线网卡    Atheros AR956X</span><br></pre></td></tr></table></figure>
+<p>按照上面的驱动简要说明，我以太网卡是<code>RTL8111</code>，那么需要<code>RTL8111.kext</code>、核心显卡是<code>HD4400</code>，就需要<code>FakePCIID.kext</code>、<code>FakePCIID_Intel_HD_Graphics.kext</code>，声卡比较麻烦，暂时不考虑，无线网卡是<code>Atheros AR956X</code>，那么我需要<code>ATH9KFixup.kext</code>，又要依赖<code>Lilu.kext</code>，所以需要<code>Lilu.kext</code>，四代低压机器，我需要<code>IntelGraphicsFixup.kext</code>来解决腾讯视频死机的问题，所以放上这个。暂时只考虑这些驱动吧，下面就进入安装阶段。</p>
+<h4 id="重启利用U盘启动选择安装盘"><a href="#重启利用U盘启动选择安装盘" class="headerlink" title="重启利用U盘启动选择安装盘"></a>重启利用<code>U</code>盘启动选择安装盘</h4><p>开机按<code>esc</code>键进入启动项列表，不同厂商热键不同，参考下图：<br><img src="http://ovefvi4g3.bkt.clouddn.com/BIOS.JPG" alt="BIOS"></p>
+<p>选择<code>U</code>盘进入，这里就不介绍太多了，大家玩黑果的想必对<code>BIOS</code>不会陌生，不过需要注意的是需要将<code>BIOS</code>中的安全启动关掉。</p>
+<p>接下来就会进入<code>CLOVER</code>引导界面<br><img src="http://ovefvi4g3.bkt.clouddn.com/XiaoMiCloverboot.png" alt="XiaoMiCloverboot"></p>
+<p>通过键盘方向键选中<code>Boot OS X Install from ***</code>，<code>***</code>代表你的镜像名字，然后回车。<br><img src="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture.png" alt="ParallelsPicture"></p>
+<p>等待进入安装界面。<br><img src="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture1.png" alt="ParallelsPicture1"></p>
+<p>这里选择自己擅长的语言好啦。</p>
+<h4 id="选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs"><a href="#选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs" class="headerlink" title="选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs"></a>选择磁盘工具，并将事先分好的分区抹成扩展日志式或者<code>apfs</code></h4><p>选择磁盘工具，并继续<br><img src="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture0.png" alt="ParallelsPicture0"></p>
+<p>选择<code>显示所有设备</code><br><img src="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture2.png" alt="ParallelsPicture2"></p>
+<p>选择SSD Media,点击抹掉按钮,选择默认的<code>Mac OS</code>扩展(日志型)，在<code>10.13</code>中如果装在<code>SSD</code>上，也可以选择<code>APFS</code>,将名称修改为<code>Macintosh HD</code>（名字随意啦，自己喜欢就好，但要是英文）,点击抹掉按钮，抹掉完成后，点击完成按钮。<br><img src="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture7.png" alt="ParallelsPicture7"></p>
+<p>然后退出磁盘工具，到这里，磁盘工具的动作就已经结束了。</p>
+<h4 id="退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装"><a href="#退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装" class="headerlink" title="退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装"></a>退出磁盘工具，选择安装<code>macos</code>选中刚才抹掉的分区开始安装</h4><p>选择安装<code>macOS</code>，并继续<br><img src="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture8.png" alt="ParallelsPicture8"></p>
+<p>接下来按照提示一步一步来就好了，有一步需要注意的就是选择安装分区时，选择自己之前抹掉的那个分区。<br><img src="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture 14.png" alt="ParallelsPicture 14"></p>
+<p>接下来静静等待，会有一次自动重启，依然用<code>U</code>盘启动，注意这次会在引导界面多出一个图标，选择除第一次选的图标外的另一个图标。然后继续等待<br><img src="http://ovefvi4g3.bkt.clouddn.com/15218990390224.png" alt=""></p>
+<p>系统安装完成后,重启进入系统设置向导，接下来根据下面的图一步一步设置就好了<br><img src="http://ovefvi4g3.bkt.clouddn.com/15218990840183.png" alt=""></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/15218990903045.png" alt=""></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/15218990970841.png" alt=""></p>
+<p>这里选择现在不传输任何信息<br><img src="http://ovefvi4g3.bkt.clouddn.com/15218991032937.png" alt=""></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/15218991134189.png" alt=""></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/15218991182539.png" alt=""></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/15218991276552.png" alt=""></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/15218991350935.png" alt=""></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/15218991452868.png" alt=""></p>
+<p>这里注意，一定不要选择加密！！！<br><img src="http://ovefvi4g3.bkt.clouddn.com/15218991526744.png" alt=""></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/15218991591740.png" alt=""></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/15218991634647.png" alt=""></p>
+<h3 id="转移CLOVER到硬盘ESP，摆脱U盘引导"><a href="#转移CLOVER到硬盘ESP，摆脱U盘引导" class="headerlink" title="转移CLOVER到硬盘ESP，摆脱U盘引导"></a>转移<code>CLOVER</code>到硬盘<code>ESP</code>，摆脱<code>U</code>盘引导</h3><h3 id="后期的驱动安装以及优化"><a href="#后期的驱动安装以及优化" class="headerlink" title="后期的驱动安装以及优化"></a>后期的驱动安装以及优化</h3><h4 id="屏蔽无用的独显降低温度"><a href="#屏蔽无用的独显降低温度" class="headerlink" title="屏蔽无用的独显降低温度"></a>屏蔽无用的独显降低温度</h4><p>参考我之前的帖子：<a href="https://blog.iamzhl.top/2017/10/04/Disable%20the%20discrete%20GPU%20in%20laptop/">Disable the discrete GPU in laptop</a></p>
 <h4 id="摆脱万能声卡，利用AppleALC加载原生声卡"><a href="#摆脱万能声卡，利用AppleALC加载原生声卡" class="headerlink" title="摆脱万能声卡，利用AppleALC加载原生声卡"></a>摆脱万能声卡，利用<code>AppleALC</code>加载原生声卡</h4><p>参考我之前的帖子：<a href="https://blog.iamzhl.top/2017/11/06/%E8%B0%88%E8%B0%88%E9%BB%91%E6%9E%9C%E7%9A%84%E5%A3%B0%E5%8D%A1/">谈谈黑果的声卡</a></p>
 <h4 id="通过对DSDT打补丁完善电池显示"><a href="#通过对DSDT打补丁完善电池显示" class="headerlink" title="通过对DSDT打补丁完善电池显示"></a>通过对<code>DSDT</code>打补丁完善电池显示</h4><p>参考<code>pcbeta</code><a href="http://bbs.pcbeta.com/viewthread-1595139-1-1.html" target="_blank" rel="noopener">daxuexinsheng的帖子</a><br><code>tonymacx86</code><a href="https://www.tonymacx86.com/threads/guide-how-to-patch-dsdt-for-working-battery-status.116102/" target="_blank" rel="noopener">RehabMan的帖子</a></p>
 <h4 id="加载x86实现变频和原生电源管理，完善节能器信息"><a href="#加载x86实现变频和原生电源管理，完善节能器信息" class="headerlink" title="加载x86实现变频和原生电源管理，完善节能器信息"></a>加载<code>x86</code>实现变频和原生电源管理，完善节能器信息</h4><ul>
@@ -626,9 +685,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/黑苹果/" rel="tag"><i class="fa fa-tag"></i> 黑苹果</a>
-          
             <a href="/tags/Hacintosh/" rel="tag"><i class="fa fa-tag"></i> Hacintosh</a>
+          
+            <a href="/tags/黑苹果/" rel="tag"><i class="fa fa-tag"></i> 黑苹果</a>
           
         </div>
       
@@ -883,7 +942,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      46.8k
+      47.7k
     </span>
   
 </div>
@@ -899,7 +958,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共46.8k字</span>
+  <span class="post-count">博客全站共47.7k字</span>
 </div>
 
         
