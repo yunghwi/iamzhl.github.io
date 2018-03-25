@@ -156,6 +156,8 @@ Clover 可以根据硬件进行自动配置，但是自动配置组件并不总�
 
 ![Xnip2018-03-84_22-00-18](http://ovefvi4g3.bkt.clouddn.com/Xnip2018-03-84_22-00-18.jpg)
 
+敢下手了，没有`Mac`环境？没关系，送你们在线编辑器，点这里[传送门](http://cloudclovereditor.altervista.org/cce/index.php)。里面目前加入了一些常见的配置，帮你完成一部分工作。
+
 #### 了解`drivers64UEFI`各个`.EFI`文件的作用，精简引导
 `BIOS`启动过程中要用到`drivers32`或`drivers64`目录，`UEFI`启动过程中则使用`drivers64UEFI`目录。它们的内容会根据配置和`BIOS版本`而有所不同。
 
