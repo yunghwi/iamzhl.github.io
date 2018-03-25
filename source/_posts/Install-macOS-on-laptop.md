@@ -133,6 +133,29 @@ Clover 可以根据硬件进行自动配置，但是自动配置组件并不总�
 - System Parameters
 ![2018032513](http://ovefvi4g3.bkt.clouddn.com/2018032513.png)
 
+不敢下手的没关系，我给一个最简单的模板，全按这个来就足可以装上最常见的。
+![201801](http://ovefvi4g3.bkt.clouddn.com/201801.png)
+
+![201802](http://ovefvi4g3.bkt.clouddn.com/201802.png)
+
+![Xnip2018-03-84_21-47-09](http://ovefvi4g3.bkt.clouddn.com/Xnip2018-03-84_21-47-09.jpg)
+
+![Xnip2018-03-84_21-48-34](http://ovefvi4g3.bkt.clouddn.com/Xnip2018-03-84_21-48-34.jpg)
+
+![Xnip2018-03-84_21-53-09](http://ovefvi4g3.bkt.clouddn.com/Xnip2018-03-84_21-53-09.jpg)
+
+![Xnip2018-03-84_21-54-50](http://ovefvi4g3.bkt.clouddn.com/Xnip2018-03-84_21-54-50.jpg)
+
+![Xnip2018-03-84_21-56-51](http://ovefvi4g3.bkt.clouddn.com/Xnip2018-03-84_21-56-51.jpg)
+
+![Xnip2018-03-84_21-57-48](http://ovefvi4g3.bkt.clouddn.com/Xnip2018-03-84_21-57-48.jpg)
+
+![Xnip2018-03-84_21-58-35](http://ovefvi4g3.bkt.clouddn.com/Xnip2018-03-84_21-58-35.jpg)
+
+![Xnip2018-03-84_21-59-32](http://ovefvi4g3.bkt.clouddn.com/Xnip2018-03-84_21-59-32.jpg)
+
+![Xnip2018-03-84_22-00-18](http://ovefvi4g3.bkt.clouddn.com/Xnip2018-03-84_22-00-18.jpg)
+
 #### 了解`drivers64UEFI`各个`.EFI`文件的作用，精简引导
 `BIOS`启动过程中要用到`drivers32`或`drivers64`目录，`UEFI`启动过程中则使用`drivers64UEFI`目录。它们的内容会根据配置和`BIOS版本`而有所不同。
 
