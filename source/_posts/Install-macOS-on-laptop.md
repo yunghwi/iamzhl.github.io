@@ -302,10 +302,10 @@ Clover 可以根据硬件进行自动配置，但是自动配置组件并不总�
 
 ### 后期的驱动安装以及优化
 #### 屏蔽无用的独显降低温度
-参考我之前的帖子：[Disable the discrete GPU in laptop](https://blog.iamzhl.top/2017/10/04/Disable%20the%20discrete%20GPU%20in%20laptop/)
+参考我之前的帖子：[Disable the discrete GPU in laptop](https://blog.iamzhl.top/Disable-the-discrete-GPU-in-laptop.html)
 
 #### 摆脱万能声卡，利用`AppleALC`加载原生声卡
-参考我之前的帖子：[谈谈黑果的声卡](https://blog.iamzhl.top/2017/11/06/%E8%B0%88%E8%B0%88%E9%BB%91%E6%9E%9C%E7%9A%84%E5%A3%B0%E5%8D%A1/)
+参考我之前的帖子：[Driver-audio-for-hackintosh](https://blog.iamzhl.top/Driver-audio-for-hackintosh.html)
 
 #### 通过对`DSDT`打补丁完善电池显示
 参考`pcbeta`[daxuexinsheng的帖子](http://bbs.pcbeta.com/viewthread-1595139-1-1.html)
