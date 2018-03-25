@@ -9,6 +9,14 @@ tags:
 ---
 
 ### 前言
+Clover支持两种启动方式，启动过程如下：
+
+- 基于`BIOS`的电脑（老式主板）
+BIOS -> MBR -> PBR -> boot -> CLOVERX64.efi -> OSLoader
+
+- 基于`UEFI`的电脑（新式主板）
+UEFI -> CLOVERX64.efi -> OSLoader
+
 对于支持`UEFI`的机器，我们通常用`CLOVER`引导原版安装，这种方式最大的优点就是有恢复分区可以正常升级，当然前提要把引导做好。
 
 ### 前期知识储备
@@ -84,9 +92,97 @@ tags:
 `AppleIGB.kext`、`IntelMausiEthernet.kext`:用以驱动`Intel`板载网卡设备。
 
 #### 根据机器配置定制`config`
-这里遵循一个原则，尽可能简单的设置`config`，不知道具体作用的就让他空着好了。
+Clover 可以根据硬件进行自动配置，但是自动配置组件并不总是完美的。这也是保留用户可以自定义配置的原因。用户可以修改配置文件config.plist中的配置参数，或者基于GUI的配置界面进行修改配置。配置文件是基于XML的，可以以文本文件来处理。它可以用纯文本编辑器进行编辑，也可以用plist编辑器进行编辑，如PlistEdit。配置文件 (config.plist) 必须放在EFI/CLOVER目录下。
+
+这里遵循一个原则，尽可能简单的设置`config`，不知道具体作用的就让他空着好了，如果你不知道参数的需求值是什么，就从配置文件中排除！不要用没有值的参数。
+
+正所谓前人种树，后人乘凉，很多黑果的热心朋友已经为我们做好了教程，这里我直接拿来用了。
+
+- ACPI
+![2018032502](http://ovefvi4g3.bkt.clouddn.com/2018032502.png)
+
+![2018032503](http://ovefvi4g3.bkt.clouddn.com/2018032503.png)
+
+- BOOT
+![2018032504](http://ovefvi4g3.bkt.clouddn.com/2018032504.png)
+
+- CPU
+![2018032505](http://ovefvi4g3.bkt.clouddn.com/2018032505.png)
+
+- Device
+![2018032506](http://ovefvi4g3.bkt.clouddn.com/2018032506.png)
+
+- Disable Drivers
+![2018032507](http://ovefvi4g3.bkt.clouddn.com/2018032507.png)
+
+- GUI
+![2018032508](http://ovefvi4g3.bkt.clouddn.com/2018032508.png)
+
+- Graphics
+![2018032509](http://ovefvi4g3.bkt.clouddn.com/2018032509.png)
+
+- Kernel and Kext Patches
+![2018032510](http://ovefvi4g3.bkt.clouddn.com/2018032510.png)
+
+- Rt Variables
+![2018032511](http://ovefvi4g3.bkt.clouddn.com/2018032511.png)
+
+- SMBIOS
+![2018032512](http://ovefvi4g3.bkt.clouddn.com/2018032512.png)
+
+- System Parameters
+![2018032513](http://ovefvi4g3.bkt.clouddn.com/2018032513.png)
 
 #### 了解`drivers64UEFI`各个`.EFI`文件的作用，精简引导
+`BIOS`启动过程中要用到`drivers32`或`drivers64`目录，`UEFI`启动过程中则使用`drivers64UEFI`目录。它们的内容会根据配置和`BIOS版本`而有所不同。
+
+必须要提的一点是这些驱动程序只在`bootloader`运行时有效，不会影响最终启动的操作系统。
+
+至于到底要使用哪些驱动程序由用户来决定。
+
+- NTFS.efi
+
+`NTFS`文件系统驱动程序。用于启动`Windows EFI`系统。
+
+- HFSPlus.efi
+`HFS+`文件系统驱动程序。这个驱动对于`10.13`之前的系统版本来启动`Mac OS X`是必须的。
+
+- APFS.efi
+`APFS`文件系统驱动程序。这个驱动对于在`10.13`的系统版本通过`APFS`装的黑果来启动`Mac OS X`是必须的。
+
+- VBoxHFS.efi
+`HFSPlus.efi`的替代品，性能要差一点。
+
+- VBoxExt2.efi
+`EXT2/3`文件系统驱动。用于启动`Linux EFI`系统。
+
+- VBoxExt4.efi
+`EXT4`文件系统驱动。用于启动`Linux EFI`系统。
+
+- FSInject.efi
+控制文件系统注入`kext`到系统的可能性。
+
+- PartitionDxe.efi
+已经存在于在`CloverEFI`和`UEFI`中，但没有为`Apple`分区优化，也没有为`GPT/MBR`优化。
+
+- OsxFatBinaryDrv.efi
+允许加载`FAT`模块比如`boot.efi`。
+
+- OsxAptioFixDrv.efi
+修复`AMI Aptio EFI`内存映射。如果没有就不能启动`OS X`。
+
+- OswLowMemFix.efi
+是`OsxAptioFixDrv`的简化版。两个不能同时使用。
+
+- DataHubDxe.efi
+已经存在于在`CloverUEFI`中。建议还是使用它，不会产生冲突。
+
+- CsmVideoDxe.efi
+比`UEFI`里提供更多分辨率的显卡驱动。
+
+看了这么多，千万不要崩溃，我告诉大家一个经验，一般`Drivers64UEFI`目录只需要下面几个`.EFI`驱动就够了。
+
+![2018032501](http://ovefvi4g3.bkt.clouddn.com/2018032501.png)
 
 #### 了解`acpi`的工作原理，完美黑苹果(进阶篇)
 
