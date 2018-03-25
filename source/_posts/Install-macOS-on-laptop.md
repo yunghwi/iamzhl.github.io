@@ -184,7 +184,10 @@ Clover 可以根据硬件进行自动配置，但是自动配置组件并不总�
 
 ![2018032501](http://ovefvi4g3.bkt.clouddn.com/2018032501.png)
 
-#### 了解`acpi`的工作原理，完美黑苹果(进阶篇)
+#### 进攻`ACPI`，完美黑苹果(进阶篇)
+论坛贡献会员[daxuexinsheng](http://i.pcbeta.com/space-uid-3322572.html)已经翻译了`RehabMan`的`DSDT`教程，可以说是非常详细，可以直接参考:[使用补丁修改DSDT/SSDT](http://i.pcbeta.com/space-uid-3322572.html)，以及[RehabMan的原贴](https://www.tonymacx86.com/threads/guide-patching-laptop-dsdt-ssdts.152573/)。
+
+如果你喜欢`hotpatch`，可以参考我的翻译帖[Clover-ACPI-hotpatch](https://blog.iamzhl.top/Clover-ACPI-hotpatch.html)，不过由于我太懒还没翻译完哈哈。当然还是推荐[RehabMan的原贴](https://www.tonymacx86.com/threads/guide-using-clover-to-hotpatch-acpi.200137/)。
 
 ### 准备工作
 - 集成`CLOVER`的原版镜像
@@ -249,7 +252,7 @@ Clover 可以根据硬件进行自动配置，但是自动配置组件并不总�
 
 这里选择自己擅长的语言好啦。
 
-#### 选择磁盘工具，并将事先分好的分区抹成扩展日志式或者`apfs`
+#### 磁盘工具分区
 选择磁盘工具，并继续
 ![ParallelsPicture0](http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture0.png)
 
@@ -299,6 +302,7 @@ Clover 可以根据硬件进行自动配置，但是自动配置组件并不总�
 ![](http://ovefvi4g3.bkt.clouddn.com/15218991634647.png)
 
 ### 转移`CLOVER`到硬盘`ESP`，摆脱`U`盘引导
+这里用到前期准备的`EasyUEFI`，在`Windows`下安装打开此软件，添加`CLOVER`启动项，并置顶。具体操作参考：[黑苹果安装从0开始----clover优盘引导改硬盘引导篇](http://bbs.pcbeta.com/viewthread-1683571-1-1.html)
 
 ### 后期的驱动安装以及优化
 #### 屏蔽无用的独显降低温度
@@ -306,6 +310,7 @@ Clover 可以根据硬件进行自动配置，但是自动配置组件并不总�
 
 #### 摆脱万能声卡，利用`AppleALC`加载原生声卡
 参考我之前的帖子：[Driver-audio-for-hackintosh](https://blog.iamzhl.top/Driver-audio-for-hackintosh.html)
+还有这个帖子：[自己动手用上AppleALC，使用原生AppleHDA](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1763452&highlight=AppleALC)
 
 #### 通过对`DSDT`打补丁完善电池显示
 参考`pcbeta`[daxuexinsheng的帖子](http://bbs.pcbeta.com/viewthread-1595139-1-1.html)
@@ -313,9 +318,17 @@ Clover 可以根据硬件进行自动配置，但是自动配置组件并不总�
 
 #### 加载`x86`实现变频和原生电源管理，完善节能器信息
 - 对于`Haswell`以及`Broadwell`平台，利用`ssdtPRGen`生成`SSDT`，在`config`中`drop`掉`CpuPm`和`Cpu0Ist`两个表，并利用`FakeSMC`或`DSDT`或`hotpatch`加载`AppleLPC`
-- 对于`Skylake`及以上平台，选择支持`HWP`的合适的机型，并勾选`HWPEnable`即可开启完整电源特性
+- 对于`Skylake`及以上平台，选择支持`HWP`的合适的机型，并勾选`HWPEnable`。
 
-#### 修复八苹果二阶段花屏等问题完善显卡驱动
+#### 注入`HiDPI`和显示器信息完善唤醒后的花屏、闪屏、撕裂屏问题
+参考：[macOS Sierra 10.12下 开启HiDPI 傻瓜式开启教程](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1722308&highlight=HIDPI)
 
-#### 注入`HiDPI`和显示器信息完善唤醒后的花屏问题
+### 写在最后
+本帖多处引用现成帖子，只是将整个流程做个陈述，意在整理思路，以便大家更好地理解实践。本人水平有限，帖子中的不正确之处希望大家积极批评指出，一起完善。
+
+楼主真的是懒到蜕皮(手动滑稽哈哈)帖子中图片很多是出自黑果小兵的博客：[macOS安装教程兼小米Pro安装过程记录](https://blog.daliansky.net/MacOS-installation-tutorial-XiaoMi-Pro-installation-process-records.html)。
+
+感谢各位黑果前辈的好帖子，引用太多，文中也有说明，就不一一列出了。
+
+待续......
 
