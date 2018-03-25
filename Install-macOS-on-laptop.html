@@ -105,7 +105,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hacintosh,黑苹果," />
+  <meta name="keywords" content="黑苹果,Hacintosh," />
 
 
 
@@ -134,7 +134,7 @@
 </script>
 
 <meta name="description" content="Install macOS on laptop 原版黑苹果安装参考贴">
-<meta name="keywords" content="Hacintosh,黑苹果">
+<meta name="keywords" content="黑苹果,Hacintosh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Install macOS on laptop">
 <meta property="og:url" content="https://blog.iamzhl.top/Install-macOS-on-laptop.html">
@@ -143,6 +143,19 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018-02-12-01.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018-02-12-02.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018032502.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018032503.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018032504.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018032505.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018032506.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018032507.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018032508.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018032509.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018032510.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018032511.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018032512.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018032513.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018032501.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/TransMac1.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/TransMac2.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/TransMac3.png">
@@ -169,7 +182,7 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991526744.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991591740.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991634647.png">
-<meta property="og:updated_time" content="2018-03-24T13:52:08.135Z">
+<meta property="og:updated_time" content="2018-03-25T09:20:44.278Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Install macOS on laptop">
 <meta name="twitter:description" content="Install macOS on laptop 原版黑苹果安装参考贴">
@@ -487,7 +500,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,994 字
+                  3,683 字
                 </span>
               
 
@@ -503,7 +516,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11 分钟
+                  14 分钟
                 </span>
               
             </div>
@@ -528,7 +541,14 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>对于支持<code>UEFI</code>的机器，我们通常用<code>CLOVER</code>引导原版安装，这种方式最大的优点就是有恢复分区可以正常升级，当然前提要把引导做好。</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Clover支持两种启动方式，启动过程如下：</p>
+<ul>
+<li><p>基于<code>BIOS</code>的电脑（老式主板）<br>BIOS -&gt; MBR -&gt; PBR -&gt; boot -&gt; CLOVERX64.efi -&gt; OSLoader</p>
+</li>
+<li><p>基于<code>UEFI</code>的电脑（新式主板）<br>UEFI -&gt; CLOVERX64.efi -&gt; OSLoader</p>
+</li>
+</ul>
+<p>对于支持<code>UEFI</code>的机器，我们通常用<code>CLOVER</code>引导原版安装，这种方式最大的优点就是有恢复分区可以正常升级，当然前提要把引导做好。</p>
 <h3 id="前期知识储备"><a href="#前期知识储备" class="headerlink" title="前期知识储备"></a>前期知识储备</h3><h4 id="CLOVER的目录结构"><a href="#CLOVER的目录结构" class="headerlink" title="CLOVER的目录结构"></a><code>CLOVER</code>的目录结构</h4><p><code>CLOVER</code>正常工作需要的完整目录包括<code>config.plist</code>、<code>CLOVERX64.efi</code>两个文件以及<code>ACPI</code>、<code>drivers64UEFI</code>、<code>kexts</code>、和<code>themes</code>几个目录，如图所示：</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/2018-02-12-01.png" alt="2018-02-12-01"></p>
 <p>其中，<code>config.plist</code>是最核心的文件—-配置文件，<code>CLOVER</code>所实现的多数功能都是通过这个文件进行配置的，对其进行配置修改的最好用的工具就是<code>Clover Configurator</code>，主页面如下：</p>
@@ -563,8 +583,71 @@
 <p><code>WhateverGreen.kext</code>:用以驱动A卡。</p>
 <p><code>RealtekRTL8111.kext</code>:用以驱动<code>RealtekRTL8111.kext</code>以太网卡设备。</p>
 <p><code>AppleIGB.kext</code>、<code>IntelMausiEthernet.kext</code>:用以驱动<code>Intel</code>板载网卡设备。</p>
-<h4 id="根据机器配置定制config"><a href="#根据机器配置定制config" class="headerlink" title="根据机器配置定制config"></a>根据机器配置定制<code>config</code></h4><p>这里遵循一个原则，尽可能简单的设置<code>config</code>，不知道具体作用的就让他空着好了。</p>
-<h4 id="了解drivers64UEFI各个-EFI文件的作用，精简引导"><a href="#了解drivers64UEFI各个-EFI文件的作用，精简引导" class="headerlink" title="了解drivers64UEFI各个.EFI文件的作用，精简引导"></a>了解<code>drivers64UEFI</code>各个<code>.EFI</code>文件的作用，精简引导</h4><h4 id="了解acpi的工作原理，完美黑苹果-进阶篇"><a href="#了解acpi的工作原理，完美黑苹果-进阶篇" class="headerlink" title="了解acpi的工作原理，完美黑苹果(进阶篇)"></a>了解<code>acpi</code>的工作原理，完美黑苹果(进阶篇)</h4><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<h4 id="根据机器配置定制config"><a href="#根据机器配置定制config" class="headerlink" title="根据机器配置定制config"></a>根据机器配置定制<code>config</code></h4><p>Clover 可以根据硬件进行自动配置，但是自动配置组件并不总是完美的。这也是保留用户可以自定义配置的原因。用户可以修改配置文件config.plist中的配置参数，或者基于GUI的配置界面进行修改配置。配置文件是基于XML的，可以以文本文件来处理。它可以用纯文本编辑器进行编辑，也可以用plist编辑器进行编辑，如PlistEdit。配置文件 (config.plist) 必须放在EFI/CLOVER目录下。</p>
+<p>这里遵循一个原则，尽可能简单的设置<code>config</code>，不知道具体作用的就让他空着好了，如果你不知道参数的需求值是什么，就从配置文件中排除！不要用没有值的参数。</p>
+<p>正所谓前人种树，后人乘凉，很多黑果的热心朋友已经为我们做好了教程，这里我直接拿来用了。</p>
+<ul>
+<li>ACPI<br><img src="http://ovefvi4g3.bkt.clouddn.com/2018032502.png" alt="2018032502"></li>
+</ul>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/2018032503.png" alt="2018032503"></p>
+<ul>
+<li><p>BOOT<br><img src="http://ovefvi4g3.bkt.clouddn.com/2018032504.png" alt="2018032504"></p>
+</li>
+<li><p>CPU<br><img src="http://ovefvi4g3.bkt.clouddn.com/2018032505.png" alt="2018032505"></p>
+</li>
+<li><p>Device<br><img src="http://ovefvi4g3.bkt.clouddn.com/2018032506.png" alt="2018032506"></p>
+</li>
+<li><p>Disable Drivers<br><img src="http://ovefvi4g3.bkt.clouddn.com/2018032507.png" alt="2018032507"></p>
+</li>
+<li><p>GUI<br><img src="http://ovefvi4g3.bkt.clouddn.com/2018032508.png" alt="2018032508"></p>
+</li>
+<li><p>Graphics<br><img src="http://ovefvi4g3.bkt.clouddn.com/2018032509.png" alt="2018032509"></p>
+</li>
+<li><p>Kernel and Kext Patches<br><img src="http://ovefvi4g3.bkt.clouddn.com/2018032510.png" alt="2018032510"></p>
+</li>
+<li><p>Rt Variables<br><img src="http://ovefvi4g3.bkt.clouddn.com/2018032511.png" alt="2018032511"></p>
+</li>
+<li><p>SMBIOS<br><img src="http://ovefvi4g3.bkt.clouddn.com/2018032512.png" alt="2018032512"></p>
+</li>
+<li><p>System Parameters<br><img src="http://ovefvi4g3.bkt.clouddn.com/2018032513.png" alt="2018032513"></p>
+</li>
+</ul>
+<h4 id="了解drivers64UEFI各个-EFI文件的作用，精简引导"><a href="#了解drivers64UEFI各个-EFI文件的作用，精简引导" class="headerlink" title="了解drivers64UEFI各个.EFI文件的作用，精简引导"></a>了解<code>drivers64UEFI</code>各个<code>.EFI</code>文件的作用，精简引导</h4><p><code>BIOS</code>启动过程中要用到<code>drivers32</code>或<code>drivers64</code>目录，<code>UEFI</code>启动过程中则使用<code>drivers64UEFI</code>目录。它们的内容会根据配置和<code>BIOS版本</code>而有所不同。</p>
+<p>必须要提的一点是这些驱动程序只在<code>bootloader</code>运行时有效，不会影响最终启动的操作系统。</p>
+<p>至于到底要使用哪些驱动程序由用户来决定。</p>
+<ul>
+<li>NTFS.efi</li>
+</ul>
+<p><code>NTFS</code>文件系统驱动程序。用于启动<code>Windows EFI</code>系统。</p>
+<ul>
+<li><p>HFSPlus.efi<br><code>HFS+</code>文件系统驱动程序。这个驱动对于<code>10.13</code>之前的系统版本来启动<code>Mac OS X</code>是必须的。</p>
+</li>
+<li><p>APFS.efi<br><code>APFS</code>文件系统驱动程序。这个驱动对于在<code>10.13</code>的系统版本通过<code>APFS</code>装的黑果来启动<code>Mac OS X</code>是必须的。</p>
+</li>
+<li><p>VBoxHFS.efi<br><code>HFSPlus.efi</code>的替代品，性能要差一点。</p>
+</li>
+<li><p>VBoxExt2.efi<br><code>EXT2/3</code>文件系统驱动。用于启动<code>Linux EFI</code>系统。</p>
+</li>
+<li><p>VBoxExt4.efi<br><code>EXT4</code>文件系统驱动。用于启动<code>Linux EFI</code>系统。</p>
+</li>
+<li><p>FSInject.efi<br>控制文件系统注入<code>kext</code>到系统的可能性。</p>
+</li>
+<li><p>PartitionDxe.efi<br>已经存在于在<code>CloverEFI</code>和<code>UEFI</code>中，但没有为<code>Apple</code>分区优化，也没有为<code>GPT/MBR</code>优化。</p>
+</li>
+<li><p>OsxFatBinaryDrv.efi<br>允许加载<code>FAT</code>模块比如<code>boot.efi</code>。</p>
+</li>
+<li><p>OsxAptioFixDrv.efi<br>修复<code>AMI Aptio EFI</code>内存映射。如果没有就不能启动<code>OS X</code>。</p>
+</li>
+<li><p>OswLowMemFix.efi<br>是<code>OsxAptioFixDrv</code>的简化版。两个不能同时使用。</p>
+</li>
+<li><p>DataHubDxe.efi<br>已经存在于在<code>CloverUEFI</code>中。建议还是使用它，不会产生冲突。</p>
+</li>
+<li><p>CsmVideoDxe.efi<br>比<code>UEFI</code>里提供更多分辨率的显卡驱动。</p>
+</li>
+</ul>
+<p>看了这么多，千万不要崩溃，我告诉大家一个经验，一般<code>Drivers64UEFI</code>目录只需要下面几个<code>.EFI</code>驱动就够了。</p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/2018032501.png" alt="2018032501"></p>
+<h4 id="了解acpi的工作原理，完美黑苹果-进阶篇"><a href="#了解acpi的工作原理，完美黑苹果-进阶篇" class="headerlink" title="了解acpi的工作原理，完美黑苹果(进阶篇)"></a>了解<code>acpi</code>的工作原理，完美黑苹果(进阶篇)</h4><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
 <li>集成<code>CLOVER</code>的原版镜像<blockquote>
 <p>链接:<a href="https://pan.baidu.com/s/1gfTmRj9" target="_blank" rel="noopener">https://pan.baidu.com/s/1gfTmRj9</a>  密码:s3dv</p>
 </blockquote>
@@ -685,9 +768,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hacintosh/" rel="tag"><i class="fa fa-tag"></i> Hacintosh</a>
-          
             <a href="/tags/黑苹果/" rel="tag"><i class="fa fa-tag"></i> 黑苹果</a>
+          
+            <a href="/tags/Hacintosh/" rel="tag"><i class="fa fa-tag"></i> Hacintosh</a>
           
         </div>
       
@@ -942,7 +1025,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      47.7k
+      48.4k
     </span>
   
 </div>
@@ -958,7 +1041,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共47.7k字</span>
+  <span class="post-count">博客全站共48.4k字</span>
 </div>
 
         
