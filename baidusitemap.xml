@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Install-macOS-on-laptop.html</loc>
-    <lastmod>2018-03-25T09:29:22.910Z</lastmod>
+    <lastmod>2018-03-25T13:02:33.096Z</lastmod>
     <data>
         <display>
         <title>Install macOS on laptop</title>
@@ -19,26 +19,6 @@
            
              
               <breadCrumb title="Hacintosh" url="https://blog.iamzhl.top/categories/Hacintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
-    <lastmod>2018-03-19T15:26:23.936Z</lastmod>
-    <data>
-        <display>
-        <title>How to unzip packages without .DS_store</title>
-        <pubTime>2018-03-15T09:11:43.000Z</pubTime>
-        
-        <tag>.DS_store</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
           
         </display>
     </data>
@@ -60,6 +40,26 @@
         <tag>计算机名</tag>
          
         <tag>mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
+    <lastmod>2018-03-19T15:26:23.936Z</lastmod>
+    <data>
+        <display>
+        <title>How to unzip packages without .DS_store</title>
+        <pubTime>2018-03-15T09:11:43.000Z</pubTime>
+        
+        <tag>.DS_store</tag>
          
          
            

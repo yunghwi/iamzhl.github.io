@@ -182,7 +182,7 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991526744.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991591740.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991634647.png">
-<meta property="og:updated_time" content="2018-03-25T09:29:22.910Z">
+<meta property="og:updated_time" content="2018-03-25T13:02:33.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Install macOS on laptop">
 <meta name="twitter:description" content="Install macOS on laptop 原版黑苹果安装参考贴">
@@ -500,7 +500,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,680 字
+                  3,955 字
                 </span>
               
 
@@ -516,7 +516,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  14 分钟
+                  15 分钟
                 </span>
               
             </div>
@@ -647,7 +647,9 @@
 </ul>
 <p>看了这么多，千万不要崩溃，我告诉大家一个经验，一般<code>Drivers64UEFI</code>目录只需要下面几个<code>.EFI</code>驱动就够了。</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/2018032501.png" alt="2018032501"></p>
-<h4 id="了解acpi的工作原理，完美黑苹果-进阶篇"><a href="#了解acpi的工作原理，完美黑苹果-进阶篇" class="headerlink" title="了解acpi的工作原理，完美黑苹果(进阶篇)"></a>了解<code>acpi</code>的工作原理，完美黑苹果(进阶篇)</h4><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<h4 id="进攻ACPI，完美黑苹果-进阶篇"><a href="#进攻ACPI，完美黑苹果-进阶篇" class="headerlink" title="进攻ACPI，完美黑苹果(进阶篇)"></a>进攻<code>ACPI</code>，完美黑苹果(进阶篇)</h4><p>论坛贡献会员<a href="http://i.pcbeta.com/space-uid-3322572.html" target="_blank" rel="noopener">daxuexinsheng</a>已经翻译了<code>RehabMan</code>的<code>DSDT</code>教程，可以说是非常详细，可以直接参考:<a href="http://i.pcbeta.com/space-uid-3322572.html" target="_blank" rel="noopener">使用补丁修改DSDT/SSDT</a>，以及<a href="https://www.tonymacx86.com/threads/guide-patching-laptop-dsdt-ssdts.152573/" target="_blank" rel="noopener">RehabMan的原贴</a>。</p>
+<p>如果你喜欢<code>hotpatch</code>，可以参考我的翻译帖<a href="https://blog.iamzhl.top/Clover-ACPI-hotpatch.html">Clover-ACPI-hotpatch</a>，不过由于我太懒还没翻译完哈哈。当然还是推荐<a href="https://www.tonymacx86.com/threads/guide-using-clover-to-hotpatch-acpi.200137/" target="_blank" rel="noopener">RehabMan的原贴</a>。</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
 <li>集成<code>CLOVER</code>的原版镜像<blockquote>
 <p>链接:<a href="https://pan.baidu.com/s/1gfTmRj9" target="_blank" rel="noopener">https://pan.baidu.com/s/1gfTmRj9</a>  密码:s3dv</p>
 </blockquote>
@@ -686,7 +688,7 @@
 <p>通过键盘方向键选中<code>Boot OS X Install from ***</code>，<code>***</code>代表你的镜像名字，然后回车。<br><img src="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture.png" alt="ParallelsPicture"></p>
 <p>等待进入安装界面。<br><img src="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture1.png" alt="ParallelsPicture1"></p>
 <p>这里选择自己擅长的语言好啦。</p>
-<h4 id="选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs"><a href="#选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs" class="headerlink" title="选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs"></a>选择磁盘工具，并将事先分好的分区抹成扩展日志式或者<code>apfs</code></h4><p>选择磁盘工具，并继续<br><img src="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture0.png" alt="ParallelsPicture0"></p>
+<h4 id="磁盘工具分区"><a href="#磁盘工具分区" class="headerlink" title="磁盘工具分区"></a>磁盘工具分区</h4><p>选择磁盘工具，并继续<br><img src="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture0.png" alt="ParallelsPicture0"></p>
 <p>选择<code>显示所有设备</code><br><img src="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture2.png" alt="ParallelsPicture2"></p>
 <p>选择SSD Media,点击抹掉按钮,选择默认的<code>Mac OS</code>扩展(日志型)，在<code>10.13</code>中如果装在<code>SSD</code>上，也可以选择<code>APFS</code>,将名称修改为<code>Macintosh HD</code>（名字随意啦，自己喜欢就好，但要是英文）,点击抹掉按钮，抹掉完成后，点击完成按钮。<br><img src="http://ovefvi4g3.bkt.clouddn.com/ParallelsPicture7.png" alt="ParallelsPicture7"></p>
 <p>然后退出磁盘工具，到这里，磁盘工具的动作就已经结束了。</p>
@@ -705,14 +707,20 @@
 <p>这里注意，一定不要选择加密！！！<br><img src="http://ovefvi4g3.bkt.clouddn.com/15218991526744.png" alt=""></p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/15218991591740.png" alt=""></p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/15218991634647.png" alt=""></p>
-<h3 id="转移CLOVER到硬盘ESP，摆脱U盘引导"><a href="#转移CLOVER到硬盘ESP，摆脱U盘引导" class="headerlink" title="转移CLOVER到硬盘ESP，摆脱U盘引导"></a>转移<code>CLOVER</code>到硬盘<code>ESP</code>，摆脱<code>U</code>盘引导</h3><h3 id="后期的驱动安装以及优化"><a href="#后期的驱动安装以及优化" class="headerlink" title="后期的驱动安装以及优化"></a>后期的驱动安装以及优化</h3><h4 id="屏蔽无用的独显降低温度"><a href="#屏蔽无用的独显降低温度" class="headerlink" title="屏蔽无用的独显降低温度"></a>屏蔽无用的独显降低温度</h4><p>参考我之前的帖子：<a href="https://blog.iamzhl.top/Disable-the-discrete-GPU-in-laptop.html">Disable the discrete GPU in laptop</a></p>
-<h4 id="摆脱万能声卡，利用AppleALC加载原生声卡"><a href="#摆脱万能声卡，利用AppleALC加载原生声卡" class="headerlink" title="摆脱万能声卡，利用AppleALC加载原生声卡"></a>摆脱万能声卡，利用<code>AppleALC</code>加载原生声卡</h4><p>参考我之前的帖子：<a href="https://blog.iamzhl.top/Driver-audio-for-hackintosh.html">Driver-audio-for-hackintosh</a></p>
+<h3 id="转移CLOVER到硬盘ESP，摆脱U盘引导"><a href="#转移CLOVER到硬盘ESP，摆脱U盘引导" class="headerlink" title="转移CLOVER到硬盘ESP，摆脱U盘引导"></a>转移<code>CLOVER</code>到硬盘<code>ESP</code>，摆脱<code>U</code>盘引导</h3><p>这里用到前期准备的<code>EasyUEFI</code>，在<code>Windows</code>下安装打开此软件，添加<code>CLOVER</code>启动项，并置顶。具体操作参考：<a href="http://bbs.pcbeta.com/viewthread-1683571-1-1.html" target="_blank" rel="noopener">黑苹果安装从0开始—-clover优盘引导改硬盘引导篇</a></p>
+<h3 id="后期的驱动安装以及优化"><a href="#后期的驱动安装以及优化" class="headerlink" title="后期的驱动安装以及优化"></a>后期的驱动安装以及优化</h3><h4 id="屏蔽无用的独显降低温度"><a href="#屏蔽无用的独显降低温度" class="headerlink" title="屏蔽无用的独显降低温度"></a>屏蔽无用的独显降低温度</h4><p>参考我之前的帖子：<a href="https://blog.iamzhl.top/Disable-the-discrete-GPU-in-laptop.html">Disable the discrete GPU in laptop</a></p>
+<h4 id="摆脱万能声卡，利用AppleALC加载原生声卡"><a href="#摆脱万能声卡，利用AppleALC加载原生声卡" class="headerlink" title="摆脱万能声卡，利用AppleALC加载原生声卡"></a>摆脱万能声卡，利用<code>AppleALC</code>加载原生声卡</h4><p>参考我之前的帖子：<a href="https://blog.iamzhl.top/Driver-audio-for-hackintosh.html">Driver-audio-for-hackintosh</a><br>还有这个帖子：<a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1763452&amp;highlight=AppleALC" target="_blank" rel="noopener">自己动手用上AppleALC，使用原生AppleHDA</a></p>
 <h4 id="通过对DSDT打补丁完善电池显示"><a href="#通过对DSDT打补丁完善电池显示" class="headerlink" title="通过对DSDT打补丁完善电池显示"></a>通过对<code>DSDT</code>打补丁完善电池显示</h4><p>参考<code>pcbeta</code><a href="http://bbs.pcbeta.com/viewthread-1595139-1-1.html" target="_blank" rel="noopener">daxuexinsheng的帖子</a><br><code>tonymacx86</code><a href="https://www.tonymacx86.com/threads/guide-how-to-patch-dsdt-for-working-battery-status.116102/" target="_blank" rel="noopener">RehabMan的帖子</a></p>
 <h4 id="加载x86实现变频和原生电源管理，完善节能器信息"><a href="#加载x86实现变频和原生电源管理，完善节能器信息" class="headerlink" title="加载x86实现变频和原生电源管理，完善节能器信息"></a>加载<code>x86</code>实现变频和原生电源管理，完善节能器信息</h4><ul>
 <li>对于<code>Haswell</code>以及<code>Broadwell</code>平台，利用<code>ssdtPRGen</code>生成<code>SSDT</code>，在<code>config</code>中<code>drop</code>掉<code>CpuPm</code>和<code>Cpu0Ist</code>两个表，并利用<code>FakeSMC</code>或<code>DSDT</code>或<code>hotpatch</code>加载<code>AppleLPC</code></li>
-<li>对于<code>Skylake</code>及以上平台，选择支持<code>HWP</code>的合适的机型，并勾选<code>HWPEnable</code>即可开启完整电源特性</li>
+<li>对于<code>Skylake</code>及以上平台，选择支持<code>HWP</code>的合适的机型，并勾选<code>HWPEnable</code>。</li>
 </ul>
-<h4 id="修复八苹果二阶段花屏等问题完善显卡驱动"><a href="#修复八苹果二阶段花屏等问题完善显卡驱动" class="headerlink" title="修复八苹果二阶段花屏等问题完善显卡驱动"></a>修复八苹果二阶段花屏等问题完善显卡驱动</h4><h4 id="注入HiDPI和显示器信息完善唤醒后的花屏问题"><a href="#注入HiDPI和显示器信息完善唤醒后的花屏问题" class="headerlink" title="注入HiDPI和显示器信息完善唤醒后的花屏问题"></a>注入<code>HiDPI</code>和显示器信息完善唤醒后的花屏问题</h4>
+<h4 id="注入HiDPI和显示器信息完善唤醒后的花屏、闪屏、撕裂屏问题"><a href="#注入HiDPI和显示器信息完善唤醒后的花屏、闪屏、撕裂屏问题" class="headerlink" title="注入HiDPI和显示器信息完善唤醒后的花屏、闪屏、撕裂屏问题"></a>注入<code>HiDPI</code>和显示器信息完善唤醒后的花屏、闪屏、撕裂屏问题</h4><p>参考：<a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1722308&amp;highlight=HIDPI" target="_blank" rel="noopener">macOS Sierra 10.12下 开启HiDPI 傻瓜式开启教程</a></p>
+<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>本帖多处引用现成帖子，只是将整个流程做个陈述，意在整理思路，以便大家更好地理解实践。本人水平有限，帖子中的不正确之处希望大家积极批评指出，一起完善。</p>
+<p>楼主真的是懒到蜕皮(手动滑稽哈哈)帖子中图片很多是出自黑果小兵的博客：<a href="https://blog.daliansky.net/MacOS-installation-tutorial-XiaoMi-Pro-installation-process-records.html" target="_blank" rel="noopener">macOS安装教程兼小米Pro安装过程记录</a>。</p>
+<p>感谢各位黑果前辈的好帖子，引用太多，文中也有说明，就不一一列出了。</p>
+<p>待续……</p>
+
       
     </div>
     
@@ -979,7 +987,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前期知识储备"><span class="nav-number">2.</span> <span class="nav-text">前期知识储备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CLOVER的目录结构"><span class="nav-number">2.1.</span> <span class="nav-text">CLOVER的目录结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据机器配置定制kext"><span class="nav-number">2.2.</span> <span class="nav-text">根据机器配置定制kext</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据机器配置定制config"><span class="nav-number">2.3.</span> <span class="nav-text">根据机器配置定制config</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#了解drivers64UEFI各个-EFI文件的作用，精简引导"><span class="nav-number">2.4.</span> <span class="nav-text">了解drivers64UEFI各个.EFI文件的作用，精简引导</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#了解acpi的工作原理，完美黑苹果-进阶篇"><span class="nav-number">2.5.</span> <span class="nav-text">了解acpi的工作原理，完美黑苹果(进阶篇)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">3.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装步骤"><span class="nav-number">4.</span> <span class="nav-text">安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用Transmac将原版镜像写入u盘"><span class="nav-number">4.1.</span> <span class="nav-text">利用Transmac将原版镜像写入u盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext"><span class="nav-number">4.2.</span> <span class="nav-text">利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重启利用U盘启动选择安装盘"><span class="nav-number">4.3.</span> <span class="nav-text">重启利用U盘启动选择安装盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs"><span class="nav-number">4.4.</span> <span class="nav-text">选择磁盘工具，并将事先分好的分区抹成扩展日志式或者apfs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装"><span class="nav-number">4.5.</span> <span class="nav-text">退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转移CLOVER到硬盘ESP，摆脱U盘引导"><span class="nav-number">5.</span> <span class="nav-text">转移CLOVER到硬盘ESP，摆脱U盘引导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后期的驱动安装以及优化"><span class="nav-number">6.</span> <span class="nav-text">后期的驱动安装以及优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#屏蔽无用的独显降低温度"><span class="nav-number">6.1.</span> <span class="nav-text">屏蔽无用的独显降低温度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#摆脱万能声卡，利用AppleALC加载原生声卡"><span class="nav-number">6.2.</span> <span class="nav-text">摆脱万能声卡，利用AppleALC加载原生声卡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过对DSDT打补丁完善电池显示"><span class="nav-number">6.3.</span> <span class="nav-text">通过对DSDT打补丁完善电池显示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加载x86实现变频和原生电源管理，完善节能器信息"><span class="nav-number">6.4.</span> <span class="nav-text">加载x86实现变频和原生电源管理，完善节能器信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修复八苹果二阶段花屏等问题完善显卡驱动"><span class="nav-number">6.5.</span> <span class="nav-text">修复八苹果二阶段花屏等问题完善显卡驱动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注入HiDPI和显示器信息完善唤醒后的花屏问题"><span class="nav-number">6.6.</span> <span class="nav-text">注入HiDPI和显示器信息完善唤醒后的花屏问题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前期知识储备"><span class="nav-number">2.</span> <span class="nav-text">前期知识储备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CLOVER的目录结构"><span class="nav-number">2.1.</span> <span class="nav-text">CLOVER的目录结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据机器配置定制kext"><span class="nav-number">2.2.</span> <span class="nav-text">根据机器配置定制kext</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据机器配置定制config"><span class="nav-number">2.3.</span> <span class="nav-text">根据机器配置定制config</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#了解drivers64UEFI各个-EFI文件的作用，精简引导"><span class="nav-number">2.4.</span> <span class="nav-text">了解drivers64UEFI各个.EFI文件的作用，精简引导</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进攻ACPI，完美黑苹果-进阶篇"><span class="nav-number">2.5.</span> <span class="nav-text">进攻ACPI，完美黑苹果(进阶篇)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">3.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装步骤"><span class="nav-number">4.</span> <span class="nav-text">安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用Transmac将原版镜像写入u盘"><span class="nav-number">4.1.</span> <span class="nav-text">利用Transmac将原版镜像写入u盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext"><span class="nav-number">4.2.</span> <span class="nav-text">利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重启利用U盘启动选择安装盘"><span class="nav-number">4.3.</span> <span class="nav-text">重启利用U盘启动选择安装盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#磁盘工具分区"><span class="nav-number">4.4.</span> <span class="nav-text">磁盘工具分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装"><span class="nav-number">4.5.</span> <span class="nav-text">退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转移CLOVER到硬盘ESP，摆脱U盘引导"><span class="nav-number">5.</span> <span class="nav-text">转移CLOVER到硬盘ESP，摆脱U盘引导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后期的驱动安装以及优化"><span class="nav-number">6.</span> <span class="nav-text">后期的驱动安装以及优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#屏蔽无用的独显降低温度"><span class="nav-number">6.1.</span> <span class="nav-text">屏蔽无用的独显降低温度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#摆脱万能声卡，利用AppleALC加载原生声卡"><span class="nav-number">6.2.</span> <span class="nav-text">摆脱万能声卡，利用AppleALC加载原生声卡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过对DSDT打补丁完善电池显示"><span class="nav-number">6.3.</span> <span class="nav-text">通过对DSDT打补丁完善电池显示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加载x86实现变频和原生电源管理，完善节能器信息"><span class="nav-number">6.4.</span> <span class="nav-text">加载x86实现变频和原生电源管理，完善节能器信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注入HiDPI和显示器信息完善唤醒后的花屏、闪屏、撕裂屏问题"><span class="nav-number">6.5.</span> <span class="nav-text">注入HiDPI和显示器信息完善唤醒后的花屏、闪屏、撕裂屏问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写在最后"><span class="nav-number">7.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
             
 
           </div>
@@ -1025,7 +1033,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      48.4k
+      48.7k
     </span>
   
 </div>
@@ -1041,7 +1049,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共48.4k字</span>
+  <span class="post-count">博客全站共48.7k字</span>
 </div>
 
         
