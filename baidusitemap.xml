@@ -5,40 +5,20 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Install-macOS-on-laptop.html</loc>
-    <lastmod>2018-03-25T14:06:55.630Z</lastmod>
+    <lastmod>2018-03-25T14:14:22.720Z</lastmod>
     <data>
         <display>
         <title>Install macOS on laptop</title>
         <pubTime>2017-12-11T16:28:15.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
          
            
              
               <breadCrumb title="Hacintosh" url="https://blog.iamzhl.top/categories/Hacintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
-    <lastmod>2018-03-19T15:26:23.936Z</lastmod>
-    <data>
-        <display>
-        <title>How to unzip packages without .DS_store</title>
-        <pubTime>2018-03-15T09:11:43.000Z</pubTime>
-        
-        <tag>.DS_store</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
           
         </display>
     </data>
@@ -72,6 +52,26 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
+    <lastmod>2018-03-19T15:26:23.936Z</lastmod>
+    <data>
+        <display>
+        <title>How to unzip packages without .DS_store</title>
+        <pubTime>2018-03-15T09:11:43.000Z</pubTime>
+        
+        <tag>.DS_store</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/0-1-backpack.html</loc>
     <lastmod>2018-01-17T09:25:12.000Z</lastmod>
     <data>
@@ -79,11 +79,11 @@
         <title>0-1 backpack</title>
         <pubTime>2018-01-17T08:51:25.000Z</pubTime>
         
-        <tag>0-1背包问题</tag>
+        <tag>算法</tag>
          
         <tag>algorithm</tag>
          
-        <tag>算法</tag>
+        <tag>0-1背包问题</tag>
          
          
            
@@ -103,9 +103,9 @@
         <title>Reverse part of array</title>
         <pubTime>2018-01-17T08:23:37.000Z</pubTime>
         
-        <tag>algorithm</tag>
-         
         <tag>算法</tag>
+         
+        <tag>algorithm</tag>
          
         <tag>逆置</tag>
          
@@ -127,9 +127,9 @@
         <title>n queen</title>
         <pubTime>2018-01-17T08:04:05.000Z</pubTime>
         
-        <tag>algorithm</tag>
-         
         <tag>算法</tag>
+         
+        <tag>algorithm</tag>
          
         <tag>n皇后问题</tag>
          
@@ -151,9 +151,9 @@
         <title>RecurMatrix</title>
         <pubTime>2018-01-17T07:54:02.000Z</pubTime>
         
-        <tag>algorithm</tag>
-         
         <tag>算法</tag>
+         
+        <tag>algorithm</tag>
          
         <tag>矩阵连乘问题</tag>
          
@@ -175,11 +175,11 @@
         <title>BinarySearch</title>
         <pubTime>2018-01-17T07:29:36.000Z</pubTime>
         
-        <tag>algorithm</tag>
-         
         <tag>算法</tag>
          
         <tag>二分查找</tag>
+         
+        <tag>algorithm</tag>
          
          
            
@@ -249,9 +249,9 @@
         <title>Check CPU frequences by using AppleIntelInfo</title>
         <pubTime>2017-09-04T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>AppleIntelInfo</tag>
          
@@ -337,11 +337,11 @@
         <title>Allow apps downloaded from anywhere on macOS</title>
         <pubTime>2017-09-15T13:16:31.000Z</pubTime>
         
+        <tag>Hacintosh</tag>
+         
         <tag>黑苹果</tag>
          
         <tag>终端</tag>
-         
-        <tag>Hacintosh</tag>
          
         <tag>任何来源</tag>
          
@@ -479,9 +479,9 @@
         <title>Disable the discrete GPU in laptop</title>
         <pubTime>2017-10-03T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>Window Server Service only ran for 0 seconds</tag>
          
@@ -507,9 +507,9 @@
         <title>Enable BCM94352z on your hacintosh</title>
         <pubTime>2017-09-12T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>BCM94352z</tag>
          
@@ -739,9 +739,9 @@
         <title>Speed up the hackintosh to boot</title>
         <pubTime>2017-09-04T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>开机速度</tag>
          
@@ -929,9 +929,9 @@
         <title>RW NTFS partition natively on macOS</title>
         <pubTime>2017-10-26T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>NTFS</tag>
          
@@ -953,9 +953,9 @@
         <title>Driver audio for hackintosh</title>
         <pubTime>2017-11-05T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
          
            
