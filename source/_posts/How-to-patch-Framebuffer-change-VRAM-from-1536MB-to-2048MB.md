@@ -62,7 +62,7 @@ $ ioreg -l | grep ig-platform-id
 
 ![170356xpbiyid3del3byda](http://ovefvi4g3.bkt.clouddn.com/170356xpbiyid3del3byda.png)
 
-然后报错重启，就会发现关于本机的显存从原来的`1536MB`变成了`2048MB`
+然后保存重启，就会发现关于本机的显存从原来的`1536MB`变成了`2048MB`
 
 ![170543xxdf6b0wdrkkbh80](http://ovefvi4g3.bkt.clouddn.com/170543xxdf6b0wdrkkbh80.png)
 
