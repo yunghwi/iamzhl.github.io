@@ -1,7 +1,7 @@
 ---
 title: Speed up the hackintosh to boot
 date: 2017-09-05
-categories: Hacintosh
+categories: Hackintosh
 description: 加快黑苹果开机速度的一种方法
 tags:
 - 黑苹果

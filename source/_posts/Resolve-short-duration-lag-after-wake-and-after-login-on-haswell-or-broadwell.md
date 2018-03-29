@@ -1,7 +1,7 @@
 ---
 title: Resolve short duration lag after wake and after login on haswell or broadwell
 date: 2017-10-07 03:06:04
-categories: Hacintosh
+categories: Hackintosh
 description: Resolve short duration lag after wake and after login on haswell or broadwell
 tags: 
 - short duration lag

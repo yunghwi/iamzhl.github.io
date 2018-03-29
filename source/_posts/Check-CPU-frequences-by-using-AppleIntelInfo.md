@@ -1,7 +1,7 @@
 ---
 title: Check CPU frequences by using AppleIntelInfo
 date: 2017-09-05
-categories: Hacintosh
+categories: Hackintosh
 description: 利用 AppleIntelInfo 查看变频
 tags:
 - AppleIntelInfo

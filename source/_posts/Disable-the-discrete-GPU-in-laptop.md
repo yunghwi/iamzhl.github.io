@@ -1,7 +1,7 @@
 ---
 title: Disable the discrete GPU in laptop
 date: 2017-10-04
-categories: Hacintosh
+categories: Hackintosh
 description: Disable the discrete GPU to fix "Window Server Service only ran for 0 seconds" in High Sierra
 tags:
 - Hacintosh

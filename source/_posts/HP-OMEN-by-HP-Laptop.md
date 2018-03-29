@@ -1,7 +1,7 @@
 ---
 title: HP OMEN by HP Laptop
 date: 2017-12-13 19:25:35
-categories: Hacintosh
+categories: Hackintosh
 description: Install macOS High Sierra on HP OMEN by HP Laptop
 tags:
 - Hacintosh

@@ -1,7 +1,7 @@
 ---
 title: How to use xcode-select in terminal
 date: 2017-09-03
-categories: Hacintosh
+categories: Hackintosh
 description: How to use xcode-select in terminal
 tags:
 - 终端

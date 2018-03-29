@@ -1,7 +1,7 @@
 ---
 title: Clover ACPI hotpatch
 date: 2017-12-17 15:30:15
-categories: Hacintosh
+categories: Hackintosh
 description: Using Clover to "hotpatch" ACPI 
 tags:
 - Hacintosh

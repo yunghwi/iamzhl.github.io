@@ -1,7 +1,7 @@
 ---
 title: Extract and fix DSDT SSDT simply
 date: 2017-08-30
-categories: Hacintosh
+categories: Hackintosh
 description: DSDT SSDT 简单提取修复
 tags:
 - DSDT

@@ -1,9 +1,13 @@
 ---
 title: How to patch Framebuffer change VRAM from 1536MB to 2048MB
 date: 2018-03-29 17:22:57
-categories:
-description:
-tags:
+categories: Hackintosh
+description: 简单修改FB实现显存增加至2048MB修复某些花屏
+tags: 
+- 显存
+- FB
+- 花屏
+- Framebuffer
 ---
 
 ## 前言：

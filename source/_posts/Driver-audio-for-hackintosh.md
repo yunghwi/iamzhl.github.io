@@ -1,7 +1,7 @@
 ---
 title: Driver audio for hackintosh
 date: 2017-11-06
-categories: Hacintosh
+categories: Hackintosh
 description: 利用 AppleALC 驱动声卡
 tags:
 - Hacintosh

@@ -1,7 +1,7 @@
 ---
 title: Allow apps downloaded from anywhere on macOS
 date: 2017-09-15 21:16:31
-categories: Hacintosh
+categories: Hackintosh
 description: 在 macOS 启用任何来源
 tags:
 - 黑苹果
