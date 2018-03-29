@@ -149,7 +149,7 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170205ia9i0jppida5jai5.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170356xpbiyid3del3byda.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170543xxdf6b0wdrkkbh80.png">
-<meta property="og:updated_time" content="2018-03-29T09:56:07.087Z">
+<meta property="og:updated_time" content="2018-03-29T10:04:06.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to patch Framebuffer change VRAM from 1536MB to 2048MB">
 <meta name="twitter:description" content="简单修改FB实现显存增加至2048MB修复某些花屏">
@@ -467,7 +467,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  978 字
+                  975 字
                 </span>
               
 
@@ -509,16 +509,15 @@
 
       
         <script src="/assets/js/APlayer.min.js"> </script><h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>本来不打算发这个帖子的，因为好多人觉得没有什么用，但前几天帮论坛好友阿林解决他<code>hd4600</code>花屏问题时，发现这个方法还是有一定作用的。之前在<code>10.12</code>区有坛友的<code>4600</code>部分区域出现花屏的情况，最后通过修改注入的<code>ig</code>来解决的，大家都知道，<code>4200 4400 4600</code>都是靠<code>FakeID</code>为<code>0x04128086</code>和<code>ig</code>为<code>0x0a260006</code>然后配合<code>FakePCIID</code>和<code>FakePCIID_HD_Graphics</code>两个<code>kext</code>来驱动的，大家也知道，一部分<code>4600</code>也可以用<code>0x04160000</code>而不需要<code>FakeID</code>注入来驱动（相应的不少<code>4400</code>也可以用<code>0x0a160000</code>而不需要<code>FakeID</code>来驱动），两种方法都可以驱动核显，但区别还是有的，最容易发现的就是显存了，第一种方法驱动后都是<code>1536m</code>，第二种则是<code>1024m</code>。而前面提到的<code>4600</code>部分区域花屏的案例则是用第二种方式来解决的，后来经过测试，发现通过对<code>framebuffer</code>进行<code>patch</code>以达到<code>2048m</code>的显存也可以解决这个问题，于是这个方法就被我记在心里了。后来在帮阿林解决了他的花屏问题后，决定还是把相关方法写出来，虽然没什么技术含量，但也能为景友提供一个思路。<br>废话就说到这，下面说方法:</p>
-<p>开工</p>
-<p>一、查看<code>FB</code>以及<code>ig</code><br>首先，确定你当前加载的Framebuffer，终端执行以下命令</p>
+<h2 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h2><h3 id="查看FB以及ig"><a href="#查看FB以及ig" class="headerlink" title="查看FB以及ig"></a>查看<code>FB</code>以及<code>ig</code></h3><p>首先，确定你当前加载的Framebuffer，终端执行以下命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kextstat | grep -y AppleIntel</span><br></pre></td></tr></table></figure>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/163040bhnxihl6zjlv0uiv.png" alt="163040bhnxihl6zjlv0uiv"></p>
 <p>如图，看输出结果中带Framebuffer的就是我们需要的（haswell之前的是带FB的），图中我的就是AppleIntelFramebufferAzul然后执行以下命令查看当前使用的ig</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ioreg -l | grep ig-platform-id</span><br></pre></td></tr></table></figure>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/163317lkkaa4c8k88h8gec.png" alt="163317lkkaa4c8k88h8gec"></p>
 <p>如图我的就是<code>0x0a260006</code>,有朋友不清楚，不是<code>0600260a</code>吗，下次一定要知道，这种<code>id</code>将每两位一组分组，然后从后往前排序，最后由于是十六进制，我们在最前面加上<code>0x</code>来表示，就得出了<code>0x0a260006</code>，这就是我们的<code>id</code>，当然了，后面步骤中用到的还是<code>0600260a</code>。</p>
-<p>二、下载并安装<code>hexfiend</code><br>我直接放链接了<br>链接:<a href="https://pan.baidu.com/s/1EhkVv2eaUE1u_Gmp87arJw" target="_blank" rel="noopener">https://pan.baidu.com/s/1EhkVv2eaUE1u_Gmp87arJw</a>  密码:lm1o</p>
-<p>三、在<code>FB</code>中查找<code>ig</code>进行处理<br>然后，在<code>/System/Library/Extensions</code>下找到和第一步找出的<code>Frambuffer</code>同名<code>kext</code>，以我的为例，就是<code>AppleIntelFramebufferAzul.kext</code>,右键显示包内容，在<code>/Contents/MacOS</code>下将<code>kext</code>的同名文件拷贝到桌面，以我的为例就是<code>AppleIntelFramebufferAzul</code>。</p>
+<h3 id="下载并安装hexfiend"><a href="#下载并安装hexfiend" class="headerlink" title="下载并安装hexfiend"></a>下载并安装<code>hexfiend</code></h3><p>我直接放链接了<br>链接:<a href="https://pan.baidu.com/s/1EhkVv2eaUE1u_Gmp87arJw" target="_blank" rel="noopener">https://pan.baidu.com/s/1EhkVv2eaUE1u_Gmp87arJw</a>  密码:lm1o</p>
+<h3 id="在FB中查找ig进行处理"><a href="#在FB中查找ig进行处理" class="headerlink" title="在FB中查找ig进行处理"></a>在<code>FB</code>中查找<code>ig</code>进行处理</h3><p>然后，在<code>/System/Library/Extensions</code>下找到和第一步找出的<code>Frambuffer</code>同名<code>kext</code>，以我的为例，就是<code>AppleIntelFramebufferAzul.kext</code>,右键显示包内容，在<code>/Contents/MacOS</code>下将<code>kext</code>的同名文件拷贝到桌面，以我的为例就是<code>AppleIntelFramebufferAzul</code>。</p>
 <p>右键此文件打开方式选我们刚才安装的<code>hexfiend</code>，如图</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/165110qfihyri7ahijpxfi.png" alt="165110qfihyri7ahijpxfi"></p>
 <p>快捷键<code>command + F</code>调出搜索框，输入刚才在第一步找到的<code>ig</code>，回车搜索，找到后面紧跟<code>01030303</code>的那一串字符，如图</p>
@@ -532,8 +531,7 @@
 <p>然后报错重启，就会发现关于本机的显存从原来的<code>1536MB</code>变成了<code>2048MB</code></p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/170543xxdf6b0wdrkkbh80.png" alt="170543xxdf6b0wdrkkbh80"></p>
 <p>如果没效果，可以尝试重建缓存。</p>
-<p>帖子的最后，我将之前做的几个<code>patch</code>贴出来，大家可以尝试使用:</p>
-<blockquote>
+<h2 id="帖子的最后，我将之前做的几个patch贴出来，大家可以尝试使用"><a href="#帖子的最后，我将之前做的几个patch贴出来，大家可以尝试使用" class="headerlink" title="帖子的最后，我将之前做的几个patch贴出来，大家可以尝试使用"></a>帖子的最后，我将之前做的几个<code>patch</code>贴出来，大家可以尝试使用</h2><blockquote>
 <p>HD4200_4400_4600 Mobile</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：           AppleIntelFramebufferAzul</span><br><span class="line">Find：           01030303 00000002 00003001 00006000 00000060</span><br><span class="line">Replace：        01030303 00000002 00003001 00009000 00000080</span><br><span class="line">Comment：        1536MB -&gt; 2048MB for HD4200_4400_4600 Mobile</span><br></pre></td></tr></table></figure>
@@ -820,7 +818,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开工"><span class="nav-number">2.</span> <span class="nav-text">开工</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看FB以及ig"><span class="nav-number">2.1.</span> <span class="nav-text">查看FB以及ig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载并安装hexfiend"><span class="nav-number">2.2.</span> <span class="nav-text">下载并安装hexfiend</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在FB中查找ig进行处理"><span class="nav-number">2.3.</span> <span class="nav-text">在FB中查找ig进行处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帖子的最后，我将之前做的几个patch贴出来，大家可以尝试使用"><span class="nav-number">3.</span> <span class="nav-text">帖子的最后，我将之前做的几个patch贴出来，大家可以尝试使用</span></a></li></ol></div>
             
 
           </div>
