@@ -105,7 +105,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="显存,FB,花屏,Framebuffer," />
 
 
 
@@ -133,12 +133,13 @@
   })();
 </script>
 
-<meta name="description" content="前言：本来不打算发这个帖子的，因为好多人觉得没有什么用，但前几天帮论坛好友阿林解决他hd4600花屏问题时，发现这个方法还是有一定作用的。之前在10.12区有坛友的4600部分区域出现花屏的情况，最后通过修改注入的ig来解决的，大家都知道，4200 4400 4600都是靠FakeID为0x04128086和ig为0x0a260006然后配合FakePCIID和FakePCIID_HD_Grap">
+<meta name="description" content="简单修改FB实现显存增加至2048MB修复某些花屏">
+<meta name="keywords" content="显存,FB,花屏,Framebuffer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to patch Framebuffer change VRAM from 1536MB to 2048MB">
 <meta property="og:url" content="https://blog.iamzhl.top/How-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html">
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
-<meta property="og:description" content="前言：本来不打算发这个帖子的，因为好多人觉得没有什么用，但前几天帮论坛好友阿林解决他hd4600花屏问题时，发现这个方法还是有一定作用的。之前在10.12区有坛友的4600部分区域出现花屏的情况，最后通过修改注入的ig来解决的，大家都知道，4200 4400 4600都是靠FakeID为0x04128086和ig为0x0a260006然后配合FakePCIID和FakePCIID_HD_Grap">
+<meta property="og:description" content="简单修改FB实现显存增加至2048MB修复某些花屏">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/163040bhnxihl6zjlv0uiv.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/163317lkkaa4c8k88h8gec.png">
@@ -148,10 +149,10 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170205ia9i0jppida5jai5.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170356xpbiyid3del3byda.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170543xxdf6b0wdrkkbh80.png">
-<meta property="og:updated_time" content="2018-03-29T09:40:45.645Z">
+<meta property="og:updated_time" content="2018-03-29T09:56:07.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to patch Framebuffer change VRAM from 1536MB to 2048MB">
-<meta name="twitter:description" content="前言：本来不打算发这个帖子的，因为好多人觉得没有什么用，但前几天帮论坛好友阿林解决他hd4600花屏问题时，发现这个方法还是有一定作用的。之前在10.12区有坛友的4600部分区域出现花屏的情况，最后通过修改注入的ig来解决的，大家都知道，4200 4400 4600都是靠FakeID为0x04128086和ig为0x0a260006然后配合FakePCIID和FakePCIID_HD_Grap">
+<meta name="twitter:description" content="简单修改FB实现显存增加至2048MB修复某些花屏">
 <meta name="twitter:image" content="http://ovefvi4g3.bkt.clouddn.com/163040bhnxihl6zjlv0uiv.png">
 
 
@@ -411,6 +412,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/" itemprop="url" rel="index">
+                    <span itemprop="name">Hackintosh</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -466,6 +489,10 @@
             </div>
           
 
+          
+              <div class="post-description">
+                  简单修改FB实现显存增加至2048MB修复某些花屏
+              </div>
           
 
         </div>
@@ -580,6 +607,18 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/显存/" rel="tag"><i class="fa fa-tag"></i> 显存</a>
+          
+            <a href="/tags/FB/" rel="tag"><i class="fa fa-tag"></i> FB</a>
+          
+            <a href="/tags/花屏/" rel="tag"><i class="fa fa-tag"></i> 花屏</a>
+          
+            <a href="/tags/Framebuffer/" rel="tag"><i class="fa fa-tag"></i> Framebuffer</a>
+          
+        </div>
+      
 
       
       
@@ -685,7 +724,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -696,7 +735,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -707,7 +746,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">71</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -827,7 +866,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      49.8k
+      49.2k
     </span>
   
 </div>
@@ -843,7 +882,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共49.8k字</span>
+  <span class="post-count">博客全站共49.2k字</span>
 </div>
 
         

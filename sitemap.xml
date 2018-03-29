@@ -2,16 +2,114 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.iamzhl.top/How-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html</loc>
+    <loc>https://blog.iamzhl.top/Speed-up-the-hackintosh-to-boot.html</loc>
     
-    <lastmod>2018-03-29T09:40:45.645Z</lastmod>
+    <lastmod>2018-03-29T09:59:42.071Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/RW-NTFS-partition-natively-on-macOS.html</loc>
+    
+    <lastmod>2018-03-29T09:59:32.532Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Resolve-short-duration-lag-after-wake-and-after-login-on-haswell-or-broadwell.html</loc>
+    
+    <lastmod>2018-03-29T09:59:23.131Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog.iamzhl.top/Install-macOS-on-laptop.html</loc>
     
-    <lastmod>2018-03-27T07:29:18.662Z</lastmod>
+    <lastmod>2018-03-29T09:58:49.786Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/HP-OMEN-by-HP-Laptop.html</loc>
+    
+    <lastmod>2018-03-29T09:58:30.400Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/How-to-use-xcode-select-in-terminal.html</loc>
+    
+    <lastmod>2018-03-29T09:58:25.245Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Extract-and-fix-DSDT-SSDT-simply.html</loc>
+    
+    <lastmod>2018-03-29T09:57:44.642Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Enable-BCM94352z-on-hacintosh.html</loc>
+    
+    <lastmod>2018-03-29T09:57:39.860Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Driver-audio-for-hackintosh.html</loc>
+    
+    <lastmod>2018-03-29T09:57:34.597Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Disable-the-discrete-GPU-in-laptop.html</loc>
+    
+    <lastmod>2018-03-29T09:57:28.942Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Dell-Inspiron-15-7000-i7-8550u.html</loc>
+    
+    <lastmod>2018-03-29T09:57:22.287Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Clover-ACPI-hotpatch.html</loc>
+    
+    <lastmod>2018-03-29T09:57:01.880Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Check-CPU-frequences-by-using-AppleIntelInfo.html</loc>
+    
+    <lastmod>2018-03-29T09:56:42.580Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/ASUS-X455LD-i5-4210u.html</loc>
+    
+    <lastmod>2018-03-29T09:56:27.319Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Allow-apps-downloaded-from-anywhere-in-macOS.html</loc>
+    
+    <lastmod>2018-03-29T09:56:21.346Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/How-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html</loc>
+    
+    <lastmod>2018-03-29T09:56:07.087Z</lastmod>
     
   </url>
   
@@ -79,13 +177,6 @@
   </url>
   
   <url>
-    <loc>https://blog.iamzhl.top/Check-CPU-frequences-by-using-AppleIntelInfo.html</loc>
-    
-    <lastmod>2017-12-24T11:38:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.iamzhl.top/Change-NetBeans's-language-to-Chinese-in-macOS.html</loc>
     
     <lastmod>2017-12-24T11:38:11.000Z</lastmod>
@@ -96,27 +187,6 @@
     <loc>https://blog.iamzhl.top/Change-launchpad-icon-grid-layout-in-macOS.html</loc>
     
     <lastmod>2017-12-24T11:37:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/ASUS-X455LD-i5-4210u.html</loc>
-    
-    <lastmod>2017-12-24T11:37:25.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Allow-apps-downloaded-from-anywhere-in-macOS.html</loc>
-    
-    <lastmod>2017-12-24T11:37:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Clover-ACPI-hotpatch.html</loc>
-    
-    <lastmod>2017-12-24T11:36:15.000Z</lastmod>
     
   </url>
   
@@ -138,48 +208,6 @@
     <loc>https://blog.iamzhl.top/Connect-Network-in-Windows-10.html</loc>
     
     <lastmod>2017-12-24T11:35:11.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Dell-Inspiron-15-7000-i7-8550u.html</loc>
-    
-    <lastmod>2017-12-24T11:35:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Disable-the-discrete-GPU-in-laptop.html</loc>
-    
-    <lastmod>2017-12-24T11:34:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Enable-BCM94352z-on-hacintosh.html</loc>
-    
-    <lastmod>2017-12-24T11:34:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Extract-and-fix-DSDT-SSDT-simply.html</loc>
-    
-    <lastmod>2017-12-24T11:33:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/How-to-use-xcode-select-in-terminal.html</loc>
-    
-    <lastmod>2017-12-24T11:32:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/How-to-build-Clover-from-source.html</loc>
-    
-    <lastmod>2017-12-24T11:32:09.000Z</lastmod>
     
   </url>
   
@@ -212,23 +240,9 @@
   </url>
   
   <url>
-    <loc>https://blog.iamzhl.top/Resolve-short-duration-lag-after-wake-and-after-login-on-haswell-or-broadwell.html</loc>
-    
-    <lastmod>2017-12-24T11:30:14.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.iamzhl.top/Solve-problem-of-subset-sum-with-backtracking-method.html</loc>
     
     <lastmod>2017-12-24T11:30:02.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Speed-up-the-hackintosh-to-boot.html</loc>
-    
-    <lastmod>2017-12-24T11:29:42.000Z</lastmod>
     
   </url>
   
@@ -282,30 +296,9 @@
   </url>
   
   <url>
-    <loc>https://blog.iamzhl.top/RW-NTFS-partition-natively-on-macOS.html</loc>
-    
-    <lastmod>2017-12-24T11:10:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Driver-audio-for-hackintosh.html</loc>
-    
-    <lastmod>2017-12-24T11:07:12.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.iamzhl.top/Install-and-config-mysql-on-mac.html</loc>
     
     <lastmod>2017-12-20T09:31:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/HP-OMEN-by-HP-Laptop.html</loc>
-    
-    <lastmod>2017-12-13T11:27:04.000Z</lastmod>
     
   </url>
   
