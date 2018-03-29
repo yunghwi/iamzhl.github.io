@@ -133,16 +133,26 @@
   })();
 </script>
 
-<meta name="description" content="日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Athlonreg&#39;s Blog">
-<meta property="og:url" content="https://blog.iamzhl.top/tags/暗影精灵/index.html">
+<meta name="description" content="前言：本来不打算发这个帖子的，因为好多人觉得没有什么用，但前几天帮论坛好友阿林解决他hd4600花屏问题时，发现这个方法还是有一定作用的。之前在10.12区有坛友的4600部分区域出现花屏的情况，最后通过修改注入的ig来解决的，大家都知道，4200 4400 4600都是靠FakeID为0x04128086和ig为0x0a260006然后配合FakePCIID和FakePCIID_HD_Grap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to patch Framebuffer change VRAM from 1536MB to 2048MB">
+<meta property="og:url" content="https://blog.iamzhl.top/How-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html">
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
-<meta property="og:description" content="日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！">
+<meta property="og:description" content="前言：本来不打算发这个帖子的，因为好多人觉得没有什么用，但前几天帮论坛好友阿林解决他hd4600花屏问题时，发现这个方法还是有一定作用的。之前在10.12区有坛友的4600部分区域出现花屏的情况，最后通过修改注入的ig来解决的，大家都知道，4200 4400 4600都是靠FakeID为0x04128086和ig为0x0a260006然后配合FakePCIID和FakePCIID_HD_Grap">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/163040bhnxihl6zjlv0uiv.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/163317lkkaa4c8k88h8gec.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/165110qfihyri7ahijpxfi.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/165432j9e9ve5zw091q6mj.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/165830l1ji7ero3hez1js6.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170205ia9i0jppida5jai5.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170356xpbiyid3del3byda.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170543xxdf6b0wdrkkbh80.png">
+<meta property="og:updated_time" content="2018-03-29T09:40:45.645Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Athlonreg&#39;s Blog">
-<meta name="twitter:description" content="日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！">
+<meta name="twitter:title" content="How to patch Framebuffer change VRAM from 1536MB to 2048MB">
+<meta name="twitter:description" content="前言：本来不打算发这个帖子的，因为好多人觉得没有什么用，但前几天帮论坛好友阿林解决他hd4600花屏问题时，发现这个方法还是有一定作用的。之前在10.12区有坛友的4600部分区域出现花屏的情况，最后通过修改注入的ig来解决的，大家都知道，4200 4400 4600都是靠FakeID为0x04128086和ig为0x0a260006然后配合FakePCIID和FakePCIID_HD_Grap">
+<meta name="twitter:image" content="http://ovefvi4g3.bkt.clouddn.com/163040bhnxihl6zjlv0uiv.png">
 
 
 
@@ -172,13 +182,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.iamzhl.top/tags/暗影精灵/"/>
+  <link rel="canonical" href="https://blog.iamzhl.top/How-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html"/>
 
 
 
 
 
-  <title>标签: 暗影精灵 | Athlonreg's Blog</title>
+  <title>How to patch Framebuffer change VRAM from 1536MB to 2048MB | Athlonreg's Blog</title>
   
 
 
@@ -207,7 +217,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <a href="https://github.com/athlonreg"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
@@ -347,54 +357,273 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>暗影精灵<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.iamzhl.top/How-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="athlonreg/套陆">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Athlonreg's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/HP-OMEN-by-HP-Laptop.html" itemprop="url">
-              
-                <span itemprop="name">HP OMEN by HP Laptop</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">How to patch Framebuffer change VRAM from 1536MB to 2048MB</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-13T19:25:35+08:00"
-              content="2017-12-13" >
-          12-13
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T17:22:57+08:00">
+                2018-03-29
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/How-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html" class="leancloud_visitors" data-flag-title="How to patch Framebuffer change VRAM from 1536MB to 2048MB">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  978 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>本来不打算发这个帖子的，因为好多人觉得没有什么用，但前几天帮论坛好友阿林解决他<code>hd4600</code>花屏问题时，发现这个方法还是有一定作用的。之前在<code>10.12</code>区有坛友的<code>4600</code>部分区域出现花屏的情况，最后通过修改注入的<code>ig</code>来解决的，大家都知道，<code>4200 4400 4600</code>都是靠<code>FakeID</code>为<code>0x04128086</code>和<code>ig</code>为<code>0x0a260006</code>然后配合<code>FakePCIID</code>和<code>FakePCIID_HD_Graphics</code>两个<code>kext</code>来驱动的，大家也知道，一部分<code>4600</code>也可以用<code>0x04160000</code>而不需要<code>FakeID</code>注入来驱动（相应的不少<code>4400</code>也可以用<code>0x0a160000</code>而不需要<code>FakeID</code>来驱动），两种方法都可以驱动核显，但区别还是有的，最容易发现的就是显存了，第一种方法驱动后都是<code>1536m</code>，第二种则是<code>1024m</code>。而前面提到的<code>4600</code>部分区域花屏的案例则是用第二种方式来解决的，后来经过测试，发现通过对<code>framebuffer</code>进行<code>patch</code>以达到<code>2048m</code>的显存也可以解决这个问题，于是这个方法就被我记在心里了。后来在帮阿林解决了他的花屏问题后，决定还是把相关方法写出来，虽然没什么技术含量，但也能为景友提供一个思路。<br>废话就说到这，下面说方法:</p>
+<p>开工</p>
+<p>一、查看<code>FB</code>以及<code>ig</code><br>首先，确定你当前加载的Framebuffer，终端执行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kextstat | grep -y AppleIntel</span><br></pre></td></tr></table></figure>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/163040bhnxihl6zjlv0uiv.png" alt="163040bhnxihl6zjlv0uiv"></p>
+<p>如图，看输出结果中带Framebuffer的就是我们需要的（haswell之前的是带FB的），图中我的就是AppleIntelFramebufferAzul然后执行以下命令查看当前使用的ig</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ioreg -l | grep ig-platform-id</span><br></pre></td></tr></table></figure>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/163317lkkaa4c8k88h8gec.png" alt="163317lkkaa4c8k88h8gec"></p>
+<p>如图我的就是<code>0x0a260006</code>,有朋友不清楚，不是<code>0600260a</code>吗，下次一定要知道，这种<code>id</code>将每两位一组分组，然后从后往前排序，最后由于是十六进制，我们在最前面加上<code>0x</code>来表示，就得出了<code>0x0a260006</code>，这就是我们的<code>id</code>，当然了，后面步骤中用到的还是<code>0600260a</code>。</p>
+<p>二、下载并安装<code>hexfiend</code><br>我直接放链接了<br>链接:<a href="https://pan.baidu.com/s/1EhkVv2eaUE1u_Gmp87arJw" target="_blank" rel="noopener">https://pan.baidu.com/s/1EhkVv2eaUE1u_Gmp87arJw</a>  密码:lm1o</p>
+<p>三、在<code>FB</code>中查找<code>ig</code>进行处理<br>然后，在<code>/System/Library/Extensions</code>下找到和第一步找出的<code>Frambuffer</code>同名<code>kext</code>，以我的为例，就是<code>AppleIntelFramebufferAzul.kext</code>,右键显示包内容，在<code>/Contents/MacOS</code>下将<code>kext</code>的同名文件拷贝到桌面，以我的为例就是<code>AppleIntelFramebufferAzul</code>。</p>
+<p>右键此文件打开方式选我们刚才安装的<code>hexfiend</code>，如图</p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/165110qfihyri7ahijpxfi.png" alt="165110qfihyri7ahijpxfi"></p>
+<p>快捷键<code>command + F</code>调出搜索框，输入刚才在第一步找到的<code>ig</code>，回车搜索，找到后面紧跟<code>01030303</code>的那一串字符，如图</p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/165432j9e9ve5zw091q6mj.png" alt="165432j9e9ve5zw091q6mj"></p>
+<p>从搜索的<code>ig</code>后面第一串开始，到<code>00000060</code>结束，将这些字符串拷贝到一个文本文档，并八个数字一组，整理好，然后再复制一行，将第二行最后的<code>60</code>改为<code>80</code>，如图</p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/165830l1ji7ero3hez1js6.png" alt="165830l1ji7ero3hez1js6"></p>
+<p>第一串就是我们要做的<code>patch</code>的<code>Find</code>，第二串是<code>Replace</code>，而<code>Name</code>则是第一步中的<code>Framebuffer</code>名字，我这里就是<code>AppleIntelFramebufferAzul</code>，<code>Comment</code>就无所谓了，我写成<code>Change VRAM from 1536MB to 2048MB for HD4400</code>，这时我们的补丁就做好了。</p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/170205ia9i0jppida5jai5.png" alt="170205ia9i0jppida5jai5"></p>
+<p>最后将<code>patch</code>打到<code>config.plist</code></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/170356xpbiyid3del3byda.png" alt="170356xpbiyid3del3byda"></p>
+<p>然后报错重启，就会发现关于本机的显存从原来的<code>1536MB</code>变成了<code>2048MB</code></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/170543xxdf6b0wdrkkbh80.png" alt="170543xxdf6b0wdrkkbh80"></p>
+<p>如果没效果，可以尝试重建缓存。</p>
+<p>帖子的最后，我将之前做的几个<code>patch</code>贴出来，大家可以尝试使用:</p>
+<blockquote>
+<p>HD4200_4400_4600 Mobile</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：           AppleIntelFramebufferAzul</span><br><span class="line">Find：           01030303 00000002 00003001 00006000 00000060</span><br><span class="line">Replace：        01030303 00000002 00003001 00009000 00000080</span><br><span class="line">Comment：        1536MB -&gt; 2048MB for HD4200_4400_4600 Mobile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HD620 Mobile：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：           AppleIntelKBLGraphicsFramebuffer</span><br><span class="line">Find：           01030303 00002002 00000000 00000060</span><br><span class="line">Replace：        01030303 00002002 00000000 00000080 </span><br><span class="line">Comment：        1536MB -&gt; 2048MB for HD620 Mobile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HD630 Mobile：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：           AppleIntelKBLGraphicsFramebuffer</span><br><span class="line">Find：           01030303 00006002 00005001 00000060</span><br><span class="line">Replace：        01030303 00006002 00005001 00000080</span><br><span class="line">Comment：        1536MB -&gt; 2048MB for HD630 Mobile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HD520_530_540 Mobile：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：           AppleIntelSKLGraphicsFramebuffer</span><br><span class="line">Find：           01030303 00002002 00005001 00000060</span><br><span class="line">Replace：        01030303 00002002 00005001 00000080</span><br><span class="line">Comment：        1536MB -&gt; 2048MB for HD520_530_540 Mobile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HD5500 Mobile：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：           AppleIntelBDWGraphicsFramebuffer </span><br><span class="line">find：           01030303 00002002 00005001 00000060</span><br><span class="line">Replace：        01030303 00002002 00005001 00000080</span><br><span class="line">Comment：        1536MB -&gt; 2048MB for HD5500 Mobile</span><br></pre></td></tr></table></figure>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持站长</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="athlonreg/套陆 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="athlonreg/套陆 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/How-to-change-your-username-on-your-mac.html" rel="next" title="How to change your username on your mac">
+                <i class="fa fa-chevron-left"></i> How to change your username on your mac
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -402,6 +631,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjY0OC85MjA5"></div>
+    
+  </div>
+
 
         </div>
         
@@ -422,8 +657,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -527,6 +771,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -679,6 +939,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -707,6 +971,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1168,26 +1443,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
