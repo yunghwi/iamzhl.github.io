@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.iamzhl.top/"/>
-  <updated>2018-03-29T11:35:58.215Z</updated>
+  <updated>2018-03-30T12:29:30.855Z</updated>
   <id>https://blog.iamzhl.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Make a bootable install image to install macOS High Sierra 10.13.4</title>
+    <link href="https://blog.iamzhl.top/Make-a-bootable-install-media-image-to-install-macOS-High-Sierra-10-13-4.html"/>
+    <id>https://blog.iamzhl.top/Make-a-bootable-install-media-image-to-install-macOS-High-Sierra-10-13-4.html</id>
+    <published>2018-03-30T11:52:35.000Z</published>
+    <updated>2018-03-30T12:29:30.855Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>随着新的<code>macOS High Sierra 10.13.4</code>操作系统发布，很多盆友迫不及待的做了一个<code>.dmg</code>格式的压缩镜像以备用，但发现用<code>Apple</code>官方的方法制作出的镜像用<code>CLOVER</code>引导时是看不到安装镜像的，最后，在<a href="https://blog.daliansky.net" target="_blank" rel="noopener">黑果小兵</a>的帮助下，终于找到了解决方法。</p><h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="下载app镜像"><a href="#下载app镜像" class="headerlink" title="下载app镜像"></a>下载<code>app</code>镜像</h3><p>首先去<code>AppleStore</code>下载原版的<code>app</code>镜像<a href="https://itunes.apple.com/cn/app/macos-high-sierra/id1246284741?l=en&amp;mt=12" target="_blank" rel="noopener">https://itunes.apple.com/cn/app/macos-high-sierra/id1246284741?l=en&amp;mt=12</a></p><h3 id="制作镜像"><a href="#制作镜像" class="headerlink" title="制作镜像"></a>制作镜像</h3><p>打开磁盘工具</p><p><img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_1.png" alt="Snip20180330_1"></p><p>点击顶部状态栏<code>File -&gt; New Image -&gt; Blank Image</code></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_1.png" alt="Snip20180330_1"></p><p>如上图写一个好听的名字，大小大于<code>app</code>镜像的大小，我直接大一点，写了<code>6.8GB</code>，选好保存位置，然后点击<code>save</code>。</p><p>打开终端，输入<code>sudo</code>空格，找到下载好的<code>app</code>镜像(一般在应用程序里)，右键显示包内容，依次打开<code>/Contents/Resources</code>，将<code>createinstallmedia</code>拖到终端，输入空格，然后输入<code>--volume</code>，再空格，然后将准备好的安装磁盘，拖动至终端，再空格，接着输入<code>--applicationpath</code>，空格，将<code>app</code>镜像拖放到终端，空格，输入<code>--nointeraction</code>，回车，输入密码，再回车，等待镜像写入完成。</p><h3 id="进行镜像修复"><a href="#进行镜像修复" class="headerlink" title="进行镜像修复"></a>进行镜像修复</h3><p>如图</p><p><img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_3.png" alt="Snip20180330_3"></p><p>然后下载附件，这个是我从10.13.3的镜像中提取的，13.4缺少这个启动的必要文件。<br>链接:<a href="https://pan.baidu.com/s/14R8rEk7PK9exu0lDvPh7jA" target="_blank" rel="noopener">https://pan.baidu.com/s/14R8rEk7PK9exu0lDvPh7jA</a>  密码:fcwt，将下载的压缩包解压，按住<code>Command Shift .</code>显示隐藏文件，即可看到里面的<code>.IA</code>开头的一个目录和一个文件，将这两个文件拷贝到刚才做的安装盘内。</p><p>拷贝之前</p><p><img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_4.png" alt="Snip20180330_4"></p><p>拷贝之后</p><p><img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_5.png" alt="Snip20180330_5"></p><p>右键<code>.IABootFilesSystemVersion.plist</code>用<code>plist</code>编辑器打开，例如<code>Xcode</code>、<code>Plist Edit</code></p><p>做以下修改</p><p><img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_6.png" alt="Snip20180330_6"></p><p>保存退出</p><p>打开<code>/System/Library/CoreServices</code></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_8.png" alt="Snip20180330_8"></p><p>拷贝图中选中项，将其拷贝到<code>/.IABootFiles/</code>目录下，然后打开<code>/System/Library/PrelinkedKernels/</code>，将下图选中的文件也拷贝到<code>/.IABootFiles/</code>目录下</p><p><img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_9.png" alt="Snip20180330_9"></p><p>最后<code>/.IABootFiles/</code>目录下内容如下</p><p><img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_10.png" alt="Snip20180330_10"></p><p>这时重启进入<code>CLOVER</code>引导界面就可以看到安装盘了。</p>]]></content>
+    
+    <summary type="html">
+    
+      制作可启动的安装镜像来安装macOS High Sierra 10.13.4
+    
+    </summary>
+    
+      <category term="Hackintosh" scheme="https://blog.iamzhl.top/categories/Hackintosh/"/>
+    
+    
+      <category term="image" scheme="https://blog.iamzhl.top/tags/image/"/>
+    
+      <category term="10.13.4" scheme="https://blog.iamzhl.top/tags/10-13-4/"/>
+    
+      <category term="镜像" scheme="https://blog.iamzhl.top/tags/%E9%95%9C%E5%83%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>How to patch Framebuffer change VRAM from 1536MB to 2048MB</title>
@@ -394,9 +420,9 @@
       <category term="Hackintosh" scheme="https://blog.iamzhl.top/categories/Hackintosh/"/>
     
     
-      <category term="Hacintosh" scheme="https://blog.iamzhl.top/tags/Hacintosh/"/>
-    
       <category term="黑苹果" scheme="https://blog.iamzhl.top/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
+    
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/tags/Hacintosh/"/>
     
   </entry>
   
@@ -464,9 +490,9 @@
       <category term="Hackintosh" scheme="https://blog.iamzhl.top/categories/Hackintosh/"/>
     
     
-      <category term="Hacintosh" scheme="https://blog.iamzhl.top/tags/Hacintosh/"/>
-    
       <category term="黑苹果" scheme="https://blog.iamzhl.top/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
+    
+      <category term="Hacintosh" scheme="https://blog.iamzhl.top/tags/Hacintosh/"/>
     
   </entry>
   
@@ -491,32 +517,6 @@
       <category term="NetBeans" scheme="https://blog.iamzhl.top/tags/NetBeans/"/>
     
       <category term="MyEclipse" scheme="https://blog.iamzhl.top/tags/MyEclipse/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RW NTFS partition natively on macOS</title>
-    <link href="https://blog.iamzhl.top/RW-NTFS-partition-natively-on-macOS.html"/>
-    <id>https://blog.iamzhl.top/RW-NTFS-partition-natively-on-macOS.html</id>
-    <published>2017-10-26T16:00:00.000Z</published>
-    <updated>2018-03-29T09:59:32.532Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h3 id="实现-MAC-原生读写-NTFS-分区"><a href="#实现-MAC-原生读写-NTFS-分区" class="headerlink" title="实现 MAC 原生读写 NTFS 分区"></a>实现 MAC 原生读写 NTFS 分区</h3><blockquote><p>打开终端，输入命令</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ diskutil list</span><br></pre></td></tr></table></figure><blockquote><p>输入命令</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/fstab</span><br></pre></td></tr></table></figure><blockquote><p>编辑内容如下</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LABEL=Win\040Ntfs\040Drive none ntfs rw,auto,nobrowse</span><br></pre></td></tr></table></figure><blockquote><p>注意</p></blockquote><p><strong><code>Win\040Ntfs\040Drive</code> 这串字符中<code>\040</code>代表空格，<code>Win\040Ntfs\040Drive</code> 这一串出现在<code>diskutil list</code>那个屏幕里面，比如下图就是<code>HD-E1</code></strong></p><p><img src="http://ovefvi4g3.bkt.clouddn.com/2017-10-27-01.png" alt="2017-10-27-01"></p><blockquote><p>最后一步</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ln -s /Volumes ~/Desktop/Volumes</span><br></pre></td></tr></table></figure><h3 id="Credit"><a href="#Credit" class="headerlink" title="Credit"></a>Credit</h3><blockquote><p>转自<a href="https://www.waitsun.com" target="_blank" rel="noopener">爱情守望者</a></p><p>转载请注明<a href="https://www.waitsun.com/aboutus/help" target="_blank" rel="noopener">原帖地址</a></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      实现 MAC 原生读写 NTFS 分区
-    
-    </summary>
-    
-      <category term="Hackintosh" scheme="https://blog.iamzhl.top/categories/Hackintosh/"/>
-    
-    
-      <category term="Hacintosh" scheme="https://blog.iamzhl.top/tags/Hacintosh/"/>
-    
-      <category term="黑苹果" scheme="https://blog.iamzhl.top/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
-    
-      <category term="NTFS" scheme="https://blog.iamzhl.top/tags/NTFS/"/>
     
   </entry>
   

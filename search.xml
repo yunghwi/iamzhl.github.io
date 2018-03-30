@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Make a bootable install image to install macOS High Sierra 10.13.4]]></title>
+    <url>%2FMake-a-bootable-install-media-image-to-install-macOS-High-Sierra-10-13-4.html</url>
+    <content type="text"><![CDATA[前言随着新的macOS High Sierra 10.13.4操作系统发布，很多盆友迫不及待的做了一个.dmg格式的压缩镜像以备用，但发现用Apple官方的方法制作出的镜像用CLOVER引导时是看不到安装镜像的，最后，在黑果小兵的帮助下，终于找到了解决方法。 教程开始下载app镜像首先去AppleStore下载原版的app镜像https://itunes.apple.com/cn/app/macos-high-sierra/id1246284741?l=en&amp;mt=12 制作镜像打开磁盘工具 点击顶部状态栏File -&gt; New Image -&gt; Blank Image 如上图写一个好听的名字，大小大于app镜像的大小，我直接大一点，写了6.8GB，选好保存位置，然后点击save。 打开终端，输入sudo空格，找到下载好的app镜像(一般在应用程序里)，右键显示包内容，依次打开/Contents/Resources，将createinstallmedia拖到终端，输入空格，然后输入--volume，再空格，然后将准备好的安装磁盘，拖动至终端，再空格，接着输入--applicationpath，空格，将app镜像拖放到终端，空格，输入--nointeraction，回车，输入密码，再回车，等待镜像写入完成。 进行镜像修复如图 然后下载附件，这个是我从10.13.3的镜像中提取的，13.4缺少这个启动的必要文件。链接:https://pan.baidu.com/s/14R8rEk7PK9exu0lDvPh7jA 密码:fcwt，将下载的压缩包解压，按住Command Shift .显示隐藏文件，即可看到里面的.IA开头的一个目录和一个文件，将这两个文件拷贝到刚才做的安装盘内。 拷贝之前 拷贝之后 右键.IABootFilesSystemVersion.plist用plist编辑器打开，例如Xcode、Plist Edit 做以下修改 保存退出 打开/System/Library/CoreServices 拷贝图中选中项，将其拷贝到/.IABootFiles/目录下，然后打开/System/Library/PrelinkedKernels/，将下图选中的文件也拷贝到/.IABootFiles/目录下 最后/.IABootFiles/目录下内容如下 这时重启进入CLOVER引导界面就可以看到安装盘了。]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>image</tag>
+        <tag>10.13.4</tag>
+        <tag>镜像</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[How to patch Framebuffer change VRAM from 1536MB to 2048MB]]></title>
     <url>%2FHow-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html</url>
     <content type="text"><![CDATA[前言：本来不打算发这个帖子的，因为好多人觉得没有什么用，但前几天帮论坛好友阿林解决他hd4600花屏问题时，发现这个方法还是有一定作用的。之前在10.12区有坛友的4600部分区域出现花屏的情况，最后通过修改注入的ig来解决的，大家都知道，4200 4400 4600都是靠FakeID为0x04128086和ig为0x0a260006然后配合FakePCIID和FakePCIID_HD_Graphics两个kext来驱动的，大家也知道，一部分4600也可以用0x04160000而不需要FakeID注入来驱动（相应的不少4400也可以用0x0a160000而不需要FakeID来驱动），两种方法都可以驱动核显，但区别还是有的，最容易发现的就是显存了，第一种方法驱动后都是1536m，第二种则是1024m。而前面提到的4600部分区域花屏的案例则是用第二种方式来解决的，后来经过测试，发现通过对framebuffer进行patch以达到2048m的显存也可以解决这个问题，于是这个方法就被我记在心里了。后来在帮阿林解决了他的花屏问题后，决定还是把相关方法写出来，虽然没什么技术含量，但也能为景友提供一个思路。废话就说到这，下面说方法: 开工查看FB以及ig首先，确定你当前加载的Framebuffer，终端执行以下命令 1$ kextstat | grep -y AppleIntel 如图，看输出结果中带Framebuffer的就是我们需要的（haswell之前的是带FB的），图中我的就是AppleIntelFramebufferAzul然后执行以下命令查看当前使用的ig 1$ ioreg -l | grep ig-platform-id 如图我的就是0x0a260006,有朋友不清楚，不是0600260a吗，下次一定要知道，这种id将每两位一组分组，然后从后往前排序，最后由于是十六进制，我们在最前面加上0x来表示，就得出了0x0a260006，这就是我们的id，当然了，后面步骤中用到的还是0600260a。 下载并安装hexfiend我直接放链接了链接:https://pan.baidu.com/s/1EhkVv2eaUE1u_Gmp87arJw 密码:lm1o 在FB中查找ig进行处理然后，在/System/Library/Extensions下找到和第一步找出的Frambuffer同名kext，以我的为例，就是AppleIntelFramebufferAzul.kext,右键显示包内容，在/Contents/MacOS下将kext的同名文件拷贝到桌面，以我的为例就是AppleIntelFramebufferAzul。 右键此文件打开方式选我们刚才安装的hexfiend，如图 快捷键command + F调出搜索框，输入刚才在第一步找到的ig，回车搜索，找到后面紧跟01030303的那一串字符，如图 从搜索的ig后面第一串开始，到00000060结束，将这些字符串拷贝到一个文本文档，并八个数字一组，整理好，然后再复制一行，将第二行最后的60改为80，如图 第一串就是我们要做的patch的Find，第二串是Replace，而Name则是第一步中的Framebuffer名字，我这里就是AppleIntelFramebufferAzul，Comment就无所谓了，我写成Change VRAM from 1536MB to 2048MB for HD4400，这时我们的补丁就做好了。 最后将patch打到config.plist 然后保存重启，就会发现关于本机的显存从原来的1536MB变成了2048MB 如果没效果，可以尝试重建缓存。 帖子的最后，我将之前做的几个patch贴出来，大家可以尝试使用 HD4200_4400_4600 Mobile 1234Name： AppleIntelFramebufferAzulFind： 01030303 00000002 00003001 00006000 00000060Replace： 01030303 00000002 00003001 00009000 00000080Comment： 1536MB -&gt; 2048MB for HD4200_4400_4600 Mobile HD620 Mobile： 1234Name： AppleIntelKBLGraphicsFramebufferFind： 01030303 00002002 00000000 00000060Replace： 01030303 00002002 00000000 00000080 Comment： 1536MB -&gt; 2048MB for HD620 Mobile HD630 Mobile： 1234Name： AppleIntelKBLGraphicsFramebufferFind： 01030303 00006002 00005001 00000060Replace： 01030303 00006002 00005001 00000080Comment： 1536MB -&gt; 2048MB for HD630 Mobile HD520_530_540 Mobile： 1234Name： AppleIntelSKLGraphicsFramebufferFind： 01030303 00002002 00005001 00000060Replace： 01030303 00002002 00005001 00000080Comment： 1536MB -&gt; 2048MB for HD520_530_540 Mobile HD5500 Mobile： 1234Name： AppleIntelBDWGraphicsFramebuffer find： 01030303 00002002 00005001 00000060Replace： 01030303 00002002 00005001 00000080Comment： 1536MB -&gt; 2048MB for HD5500 Mobile]]></content>
@@ -188,8 +201,8 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -223,8 +236,8 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -247,8 +260,8 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>NTFS</tag>
       </tags>
   </entry>
@@ -320,8 +333,8 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>Window Server Service only ran for 0 seconds</tag>
         <tag>Disable DGPU</tag>
         <tag>屏蔽独显</tag>
@@ -338,19 +351,6 @@
         <tag>git</tag>
         <tag>同步</tag>
         <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Problem about police and gangster 110]]></title>
-    <url>%2FProblem-about-police-and-gangster-110.html</url>
-    <content type="text"><![CDATA[问题描述 思路1、一共九个数字，八个操作符；2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；3、共有 3^8 种情况，遍历每种情况判断输出；4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1x10+2，然后下一次循环操作符为+，需要计算的就是12+3，同理在3、4之间的空需要计算的是3x10+4，而不是（12+3）x10+4，所以需要一个临时变量来记录上次的操作数，还需要一个变量来记录上次的操作符将上次的结果进行统计处理，原因就在于我们无法确定下次的操作符是不是留空。6、由于我们在统计和时，只有在下一次循环才能处理最后一个操作数，所以需要将9最后单独处理。 代码实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int a[9]=&#123;1,2,3,4,5,6,7,8,9&#125;; int sum; int temp; int oper,lastoper; int number; int i,j; for(i=0;i&lt;pow(3,8);i++) &#123; sum=0; temp=1; lastoper=1; number=i; for(j=1;j&lt;=8;j++) &#123; //操作八次 oper=number%3; number=number/3; if (!oper) temp=temp*10+a[j]; //留空单独处理 if (oper==1) &#123; //当前操作符 if(lastoper==1)&#123; //前一次操作符 sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; //更新上次操作符 &#125; if(oper==2)&#123; if(lastoper==1)&#123; sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; &#125; &#125; if(lastoper==1) //第九次操作单独处理 sum=sum+temp; if(lastoper==2) sum=sum-temp; if(sum==110) &#123; number=i; for(j=1;j&lt;=8;j++) &#123; printf(&quot;%d&quot;,a[j-1]); oper=number%3; number=number/3; if(oper==1) printf(&quot;+&quot;); if(oper==2) printf(&quot;-&quot;); else continue; &#125; printf(&quot;9\n&quot;); &#125; &#125; return 0;&#125; 运行结果]]></content>
-      <categories>
-        <category>algorithm</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>C语言</tag>
-        <tag>警匪110</tag>
       </tags>
   </entry>
   <entry>
@@ -380,6 +380,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Problem about police and gangster 110]]></title>
+    <url>%2FProblem-about-police-and-gangster-110.html</url>
+    <content type="text"><![CDATA[问题描述 思路1、一共九个数字，八个操作符；2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；3、共有 3^8 种情况，遍历每种情况判断输出；4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1x10+2，然后下一次循环操作符为+，需要计算的就是12+3，同理在3、4之间的空需要计算的是3x10+4，而不是（12+3）x10+4，所以需要一个临时变量来记录上次的操作数，还需要一个变量来记录上次的操作符将上次的结果进行统计处理，原因就在于我们无法确定下次的操作符是不是留空。6、由于我们在统计和时，只有在下一次循环才能处理最后一个操作数，所以需要将9最后单独处理。 代码实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int a[9]=&#123;1,2,3,4,5,6,7,8,9&#125;; int sum; int temp; int oper,lastoper; int number; int i,j; for(i=0;i&lt;pow(3,8);i++) &#123; sum=0; temp=1; lastoper=1; number=i; for(j=1;j&lt;=8;j++) &#123; //操作八次 oper=number%3; number=number/3; if (!oper) temp=temp*10+a[j]; //留空单独处理 if (oper==1) &#123; //当前操作符 if(lastoper==1)&#123; //前一次操作符 sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; //更新上次操作符 &#125; if(oper==2)&#123; if(lastoper==1)&#123; sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; &#125; &#125; if(lastoper==1) //第九次操作单独处理 sum=sum+temp; if(lastoper==2) sum=sum-temp; if(sum==110) &#123; number=i; for(j=1;j&lt;=8;j++) &#123; printf(&quot;%d&quot;,a[j-1]); oper=number%3; number=number/3; if(oper==1) printf(&quot;+&quot;); if(oper==2) printf(&quot;-&quot;); else continue; &#125; printf(&quot;9\n&quot;); &#125; &#125; return 0;&#125; 运行结果]]></content>
+      <categories>
+        <category>algorithm</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>C语言</tag>
+        <tag>警匪110</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Allow apps downloaded from anywhere on macOS]]></title>
     <url>%2FAllow-apps-downloaded-from-anywhere-in-macOS.html</url>
     <content type="text"><![CDATA[Allow apps downloaded from anywhere on许多朋友升级到 macOS Sierra 后在”安全性与隐私”中找不到”任何来源”选项，这里我教给大家怎么打开”任何来源”。 打开终端，输入以下代码回车： 1sudo spctl --master-disable 会提示输入密码，根据提示输入密码回车之后就可以在”安全性与隐私”中打开”任何来源”选项了]]></content>
@@ -387,9 +400,9 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
         <tag>终端</tag>
+        <tag>Hacintosh</tag>
         <tag>任何来源</tag>
       </tags>
   </entry>
@@ -414,8 +427,8 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>BCM94352z</tag>
       </tags>
   </entry>
@@ -453,8 +466,8 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>AppleIntelInfo</tag>
         <tag>变频</tag>
       </tags>
@@ -467,22 +480,9 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>开机速度</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Problem about coin array]]></title>
-    <url>%2FProblem-about-coin-array.html</url>
-    <content type="text"><![CDATA[问题描述有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 思路本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];nt number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
-      <categories>
-        <category>algorithm</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>C语言</tag>
-        <tag>金币阵列</tag>
       </tags>
   </entry>
   <entry>
@@ -496,6 +496,19 @@
         <tag>终端</tag>
         <tag>Mac</tag>
         <tag>Xcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Problem about coin array]]></title>
+    <url>%2FProblem-about-coin-array.html</url>
+    <content type="text"><![CDATA[问题描述有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 思路本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];nt number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>algorithm</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>C语言</tag>
+        <tag>金币阵列</tag>
       </tags>
   </entry>
   <entry>
