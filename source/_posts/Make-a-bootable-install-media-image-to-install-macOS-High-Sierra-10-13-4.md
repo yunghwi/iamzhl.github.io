@@ -23,17 +23,17 @@ tags:
 
 点击顶部状态栏`File -> New Image -> Blank Image`
 
-![Snip20180330_1](http://ovefvi4g3.bkt.clouddn.com/Snip20180330_1.png)
+![Snip20180330_11](http://ovefvi4g3.bkt.clouddn.com/Snip20180330_11.png)
 
 如上图写一个好听的名字，大小大于`app`镜像的大小，我直接大一点，写了`6.8GB`，选好保存位置，然后点击`save`。
 
 打开终端，输入`sudo`空格，找到下载好的`app`镜像(一般在应用程序里)，右键显示包内容，依次打开`/Contents/Resources`，将`createinstallmedia`拖到终端，输入空格，然后输入`--volume`，再空格，然后将准备好的安装磁盘，拖动至终端，再空格，接着输入`--applicationpath`，空格，将`app`镜像拖放到终端，空格，输入`--nointeraction`，回车，输入密码，再回车，等待镜像写入完成。
 
-### 进行镜像修复
 如图
 
 ![Snip20180330_3](http://ovefvi4g3.bkt.clouddn.com/Snip20180330_3.png)
 
+### 进行镜像修复
 然后下载附件，这个是我从10.13.3的镜像中提取的，13.4缺少这个启动的必要文件。
 链接:[https://pan.baidu.com/s/14R8rEk7PK9exu0lDvPh7jA](https://pan.baidu.com/s/14R8rEk7PK9exu0lDvPh7jA)  密码:fcwt，将下载的压缩包解压，按住`Command Shift .`显示隐藏文件，即可看到里面的`.IA`开头的一个目录和一个文件，将这两个文件拷贝到刚才做的安装盘内。
 
