@@ -142,7 +142,7 @@
 <meta property="og:description" content="制作可启动的安装镜像来安装macOS High Sierra 10.13.4">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_1.png">
-<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_1.png">
+<meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_11.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_3.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_4.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_5.png">
@@ -150,7 +150,7 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_8.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_9.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_10.png">
-<meta property="og:updated_time" content="2018-03-30T12:29:30.855Z">
+<meta property="og:updated_time" content="2018-03-30T12:57:44.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Make a bootable install image to install macOS High Sierra 10.13.4">
 <meta name="twitter:description" content="制作可启动的安装镜像来安装macOS High Sierra 10.13.4">
@@ -514,12 +514,12 @@
 <h3 id="制作镜像"><a href="#制作镜像" class="headerlink" title="制作镜像"></a>制作镜像</h3><p>打开磁盘工具</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_1.png" alt="Snip20180330_1"></p>
 <p>点击顶部状态栏<code>File -&gt; New Image -&gt; Blank Image</code></p>
-<p><img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_1.png" alt="Snip20180330_1"></p>
+<p><img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_11.png" alt="Snip20180330_11"></p>
 <p>如上图写一个好听的名字，大小大于<code>app</code>镜像的大小，我直接大一点，写了<code>6.8GB</code>，选好保存位置，然后点击<code>save</code>。</p>
 <p>打开终端，输入<code>sudo</code>空格，找到下载好的<code>app</code>镜像(一般在应用程序里)，右键显示包内容，依次打开<code>/Contents/Resources</code>，将<code>createinstallmedia</code>拖到终端，输入空格，然后输入<code>--volume</code>，再空格，然后将准备好的安装磁盘，拖动至终端，再空格，接着输入<code>--applicationpath</code>，空格，将<code>app</code>镜像拖放到终端，空格，输入<code>--nointeraction</code>，回车，输入密码，再回车，等待镜像写入完成。</p>
-<h3 id="进行镜像修复"><a href="#进行镜像修复" class="headerlink" title="进行镜像修复"></a>进行镜像修复</h3><p>如图</p>
+<p>如图</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_3.png" alt="Snip20180330_3"></p>
-<p>然后下载附件，这个是我从10.13.3的镜像中提取的，13.4缺少这个启动的必要文件。<br>链接:<a href="https://pan.baidu.com/s/14R8rEk7PK9exu0lDvPh7jA" target="_blank" rel="noopener">https://pan.baidu.com/s/14R8rEk7PK9exu0lDvPh7jA</a>  密码:fcwt，将下载的压缩包解压，按住<code>Command Shift .</code>显示隐藏文件，即可看到里面的<code>.IA</code>开头的一个目录和一个文件，将这两个文件拷贝到刚才做的安装盘内。</p>
+<h3 id="进行镜像修复"><a href="#进行镜像修复" class="headerlink" title="进行镜像修复"></a>进行镜像修复</h3><p>然后下载附件，这个是我从10.13.3的镜像中提取的，13.4缺少这个启动的必要文件。<br>链接:<a href="https://pan.baidu.com/s/14R8rEk7PK9exu0lDvPh7jA" target="_blank" rel="noopener">https://pan.baidu.com/s/14R8rEk7PK9exu0lDvPh7jA</a>  密码:fcwt，将下载的压缩包解压，按住<code>Command Shift .</code>显示隐藏文件，即可看到里面的<code>.IA</code>开头的一个目录和一个文件，将这两个文件拷贝到刚才做的安装盘内。</p>
 <p>拷贝之前</p>
 <p><img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_4.png" alt="Snip20180330_4"></p>
 <p>拷贝之后</p>
@@ -618,6 +618,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/Common-command-in-macOS.html" rel="prev" title="Common command in macOS">
+                Common command in macOS <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -704,7 +708,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -726,7 +730,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -846,7 +850,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      49.7k
+      49.9k
     </span>
   
 </div>
@@ -862,7 +866,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共49.7k字</span>
+  <span class="post-count">博客全站共49.9k字</span>
 </div>
 
         

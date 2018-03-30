@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Make-a-bootable-install-media-image-to-install-macOS-High-Sierra-10-13-4.html</loc>
-    <lastmod>2018-03-30T12:29:30.855Z</lastmod>
+    <lastmod>2018-03-30T12:57:44.618Z</lastmod>
     <data>
         <display>
         <title>Make a bootable install image to install macOS High Sierra 10.13.4</title>
@@ -16,6 +16,28 @@
         <tag>10.13.4</tag>
          
         <tag>镜像</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Common-command-in-macOS.html</loc>
+    <lastmod>2018-03-30T12:56:34.288Z</lastmod>
+    <data>
+        <display>
+        <title>Common command in macOS</title>
+        <pubTime>2018-03-30T12:32:47.000Z</pubTime>
+        
+        <tag>command</tag>
+         
+        <tag>macOS</tag>
          
          
            
@@ -61,9 +83,9 @@
         <title>Speed up the hackintosh to boot</title>
         <pubTime>2017-09-04T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>开机速度</tag>
          
@@ -85,9 +107,9 @@
         <title>RW NTFS partition natively on macOS</title>
         <pubTime>2017-10-26T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>NTFS</tag>
          
@@ -131,9 +153,9 @@
         <title>Install macOS on laptop</title>
         <pubTime>2017-12-11T16:28:15.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
          
            
@@ -225,9 +247,9 @@
         <title>Enable BCM94352z on your hacintosh</title>
         <pubTime>2017-09-12T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>BCM94352z</tag>
          
@@ -249,9 +271,9 @@
         <title>Driver audio for hackintosh</title>
         <pubTime>2017-11-05T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
          
            
@@ -271,9 +293,9 @@
         <title>Disable the discrete GPU in laptop</title>
         <pubTime>2017-10-03T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>Window Server Service only ran for 0 seconds</tag>
          
@@ -347,9 +369,9 @@
         <title>Check CPU frequences by using AppleIntelInfo</title>
         <pubTime>2017-09-04T16:00:00.000Z</pubTime>
         
-        <tag>黑苹果</tag>
-         
         <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
          
         <tag>AppleIntelInfo</tag>
          
@@ -395,11 +417,11 @@
         <title>Allow apps downloaded from anywhere on macOS</title>
         <pubTime>2017-09-15T13:16:31.000Z</pubTime>
         
+        <tag>Hacintosh</tag>
+         
         <tag>黑苹果</tag>
          
         <tag>终端</tag>
-         
-        <tag>Hacintosh</tag>
          
         <tag>任何来源</tag>
          
