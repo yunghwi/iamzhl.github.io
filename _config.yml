@@ -28,6 +28,7 @@ i18n_dir: :lang
 skip_render: 
 - baidu_verify_a6aDbE1lFp.html
 - sogousiteverification.txt.html
+- googlebc464c81a469b283.html
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
