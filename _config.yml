@@ -27,6 +27,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render: 
 - baidu_verify_a6aDbE1lFp.html
+- sogousiteverification.txt.html
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
