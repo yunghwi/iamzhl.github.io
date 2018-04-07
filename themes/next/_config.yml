@@ -22,7 +22,7 @@ keywords: "Hexo, NexT"
 rss: /atom.xml
 
 # Specify the date when the site was setup
-#since: 2015
+since: 2017
 
 # icon between year and author @Footer
 authoricon: heart
@@ -339,10 +339,10 @@ changyan:
 # more info please open https://github.com/xCss/Valine
 valine:
   enable: true
-  appid: PFWdP6K0HHhxo0n79CWW1jwC-gzGzoHsz
-  appkey: odzPREQYB3YOJ9fmkolyHFap
-  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
-  verify: false # Verification code
+  appid: UvfjEEwG1cCMWwMoSfmFPHsp-gzGzoHsz
+  appkey: 05veilg20psiTa5NPUhOxz6I
+  notify: true # mail notifier , https://github.com/xCss/Valine/wiki
+  verify: true # Verification code
   placeholder: 给博主留言...
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
