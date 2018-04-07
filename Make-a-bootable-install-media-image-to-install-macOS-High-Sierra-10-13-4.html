@@ -14,6 +14,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/vendors/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/vendors/pace/pace-theme-mac-osx.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -164,7 +171,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.2',
-    sidebar: {"position":"left","display":"hide","offset":14,"offset_float":14,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":14,"offset_float":14,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
@@ -543,6 +550,14 @@
     
 
     
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="athlonreg/套陆 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>关注微信公众号来订阅我的博客吧!!!</div>
+</div>
+
+      </div>
+    
 
     
       <div>
@@ -687,6 +702,8 @@
 
   <aside id="sidebar" class="sidebar">
     
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -784,12 +801,6 @@
                 <a href="https://coding.net/u/iamzhl" target="_blank" title="coding">
                   
                     <i class="fa fa-fw fa-spinner"></i>coding</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.facebook.com/15563836030@163.com" target="_blank" title="FB Page">
-                  
-                    <i class="fa fa-fw fa-facebook"></i>FB Page</a>
               </span>
             
           
@@ -1020,8 +1031,8 @@
     new Valine({
         av: AV,
         el: '#vcomments' ,
-        verify: true,
-        notify: true,
+        verify: false,
+        notify: false,
         app_id: 'UvfjEEwG1cCMWwMoSfmFPHsp-gzGzoHsz',
         app_key: '05veilg20psiTa5NPUhOxz6I',
         placeholder: '给博主留言...'
