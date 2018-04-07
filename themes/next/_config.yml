@@ -22,7 +22,7 @@ keywords: "Hexo, NexT"
 rss: /atom.xml
 
 # Specify the date when the site was setup
-# since: 2015
+#since: 2015
 
 # icon between year and author @Footer
 authoricon: heart
@@ -344,6 +344,9 @@ valine:
   notify: true # mail notifier , https://github.com/xCss/Valine/wiki
   verify: true # Verification code
   placeholder: 给博主留言...
+  avatar: mm # gravatar style
+  guest_info: nick,mail,link # custom comment header
+  pageSize: 10 # pagination size
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
