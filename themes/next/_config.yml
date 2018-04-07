@@ -343,7 +343,10 @@ valine:
   appkey: odzPREQYB3YOJ9fmkolyHFap
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: ヾﾉ≧∀≦)o来啊，快活啊!
+  placeholder: 给博主留言...
+  avatar: mm # gravatar style
+  guest_info: nick,mail,link # custom comment header
+  pageSize: 10 # pagination size
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
@@ -351,7 +354,7 @@ valine:
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-livere_uid: 
+# livere_uid: 
 
 # Baidu Share
 # Available value:
