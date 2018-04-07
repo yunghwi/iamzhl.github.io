@@ -41,7 +41,7 @@ copyright: false
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
@@ -97,7 +97,6 @@ social:
   E-Mail: mailto:qingyingairen@gmail.com || envelope
   简书: http://www.jianshu.com/u/a918c9e67dc2 || heartbeat
   coding: https://coding.net/u/iamzhl || spinner
-  #Asiba: http://www.asiba.cn || stack-overflow
   FB Page: https://www.facebook.com/15563836030@163.com || facebook
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -211,14 +210,14 @@ post_wordcount:
   #description: ex. subscribe to my blog by scanning my public wechat account
 
 # Reward
-reward_comment: 支持站长
+reward_comment: 请作者喝杯咖啡！
 wechatpay: /images/wechatpay.jpg
 alipay: /images/alipay.jpg
 #bitcoin: /images/bitcoin.png
 
 # Declare license on posts
 post_copyright:
-  enable: false
+  enable: true
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
@@ -323,7 +322,7 @@ baidu_analytics: 41fc030db57d5570dd22f78997dc4a7e
 disqus:
   enable: false
   shortname: athlonreg
-  count: true
+  count: false
 
 # Hypercomments
 #hypercomments_id:
@@ -342,8 +341,8 @@ valine:
   enable: true
   appid:  PFWdP6K0HHhxo0n79CWW1jwC-gzGzoHsz
   appkey:  odzPREQYB3YOJ9fmkolyHFap
-  notify: true # mail notifier , https://github.com/xCss/Valine/wiki
-  verify: true # Verification code
+  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  verify: false # Verification code
   placeholder: 欢迎讨论 ~~
 
 # Support for youyan comments system.
