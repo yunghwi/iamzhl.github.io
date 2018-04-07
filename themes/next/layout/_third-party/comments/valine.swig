@@ -4,8 +4,7 @@
   <script src="//cdn.jsdelivr.net/npm/valine@1.1.4/dist/Valine.min.js"></script>
   <script type="text/javascript">
     new Valine({
-        av: AV,
-        el: '#vcomments' ,
+        el: '#comment' ,
         verify: {{ theme.valine.verify }},
         notify: {{ theme.valine.notify }},
         app_id: '{{ theme.valine.appid }}',
