@@ -337,7 +337,7 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://github.com/xCss/Valine
 valine:
-  enable: false
+  enable: true
   appid:  UvfjEEwG1cCMWwMoSfmFPHsp-gzGzoHsz
   appkey: 05veilg20psiTa5NPUhOxz6I
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
@@ -349,7 +349,7 @@ valine:
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
-youyan_uid: 2160762
+# youyan_uid: 2160762
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
