@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/test.html</loc>
+    <lastmod>2018-04-08T00:48:57.024Z</lastmod>
+    <data>
+        <display>
+        <title>test</title>
+        <pubTime>2018-04-08T00:47:38.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/Install-macOS-on-laptop.html</loc>
     <lastmod>2018-03-31T15:49:22.811Z</lastmod>
     <data>
@@ -221,9 +236,9 @@
         <title>How to use xcode-select in terminal</title>
         <pubTime>2017-09-02T16:00:00.000Z</pubTime>
         
-        <tag>Mac</tag>
-         
         <tag>终端</tag>
+         
+        <tag>Mac</tag>
          
         <tag>Xcode</tag>
          
