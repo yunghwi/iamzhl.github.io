@@ -217,8 +217,8 @@ alipay: /images/alipay.jpg
 # Declare license on posts
 post_copyright:
   enable: true
-# license: CC BY-NC-SA 3.0
-# license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
+  license: CC BY-NC-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
 
 # ---------------------------------------------------------------
@@ -226,7 +226,7 @@ post_copyright:
 # ---------------------------------------------------------------
 
 # Reduce padding / margin indents on devices with narrow width.
-mobile_layout_economy: false
+mobile_layout_economy: true
 
 # Android Chrome header panel color ($black-deep).
 android_chrome_color: "#222"
@@ -338,7 +338,7 @@ changyan:
 # more info please open https://github.com/xCss/Valine
 valine:
   enable: true
-  appid: UvfjEEwG1cCMWwMoSfmFPHsp-gzGzoHsz
+  appid:  UvfjEEwG1cCMWwMoSfmFPHsp-gzGzoHsz
   appkey: 05veilg20psiTa5NPUhOxz6I
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
@@ -448,7 +448,7 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: true
+  enable: false
   app_id: UvfjEEwG1cCMWwMoSfmFPHsp-gzGzoHsz
   app_key: 05veilg20psiTa5NPUhOxz6I
 
