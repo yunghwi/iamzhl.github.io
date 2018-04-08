@@ -8,8 +8,8 @@
         el: '#vcomments' ,
         verify: {{ theme.valine.verify }},
         notify: {{ theme.valine.notify }},
-        app_id: '{{ theme.valine.appid }}',
-        app_key: '{{ theme.valine.appkey }}',
+        app_id: UvfjEEwG1cCMWwMoSfmFPHsp-gzGzoHsz,
+        app_key: 05veilg20psiTa5NPUhOxz6I,
         placeholder: '{{ theme.valine.placeholder }}'
     });
   </script>
