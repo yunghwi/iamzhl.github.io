@@ -6,8 +6,8 @@
     new Valine({
         av: AV,
         el: '#vcomments' ,
-        verify: {{ theme.valine.verify }},
-        notify: {{ theme.valine.notify }},
+        verify: '{{ theme.valine.verify }}',
+        notify: '{{ theme.valine.notify }}',
         app_id: '{{ theme.valine.appid }}',
         app_key: '{{ theme.valine.appkey }}',
         placeholder: '{{ theme.valine.placeholder }}'
