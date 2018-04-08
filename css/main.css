@@ -2012,7 +2012,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffe070;
+  background: #93d213;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3197,8 +3197,4 @@ pre .javascript .function {
 }
 .site-meta {
   background: $dark;
-}
-body {
-  background: url("/images/background.jpg");
-  background-attachment: fixed;
 }
