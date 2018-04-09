@@ -63,3 +63,27 @@ $ ioreg -l | grep "DisplayVendorID"
 $ sudo spctl --master-disable
 ```
 
+### 查看加载的非官方内核扩展 -- `kext`
+```
+$ kextstat | grep -v "com.apple" | grep -v Energy
+```
+
+### 查看显示器硬件信息
+> EDID
+```
+$ ioreg -l | grep "IODisplayEDID"
+```
+
+> ProductID
+```
+$ ioreg -l | grep "DisplayProductID"
+```
+
+> VendorID
+```
+$ ioreg -l | grep "DisplayVendorID"
+```
+
+### 待续...
+
+
