@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.iamzhl.top/Common-patches-on-Hackintosh.html</loc>
+    
+    <lastmod>2018-04-09T03:11:53.265Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/Common-command-in-macOS.html</loc>
+    
+    <lastmod>2018-04-09T02:14:58.056Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.iamzhl.top/Install-macOS-on-laptop.html</loc>
     
     <lastmod>2018-03-31T15:49:22.811Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>https://blog.iamzhl.top/Make-a-bootable-install-media-image-to-install-macOS-High-Sierra-10-13-4.html</loc>
     
     <lastmod>2018-03-30T12:57:44.618Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/Common-command-in-macOS.html</loc>
-    
-    <lastmod>2018-03-30T12:56:34.288Z</lastmod>
     
   </url>
   
@@ -128,14 +135,14 @@
   </url>
   
   <url>
-    <loc>https://blog.iamzhl.top/How-to-change-your-username-on-your-mac.html</loc>
+    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
     
     <lastmod>2018-03-19T15:26:23.936Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
+    <loc>https://blog.iamzhl.top/How-to-change-your-username-on-your-mac.html</loc>
     
     <lastmod>2018-03-19T15:26:23.936Z</lastmod>
     

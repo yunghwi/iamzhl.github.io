@@ -148,7 +148,7 @@
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
 <meta property="og:description" content="macOS下一些常用命令">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-30T12:56:34.288Z">
+<meta property="og:updated_time" content="2018-04-09T02:14:58.056Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Common command in macOS">
 <meta name="twitter:description" content="macOS下一些常用命令">
@@ -465,7 +465,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  168 字
+                  219 字
                 </span>
               
 
@@ -530,7 +530,17 @@
 <p>VID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ioreg -l | grep &quot;DisplayVendorID&quot;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h3 id="为macOS-Sierra以上的OS-X开启任何来源"><a href="#为macOS-Sierra以上的OS-X开启任何来源" class="headerlink" title="为macOS Sierra以上的OS X开启任何来源"></a>为<code>macOS Sierra</code>以上的<code>OS X</code>开启任何来源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo spctl --master-disable</span><br></pre></td></tr></table></figure>
-
+<h3 id="查看加载的非官方内核扩展-–-kext"><a href="#查看加载的非官方内核扩展-–-kext" class="headerlink" title="查看加载的非官方内核扩展 – kext"></a>查看加载的非官方内核扩展 – <code>kext</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kextstat | grep -v &quot;com.apple&quot; | grep -v Energy</span><br></pre></td></tr></table></figure>
+<h3 id="查看显示器硬件信息"><a href="#查看显示器硬件信息" class="headerlink" title="查看显示器硬件信息"></a>查看显示器硬件信息</h3><blockquote>
+<p>EDID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ioreg -l | grep &quot;IODisplayEDID&quot;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>ProductID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ioreg -l | grep &quot;DisplayProductID&quot;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>VendorID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ioreg -l | grep &quot;DisplayVendorID&quot;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3>
       
     </div>
     
@@ -637,6 +647,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/Common-patches-on-Hackintosh.html" rel="prev" title="Common patches on Hackintosh">
+                Common patches on Hackintosh <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -719,7 +733,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -741,7 +755,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">79</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -809,7 +823,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Trim"><span class="nav-number">1.</span> <span class="nav-text">Trim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看启用的ig-platform-id"><span class="nav-number">2.</span> <span class="nav-text">查看启用的ig-platform-id</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#笔记本开启插电源出提示音"><span class="nav-number">3.</span> <span class="nav-text">笔记本开启插电源出提示音:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#去掉apfs-efi最新版本的日志调试显示"><span class="nav-number">4.</span> <span class="nav-text">去掉apfs.efi最新版本的日志调试显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取显示器EDID及设备ID厂商ID"><span class="nav-number">5.</span> <span class="nav-text">提取显示器EDID及设备ID厂商ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为macOS-Sierra以上的OS-X开启任何来源"><span class="nav-number">6.</span> <span class="nav-text">为macOS Sierra以上的OS X开启任何来源</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Trim"><span class="nav-number">1.</span> <span class="nav-text">Trim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看启用的ig-platform-id"><span class="nav-number">2.</span> <span class="nav-text">查看启用的ig-platform-id</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#笔记本开启插电源出提示音"><span class="nav-number">3.</span> <span class="nav-text">笔记本开启插电源出提示音:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#去掉apfs-efi最新版本的日志调试显示"><span class="nav-number">4.</span> <span class="nav-text">去掉apfs.efi最新版本的日志调试显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取显示器EDID及设备ID厂商ID"><span class="nav-number">5.</span> <span class="nav-text">提取显示器EDID及设备ID厂商ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为macOS-Sierra以上的OS-X开启任何来源"><span class="nav-number">6.</span> <span class="nav-text">为macOS Sierra以上的OS X开启任何来源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看加载的非官方内核扩展-–-kext"><span class="nav-number">7.</span> <span class="nav-text">查看加载的非官方内核扩展 – kext</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看显示器硬件信息"><span class="nav-number">8.</span> <span class="nav-text">查看显示器硬件信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#待续…"><span class="nav-number">9.</span> <span class="nav-text">待续…</span></a></li></ol></div>
             
 
           </div>
@@ -855,7 +869,7 @@
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
     <span title="Site words total count">
-      49.9k
+      50.8k
     </span>
   
 </div>
@@ -871,7 +885,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共49.9k字</span>
+  <span class="post-count">博客全站共50.8k字</span>
 </div>
 
         

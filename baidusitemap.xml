@@ -4,6 +4,52 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/Common-patches-on-Hackintosh.html</loc>
+    <lastmod>2018-04-09T03:11:53.265Z</lastmod>
+    <data>
+        <display>
+        <title>Common patches on Hackintosh</title>
+        <pubTime>2018-04-09T02:08:56.000Z</pubTime>
+        
+        <tag>patch</tag>
+         
+        <tag>Hackintosh</tag>
+         
+        <tag>补丁</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Common-command-in-macOS.html</loc>
+    <lastmod>2018-04-09T02:14:58.056Z</lastmod>
+    <data>
+        <display>
+        <title>Common command in macOS</title>
+        <pubTime>2018-03-30T12:32:47.000Z</pubTime>
+        
+        <tag>command</tag>
+         
+        <tag>macOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/Install-macOS-on-laptop.html</loc>
     <lastmod>2018-03-31T15:49:22.811Z</lastmod>
     <data>
@@ -60,28 +106,6 @@
         <tag>10.13.4</tag>
          
         <tag>镜像</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Common-command-in-macOS.html</loc>
-    <lastmod>2018-03-30T12:56:34.288Z</lastmod>
-    <data>
-        <display>
-        <title>Common command in macOS</title>
-        <pubTime>2018-03-30T12:32:47.000Z</pubTime>
-        
-        <tag>command</tag>
-         
-        <tag>macOS</tag>
          
          
            
@@ -436,6 +460,26 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
+    <lastmod>2018-03-19T15:26:23.936Z</lastmod>
+    <data>
+        <display>
+        <title>How to unzip packages without .DS_store</title>
+        <pubTime>2018-03-15T09:11:43.000Z</pubTime>
+        
+        <tag>.DS_store</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/How-to-change-your-username-on-your-mac.html</loc>
     <lastmod>2018-03-19T15:26:23.936Z</lastmod>
     <data>
@@ -450,26 +494,6 @@
         <tag>计算机名</tag>
          
         <tag>mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
-    <lastmod>2018-03-19T15:26:23.936Z</lastmod>
-    <data>
-        <display>
-        <title>How to unzip packages without .DS_store</title>
-        <pubTime>2018-03-15T09:11:43.000Z</pubTime>
-        
-        <tag>.DS_store</tag>
          
          
            
