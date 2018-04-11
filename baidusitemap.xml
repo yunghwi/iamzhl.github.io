@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/Intro-about-iterator-in-struts2.html</loc>
+    <lastmod>2018-04-11T02:59:33.293Z</lastmod>
+    <data>
+        <display>
+        <title>Intro about iterator in struts2</title>
+        <pubTime>2018-04-11T02:12:17.000Z</pubTime>
+        
+        <tag>struts2</tag>
+         
+        <tag>iterator</tag>
+         
+        <tag>框架</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/OSI-Model.html</loc>
     <lastmod>2018-04-09T09:18:37.790Z</lastmod>
     <data>
@@ -267,9 +291,9 @@
         <title>How to use xcode-select in terminal</title>
         <pubTime>2017-09-02T16:00:00.000Z</pubTime>
         
-        <tag>Mac</tag>
-         
         <tag>终端</tag>
+         
+        <tag>Mac</tag>
          
         <tag>Xcode</tag>
          
@@ -439,11 +463,11 @@
         
         <tag>Hacintosh</tag>
          
+        <tag>黑苹果</tag>
+         
         <tag>AppleIntelInfo</tag>
          
         <tag>变频</tag>
-         
-        <tag>黑苹果</tag>
          
          
            
@@ -535,11 +559,11 @@
         <title>0-1 backpack</title>
         <pubTime>2018-01-17T08:51:25.000Z</pubTime>
         
-        <tag>算法</tag>
+        <tag>0-1背包问题</tag>
          
         <tag>algorithm</tag>
          
-        <tag>0-1背包问题</tag>
+        <tag>算法</tag>
          
          
            
@@ -559,9 +583,9 @@
         <title>Reverse part of array</title>
         <pubTime>2018-01-17T08:23:37.000Z</pubTime>
         
-        <tag>算法</tag>
-         
         <tag>algorithm</tag>
+         
+        <tag>算法</tag>
          
         <tag>逆置</tag>
          
@@ -583,9 +607,9 @@
         <title>n queen</title>
         <pubTime>2018-01-17T08:04:05.000Z</pubTime>
         
-        <tag>算法</tag>
-         
         <tag>algorithm</tag>
+         
+        <tag>算法</tag>
          
         <tag>n皇后问题</tag>
          
@@ -607,9 +631,9 @@
         <title>RecurMatrix</title>
         <pubTime>2018-01-17T07:54:02.000Z</pubTime>
         
-        <tag>算法</tag>
-         
         <tag>algorithm</tag>
+         
+        <tag>算法</tag>
          
         <tag>矩阵连乘问题</tag>
          
@@ -631,11 +655,11 @@
         <title>BinarySearch</title>
         <pubTime>2018-01-17T07:29:36.000Z</pubTime>
         
+        <tag>algorithm</tag>
+         
         <tag>算法</tag>
          
         <tag>二分查找</tag>
-         
-        <tag>algorithm</tag>
          
          
            
