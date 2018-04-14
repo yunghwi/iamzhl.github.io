@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/Deploy-tale-on-CentOS7.html</loc>
+    <lastmod>2018-04-14T04:31:18.047Z</lastmod>
+    <data>
+        <display>
+        <title>Deploy tale on CentOS7</title>
+        <pubTime>2018-04-14T01:34:15.000Z</pubTime>
+        
+        <tag>Tale</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://blog.iamzhl.top/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/Intro-about-iterator-in-struts2.html</loc>
     <lastmod>2018-04-11T02:59:33.293Z</lastmod>
     <data>
@@ -291,9 +311,9 @@
         <title>How to use xcode-select in terminal</title>
         <pubTime>2017-09-02T16:00:00.000Z</pubTime>
         
-        <tag>终端</tag>
-         
         <tag>Mac</tag>
+         
+        <tag>终端</tag>
          
         <tag>Xcode</tag>
          
@@ -463,11 +483,11 @@
         
         <tag>Hacintosh</tag>
          
-        <tag>黑苹果</tag>
-         
         <tag>AppleIntelInfo</tag>
          
         <tag>变频</tag>
+         
+        <tag>黑苹果</tag>
          
          
            
