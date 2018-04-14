@@ -238,3 +238,9 @@ $ cd tale
 $ ./tale-cli 
 ```
 
+![](http://ovefvi4g3.bkt.clouddn.com/15236888643209.jpg)
+
+> 最后在浏览器输入`127.0.0.1:9000`就可以开始你的博客历程了
+
+![](http://ovefvi4g3.bkt.clouddn.com/15236887060359.jpg)
+
