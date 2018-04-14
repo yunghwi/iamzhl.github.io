@@ -190,7 +190,7 @@ $ service mysqld restart
 ```
 
 ```
-$ /usr/bin/mysqladmin -u root password 'Password'
+$ /usr/bin/mysqladmin -u root password '123456'
 ```
 
 ----
@@ -200,53 +200,18 @@ $ /usr/bin/mysqladmin -u root password 'Password'
 $ yum install nginx -y
 ```
 
-#### 更改配置文件
-
-> 通过yum安装的nginx略有不同，配置文件目录在/etc/nginx下
-
-```
-$ vim /etc/nginx/conf.d/default.conf
-```
-
-修改default.conf文件内容如下并保存
-
-```
-server {
-    listen80;
-    #listen[::]:80 default_server;
-
-server_name  _;
-    root/usr/share/nginx/html;
-
-
-# Load configuration files for the default server block.
-
-    include /etc/nginx/default.d/*.conf;
-
-location / {
-proxy_pass http://127.0.0.1:9000;
-    }
-
-error_page 404 /404.html;
-location = /40x.html {
-    }
-
-error_page 500 502 503 504 /50x.html;
-location = /50x.html {
-    }
-}
-```
-
 #### 启动nginx,可执行文件在/usr/sbin/下
 ```
-$ /usr/sbin/nginx
+$ /usr/sbin/nginx -t
 ```
 
 #### 新建数据库
 
 ```
-$ mysql -u root -p 123456
+$ mysql -u root -p 
 ```
+
+输入密码登录
 
 ```
 $ create database `tale` default character set utf8 collate utf8_general_ci;
@@ -258,7 +223,7 @@ $ exit;
 
 #### 安装Tale博客
 ```
-$ wget http://7xls9k.dl1.z0.glb.clouddn.com/tale.zip
+$ wget http://static.biezhi.me/tale-least.zip  
 ```
 
 ```
@@ -270,6 +235,6 @@ $ cd tale
 ```
 
 ```
-$ nohup java -jar tale-1.12.jar
+$ ./tale-cli 
 ```
 
