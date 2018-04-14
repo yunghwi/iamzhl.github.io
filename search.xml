@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Deploy tale on CentOS7]]></title>
     <url>%2FDeploy-tale-on-CentOS7.html</url>
-    <content type="text"><![CDATA[前言 什么是Nginx? Nginx类似于Apache和Tomcat，也是一种服务器软件。 Nginx是一个高性能的HTTP和反向代理服务器，也可以实现负载均衡的功能。 与Tomcat相比，Tomcat是一个Java实现的重量级服务器，而Nginx是一个轻量级服务器。 与Apache相比，Nginx能支持处理百万级的TCP连接，10万以上的并发连接。 准备工作 CentOS主机 ssh工具 开工CentOS安装ssh工具1$ yum install openssh-server -y 检查是否安装成功1$ rpm -qa | grep ssh-server 如图所示即安装成功 1[root@localhost]/home/parallels# rpm -qa | grep ssh-server openssh-server-7.4p1-13.el7_4.x86_64 [root@localhost]/home/parallels# 打开虚拟机建立连接配置好IP、网关、掩码以及DNS 连接到远程主机1$ ssh parallels@192.168.46.226 如图建立连接成功 其中命令格式为：1$ ssh user@ip 即远程连接的用户名@其IP地址，此处就是之前配置好的IP地址 Note: 此处往下内容，均为远程登录后对远程主机的操作 切换root权限1$ sudo -s 安装编译依赖工具以及库文件 gcc-c++ 1$ yum -y install gcc gcc-c++ autoconf automake pcre 1$ yum -y install pcre pcre-devel zlib 1$ yum -y install zlib zlib-devel 检查是否安装成功 安装Nginx下载1$ wget http://nginx.org/download/nginx-1.12.0.tar.gz 解压1$ tar -zxvf nginx-1.12.0.tar.gz 对Nginx进行配置部署 进入Nginx目录，执行configure1$ cd nginx-1.12.0 &amp;&amp; ./configure 编译安装 1$ make &amp;&amp; make install 检查nginx是否成功安装1$ ll -h /usr/local | grep nginx 如图，有结果输出表示安装完成 Nginx各文件简介 conf – 放置nginx的配置文件 html – 放置网页程序 logs – 放置日志文件 sbin – 放置Nginx可执行应用程序 Nginx的常用命令 启动(格式就是Nginx可执行文件地址 -c Nginx配置文件地址) 1$ /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf 重启(格式就是Nginx可执行文件地址 -s reload) 1$ /usr/local/nginx/sbin/nginx -s reload 杀死进程 1$ pkill -9 nginx 验证配置文件重启(格式就是Nginx可执行文件地址 -t) 1$ /usr/local/nginx/sbin/nginx -t 在启动nginx的同时测试配置文件是否正确 1$ /usr/local/nginx/sbin/nginx -tc /usr/local/nginx/conf/nginx.conf 部署Tale安装Java8运行环境 Tale是用Java实现的，所以需要Java环境 12$ cd ; mkdir /usr/java &amp;&amp; cd /usr/java $ yum install java-1.8.0-openjdk* -y 安装MySQL1$ yum install -y mysql-server mysql mysql-devel 1$ service mysqld restart 1$ /usr/bin/mysqladmin -u root password &apos;123456&apos; 安装Nginx服务器(与前面略有不同)1$ yum install nginx -y 启动nginx,可执行文件在/usr/sbin/下1$ /usr/sbin/nginx -t 新建数据库1$ mysql -u root -p 输入密码登录 1$ create database `tale` default character set utf8 collate utf8_general_ci; 1$ exit; 安装Tale博客1$ wget http://static.biezhi.me/tale-least.zip 1$ unzip tale.zip 1$ cd tale 1$ ./tale-cli]]></content>
+    <content type="text"><![CDATA[前言 什么是Nginx? Nginx类似于Apache和Tomcat，也是一种服务器软件。 Nginx是一个高性能的HTTP和反向代理服务器，也可以实现负载均衡的功能。 与Tomcat相比，Tomcat是一个Java实现的重量级服务器，而Nginx是一个轻量级服务器。 与Apache相比，Nginx能支持处理百万级的TCP连接，10万以上的并发连接。 准备工作 CentOS主机 ssh工具 开工CentOS安装ssh工具1$ yum install openssh-server -y 检查是否安装成功1$ rpm -qa | grep ssh-server 如图所示即安装成功 1[root@localhost]/home/parallels# rpm -qa | grep ssh-server openssh-server-7.4p1-13.el7_4.x86_64 [root@localhost]/home/parallels# 打开虚拟机建立连接配置好IP、网关、掩码以及DNS 连接到远程主机1$ ssh parallels@192.168.46.226 如图建立连接成功 其中命令格式为：1$ ssh user@ip 即远程连接的用户名@其IP地址，此处就是之前配置好的IP地址 Note: 此处往下内容，均为远程登录后对远程主机的操作 切换root权限1$ sudo -s 安装编译依赖工具以及库文件 gcc-c++ 1$ yum -y install gcc gcc-c++ autoconf automake pcre 1$ yum -y install pcre pcre-devel zlib 1$ yum -y install zlib zlib-devel 检查是否安装成功 安装Nginx下载1$ wget http://nginx.org/download/nginx-1.12.0.tar.gz 解压1$ tar -zxvf nginx-1.12.0.tar.gz 对Nginx进行配置部署 进入Nginx目录，执行configure1$ cd nginx-1.12.0 &amp;&amp; ./configure 编译安装 1$ make &amp;&amp; make install 检查nginx是否成功安装1$ ll -h /usr/local | grep nginx 如图，有结果输出表示安装完成 Nginx各文件简介 conf – 放置nginx的配置文件 html – 放置网页程序 logs – 放置日志文件 sbin – 放置Nginx可执行应用程序 Nginx的常用命令 启动(格式就是Nginx可执行文件地址 -c Nginx配置文件地址) 1$ /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf 重启(格式就是Nginx可执行文件地址 -s reload) 1$ /usr/local/nginx/sbin/nginx -s reload 杀死进程 1$ pkill -9 nginx 验证配置文件重启(格式就是Nginx可执行文件地址 -t) 1$ /usr/local/nginx/sbin/nginx -t 在启动nginx的同时测试配置文件是否正确 1$ /usr/local/nginx/sbin/nginx -tc /usr/local/nginx/conf/nginx.conf 部署Tale安装Java8运行环境 Tale是用Java实现的，所以需要Java环境 12$ cd ; mkdir /usr/java &amp;&amp; cd /usr/java $ yum install java-1.8.0-openjdk* -y 安装MySQL1$ yum install -y mysql-server mysql mysql-devel 1$ service mysqld restart 1$ /usr/bin/mysqladmin -u root password &apos;123456&apos; 安装Nginx服务器(与前面略有不同)1$ yum install nginx -y 启动nginx,可执行文件在/usr/sbin/下1$ /usr/sbin/nginx -t 新建数据库1$ mysql -u root -p 输入密码登录 1$ create database `tale` default character set utf8 collate utf8_general_ci; 1$ exit; 安装Tale博客1$ wget http://static.biezhi.me/tale-least.zip 1$ unzip tale.zip 1$ cd tale 1$ ./tale-cli 最后在浏览器输入127.0.0.1:9000就可以开始你的博客历程了]]></content>
       <categories>
         <category>Linux</category>
       </categories>
@@ -428,19 +428,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Problem about rollover price tag]]></title>
-    <url>%2FProblem-about-rollover-price-tag.html</url>
-    <content type="text"><![CDATA[问题描述 思路1、已知是一个四位数，那么共有1001-9999种情况；2、一个数颠倒之后，数字顺序颠倒并且每个数字颠倒，例如1269颠倒之后就是6921；3、0不能是第一位也不能是最后一位。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;math.h&gt;int array[4]=&#123;0&#125;;int inverse(int a)&#123;//求一个数颠倒之后的结果 int b=0; int arr[4]=&#123;0&#125;; for(int i=0;i&lt;4;i++)&#123; arr[i]=(int)(a/pow(10,3-i))%10; if(arr[i]==9) b+=6*pow(10,i); else if(arr[i]==6) b+=9*pow(10,i); else b+=arr[i]*pow(10,i); &#125; return b;&#125;int main()&#123; int i,j; int k=0,l=0; int temp; int flag; int up[50]=&#123;0&#125;,down[50]=&#123;0&#125;;//分别存放赚钱和赔钱的价牌 for(i=1001;i&lt;10000;i++)&#123; temp=i; flag=1; for(j=0;j&lt;4;j++)&#123; array[j]=(int)(temp/pow(10,3-j))%10; if(array[j]==3||array[j]==4||array[j]==7)&#123;//分割数字排除不能翻转的数字 flag=0; break; &#125; &#125; if(flag)&#123; if(array[0]==0 || array[3]==0)//0不能位于第一位和最后一位 continue; if(inverse(i)-i&gt;800&amp;&amp;inverse(i)-i&lt;900) up[k++]=i; if(i-inverse(i)&gt;200&amp;&amp;i-inverse(i)&lt;300) down[l++]=i; &#125; &#125; for(i=0;i&lt;50;i++)&#123;//依次输出赚钱的原价，颠倒价、赚的钱、赔钱的原价、颠倒价、赔的钱 for(j=0;j&lt;50;j++)&#123; if((inverse(up[i])-up[i])-(down[j]-inverse(down[j]))==558)&#123; printf(&quot;%d\t%d\t%d\t&quot;,up[i],inverse(up[i]),inverse(up[i])-up[i]); printf(&quot;%d\t%d\t%d\n&quot;,down[j],inverse(down[j]),down[j]-inverse(down[j])); &#125; &#125; &#125; return 0;&#125; 运行结果：]]></content>
-      <categories>
-        <category>algorithm</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>C语言</tag>
-        <tag>价牌翻转</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Problem about Sending out death squads]]></title>
     <url>%2FProblem-about-Sending-out-death-squads.html</url>
     <content type="text"><![CDATA[问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
@@ -451,6 +438,19 @@
         <tag>算法</tag>
         <tag>C语言</tag>
         <tag>派遣敢死队</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Problem about rollover price tag]]></title>
+    <url>%2FProblem-about-rollover-price-tag.html</url>
+    <content type="text"><![CDATA[问题描述 思路1、已知是一个四位数，那么共有1001-9999种情况；2、一个数颠倒之后，数字顺序颠倒并且每个数字颠倒，例如1269颠倒之后就是6921；3、0不能是第一位也不能是最后一位。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;math.h&gt;int array[4]=&#123;0&#125;;int inverse(int a)&#123;//求一个数颠倒之后的结果 int b=0; int arr[4]=&#123;0&#125;; for(int i=0;i&lt;4;i++)&#123; arr[i]=(int)(a/pow(10,3-i))%10; if(arr[i]==9) b+=6*pow(10,i); else if(arr[i]==6) b+=9*pow(10,i); else b+=arr[i]*pow(10,i); &#125; return b;&#125;int main()&#123; int i,j; int k=0,l=0; int temp; int flag; int up[50]=&#123;0&#125;,down[50]=&#123;0&#125;;//分别存放赚钱和赔钱的价牌 for(i=1001;i&lt;10000;i++)&#123; temp=i; flag=1; for(j=0;j&lt;4;j++)&#123; array[j]=(int)(temp/pow(10,3-j))%10; if(array[j]==3||array[j]==4||array[j]==7)&#123;//分割数字排除不能翻转的数字 flag=0; break; &#125; &#125; if(flag)&#123; if(array[0]==0 || array[3]==0)//0不能位于第一位和最后一位 continue; if(inverse(i)-i&gt;800&amp;&amp;inverse(i)-i&lt;900) up[k++]=i; if(i-inverse(i)&gt;200&amp;&amp;i-inverse(i)&lt;300) down[l++]=i; &#125; &#125; for(i=0;i&lt;50;i++)&#123;//依次输出赚钱的原价，颠倒价、赚的钱、赔钱的原价、颠倒价、赔的钱 for(j=0;j&lt;50;j++)&#123; if((inverse(up[i])-up[i])-(down[j]-inverse(down[j]))==558)&#123; printf(&quot;%d\t%d\t%d\t&quot;,up[i],inverse(up[i]),inverse(up[i])-up[i]); printf(&quot;%d\t%d\t%d\n&quot;,down[j],inverse(down[j]),down[j]-inverse(down[j])); &#125; &#125; &#125; return 0;&#125; 运行结果：]]></content>
+      <categories>
+        <category>algorithm</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>C语言</tag>
+        <tag>价牌翻转</tag>
       </tags>
   </entry>
   <entry>
@@ -528,9 +528,9 @@
       </categories>
       <tags>
         <tag>Hacintosh</tag>
+        <tag>黑苹果</tag>
         <tag>AppleIntelInfo</tag>
         <tag>变频</tag>
-        <tag>黑苹果</tag>
       </tags>
   </entry>
   <entry>
