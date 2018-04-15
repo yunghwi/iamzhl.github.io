@@ -168,7 +168,7 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15237600130824.jpg">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15237601311912.jpg">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15237602146298.jpg">
-<meta property="og:updated_time" content="2018-04-15T02:44:49.317Z">
+<meta property="og:updated_time" content="2018-04-15T03:02:50.402Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deploy tale on Fedora27">
 <meta name="twitter:description" content="在 Fedora27 部署国人开源博客 Tale">
@@ -548,7 +548,7 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost athlonreg]# yum install openssh-server -y </span><br><span class="line">上次元数据过期检查：1:43:17 前，执行于 2018年04月15日 星期日 07时49分48秒。</span><br><span class="line">软件包 openssh-server-7.5p1-5.fc27.x86_64 已安装，跳过</span><br><span class="line">依赖关系解决。</span><br><span class="line">无需任何处理。</span><br><span class="line">完毕！</span><br><span class="line">[root@localhost athlonreg]# rpm -qa | grep ssh-server</span><br><span class="line">openssh-server-7.5p1-5.fc27.x86_64</span><br><span class="line">[root@localhost athlonreg]#</span><br></pre></td></tr></table></figure>
 <h3 id="远程主机网络相关配置"><a href="#远程主机网络相关配置" class="headerlink" title="远程主机网络相关配置"></a>远程主机网络相关配置</h3><p>配置好<code>IP</code>、网关、掩码以及<code>DNS</code></p>
-<h3 id="本机连接到远程主机"><a href="#本机连接到远程主机" class="headerlink" title="本机连接到远程主机"></a>本机连接到远程主机</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh parallels@192.168.46.226</span><br></pre></td></tr></table></figure>
+<h3 id="本机连接到远程主机"><a href="#本机连接到远程主机" class="headerlink" title="本机连接到远程主机"></a>本机连接到远程主机</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh root@192.168.48.222</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>如图建立连接成功</p>
 </blockquote>

@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Deploy-tale-on-Fedora27.html</loc>
-    <lastmod>2018-04-15T02:44:49.317Z</lastmod>
+    <lastmod>2018-04-15T03:02:50.402Z</lastmod>
     <data>
         <display>
         <title>Deploy tale on Fedora27</title>
@@ -331,9 +331,9 @@
         <title>How to use xcode-select in terminal</title>
         <pubTime>2017-09-02T16:00:00.000Z</pubTime>
         
-        <tag>Mac</tag>
-         
         <tag>终端</tag>
+         
+        <tag>Mac</tag>
          
         <tag>Xcode</tag>
          
@@ -503,11 +503,11 @@
         
         <tag>Hacintosh</tag>
          
+        <tag>黑苹果</tag>
+         
         <tag>AppleIntelInfo</tag>
          
         <tag>变频</tag>
-         
-        <tag>黑苹果</tag>
          
          
            
@@ -546,6 +546,26 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
+    <lastmod>2018-03-19T15:26:23.936Z</lastmod>
+    <data>
+        <display>
+        <title>How to unzip packages without .DS_store</title>
+        <pubTime>2018-03-15T09:11:43.000Z</pubTime>
+        
+        <tag>.DS_store</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/How-to-change-your-username-on-your-mac.html</loc>
     <lastmod>2018-03-19T15:26:23.936Z</lastmod>
     <data>
@@ -560,26 +580,6 @@
         <tag>计算机名</tag>
          
         <tag>mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
-    <lastmod>2018-03-19T15:26:23.936Z</lastmod>
-    <data>
-        <display>
-        <title>How to unzip packages without .DS_store</title>
-        <pubTime>2018-03-15T09:11:43.000Z</pubTime>
-        
-        <tag>.DS_store</tag>
          
          
            
