@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/Deploy-tale-on-Fedora27.html</loc>
+    <lastmod>2018-04-15T02:44:49.317Z</lastmod>
+    <data>
+        <display>
+        <title>Deploy tale on Fedora27</title>
+        <pubTime>2018-04-15T01:30:10.000Z</pubTime>
+        
+        <tag>Tale</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://blog.iamzhl.top/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/Deploy-tale-on-CentOS7.html</loc>
     <lastmod>2018-04-14T06:54:27.714Z</lastmod>
     <data>
@@ -311,9 +331,9 @@
         <title>How to use xcode-select in terminal</title>
         <pubTime>2017-09-02T16:00:00.000Z</pubTime>
         
-        <tag>终端</tag>
-         
         <tag>Mac</tag>
+         
+        <tag>终端</tag>
          
         <tag>Xcode</tag>
          
@@ -483,11 +503,11 @@
         
         <tag>Hacintosh</tag>
          
-        <tag>黑苹果</tag>
-         
         <tag>AppleIntelInfo</tag>
          
         <tag>变频</tag>
+         
+        <tag>黑苹果</tag>
          
          
            
