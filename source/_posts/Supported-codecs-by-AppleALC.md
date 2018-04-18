@@ -117,5 +117,5 @@ tags:
 | Nvidia  | [GP106](https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist)| | 17 (10.13.4) | — |
 
 #### Credits
-[https://github.com/vit9696/AppleALC.wiki][https://github.com/vit9696/AppleALC.wiki]
+[https://github.com/vit9696/AppleALC/wiki/Supported-codecs](https://github.com/vit9696/AppleALC/wiki/Supported-codecs)
 
