@@ -150,13 +150,13 @@ $ git push origin dev
 
 ![](http://ovefvi4g3.bkt.clouddn.com/15243256764217.jpg)
 
-##### 提交申请后，`A`就会通过邮件或者订阅收到通知。
+提交申请后，`A`就会通过邮件或者订阅收到通知。
 
 `A`在网页端点击`Pull requests`后`Merge requests`即可合并提交。
 
 这时如果`A`想再次进行开发，就必须要将远程`dev`分支`fetch`到本地，如下: 
 
-- 开发过程中每个工程师在推送代码之前要先执行拉取操作，因为远程仓库有更新的话，不先拉取（`pull/fetch`）是无法推送（`push`）的，尽量少使用`git pull`进行拉取，而是先用`git fetch`拉取再进行`git merge`。 
+开发过程中每个工程师在推送代码之前要先执行拉取操作，因为远程仓库有更新的话，不先拉取（`pull/fetch`）是无法推送（`push`）的，尽量少使用`git pull`进行拉取，而是先用`git fetch`拉取再进行`git merge`。 
 
 ```
 $ git fetch origin dev    
@@ -184,7 +184,7 @@ Fast-forward
 
 ```
 $ git add .
-$ git commit -m 'Some fix (credit by A)'
+$ git commit -m "Some fix (credit by A)"
 $ git push origin dev 
 ``` 
 
