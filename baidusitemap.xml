@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/Use-GitHub-for-team-development.html</loc>
+    <lastmod>2018-04-21T16:18:37.515Z</lastmod>
+    <data>
+        <display>
+        <title>Use GitHub for team development</title>
+        <pubTime>2018-04-21T14:07:42.000Z</pubTime>
+        
+        <tag>GitHub</tag>
+         
+        <tag>团队开发</tag>
+         
+        <tag>分支管理</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/Supported-codecs-by-AppleALC.html</loc>
     <lastmod>2018-04-18T12:57:35.778Z</lastmod>
     <data>
@@ -353,9 +377,9 @@
         <title>How to use xcode-select in terminal</title>
         <pubTime>2017-09-02T16:00:00.000Z</pubTime>
         
-        <tag>终端</tag>
-         
         <tag>Mac</tag>
+         
+        <tag>终端</tag>
          
         <tag>Xcode</tag>
          
@@ -525,11 +549,11 @@
         
         <tag>Hacintosh</tag>
          
-        <tag>黑苹果</tag>
-         
         <tag>AppleIntelInfo</tag>
          
         <tag>变频</tag>
+         
+        <tag>黑苹果</tag>
          
          
            
@@ -568,6 +592,26 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
+    <lastmod>2018-03-19T15:26:23.936Z</lastmod>
+    <data>
+        <display>
+        <title>How to unzip packages without .DS_store</title>
+        <pubTime>2018-03-15T09:11:43.000Z</pubTime>
+        
+        <tag>.DS_store</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/How-to-change-your-username-on-your-mac.html</loc>
     <lastmod>2018-03-19T15:26:23.936Z</lastmod>
     <data>
@@ -582,26 +626,6 @@
         <tag>计算机名</tag>
          
         <tag>mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
-    <lastmod>2018-03-19T15:26:23.936Z</lastmod>
-    <data>
-        <display>
-        <title>How to unzip packages without .DS_store</title>
-        <pubTime>2018-03-15T09:11:43.000Z</pubTime>
-        
-        <tag>.DS_store</tag>
          
          
            
