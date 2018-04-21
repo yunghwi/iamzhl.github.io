@@ -133,11 +133,10 @@ $ git branch -a
 
 ![2018042201](http://ovefvi4g3.bkt.clouddn.com/2018042201.png)
 
-##### 此时`A`和`B`就可以切到本地`dev`分支进行开发了。
+此时`A`和`B`就可以切到本地`dev`分支进行开发了。
 
 ```
 $ git checkout dev
-Switched to branch 'dev'
 ``` 
 
 假如`B`的开发修复了某个`BUG`，需要提交推送申请
