@@ -45,14 +45,14 @@ $ git branch
 ```
 $ git branch dev
 $ git branch
-  develop
+  dev
 * master
 ```
-这个时候我们看到本地工作区已经有两个分支：`master`和`develop`。但当前工作区还是在`master`上（注意*号位置），需要手动切换到`dev`上。只需使用`git checkout`命令
+这个时候我们看到本地工作区已经有两个分支：`master`和`dev`。但当前工作区还是在`master`上（注意*号位置），需要手动切换到`dev`上。只需使用`git checkout`命令
 
 ```
 $ git checkout dev
-Switched to branch 'develop'
+Switched to branch 'dev'
 $ git branch
 * dev
   master
@@ -61,8 +61,8 @@ $ git branch
 当然有人希望创建分支后直接切换到新的分支：
 
 ```
-$ git checkout -b develop
-Switched to a new branch 'develop'
+$ git checkout -b dev
+Switched to a new branch 'dev'
 ```
 
 这样就将当前工作区切换到新的分支中，我们可以发现此时的`dev`分支中的内容是`master`的复制。 
@@ -83,7 +83,7 @@ $ git branch -a
 发现并没有远程分支里并没有新建的`dev`，这时需要执行`git push origin dev`命令，将本地`dev`分支推送到`GitHub`服务器，生成远程分支。
 
 ```
-$ git push origin develop
+$ git push origin dev
 Total 0 (delta 0), reused 0 (delta 0)
 To https://github.com/athlonreg/Common-patches-for-hackintosh
  * [new branch]      dev -> dev
