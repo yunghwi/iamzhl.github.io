@@ -180,7 +180,7 @@ Fast-forward
  1 file changed, 178 insertions(+)
 ```
 
-- 在每个开发阶段都及时地提交代码（`git commit`）并推送（`git push`）至远程仓库，可以使用`git status`检查工作区是否还有未处理的代码和文件。在提交代码的时候写好优秀的注释。
+在每个开发阶段都及时地提交代码（`git commit`）并推送（`git push`）至远程仓库，可以使用`git status`检查工作区是否还有未处理的代码和文件。在提交代码的时候写好优秀的注释。
 
 ```
 $ git add .
@@ -188,7 +188,7 @@ $ git commit -m 'Some fix (credit by A)'
 $ git push origin dev 
 ``` 
 
-- 在项目代码将要合并到主干`master`的时候，要由一名工程师做最后的合并处理，如创建分支的`A`。由于在合并代码时极易产生冲突，所以一定要先与主干代码版本做对比（`git diff`），合并时可以使用`git merge`，当然如果`dev`可以废除的话，也可以使用`git rebase`做最后的合并。 
+在项目代码将要合并到主干`master`的时候，要由一名工程师做最后的合并处理，如创建分支的`A`。由于在合并代码时极易产生冲突，所以一定要先与主干代码版本做对比（`git diff`），合并时可以使用`git merge`，当然如果`dev`可以废除的话，也可以使用`git rebase`做最后的合并。 
 
 ```
 $ git checkout master     
@@ -206,7 +206,7 @@ To https://github.com/athlonreg/Common-patches-for-hackintosh
    23b74f3..ea1c09f  master -> master
 ```
 
-- 最后在分支代码合并到主干或者代码上线后，`dev`分支完成了自己的任务，可以删除本地分支和远程分支。 
+最后在分支代码合并到主干或者代码上线后，`dev`分支完成了自己的任务，可以删除本地分支和远程分支。 
 
 #### 删除本地分支：
 
