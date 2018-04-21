@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Use-GitHub-for-team-development.html</loc>
-    <lastmod>2018-04-21T16:18:37.515Z</lastmod>
+    <lastmod>2018-04-21T16:31:08.536Z</lastmod>
     <data>
         <display>
         <title>Use GitHub for team development</title>
@@ -189,9 +189,9 @@
         <title>Install macOS on laptop</title>
         <pubTime>2017-12-11T16:28:15.000Z</pubTime>
         
-        <tag>Hacintosh</tag>
-         
         <tag>黑苹果</tag>
+         
+        <tag>Hacintosh</tag>
          
          
            
@@ -283,9 +283,9 @@
         <title>Speed up the hackintosh to boot</title>
         <pubTime>2017-09-04T16:00:00.000Z</pubTime>
         
-        <tag>Hacintosh</tag>
-         
         <tag>黑苹果</tag>
+         
+        <tag>Hacintosh</tag>
          
         <tag>开机速度</tag>
          
@@ -307,9 +307,9 @@
         <title>RW NTFS partition natively on macOS</title>
         <pubTime>2017-10-26T16:00:00.000Z</pubTime>
         
-        <tag>Hacintosh</tag>
-         
         <tag>黑苹果</tag>
+         
+        <tag>Hacintosh</tag>
          
         <tag>NTFS</tag>
          
@@ -377,9 +377,9 @@
         <title>How to use xcode-select in terminal</title>
         <pubTime>2017-09-02T16:00:00.000Z</pubTime>
         
-        <tag>Mac</tag>
-         
         <tag>终端</tag>
+         
+        <tag>Mac</tag>
          
         <tag>Xcode</tag>
          
@@ -425,9 +425,9 @@
         <title>Enable BCM94352z on your hacintosh</title>
         <pubTime>2017-09-12T16:00:00.000Z</pubTime>
         
-        <tag>Hacintosh</tag>
-         
         <tag>黑苹果</tag>
+         
+        <tag>Hacintosh</tag>
          
         <tag>BCM94352z</tag>
          
@@ -449,9 +449,9 @@
         <title>Driver audio for hackintosh</title>
         <pubTime>2017-11-05T16:00:00.000Z</pubTime>
         
-        <tag>Hacintosh</tag>
-         
         <tag>黑苹果</tag>
+         
+        <tag>Hacintosh</tag>
          
          
            
@@ -471,9 +471,9 @@
         <title>Disable the discrete GPU in laptop</title>
         <pubTime>2017-10-03T16:00:00.000Z</pubTime>
         
-        <tag>Hacintosh</tag>
-         
         <tag>黑苹果</tag>
+         
+        <tag>Hacintosh</tag>
          
         <tag>Window Server Service only ran for 0 seconds</tag>
          
@@ -547,13 +547,13 @@
         <title>Check CPU frequences by using AppleIntelInfo</title>
         <pubTime>2017-09-04T16:00:00.000Z</pubTime>
         
+        <tag>黑苹果</tag>
+         
         <tag>Hacintosh</tag>
          
         <tag>AppleIntelInfo</tag>
          
         <tag>变频</tag>
-         
-        <tag>黑苹果</tag>
          
          
            
@@ -573,11 +573,11 @@
         <title>Allow apps downloaded from anywhere on macOS</title>
         <pubTime>2017-09-15T13:16:31.000Z</pubTime>
         
-        <tag>Hacintosh</tag>
-         
         <tag>黑苹果</tag>
          
         <tag>终端</tag>
+         
+        <tag>Hacintosh</tag>
          
         <tag>任何来源</tag>
          
