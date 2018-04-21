@@ -102,6 +102,7 @@ $ git branch -a
 可以看到多了一个名为`remotes/origin/dev`的分支，即为创建的远程分支。
 
 好了，现在`B`和其他任何工程师都可以通过拉取远程分支获取`A`创建的`dev`分支代码。 
+
 `B`先做一次分支查询
 
 ```
@@ -134,10 +135,6 @@ $ git branch -a
 ![2018042201](http://ovefvi4g3.bkt.clouddn.com/2018042201.png)
 
 此时`A`和`B`就可以切到本地`dev`分支进行开发了。
-
-```
-$ git checkout dev
-``` 
 
 假如`B`的开发修复了某个`BUG`，需要提交推送申请
 
