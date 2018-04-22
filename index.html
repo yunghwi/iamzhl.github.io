@@ -192,13 +192,110 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-         
-利用 GitHub 进行团队开发
-创建项目本文以GitHub项目为例: 
-1https://github.com/athlonreg/Common-patches-for-hackintosh.git
-然后在本地克隆项目代码： 
-1$ git clone https://github.com/athlonreg/Common-patches-for-hackintosh.git
-查看项目...
+        <script src="/assets/js/APlayer.min.js"> </script><a id="more"></a>
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>本文以<code>GitHub</code>项目为例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/athlonreg/Common-patches-for-hackintosh.git</span><br></pre></td></tr></table></figure>
+<p>然后在本地克隆项目代码： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/athlonreg/Common-patches-for-hackintosh.git</span><br></pre></td></tr></table></figure>
+<p>查看项目分支情况可以使用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch </span><br><span class="line">* master</span><br></pre></td></tr></table></figure>
+<p>可以看到当前项目坐在的分支是<code>master</code>（*号后边为当前所在分支名）。</p>
+<p>而且项目目前也只有一个分支，就是<code>master</code>。</p>
+<h3 id="团队开发"><a href="#团队开发" class="headerlink" title="团队开发"></a>团队开发</h3><p>但是我们在实际项目开发中，通常都是以团队开发为主，所以为了维护线上主干代码的稳定，我们也都会采取创建分支 -&gt; 开发 -&gt; 测试 -&gt; 合并 -&gt; 上线的形式进行实际操作的。</p>
+<p>接下来描述一下简单的团队开发<code>Git</code>项目。</p>
+<h4 id="本地分支"><a href="#本地分支" class="headerlink" title="本地分支"></a>本地分支</h4><p>工程师<code>A</code>需要对原来的代码做改动，这时他需要创建一个开发分支，假设名字为<code>dev</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git branch dev</span><br><span class="line">$ git branch</span><br><span class="line">  dev</span><br><span class="line">* master</span><br></pre></td></tr></table></figure>
+<p>这个时候我们看到本地工作区已经有两个分支：<code>master</code>和<code>dev</code>。但当前工作区还是在<code>master</code>上（注意*号位置），需要手动切换到<code>dev</code>上。只需使用<code>git checkout</code>命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout dev</span><br><span class="line">Switched to branch &apos;dev&apos;</span><br><span class="line">$ git branch</span><br><span class="line">* dev</span><br><span class="line">  master</span><br></pre></td></tr></table></figure>
+<p>当然有人希望创建分支后直接切换到新的分支：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b dev</span><br><span class="line">Switched to a new branch &apos;dev&apos;</span><br></pre></td></tr></table></figure>
+<p>这样就将当前工作区切换到新的分支中，我们可以发现此时的<code>dev</code>分支中的内容是<code>master</code>的复制。 </p>
+<h4 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h4><p>现在的<code>dev</code>分支只是存在于<code>A</code>的本地环境，当工程师<code>B</code>打算协同<code>A</code>进行相同业务的开发时，他也需要拿到<code>dev</code>分支的代码，那该怎么获取呢？此时需要<code>A</code>将本地分支推送到远程分支，以供给其他工程师共同开发。 </p>
+<p>使用<code>git branch -a</code>能够查询当前所有分支，包括本地分支和远程分支（下边<code>remotes/origin</code>开头）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br><span class="line">* dev</span><br><span class="line">  master</span><br><span class="line">  remotes/origin/master</span><br></pre></td></tr></table></figure>
+<p>发现并没有远程分支里并没有新建的<code>dev</code>，这时需要执行<code>git push origin dev</code>命令，将本地<code>dev</code>分支推送到<code>GitHub</code>服务器，生成远程分支。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin dev</span><br><span class="line">Total 0 (delta 0), reused 0 (delta 0)</span><br><span class="line">To https://github.com/athlonreg/Common-patches-for-hackintosh</span><br><span class="line"> * [new branch]      dev -&gt; dev</span><br></pre></td></tr></table></figure>
+<p>这时再用<code>git branch -a</code>查看分支。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br><span class="line">* dev</span><br><span class="line">  master</span><br><span class="line">  remotes/origin/dev</span><br><span class="line">  remotes/origin/master</span><br></pre></td></tr></table></figure>
+<p>可以看到多了一个名为<code>remotes/origin/dev</code>的分支，即为创建的远程分支。</p>
+<p>好了，现在<code>B</code>和其他任何工程师都可以通过拉取远程分支获取<code>A</code>创建的<code>dev</code>分支代码。 </p>
+<p><code>B</code>先做一次分支查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br><span class="line">* master</span><br><span class="line">  remotes/origin/dev</span><br><span class="line">  remotes/origin/master</span><br></pre></td></tr></table></figure>
+<p>发现存在<code>remotes/origin/dev</code>远程分支。<br>此时只需执行<code>git fetch origin dev:dev</code>将远程分支代码拉取到本地.。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch origin dev:dev</span><br><span class="line">From https://github.com/athlonreg/Common-patches-for-hackintosh</span><br><span class="line"> * [new branch]      dev    -&gt; dev</span><br><span class="line">$ git branch -a</span><br><span class="line">  dev</span><br><span class="line">* master</span><br><span class="line">  remotes/origin/dev</span><br><span class="line">  remotes/origin/master</span><br></pre></td></tr></table></figure>
+<p>再通过查询可以看到本地多了一个<code>dev</code>本地分支。<br><code>git fetch origin dev:dev</code>这个命令的意思是将远程<code>dev</code>分支代码拉取到本地<code>dev</code>分支中。这是一个快捷的方式，如果<code>B</code>本地没有<code>dev</code>分支，该命令会创建一个名为<code>dev</code>的分支，如果<code>B</code>本地有自己的分支，如<code>B_dev</code>，则可以执行<code>git fetch origin dev:B_dev</code>或者先切到<code>B_dev</code>分支内，执行<code>git fetch origin dev</code>即可。</p>
+<h4 id="多人开发"><a href="#多人开发" class="headerlink" title="多人开发"></a>多人开发</h4><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/20160430221106224.png" alt="20160430221106224" title="">
+                </div>
+                <div class="image-caption">20160430221106224</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/2018042201.png" alt="2018042201" title="">
+                </div>
+                <div class="image-caption">2018042201</div>
+            </figure>
+<p>此时<code>A</code>和<code>B</code>就可以切到本地<code>dev</code>分支进行开发了。</p>
+<p>假如<code>B</code>的开发修复了某个<code>BUG</code>，需要提交推送申请</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m &quot;Some fix&quot;</span><br><span class="line">$ git push origin dev</span><br></pre></td></tr></table></figure>
+<p>在<code>B</code>将分支推送到她的远程仓库（不是别人维护的正式仓库，是他<code>fork</code>的仓库）后，去<code>GitHub</code>网页端点击<code>Pull requests</code>提交合并申请。弹出表单并要求他设置源分支、目标仓库和目标分支，默认设置<code>B</code>的仓库为源仓库。</p>
+<p><code>A</code>需要合并他的代码，所以他设置他的分支为源分支，目标仓库为<code>A</code>的共有正式仓库，目标分枝为主干分支<code>dev</code>，还需要输入标题和提交的修改描述。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15243256764217.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>提交申请后，<code>A</code>就会通过邮件或者订阅收到通知。</p>
+<p><code>A</code>在网页端点击<code>Pull requests</code>后<code>Merge requests</code>即可合并提交。</p>
+<p>这时如果<code>A</code>想再次进行开发，就必须要将远程<code>dev</code>分支<code>fetch</code>到本地，如下: </p>
+<p>开发过程中每个工程师在推送代码之前要先执行拉取操作，因为远程仓库有更新的话，不先拉取（<code>pull/fetch</code>）是无法推送（<code>push</code>）的，尽量少使用<code>git pull</code>进行拉取，而是先用<code>git fetch</code>拉取再进行<code>git merge</code>。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch origin dev    </span><br><span class="line">From https://github.com/athlonreg/Common-patches-for-hackintosh</span><br><span class="line"> * branch            dev        -&gt; FETCH_HEAD</span><br><span class="line">Updating 23b74f3..ea1c09f</span><br><span class="line">Fast-forward</span><br><span class="line"> config_patches.plist | 178 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span><br><span class="line"> 1 file changed, 178 insertions(+)</span><br></pre></td></tr></table></figure>
+<p>当然<code>git pull</code>也可以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git pull origin dev</span><br><span class="line">From https://github.com/athlonreg/Common-patches-for-hackintosh</span><br><span class="line"> * branch            dev        -&gt; FETCH_HEAD</span><br><span class="line">Updating 23b74f3..ea1c09f</span><br><span class="line">Fast-forward</span><br><span class="line"> config_patches.plist | 178 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span><br><span class="line"> 1 file changed, 178 insertions(+)</span><br></pre></td></tr></table></figure>
+<p>在每个开发阶段都及时地提交代码（<code>git commit</code>）并推送（<code>git push</code>）至远程仓库，可以使用<code>git status</code>检查工作区是否还有未处理的代码和文件。在提交代码的时候写好优秀的注释。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;Some fix (credit by A)&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin dev</span><br></pre></td></tr></table></figure>
+<p>在项目代码将要合并到主干<code>master</code>的时候，要由一名工程师做最后的合并处理，如创建分支的<code>A</code>。由于在合并代码时极易产生冲突，所以一定要先与主干代码版本做对比（<code>git diff</code>），合并时可以使用<code>git merge</code>，当然如果<code>dev</code>可以废除的话，也可以使用<code>git rebase</code>做最后的合并。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master     </span><br><span class="line">Switched to branch &apos;master&apos;</span><br><span class="line"></span><br><span class="line">$ git merge dev           </span><br><span class="line">Updating 23b74f3..ea1c09f</span><br><span class="line">Fast-forward</span><br><span class="line"> config_patches.plist | 178 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span><br><span class="line"> 1 file changed, 178 insertions(+)</span><br><span class="line"> </span><br><span class="line"> $ git push origin master </span><br><span class="line">Total 0 (delta 0), reused 0 (delta 0)</span><br><span class="line">To https://github.com/athlonreg/Common-patches-for-hackintosh</span><br><span class="line">   23b74f3..ea1c09f  master -&gt; master</span><br></pre></td></tr></table></figure>
+<p>最后在分支代码合并到主干或者代码上线后，<code>dev</code>分支完成了自己的任务，可以删除本地分支和远程分支。 </p>
+<h4 id="删除本地分支："><a href="#删除本地分支：" class="headerlink" title="删除本地分支："></a>删除本地分支：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d dev</span><br><span class="line">Deleted branch dev (was 1fe1352).</span><br><span class="line">$ git branch -a</span><br><span class="line">* master</span><br><span class="line">  remotes/origin/dev</span><br><span class="line">  remotes/origin/master</span><br></pre></td></tr></table></figure>
+<h4 id="删除远程分支："><a href="#删除远程分支：" class="headerlink" title="删除远程分支："></a>删除远程分支：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete dev</span><br><span class="line">To https://github.com/athlonreg/Common-patches-for-hackintosh</span><br><span class="line"> - [deleted]         dev</span><br><span class="line">$ git branch -a</span><br><span class="line">* master</span><br><span class="line">  remotes/origin/master</span><br></pre></td></tr></table></figure>
+<h4 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h4><p>在代码的合并阶段（<code>git pull</code>或者<code>git merge</code>命令），通常会产生代码冲突。如果是其他工程师造成的冲突，需要转给相关工程师处理，也造成大量的沟通成本。为了减少冲突，建议每个工程师各自单独负责模块，业务互相不冲突。<br>在解决冲突时，需要使用<code>git log</code>和<code>git diff</code>来检查历史版本的修改信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git log README.md</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15243250721465.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p><code>git log</code>可以列出该文件的历史提交版本，能看到提交的版本号和提交的注释信息。 </p>
+<p>然后使用<code>git diff</code>来对比该文件两个版本的不同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git diff</span><br></pre></td></tr></table></figure>
+<p>需要回退到某一版本，可以使用<code>git reset</code>命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset --hard 265886db0d6868cc669e0ef253e6e9ac1e39319c</span><br></pre></td></tr></table></figure>
+<p>如果文件尚未提交，也可以用<code>git checkout filename</code>恢复到提交前。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch dev</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line"></span><br><span class="line">$ git checkout README.md</span><br></pre></td></tr></table></figure>
+<h3 id="开发规范"><a href="#开发规范" class="headerlink" title="开发规范"></a>开发规范</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;用户名&quot;。 </span><br><span class="line">$ git config --global user.email &quot;电子邮件&quot; 。</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>团队开发禁止在主干直接修改代码，一定要开分支，而且是远程分支进行开发。</p>
+</li>
+<li><p>创建分支可以打标签，<code>git tag</code>。</p>
+</li>
+<li><p>拉取代码时最好先<code>git fetch</code>再<code>git merge</code>而不是直接<code>git pull</code>。</p>
+</li>
+<li><p>提交代码和推送代码以及代码上线之前，一定要先和原来版本对比<code>git diff</code>。</p>
+</li>
+<li><p>提交代码加注释<code>git commit -m &#39;B developed&#39;</code>。</p>
+</li>
+</ul>
+
     
 
         <a href="/Use-GitHub-for-team-development.html" class="post-more waves-effect waves-button">
@@ -245,29 +342,749 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-         Currently supported codecs
+        <script src="/assets/js/APlayer.min.js"> </script><h4 id="Currently-supported-codecs"><a href="#Currently-supported-codecs" class="headerlink" title="Currently supported codecs"></a>Currently supported codecs</h4><table>
+<thead>
+<tr>
+<th>Vendor</th>
+<th>Codec</th>
+<th>Revisions</th>
+<th>MinKernel</th>
+<th>MaxKernel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Creative</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CA0132" target="_blank" rel="noopener">CA0132</a></td>
+<td>0x100918 layout 0, 1, 2, 3, 4, 5, 6, 9, 10, 11, 12</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>CirrusLogic</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CS4210" target="_blank" rel="noopener">CS4210</a></td>
+<td>0x100101 layout 13</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>CirrusLogic</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CS4213" target="_blank" rel="noopener">CS4213</a></td>
+<td>0x100100 layout 28</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC221" target="_blank" rel="noopener">ALC221</a></td>
+<td>layout 11</td>
+<td>12 (10.8)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC225" target="_blank" rel="noopener">ALC225/ALC3253</a></td>
+<td>layout 28, 33</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC233" target="_blank" rel="noopener">ALC233</a></td>
+<td>layout 3, 13, 27, 33</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC235" target="_blank" rel="noopener">ALC235</a></td>
+<td>layout 3, 11, 28</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC236" target="_blank" rel="noopener">ALC236</a></td>
+<td>0x100001, 0x100002 layout 3, 11, 13, 15</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC233" target="_blank" rel="noopener">ALC3236</a></td>
+<td>layout 4, 5, 28, 29</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC255" target="_blank" rel="noopener">ALC255</a></td>
+<td>layout 3, 13, 17, 18, 27, 28, 99</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC256" target="_blank" rel="noopener">ALC256 (3246)</a></td>
+<td>layout 13, 56</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC260" target="_blank" rel="noopener">ALC260</a></td>
+<td>layout 11, 12</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC262" target="_blank" rel="noopener">ALC262</a></td>
+<td>0x100202 layout 11, 12, 13, 28</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC268" target="_blank" rel="noopener">ALC268</a></td>
+<td>layout 3</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC269" target="_blank" rel="noopener">ALC269</a></td>
+<td>0x100004, 0x100100, 0x100202, 0x100203 layout 1-10, 11, 13, 14, 15, 16, 18, 19, 20, 27, 28, 29, 32, 33, 35, 40, 76, 93, 99, 127</td>
+<td>12 (10.8)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC270" target="_blank" rel="noopener">ALC270</a></td>
+<td>0x100100, layout 3, 4, 27, 28</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC269" target="_blank" rel="noopener">ALC271x</a></td>
+<td>layout 9, 31</td>
+<td>12 (10.8)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC272" target="_blank" rel="noopener">ALC272</a></td>
+<td>0x100001, layout 3, 11</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC275" target="_blank" rel="noopener">ALC275</a></td>
+<td>0x100005, 0x100008, layout 3, 13, 28</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC280" target="_blank" rel="noopener">ALC280</a></td>
+<td>layout 3, 4, 11, 13, 15</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC282" target="_blank" rel="noopener">ALC282</a></td>
+<td>0x100003, layout 3, 4, 13, 27, 28, 29, 76, 86, 127</td>
+<td>12 (10.8)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC283" target="_blank" rel="noopener">ALC283</a></td>
+<td>layout 1, 3, 11, 66</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC284" target="_blank" rel="noopener">ALC284</a></td>
+<td>layout 3</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC286" target="_blank" rel="noopener">ALC286</a></td>
+<td>0x100002, 0x100003 layout 3</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC288" target="_blank" rel="noopener">ALC288</a></td>
+<td>layout 3, 13</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC290" target="_blank" rel="noopener">ALC290</a></td>
+<td>layout 3, 28</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC290" target="_blank" rel="noopener">ALC3241</a></td>
+<td>layout 4</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC292" target="_blank" rel="noopener">ALC292</a></td>
+<td>layout 12, 18,  28</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC293" target="_blank" rel="noopener">ALC293</a></td>
+<td>layout 28, 29</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC294" target="_blank" rel="noopener">ALC294</a></td>
+<td>layout 13</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC295" target="_blank" rel="noopener">ALC295</a></td>
+<td>layout 3, 13, 28</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC298" target="_blank" rel="noopener">ALC298</a></td>
+<td>0x100103, layout 3, 11, 13, 28, 29, 47, 72, 99</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC662" target="_blank" rel="noopener">ALC662</a></td>
+<td>0x100101, 0x100300 layout 5, 7, 11, 12, 13</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC663" target="_blank" rel="noopener">ALC663</a></td>
+<td>0x100001, 0x100002, layout 3, 4, 28, 99</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC665" target="_blank" rel="noopener">ALC665</a></td>
+<td>layout 12, 13</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC668" target="_blank" rel="noopener">ALC668</a></td>
+<td>0x100003, layout 3, 20, 27, 28, 29</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC670" target="_blank" rel="noopener">ALC670</a></td>
+<td>0x100002, layout 12</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC671" target="_blank" rel="noopener">ALC671</a></td>
+<td>layout 12</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC882" target="_blank" rel="noopener">ALC882</a></td>
+<td>0x100101, layout 5, 7</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC883" target="_blank" rel="noopener">ALC883</a></td>
+<td>0x100002, layout 7</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC885" target="_blank" rel="noopener">ALC885</a></td>
+<td>0x100101, 0x100103 layout 1, 12</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC887" target="_blank" rel="noopener">ALC887</a></td>
+<td>0x100202, 0x100302, layout 1, 2, 3, 5, 7, 11, 13, 17, 18, 33, 99</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC888" target="_blank" rel="noopener">ALC888/ALC1200</a></td>
+<td>0x100101, 0x100001, 0x100202, 0x100302 layout 1, 2, 3, (4 for laptop), 5, 7, 11, 28, 29</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC889" target="_blank" rel="noopener">ALC889</a></td>
+<td>0x100004, layout 1, 11, 12</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC891" target="_blank" rel="noopener">ALC891/ALC867</a></td>
+<td>0x100002, layout 11, 13</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC892" target="_blank" rel="noopener">ALC892</a></td>
+<td>0x100302, layout 1, 2, 3, (4 for laptop), 5, 7, 28, 31, 92, 98, 99</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC898" target="_blank" rel="noopener">ALC898/ALC899</a></td>
+<td>0x100003, layout 1, 2, 3, 5, 7, 11, 13, 65, 98, 99, 101</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC1150" target="_blank" rel="noopener">ALC1150</a></td>
+<td>0x100001, layout 1, 2, 3, 5, 7, 11</td>
+<td>12 (10.8)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALC1220" target="_blank" rel="noopener">ALC1220</a></td>
+<td>0x100003, layout 1, 2, 5, 7, 11</td>
+<td>15 (10.11)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Realtek</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/ALCS1220A" target="_blank" rel="noopener">ALCS1220A</a></td>
+<td>layout 1, 2, 5, 7</td>
+<td>15 (10.11)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>AnalogDevices</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/AD1984" target="_blank" rel="noopener">AD1984</a></td>
+<td>0x100400, layout 11</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>AnalogDevices</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/AD1984A" target="_blank" rel="noopener">AD1984A</a></td>
+<td>0x100400, layout 11, 13</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>AnalogDevices</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/AD1988B" target="_blank" rel="noopener">AD1988B</a></td>
+<td>layout 5, 7, 12</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>AnalogDevices</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/AD2000B" target="_blank" rel="noopener">AD2000B</a></td>
+<td>layout 5, 7</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX8050" target="_blank" rel="noopener">CX8050</a></td>
+<td>layout 3</td>
+<td>16 (10.12)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX8200" target="_blank" rel="noopener">CX8200</a></td>
+<td>layout 3</td>
+<td>16 (10.12)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX20561" target="_blank" rel="noopener">CX20561</a></td>
+<td>0x100000, layout 11</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX20583" target="_blank" rel="noopener">CX20583</a></td>
+<td>layout 3</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX20585" target="_blank" rel="noopener">CX20585</a></td>
+<td>layout 3, 13</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX20588" target="_blank" rel="noopener">CX20588</a></td>
+<td>layout 3</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX20590" target="_blank" rel="noopener">CX20590</a></td>
+<td>0x100000, 0x100002, 0x100003, layout 3, 12, 28</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX20641" target="_blank" rel="noopener">CX20641</a></td>
+<td>layout 11, 13</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX20642" target="_blank" rel="noopener">CX20642</a></td>
+<td>layout 11, 13</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX20722" target="_blank" rel="noopener">CX20722</a></td>
+<td>layout 3</td>
+<td>16 (10.12)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX20724" target="_blank" rel="noopener">CX20724</a></td>
+<td>layout 3, 13</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX20751_2" target="_blank" rel="noopener">CX20751/20752</a></td>
+<td>layout 3, 28</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX20753_4" target="_blank" rel="noopener">CX20753/4</a></td>
+<td>layout 3</td>
+<td>16 (10.12)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX20755" target="_blank" rel="noopener">CX20755</a></td>
+<td>layout 3</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX20756" target="_blank" rel="noopener">CX20756</a></td>
+<td>layout 3, 13</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Conexant</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/CX20757" target="_blank" rel="noopener">CX20757</a></td>
+<td>layout 3</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD66C3_65" target="_blank" rel="noopener">IDT92HD66C3/65</a></td>
+<td>layout 3</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD71B7X" target="_blank" rel="noopener">IDT92HD71B7X</a></td>
+<td>layout 3</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD73C1X5" target="_blank" rel="noopener">IDT92HD73C1X5</a></td>
+<td>layout 19</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD75B2X5" target="_blank" rel="noopener">IDT92HD75B2X5</a></td>
+<td>layout 3</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD75B3X5" target="_blank" rel="noopener">IDT92HD75B3X5</a></td>
+<td>layout 3, 11</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD99BXX" target="_blank" rel="noopener">IDT92HD99BXX</a></td>
+<td>layout 3</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD87B1" target="_blank" rel="noopener">IDT92HD87B1</a></td>
+<td>layout 3</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD81B1C5" target="_blank" rel="noopener">IDT92HD81B1C5</a></td>
+<td>layout 3, 11</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD81B1X5" target="_blank" rel="noopener">IDT92HD81B1X5</a></td>
+<td>layout 3, 11, 12, 20, 21, 28</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD87B1_3" target="_blank" rel="noopener">IDT92HD87B1/3</a></td>
+<td>layout 12, 13</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD87B2_4" target="_blank" rel="noopener">IDT92HD87B2/4</a></td>
+<td>layout 12</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD90BXX" target="_blank" rel="noopener">IDT92HD90BXX</a></td>
+<td>layout 3, 12</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD91BXX" target="_blank" rel="noopener">IDT92HD91BXX</a></td>
+<td>0x100102, 0x100303 layout 3, 12, 13, 33, 84</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD93BXX" target="_blank" rel="noopener">IDT92HD93BXX</a></td>
+<td>0x100203, layout 12</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IDT</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/IDT92HD95" target="_blank" rel="noopener">IDT92HD95</a></td>
+<td>layout 12</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>VIA</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/VT1802" target="_blank" rel="noopener">VT1802</a></td>
+<td>0x100000, layout 3, 33</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>VIA</td>
+<td><a href="https://github.com/vit9696/AppleALC/tree/master/Resources/VT2020_2021" target="_blank" rel="noopener">VT2020/2021</a></td>
+<td>0x100100, layout 5, 7, 9</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">HD3000 HDMI</a></td>
+<td>snb-platform-id 0x00030010, 0x00010000</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">HD4000 HDMI</a></td>
+<td>ig-platform-id 0x01660003, 0x01660009, 0x0166000A</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">HD4x00 HDMI</a></td>
+<td>ig-platform-id 0x0d220003, 0x0a260005</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">HD5500 HDMI</a></td>
+<td>ig-platform-id 0x16260006</td>
+<td>15 (10.11)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">HD5600 HDMI</a></td>
+<td>ig-platform-id 0x16260006</td>
+<td>15 (10.11)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">HD6000 HDMI</a></td>
+<td>ig-platform-id 0x16260004</td>
+<td>15 (10.11)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">HD515 HDMI</a></td>
+<td>ig-platform-id 0x191E0000</td>
+<td>15 (10.11)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">HD520 HDMI</a></td>
+<td>ig-platform-id 0x19160000</td>
+<td>15 (10.11)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">HD530 HDMI</a></td>
+<td>ig-platform-id 0x19160000, 0x191B0000, 0x19120000</td>
+<td>15 (10.11)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">HD630 HDMI</a></td>
+<td>ig-platform-id 0x59120000</td>
+<td>15 (10.11)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>AMD</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">Radeon 290/290X</a></td>
+<td></td>
+<td>15 (10.11)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Nvidia</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">GK208</a></td>
+<td></td>
+<td>17 (10.13.4)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Nvidia</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">GM200</a></td>
+<td></td>
+<td>17 (10.13.4)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Nvidia</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">GM204</a></td>
+<td></td>
+<td>17 (10.13.4)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Nvidia</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">GM206</a></td>
+<td></td>
+<td>17 (10.13.4)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Nvidia</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">GP102</a></td>
+<td></td>
+<td>17 (10.13.4)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Nvidia</td>
+<td><a href="https://github.com/vit9696/AppleALC/blob/master/Resources/Controllers.plist" target="_blank" rel="noopener">GP106</a></td>
+<td></td>
+<td>17 (10.13.4)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Credits"><a href="#Credits" class="headerlink" title="Credits"></a>Credits</h4><p><a href="https://github.com/vit9696/AppleALC/wiki/Supported-codecs" target="_blank" rel="noopener">https://github.com/vit9696/AppleALC/wiki/Supported-codecs</a></p>
 
-
-Vendor
-Codec
-Revisions
-MinKernel
-MaxKernel
-
-
-
-
-Creative
-CA0132
-0x100918 layout 0, 1, 2, 3, 4, 5, 6, 9, 10, 11, 12
-13 (10.9)
-—
-
-
-CirrusLogic
-CS4210
-0x100101 layout 13
-1...
     
 
         <a href="/Supported-codecs-by-AppleALC.html" class="post-more waves-effect waves-button">
@@ -314,18 +1131,272 @@ CS4210
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-         前言
-什么是Nginx?
-
-
-Nginx类似于Apache和Tomcat，也是一种服务器软件。
-Nginx是一个高性能的HTTP和反向代理服务器，也可以实现负载均衡的功能。
-与Tomcat相比，Tomcat是一个Java实现的重量级服务器，而Nginx是一个轻量级服务器。
-与Apache相比，Nginx能支持处理百万级的TCP连接，10万以上的并发连接。
-
-准备工作
-Fedora主机
-ss...
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>什么是<code>Nginx</code>?</p>
+</blockquote>
+<ul>
+<li><code>Nginx</code>类似于<code>Apache</code>和<code>Tomcat</code>，也是一种服务器软件。</li>
+<li><code>Nginx</code>是一个高性能的<code>HTTP</code>和反向代理服务器，也可以实现负载均衡的功能。</li>
+<li>与<code>Tomcat</code>相比，<code>Tomcat</code>是一个<code>Java</code>实现的重量级服务器，而<code>Nginx</code>是一个轻量级服务器。</li>
+<li>与<code>Apache</code>相比，<code>Nginx</code>能支持处理百万级的<code>TCP</code>连接，<code>10万</code>以上的并发连接。</li>
+</ul>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><code>Fedora</code>主机</li>
+<li><code>ssh</code>工具</li>
+</ul>
+<h2 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h2><h3 id="Fedora安装ssh工具"><a href="#Fedora安装ssh工具" class="headerlink" title="Fedora安装ssh工具"></a><code>Fedora</code>安装<code>ssh</code>工具</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install openssh-server -y</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237560096540.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="检查是否安装成功"><a href="#检查是否安装成功" class="headerlink" title="检查是否安装成功"></a>检查是否安装成功</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -qa | grep ssh-server</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如下所示即安装成功</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost athlonreg]# yum install openssh-server -y </span><br><span class="line">上次元数据过期检查：1:43:17 前，执行于 2018年04月15日 星期日 07时49分48秒。</span><br><span class="line">软件包 openssh-server-7.5p1-5.fc27.x86_64 已安装，跳过</span><br><span class="line">依赖关系解决。</span><br><span class="line">无需任何处理。</span><br><span class="line">完毕！</span><br><span class="line">[root@localhost athlonreg]# rpm -qa | grep ssh-server</span><br><span class="line">openssh-server-7.5p1-5.fc27.x86_64</span><br><span class="line">[root@localhost athlonreg]#</span><br></pre></td></tr></table></figure>
+<h3 id="远程主机网络相关配置"><a href="#远程主机网络相关配置" class="headerlink" title="远程主机网络相关配置"></a>远程主机网络相关配置</h3><p>配置好<code>IP</code>、网关、掩码以及<code>DNS</code></p>
+<h3 id="本机连接到远程主机"><a href="#本机连接到远程主机" class="headerlink" title="本机连接到远程主机"></a>本机连接到远程主机</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh root@192.168.48.222</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如图建立连接成功</p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237567232486.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>其中命令格式为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh user@ip</span><br></pre></td></tr></table></figure></p>
+<p>即远程连接的用户名<code>@</code>其<code>IP</code>地址，此处就是之前配置好的<code>IP</code>地址</p>
+<p><strong>Note: 此处往下内容，均为远程登录后本机终端对远程主机的操作</strong></p>
+<h3 id="安装编译依赖工具以及库文件"><a href="#安装编译依赖工具以及库文件" class="headerlink" title="安装编译依赖工具以及库文件"></a>安装编译依赖工具以及库文件</h3><blockquote>
+<p><code>gcc-c++</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum -y install gcc gcc-c++ autoconf automake</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>pcre</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum -y install pcre pcre-devel</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>zlib</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum -y install zlib zlib-devel</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>检查是否安装成功</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -qa | grep gcc-c++</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -qa | grep pcre-devel</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -qa | grep zlib-devel</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237569358658.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装<code>Nginx</code></h3><h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://nginx.org/download/nginx-1.13.12.tar.gz</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237579657586.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -zxvf nginx-1.13.12.tar.gz</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237580152586.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="对Nginx进行配置部署"><a href="#对Nginx进行配置部署" class="headerlink" title="对Nginx进行配置部署"></a>对<code>Nginx</code>进行配置部署</h4><blockquote>
+<p>进入<code>Nginx</code>目录，执行<code>configure</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd nginx-1.13.12 &amp;&amp; ./configure</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237573233422.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>编译安装</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237580917796.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>这里注意，如果遇到<code>make</code>或者<code>make install</code>报错，有能力的可以根据命令输出排错，也可以换个<code>nginx</code>的版本重新配置<code>nginx</code>，下面给出下载地址</p>
+</blockquote>
+<p><a href="http://nginx.org/download/" target="_blank" rel="noopener">http://nginx.org/download/</a></p>
+<h4 id="检查nginx是否成功安装"><a href="#检查nginx是否成功安装" class="headerlink" title="检查nginx是否成功安装"></a>检查<code>nginx</code>是否成功安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ll -h /usr/local | grep nginx</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237582810802.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>如图，有结果输出表示安装完成</p>
+<h3 id="Nginx各文件简介"><a href="#Nginx各文件简介" class="headerlink" title="Nginx各文件简介"></a><code>Nginx</code>各文件简介</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237583404346.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li><p><code>conf</code> – 放置<code>nginx</code>的配置文件</p>
+</li>
+<li><p><code>html</code> – 放置网页程序</p>
+</li>
+<li><p><code>logs</code> – 放置日志文件</p>
+</li>
+<li><p><code>sbin</code> – 放置<code>Nginx</code>可执行应用程序</p>
+</li>
+</ul>
+<h3 id="Nginx的常用命令"><a href="#Nginx的常用命令" class="headerlink" title="Nginx的常用命令"></a><code>Nginx</code>的常用命令</h3><blockquote>
+<p>启动(格式就是Nginx可执行文件地址 -c Nginx配置文件地址)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重启(格式就是Nginx可执行文件地址 -s reload)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/local/nginx/sbin/nginx -s reload</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>杀死进程</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pkill -9 nginx</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>验证配置文件重启(格式就是Nginx可执行文件地址 -t)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/local/nginx/sbin/nginx -t</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237584136305.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>在启动<code>nginx</code>的同时测试配置文件是否正确</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/local/nginx/sbin/nginx -tc /usr/local/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237584361064.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<hr>
+<h3 id="部署Tale"><a href="#部署Tale" class="headerlink" title="部署Tale"></a>部署<code>Tale</code></h3><h4 id="安装Java8运行环境"><a href="#安装Java8运行环境" class="headerlink" title="安装Java8运行环境"></a>安装<code>Java8运行环境</code></h4><blockquote>
+<p><code>Tale</code>是用<code>Java</code>实现的，所以需要<code>Java</code>环境</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd ; mkdir /usr/java &amp;&amp; cd /usr/java </span><br><span class="line">$ yum install java-1.8.0-openjdk* -y</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237586607060.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237586980349.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装<code>MySQL</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd &amp;&amp; yum install -y mysql-server mysql mysql-devel</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237587770486.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>如遇到上图所示报错，只需根据提示执行以下命令清除缓存即可</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ dnf clean packages</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237589070728.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service mysqld restart</span><br></pre></td></tr></table></figure>
+<p>如遇报错，可用<code>MariaDB</code>代替</p>
+<p>安装<code>MariaDB</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install -y mariadb-server</span><br></pre></td></tr></table></figure>
+<p>启动<code>MariaDB</code>服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl start mariadb.service</span><br></pre></td></tr></table></figure>
+<p>添加到开机启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl enable mariadb.service</span><br></pre></td></tr></table></figure>
+<p>进行一些安全设置，以及修改数据库管理员密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysql_secure_installation</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="安装Nginx服务器-与前面略有不同"><a href="#安装Nginx服务器-与前面略有不同" class="headerlink" title="安装Nginx服务器(与前面略有不同)"></a>安装<code>Nginx</code>服务器(与前面略有不同)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install nginx -y</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237597121815.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="启动nginx-可执行文件在-usr-sbin-下"><a href="#启动nginx-可执行文件在-usr-sbin-下" class="headerlink" title="启动nginx,可执行文件在/usr/sbin/下"></a>启动nginx,可执行文件在/usr/sbin/下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/sbin/nginx -t</span><br></pre></td></tr></table></figure>
+<h4 id="新建数据库"><a href="#新建数据库" class="headerlink" title="新建数据库"></a>新建数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -u root -p</span><br></pre></td></tr></table></figure>
+<p>输入密码登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ create database `tale` default character set utf8 collate utf8_general_ci;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ exit;</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237597862688.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="安装Tale博客"><a href="#安装Tale博客" class="headerlink" title="安装Tale博客"></a>安装Tale博客</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://static.biezhi.me/tale-least.zip</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ unzip tale-least.zip</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237600130824.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd tale</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./tale-cli start</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237601311912.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>最后在远程主机浏览器输入<code>127.0.0.1:9000</code>就可以开始你的博客历程了</p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15237602146298.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="本项目实战到此结束"><a href="#本项目实战到此结束" class="headerlink" title="本项目实战到此结束"></a>本项目实战到此结束</h2>
     
 
         <a href="/Deploy-tale-on-Fedora27.html" class="post-more waves-effect waves-button">
@@ -372,18 +1443,189 @@ ss...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-         前言
-什么是Nginx?
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>什么是<code>Nginx</code>?</p>
+</blockquote>
+<ul>
+<li><code>Nginx</code>类似于<code>Apache</code>和<code>Tomcat</code>，也是一种服务器软件。</li>
+<li><code>Nginx</code>是一个高性能的<code>HTTP</code>和反向代理服务器，也可以实现负载均衡的功能。</li>
+<li>与<code>Tomcat</code>相比，<code>Tomcat</code>是一个<code>Java</code>实现的重量级服务器，而<code>Nginx</code>是一个轻量级服务器。</li>
+<li>与<code>Apache</code>相比，<code>Nginx</code>能支持处理百万级的<code>TCP</code>连接，<code>10万</code>以上的并发连接。</li>
+</ul>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><code>CentOS</code>主机</li>
+<li><code>ssh</code>工具</li>
+</ul>
+<h2 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h2><h3 id="CentOS安装ssh工具"><a href="#CentOS安装ssh工具" class="headerlink" title="CentOS安装ssh工具"></a><code>CentOS</code>安装<code>ssh</code>工具</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install openssh-server -y</span><br></pre></td></tr></table></figure>
+<h3 id="检查是否安装成功"><a href="#检查是否安装成功" class="headerlink" title="检查是否安装成功"></a>检查是否安装成功</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -qa | grep ssh-server</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如图所示即安装成功</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost]/home/parallels# rpm -qa | grep ssh-server  openssh-server-7.4p1-13.el7_4.x86_64[root@localhost]/home/parallels#</span><br></pre></td></tr></table></figure>
+<h3 id="打开虚拟机建立连接"><a href="#打开虚拟机建立连接" class="headerlink" title="打开虚拟机建立连接"></a>打开虚拟机建立连接</h3><p>配置好<code>IP</code>、网关、掩码以及<code>DNS</code></p>
+<h3 id="连接到远程主机"><a href="#连接到远程主机" class="headerlink" title="连接到远程主机"></a>连接到远程主机</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh parallels@192.168.46.226</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如图建立连接成功</p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15236728557742.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>其中命令格式为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh user@ip</span><br></pre></td></tr></table></figure></p>
+<p>即远程连接的用户名<code>@</code>其<code>IP</code>地址，此处就是之前配置好的<code>IP</code>地址</p>
+<p><strong>Note: 此处往下内容，均为远程登录后对远程主机的操作</strong></p>
+<h3 id="切换root权限"><a href="#切换root权限" class="headerlink" title="切换root权限"></a>切换<code>root</code>权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo -s</span><br></pre></td></tr></table></figure>
+<h3 id="安装编译依赖工具以及库文件"><a href="#安装编译依赖工具以及库文件" class="headerlink" title="安装编译依赖工具以及库文件"></a>安装编译依赖工具以及库文件</h3><blockquote>
+<p><code>gcc-c++</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum -y install gcc gcc-c++ autoconf automake</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>pcre</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum -y install pcre pcre-devel</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>zlib</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum -y install zlib zlib-devel</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>检查是否安装成功</p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15236735604953.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装<code>Nginx</code></h3><h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://nginx.org/download/nginx-1.12.0.tar.gz</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15236731142572.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -zxvf nginx-1.12.0.tar.gz</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15236732255925.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h4 id="对Nginx进行配置部署"><a href="#对Nginx进行配置部署" class="headerlink" title="对Nginx进行配置部署"></a>对<code>Nginx</code>进行配置部署</h4><blockquote>
+<p>进入<code>Nginx</code>目录，执行<code>configure</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd nginx-1.12.0 &amp;&amp; ./configure</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15236737656357.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>编译安装</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<h4 id="检查nginx是否成功安装"><a href="#检查nginx是否成功安装" class="headerlink" title="检查nginx是否成功安装"></a>检查<code>nginx</code>是否成功安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ll -h /usr/local | grep nginx</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15236740752298.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>如图，有结果输出表示安装完成</p>
+<h3 id="Nginx各文件简介"><a href="#Nginx各文件简介" class="headerlink" title="Nginx各文件简介"></a><code>Nginx</code>各文件简介</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15236742286457.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li><p><code>conf</code> – 放置<code>nginx</code>的配置文件</p>
+</li>
+<li><p><code>html</code> – 放置网页程序</p>
+</li>
+<li><p><code>logs</code> – 放置日志文件</p>
+</li>
+<li><p><code>sbin</code> – 放置<code>Nginx</code>可执行应用程序</p>
+</li>
+</ul>
+<h3 id="Nginx的常用命令"><a href="#Nginx的常用命令" class="headerlink" title="Nginx的常用命令"></a><code>Nginx</code>的常用命令</h3><blockquote>
+<p>启动(格式就是Nginx可执行文件地址 -c Nginx配置文件地址)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重启(格式就是Nginx可执行文件地址 -s reload)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/local/nginx/sbin/nginx -s reload</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>杀死进程</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pkill -9 nginx</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>验证配置文件重启(格式就是Nginx可执行文件地址 -t)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/local/nginx/sbin/nginx -t</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15236747108486.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>在启动<code>nginx</code>的同时测试配置文件是否正确</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/local/nginx/sbin/nginx -tc /usr/local/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15236749008794.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="部署Tale"><a href="#部署Tale" class="headerlink" title="部署Tale"></a>部署<code>Tale</code></h3><h4 id="安装Java8运行环境"><a href="#安装Java8运行环境" class="headerlink" title="安装Java8运行环境"></a>安装<code>Java8运行环境</code></h4><blockquote>
+<p><code>Tale</code>是用<code>Java</code>实现的，所以需要<code>Java</code>环境</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd ; mkdir /usr/java &amp;&amp; cd /usr/java </span><br><span class="line">$ yum install java-1.8.0-openjdk* -y</span><br></pre></td></tr></table></figure>
+<h4 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装<code>MySQL</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install -y mysql-server mysql mysql-devel</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service mysqld restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/bin/mysqladmin -u root password &apos;123456&apos;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="安装Nginx服务器-与前面略有不同"><a href="#安装Nginx服务器-与前面略有不同" class="headerlink" title="安装Nginx服务器(与前面略有不同)"></a>安装<code>Nginx</code>服务器(与前面略有不同)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install nginx -y</span><br></pre></td></tr></table></figure>
+<h4 id="启动nginx-可执行文件在-usr-sbin-下"><a href="#启动nginx-可执行文件在-usr-sbin-下" class="headerlink" title="启动nginx,可执行文件在/usr/sbin/下"></a>启动nginx,可执行文件在/usr/sbin/下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/sbin/nginx -t</span><br></pre></td></tr></table></figure>
+<h4 id="新建数据库"><a href="#新建数据库" class="headerlink" title="新建数据库"></a>新建数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -u root -p</span><br></pre></td></tr></table></figure>
+<p>输入密码登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ create database `tale` default character set utf8 collate utf8_general_ci;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ exit;</span><br></pre></td></tr></table></figure>
+<h4 id="安装Tale博客"><a href="#安装Tale博客" class="headerlink" title="安装Tale博客"></a>安装Tale博客</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://static.biezhi.me/tale-least.zip</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ unzip tale.zip</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd tale</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./tale-cli</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15236888643209.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>最后在浏览器输入<code>127.0.0.1:9000</code>就可以开始你的博客历程了</p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/15236887060359.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
-
-Nginx类似于Apache和Tomcat，也是一种服务器软件。
-Nginx是一个高性能的HTTP和反向代理服务器，也可以实现负载均衡的功能。
-与Tomcat相比，Tomcat是一个Java实现的重量级服务器，而Nginx是一个轻量级服务器。
-与Apache相比，Nginx能支持处理百万级的TCP连接，10万以上的并发连接。
-
-准备工作
-CentOS主机
-ss...
     
 
         <a href="/Deploy-tale-on-CentOS7.html" class="post-more waves-effect waves-button">
@@ -430,15 +1672,220 @@ ss...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-         简单的Demo
-s:iterator 标签有三个属性：
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="简单的Demo"><a href="#简单的Demo" class="headerlink" title="简单的Demo"></a>简单的<code>Demo</code></h3><blockquote>
+<p>s:iterator 标签有三个属性：</p>
+</blockquote>
+<ul>
+<li>value: 被迭代的集合</li>
+<li>id: 指定集合中元素的<code>id</code></li>
+<li>status: 迭代元素的索引</li>
+</ul>
+<h4 id="jsp页面定义元素写法-数组或list"><a href="#jsp页面定义元素写法-数组或list" class="headerlink" title="jsp页面定义元素写法 数组或list"></a><code>jsp</code>页面定义元素写法 数组或<code>list</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:iterator value=&quot;&#123;&apos;1&apos;,&apos;2&apos;,&apos;3&apos;,&apos;4&apos;,&apos;5&apos;&#125;&quot; &gt;</span><br><span class="line">    &lt;s:property value=&apos;number&apos;/&gt;A</span><br><span class="line">&lt;/s:iterator&gt;</span><br></pre></td></tr></table></figure>
+<p>打印结果为: 1A2A3A4A5A</p>
+<h4 id="索引的用法"><a href="#索引的用法" class="headerlink" title="索引的用法"></a>索引的用法</h4><blockquote>
+<p>如果指定了status，每次的迭代数据都有IteratorStatus的实例，它有以下几个方法</p>
+</blockquote>
+<ul>
+<li>int getCount() – 返回当前迭代了几个元素</li>
+<li>int getIndex() – 返回当前元素索引</li>
+<li>boolean isEven() – 当前的索引是否偶数</li>
+<li>boolean isFirst() – 当前是否第一个元素</li>
+<li>boolean isLast() – 当前是否最后一个元素</li>
+<li>boolean isOdd() – 当前元素索引是否奇数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:iterator value=&quot;&#123;&apos;a&apos;,&apos;b&apos;,&apos;c&apos;&#125;&quot; status=&apos;st&apos;&gt;</span><br><span class="line">    &lt;s:if test=&quot;#st.Even&quot;&gt;</span><br><span class="line">        现在的索引是奇数为:&lt;s:property value=&apos;#st.index&apos;/&gt;</span><br><span class="line">    &lt;/s:if&gt;</span><br><span class="line">    当前元素值：&lt;s:property value=&apos;char&apos;/&gt;</span><br><span class="line">&lt;/s:iterator&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="遍历map"><a href="#遍历map" class="headerlink" title="遍历map"></a>遍历<code>map</code></h4><p><code>value</code>可以直接定义为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value=&quot;#&#123;&quot;1&quot;:&quot;a&quot;,&quot;2&quot;:&quot;b&quot;&#125;&quot;</span><br></pre></td></tr></table></figure>
+<p>每个元素以逗号隔开，元素之间的<code>key</code>和<code>value</code>冒号隔开。</p>
+<p><code>value</code>也可以是数据栈里面的<code>java.util.Map</code>对象</p>
+<blockquote>
+<p>遍历写法如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:iterator value=&quot;map&quot; status=&quot;st&quot;&gt;</span><br><span class="line">    key : &lt;s:property value=&apos;key&apos;/&gt;</span><br><span class="line">    value:&lt;s:property vlaue=&apos;value&apos;/&gt;</span><br><span class="line">&lt;/s:iterator&gt;</span><br></pre></td></tr></table></figure>
+<p>当然<code>key</code>和<code>value</code>都可以是<code>java</code>的 <code>Object</code>。</p>
+<h4 id="遍历数据栈-–-简单的List类"><a href="#遍历数据栈-–-简单的List类" class="headerlink" title="遍历数据栈 – 简单的List类"></a>遍历数据栈 – 简单的<code>List</code>类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Attr&gt; class Attr&#123;</span><br><span class="line">    String attrName;</span><br><span class="line">    String getAttrName()</span><br><span class="line">    &#123;</span><br><span class="line">        return &quot;123&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;s:iterator value=&quot;label&quot; &gt;</span><br><span class="line">    &lt;s:property value=&quot;#id.attrName&quot; /&gt;</span><br><span class="line">&lt;/s:iterator&gt;</span><br></pre></td></tr></table></figure>
+<p>当然<code>value</code>还可以写成<code>value=&quot;%{label}&quot;</code>，<code>label</code>可以用<code>.</code>操作<code>label</code>的属性<code>List</code>，可以写成<code>value=&quot;%{label.list}&quot;</code>，相当于: <code>getLabel().getList()</code>；</p>
+<h4 id="遍历-2-个list"><a href="#遍历-2-个list" class="headerlink" title="遍历 2 个list"></a>遍历 2 个<code>list</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;AttrName&gt; attrN &#123;color,size,style&#125;</span><br><span class="line">List&lt;AttrValue&gt; attrV &#123;red,20,gay&#125;</span><br></pre></td></tr></table></figure>
+<p>这 2 个<code>list</code>的元素是一一对应的，一个attrN对应一个attrV</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:iterator value=&quot;%&#123;attrN&#125;&quot; status=&quot;status&quot;&gt;</span><br><span class="line">    index    is : &lt;s:property value=&apos;status.index&apos;/&gt;</span><br><span class="line">    attrName is : &lt;s:property value=&apos;id&apos;/&gt; or &lt;s:property value=&apos;%&#123;id&#125;&apos;/&gt;</span><br><span class="line">    attrName is : &lt;s:property value=&apos;%&#123;attrV[#status.index]&#125;&apos;/&gt;</span><br><span class="line">&lt;/s:iterator&gt;</span><br><span class="line"></span><br><span class="line">&lt;s:bean&gt;</span><br><span class="line">    &lt;s:param value=&quot;5&quot; /&gt;</span><br><span class="line">    &lt;s:param value=&quot;10&quot; /&gt;</span><br><span class="line">    &lt;s:iterator&gt;</span><br><span class="line">        counter:&lt;s:property/&gt;</span><br><span class="line">    &lt;/s:iterator&gt;</span><br><span class="line">&lt;/s:bean&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这个标签主要的的作用就是迭代出集合。<br>value属性表示需要跌代显示出来的值。<br>status属性，又来保存迭代时的一些状态值。</p>
+</blockquote>
+<p><strong>注：</strong></p>
+<ul>
+<li>如果需要引用<code>valueStack</code>中的值，需要使用这样的形式。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:iterator value=&quot;#userList&quot; /&gt; //userList</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在<code>action</code>部分被保存在<code>Request</code>中，所以使用<code>#</code>加属性名来引用值。</p>
+</blockquote>
+<ul>
+<li>如果集合的值是通过<code>action</code>的方法，假设我们的<code>action</code>中有一个<code>getListMenu</code>方法，返回一个<code>List</code>集合。我们可以使用如下的形式来引用这个集合，并用<code>s:iterator</code>来输出。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:iterator value=&quot;listMenu&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>iterator</code>的<code>value</code>使用定义好的方式，如：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:iterator value=&quot;&#123;1,2,3,4&#125;&quot; /&gt;    //这样跌代输出的值就是1.2.3.4这四个值。</span><br></pre></td></tr></table></figure>
+<h3 id="iterator中输出具体值"><a href="#iterator中输出具体值" class="headerlink" title="iterator中输出具体值"></a><code>iterator</code>中输出具体值</h3><p>如果，在上面我们的<code>list</code>中的对象，有两个属性，都是<code>String</code>类型，一个是<code>name</code>，一个是<code>url</code>。<br>我们可以这样来引用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;name&quot; /&gt;     //这样我们将可以输出迭代对象的name属性值。</span><br></pre></td></tr></table></figure>
+<p>如果我们希望使用<code>&lt;s:url /&gt;</code>来将跳转过后的<code>url</code>进行处理，该如何来做？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:url value=&quot;%&#123;url&#125;&quot;/&gt;     //%&#123;&#125;ognl的表达式，这样的值能够将url的值进行&lt;s:url/&gt;的处理</span><br><span class="line">实际上就是转为绝对路径。这样，我们就可以对付一些因跳转换产生的路径问题。</span><br></pre></td></tr></table></figure>
+<p><strong>原因：</strong><br>因为<code>&lt;s:iteratotr /&gt;</code>以后，当前的对象应该就在<code>ValueStack</code>顶部了，这样当然的<code>url</code>实际上就是对象的<code>url</code>属性了。</p>
+<h3 id="使用ognl输出对应的值"><a href="#使用ognl输出对应的值" class="headerlink" title="使用ognl输出对应的值"></a>使用ognl输出对应的值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:textfield value=&quot;%&#123;#request.loginNames&#125;&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<p>使用此表达式，会生成一个文本框，并且，如果<code>request.attribute</code>中有<code>loginNames</code>属性，将会做为些文本框的默认值。</p>
+<p>如果只使用<code>#request.loginNames</code>在<code>struts2</code>的标签内部，是不会显示任何值的，注意外面加上的<code>%{}</code>符号，才会被正常的使用。</p>
+<p>如果希望如<code>EL</code>语言一样直接输出文件，如在一个<code>&lt;a&gt;&lt;/a&gt;</code>之间的<code>innerHTML</code>文本为<code>#request.loginNames</code>的值，我们只要使用：<code>&lt;s:property value=&quot;#request.loginNames&quot; /&gt;</code>便可以正常使用！</p>
+<p><strong>注：</strong></p>
+<ul>
+<li><code>${}</code>是<code>EL</code>语言的<code>%{}</code>这样的形式是<code>ognl</code>表达式语言的，在<code>struts2</code>的标签内部，使用<code>%{}</code>这样的形式，在标签外部可以使用<code>${}</code> <code>EL</code>语言的方式。如果在<code>struts2</code>的标签内部使用<code>${}</code>这样的方式，会出现以下的错误提示：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">According to TLD or attribute directive in tag file, attribute value does not accept any expressions</span><br></pre></td></tr></table></figure>
+<p>2.很多时候，我们使用<code>struts2</code>的一些标签，属性是需要接受集合的，如果集合是保存在<code>request,session</code>，或者是值栈(非根对象的栈顶)，可以使用<code>#变量名</code>的方式，如果获取的值是在<code>Action</code>中通过特定的方法来获取，就需要使用如<code>value=&quot;userList&quot;</code>这样的方式，只是去掉了前面的<code>#</code>。</p>
+<h3 id="struts2中的OGNL用法"><a href="#struts2中的OGNL用法" class="headerlink" title="struts2中的OGNL用法"></a><code>struts2</code>中的<code>OGNL</code>用法</h3><h4 id="User对象属性获取"><a href="#User对象属性获取" class="headerlink" title="User对象属性获取"></a><code>User</code>对象属性获取</h4><p>如<code>User</code>中有<code>username</code>和<code>password</code>字段</p>
+<ul>
+<li><p>获取<code>username</code>属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;user.username&quot; /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取<code>password</code>属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;user.password&quot; /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>若<code>User</code>中又包含定义了<code>address</code>对象，<code>address</code>对象中包含有<code>addr</code>属性，则可以这样访问获取<code>addr</code>属性:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;user.address.addr&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>若<code>User</code>中还包含一个<code>get()</code>的普通方法，可以这样调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;user.get()&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>以上是调用值栈中对象的普通方法，<code>user</code>为值栈中的对象</p>
+<hr>
+<p>调用<code>action</code>中的静态方法<code>get()</code>，普通方法不能直接调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;@com.netshuai.action.ManagerAction@get()&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>以上为调用非值栈中的静态方法</p>
+<hr>
+<p>调用<code>JDK</code>中类的静态方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;@java.lang.Math@floor(32.56)&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>上例也可写成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;@@floor(32.56)&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>省略前面的类则默认使用<code>java.lang.Math</code>类，其他类不可省略</p>
+<hr>
+<p>调用普通类中的静态属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;@com.netshuai.model.Address@city&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p><code>address</code>中的<code>city</code>静态属性要用<code>public</code>声明</p>
+<hr>
+<p>调用普通类的构造方法，如构造方法为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public User(String username)</span><br><span class="line">&#123;</span><br><span class="line">    this.username=username;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>调用方法为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;new com.netshuai.model.User(&apos;hello&apos;).username&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>则返回<code>username</code>值为<code>hello</code></p>
+<hr>
+<ul>
+<li>获取<code>List</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;list&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取<code>List</code>中的某一个元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;list[0]&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取<code>List</code>的大小</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;list.size&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取<code>Set</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;set&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>无法获取<code>Set</code>中的某一个元素，因为<code>Set</code>没有顺序</p>
+<ul>
+<li>获取<code>Map</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;map&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取<code>Map</code>中所有<code>key</code>的值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;map.keys&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取<code>Map</code>中所有<code>value</code>的值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;map.values&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取<code>Map</code>中的某一个元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;map[&apos;k1&apos;]&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取<code>List</code>所有对象</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;listObject&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>需要重写<code>toString()</code>方法才能正常显示对象的值</p>
+<ul>
+<li>利用投影获取<code>List</code>中所有对象的<code>username</code>属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;listObject.&#123;username&#125;&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>利用投影获取<code>List</code>中第一个对象的<code>username</code>属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;listObject.&#123;username&#125;[0]&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>利用选择获取<code>List</code>中年龄大于 30 的对象</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;listObject.&#123;?#this.age&gt;30&#125;&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>利用选择获取<code>List</code>中年龄大于 30 的对象的<code>username</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;listObject.&#123;?#this.age&gt;30&#125;.&#123;username&#125;&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>利用选择获取<code>List</code>中年龄大于 30 的第一个对象的<code>username</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;listObject.&#123;?#this.age&gt;30&#125;.&#123;username&#125;[0]&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;listObject.&#123;^#this.age&gt;30&#125;.&#123;username&#125;&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>利用选择获取<code>List</code>中年龄大于 30 的最后一个对象的<code>username</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;listObject.&#123;$#this.age&gt;30&#125;.&#123;username&#125;&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取<code>parameters</code>中的属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;#parameters.name&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取<code>request</code>中的属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;#request.name&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取<code>session</code>中的属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;#session.name&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取<code>application</code>中的属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;#application.name&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>按顺序遍历上面四个对象，然后返回首先找到的值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;#attr.name&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>%{}</code>可以取出存在值堆栈中的<code>Action</code>对象，直接调用它的方法，如<code>%{getText(&#39;key&#39;)}</code>可以取出国际化信息</p>
+</li>
+<li><p><code>${}</code>可以用在国际化资源文件中和<code>struts2</code>配置文件中</p>
+</li>
+<li><p>使用<code>top</code>获取值栈中第二个对象</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;[1].top.user&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用<code>top</code>获取值栈中第二个对象的属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:property value=&quot;[1].user&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>调用值栈中<code>action</code>的静态方法(<code>vs</code>也可写做<code>vs1</code>)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get()&lt;s:property value=&quot;@vs@get()&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>调用值栈中第二个<code>action</code>的静态方法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get()&lt;s:property value=&quot;@vs2@get()&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>将一个对象放入值栈</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ActionContext.getContext().getValueStack().push(user);</span><br></pre></td></tr></table></figure>
+<h3 id="转载自"><a href="#转载自" class="headerlink" title="转载自"></a>转载自</h3><p><a href="http://tomfish88.iteye.com/blog/1489506" target="_blank" rel="noopener">http://tomfish88.iteye.com/blog/1489506</a></p>
 
-
-value: 被迭代的集合
-id: 指定集合中元素的id
-status: 迭代元素的索引
-
-jsp页面定义元素写法 数组或list123&lt;s:iterator value=&quot;&#123;&apos;1&apos;,&apos;2&apos;,&apos;3&apos;,&apos;4&apos;,&apos;5&a...
     
 
         <a href="/Intro-about-iterator-in-struts2.html" class="post-more waves-effect waves-button">
@@ -485,13 +1932,100 @@ jsp页面定义元素写法 数组或list123&lt;s:iterator value=&quot;&#123;&ap
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-         定义OSI（Open System Interconnection）参考模型是国际标准化组织（ISO）制定的一个用于计算机或通信系统间互联的标准体系，一般称为OSI参考模型或七层模型。
-模型图
-                
-                    
-                    
-                
-                1099668...
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>OSI（Open System Interconnection）参考模型是国际标准化组织（ISO）制定的一个用于计算机或通信系统间互联的标准体系，一般称为OSI参考模型或七层模型。</p>
+<h2 id="模型图"><a href="#模型图" class="headerlink" title="模型图"></a>模型图</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/1099668-20170212153338135-125492424.jpg" alt="1099668-20170212153338135-125492424" title="">
+                </div>
+                <div class="image-caption">1099668-20170212153338135-125492424</div>
+            </figure>
+<h3 id="各层描述"><a href="#各层描述" class="headerlink" title="各层描述"></a>各层描述</h3><h3 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h3><blockquote>
+<p>设备之间的比特流传输、物理接口、电气特性等</p>
+</blockquote>
+<p>物理层并不是物理媒体本身，它只是开放系统中利用物理媒体实现物理连接的功能描述和执行连接的规程。物理层提供用于建立、保持和断开物理连接的机械的、电气的、功能的和过程的条件。简而言之，物理层提供有关同步和全双工比特流在物理媒体上的传输手段，其典型的协议有<code>RS 232C</code>、<code>RS 449/422/423</code>、<code>V.24</code>和<code>X.21</code>、<code>X.21bis</code>等。</p>
+<p>物理层是<code>OSI</code>的第一层，它虽然处于最底层，却是整个开放系统的基础。物理层为设备之间的数据通信提供传输媒体及互连设备，为数据传输提供可靠的环境。</p>
+<ul>
+<li><p>为数据端设备提供传送数据的通路，数据通路可以是一个物理媒体，也可以是多个物理媒体连接而成。一次完整的数据传输，包括激活物理连接、传送数据和终止物理连接。所谓激活，就是不管有多少物理媒体参与，都要在通信的两个数据终端设备间连接起来，形成一条通路。</p>
+</li>
+<li><p>传输数据。物理层要形成适合数据传输需要的实体，为数据传送服务。一是要保证数据能在其上正确通过，二是要提供足够的带宽(带宽是指每秒钟内能通过的比特(<code>Bit</code>)数)，以减少信道上的拥塞。传输数据的方式能满足点到点，一点到多点，串行或并行，半双工或全双工，同步或异步传输的需要。</p>
+</li>
+<li><p>完成物理层的一些管理工作。</p>
+</li>
+</ul>
+<h3 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h3><blockquote>
+<p>封装数据帧</p>
+</blockquote>
+<p>数据链路可以粗略地理解为数据通道。物理层要为终端设备间的数据通信提供传输介质及其连接。介质是长期的，连接是有生存期的。在连接生存期内，收发两端可以进行不等的一次或多次数据通信。每次通信都要经过建立通信联络和拆除通信联络两个过程。这种建立起来的数据收发关系就叫做数据链路。而在物理媒体上传输的数据难免受到各种不可靠因素的影响而产生差错，为了弥补物理层上的不足，为上层提供无差错的数据传输，就要能对数据进行检错和纠错。数据链路的建立，拆除，对数据的检错，纠错是数据链路层的基本任务。</p>
+<p>链路层是为网络层提供数据传送服务的，这种服务要依靠本层具备的功能来实现。链路层应具备如下功能：</p>
+<ul>
+<li>链路连接的建立、拆除和分离；</li>
+<li>帧定界和帧同步。链路层的数据传输单元是帧，协议不同，帧的长短和界面也有差别，但无论如何必须对帧进行定界；</li>
+<li>顺序控制，指对帧的收发顺序的控制；</li>
+<li>差错检测和恢复。还有链路标识，流量控制等等。差错检测多用方阵码校验和循环码校验来检测信道上数据的误码，而帧丢失等用序号检测。各种错误的恢复则常靠反馈重发技术来完成。</li>
+</ul>
+<p>独立的链路产品中最常见的当属网卡，网桥也是链路产品。数据链路层将本质上不可靠的传输媒体变成可靠的传输通路提供给网络层。在<code>IEEE802.3</code>情况下，数据链路层分成了两个子层，一个是逻辑链路控制，另一个是媒体访问控制.</p>
+<p><code>OSI</code>其中：</p>
+<ul>
+<li><code>AUI</code>——连接单元接口 </li>
+<li><code>PMA</code>——物理媒体连接</li>
+<li><code>MAU</code>——媒体连接单元 </li>
+<li><code>PLS</code>——物理信令</li>
+<li><code>MDI</code>——媒体相关接口</li>
+</ul>
+<h3 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h3><blockquote>
+<p>封装数据报文</p>
+</blockquote>
+<p>网络层的产生也是网络发展的结果。在联机系统和线路交换的环境中，网络层的功能没有太大意义。当数据终端增多时。它们之间有中继设备相连，此时会出现一台终端要求不只是与惟一的一台而是能和多台终端通信的情况，这就产生了把任意两台数据终端设备的数据链接起来的问题，也就是路由或者叫寻径。另外，当一条物理信道建立之后，被一对用户使用，往往有许多空闲时间被浪费掉。人们自然会希望让多对用户共用一条链路，为解决这一问题就出现了逻辑信道技术和虚拟电路技术。</p>
+<p>中继控制层，其主要功能是利用数据链路层所保证的邻接节点间的无差错数据传输功能，通过路由选择和中继功能，实现两个端系统之间的数据传输。为此，网络层还具有多路复用功能，采用统计时分复用原理，将一条数据链路复用为多条逻辑信道，从而实现一个数据终端设备利用一条物理电路同时和多个远程数据通信设备的通信。网络层规定了网路连接的建立和拆除规程以及数据传送规程等。</p>
+<ul>
+<li>路由选择和中继；</li>
+<li>激活，终止网络连接；</li>
+<li>在一条数据链路上复用多条网络连接，多采取分时复用技术；</li>
+<li>检测与恢复；</li>
+<li>排序，流量控制；</li>
+<li>服务选择；</li>
+<li>网络管理。</li>
+</ul>
+<h3 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h3><blockquote>
+<p>确定传输协议、确定数据传输的接口</p>
+</blockquote>
+<p>主要功能是端开放系统之间数据的收妥确认。同时，还用于弥补各种通信网路的质量差异，对经过下三层之后仍然存在的传输差错进行恢复，进一步提高可靠性。另外，还通过复用、分段和组合、连接和分离、分流和合流等技术措施，提高吞吐量和服务质量。</p>
+<p>传输层是两台计算机经过网络进行数据通信时，第一个端到端的层次，具有缓冲作用。当网络层服务质量不能满足要求时，它将服务加以提高，以满足高层的要求；当网络层服务质量较好时，它只用很少的工作。传输层还可进行复用，即在一个网络连接上创建多个逻辑连接。传输层也称为运输层。传输层只存在于端开放系统中，是介于低3层通信子网系统和高3层之间的一层，但是很重要的一层。因为它是源端到目的端对数据传送进行控制从低到高的最后一层。</p>
+<p>有一个既存事实，即世界上各种通信子网在性能上存在着很大差异。例如电话交换网，分组交换网，公用数据交换网，局域网等通信子网都可互连，但它们提供的吞吐量，传输速率，数据延迟通信费用各不相同。对于会话层来说，却要求有一性能恒定的界面。传输层就承担了这一功能。它采用分流/合流，复用/介复用技术来调节上述通信子网的差异，使会话层感受不到。</p>
+<p>此外传输层还要具备差错恢复，流量控制等功能，以此对会话层屏蔽通信子网在这些方面的细节与差异。传输层面对的数据对象已不是网络地址和主机地址，而是会话层的界面端口。上述功能的最终目的是为会话提供可靠的，无误的数据传输。传输层的服务一般要经历传输连接建立、数据传送、传输连接释放3个阶段才算完成一个完整的服务过程。而在数据传送阶段又分为一般数据传送和加速数据传送两种。</p>
+<h3 id="会话层"><a href="#会话层" class="headerlink" title="会话层"></a>会话层</h3><blockquote>
+<p>对应用会话的管理、同步</p>
+</blockquote>
+<p>按照在应用进程之间约定的原则，按照正确的顺序收、发数据，进行各种形态的对话。会话层规定了会话服务用户间会话连接的建立和拆除规程以及数据传送规程。</p>
+<p>会话层提供的服务是应用建立和维持会话，并能使会话获得同步。会话层使用校验点可使通信会话在通信失效时从校验点继续恢复通信。这种能力对于传送大的文件极为重要。会话层，表示层，应用层构成开放系统的高3层，面向应用进程提供分布处理、对话管理、信息表示、检查和恢复与语义上下文有关的传送差错等。为给两个对等会话服务用户建立一个会话连接，应该做如下几项工作：</p>
+<ul>
+<li>将会话地址映射为运输地址；</li>
+<li>数据传输阶段；</li>
+<li>连接释放。</li>
+</ul>
+<h3 id="表示层"><a href="#表示层" class="headerlink" title="表示层"></a>表示层</h3><blockquote>
+<p>数据的表现形式、特殊数据的加密、压缩（解释传输的数据）</p>
+</blockquote>
+<p>把应用层提供的信息变换为能够共同理解的形式，提供字符代码、数据格式、控制信息格式、加密等的统一表示。表示层的作用之一是为异种机通信提供一种公共语言，以便能进行互操作。这种类型的服务之所以需要，是因为不同的计算机体系结构使用的数据表示法不同。例如，<code>IBM</code>主机使用<code>EBCDIC</code>编码，而大部分<code>PC</code>机使用的是<code>ASCII</code>码。在这种情况下，便需要表示层来完成这种转换。通过前面的介绍，我们可以看出，会话层以下5层完成了端到端的数据传送，并且是可靠的、无差错的传送。但是数据传送只是手段而不是目的，最终是要实现对数据的使用。由于各种系统对数据的定义并不完全相同，最易明白的例子是键盘——其上的某些键的含义在许多系统中都有差异。这自然给利用其它系统的数据造成了障碍。表示层和应用层就担负了消除这种障碍的任务。</p>
+<h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><blockquote>
+<p>提供用户接口</p>
+</blockquote>
+<p>实现应用进程（如用户程序、终端操作员等）之间的信息交换。同时，还具有一系列业务处理所需要的服务功能。应用层一般包括公共应用服务要素（<code>CASE</code>）和特定应用服务要素（<code>SASE</code>）。其中<code>CASE</code>提供应用进程中最基本的服务，向应用进程提供信息传送所必需的、但又独立于应用进程通信的能力。SASE实质上是各种应用进程在应用层中的映射，每一个<code>SASE</code>都针对某一类具体应用，例如文件传送、访问和管理（<code>FTAM</code>）、虚拟终端（<code>VT</code>）、消息处理系统（<code>MHS</code>）、电子数据互换（<code>EDI</code>）和目录查询等。</p>
+<p>应用层向应用程序提供服务，这些服务按其向应用程序提供的特性分成组，并称为服务元素。有些可为多种应用程序共同使用，有些则为较少的一类应用程序使用。应用层是开放系统的最高层，是直接为应用进程提供服务的。其作用是在实现多个系统应用进程相互通信的同时，完成一系列业务处理所需的服务。</p>
+<h2 id="OSI七层模型-相关协议-缩写"><a href="#OSI七层模型-相关协议-缩写" class="headerlink" title="OSI七层模型 相关协议 缩写"></a>OSI七层模型 相关协议 缩写</h2><h3 id="应用层-1"><a href="#应用层-1" class="headerlink" title="应用层"></a>应用层</h3><p>HTTP        超文本传输协议<br>FTP         文件传输协议<br>SMTP        简单邮件传输协议<br>TELNETTCP/IP    终端仿真协议<br>POP3        邮局协议第三版<br>Finger      用户信息协议<br>NNTP        网络新闻传输协议<br>IMAP4       因特网信息访问协议第四版<br>LPR UNIX    远程打印协议<br>Rwho UNIX   远程 Who协议<br>Rexec UNIX  远程执行协议<br>Login UNIX  远程登陆协议<br>RSH UNIX    远程Shell协议<br>NTF HP      网络文件传输协议<br>RDA HP      远程数据库访问协议<br>VT          虚拟终端仿真协议<br>RFA HP      远程文件访问协议<br>RPC Remote Process Comm.<br>S-HTTP      安全超文本传输协议<br>GDP         网关发现协议<br>X-Window<br>CMOT        基于TCP/IP的CMIP协议<br>SOCKS       安全套接字协议<br>FANP        流属性通知协议<br>SLP         服务定位协议<br>MSN         微软网络服务<br>Radius      远程用户拨号认证服务协议<br>DNS         域名系统<br>NFS         网络文件系统协议<br>NIS SUN     网络信息系统协议<br>R-STAT SUN  远程状态协议<br>NSM SUN     网络状态监测协议<br>PMAP SUN    端口映射协议<br>Mount<br>LPR         UNIX远程打印协议</p>
+<h4 id="常用UDP协议的应用层服务"><a href="#常用UDP协议的应用层服务" class="headerlink" title="常用UDP协议的应用层服务"></a>常用UDP协议的应用层服务</h4><p>BOOTP   引导协议<br>DHCP    动态主机配套协议<br>NTP     网络时间协议<br>TFTP    简单文件传输协议<br>SNMP    简单网络管理协议</p>
+<h3 id="表示层-1"><a href="#表示层-1" class="headerlink" title="表示层"></a>表示层</h3><p>DECnet NSP<br>LPP             轻量级表示协议<br>NBSSN NetBIOS   会话服务协议<br>XDP             外部数据表示协议<br>IPX</p>
+<h3 id="会话层-1"><a href="#会话层-1" class="headerlink" title="会话层"></a>会话层</h3><p>SSL     安全套接字层协议<br>TLS     传输层安全协议<br>DAP     目录访问协议<br>LDAP    轻量级目录访问协议<br>RPC     远程过程调用协议<br>VINES NETRPC<br>VFRP<br>NeTBIOS<br>IPX</p>
+<h3 id="传输层-1"><a href="#传输层-1" class="headerlink" title="传输层"></a>传输层</h3><p>XOT         基于tcp之上的X协议<br>Van Jacobson 压缩TCP协议<br>ISO-DE ISO  开发环境——–&gt;NetBISO<br>TALI        传输适配层接口协议<br>DSI、NetBIOS、IP NeTBIOS、ISO-TP SSP、SMB、MSRPC<br>UDP         用户数据报协议<br>RUDP        可靠的用户数据报协议<br>Mobile IP   移动IP协议</p>
+<h3 id="网络层-1"><a href="#网络层-1" class="headerlink" title="网络层"></a>网络层</h3><p>IP/IPv6 互联网协议/互联网协议第六版<br>ICMPv6  互联网控制信息协议第六版<br>ICMP    互联网控制信息协议<br>IGMP    互联网组管理协议<br>SLIP    串行线路IP协议</p>
+<h4 id="安全协议"><a href="#安全协议" class="headerlink" title="安全协议"></a>安全协议</h4><p>AH  认证头协议<br>ESP 安装封装有效载荷协议</p>
+<h4 id="路由协议"><a href="#路由协议" class="headerlink" title="路由协议"></a>路由协议</h4><p>EGP     外部网关协议<br>OSPF    开放最短路径优先协议<br>IGRP    内部网关路由协议<br>NHRP    下一跳解析协议<br>IE-IRGP     增强内部网关路由选择协议<br>RIPng for IPv6 IPv6路由信息协议<br>GGP     网关到网关协议<br>VRRP    虚拟路由器冗余协议<br>PGM     实际通用组播协议<br>RSVP    资源预留协议<br>PIM-DM  密集模式独立组播协议<br>DVMRP   距离矢量组播路由协议<br>RIP2    路由信息协议第二版<br>PIM-SM  稀疏模式独立组播协议<br>MOSPF   组播开放最短路径优先协议</p>
+<h3 id="数据链路层-1"><a href="#数据链路层-1" class="headerlink" title="数据链路层"></a>数据链路层</h3><p>MPLS    多协议标签交换协议<br>XTP     压缩传输协议<br>DCAP    数据转换客户访问协议<br>SLE     串行连接封装协议<br>IPinIP  IP套IP封装协议</p>
+<h4 id="隧道协议"><a href="#隧道协议" class="headerlink" title="隧道协议"></a>隧道协议</h4><p>PPTP    点对点隧道协议<br>L2F     第二层转发协议<br>L2TP    第二层隧道协议<br>ATMP    接入隧道管理协议<br>Cisco   协议<br>CDP     思科发现协议<br>CGMP    思科组管理协议</p>
+<h4 id="地址解析协议"><a href="#地址解析协议" class="headerlink" title="地址解析协议"></a>地址解析协议</h4><p>ARP     地址解析协议<br>RAR     逆向地址解析协议</p>
+<h3 id="物理层-1"><a href="#物理层-1" class="headerlink" title="物理层"></a>物理层</h3><p>IEEE        802.2<br>Ethernet    v.2<br>Internetwork</p>
+
     
 
         <a href="/OSI-Model.html" class="post-more waves-effect waves-button">
@@ -538,7 +2072,56 @@ jsp页面定义元素写法 数组或list123&lt;s:iterator value=&quot;&#123;&ap
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-         先说说怎样强制加载某个驱动如下，KextToPatch并列ForceKextsToLoad，设置kext路径12345&lt;key&gt;ForceKextsToLoad&lt;/key&gt;&lt;array&gt;    &lt;string&gt;\System\Library\Extensions\AppleHDA.kext&lt;/string&gt;    &lt;stri...
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="先说说怎样强制加载某个驱动"><a href="#先说说怎样强制加载某个驱动" class="headerlink" title="先说说怎样强制加载某个驱动"></a>先说说怎样强制加载某个驱动</h3><p>如下，<code>KextToPatch</code>并列<code>ForceKextsToLoad</code>，设置<code>kext</code>路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;key&gt;ForceKextsToLoad&lt;/key&gt;</span><br><span class="line">&lt;array&gt;</span><br><span class="line">    &lt;string&gt;\System\Library\Extensions\AppleHDA.kext&lt;/string&gt;</span><br><span class="line">    &lt;string&gt;\Extra\Extensions&lt;/string&gt;</span><br><span class="line">&lt;/array&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="笔记本显存修改至2048MB"><a href="#笔记本显存修改至2048MB" class="headerlink" title="笔记本显存修改至2048MB"></a>笔记本显存修改至<code>2048MB</code></h3><blockquote>
+<p>HD4200_4400_4600 Mobile：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：		AppleIntelFramebufferAzul</span><br><span class="line">Find：		01030303 00000002 00003001 00006000 00000060</span><br><span class="line">Replace：	01030303 00000002 00003001 00009000 00000080</span><br><span class="line">Comment:	1536MB -&gt; 2048MB for HD4200_4400_4600 Mobile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HD620 Mobile：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：		AppleIntelKBLGraphicsFramebuffer</span><br><span class="line">Find：		01030303 00002002 00000000 00000060</span><br><span class="line">Replace：	01030303 00002002 00000000 00000080 </span><br><span class="line">Comment:	1536MB -&gt; 2048MB for HD620 Mobile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HD630 Mobile：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：		AppleIntelKBLGraphicsFramebuffer</span><br><span class="line">Find：		01030303 00006002 00005001 00000060</span><br><span class="line">Replace：	01030303 00006002 00005001 00000080</span><br><span class="line">Comment:	1536MB -&gt; 2048MB for HD630 Mobile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HD520_530_540 Mobile：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：		AppleIntelSKLGraphicsFramebuffer</span><br><span class="line">Find：		01030303 00002002 00005001 00000060</span><br><span class="line">Replace：	01030303 00002002 00005001 00000080</span><br><span class="line">Comment:	1536MB -&gt; 2048MB for HD520_530_540 Mobile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HD5500 Mobile：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：		AppleIntelBDWGraphicsFramebuffer </span><br><span class="line">Find: 		01030303 00002002 00005001 00000060</span><br><span class="line">Replace: 	01030303 00002002 00005001 00000080</span><br><span class="line">Comment:	1536MB -&gt; 2048MB for HD5500 Mobile</span><br></pre></td></tr></table></figure>
+<h3 id="开启Trim"><a href="#开启Trim" class="headerlink" title="开启Trim"></a>开启<code>Trim</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.iokit.IOAHCIBlockStorage</span><br><span class="line">Find: 00415050 4C452053 534400</span><br><span class="line">Replcae: 00000000 00000000 000000</span><br><span class="line">Comment: Enable TRIM for SSD</span><br></pre></td></tr></table></figure>
+<h3 id="花屏补丁"><a href="#花屏补丁" class="headerlink" title="花屏补丁"></a>花屏补丁</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.iokit.IOGraphicsFamily</span><br><span class="line">Find: 4188C4EB 11</span><br><span class="line">Replcae: 4188C4EB 31</span><br><span class="line">Comment: Boot graphics glitch, 10.10.2/10.10.3</span><br><span class="line">MatchOS: 10.10.2,10.10.3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.iokit.IOGraphicsFamily</span><br><span class="line">Find: 01000075 17</span><br><span class="line">Replcae: 010000EB 17</span><br><span class="line">Comment: Boot graphics glitch, 10.10.x/10.11.x (credit lisai9093, cecekpawon)</span><br><span class="line">MatchOS: 10.10.x,10.11.x</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.iokit.IOGraphicsFamily</span><br><span class="line">Find: 01000075 25</span><br><span class="line">Replcae: 010000EB 25</span><br><span class="line">Comment: Boot graphics glitch, 10.12.dp1 (credit denskop)</span><br><span class="line">MatchOS: 10.12.x</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.iokit.IOGraphicsFamily</span><br><span class="line">Find: 01000075 22</span><br><span class="line">Replcae: 010000EB 22</span><br><span class="line">Comment: Boot graphics glitch, 10.13 beta (based on denskop patch)</span><br><span class="line">MatchOS: 10.13.x</span><br></pre></td></tr></table></figure>
+<h3 id="DVMT补丁"><a href="#DVMT补丁" class="headerlink" title="DVMT补丁"></a>DVMT补丁</h3><blockquote>
+<p>Broadwell</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.driver.AppleIntelBDWGraphicsFramebuffer</span><br><span class="line">Find: 39CF763C</span><br><span class="line">Replcae: 39CFEB3C</span><br><span class="line">Comment: Disable minStolenSize less or equal fStolenMemorySize assertion, 10.10.x (based on Austere.J patch)</span><br><span class="line">MatchOS: 10.10.x</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.driver.AppleIntelBDWGraphicsFramebuffer</span><br><span class="line">Find: 4139C476 3E</span><br><span class="line">Replcae: 4139C4EB 3E</span><br><span class="line">Comment: Disable minStolenSize less or equal fStolenMemorySize assertion, 10.11.beta (based on Austere.J patch)</span><br><span class="line">MatchOS: 10.11.x</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.driver.AppleIntelBDWGraphicsFramebuffer</span><br><span class="line">Find: 8945C839 C7764F</span><br><span class="line">Replcae: 8945C839 C7EB4F</span><br><span class="line">Comment: Disable minStolenSize less or equal fStolenMemorySize assertion, 10.12.0 (based on Austere.J patch)</span><br><span class="line">MatchOS: 10.12.x</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.driver.AppleIntelBDWGraphicsFramebuffer</span><br><span class="line">Find: 4C895DB8 7644</span><br><span class="line">Replcae: 4C895DB8 EB44</span><br><span class="line">Comment: Disable minStolenSize less or equal fStolenMemorySize assertion, 10.13.0/1 (credit PMHeart)</span><br><span class="line">MatchOS: 10.13.0,10.13.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.driver.AppleIntelBDWGraphicsFramebuffer</span><br><span class="line">Find: 4C8945C0 7644</span><br><span class="line">Replcae: 4C8945C0 EB44</span><br><span class="line">Comment: Disable minStolenSize less or equal fStolenMemorySize assertion, 10.13.2/3 (credit RehabMan)</span><br><span class="line">MatchOS: 10.13.2,10.13.3</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Skylake</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.driver.AppleIntelSKLGraphicsFramebuffer</span><br><span class="line">Find: 4139C476 2A</span><br><span class="line">Replcae: 4139C4EB 2A</span><br><span class="line">Comment: Disable minStolenSize less or equal fStolenMemorySize assertion, 10.11.4 (based on Austere.J patch)</span><br><span class="line">MatchOS: 10.11.x</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.driver.AppleIntelSKLGraphicsFramebuffer</span><br><span class="line">Find: 8945C839 C67651</span><br><span class="line">Replcae: 8945C839 C6EB51</span><br><span class="line">Comment: Disable minStolenSize less or equal fStolenMemorySize assertion, 10.12.0 (based on Austere.J patch)</span><br><span class="line">MatchOS: 10.12.x</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.driver.AppleIntelSKLGraphicsFramebuffer</span><br><span class="line">Find: 4C8955B8 7640</span><br><span class="line">Replcae: 4C8955B8 EB40</span><br><span class="line">Comment: Disable minStolenSize less or equal fStolenMemorySize assertion, 10.13.0/1 (credit PMHeart)</span><br><span class="line">MatchOS: 10.13.0,10.13.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.driver.AppleIntelSKLGraphicsFramebuffer</span><br><span class="line">Find: 4C895DB8 7640</span><br><span class="line">Replcae: 4C895DB8 EB40</span><br><span class="line">Comment: Disable minStolenSize less or equal fStolenMemorySize assertion, 10.13.2/3 (credit PMHeart, , shdkpr2008)</span><br><span class="line">MatchOS: 10.13.2,10.13.3</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Kabylake</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.driver.AppleIntelKBLGraphicsFramebuffer</span><br><span class="line">Find: 4C895DC0 7646</span><br><span class="line">Replcae: 4C895DC0 EB46</span><br><span class="line">Comment: Disable minStolenSize less or equal fStolenMemorySize assertion, 10.13.0/1 (credit PMHeart)</span><br><span class="line">MatchOS: 10.13.0,10.13.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Name: com.apple.driver.AppleIntelKBLGraphicsFramebuffer</span><br><span class="line">Find: 4C896DB8 7646</span><br><span class="line">Replcae: 4C896DB8 EB46</span><br><span class="line">Comment: Disable minStolenSize less or equal fStolenMemorySize assertion, 10.13.2/3 (credit RehabMan)</span><br><span class="line">MatchOS: 10.13.2,10.13.3</span><br></pre></td></tr></table></figure>
+<h3 id="硬盘橙色"><a href="#硬盘橙色" class="headerlink" title="硬盘橙色"></a>硬盘橙色</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name: AppleAHCIPort</span><br><span class="line">Find: 45787465 726E616C</span><br><span class="line">Replcae: 496E7465 726E616C</span><br><span class="line">Comment: Define external drivers as internal to fix yellow drive icons</span><br></pre></td></tr></table></figure>
+<h3 id="让没有ECC内存的机器利用MacPro4-1或者-MacPro5-1机型启动"><a href="#让没有ECC内存的机器利用MacPro4-1或者-MacPro5-1机型启动" class="headerlink" title="让没有ECC内存的机器利用MacPro4,1或者 MacPro5,1机型启动"></a>让没有<code>ECC</code>内存的机器利用<code>MacPro4,1</code>或者 <code>MacPro5,1</code>机型启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name: AppleTyMCEDriver</span><br><span class="line">Find: 720A004D 61635072 6F342C31 004D6163 50726F35 2C310058</span><br><span class="line">Replcae: 720A0000 00000000 00000000 00000000 00000000 00000058</span><br><span class="line">Comment: Allow booting with a MacPro4,1 or MacPro5,1 SMBIOS definition without ECC memory</span><br></pre></td></tr></table></figure>
+<h3 id="万能声卡将Headphones显示替代为Telephones"><a href="#万能声卡将Headphones显示替代为Telephones" class="headerlink" title="万能声卡将Headphones显示替代为Telephones"></a>万能声卡将<code>Headphones</code>显示替代为<code>Telephones</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name: VoodooHDA</span><br><span class="line">Find: 48656164 70686F6E 657300</span><br><span class="line">Replcae: 54656C65 70686F6E 657300</span><br><span class="line">Comment: For VoodooHDA replacing the string Headphones with Telephones</span><br></pre></td></tr></table></figure>
+
     
 
         <a href="/Common-patches-on-Hackintosh.html" class="post-more waves-effect waves-button">
@@ -585,15 +2168,41 @@ jsp页面定义元素写法 数组或list123&lt;s:iterator value=&quot;&#123;&ap
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-         Trim
-开启1$ sudo trimforce enable
-
-
-关闭1$ sudo trimforce disable
-
-查看启用的ig-platform-id1$ ioreg -l | grep -y platform-id
-笔记本开启插电源出提示音:
-开启:1$ defaults write com.apple.PowerChime ChimeOnAllHardware -bool...
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="Trim"><a href="#Trim" class="headerlink" title="Trim"></a>Trim</h3><blockquote>
+<p>开启<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo trimforce enable</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>关闭<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo trimforce disable</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="查看启用的ig-platform-id"><a href="#查看启用的ig-platform-id" class="headerlink" title="查看启用的ig-platform-id"></a>查看启用的<code>ig-platform-id</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ioreg -l | grep -y platform-id</span><br></pre></td></tr></table></figure>
+<h3 id="笔记本开启插电源出提示音"><a href="#笔记本开启插电源出提示音" class="headerlink" title="笔记本开启插电源出提示音:"></a>笔记本开启插电源出提示音:</h3><blockquote>
+<p>开启:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; open /System/Library/CoreServices/PowerChime.app &amp;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>关闭:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ defaults write com.apple.PowerChime ChimeOnAllHardware -bool false; killall PowerChime</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="去掉apfs-efi最新版本的日志调试显示"><a href="#去掉apfs-efi最新版本的日志调试显示" class="headerlink" title="去掉apfs.efi最新版本的日志调试显示"></a>去掉apfs.efi最新版本的日志调试显示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/Desktop						</span><br><span class="line">&amp; cp /usr/standalone/i386/apfs.efi .</span><br><span class="line">$ perl -i -pe &apos;s|\x00\x74\x07\xb8\xff\xff|\x00\x90\x90\xb8\xff\xff|sg&apos; ./apfs.efi</span><br></pre></td></tr></table></figure>
+<h3 id="提取显示器EDID及设备ID厂商ID"><a href="#提取显示器EDID及设备ID厂商ID" class="headerlink" title="提取显示器EDID及设备ID厂商ID"></a>提取显示器<code>EDID</code>及设备<code>ID</code>厂商<code>ID</code></h3><blockquote>
+<p>EDID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ioreg -lw0 | grep -i &quot;IODisplayEDID&quot; | sed -e &apos;s/.*&lt;//&apos; -e &apos;s/&gt;//&apos;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>PID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ioreg -l | grep &quot;DisplayProductID&quot;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>VID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ioreg -l | grep &quot;DisplayVendorID&quot;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="为macOS-Sierra以上的OS-X开启任何来源"><a href="#为macOS-Sierra以上的OS-X开启任何来源" class="headerlink" title="为macOS Sierra以上的OS X开启任何来源"></a>为<code>macOS Sierra</code>以上的<code>OS X</code>开启任何来源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo spctl --master-disable</span><br></pre></td></tr></table></figure>
+<h3 id="查看加载的非官方内核扩展-–-kext"><a href="#查看加载的非官方内核扩展-–-kext" class="headerlink" title="查看加载的非官方内核扩展 – kext"></a>查看加载的非官方内核扩展 – <code>kext</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kextstat | grep -v &quot;com.apple&quot; | grep -v Energy</span><br></pre></td></tr></table></figure>
+<h3 id="查看显示器硬件信息"><a href="#查看显示器硬件信息" class="headerlink" title="查看显示器硬件信息"></a>查看显示器硬件信息</h3><blockquote>
+<p>EDID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ioreg -l | grep &quot;IODisplayEDID&quot;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>ProductID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ioreg -l | grep &quot;DisplayProductID&quot;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>VendorID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ioreg -l | grep &quot;DisplayVendorID&quot;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3>
     
 
         <a href="/Common-command-in-macOS.html" class="post-more waves-effect waves-button">
@@ -640,8 +2249,87 @@ jsp页面定义元素写法 数组或list123&lt;s:iterator value=&quot;&#123;&ap
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-         前言随着新的macOS High Sierra 10.13.4操作系统发布，很多盆友迫不及待的做了一个.dmg格式的压缩镜像以备用，但发现用Apple官方的方法制作出的镜像用CLOVER引导时是看不到安装镜像的，最后，在黑果小兵的帮助下，终于找到了解决方法。
-教程开始下载app镜像首先去AppleStore下载原版的app镜像https://itunes.apple.com/cn/app/...
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>随着新的<code>macOS High Sierra 10.13.4</code>操作系统发布，很多盆友迫不及待的做了一个<code>.dmg</code>格式的压缩镜像以备用，但发现用<code>Apple</code>官方的方法制作出的镜像用<code>CLOVER</code>引导时是看不到安装镜像的，最后，在<a href="https://blog.daliansky.net" target="_blank" rel="noopener">黑果小兵</a>的帮助下，终于找到了解决方法。</p>
+<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="下载app镜像"><a href="#下载app镜像" class="headerlink" title="下载app镜像"></a>下载<code>app</code>镜像</h3><p>首先去<code>AppleStore</code>下载原版的<code>app</code>镜像<a href="https://itunes.apple.com/cn/app/macos-high-sierra/id1246284741?l=en&amp;mt=12" target="_blank" rel="noopener">https://itunes.apple.com/cn/app/macos-high-sierra/id1246284741?l=en&amp;mt=12</a></p>
+<h3 id="制作镜像"><a href="#制作镜像" class="headerlink" title="制作镜像"></a>制作镜像</h3><p>打开磁盘工具</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_1.png" alt="Snip20180330_1" title="">
+                </div>
+                <div class="image-caption">Snip20180330_1</div>
+            </figure>
+<p>点击顶部状态栏<code>File -&gt; New Image -&gt; Blank Image</code></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_11.png" alt="Snip20180330_11" title="">
+                </div>
+                <div class="image-caption">Snip20180330_11</div>
+            </figure>
+<p>如上图写一个好听的名字，大小大于<code>app</code>镜像的大小，我直接大一点，写了<code>6.8GB</code>，选好保存位置，然后点击<code>save</code>。</p>
+<p>打开终端，输入<code>sudo</code>空格，找到下载好的<code>app</code>镜像(一般在应用程序里)，右键显示包内容，依次打开<code>/Contents/Resources</code>，将<code>createinstallmedia</code>拖到终端，输入空格，然后输入<code>--volume</code>，再空格，然后将准备好的安装磁盘，拖动至终端，再空格，接着输入<code>--applicationpath</code>，空格，将<code>app</code>镜像拖放到终端，空格，输入<code>--nointeraction</code>，回车，输入密码，再回车，等待镜像写入完成。</p>
+<p>如图</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_3.png" alt="Snip20180330_3" title="">
+                </div>
+                <div class="image-caption">Snip20180330_3</div>
+            </figure>
+<h3 id="进行镜像修复"><a href="#进行镜像修复" class="headerlink" title="进行镜像修复"></a>进行镜像修复</h3><p>然后下载附件，这个是我从10.13.3的镜像中提取的，13.4缺少这个启动的必要文件。<br>链接:<a href="https://pan.baidu.com/s/14R8rEk7PK9exu0lDvPh7jA" target="_blank" rel="noopener">https://pan.baidu.com/s/14R8rEk7PK9exu0lDvPh7jA</a>  密码:fcwt，将下载的压缩包解压，按住<code>Command Shift .</code>显示隐藏文件，即可看到里面的<code>.IA</code>开头的一个目录和一个文件，将这两个文件拷贝到刚才做的安装盘内。</p>
+<p>拷贝之前</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_4.png" alt="Snip20180330_4" title="">
+                </div>
+                <div class="image-caption">Snip20180330_4</div>
+            </figure>
+<p>拷贝之后</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_5.png" alt="Snip20180330_5" title="">
+                </div>
+                <div class="image-caption">Snip20180330_5</div>
+            </figure>
+<p>右键<code>.IABootFilesSystemVersion.plist</code>用<code>plist</code>编辑器打开，例如<code>Xcode</code>、<code>Plist Edit</code></p>
+<p>做以下修改</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_6.png" alt="Snip20180330_6" title="">
+                </div>
+                <div class="image-caption">Snip20180330_6</div>
+            </figure>
+<p>保存退出</p>
+<p>打开<code>/System/Library/CoreServices</code></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_8.png" alt="Snip20180330_8" title="">
+                </div>
+                <div class="image-caption">Snip20180330_8</div>
+            </figure>
+<p>拷贝图中选中项，将其拷贝到<code>/.IABootFiles/</code>目录下，然后打开<code>/System/Library/PrelinkedKernels/</code>，将下图选中的文件也拷贝到<code>/.IABootFiles/</code>目录下</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_9.png" alt="Snip20180330_9" title="">
+                </div>
+                <div class="image-caption">Snip20180330_9</div>
+            </figure>
+<p>最后<code>/.IABootFiles/</code>目录下内容如下</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_10.png" alt="Snip20180330_10" title="">
+                </div>
+                <div class="image-caption">Snip20180330_10</div>
+            </figure>
+<p>这时重启进入<code>CLOVER</code>引导界面就可以看到安装盘了。</p>
+
     
 
         <a href="/Make-a-bootable-install-media-image-to-install-macOS-High-Sierra-10-13-4.html" class="post-more waves-effect waves-button">
@@ -688,7 +2376,98 @@ jsp页面定义元素写法 数组或list123&lt;s:iterator value=&quot;&#123;&ap
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-         前言：本来不打算发这个帖子的，因为好多人觉得没有什么用，但前几天帮论坛好友阿林解决他hd4600花屏问题时，发现这个方法还是有一定作用的。之前在10.12区有坛友的4600部分区域出现花屏的情况，最后通过修改注入的ig来解决的，大家都知道，4200 4400 4600都是靠FakeID为0x04128086和ig为0x0a260006然后配合FakePCIID和FakePCIID_HD_G...
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>本来不打算发这个帖子的，因为好多人觉得没有什么用，但前几天帮论坛好友阿林解决他<code>hd4600</code>花屏问题时，发现这个方法还是有一定作用的。之前在<code>10.12</code>区有坛友的<code>4600</code>部分区域出现花屏的情况，最后通过修改注入的<code>ig</code>来解决的，大家都知道，<code>4200 4400 4600</code>都是靠<code>FakeID</code>为<code>0x04128086</code>和<code>ig</code>为<code>0x0a260006</code>然后配合<code>FakePCIID</code>和<code>FakePCIID_HD_Graphics</code>两个<code>kext</code>来驱动的，大家也知道，一部分<code>4600</code>也可以用<code>0x04160000</code>而不需要<code>FakeID</code>注入来驱动（相应的不少<code>4400</code>也可以用<code>0x0a160000</code>而不需要<code>FakeID</code>来驱动），两种方法都可以驱动核显，但区别还是有的，最容易发现的就是显存了，第一种方法驱动后都是<code>1536m</code>，第二种则是<code>1024m</code>。而前面提到的<code>4600</code>部分区域花屏的案例则是用第二种方式来解决的，后来经过测试，发现通过对<code>framebuffer</code>进行<code>patch</code>以达到<code>2048m</code>的显存也可以解决这个问题，于是这个方法就被我记在心里了。后来在帮阿林解决了他的花屏问题后，决定还是把相关方法写出来，虽然没什么技术含量，但也能为景友提供一个思路。<br>废话就说到这，下面说方法:</p>
+<h2 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h2><h3 id="查看FB以及ig"><a href="#查看FB以及ig" class="headerlink" title="查看FB以及ig"></a>查看<code>FB</code>以及<code>ig</code></h3><p>首先，确定你当前加载的Framebuffer，终端执行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kextstat | grep -y AppleIntel</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/163040bhnxihl6zjlv0uiv.png" alt="163040bhnxihl6zjlv0uiv" title="">
+                </div>
+                <div class="image-caption">163040bhnxihl6zjlv0uiv</div>
+            </figure>
+<p>如图，看输出结果中带Framebuffer的就是我们需要的（haswell之前的是带FB的），图中我的就是AppleIntelFramebufferAzul然后执行以下命令查看当前使用的ig</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ioreg -l | grep ig-platform-id</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/163317lkkaa4c8k88h8gec.png" alt="163317lkkaa4c8k88h8gec" title="">
+                </div>
+                <div class="image-caption">163317lkkaa4c8k88h8gec</div>
+            </figure>
+<p>如图我的就是<code>0x0a260006</code>,有朋友不清楚，不是<code>0600260a</code>吗，下次一定要知道，这种<code>id</code>将每两位一组分组，然后从后往前排序，最后由于是十六进制，我们在最前面加上<code>0x</code>来表示，就得出了<code>0x0a260006</code>，这就是我们的<code>id</code>，当然了，后面步骤中用到的还是<code>0600260a</code>。</p>
+<h3 id="下载并安装hexfiend"><a href="#下载并安装hexfiend" class="headerlink" title="下载并安装hexfiend"></a>下载并安装<code>hexfiend</code></h3><p>我直接放链接了<br>链接:<a href="https://pan.baidu.com/s/1EhkVv2eaUE1u_Gmp87arJw" target="_blank" rel="noopener">https://pan.baidu.com/s/1EhkVv2eaUE1u_Gmp87arJw</a>  密码:lm1o</p>
+<h3 id="在FB中查找ig进行处理"><a href="#在FB中查找ig进行处理" class="headerlink" title="在FB中查找ig进行处理"></a>在<code>FB</code>中查找<code>ig</code>进行处理</h3><p>然后，在<code>/System/Library/Extensions</code>下找到和第一步找出的<code>Frambuffer</code>同名<code>kext</code>，以我的为例，就是<code>AppleIntelFramebufferAzul.kext</code>,右键显示包内容，在<code>/Contents/MacOS</code>下将<code>kext</code>的同名文件拷贝到桌面，以我的为例就是<code>AppleIntelFramebufferAzul</code>。</p>
+<p>右键此文件打开方式选我们刚才安装的<code>hexfiend</code>，如图</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/165110qfihyri7ahijpxfi.png" alt="165110qfihyri7ahijpxfi" title="">
+                </div>
+                <div class="image-caption">165110qfihyri7ahijpxfi</div>
+            </figure>
+<p>快捷键<code>command + F</code>调出搜索框，输入刚才在第一步找到的<code>ig</code>，回车搜索，找到后面紧跟<code>01030303</code>的那一串字符，如图</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/165432j9e9ve5zw091q6mj.png" alt="165432j9e9ve5zw091q6mj" title="">
+                </div>
+                <div class="image-caption">165432j9e9ve5zw091q6mj</div>
+            </figure>
+<p>从搜索的<code>ig</code>后面第一串开始，到<code>00000060</code>结束，将这些字符串拷贝到一个文本文档，并八个数字一组，整理好，然后再复制一行，将第二行最后的<code>60</code>改为<code>80</code>，如图</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/165830l1ji7ero3hez1js6.png" alt="165830l1ji7ero3hez1js6" title="">
+                </div>
+                <div class="image-caption">165830l1ji7ero3hez1js6</div>
+            </figure>
+<p>第一串就是我们要做的<code>patch</code>的<code>Find</code>，第二串是<code>Replace</code>，而<code>Name</code>则是第一步中的<code>Framebuffer</code>名字，我这里就是<code>AppleIntelFramebufferAzul</code>，<code>Comment</code>就无所谓了，我写成<code>Change VRAM from 1536MB to 2048MB for HD4400</code>，这时我们的补丁就做好了。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/170205ia9i0jppida5jai5.png" alt="170205ia9i0jppida5jai5" title="">
+                </div>
+                <div class="image-caption">170205ia9i0jppida5jai5</div>
+            </figure>
+<p>最后将<code>patch</code>打到<code>config.plist</code></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/170356xpbiyid3del3byda.png" alt="170356xpbiyid3del3byda" title="">
+                </div>
+                <div class="image-caption">170356xpbiyid3del3byda</div>
+            </figure>
+<p>然后保存重启，就会发现关于本机的显存从原来的<code>1536MB</code>变成了<code>2048MB</code></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ovefvi4g3.bkt.clouddn.com/170543xxdf6b0wdrkkbh80.png" alt="170543xxdf6b0wdrkkbh80" title="">
+                </div>
+                <div class="image-caption">170543xxdf6b0wdrkkbh80</div>
+            </figure>
+<p>如果没效果，可以尝试重建缓存。</p>
+<h2 id="帖子的最后，我将之前做的几个patch贴出来，大家可以尝试使用"><a href="#帖子的最后，我将之前做的几个patch贴出来，大家可以尝试使用" class="headerlink" title="帖子的最后，我将之前做的几个patch贴出来，大家可以尝试使用"></a>帖子的最后，我将之前做的几个<code>patch</code>贴出来，大家可以尝试使用</h2><blockquote>
+<p>HD4200_4400_4600 Mobile</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：           AppleIntelFramebufferAzul</span><br><span class="line">Find：           01030303 00000002 00003001 00006000 00000060</span><br><span class="line">Replace：        01030303 00000002 00003001 00009000 00000080</span><br><span class="line">Comment：        1536MB -&gt; 2048MB for HD4200_4400_4600 Mobile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HD620 Mobile：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：           AppleIntelKBLGraphicsFramebuffer</span><br><span class="line">Find：           01030303 00002002 00000000 00000060</span><br><span class="line">Replace：        01030303 00002002 00000000 00000080 </span><br><span class="line">Comment：        1536MB -&gt; 2048MB for HD620 Mobile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HD630 Mobile：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：           AppleIntelKBLGraphicsFramebuffer</span><br><span class="line">Find：           01030303 00006002 00005001 00000060</span><br><span class="line">Replace：        01030303 00006002 00005001 00000080</span><br><span class="line">Comment：        1536MB -&gt; 2048MB for HD630 Mobile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HD520_530_540 Mobile：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：           AppleIntelSKLGraphicsFramebuffer</span><br><span class="line">Find：           01030303 00002002 00005001 00000060</span><br><span class="line">Replace：        01030303 00002002 00005001 00000080</span><br><span class="line">Comment：        1536MB -&gt; 2048MB for HD520_530_540 Mobile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HD5500 Mobile：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name：           AppleIntelBDWGraphicsFramebuffer </span><br><span class="line">find：           01030303 00002002 00005001 00000060</span><br><span class="line">Replace：        01030303 00002002 00005001 00000080</span><br><span class="line">Comment：        1536MB -&gt; 2048MB for HD5500 Mobile</span><br></pre></td></tr></table></figure>
+
     
 
         <a href="/How-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html" class="post-more waves-effect waves-button">
@@ -829,6 +2608,27 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
 
 

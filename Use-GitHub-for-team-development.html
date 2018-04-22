@@ -39,7 +39,7 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2018042201.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15243256764217.jpg">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15243250721465.jpg">
-<meta property="og:updated_time" content="2018-04-22T06:17:17.569Z">
+<meta property="og:updated_time" content="2018-04-22T06:19:15.571Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Use GitHub for team development">
 <meta name="twitter:description" content="利用 GitHub 进行团队开发">
@@ -205,7 +205,6 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <script src="/assets/js/APlayer.min.js"> </script><a id="more"></a>
-<p>利用 GitHub 进行团队开发</p>
 <h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>本文以<code>GitHub</code>项目为例: </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/athlonreg/Common-patches-for-hackintosh.git</span><br></pre></td></tr></table></figure>
 <p>然后在本地克隆项目代码： </p>
@@ -316,7 +315,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-04-22T06:17:17.569Z" itemprop="dateUpdated">2018-04-22 14:17:17</time>
+    最后更新时间：<time datetime="2018-04-22T06:19:15.571Z" itemprop="dateUpdated">2018-04-22 14:19:15</time>
 </span><br>
 
 
@@ -595,6 +594,27 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
 
 
