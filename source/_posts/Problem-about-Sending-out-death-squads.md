@@ -9,6 +9,11 @@ tags:
 - 派遣敢死队
 ---
 
+## 派遣敢死队问题
+![2017-09-18-03](http://ovefvi4g3.bkt.clouddn.com/2017-09-18-03-1.png)
+
+<!--more-->
+
 # 问题描述
 
 ![2017-09-18-03](http://ovefvi4g3.bkt.clouddn.com/2017-09-18-03-1.png)
