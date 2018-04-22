@@ -192,17 +192,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <script src="/assets/js/APlayer.min.js"> </script><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 。</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路:"></a>思路:</h1><p>暴力求解。<br>本题关键在于将每一页码的数字进行分解，这种方式可以利用整数的除法和对10取余计算。</p>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;math.h&gt;</span><br><span class="line">    </span><br><span class="line">int main(int argc, const char * argv[]) &#123;</span><br><span class="line">    // insert code here...</span><br><span class="line">    int array[10] = &#123;0&#125;;                                    //存放0~9出现的次数</span><br><span class="line">    int low, temp, high;                                    //以temp为分割点 将页数分为三部分 high和low分别代表高位和低位的数值 </span><br><span class="line">    int paginations;                                        //存放总页数</span><br><span class="line">    int i, j;</span><br><span class="line">    </span><br><span class="line">    printf(&quot;一共多少页: &quot;);</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;paginations);</span><br><span class="line">    </span><br><span class="line">    int count = 0;                                          //存放除去最高位后总页码的位数</span><br><span class="line">    count = (int)log10(paginations);</span><br><span class="line">    </span><br><span class="line">    for(i = count; i &gt;= 0; i --) &#123; 				//i表示低位（low）的位数</span><br><span class="line">        low = paginations % (int)pow(10, i);                //计算low的数值</span><br><span class="line">        temp = paginations / (int)pow(10, i) % 10;          //计算temp的数值</span><br><span class="line">        high = paginations / (int)pow(10, i + 1);           //计算high的数值</span><br><span class="line">        </span><br><span class="line">        for(j = 0; j &lt; temp; j ++)</span><br><span class="line">            array[j] += (high + 1) * pow(10, i);            //计算 0&lt;中间位&lt;temp 出现的次数</span><br><span class="line">        array[temp] += high * pow(10, i) + low + 1;         //计算 中间位=temp 出现的次数</span><br><span class="line">        for(j = temp + 1; j &lt; 10; j ++)                     //计算 temp&lt;中间位&lt;9 出现的次数</span><br><span class="line">            array[j] += high * pow(10, i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    for(i = count; i &gt;= 0; i --)                            //除去多统计的a[0]出现的次数</span><br><span class="line">        array[0] -= pow(10, i);</span><br><span class="line">    printf(&quot;0~9分别出现的次数为:\n&quot;);</span><br><span class="line">    for(i = 0; i &lt; 10; i ++)                                //打印0~9分别出现的次数</span><br><span class="line">        printf(&quot;%d\n&quot;, array[i]);</span><br><span class="line">    </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/2017-08-30-1.png" alt="2017-08-30" title="">
-                </div>
-                <div class="image-caption">2017-08-30</div>
-            </figure>
-
+         问题描述一本书的页码从自然数 1 开始计数，直到自然数 n 。书的页码按照通常的习惯编排，每个页码都不包含多余的前导数字 0 。例如，第 6 页用数字 6 表示，而不是 06 或 006 等。数字计数问题要求对给定书的总页码 n ，计算出书的全部页码中分别用到多少次数字 0，1，2，…，9 ...
     
 
         <a href="/Statistical-problem.html" class="post-more waves-effect waves-button">
@@ -249,14 +239,9 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <script src="/assets/js/APlayer.min.js"> </script><h2 id="安装-jdk"><a href="#安装-jdk" class="headerlink" title="安装 jdk"></a>安装 jdk</h2><p>Mac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。</p>
-<h2 id="配置-jdk-环境变量"><a href="#配置-jdk-环境变量" class="headerlink" title="配置 jdk 环境变量"></a>配置 jdk 环境变量</h2><p>打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home</span><br><span class="line">PATH=$JAVA_HOME/bin:$PATH:.</span><br><span class="line">CLASSPATH=JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.</span><br><span class="line"></span><br><span class="line">export JAVA_HOME</span><br><span class="line">export PATH</span><br><span class="line">export CLASSPATH</span><br></pre></td></tr></table></figure>
-<p>按下 esc ，然后输入 :wq 回车，保存退出</p>
-<p>然后输入 source ~/.bash_profile 回车文件修改就生效了。</p>
-<p>输入 java -version 回车可以查看 Java 版本，whereis java 可以查看 Java 位置，echo $JAVA_HOME 可以打印出 JAVA_HOME 。</p>
-<h2 id="安装eclipse"><a href="#安装eclipse" class="headerlink" title="安装eclipse"></a>安装eclipse</h2><p>为了更方便的进行开发工作，我们还需要安装Eclipse，去官网下载完成后解压，把.app文件拖进应用程序(Application)就可以了，然后创建一个workspace，也就是工作目录，用来存放工作代码。</p>
-
+         安装 jdkMac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。
+配置 jdk 环境变量打开终端输入 vim ~/.bash_profile 回车，然后按i进入编辑模式，在最后面输入以下内容： 
+1234567JAVA_HOME=/Library...
     
 
         <a href="/Install-jdk-on-macOS.html" class="post-more waves-effect waves-button">

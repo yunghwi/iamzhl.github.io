@@ -192,322 +192,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <script src="/assets/js/APlayer.min.js"> </script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。</p>
-<p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
-<p>为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。</p>
-<h2 id="安装-NexT"><a href="#安装-NexT" class="headerlink" title="安装 NexT"></a>安装 NexT</h2><p>Hexo 安装主题的方式非常简单，只需要将主题文件拷贝至站点目录的 themes 目录下， 然后修改下配置文件即可。具体到 NexT 来说，安装步骤如下。</p>
-<h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>在终端窗口下，定位到 Hexo 站点目录下。使用 Git checkout 代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
-<h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>与所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开站点配置文件， 找到 theme 字段，并将其值更改为 next。</p>
-<blockquote>
-<p>启用 NexT 主题</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<h3 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h3><p>首先启动 Hexo 本地站点，并开启调试模式（即加上 –debug），整个命令是 hexo s –debug 。 在服务启动的过程，注意观察命令行输出是否有任何异常信息，如果你碰到问题，这些信息将帮助他人更好的定位错误。 当命令行输出中提示出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>此时即可使用浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> ，检查站点是否正确运行。</p>
-<p>成功安装并启用了 NexT 主题后。下一步我们将要更改一些主题的设定，包括个性化以及集成第三方服务。</p>
-<h2 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h2><h3 id="选择-Scheme"><a href="#选择-Scheme" class="headerlink" title="选择 Scheme"></a>选择 Scheme</h3><p>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</span><br><span class="line">Mist - Muse 的紧凑版本，整洁有序的单栏外观</span><br><span class="line">Pisces - 双栏 Scheme，小家碧玉似的清新</span><br></pre></td></tr></table></figure>
-<p>Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。</p>
-<blockquote>
-<p>选择 Pisces Scheme</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">scheme: Pisces</span><br></pre></td></tr></table></figure>
-<h3 id="设置-语言"><a href="#设置-语言" class="headerlink" title="设置 语言"></a>设置 语言</h3><p>编辑 站点配置文件， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用简体中文，配置如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
-<p>目前 NexT 支持的语言如以下表格所示：</p>
-<table>
-<thead>
-<tr>
-<th>语言</th>
-<th>代码</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>English</td>
-<td>en</td>
-<td>language: en</td>
-</tr>
-<tr>
-<td>简体中文</td>
-<td>zh-Hans</td>
-<td>language: zh-Hans</td>
-</tr>
-<tr>
-<td>Français</td>
-<td>fr-FR</td>
-<td>language: fr-FR</td>
-</tr>
-<tr>
-<td>Português</td>
-<td>pt</td>
-<td>language: pt or language: pt-BR</td>
-</tr>
-<tr>
-<td>繁體中文</td>
-<td>zh-hk 或者 zh-tw</td>
-<td>language: zh-hk</td>
-</tr>
-<tr>
-<td>Русский язык</td>
-<td>ru</td>
-<td>language: ru</td>
-</tr>
-<tr>
-<td>Deutsch</td>
-<td>de</td>
-<td>language: de</td>
-</tr>
-<tr>
-<td>日本語</td>
-<td>ja</td>
-<td>language: ja</td>
-</tr>
-<tr>
-<td>Indonesian</td>
-<td>id</td>
-<td>language: id</td>
-</tr>
-<tr>
-<td>Korean</td>
-<td>ko</td>
-<td>language: ko</td>
-</tr>
-</tbody>
-</table>
-<h3 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h3><p>菜单配置包括三个部分，第一是菜单项（名称和链接），第二是菜单项的显示文本，第三是菜单项对应的图标。 NexT 使用的是 Font Awesome 提供的图标， Font Awesome 提供了 600+ 的图标，可以满足绝大的多数的场景，同时无须担心在 Retina 屏幕下 图标模糊的问题。</p>
-<p>编辑 主题配置文件，修改以下内容：</p>
-<p>设定菜单内容，对应的字段是 menu。 菜单内容的设置格式是：item name: link。其中 item name 是一个名称，这个名称并不直接显示在页面上，她将用于匹配图标以及翻译。</p>
-<blockquote>
-<p>菜单示例配置</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  archives: /archives</span><br><span class="line">  #about: /about</span><br><span class="line">  #categories: /categories</span><br><span class="line">  tags: /tags</span><br><span class="line">  #commonweal: /404.html</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>若你的站点运行在子目录中，请将链接前缀的 / 去掉</p>
-</blockquote>
-<p>NexT 默认的菜单项有</p>
-<table>
-<thead>
-<tr>
-<th>键值</th>
-<th>设定值</th>
-<th>显示文本</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>home</td>
-<td>home: /</td>
-<td>主页</td>
-</tr>
-<tr>
-<td>archives</td>
-<td>archives: /archives</td>
-<td>归档页</td>
-</tr>
-<tr>
-<td>categories</td>
-<td>categories: /categories</td>
-<td>分类页</td>
-</tr>
-<tr>
-<td>tags</td>
-<td>tags: /tags</td>
-<td>标签页</td>
-</tr>
-<tr>
-<td>about</td>
-<td>about: /about</td>
-<td>关于页面</td>
-</tr>
-<tr>
-<td>commonweal</td>
-<td>commonweal: /404.html</td>
-<td>公益 404</td>
-</tr>
-</tbody>
-</table>
-<p>2.设置菜单项的显示文本。在第一步中设置的菜单的名称并不直接用于界面上的展示。Hexo 在生成的时候将使用 这个名称查找对应的语言翻译，并提取显示文本。这些翻译文本放置在 NexT 主题目录下的 languages/{language}.yml （{language} 为你所使用的语言）。</p>
-<p>以简体中文为例，若你需要添加一个菜单项，比如 something。那么就需要修改简体中文对应的翻译文件 languages/zh-Hans.yml，在 menu 字段下添加一项：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: 首页</span><br><span class="line">  archives: 归档</span><br><span class="line">  categories: 分类</span><br><span class="line">  tags: 标签</span><br><span class="line">  about: 关于</span><br><span class="line">  search: 搜索</span><br><span class="line">  commonweal: 公益404</span><br><span class="line">  something: 有料</span><br></pre></td></tr></table></figure>
-<p>3.设定菜单项的图标，对应的字段是 menu_icons。 此设定格式是 item name: icon name，其中 item name 与上一步所配置的菜单名字对应，icon name 是 Font Awesome 图标的 名字。而 enable 可用于控制是否显示图标，你可以设置成 false 来去掉图标。</p>
-<blockquote>
-<p>菜单图标配置示例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu_icons:</span><br><span class="line">  enable: true</span><br><span class="line">  # Icon Mapping.</span><br><span class="line">  home: home</span><br><span class="line">  about: user</span><br><span class="line">  categories: th</span><br><span class="line">  tags: tags</span><br><span class="line">  archives: archive</span><br><span class="line">  commonweal: heartbeat</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>在菜单图标开启的情况下，如果菜单项与菜单未匹配（没有设置或者无效的 Font Awesome 图标名字） 的情况下，NexT 将会使用 ? 作为图标。</p>
-</blockquote>
-<blockquote>
-<p>请注意键值（如 home）的大小写要严格匹配</p>
-</blockquote>
-<h3 id="设置-侧栏"><a href="#设置-侧栏" class="headerlink" title="设置 侧栏"></a>设置 侧栏</h3><p>默认情况下，侧栏仅在文章页面（拥有目录列表）时才显示，并放置于右侧位置。 可以通过修改 主题配置文件 中的 sidebar 字段来控制侧栏的行为。侧栏的设置包括两个部分，其一是侧栏的位置， 其二是侧栏显示的时机。</p>
-<p>1.设置侧栏的位置，修改 sidebar.position 的值，支持的选项有：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">left - 靠左放置</span><br><span class="line">right - 靠右放置</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>目前仅 Pisces Scheme 支持 position 配置。影响版本5.0.0及更低版本。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  position: left</span><br></pre></td></tr></table></figure>
-<p>2.设置侧栏显示的时机，修改 sidebar.display 的值，支持的选项有：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">post</th>
-<th style="text-align:center">默认行为，在文章页面（拥有目录列表）时显示</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">always</td>
-<td style="text-align:center">在所有页面中都显示</td>
-</tr>
-<tr>
-<td style="text-align:center">hide</td>
-<td style="text-align:center">在所有页面中都隐藏（可以手动展开）</td>
-</tr>
-<tr>
-<td style="text-align:center">remove</td>
-<td style="text-align:center">完全移除</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  display: post</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>已知侧栏在 use motion: false 的情况下不会展示。 影响版本5.0.0及更低版本。</p>
-</blockquote>
-<h3 id="设置-头像"><a href="#设置-头像" class="headerlink" title="设置 头像"></a>设置 头像</h3><p>编辑 主题配置文件， 修改字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">地址</th>
-<th style="text-align:center">值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">完整的互联网URI</td>
-<td style="text-align:center"><a href="http://example.com/avatar.png" target="_blank" rel="noopener">http://example.com/avatar.png</a></td>
-</tr>
-<tr>
-<td style="text-align:center">站点内的地址</td>
-<td style="text-align:center">将头像放置主题目录下的 source/uploads/ (新建 uploads 目录若不存在)，配置为：avatar: /uploads/avatar.png；或者 放置在 source/images/ 目录下，配置为：avatar: /images/avatar.png</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>头像设置示例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avatar: http://example.com/avatar.png</span><br></pre></td></tr></table></figure>
-<h3 id="设置作者昵称"><a href="#设置作者昵称" class="headerlink" title="设置作者昵称"></a>设置作者昵称</h3><p>编辑站点配置文件， 设置 author 为你的昵称。</p>
-<h3 id="站点描述"><a href="#站点描述" class="headerlink" title="站点描述"></a>站点描述</h3><p>编辑站点配置文件， 设置 description 字段为你的站点描述。站点描述可以是你喜欢的一句签名 : )</p>
-<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><h3 id="设置-RSS"><a href="#设置-RSS" class="headerlink" title="设置 RSS"></a>设置 RSS</h3><p>NexT 中 RSS 有三个设置选项，满足特定的使用场景。 更改 主题配置文件，设定 rss 字段的值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">false： 禁用 RSS，不在页面上显示 RSS 连接。</span><br><span class="line">留空： 使用 Hexo 生成的 Feed 链接。 你可以需要先安装 hexo-generator-feed 插件。</span><br><span class="line">具体的链接地址：适用于已经烧制过 Feed 的情形。</span><br></pre></td></tr></table></figure>
-<h3 id="添加「标签」页面"><a href="#添加「标签」页面" class="headerlink" title="添加「标签」页面"></a>添加「标签」页面</h3><p>新建「标签」页面，并在菜单中显示「标签」链接。「标签」页面将展示站点的所有标签，若你的所有文章都未包含标签，此页面将是空的。 底下代码是一篇包含标签的文章的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 标签测试文章</span><br><span class="line">tags:</span><br><span class="line">  - Testing</span><br><span class="line">  - Another Tag</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>请参阅 <a href="https://hexo.io/zh-cn/docs/front-matter.html#分类和标签" target="_blank" rel="noopener">Hexo 的分类与标签文档</a>，了解如何为文章添加标签或者分类。</p>
-</blockquote>
-<h4 id="新建页面"><a href="#新建页面" class="headerlink" title="新建页面"></a>新建页面</h4><p>在终端窗口下，定位到 Hexo 站点目录下。使用 hexo new page 新建一个页面，命名为 tags ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
-<h4 id="设置页面类型"><a href="#设置页面类型" class="headerlink" title="设置页面类型"></a>设置页面类型</h4><p>编辑刚新建的页面，将页面的类型设置为 tags ，主题将自动为这个页面显示标签云。页面内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 标签</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h4 id="在菜单中添加链接。编辑-主题配置文件-，-添加-tags-到-menu-中，如下"><a href="#在菜单中添加链接。编辑-主题配置文件-，-添加-tags-到-menu-中，如下" class="headerlink" title="在菜单中添加链接。编辑 主题配置文件 ， 添加 tags 到 menu 中，如下:"></a>在菜单中添加链接。编辑 主题配置文件 ， 添加 tags 到 menu 中，如下:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  archives: /archives</span><br><span class="line">  tags: /tags</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：如果有集成评论服务，页面也会带有评论。 若需要关闭的话，请添加字段 comments 并将值设置为 false，如：</p>
-</blockquote>
-<blockquote>
-<p>禁用评论示例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 标签</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h3 id="添加「分类」页面"><a href="#添加「分类」页面" class="headerlink" title="添加「分类」页面"></a>添加「分类」页面</h3><p>新建「分类」页面，并在菜单中显示「分类」链接。「分类」页面将展示站点的所有分类，若你的所有文章都未包含分类，此页面将是空的。 底下代码是一篇包含分类的文章的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 分类测试文章</span><br><span class="line">categories: Testing</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>请参阅 <a href="https://hexo.io/zh-cn/docs/front-matter.html#分类和标签" target="_blank" rel="noopener">Hexo 的分类与标签文档</a>，了解如何为文章添加标签或者分类。</p>
-</blockquote>
-<h4 id="新建页面-1"><a href="#新建页面-1" class="headerlink" title="新建页面"></a>新建页面</h4><p>在终端窗口下，定位到 Hexo 站点目录下。使用 hexo new page 新建一个页面，命名为 categories ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
-<h4 id="设置页面类型-1"><a href="#设置页面类型-1" class="headerlink" title="设置页面类型"></a>设置页面类型</h4><p>编辑刚新建的页面，将页面的 type 设置为 categories ，主题将自动为这个页面显示分类。页面内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h4 id="修改菜单"><a href="#修改菜单" class="headerlink" title="修改菜单"></a>修改菜单</h4><p>在菜单中添加链接。编辑 主题配置文件 ， 添加 categories 到 menu 中，如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  archives: /archives</span><br><span class="line">  categories: /categories</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：如果有集成评论服务，页面也会带有评论。 若需要关闭的话，请添加字段 comments 并将值设置为 false，如：</p>
-</blockquote>
-<blockquote>
-<p>禁用评论示例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h3 id="设置字体"><a href="#设置字体" class="headerlink" title="设置字体"></a>设置字体</h3><blockquote>
-<p>注意： 此特性在版本 5.0.1 中引入，要使用此功能请确保所使用的 NexT 版本在此之后</p>
-</blockquote>
-<p>为了解决 Google Fonts API 不稳定的问题，NexT 在 5.0.1 中引入此特性。 通过此特性，你可以指定所使用的字体库外链地址；与此同时，NexT 开放了 5 个特定范围的字体设定，他们是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">全局字体：定义的字体将在全站范围使用</span><br><span class="line">标题字体：文章内标题的字体（h1, h2, h3, h4, h5, h6）</span><br><span class="line">文章字体：文章所使用的字体</span><br><span class="line">Logo字体：Logo 所使用的字体</span><br><span class="line">代码字体： 代码块所使用的字体</span><br><span class="line">各项所指定的字体将作为首选字体，当他们不可用时会自动 Fallback 到 NexT 设定的基础字体组：</span><br><span class="line"></span><br><span class="line">非代码类字体：Fallback 到 &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif</span><br><span class="line">代码类字体： Fallback 到 consolas, Menlo, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, monospace</span><br></pre></td></tr></table></figure>
-<p>另外，每一项都有一个额外的 external 属性，此属性用来控制是否使用外链字体库。 开放此属性方便你设定那些已经安装在系统中的字体，减少不必要的请求（请求大小）。</p>
-<blockquote>
-<p>配置示例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">font:</span><br><span class="line">  enable: true</span><br><span class="line"></span><br><span class="line">  # 外链字体库地址，例如 //fonts.googleapis.com (默认值)</span><br><span class="line">  host:</span><br><span class="line"></span><br><span class="line">  # 全局字体，应用在 body 元素上</span><br><span class="line">  global:</span><br><span class="line">    external: true</span><br><span class="line">    family: Monda</span><br><span class="line"></span><br><span class="line">  # 标题字体 (h1, h2, h3, h4, h5, h6)</span><br><span class="line">  headings:</span><br><span class="line">    external: true</span><br><span class="line">    family: Roboto Slab</span><br><span class="line"></span><br><span class="line">  # 文章字体</span><br><span class="line">  posts:</span><br><span class="line">    external: true</span><br><span class="line">    family:</span><br><span class="line"></span><br><span class="line">  # Logo 字体</span><br><span class="line">  logo:</span><br><span class="line">    external: true</span><br><span class="line">    family: Lobster Two</span><br><span class="line">    size: 24</span><br><span class="line"></span><br><span class="line">  # 代码字体，应用于 code 以及代码块</span><br><span class="line">  codes:</span><br><span class="line">    external: true</span><br><span class="line">    family: PT Mono</span><br></pre></td></tr></table></figure>
-<h3 id="设置代码高亮主题"><a href="#设置代码高亮主题" class="headerlink" title="设置代码高亮主题"></a>设置代码高亮主题</h3><p>NexT 使用 Tomorrow Theme 作为代码高亮，共有5款主题供你选择。 NexT 默认使用的是 白色的 normal 主题，可选的值有 normal，night， night blue， night bright， night eighties。</p>
-<p>更改 highlight_theme 字段，将其值设定成你所喜爱的高亮主题，例如：</p>
-<blockquote>
-<p>高亮主题设置示例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Code Highlight theme</span><br><span class="line"># Available value: normal | night | night eighties | night blue | night bright</span><br><span class="line"># https://github.com/chriskempson/tomorrow-theme</span><br><span class="line">highlight_theme: normal</span><br></pre></td></tr></table></figure>
-<h3 id="侧边栏社交链接"><a href="#侧边栏社交链接" class="headerlink" title="侧边栏社交链接"></a>侧边栏社交链接</h3><p>侧栏社交链接的修改包含两个部分，第一是链接，第二是链接图标。 两者配置均在 主题配置文件 中。</p>
-<p>1.链接放置在 social 字段下，一行一个链接。其键值格式是 显示文本: 链接地址。</p>
-<blockquote>
-<p>配置示例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Social links</span><br><span class="line">social:</span><br><span class="line">  GitHub: https://github.com/your-user-name</span><br><span class="line">  Twitter: https://twitter.com/your-user-name</span><br><span class="line">  微博: http://weibo.com/your-user-name</span><br><span class="line">  豆瓣: http://douban.com/people/your-user-name</span><br><span class="line">  知乎: http://www.zhihu.com/people/your-user-name</span><br></pre></td></tr></table></figure>
-<p>2.设定链接的图标，对应的字段是 social_icons。其键值格式是 匹配键: Font Awesome 图标名称， 匹配键 与上一步所配置的链接的 显示文本 相同（大小写严格匹配），图标名称 是 Font Awesome 图标的名字（不必带 fa- 前缀）。 enable 选项用于控制是否显示图标，你可以设置成 false 来去掉图标。</p>
-<blockquote>
-<p>配置示例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Social Icons</span><br><span class="line">social_icons:</span><br><span class="line">  enable: true</span><br><span class="line">  # Icon Mappings</span><br><span class="line">  GitHub: github</span><br><span class="line">  Twitter: twitter</span><br><span class="line">  微博: weibo</span><br></pre></td></tr></table></figure>
-<h3 id="开启打赏功能-由-habren-贡献"><a href="#开启打赏功能-由-habren-贡献" class="headerlink" title="开启打赏功能 由 habren 贡献"></a>开启打赏功能 由 habren 贡献</h3><p>越来越多的平台（微信公众平台，新浪微博，简书，百度打赏等）支持打赏功能，付费阅读时代越来越近，特此增加了打赏功能，支持微信打赏和支付宝打赏。 只需要 主题配置文件 中填入 微信 和 支付宝 收款二维码图片地址 即可开启该功能。</p>
-<blockquote>
-<p>打赏功能配置示例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！</span><br><span class="line">wechatpay: /path/to/wechat-reward-image</span><br><span class="line">alipay: /path/to/alipay-reward-image</span><br></pre></td></tr></table></figure>
-<h3 id="友情链接-由-iamwent-贡献"><a href="#友情链接-由-iamwent-贡献" class="headerlink" title="友情链接 由 iamwent 贡献"></a>友情链接 由 iamwent 贡献</h3><p>编辑 主题配置文件 添加：</p>
-<blockquote>
-<p>友情链接配置示例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># title</span><br><span class="line">links_title: Links</span><br><span class="line">links:</span><br><span class="line">  MacTalk: http://macshuo.com/</span><br><span class="line">  Title: http://example.com/</span><br></pre></td></tr></table></figure>
-<h3 id="站点建立时间"><a href="#站点建立时间" class="headerlink" title="站点建立时间"></a>站点建立时间</h3><p>这个时间将在站点的底部显示，例如 © 2013 - 2015。 编辑 主题配置文件，新增字段 since。</p>
-<blockquote>
-<p>配置示例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">since: 2013</span><br></pre></td></tr></table></figure>
-<h3 id="设置「动画效果」"><a href="#设置「动画效果」" class="headerlink" title="设置「动画效果」"></a>设置「动画效果」</h3><p>NexT 默认开启动画效果，效果使用 JavaScript 编写，因此需要等待 JavaScript 脚本完全加载完毕后才会显示内容。 如果您比较在乎速度，可以将设置此字段的值为 false 来关闭动画。</p>
-<p>编辑 主题配置文件， 搜索 use_motion，根据您的需求设置值为 true 或者 false 即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use_motion: true  # 开启动画效果</span><br><span class="line">use_motion: false # 关闭动画效果</span><br></pre></td></tr></table></figure>
-<h3 id="设置「背景动画」"><a href="#设置「背景动画」" class="headerlink" title="设置「背景动画」"></a>设置「背景动画」</h3><p>NexT 自带两种背景动画效果</p>
-<p>编辑 主题配置文件， 搜索 canvas_nest 或 three_waves，根据您的需求设置值为 true 或者 false 即可：</p>
-<blockquote>
-<p>注意： three_waves 在版本 5.1.1 中引入。只能同时开启一种背景动画效果。</p>
-</blockquote>
-<blockquote>
-<p>canvas_nest 配置示例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># canvas_nest</span><br><span class="line">canvas_nest: true //开启动画</span><br><span class="line">canvas_nest: false //关闭动画</span><br><span class="line">three_waves 配置示例</span><br><span class="line"># three_waves</span><br><span class="line">three_waves: true //开启动画</span><br><span class="line">three_waves: false //关闭动画</span><br></pre></td></tr></table></figure>
-<h3 id="腾讯公益-404-页面-由-xirong-贡献"><a href="#腾讯公益-404-页面-由-xirong-贡献" class="headerlink" title="腾讯公益 404 页面 由 xirong 贡献"></a>腾讯公益 404 页面 由 xirong 贡献</h3><p>腾讯公益404页面，寻找丢失儿童，让大家一起关注此项公益事业！</p>
-<p>效果如下</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-14.png" alt="2017-09-14" title="">
-                </div>
-                <div class="image-caption">2017-09-14</div>
-            </figure>
-<p>使用方法，新建 404.html 页面，放到主题的 source 目录下，内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8;&quot;/&gt;</span><br><span class="line">  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;</span><br><span class="line">  &lt;meta name=&quot;robots&quot; content=&quot;all&quot; /&gt;</span><br><span class="line">  &lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot;/&gt;</span><br><span class="line">  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://qzone.qq.com/gy/404/style/404style.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;script type=&quot;text/plain&quot; src=&quot;http://www.qq.com/404/search_children.js&quot;</span><br><span class="line">          charset=&quot;utf-8&quot; homePageUrl=&quot;/&quot;</span><br><span class="line">          homePageName=&quot;回到我的主页&quot;&gt;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://qzone.qq.com/gy/404/data.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://qzone.qq.com/gy/404/page.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="Credits"><a href="#Credits" class="headerlink" title="Credits"></a>Credits</h2><blockquote>
-<p>NexT基本使用<br>转自<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">官方说明文档</a></p>
-</blockquote>
-
+         前言Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 H...
     
 
         <a href="/Config-NexT-to-beautify-your-blog-with-hexo.html" class="post-more waves-effect waves-button">
@@ -554,13 +239,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <script src="/assets/js/APlayer.min.js"> </script><h1 id="添加仿冒-ID-启用蓝牙："><a href="#添加仿冒-ID-启用蓝牙：" class="headerlink" title="添加仿冒 ID 启用蓝牙："></a>添加仿冒 ID 启用蓝牙：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.plist -&gt; Device -&gt; FakeID -&gt; WIFI 中填写 0x43a014e4</span><br></pre></td></tr></table></figure>
-<h1 id="在-Clover-的配置文件-config-plist-gt-Kernel-and-Kext-Patches-添加以下代码块"><a href="#在-Clover-的配置文件-config-plist-gt-Kernel-and-Kext-Patches-添加以下代码块" class="headerlink" title="在 Clover 的配置文件 config.plist -&gt; Kernel and Kext Patches 添加以下代码块"></a>在 Clover 的配置文件 config.plist -&gt; Kernel and Kext Patches 添加以下代码块</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;dict&gt;</span><br><span class="line">    &lt;key&gt;Comment&lt;/key&gt;</span><br><span class="line">    &lt;string&gt;10.11+-BT4LE-Handoff-Hotspot-lisai9093&lt;/string&gt;</span><br><span class="line">    &lt;key&gt;Disabled&lt;/key&gt;</span><br><span class="line">    &lt;false/&gt;</span><br><span class="line">    &lt;key&gt;Find&lt;/key&gt;</span><br><span class="line">    &lt;data&gt;</span><br><span class="line">    SIX/dEdIiwc=</span><br><span class="line">    &lt;/data&gt;</span><br><span class="line">    &lt;key&gt;Name&lt;/key&gt;</span><br><span class="line">    &lt;string&gt;IOBluetoothFamily&lt;/string&gt;</span><br><span class="line">    &lt;key&gt;Replace&lt;/key&gt;</span><br><span class="line">    &lt;data&gt;</span><br><span class="line">    Qb4PAAAA60Q=</span><br><span class="line">    &lt;/data&gt;</span><br><span class="line">&lt;/dict&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="下载并安装驱动"><a href="#下载并安装驱动" class="headerlink" title="下载并安装驱动"></a>下载并安装驱动</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/vit9696/Lilu/releases</span><br><span class="line">https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/   </span><br><span class="line">https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/</span><br><span class="line">https://sourceforge.net/projects/airportbrcmfixup/files/?source=navbar</span><br></pre></td></tr></table></figure>
-<p>   将以下驱动拷贝到 CLOVER/EFI/CLOVER/kexts/Other 文件夹下(由于 AirportBrcmFixup.kext 是依赖于 Lilu 运行的插件，所以还需要确保该目录下必须存在 Lilu.kext)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">AirportBrcmFixup.kext </span><br><span class="line">FakePCIID.kext </span><br><span class="line">FakePCIID_Broadcom_WiFi.kext </span><br><span class="line">BrcmPatchRAM2.kext </span><br><span class="line">BrcmFirmwareData.kext</span><br><span class="line">Lilu.kext</span><br></pre></td></tr></table></figure>
-<h1 id="重建缓存"><a href="#重建缓存" class="headerlink" title="重建缓存"></a>重建缓存</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /System/Library/Caches/com.apple.kext.caches/Startup/kernelcache</span><br><span class="line">sudo rm -rf /System/Library/PrelinkedKernels/prelinkedkernel</span><br><span class="line">sudo touch /System/Library/Extensions/ &amp;&amp; sudo kextcache -u /</span><br></pre></td></tr></table></figure>
-<h1 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h1>
+         添加仿冒 ID 启用蓝牙：1config.plist -&gt; Device -&gt; FakeID -&gt; WIFI 中填写 0x43a014e4
+在 Clover 的配置文件 config.plist -&gt; Kernel and Kext Patches 添加以下代码块12...
     
 
         <a href="/Enable-BCM94352z-on-hacintosh.html" class="post-more waves-effect waves-button">
@@ -607,17 +287,9 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <script src="/assets/js/APlayer.min.js"> </script><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>某电视台举办了低碳生活大奖赛。题目的计分规则相当奇怪：</p>
-<p>1、每位选手需要回答10个问题（其编号为1到10），越后面越有难度。答对的，当前分数翻倍；答错了则扣掉与题号相同的分数（选手必须回答问题，不回答按错误处理）。</p>
-<p>2、每位选手都有一个起步的分数为10分。 某获胜选手最终得分刚好是100分，如果不让你看比赛过程，你能推断出他（她）哪个题目答对了，哪个题目答错了吗？</p>
-<p>3、如果把答对的记为1，答错的记为0，则10个题目的回答情况可以用仅含有1和0的串来表示。例如：0010110011 就是可能的情况。</p>
-<p>4、你的任务是算出所有可能情况。每个答案占一行。</p>
-<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>一共十个问题，每个问题两种情况，要么对要么错，那么结果就会有 0000000000 ~ 1111111111 = pow（2，10）种，就可以用暴力搜索将所有情况枚举出来然后判断符合要求的情况；</p>
-<p>分数的控制可以直接利用遍历所有情况的 for 循环分别判断两种情况； </p>
-<p>如果用输出 1 代表回答正确， 0 代表错误，不难想到任何一个正整数对 2 取余结果只有 1 和 0 两种情况， 输出的时候也就成了进制转换问题； </p>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt; </span><br><span class="line">#include &lt;math.h&gt; </span><br><span class="line">int main() &#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    int score,temp;</span><br><span class="line">		</span><br><span class="line">    for(i=0;i&lt;pow(2,10);i++)&#123;</span><br><span class="line">        temp=i;</span><br><span class="line">        score=10;</span><br><span class="line">            </span><br><span class="line">        for(j=0;j&lt;10;j++)&#123; </span><br><span class="line">            if(temp%2 == 1)</span><br><span class="line">                score*=2;</span><br><span class="line">            else</span><br><span class="line">                score-=j+1; </span><br><span class="line">            temp/=2;		</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if(score==100)&#123;	</span><br><span class="line">            temp=i;</span><br><span class="line">            for(j=0;j&lt;10;j++)&#123;</span><br><span class="line">                printf(&quot;%d &quot;, temp%2);</span><br><span class="line">                temp/=2;</span><br><span class="line">            &#125;</span><br><span class="line">            printf(&quot;\n&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 0 1 1 0 1 0 0 0 0 </span><br><span class="line">0 1 1 1 0 1 0 0 0 0 </span><br><span class="line">0 0 1 0 1 1 0 0 1 1</span><br></pre></td></tr></table></figure>
-
+         问题描述某电视台举办了低碳生活大奖赛。题目的计分规则相当奇怪：
+1、每位选手需要回答10个问题（其编号为1到10），越后面越有难度。答对的，当前分数翻倍；答错了则扣掉与题号相同的分数（选手必须回答问题，不回答按错误处理）。
+2、每位选手都有一个起步的分数为10分。 某获胜选手最终得分刚好是1...
     
 
         <a href="/Problem-about-low-carbon-lifestyle-answering.html" class="post-more waves-effect waves-button">
@@ -664,9 +336,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <script src="/assets/js/APlayer.min.js"> </script><h1 id="EchoClient-java"><a href="#EchoClient-java" class="headerlink" title="EchoClient.java"></a>EchoClient.java</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> * To change this license header, choose License Headers in Project Properties.</span><br><span class="line"> * To change this template file, choose Tools | Templates</span><br><span class="line"> * and open the template in the editor.</span><br><span class="line"> */</span><br><span class="line"> </span><br><span class="line">package athlonreg.top;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.BufferedWriter;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.io.OutputStreamWriter;</span><br><span class="line">import java.net.InetSocketAddress;</span><br><span class="line">import java.net.Socket;</span><br><span class="line">import java.net.SocketAddress;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *</span><br><span class="line"> * @author athlonreg</span><br><span class="line"> </span><br><span class="line"> */</span><br><span class="line"> </span><br><span class="line">public class EchoCilent &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @param args the command line arguments</span><br><span class="line">     */</span><br><span class="line">      </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO code application logic here</span><br><span class="line">        Socket clientSocket = null;</span><br><span class="line">        BufferedReader in = null;</span><br><span class="line">        BufferedWriter out = null;</span><br><span class="line">        </span><br><span class="line">        try &#123;</span><br><span class="line">        </span><br><span class="line">            //1.创建客户机套接字</span><br><span class="line">            clientSocket = new Socket();</span><br><span class="line">            SocketAddress remoteAddr=new InetSocketAddress(&quot;localhost&quot;,5000);  </span><br><span class="line">            System.out.println(&quot;1.创建客户机套接字成功！&quot;);</span><br><span class="line">            </span><br><span class="line">            //2.连接服务器</span><br><span class="line">            clientSocket.connect(remoteAddr);</span><br><span class="line">            System.out.println(&quot;2.客户机连接服务器localhost端口5000成功！&quot;);</span><br><span class="line">            System.out.println(&quot;客户机使用的地址和端口：&quot;+clientSocket.getLocalSocketAddress());</span><br><span class="line">            </span><br><span class="line">            //与服务器会话            </span><br><span class="line">            in = new BufferedReader(</span><br><span class="line">                 new InputStreamReader(</span><br><span class="line">                 clientSocket.getInputStream()));         </span><br><span class="line">            out = new BufferedWriter(</span><br><span class="line">                  new OutputStreamWriter(         </span><br><span class="line">                  clientSocket.getOutputStream()));</span><br><span class="line">            String sendStr=&quot;有朋自远方来&quot;;</span><br><span class="line">            out.write(sendStr);  //向服务器发送字符串</span><br><span class="line">            out.newLine();</span><br><span class="line">            out.flush();</span><br><span class="line">            System.out.println(&quot;3.1向服务器发送字符串成功!&quot;+sendStr);</span><br><span class="line">            String recvStr=in.readLine();  //从服务器接收字符串   </span><br><span class="line">            System.out.println(&quot;3.2从服务器接收回送字符串成功！&quot;+recvStr);    </span><br><span class="line">        &#125; catch (IOException ex) &#123;</span><br><span class="line">            System.out.println(&quot;异常信息：&quot;+ex.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        //关闭套接字和流</span><br><span class="line">        try &#123;</span><br><span class="line">            if (in != null) </span><br><span class="line">                in.close();</span><br><span class="line">            if (out != null)  </span><br><span class="line">                out.close(); </span><br><span class="line">            if (clientSocket != null)   </span><br><span class="line">                clientSocket.close(); </span><br><span class="line">            System.out.println(&quot;4.关闭套接字和流成功！&quot;); </span><br><span class="line">        &#125; catch (IOException ex) &#123;</span><br><span class="line">             System.out.println(&quot;异常信息：&quot;+ex.getMessage());</span><br><span class="line">        &#125; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="EchoServer-java"><a href="#EchoServer-java" class="headerlink" title="EchoServer.java"></a>EchoServer.java</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> * To change this license header, choose License Headers in Project Properties.</span><br><span class="line"> * To change this template file, choose Tools | Templates</span><br><span class="line"> * and open the template in the editor.</span><br><span class="line"> */</span><br><span class="line"> </span><br><span class="line">package athlonreg.top;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.BufferedWriter;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.io.OutputStreamWriter;</span><br><span class="line">import java.net.InetSocketAddress;</span><br><span class="line">import java.net.ServerSocket;</span><br><span class="line">import java.net.Socket;</span><br><span class="line">import java.net.SocketAddress;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *</span><br><span class="line"> * @author athlonreg</span><br><span class="line"> </span><br><span class="line"> */</span><br><span class="line"> </span><br><span class="line">public class EchoServer &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @param args the command line arguments</span><br><span class="line">     * @throws java.io.IOException</span><br><span class="line">     </span><br><span class="line">     */</span><br><span class="line">     </span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        // TODO code application logic here</span><br><span class="line">   </span><br><span class="line">        //1.启动服务器</span><br><span class="line">        ServerSocket listenSocket = null; </span><br><span class="line">        Socket clientSocket = null; </span><br><span class="line">        BufferedReader in = null;</span><br><span class="line">        BufferedWriter out = null;</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            listenSocket = new ServerSocket();</span><br><span class="line">            SocketAddress serverAddr=new InetSocketAddress(&quot;localhost&quot;,5000);</span><br><span class="line">            listenSocket.bind(serverAddr); </span><br><span class="line">            System.out.println(&quot;1.服务器启动成功！开始在localhost的5000端口侦听连接...&quot;); </span><br><span class="line">            </span><br><span class="line">            //2.处理连接                      </span><br><span class="line">            clientSocket = listenSocket.accept();</span><br><span class="line">            System.out.println(&quot;2.客户机连接成功！客户机地址和端口：&quot;+clientSocket.getRemoteSocketAddress());</span><br><span class="line">              </span><br><span class="line">            //3.与客户机会话    </span><br><span class="line">            in = new BufferedReader(</span><br><span class="line">                 new InputStreamReader(</span><br><span class="line">                 clientSocket.getInputStream()));       </span><br><span class="line">            out = new BufferedWriter(</span><br><span class="line">                  new OutputStreamWriter(            </span><br><span class="line">                  clientSocket.getOutputStream()));    </span><br><span class="line">            String recvStr=in.readLine();  //从客户机接收字符串</span><br><span class="line">            System.out.println(&quot;3.1 服务器收到字符串：&quot;+recvStr);</span><br><span class="line">            out.write(recvStr);  //向客户机回送字符串       </span><br><span class="line">            out.newLine();  </span><br><span class="line">            out.flush(); </span><br><span class="line">            System.out.println(&quot;3.2 服务器回送字符串成功：&quot;+recvStr); </span><br><span class="line">        &#125; catch (IOException ex) &#123;</span><br><span class="line">            System.out.println(&quot;异常信息：&quot;+ex.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        //4.关闭套接字和流</span><br><span class="line">        try &#123;  </span><br><span class="line">            if (in != null)</span><br><span class="line">                in.close();</span><br><span class="line">            if (out != null)  </span><br><span class="line">                out.close();</span><br><span class="line">            if (listenSocket != null)   </span><br><span class="line">                listenSocket.close();</span><br><span class="line">            if (clientSocket != null)   </span><br><span class="line">                clientSocket.close(); </span><br><span class="line">            System.out.println(&quot;4.关闭套接字和流成功！&quot;);    </span><br><span class="line">        &#125; catch (IOException ex) &#123;</span><br><span class="line">            System.out.println(&quot;异常信息&quot;+ex.getMessage()); </span><br><span class="line">        &#125;     </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+         EchoClient.java12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970...
     
 
         <a href="/The-simplest-case-demo-about-client-and-server.html" class="post-more waves-effect waves-button">
@@ -713,15 +383,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <script src="/assets/js/APlayer.min.js"> </script><h1 id="知识普及"><a href="#知识普及" class="headerlink" title="知识普及"></a>知识普及</h1><p>有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。</p>
-<p>这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。</p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin </p>
-<h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><h2 id="提取-Reset-Address-和-Reset-Value-值"><a href="#提取-Reset-Address-和-Reset-Value-值" class="headerlink" title="提取 Reset Address 和 Reset Value 值"></a>提取 Reset Address 和 Reset Value 值</h2><p>用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处：</p>
-<p>  <img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-07-1.png" alt="2017-09-05-07"></p>
-<h2 id="设定Reset-Address-和-Reset-Value-值"><a href="#设定Reset-Address-和-Reset-Value-值" class="headerlink" title="设定Reset Address 和 Reset Value 值"></a>设定Reset Address 和 Reset Value 值</h2><p>提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值：</p>
-<p>  <img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-08-1.png" alt="2017-09-05-08"></p>
-<p>保存重启就可以了.</p>
-<h1 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h1>
+         知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。
+这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Co...
     
 
         <a href="/Speed-up-the-hackintosh-to-boot.html" class="post-more waves-effect waves-button">
@@ -768,69 +431,10 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <script src="/assets/js/APlayer.min.js"> </script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频</p>
-<h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><h2 id="首先下载-AppleIntelInfo-源码编译，打开终端，输入："><a href="#首先下载-AppleIntelInfo-源码编译，打开终端，输入：" class="headerlink" title="首先下载 AppleIntelInfo 源码编译，打开终端，输入："></a>首先下载 AppleIntelInfo 源码编译，打开终端，输入：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Desktop</span><br></pre></td></tr></table></figure>
-<p>回车继续敲：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/athlonreg/AppleIntelInfo.git</span><br></pre></td></tr></table></figure>
-<p>回车后就把 AppleIntelInfo 源码下载在桌面了</p>
-<p>然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/</span><br></pre></td></tr></table></figure>
-<p>将编译后的 AppleIntelInfo.kext 放到桌面</p>
-<h2 id="然后开始利用命令行看变频数据"><a href="#然后开始利用命令行看变频数据" class="headerlink" title="然后开始利用命令行看变频数据"></a>然后开始利用命令行看变频数据</h2><p>打开终端，输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Desktop</span><br></pre></td></tr></table></figure>
-<p>回车后继续敲</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R root:wheel AppleIntelInfo.kext</span><br></pre></td></tr></table></figure>
-<p>回车会提示输入密码，输入之后回车继续敲：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo kextutil AppleIntelInfo.kext</span><br></pre></td></tr></table></figure>
-<p>再回车，接着敲：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cat /tmp/AppleIntelInfo.dat</span><br></pre></td></tr></table></figure>
-<p>回车之后变频数据就出来了，例如我的机器：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-01-1.png" alt="2017-09-05-01" title="">
-                </div>
-                <div class="image-caption">2017-09-05-01</div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-02-1.png" alt="2017-09-05-02" title="">
-                </div>
-                <div class="image-caption">2017-09-05-02</div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-03-1.png" alt="2017-09-05-03" title="">
-                </div>
-                <div class="image-caption">2017-09-05-03</div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-04-1.png" alt="2017-09-05-04" title="">
-                </div>
-                <div class="image-caption">2017-09-05-04</div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-05-1.png" alt="2017-09-05-05" title="">
-                </div>
-                <div class="image-caption">2017-09-05-05</div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-06-1.png" alt="2017-09-05-06" title="">
-                </div>
-                <div class="image-caption">2017-09-05-06</div>
-            </figure>
-<p>一般我们只看最后一行就可以了哦</p>
-<p>比如我的机器就是 800、 1000、 …… 、 2700 ，单位是MHz，正好符合我的机器，最低 800MHz ，最高2.4GHz，可超频到2.7GHz。</p>
-<h1 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h1><p>行胜于言，快去试试你的机器是不是变频正常吧！！</p>
-
+         前言很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频
+开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：1cd ~/Desktop
+回车继续敲：
+1git clone https:...
     
 
         <a href="/Check-CPU-frequences-by-using-AppleIntelInfo.html" class="post-more waves-effect waves-button">
@@ -877,29 +481,9 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <script src="/assets/js/APlayer.min.js"> </script><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。</p>
-<h1 id="金币阵列游戏的规则"><a href="#金币阵列游戏的规则" class="headerlink" title="金币阵列游戏的规则"></a>金币阵列游戏的规则</h1><p>1、每次将任一行金币翻过来放在原来的位置上;<br>2、每次可以任选2列，交换这2列金币的位置.</p>
-<h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：<br>1、将某一行的金币翻转;<br>2、将某两列进行交换。</p>
-<p>在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。</p>
-<p>那么在程序中应该如下操作：<br>1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转；</p>
-<p>2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。</p>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">#define row 4</span><br><span class="line">#define col 3</span><br><span class="line"></span><br><span class="line">int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;;                       //source</span><br><span class="line">int target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;;                       //target</span><br><span class="line">int temparr[row][col];</span><br><span class="line">nt number = 0;                                                         //转换的次数</span><br><span class="line">int minnum = 9999;</span><br><span class="line"></span><br><span class="line">void raw_change(int i) &#123;                                                //行翻转</span><br><span class="line">    int j;</span><br><span class="line">    for(j=0; j&lt;col; j++) &#123;</span><br><span class="line">        temparr[i][j] = 1-temparr[i][j]; </span><br><span class="line">    &#125;</span><br><span class="line">    number++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void col_exchange(int i, int j) &#123;                                       //列交换</span><br><span class="line">    int temp, k;</span><br><span class="line">    int temp, k;</span><br><span class="line">    		</span><br><span class="line">    for(k=0; k&lt;row; k++) &#123;</span><br><span class="line">        temp = temparr[k][i];</span><br><span class="line">        temparr[k][i] = temparr[k][j];</span><br><span class="line">        temparr[k][j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    if(i != j)</span><br><span class="line">        number++;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int judge(int i, int j) &#123;                                               //temparr的i列是否和target的j列相同</span><br><span class="line">    int flag;</span><br><span class="line">    for(int k=0; k&lt;row; k++) &#123;</span><br><span class="line">        flag=1;</span><br><span class="line">        if(temparr[k][i] != target[k][j]) &#123;</span><br><span class="line">            flag=0;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;    </span><br><span class="line">    return flag;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    // insert code here...</span><br><span class="line">    		</span><br><span class="line">    int i,j,k;</span><br><span class="line">    for(i=0; i&lt;col; i++) &#123;                                        	//代表source的列</span><br><span class="line">        for(j=0; j&lt;row; j++) &#123;</span><br><span class="line">            for(k=0; k&lt;col; k++) &#123;</span><br><span class="line">                temparr[j][k] = source[j][k];  		//给替身数组赋值</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        number=0;</span><br><span class="line">        col_exchange(0,i);                                  	//temparr数组的列先做交换，把其他列放到第一列的位置</span><br><span class="line">        </span><br><span class="line">        for(j=0; j&lt;row; j++) &#123;                                	//判断temparr的0号列和target的0号列是否相同，不同则翻转</span><br><span class="line">            if(temparr[j][0] != target[j][0]) &#123;</span><br><span class="line">                raw_change(j);            		//如果第1列不匹配，那么行全部翻转</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        int found;</span><br><span class="line">        for(j=0; j&lt;col; j++) &#123;                    		//代表target，从第2行开始，到最后一行</span><br><span class="line">            found=0;</span><br><span class="line">            for(k=j; k&lt;col; k++) &#123;             		//代表temparr，从第2行开始，直到最后一行</span><br><span class="line">                if(judge(k, j)) &#123;  </span><br><span class="line">                    found=1;</span><br><span class="line">                    col_exchange(k, j);</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(!found) &#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(found) &#123;</span><br><span class="line">            minnum=number;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(minnum&lt;9999) &#123;</span><br><span class="line">        printf(&quot;一共变换%d次！\n&quot;, minnum);</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        printf(&quot;无解！\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-03-1-1.png" alt="2017-09-03-1" title="">
-                </div>
-                <div class="image-caption">2017-09-03-1</div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/2017-09-03-2-1.png" alt="2017-09-03-2" title="">
-                </div>
-                <div class="image-caption">2017-09-03-2</div>
-            </figure>
-
+         问题描述有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。
+金币阵列游戏的规则1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置.
+任务给定金币的初始状态和目标状态，编...
     
 
         <a href="/Problem-about-coin-array.html" class="post-more waves-effect waves-button">
@@ -946,16 +530,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <script src="/assets/js/APlayer.min.js"> </script><h2 id="It’s-not-uncommon-developers-to-have-multiple-versions-of-Xcode-installed-For-example-I-typically-have-the-latest-beta-as-well-as-the-most-current-production-release-installed"><a href="#It’s-not-uncommon-developers-to-have-multiple-versions-of-Xcode-installed-For-example-I-typically-have-the-latest-beta-as-well-as-the-most-current-production-release-installed" class="headerlink" title="It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed."></a>It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.</h2><p>However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.<br>Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.<br>The command line options are below:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xcode-select [-help]</span><br><span class="line">xcode-select [-switch xcode_folder_path]</span><br><span class="line">xcode-select [-print-path]</span><br><span class="line">xcode-select [-version]</span><br></pre></td></tr></table></figure>
-<h2 id="Here-is-how-to-print-the-current-Xcode-path"><a href="#Here-is-how-to-print-the-current-Xcode-path" class="headerlink" title="Here is how to print the current Xcode path:"></a>Here is how to print the current Xcode path:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ xcode-select --print-path</span><br><span class="line">/Developer/Applications/Xcode.app</span><br></pre></td></tr></table></figure>
-<p>Line number 2 shows the current version of Xcode that is ‘active.’ If you are accessing xcodebuild or other related tools from a script, –print-path is the preferred means to determine the current Xcode location.<br>Use the -switch option to change to another version of Xcode on your system:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo xcode-select --switch /Applications/Xcode-beta.app/Contents/Developer</span><br></pre></td></tr></table></figure>
-<p>This changes to the Xcode-beta 9 on my system. Note that root access is required to set the Xcode location, thus I have used sudo to execute the command as root.<br>Printing the path now looks as follows:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ xcode-select --print-path</span><br><span class="line">/Applications/Xcode-beta.app/Contents/Developer</span><br></pre></td></tr></table></figure>
-<h2 id="To-switch-back-to-Xcode-installed-in-the-Applications-directory"><a href="#To-switch-back-to-Xcode-installed-in-the-Applications-directory" class="headerlink" title="To switch back to Xcode installed in the /Applications directory:"></a>To switch back to Xcode installed in the /Applications directory:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo xcode-select -switch /Applications/Xcode.app/</span><br></pre></td></tr></table></figure>
-<h2 id="You-can-read-more-about-xcode-select-by-view-the-man-page-from-a-terminal"><a href="#You-can-read-more-about-xcode-select-by-view-the-man-page-from-a-terminal" class="headerlink" title="You can read more about xcode-select by view the man page from a terminal:"></a>You can read more about xcode-select by view the man page from a terminal:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ man xcode-select</span><br></pre></td></tr></table></figure>
-
+         It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most curre...
     
 
         <a href="/How-to-use-xcode-select-in-terminal.html" class="post-more waves-effect waves-button">
@@ -1002,20 +577,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <script src="/assets/js/APlayer.min.js"> </script><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A由26个小写字母组成。该字母表产生的升序字符串中字母从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1次。例如，a,b,ab,bc,xyz等字符串都是升序字符串。现在对字母表中产生的所有长度不超过6的升序字符串，计算它在字典中的编码。</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>首先判断字符串长度为3，先算长度为1和2的所有情况，即从26个字母中选1个或两个字母，因为是升序，即sum=C（26，1）+C（26，2）；</p>
-<p>之后再看字符串的第一个字符，为’d’,之前有以a,b,c开头的长度为3的字符串，以a开头，后边2位需要在25个字母中选择（除了a），以b开头的后2位需要在24个字母中选择（除了a,b），以c开头的在23个字母（除了a,,b,c）中选择，即sum+=(C(25,2)+C(24,2)+C(23,2));</p>
-<p>然后再看下一个字母’g’，d与g之间有e,f,需要算以de开头以及以df开头的所有情况，即sum+=(C(21,1)+C(20,1))；</p>
-<p>最后再加上h-‘a’+1;</p>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int getCombinatorialNumber(int m, int n) &#123;</span><br><span class="line">    int n_Product=1, m_Product=1;</span><br><span class="line">    int i;</span><br><span class="line">    </span><br><span class="line">    for(i=1; i&lt;=n; i++) </span><br><span class="line">        n_Product*=i;</span><br><span class="line">    for(i=m; i&gt;m-n; i--) &#123;</span><br><span class="line">        m_Product*=i;</span><br><span class="line">        return m_Product/n_Product;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main(int argc, const char * argv[]) &#123;</span><br><span class="line">    int number;                                             		//要统计字符串的个数</span><br><span class="line">    int sum;                                                		//存放字符串的序号</span><br><span class="line">    int length;</span><br><span class="line">    char str[10];                                           		//存放字符串</span><br><span class="line">    int a[10];                                              		//存放字符串的每一位字符的值</span><br><span class="line">    int i, j;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;number);</span><br><span class="line">    </span><br><span class="line">    while(number--) &#123;</span><br><span class="line">        getchar();</span><br><span class="line">        sum=1;</span><br><span class="line">        scanf(&quot;%s&quot;, str);</span><br><span class="line">        length=(int)strlen(str);</span><br><span class="line">        </span><br><span class="line">        for(i=1; i&lt;length; i++) &#123;</span><br><span class="line">            sum += getCombinatorialNumber(26, i);             	//小于字符串长度的字符串个数</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        for(i=0; i&lt;length; i++) &#123;</span><br><span class="line">            a[i]=str[i]-96;                                 	//计算每个字符从a开始的序号数值, a~z分别对应1~26</span><br><span class="line">            //printf(&quot;%d &quot;, a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        //printf(&quot;%d\n&quot;, f(26, 2));</span><br><span class="line">        </span><br><span class="line">        int temp=1;</span><br><span class="line">        for(i=length; i&gt;0; i--) &#123;</span><br><span class="line">            for(j=temp; j&lt;a[length-i]; j++) &#123;</span><br><span class="line">                sum += getCombinatorialNumber(26-j, i-1);     //依次扫描字符，计算所有情况</span><br><span class="line">            &#125;</span><br><span class="line">            temp=a[length-i]+1;</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;%d\n&quot;, sum);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/20170831-zidianxu-1.png" alt="20170831-zidianxu" title="">
-                </div>
-                <div class="image-caption">20170831-zidianxu</div>
-            </figure>
-
+         问题描述在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A由26个小写字母组成。该字母表产生的升序字符串中字母从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1次。例如，a,b,ab,bc,xyz等字符串都是升序字符串。现在对字母表中产生的所有长度不超过6...
     
 
         <a href="/Problem-about-dictionary-order.html" class="post-more waves-effect waves-button">
@@ -1062,138 +624,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <script src="/assets/js/APlayer.min.js"> </script><h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先在 CLOVER 引导界面按 F4 或者 FN + F4 提取原始表单，然后进入 Mac ，利用 Clover Configurator 挂载ESP分区，提取的表单就在 /EFI/CLOVER/ACPI/origin ,将 origin 整个拷贝到桌面，并删除 origin 中除 DSDT SSDT 以外的所有文件</p>
-<p>然后下载要用到的工具</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iasl：https://bitbucket.org/RehabMan/acpica/downloads/</span><br><span class="line">MaciASL：链接:http://pan.baidu.com/s/1pKAksR5  密码:nxyr</span><br></pre></td></tr></table></figure>
-<p>将 iasl 放到 /usr/bin </p>
-<p><img src="http://ovefvi4g3.bkt.clouddn.com/170830-1-1.png" alt="170830-1"></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/170830-2-1.png" alt="170830-2" title="">
-                </div>
-                <div class="image-caption">170830-2</div>
-            </figure>
-<p>然后安装 MaciASL 并添加补丁源：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/170830-3-1.png" alt="170830-3" title="">
-                </div>
-                <div class="image-caption">170830-3</div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/170830-4-1.png" alt="170830-4" title="">
-                </div>
-                <div class="image-caption">170830-4</div>
-            </figure>
-<p> Rehabman 补丁源：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Name：RehabMan Laptop </span><br><span class="line">URL：http://raw.github.com/RehabMan/Laptop-DSDT-Patch/master</span><br></pre></td></tr></table></figure>
-<p>打开终端，输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Desktop/origin</span><br></pre></td></tr></table></figure>
-<p>回车</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/170830-5-1.png" alt="170830-5" title="">
-                </div>
-                <div class="image-caption">170830-5</div>
-            </figure>
-<p>然后输入:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iasl –da –dl *.aml</span><br></pre></td></tr></table></figure>
-<p>回车</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/170830-6-1.png" alt="170830-6" title="">
-                </div>
-                <div class="image-caption">170830-6</div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/170830-7-1.png" alt="170830-7" title="">
-                </div>
-                <div class="image-caption">170830-7</div>
-            </figure>
-<p>这时打开桌面的 origin 文件夹会发现多出了很多 .dsl 文件，我们要用到的就是这些文件</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/170830-8-1.png" alt="170830-8" title="">
-                </div>
-                <div class="image-caption">170830-8</div>
-            </figure>
-<p>先不要急，终端继续执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm –rf *.aml</span><br></pre></td></tr></table></figure>
-<p>回车</p>
-<p>然后执行:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm –rf *x.dsl</span><br></pre></td></tr></table></figure>
-<p>回车，这时就会发现终端只剩下了不带 x 的 dsl 文件</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/170830-9-1.png" alt="170830-9" title="">
-                </div>
-                <div class="image-caption">170830-9</div>
-            </figure>
-<h2 id="开始操作"><a href="#开始操作" class="headerlink" title="开始操作"></a>开始操作</h2><p>然后用 MaciASL 打开 DSDT.dsl </p>
-<p><img src="http://ovefvi4g3.bkt.clouddn.com/170830-10-1.png" alt="170830-10"></p>
-<p>点 Compile 编译后会弹出错误的窗口：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/170830-11-1.png" alt="170830-11" title="">
-                </div>
-                <div class="image-caption">170830-11</div>
-            </figure>
-<p>点这些错误就会定位到错误的代码位置</p>
-<p>这里说一下常见的错误修复方法:</p>
-<p>1、 PARSEOP_ZERO 错误，定位后会发现一堆 zero 代码，直接将他们删掉即可<br>2、 Unexpected ‘}’ 错误：</p>
-<p>定位后是这样：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/170830-12-1.png" alt="170830-12" title="">
-                </div>
-                <div class="image-caption">170830-12</div>
-            </figure>
-<p>我们会发现这个错误位于 ADBG 的方法下，这时只需打个补丁即可：</p>
-<p>点Patch</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/170830-13-1.png" alt="170830-13" title="">
-                </div>
-                <div class="image-caption">170830-13</div>
-            </figure>
-<p>找到 Fix ADBG Error 点一下，然后 Apply 应用即可，这时我们会发现再编译就没有错误了(警告可以不用管)，然后保存成aml文件</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/170830-14-1.png" alt="170830-14" title="">
-                </div>
-                <div class="image-caption">170830-14</div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/170830-15-1.png" alt="170830-15" title="">
-                </div>
-                <div class="image-caption">170830-15</div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/170830-16-1.png" alt="170830-16" title="">
-                </div>
-                <div class="image-caption">170830-16</div>
-            </figure>
-<p> Save 即可，其他 SSDT 文件也是一样的操作</p>
-<h2 id="修改完成"><a href="#修改完成" class="headerlink" title="修改完成"></a>修改完成</h2><p>在修改完所有表单的错误并保存成aml格式后，将这些 aml 文件放到 /EFI/CLOVER/ACPI/patched 就可以了</p>
-<h1 id="完工"><a href="#完工" class="headerlink" title="完工"></a>完工</h1>
+         开工准备工作首先在 CLOVER 引导界面按 F4 或者 FN + F4 提取原始表单，然后进入 Mac ，利用 Clover Configurator 挂载ESP分区，提取的表单就在 /EFI/CLOVER/ACPI/origin ,将 origin 整个拷贝到桌面，并删除 origin ...
     
 
         <a href="/Extract-and-fix-DSDT-SSDT-simply.html" class="post-more waves-effect waves-button">
