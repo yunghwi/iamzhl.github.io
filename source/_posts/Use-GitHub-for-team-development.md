@@ -10,9 +10,10 @@ tags:
 ---
 
 <!--more-->
+利用 GitHub 进行团队开发
 
 ### 创建项目
-本文以`GitHub`项目例: 
+本文以`GitHub`项目为例: 
 
 ```
 https://github.com/athlonreg/Common-patches-for-hackintosh.git
