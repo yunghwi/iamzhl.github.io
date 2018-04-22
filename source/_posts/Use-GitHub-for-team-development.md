@@ -9,8 +9,6 @@ tags:
 - 分支管理
 ---
 
-<!--more-->
-
 ### 创建项目
 本文以`GitHub`项目为例: 
 
@@ -289,5 +287,7 @@ $ git config --global user.email "电子邮件" 。
 - 提交代码和推送代码以及代码上线之前，一定要先和原来版本对比`git diff`。
 
 - 提交代码加注释`git commit -m 'B developed'`。
+
+<!--more-->
 
 
