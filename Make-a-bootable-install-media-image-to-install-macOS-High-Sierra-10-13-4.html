@@ -44,7 +44,7 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_8.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_9.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/Snip20180330_10.png">
-<meta property="og:updated_time" content="2018-03-30T12:57:44.618Z">
+<meta property="og:updated_time" content="2018-04-22T06:47:27.826Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Make a bootable install image to install macOS High Sierra 10.13.4">
 <meta name="twitter:description" content="制作可启动的安装镜像来安装macOS High Sierra 10.13.4">
@@ -183,7 +183,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#教程开始"><span class="post-toc-number">2.</span> <span class="post-toc-text">教程开始</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载app镜像"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">下载app镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#制作镜像"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">制作镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进行镜像修复"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">进行镜像修复</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#制作可启动的安装镜像来安装macOS-High-Sierra-10-13-4"><span class="post-toc-number">1.</span> <span class="post-toc-text">制作可启动的安装镜像来安装macOS High Sierra 10.13.4</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">2.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#教程开始"><span class="post-toc-number">3.</span> <span class="post-toc-text">教程开始</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载app镜像"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">下载app镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#制作镜像"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">制作镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进行镜像修复"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">进行镜像修复</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -209,7 +209,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <script src="/assets/js/APlayer.min.js"> </script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>随着新的<code>macOS High Sierra 10.13.4</code>操作系统发布，很多盆友迫不及待的做了一个<code>.dmg</code>格式的压缩镜像以备用，但发现用<code>Apple</code>官方的方法制作出的镜像用<code>CLOVER</code>引导时是看不到安装镜像的，最后，在<a href="https://blog.daliansky.net" target="_blank" rel="noopener">黑果小兵</a>的帮助下，终于找到了解决方法。</p>
+            <script src="/assets/js/APlayer.min.js"> </script><h2 id="制作可启动的安装镜像来安装macOS-High-Sierra-10-13-4"><a href="#制作可启动的安装镜像来安装macOS-High-Sierra-10-13-4" class="headerlink" title="制作可启动的安装镜像来安装macOS High Sierra 10.13.4"></a>制作可启动的安装镜像来安装macOS High Sierra 10.13.4</h2><a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>随着新的<code>macOS High Sierra 10.13.4</code>操作系统发布，很多盆友迫不及待的做了一个<code>.dmg</code>格式的压缩镜像以备用，但发现用<code>Apple</code>官方的方法制作出的镜像用<code>CLOVER</code>引导时是看不到安装镜像的，最后，在<a href="https://blog.daliansky.net" target="_blank" rel="noopener">黑果小兵</a>的帮助下，终于找到了解决方法。</p>
 <h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="下载app镜像"><a href="#下载app镜像" class="headerlink" title="下载app镜像"></a>下载<code>app</code>镜像</h3><p>首先去<code>AppleStore</code>下载原版的<code>app</code>镜像<a href="https://itunes.apple.com/cn/app/macos-high-sierra/id1246284741?l=en&amp;mt=12" target="_blank" rel="noopener">https://itunes.apple.com/cn/app/macos-high-sierra/id1246284741?l=en&amp;mt=12</a></p>
 <h3 id="制作镜像"><a href="#制作镜像" class="headerlink" title="制作镜像"></a>制作镜像</h3><p>打开磁盘工具</p>
 <figure class="image-bubble">
@@ -297,7 +298,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-03-30T12:57:44.618Z" itemprop="dateUpdated">2018-03-30 20:57:44</time>
+    最后更新时间：<time datetime="2018-04-22T06:47:27.826Z" itemprop="dateUpdated">2018-04-22 14:47:27</time>
 </span><br>
 
 
@@ -341,7 +342,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Make-a-bootable-install-media-image-to-install-macOS-High-Sierra-10-13-4.html&title=《Make a bootable install image to install macOS High Sierra 10.13.4》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Make-a-bootable-install-media-image-to-install-macOS-High-Sierra-10-13-4.html&title=《Make a bootable install image to install macOS High Sierra 10.13.4》 — Athlonreg's Blog&source=制作可启动的安装镜像来安装macOS High Sierra 10.13.4" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -521,7 +522,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Make-a-bootable-install-media-image-to-install-macOS-High-Sierra-10-13-4.html&title=《Make a bootable install image to install macOS High Sierra 10.13.4》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Make-a-bootable-install-media-image-to-install-macOS-High-Sierra-10-13-4.html&title=《Make a bootable install image to install macOS High Sierra 10.13.4》 — Athlonreg's Blog&source=制作可启动的安装镜像来安装macOS High Sierra 10.13.4" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

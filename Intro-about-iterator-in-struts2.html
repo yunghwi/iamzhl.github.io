@@ -35,7 +35,7 @@
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
 <meta property="og:description" content="struts2中s:iterator 标签的使用详解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-11T02:59:33.293Z">
+<meta property="og:updated_time" content="2018-04-22T06:47:59.315Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Intro about iterator in struts2">
 <meta name="twitter:description" content="struts2中s:iterator 标签的使用详解">
@@ -173,7 +173,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简单的Demo"><span class="post-toc-number">1.</span> <span class="post-toc-text">简单的Demo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#jsp页面定义元素写法-数组或list"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">jsp页面定义元素写法 数组或list</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#索引的用法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">索引的用法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#遍历map"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">遍历map</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#遍历数据栈-–-简单的List类"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">遍历数据栈 – 简单的List类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#遍历-2-个list"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">遍历 2 个list</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#iterator中输出具体值"><span class="post-toc-number">2.</span> <span class="post-toc-text">iterator中输出具体值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用ognl输出对应的值"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用ognl输出对应的值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#struts2中的OGNL用法"><span class="post-toc-number">4.</span> <span class="post-toc-text">struts2中的OGNL用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#User对象属性获取"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">User对象属性获取</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#转载自"><span class="post-toc-number">5.</span> <span class="post-toc-text">转载自</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#struts2中s-iterator-标签的使用详解"><span class="post-toc-number">1.</span> <span class="post-toc-text">struts2中s:iterator 标签的使用详解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简单的Demo"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">简单的Demo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#jsp页面定义元素写法-数组或list"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">jsp页面定义元素写法 数组或list</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#索引的用法"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">索引的用法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#遍历map"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">遍历map</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#遍历数据栈-–-简单的List类"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">遍历数据栈 – 简单的List类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#遍历-2-个list"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">遍历 2 个list</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#iterator中输出具体值"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">iterator中输出具体值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用ognl输出对应的值"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">使用ognl输出对应的值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#struts2中的OGNL用法"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">struts2中的OGNL用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#User对象属性获取"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">User对象属性获取</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#转载自"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">转载自</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -199,7 +199,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <script src="/assets/js/APlayer.min.js"> </script><h3 id="简单的Demo"><a href="#简单的Demo" class="headerlink" title="简单的Demo"></a>简单的<code>Demo</code></h3><blockquote>
+            <script src="/assets/js/APlayer.min.js"> </script><h2 id="struts2中s-iterator-标签的使用详解"><a href="#struts2中s-iterator-标签的使用详解" class="headerlink" title="struts2中s:iterator 标签的使用详解"></a>struts2中s:iterator 标签的使用详解</h2><a id="more"></a>
+<h3 id="简单的Demo"><a href="#简单的Demo" class="headerlink" title="简单的Demo"></a>简单的<code>Demo</code></h3><blockquote>
 <p>s:iterator 标签有三个属性：</p>
 </blockquote>
 <ul>
@@ -420,7 +421,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-04-11T02:59:33.293Z" itemprop="dateUpdated">2018-04-11 10:59:33</time>
+    最后更新时间：<time datetime="2018-04-22T06:47:59.315Z" itemprop="dateUpdated">2018-04-22 14:47:59</time>
 </span><br>
 
 
@@ -464,7 +465,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Intro-about-iterator-in-struts2.html&title=《Intro about iterator in struts2》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Intro-about-iterator-in-struts2.html&title=《Intro about iterator in struts2》 — Athlonreg's Blog&source=struts2中s:iterator 标签的使用详解" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -644,7 +645,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Intro-about-iterator-in-struts2.html&title=《Intro about iterator in struts2》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Intro-about-iterator-in-struts2.html&title=《Intro about iterator in struts2》 — Athlonreg's Blog&source=struts2中s:iterator 标签的使用详解" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

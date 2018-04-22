@@ -52,7 +52,7 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/Snip20180331_4.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-12-13-15.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-12-13-08.png">
-<meta property="og:updated_time" content="2018-03-31T15:11:45.066Z">
+<meta property="og:updated_time" content="2018-04-22T06:56:22.840Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ASUS-X455LD-i5-4210u">
 <meta name="twitter:description" content="Install macOS High Sierra on ASUS X455LD i5 4210u">
@@ -191,7 +191,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Laptop-Configuration"><span class="post-toc-number">1.</span> <span class="post-toc-text">Laptop Configuration</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Working"><span class="post-toc-number">2.</span> <span class="post-toc-text">Working</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Notes"><span class="post-toc-number">3.</span> <span class="post-toc-text">Notes</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#About-ALCPlugFix"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">About ALCPlugFix</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#About-一键开启HIDPI并注入EDID"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">About 一键开启HIDPI并注入EDID</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Clover-EFI-bootloader"><span class="post-toc-number">4.</span> <span class="post-toc-text">Clover EFI bootloader</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Finally"><span class="post-toc-number">5.</span> <span class="post-toc-text">Finally</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Install-macOS-High-Sierra-on-ASUS-X455LD-i5-4210u"><span class="post-toc-number">1.</span> <span class="post-toc-text">Install macOS High Sierra on ASUS X455LD i5 4210u</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Laptop-Configuration"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Laptop Configuration</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Working"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Working</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Notes"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Notes</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#About-ALCPlugFix"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">About ALCPlugFix</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#About-一键开启HIDPI并注入EDID"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">About 一键开启HIDPI并注入EDID</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Clover-EFI-bootloader"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Clover EFI bootloader</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Finally"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Finally</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -217,7 +217,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <script src="/assets/js/APlayer.min.js"> </script><h3 id="Laptop-Configuration"><a href="#Laptop-Configuration" class="headerlink" title="Laptop Configuration"></a>Laptop Configuration</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Computer model              Asus F455LD Notebook</span><br><span class="line"></span><br><span class="line">CPU                         Intel Core i5-4210u</span><br><span class="line"></span><br><span class="line">Operate System              Windows10 Education 64bit + macOS High Sierra 17B25c</span><br><span class="line">                            + Windows7 Ultimate + ElementaryOS base on Ubuntu 16.04</span><br><span class="line"></span><br><span class="line">Main board                  Asus X455LD Intel Haswell-ULT - Lynx Point-LP</span><br><span class="line"></span><br><span class="line">Discret egraphics           Nvidia GeForce 820M 2G </span><br><span class="line"></span><br><span class="line">Integrated graphics         HD4400</span><br><span class="line"></span><br><span class="line">Audio                       Realtek @ Intel Lynx Point-LP  High Definition Audio (CX20751)</span><br><span class="line"></span><br><span class="line">Ethernet                    Realtek RTL8168/8111/8112 Gigabit Ethernet Controller / Asus</span><br><span class="line"></span><br><span class="line">Wireless network adapter    Atheros AR956X</span><br></pre></td></tr></table></figure>
+            <script src="/assets/js/APlayer.min.js"> </script><h2 id="Install-macOS-High-Sierra-on-ASUS-X455LD-i5-4210u"><a href="#Install-macOS-High-Sierra-on-ASUS-X455LD-i5-4210u" class="headerlink" title="Install macOS High Sierra on ASUS X455LD i5 4210u"></a>Install macOS High Sierra on ASUS X455LD i5 4210u</h2><a id="more"></a>
+<h3 id="Laptop-Configuration"><a href="#Laptop-Configuration" class="headerlink" title="Laptop Configuration"></a>Laptop Configuration</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Computer model              Asus F455LD Notebook</span><br><span class="line"></span><br><span class="line">CPU                         Intel Core i5-4210u</span><br><span class="line"></span><br><span class="line">Operate System              Windows10 Education 64bit + macOS High Sierra 17B25c</span><br><span class="line">                            + Windows7 Ultimate + ElementaryOS base on Ubuntu 16.04</span><br><span class="line"></span><br><span class="line">Main board                  Asus X455LD Intel Haswell-ULT - Lynx Point-LP</span><br><span class="line"></span><br><span class="line">Discret egraphics           Nvidia GeForce 820M 2G </span><br><span class="line"></span><br><span class="line">Integrated graphics         HD4400</span><br><span class="line"></span><br><span class="line">Audio                       Realtek @ Intel Lynx Point-LP  High Definition Audio (CX20751)</span><br><span class="line"></span><br><span class="line">Ethernet                    Realtek RTL8168/8111/8112 Gigabit Ethernet Controller / Asus</span><br><span class="line"></span><br><span class="line">Wireless network adapter    Atheros AR956X</span><br></pre></td></tr></table></figure>
 <h3 id="Working"><a href="#Working" class="headerlink" title="Working"></a>Working</h3><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -351,7 +352,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-03-31T15:11:45.066Z" itemprop="dateUpdated">2018-03-31 23:11:45</time>
+    最后更新时间：<time datetime="2018-04-22T06:56:22.840Z" itemprop="dateUpdated">2018-04-22 14:56:22</time>
 </span><br>
 
 
@@ -395,7 +396,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/ASUS-X455LD-i5-4210u.html&title=《ASUS-X455LD-i5-4210u》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/ASUS-X455LD-i5-4210u.html&title=《ASUS-X455LD-i5-4210u》 — Athlonreg's Blog&source=Install macOS High Sierra on ASUS X455LD i5 4210u" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -575,7 +576,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/ASUS-X455LD-i5-4210u.html&title=《ASUS-X455LD-i5-4210u》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/ASUS-X455LD-i5-4210u.html&title=《ASUS-X455LD-i5-4210u》 — Athlonreg's Blog&source=Install macOS High Sierra on ASUS X455LD i5 4210u" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

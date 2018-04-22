@@ -4,18 +4,858 @@
 
     
   <url>
-    <loc>https://blog.iamzhl.top/Problem-about-rollover-price-tag.html</loc>
-    <lastmod>2018-04-22T06:44:04.638Z</lastmod>
+    <loc>https://blog.iamzhl.top/Problem-about-coin-array.html</loc>
+    <lastmod>2018-04-22T06:57:05.491Z</lastmod>
     <data>
         <display>
-        <title>Problem about rollover price tag</title>
-        <pubTime>2017-09-17T16:00:00.000Z</pubTime>
+        <title>Problem about coin array</title>
+        <pubTime>2017-09-02T16:00:00.000Z</pubTime>
         
         <tag>算法</tag>
          
         <tag>C语言</tag>
          
-        <tag>价牌翻转</tag>
+        <tag>金币阵列</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Change-NetBeans's-language-to-Chinese-in-macOS.html</loc>
+    <lastmod>2018-04-22T06:57:02.342Z</lastmod>
+    <data>
+        <display>
+        <title>Change NetBeans's language to Chinese in macOS</title>
+        <pubTime>2017-12-08T18:36:23.000Z</pubTime>
+        
+        <tag>NetBeans</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/0-1-backpack.html</loc>
+    <lastmod>2018-04-22T06:56:51.022Z</lastmod>
+    <data>
+        <display>
+        <title>0-1 backpack</title>
+        <pubTime>2018-01-17T08:51:25.000Z</pubTime>
+        
+        <tag>0-1背包问题</tag>
+         
+        <tag>algorithm</tag>
+         
+        <tag>算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Allow-apps-downloaded-from-anywhere-in-macOS.html</loc>
+    <lastmod>2018-04-22T06:56:37.873Z</lastmod>
+    <data>
+        <display>
+        <title>Allow apps downloaded from anywhere on macOS</title>
+        <pubTime>2017-09-15T13:16:31.000Z</pubTime>
+        
+        <tag>黑苹果</tag>
+         
+        <tag>终端</tag>
+         
+        <tag>Hacintosh</tag>
+         
+        <tag>任何来源</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/ASUS-X455LD-i5-4210u.html</loc>
+    <lastmod>2018-04-22T06:56:22.840Z</lastmod>
+    <data>
+        <display>
+        <title>ASUS-X455LD-i5-4210u</title>
+        <pubTime>2017-12-13T06:51:34.000Z</pubTime>
+        
+        <tag>Hacintosh</tag>
+         
+        <tag>X455LD</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/BinarySearch.html</loc>
+    <lastmod>2018-04-22T06:56:07.813Z</lastmod>
+    <data>
+        <display>
+        <title>BinarySearch</title>
+        <pubTime>2018-01-17T07:29:36.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+        <tag>算法</tag>
+         
+        <tag>二分查找</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Change-launchpad-icon-grid-layout-in-macOS.html</loc>
+    <lastmod>2018-04-22T06:55:56.728Z</lastmod>
+    <data>
+        <display>
+        <title>Change launchpad icon grid layout in your MAC</title>
+        <pubTime>2017-10-26T01:32:26.000Z</pubTime>
+        
+        <tag>launchpad</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Check-CPU-frequences-by-using-AppleIntelInfo.html</loc>
+    <lastmod>2018-04-22T06:55:18.163Z</lastmod>
+    <data>
+        <display>
+        <title>Check CPU frequences by using AppleIntelInfo</title>
+        <pubTime>2017-09-04T16:00:00.000Z</pubTime>
+        
+        <tag>黑苹果</tag>
+         
+        <tag>Hacintosh</tag>
+         
+        <tag>AppleIntelInfo</tag>
+         
+        <tag>变频</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Clover-ACPI-hotpatch.html</loc>
+    <lastmod>2018-04-22T06:55:05.712Z</lastmod>
+    <data>
+        <display>
+        <title>Clover ACPI hotpatch</title>
+        <pubTime>2017-12-17T07:30:15.000Z</pubTime>
+        
+        <tag>Hacintosh</tag>
+         
+        <tag>SSDT</tag>
+         
+        <tag>hotpatch</tag>
+         
+        <tag>ACPI</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Common-command-in-macOS.html</loc>
+    <lastmod>2018-04-22T06:54:31.971Z</lastmod>
+    <data>
+        <display>
+        <title>Common command in macOS</title>
+        <pubTime>2018-03-30T12:32:47.000Z</pubTime>
+        
+        <tag>command</tag>
+         
+        <tag>macOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Common-Keyboard-shortcut-in-macOS.html</loc>
+    <lastmod>2018-04-22T06:54:12.228Z</lastmod>
+    <data>
+        <display>
+        <title>Common Keyboard  shortcut on MAC</title>
+        <pubTime>2017-10-26T00:14:21.000Z</pubTime>
+        
+        <tag>快捷键</tag>
+         
+        <tag>Mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Common-patches-on-Hackintosh.html</loc>
+    <lastmod>2018-04-22T06:53:56.368Z</lastmod>
+    <data>
+        <display>
+        <title>Common patches on Hackintosh</title>
+        <pubTime>2018-04-09T02:08:56.000Z</pubTime>
+        
+        <tag>patch</tag>
+         
+        <tag>Hackintosh</tag>
+         
+        <tag>补丁</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Config-NexT-to-beautify-your-blog-with-hexo.html</loc>
+    <lastmod>2018-04-22T06:53:29.398Z</lastmod>
+    <data>
+        <display>
+        <title>Config NexT to beautify your blog with hexo</title>
+        <pubTime>2017-09-14T11:04:36.000Z</pubTime>
+        
+        <tag>静态博客</tag>
+         
+        <tag>NexT</tag>
+         
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Connect-Network-in-Windows-10.html</loc>
+    <lastmod>2018-04-22T06:53:13.275Z</lastmod>
+    <data>
+        <display>
+        <title>Connect Network in Windows 10</title>
+        <pubTime>2017-10-15T13:59:01.000Z</pubTime>
+        
+        <tag>自动连接</tag>
+         
+        <tag>宽带</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Dell-Inspiron-15-7000-i7-8550u.html</loc>
+    <lastmod>2018-04-22T06:52:53.711Z</lastmod>
+    <data>
+        <display>
+        <title>Dell-Inspiron-15-7000-i7-8550u</title>
+        <pubTime>2017-12-10T14:16:01.000Z</pubTime>
+        
+        <tag>Hacintosh</tag>
+         
+        <tag>燃7000</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Deploy-tale-on-CentOS7.html</loc>
+    <lastmod>2018-04-22T06:52:38.392Z</lastmod>
+    <data>
+        <display>
+        <title>Deploy tale on CentOS7</title>
+        <pubTime>2018-04-14T01:34:15.000Z</pubTime>
+        
+        <tag>Tale</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://blog.iamzhl.top/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Disable-the-discrete-GPU-in-laptop.html</loc>
+    <lastmod>2018-04-22T06:52:21.144Z</lastmod>
+    <data>
+        <display>
+        <title>Disable the discrete GPU in laptop</title>
+        <pubTime>2017-10-03T16:00:00.000Z</pubTime>
+        
+        <tag>黑苹果</tag>
+         
+        <tag>Hacintosh</tag>
+         
+        <tag>Window Server Service only ran for 0 seconds</tag>
+         
+        <tag>Disable DGPU</tag>
+         
+        <tag>屏蔽独显</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Deploy-tale-on-Fedora27.html</loc>
+    <lastmod>2018-04-22T06:52:02.182Z</lastmod>
+    <data>
+        <display>
+        <title>Deploy tale on Fedora27</title>
+        <pubTime>2018-04-15T01:30:10.000Z</pubTime>
+        
+        <tag>Tale</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://blog.iamzhl.top/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Driver-audio-for-hackintosh.html</loc>
+    <lastmod>2018-04-22T06:51:49.725Z</lastmod>
+    <data>
+        <display>
+        <title>Driver audio for hackintosh</title>
+        <pubTime>2017-11-05T16:00:00.000Z</pubTime>
+        
+        <tag>黑苹果</tag>
+         
+        <tag>Hacintosh</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Enable-BCM94352z-on-hacintosh.html</loc>
+    <lastmod>2018-04-22T06:51:32.226Z</lastmod>
+    <data>
+        <display>
+        <title>Enable BCM94352z on your hacintosh</title>
+        <pubTime>2017-09-12T16:00:00.000Z</pubTime>
+        
+        <tag>黑苹果</tag>
+         
+        <tag>Hacintosh</tag>
+         
+        <tag>BCM94352z</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Extract-and-fix-DSDT-SSDT-simply.html</loc>
+    <lastmod>2018-04-22T06:51:18.537Z</lastmod>
+    <data>
+        <display>
+        <title>Extract and fix DSDT SSDT simply</title>
+        <pubTime>2017-08-29T16:00:00.000Z</pubTime>
+        
+        <tag>DSDT</tag>
+         
+        <tag>SSDT</tag>
+         
+        <tag>编译</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/How-to-change-your-username-on-your-mac.html</loc>
+    <lastmod>2018-04-22T06:51:02.443Z</lastmod>
+    <data>
+        <display>
+        <title>How to change your username on your mac</title>
+        <pubTime>2018-03-15T09:19:00.000Z</pubTime>
+        
+        <tag>账户名</tag>
+         
+        <tag>主机名</tag>
+         
+        <tag>计算机名</tag>
+         
+        <tag>mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/How-to-import-a-project-from-NetBeans-to-MyEclipse-faultlessly.html</loc>
+    <lastmod>2018-04-22T06:50:49.328Z</lastmod>
+    <data>
+        <display>
+        <title>How to import a project from NetBeans to MyEclipse faultlessly</title>
+        <pubTime>2017-10-30T08:03:27.000Z</pubTime>
+        
+        <tag>NetBeans</tag>
+         
+        <tag>MyEclipse</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/How-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html</loc>
+    <lastmod>2018-04-22T06:50:18.158Z</lastmod>
+    <data>
+        <display>
+        <title>How to patch Framebuffer change VRAM from 1536MB to 2048MB</title>
+        <pubTime>2018-03-29T09:22:57.000Z</pubTime>
+        
+        <tag>显存</tag>
+         
+        <tag>FB</tag>
+         
+        <tag>花屏</tag>
+         
+        <tag>Framebuffer</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
+    <lastmod>2018-04-22T06:50:03.568Z</lastmod>
+    <data>
+        <display>
+        <title>How to unzip packages without .DS_store</title>
+        <pubTime>2018-03-15T09:11:43.000Z</pubTime>
+        
+        <tag>.DS_store</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/How-to-use-xcode-select-in-terminal.html</loc>
+    <lastmod>2018-04-22T06:49:28.614Z</lastmod>
+    <data>
+        <display>
+        <title>How to use xcode-select in terminal</title>
+        <pubTime>2017-09-02T16:00:00.000Z</pubTime>
+        
+        <tag>终端</tag>
+         
+        <tag>Mac</tag>
+         
+        <tag>Xcode</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Install-jdk-on-macOS.html</loc>
+    <lastmod>2018-04-22T06:49:13.934Z</lastmod>
+    <data>
+        <display>
+        <title>Install jdk on macOS</title>
+        <pubTime>2017-08-27T16:00:00.000Z</pubTime>
+        
+        <tag>Mac</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>搭建</tag>
+         
+        <tag>环境</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/HP-OMEN-by-HP-Laptop.html</loc>
+    <lastmod>2018-04-22T06:48:54.095Z</lastmod>
+    <data>
+        <display>
+        <title>HP OMEN by HP Laptop</title>
+        <pubTime>2017-12-13T11:25:35.000Z</pubTime>
+        
+        <tag>Hacintosh</tag>
+         
+        <tag>光影精灵</tag>
+         
+        <tag>暗影精灵</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Install-and-config-mysql-on-mac.html</loc>
+    <lastmod>2018-04-22T06:48:41.858Z</lastmod>
+    <data>
+        <display>
+        <title>Install and config mysql on mac</title>
+        <pubTime>2017-12-20T09:01:00.000Z</pubTime>
+        
+        <tag>Mac</tag>
+         
+        <tag>MySQL</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Install-macOS-on-laptop.html</loc>
+    <lastmod>2018-04-22T06:48:19.519Z</lastmod>
+    <data>
+        <display>
+        <title>Install macOS on laptop</title>
+        <pubTime>2017-12-11T16:28:15.000Z</pubTime>
+        
+        <tag>黑苹果</tag>
+         
+        <tag>Hacintosh</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Intro-about-iterator-in-struts2.html</loc>
+    <lastmod>2018-04-22T06:47:59.315Z</lastmod>
+    <data>
+        <display>
+        <title>Intro about iterator in struts2</title>
+        <pubTime>2018-04-11T02:12:17.000Z</pubTime>
+        
+        <tag>struts2</tag>
+         
+        <tag>iterator</tag>
+         
+        <tag>框架</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/ldu-crawl-based-on-nodejs.html</loc>
+    <lastmod>2018-04-22T06:47:45.988Z</lastmod>
+    <data>
+        <display>
+        <title>Ldu crawl based on nodejs</title>
+        <pubTime>2018-01-10T11:40:02.000Z</pubTime>
+        
+        <tag>Nodejs</tag>
+         
+        <tag>crawl</tag>
+         
+        <tag>爬虫</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Make-a-bootable-install-media-image-to-install-macOS-High-Sierra-10-13-4.html</loc>
+    <lastmod>2018-04-22T06:47:27.826Z</lastmod>
+    <data>
+        <display>
+        <title>Make a bootable install image to install macOS High Sierra 10.13.4</title>
+        <pubTime>2018-03-30T11:52:35.000Z</pubTime>
+        
+        <tag>image</tag>
+         
+        <tag>10.13.4</tag>
+         
+        <tag>镜像</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/n-queen.html</loc>
+    <lastmod>2018-04-22T06:47:10.634Z</lastmod>
+    <data>
+        <display>
+        <title>n queen</title>
+        <pubTime>2018-01-17T08:04:05.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+        <tag>算法</tag>
+         
+        <tag>n皇后问题</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/OSI-Model.html</loc>
+    <lastmod>2018-04-22T06:46:49.848Z</lastmod>
+    <data>
+        <display>
+        <title>OSI Model</title>
+        <pubTime>2018-04-09T08:36:53.000Z</pubTime>
+        
+        <tag>OSI</tag>
+         
+        <tag>七层模型</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://blog.iamzhl.top/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Use-GitHub-for-team-development.html</loc>
+    <lastmod>2018-04-22T06:46:24.130Z</lastmod>
+    <data>
+        <display>
+        <title>Use GitHub for team development</title>
+        <pubTime>2018-04-21T14:07:42.000Z</pubTime>
+        
+        <tag>GitHub</tag>
+         
+        <tag>团队开发</tag>
+         
+        <tag>分支管理</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Problem-about-dictionary-order.html</loc>
+    <lastmod>2018-04-22T06:46:06.901Z</lastmod>
+    <data>
+        <display>
+        <title>Problem about dictionary order</title>
+        <pubTime>2017-08-30T16:00:00.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>C语言</tag>
+         
+        <tag>字典序</tag>
          
          
            
@@ -29,7 +869,7 @@
     
   <url>
     <loc>https://blog.iamzhl.top/Problem-about-Sending-out-death-squads.html</loc>
-    <lastmod>2018-04-22T06:43:51.270Z</lastmod>
+    <lastmod>2018-04-22T06:45:57.693Z</lastmod>
     <data>
         <display>
         <title>Problem about Sending out death squads</title>
@@ -40,6 +880,78 @@
         <tag>C语言</tag>
          
         <tag>派遣敢死队</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Problem-about-low-carbon-lifestyle-answering.html</loc>
+    <lastmod>2018-04-22T06:44:58.860Z</lastmod>
+    <data>
+        <display>
+        <title>Problem about low-carbon lifestyle answering</title>
+        <pubTime>2017-09-11T16:00:00.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>C语言</tag>
+         
+        <tag>低碳生活答题问题</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Problem-about-police-and-gangster-110.html</loc>
+    <lastmod>2018-04-22T06:44:38.416Z</lastmod>
+    <data>
+        <display>
+        <title>Problem about police and gangster 110</title>
+        <pubTime>2017-09-17T16:00:00.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>C语言</tag>
+         
+        <tag>警匪110</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Problem-about-rollover-price-tag.html</loc>
+    <lastmod>2018-04-22T06:44:19.879Z</lastmod>
+    <data>
+        <display>
+        <title>Problem about rollover price tag</title>
+        <pubTime>2017-09-17T16:00:00.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>C语言</tag>
+         
+        <tag>价牌翻转</tag>
          
          
            
@@ -129,9 +1041,9 @@
         <title>RW NTFS partition natively on macOS</title>
         <pubTime>2017-10-26T16:00:00.000Z</pubTime>
         
-        <tag>Hacintosh</tag>
-         
         <tag>黑苹果</tag>
+         
+        <tag>Hacintosh</tag>
          
         <tag>NTFS</tag>
          
@@ -175,9 +1087,9 @@
         <title>Speed up the hackintosh to boot</title>
         <pubTime>2017-09-04T16:00:00.000Z</pubTime>
         
-        <tag>Hacintosh</tag>
-         
         <tag>黑苹果</tag>
+         
+        <tag>Hacintosh</tag>
          
         <tag>开机速度</tag>
          
@@ -286,30 +1198,6 @@
 
     
   <url>
-    <loc>https://blog.iamzhl.top/Use-GitHub-for-team-development.html</loc>
-    <lastmod>2018-04-22T06:36:52.087Z</lastmod>
-    <data>
-        <display>
-        <title>Use GitHub for team development</title>
-        <pubTime>2018-04-21T14:07:42.000Z</pubTime>
-        
-        <tag>GitHub</tag>
-         
-        <tag>团队开发</tag>
-         
-        <tag>分支管理</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.iamzhl.top/The-simplest-case-demo-about-client-and-server.html</loc>
     <lastmod>2018-04-22T06:36:47.136Z</lastmod>
     <data>
@@ -334,893 +1222,5 @@
 
     
     
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Deploy-tale-on-Fedora27.html</loc>
-    <lastmod>2018-04-15T03:02:50.402Z</lastmod>
-    <data>
-        <display>
-        <title>Deploy tale on Fedora27</title>
-        <pubTime>2018-04-15T01:30:10.000Z</pubTime>
-        
-        <tag>Tale</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="https://blog.iamzhl.top/categories/Linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Deploy-tale-on-CentOS7.html</loc>
-    <lastmod>2018-04-14T06:54:27.714Z</lastmod>
-    <data>
-        <display>
-        <title>Deploy tale on CentOS7</title>
-        <pubTime>2018-04-14T01:34:15.000Z</pubTime>
-        
-        <tag>Tale</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="https://blog.iamzhl.top/categories/Linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Intro-about-iterator-in-struts2.html</loc>
-    <lastmod>2018-04-11T02:59:33.293Z</lastmod>
-    <data>
-        <display>
-        <title>Intro about iterator in struts2</title>
-        <pubTime>2018-04-11T02:12:17.000Z</pubTime>
-        
-        <tag>struts2</tag>
-         
-        <tag>iterator</tag>
-         
-        <tag>框架</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/OSI-Model.html</loc>
-    <lastmod>2018-04-09T09:18:37.790Z</lastmod>
-    <data>
-        <display>
-        <title>OSI Model</title>
-        <pubTime>2018-04-09T08:36:53.000Z</pubTime>
-        
-        <tag>OSI</tag>
-         
-        <tag>七层模型</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="https://blog.iamzhl.top/categories/Linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Common-patches-on-Hackintosh.html</loc>
-    <lastmod>2018-04-09T03:11:53.265Z</lastmod>
-    <data>
-        <display>
-        <title>Common patches on Hackintosh</title>
-        <pubTime>2018-04-09T02:08:56.000Z</pubTime>
-        
-        <tag>patch</tag>
-         
-        <tag>Hackintosh</tag>
-         
-        <tag>补丁</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Common-command-in-macOS.html</loc>
-    <lastmod>2018-04-09T02:14:58.056Z</lastmod>
-    <data>
-        <display>
-        <title>Common command in macOS</title>
-        <pubTime>2018-03-30T12:32:47.000Z</pubTime>
-        
-        <tag>command</tag>
-         
-        <tag>macOS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Install-macOS-on-laptop.html</loc>
-    <lastmod>2018-03-31T15:49:22.811Z</lastmod>
-    <data>
-        <display>
-        <title>Install macOS on laptop</title>
-        <pubTime>2017-12-11T16:28:15.000Z</pubTime>
-        
-        <tag>Hacintosh</tag>
-         
-        <tag>黑苹果</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/ASUS-X455LD-i5-4210u.html</loc>
-    <lastmod>2018-03-31T15:11:45.066Z</lastmod>
-    <data>
-        <display>
-        <title>ASUS-X455LD-i5-4210u</title>
-        <pubTime>2017-12-13T06:51:34.000Z</pubTime>
-        
-        <tag>Hacintosh</tag>
-         
-        <tag>X455LD</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Make-a-bootable-install-media-image-to-install-macOS-High-Sierra-10-13-4.html</loc>
-    <lastmod>2018-03-30T12:57:44.618Z</lastmod>
-    <data>
-        <display>
-        <title>Make a bootable install image to install macOS High Sierra 10.13.4</title>
-        <pubTime>2018-03-30T11:52:35.000Z</pubTime>
-        
-        <tag>image</tag>
-         
-        <tag>10.13.4</tag>
-         
-        <tag>镜像</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/How-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html</loc>
-    <lastmod>2018-03-29T11:35:58.215Z</lastmod>
-    <data>
-        <display>
-        <title>How to patch Framebuffer change VRAM from 1536MB to 2048MB</title>
-        <pubTime>2018-03-29T09:22:57.000Z</pubTime>
-        
-        <tag>显存</tag>
-         
-        <tag>FB</tag>
-         
-        <tag>花屏</tag>
-         
-        <tag>Framebuffer</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/HP-OMEN-by-HP-Laptop.html</loc>
-    <lastmod>2018-03-29T09:58:30.400Z</lastmod>
-    <data>
-        <display>
-        <title>HP OMEN by HP Laptop</title>
-        <pubTime>2017-12-13T11:25:35.000Z</pubTime>
-        
-        <tag>Hacintosh</tag>
-         
-        <tag>光影精灵</tag>
-         
-        <tag>暗影精灵</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/How-to-use-xcode-select-in-terminal.html</loc>
-    <lastmod>2018-03-29T09:58:25.245Z</lastmod>
-    <data>
-        <display>
-        <title>How to use xcode-select in terminal</title>
-        <pubTime>2017-09-02T16:00:00.000Z</pubTime>
-        
-        <tag>终端</tag>
-         
-        <tag>Mac</tag>
-         
-        <tag>Xcode</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Extract-and-fix-DSDT-SSDT-simply.html</loc>
-    <lastmod>2018-03-29T09:57:44.642Z</lastmod>
-    <data>
-        <display>
-        <title>Extract and fix DSDT SSDT simply</title>
-        <pubTime>2017-08-29T16:00:00.000Z</pubTime>
-        
-        <tag>DSDT</tag>
-         
-        <tag>SSDT</tag>
-         
-        <tag>编译</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Enable-BCM94352z-on-hacintosh.html</loc>
-    <lastmod>2018-03-29T09:57:39.860Z</lastmod>
-    <data>
-        <display>
-        <title>Enable BCM94352z on your hacintosh</title>
-        <pubTime>2017-09-12T16:00:00.000Z</pubTime>
-        
-        <tag>Hacintosh</tag>
-         
-        <tag>黑苹果</tag>
-         
-        <tag>BCM94352z</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Driver-audio-for-hackintosh.html</loc>
-    <lastmod>2018-03-29T09:57:34.597Z</lastmod>
-    <data>
-        <display>
-        <title>Driver audio for hackintosh</title>
-        <pubTime>2017-11-05T16:00:00.000Z</pubTime>
-        
-        <tag>Hacintosh</tag>
-         
-        <tag>黑苹果</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Disable-the-discrete-GPU-in-laptop.html</loc>
-    <lastmod>2018-03-29T09:57:28.942Z</lastmod>
-    <data>
-        <display>
-        <title>Disable the discrete GPU in laptop</title>
-        <pubTime>2017-10-03T16:00:00.000Z</pubTime>
-        
-        <tag>Hacintosh</tag>
-         
-        <tag>黑苹果</tag>
-         
-        <tag>Window Server Service only ran for 0 seconds</tag>
-         
-        <tag>Disable DGPU</tag>
-         
-        <tag>屏蔽独显</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Dell-Inspiron-15-7000-i7-8550u.html</loc>
-    <lastmod>2018-03-29T09:57:22.287Z</lastmod>
-    <data>
-        <display>
-        <title>Dell-Inspiron-15-7000-i7-8550u</title>
-        <pubTime>2017-12-10T14:16:01.000Z</pubTime>
-        
-        <tag>Hacintosh</tag>
-         
-        <tag>燃7000</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Clover-ACPI-hotpatch.html</loc>
-    <lastmod>2018-03-29T09:57:01.880Z</lastmod>
-    <data>
-        <display>
-        <title>Clover ACPI hotpatch</title>
-        <pubTime>2017-12-17T07:30:15.000Z</pubTime>
-        
-        <tag>Hacintosh</tag>
-         
-        <tag>SSDT</tag>
-         
-        <tag>hotpatch</tag>
-         
-        <tag>ACPI</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Check-CPU-frequences-by-using-AppleIntelInfo.html</loc>
-    <lastmod>2018-03-29T09:56:42.580Z</lastmod>
-    <data>
-        <display>
-        <title>Check CPU frequences by using AppleIntelInfo</title>
-        <pubTime>2017-09-04T16:00:00.000Z</pubTime>
-        
-        <tag>Hacintosh</tag>
-         
-        <tag>黑苹果</tag>
-         
-        <tag>AppleIntelInfo</tag>
-         
-        <tag>变频</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Allow-apps-downloaded-from-anywhere-in-macOS.html</loc>
-    <lastmod>2018-03-29T09:56:21.346Z</lastmod>
-    <data>
-        <display>
-        <title>Allow apps downloaded from anywhere on macOS</title>
-        <pubTime>2017-09-15T13:16:31.000Z</pubTime>
-        
-        <tag>Hacintosh</tag>
-         
-        <tag>黑苹果</tag>
-         
-        <tag>终端</tag>
-         
-        <tag>任何来源</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/How-to-change-your-username-on-your-mac.html</loc>
-    <lastmod>2018-03-19T15:26:23.936Z</lastmod>
-    <data>
-        <display>
-        <title>How to change your username on your mac</title>
-        <pubTime>2018-03-15T09:19:00.000Z</pubTime>
-        
-        <tag>账户名</tag>
-         
-        <tag>主机名</tag>
-         
-        <tag>计算机名</tag>
-         
-        <tag>mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
-    <lastmod>2018-03-19T15:26:23.936Z</lastmod>
-    <data>
-        <display>
-        <title>How to unzip packages without .DS_store</title>
-        <pubTime>2018-03-15T09:11:43.000Z</pubTime>
-        
-        <tag>.DS_store</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/0-1-backpack.html</loc>
-    <lastmod>2018-01-17T09:25:12.000Z</lastmod>
-    <data>
-        <display>
-        <title>0-1 backpack</title>
-        <pubTime>2018-01-17T08:51:25.000Z</pubTime>
-        
-        <tag>0-1背包问题</tag>
-         
-        <tag>algorithm</tag>
-         
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/n-queen.html</loc>
-    <lastmod>2018-01-17T08:05:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>n queen</title>
-        <pubTime>2018-01-17T08:04:05.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-        <tag>算法</tag>
-         
-        <tag>n皇后问题</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/BinarySearch.html</loc>
-    <lastmod>2018-01-17T07:32:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>BinarySearch</title>
-        <pubTime>2018-01-17T07:29:36.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-        <tag>算法</tag>
-         
-        <tag>二分查找</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/ldu-crawl-based-on-nodejs.html</loc>
-    <lastmod>2018-01-10T14:36:24.000Z</lastmod>
-    <data>
-        <display>
-        <title>Ldu crawl based on nodejs</title>
-        <pubTime>2018-01-10T11:40:02.000Z</pubTime>
-        
-        <tag>Nodejs</tag>
-         
-        <tag>crawl</tag>
-         
-        <tag>爬虫</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Install-jdk-on-macOS.html</loc>
-    <lastmod>2018-01-10T12:13:19.000Z</lastmod>
-    <data>
-        <display>
-        <title>Install jdk on macOS</title>
-        <pubTime>2017-08-27T16:00:00.000Z</pubTime>
-        
-        <tag>Mac</tag>
-         
-        <tag>Java</tag>
-         
-        <tag>搭建</tag>
-         
-        <tag>环境</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Change-NetBeans's-language-to-Chinese-in-macOS.html</loc>
-    <lastmod>2017-12-24T11:38:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>Change NetBeans's language to Chinese in macOS</title>
-        <pubTime>2017-12-08T18:36:23.000Z</pubTime>
-        
-        <tag>NetBeans</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Change-launchpad-icon-grid-layout-in-macOS.html</loc>
-    <lastmod>2017-12-24T11:37:57.000Z</lastmod>
-    <data>
-        <display>
-        <title>Change launchpad icon grid layout in your MAC</title>
-        <pubTime>2017-10-26T01:32:26.000Z</pubTime>
-        
-        <tag>launchpad</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Common-Keyboard-shortcut-in-macOS.html</loc>
-    <lastmod>2017-12-24T11:35:48.000Z</lastmod>
-    <data>
-        <display>
-        <title>Common Keyboard  shortcut on MAC</title>
-        <pubTime>2017-10-26T00:14:21.000Z</pubTime>
-        
-        <tag>快捷键</tag>
-         
-        <tag>Mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Config-NexT-to-beautify-your-blog-with-hexo.html</loc>
-    <lastmod>2017-12-24T11:35:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>Config NexT to beautify your blog with hexo</title>
-        <pubTime>2017-09-14T11:04:36.000Z</pubTime>
-        
-        <tag>静态博客</tag>
-         
-        <tag>NexT</tag>
-         
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Connect-Network-in-Windows-10.html</loc>
-    <lastmod>2017-12-24T11:35:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>Connect Network in Windows 10</title>
-        <pubTime>2017-10-15T13:59:01.000Z</pubTime>
-        
-        <tag>自动连接</tag>
-         
-        <tag>宽带</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Problem-about-coin-array.html</loc>
-    <lastmod>2017-12-24T11:30:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>Problem about coin array</title>
-        <pubTime>2017-09-02T16:00:00.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-        <tag>C语言</tag>
-         
-        <tag>金币阵列</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Problem-about-dictionary-order.html</loc>
-    <lastmod>2017-12-24T11:30:43.000Z</lastmod>
-    <data>
-        <display>
-        <title>Problem about dictionary order</title>
-        <pubTime>2017-08-30T16:00:00.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-        <tag>C语言</tag>
-         
-        <tag>字典序</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Problem-about-low-carbon-lifestyle-answering.html</loc>
-    <lastmod>2017-12-24T11:30:38.000Z</lastmod>
-    <data>
-        <display>
-        <title>Problem about low-carbon lifestyle answering</title>
-        <pubTime>2017-09-11T16:00:00.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-        <tag>C语言</tag>
-         
-        <tag>低碳生活答题问题</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Problem-about-police-and-gangster-110.html</loc>
-    <lastmod>2017-12-24T11:27:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>Problem about police and gangster 110</title>
-        <pubTime>2017-09-17T16:00:00.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-        <tag>C语言</tag>
-         
-        <tag>警匪110</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/How-to-import-a-project-from-NetBeans-to-MyEclipse-faultlessly.html</loc>
-    <lastmod>2017-12-24T11:14:38.000Z</lastmod>
-    <data>
-        <display>
-        <title>How to import a project from NetBeans to MyEclipse faultlessly</title>
-        <pubTime>2017-10-30T08:03:27.000Z</pubTime>
-        
-        <tag>NetBeans</tag>
-         
-        <tag>MyEclipse</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Install-and-config-mysql-on-mac.html</loc>
-    <lastmod>2017-12-20T09:31:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>Install and config mysql on mac</title>
-        <pubTime>2017-12-20T09:01:00.000Z</pubTime>
-        
-        <tag>Mac</tag>
-         
-        <tag>MySQL</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
 </urlset>

@@ -43,7 +43,7 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170205ia9i0jppida5jai5.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170356xpbiyid3del3byda.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170543xxdf6b0wdrkkbh80.png">
-<meta property="og:updated_time" content="2018-03-29T11:35:58.215Z">
+<meta property="og:updated_time" content="2018-04-22T06:50:18.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to patch Framebuffer change VRAM from 1536MB to 2048MB">
 <meta name="twitter:description" content="简单修改FB实现显存增加至2048MB修复某些花屏">
@@ -182,7 +182,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言："><span class="post-toc-number">1.</span> <span class="post-toc-text">前言：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开工"><span class="post-toc-number">2.</span> <span class="post-toc-text">开工</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看FB以及ig"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">查看FB以及ig</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载并安装hexfiend"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">下载并安装hexfiend</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在FB中查找ig进行处理"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">在FB中查找ig进行处理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#帖子的最后，我将之前做的几个patch贴出来，大家可以尝试使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">帖子的最后，我将之前做的几个patch贴出来，大家可以尝试使用</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简单修改FB实现显存增加至2048MB修复某些花屏"><span class="post-toc-number">1.</span> <span class="post-toc-text">简单修改FB实现显存增加至2048MB修复某些花屏</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言："><span class="post-toc-number">2.</span> <span class="post-toc-text">前言：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开工"><span class="post-toc-number">3.</span> <span class="post-toc-text">开工</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看FB以及ig"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">查看FB以及ig</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载并安装hexfiend"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">下载并安装hexfiend</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在FB中查找ig进行处理"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">在FB中查找ig进行处理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#帖子的最后，我将之前做的几个patch贴出来，大家可以尝试使用"><span class="post-toc-number">4.</span> <span class="post-toc-text">帖子的最后，我将之前做的几个patch贴出来，大家可以尝试使用</span></a></li></ol>
         </nav>
     </aside>
 
@@ -208,7 +208,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <script src="/assets/js/APlayer.min.js"> </script><h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>本来不打算发这个帖子的，因为好多人觉得没有什么用，但前几天帮论坛好友阿林解决他<code>hd4600</code>花屏问题时，发现这个方法还是有一定作用的。之前在<code>10.12</code>区有坛友的<code>4600</code>部分区域出现花屏的情况，最后通过修改注入的<code>ig</code>来解决的，大家都知道，<code>4200 4400 4600</code>都是靠<code>FakeID</code>为<code>0x04128086</code>和<code>ig</code>为<code>0x0a260006</code>然后配合<code>FakePCIID</code>和<code>FakePCIID_HD_Graphics</code>两个<code>kext</code>来驱动的，大家也知道，一部分<code>4600</code>也可以用<code>0x04160000</code>而不需要<code>FakeID</code>注入来驱动（相应的不少<code>4400</code>也可以用<code>0x0a160000</code>而不需要<code>FakeID</code>来驱动），两种方法都可以驱动核显，但区别还是有的，最容易发现的就是显存了，第一种方法驱动后都是<code>1536m</code>，第二种则是<code>1024m</code>。而前面提到的<code>4600</code>部分区域花屏的案例则是用第二种方式来解决的，后来经过测试，发现通过对<code>framebuffer</code>进行<code>patch</code>以达到<code>2048m</code>的显存也可以解决这个问题，于是这个方法就被我记在心里了。后来在帮阿林解决了他的花屏问题后，决定还是把相关方法写出来，虽然没什么技术含量，但也能为景友提供一个思路。<br>废话就说到这，下面说方法:</p>
+            <script src="/assets/js/APlayer.min.js"> </script><h2 id="简单修改FB实现显存增加至2048MB修复某些花屏"><a href="#简单修改FB实现显存增加至2048MB修复某些花屏" class="headerlink" title="简单修改FB实现显存增加至2048MB修复某些花屏"></a>简单修改FB实现显存增加至2048MB修复某些花屏</h2><a id="more"></a>
+<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>本来不打算发这个帖子的，因为好多人觉得没有什么用，但前几天帮论坛好友阿林解决他<code>hd4600</code>花屏问题时，发现这个方法还是有一定作用的。之前在<code>10.12</code>区有坛友的<code>4600</code>部分区域出现花屏的情况，最后通过修改注入的<code>ig</code>来解决的，大家都知道，<code>4200 4400 4600</code>都是靠<code>FakeID</code>为<code>0x04128086</code>和<code>ig</code>为<code>0x0a260006</code>然后配合<code>FakePCIID</code>和<code>FakePCIID_HD_Graphics</code>两个<code>kext</code>来驱动的，大家也知道，一部分<code>4600</code>也可以用<code>0x04160000</code>而不需要<code>FakeID</code>注入来驱动（相应的不少<code>4400</code>也可以用<code>0x0a160000</code>而不需要<code>FakeID</code>来驱动），两种方法都可以驱动核显，但区别还是有的，最容易发现的就是显存了，第一种方法驱动后都是<code>1536m</code>，第二种则是<code>1024m</code>。而前面提到的<code>4600</code>部分区域花屏的案例则是用第二种方式来解决的，后来经过测试，发现通过对<code>framebuffer</code>进行<code>patch</code>以达到<code>2048m</code>的显存也可以解决这个问题，于是这个方法就被我记在心里了。后来在帮阿林解决了他的花屏问题后，决定还是把相关方法写出来，虽然没什么技术含量，但也能为景友提供一个思路。<br>废话就说到这，下面说方法:</p>
 <h2 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h2><h3 id="查看FB以及ig"><a href="#查看FB以及ig" class="headerlink" title="查看FB以及ig"></a>查看<code>FB</code>以及<code>ig</code></h3><p>首先，确定你当前加载的Framebuffer，终端执行以下命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kextstat | grep -y AppleIntel</span><br></pre></td></tr></table></figure>
 <figure class="image-bubble">
@@ -307,7 +308,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-03-29T11:35:58.215Z" itemprop="dateUpdated">2018-03-29 19:35:58</time>
+    最后更新时间：<time datetime="2018-04-22T06:50:18.158Z" itemprop="dateUpdated">2018-04-22 14:50:18</time>
 </span><br>
 
 
@@ -351,7 +352,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/How-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html&title=《How to patch Framebuffer change VRAM from 1536MB to 2048MB》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/How-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html&title=《How to patch Framebuffer change VRAM from 1536MB to 2048MB》 — Athlonreg's Blog&source=简单修改FB实现显存增加至2048MB修复某些花屏" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -531,7 +532,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/How-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html&title=《How to patch Framebuffer change VRAM from 1536MB to 2048MB》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/How-to-patch-Framebuffer-change-VRAM-from-1536MB-to-2048MB.html&title=《How to patch Framebuffer change VRAM from 1536MB to 2048MB》 — Athlonreg's Blog&source=简单修改FB实现显存增加至2048MB修复某些花屏" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

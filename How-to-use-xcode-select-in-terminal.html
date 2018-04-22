@@ -35,7 +35,7 @@
 <meta property="og:site_name" content="Athlonreg&#39;s Blog">
 <meta property="og:description" content="How to use xcode-select in terminal">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-29T09:58:25.245Z">
+<meta property="og:updated_time" content="2018-04-22T06:49:28.614Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to use xcode-select in terminal">
 <meta name="twitter:description" content="How to use xcode-select in terminal">
@@ -173,7 +173,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#It’s-not-uncommon-developers-to-have-multiple-versions-of-Xcode-installed-For-example-I-typically-have-the-latest-beta-as-well-as-the-most-current-production-release-installed"><span class="post-toc-number">1.</span> <span class="post-toc-text">It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Here-is-how-to-print-the-current-Xcode-path"><span class="post-toc-number">2.</span> <span class="post-toc-text">Here is how to print the current Xcode path:</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#To-switch-back-to-Xcode-installed-in-the-Applications-directory"><span class="post-toc-number">3.</span> <span class="post-toc-text">To switch back to Xcode installed in the /Applications directory:</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#You-can-read-more-about-xcode-select-by-view-the-man-page-from-a-terminal"><span class="post-toc-number">4.</span> <span class="post-toc-text">You can read more about xcode-select by view the man page from a terminal:</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#How-to-use-xcode-select-in-terminal"><span class="post-toc-number">1.</span> <span class="post-toc-text">How to use xcode-select in terminal</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#It’s-not-uncommon-developers-to-have-multiple-versions-of-Xcode-installed-For-example-I-typically-have-the-latest-beta-as-well-as-the-most-current-production-release-installed"><span class="post-toc-number">2.</span> <span class="post-toc-text">It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Here-is-how-to-print-the-current-Xcode-path"><span class="post-toc-number">3.</span> <span class="post-toc-text">Here is how to print the current Xcode path:</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#To-switch-back-to-Xcode-installed-in-the-Applications-directory"><span class="post-toc-number">4.</span> <span class="post-toc-text">To switch back to Xcode installed in the /Applications directory:</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#You-can-read-more-about-xcode-select-by-view-the-man-page-from-a-terminal"><span class="post-toc-number">5.</span> <span class="post-toc-text">You can read more about xcode-select by view the man page from a terminal:</span></a></li></ol>
         </nav>
     </aside>
 
@@ -199,7 +199,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <script src="/assets/js/APlayer.min.js"> </script><h2 id="It’s-not-uncommon-developers-to-have-multiple-versions-of-Xcode-installed-For-example-I-typically-have-the-latest-beta-as-well-as-the-most-current-production-release-installed"><a href="#It’s-not-uncommon-developers-to-have-multiple-versions-of-Xcode-installed-For-example-I-typically-have-the-latest-beta-as-well-as-the-most-current-production-release-installed" class="headerlink" title="It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed."></a>It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.</h2><p>However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.<br>Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.<br>The command line options are below:</p>
+            <script src="/assets/js/APlayer.min.js"> </script><h2 id="How-to-use-xcode-select-in-terminal"><a href="#How-to-use-xcode-select-in-terminal" class="headerlink" title="How to use xcode-select in terminal"></a>How to use xcode-select in terminal</h2><a id="more"></a>
+<h2 id="It’s-not-uncommon-developers-to-have-multiple-versions-of-Xcode-installed-For-example-I-typically-have-the-latest-beta-as-well-as-the-most-current-production-release-installed"><a href="#It’s-not-uncommon-developers-to-have-multiple-versions-of-Xcode-installed-For-example-I-typically-have-the-latest-beta-as-well-as-the-most-current-production-release-installed" class="headerlink" title="It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed."></a>It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.</h2><p>However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.<br>Once you set the Xcode folder, xcodebuild will be invoked from the folder you specified.<br>The command line options are below:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xcode-select [-help]</span><br><span class="line">xcode-select [-switch xcode_folder_path]</span><br><span class="line">xcode-select [-print-path]</span><br><span class="line">xcode-select [-version]</span><br></pre></td></tr></table></figure>
 <h2 id="Here-is-how-to-print-the-current-Xcode-path"><a href="#Here-is-how-to-print-the-current-Xcode-path" class="headerlink" title="Here is how to print the current Xcode path:"></a>Here is how to print the current Xcode path:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ xcode-select --print-path</span><br><span class="line">/Developer/Applications/Xcode.app</span><br></pre></td></tr></table></figure>
 <p>Line number 2 shows the current version of Xcode that is ‘active.’ If you are accessing xcodebuild or other related tools from a script, –print-path is the preferred means to determine the current Xcode location.<br>Use the -switch option to change to another version of Xcode on your system:</p>
@@ -216,7 +217,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-03-29T09:58:25.245Z" itemprop="dateUpdated">2018-03-29 17:58:25</time>
+    最后更新时间：<time datetime="2018-04-22T06:49:28.614Z" itemprop="dateUpdated">2018-04-22 14:49:28</time>
 </span><br>
 
 
@@ -260,7 +261,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/How-to-use-xcode-select-in-terminal.html&title=《How to use xcode-select in terminal》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/How-to-use-xcode-select-in-terminal.html&title=《How to use xcode-select in terminal》 — Athlonreg's Blog&source=How to use xcode-select in terminal" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -298,18 +299,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/Check-CPU-frequences-by-using-AppleIntelInfo.html" id="post-prev" class="post-nav-link">
+      <a href="/Problem-about-coin-array.html" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Check CPU frequences by using AppleIntelInfo</h4>
+        <h4 class="title">Problem about coin array</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/Problem-about-coin-array.html" id="post-next" class="post-nav-link">
+      <a href="/Problem-about-dictionary-order.html" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Problem about coin array</h4>
+        <h4 class="title">Problem about dictionary order</h4>
       </a>
     </div>
   
@@ -440,7 +441,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/How-to-use-xcode-select-in-terminal.html&title=《How to use xcode-select in terminal》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/How-to-use-xcode-select-in-terminal.html&title=《How to use xcode-select in terminal》 — Athlonreg's Blog&source=How to use xcode-select in terminal" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

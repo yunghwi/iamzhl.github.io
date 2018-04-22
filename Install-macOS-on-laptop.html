@@ -26,9 +26,9 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Hacintosh,黑苹果">
+    <meta name="keywords" content="黑苹果,Hacintosh">
     <meta name="description" content="Install macOS on laptop 原版黑苹果安装参考贴">
-<meta name="keywords" content="Hacintosh,黑苹果">
+<meta name="keywords" content="黑苹果,Hacintosh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Install macOS on laptop">
 <meta property="og:url" content="https://blog.iamzhl.top/Install-macOS-on-laptop.html">
@@ -88,7 +88,7 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991591740.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/15218991634647.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/1A0A34E6-D9B0-497B-885E-71C65EE59AE3.png">
-<meta property="og:updated_time" content="2018-03-31T15:49:22.811Z">
+<meta property="og:updated_time" content="2018-04-22T06:48:19.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Install macOS on laptop">
 <meta name="twitter:description" content="Install macOS on laptop 原版黑苹果安装参考贴">
@@ -227,7 +227,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前期知识储备"><span class="post-toc-number">2.</span> <span class="post-toc-text">前期知识储备</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CLOVER的目录结构"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">CLOVER的目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#根据机器配置定制kext"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">根据机器配置定制kext</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#根据机器配置定制config"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">根据机器配置定制config</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#了解drivers64UEFI各个-EFI文件的作用，精简引导"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">了解drivers64UEFI各个.EFI文件的作用，精简引导</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#进攻ACPI，完美黑苹果-进阶篇"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">进攻ACPI，完美黑苹果(进阶篇)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">3.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装步骤"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#利用Transmac将原版镜像写入u盘"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">利用Transmac将原版镜像写入u盘</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#重启利用U盘启动选择安装盘"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">重启利用U盘启动选择安装盘</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#磁盘工具分区"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">磁盘工具分区</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#转移CLOVER到硬盘ESP，摆脱U盘引导"><span class="post-toc-number">5.</span> <span class="post-toc-text">转移CLOVER到硬盘ESP，摆脱U盘引导</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#后期的驱动安装以及优化"><span class="post-toc-number">6.</span> <span class="post-toc-text">后期的驱动安装以及优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#屏蔽无用的独显降低温度"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">屏蔽无用的独显降低温度</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#摆脱万能声卡，利用AppleALC加载原生声卡"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">摆脱万能声卡，利用AppleALC加载原生声卡</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#通过对DSDT打补丁完善电池显示"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">通过对DSDT打补丁完善电池显示</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#加载x86实现变频和原生电源管理，完善节能器信息"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">加载x86实现变频和原生电源管理，完善节能器信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注入HiDPI和显示器信息完善唤醒后的花屏、闪屏、撕裂屏问题"><span class="post-toc-number">6.5.</span> <span class="post-toc-text">注入HiDPI和显示器信息完善唤醒后的花屏、闪屏、撕裂屏问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">7.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#struts2中s-iterator-标签的使用详解"><span class="post-toc-number">1.</span> <span class="post-toc-text">struts2中s:iterator 标签的使用详解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前期知识储备"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">前期知识储备</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CLOVER的目录结构"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">CLOVER的目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#根据机器配置定制kext"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">根据机器配置定制kext</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#根据机器配置定制config"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">根据机器配置定制config</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#了解drivers64UEFI各个-EFI文件的作用，精简引导"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">了解drivers64UEFI各个.EFI文件的作用，精简引导</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#进攻ACPI，完美黑苹果-进阶篇"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">进攻ACPI，完美黑苹果(进阶篇)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装步骤"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">安装步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#利用Transmac将原版镜像写入u盘"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">利用Transmac将原版镜像写入u盘</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">利用鲁大师等软件查看自己机器的配置信息，来定制config和需要用的kext</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#重启利用U盘启动选择安装盘"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">重启利用U盘启动选择安装盘</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#磁盘工具分区"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">磁盘工具分区</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">退出磁盘工具，选择安装macos选中刚才抹掉的分区开始安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#转移CLOVER到硬盘ESP，摆脱U盘引导"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">转移CLOVER到硬盘ESP，摆脱U盘引导</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#后期的驱动安装以及优化"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">后期的驱动安装以及优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#屏蔽无用的独显降低温度"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">屏蔽无用的独显降低温度</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#摆脱万能声卡，利用AppleALC加载原生声卡"><span class="post-toc-number">1.6.2.</span> <span class="post-toc-text">摆脱万能声卡，利用AppleALC加载原生声卡</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#通过对DSDT打补丁完善电池显示"><span class="post-toc-number">1.6.3.</span> <span class="post-toc-text">通过对DSDT打补丁完善电池显示</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#加载x86实现变频和原生电源管理，完善节能器信息"><span class="post-toc-number">1.6.4.</span> <span class="post-toc-text">加载x86实现变频和原生电源管理，完善节能器信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注入HiDPI和显示器信息完善唤醒后的花屏、闪屏、撕裂屏问题"><span class="post-toc-number">1.6.5.</span> <span class="post-toc-text">注入HiDPI和显示器信息完善唤醒后的花屏、闪屏、撕裂屏问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">写在最后</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -253,7 +253,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <script src="/assets/js/APlayer.min.js"> </script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Clover支持两种启动方式，启动过程如下：</p>
+            <script src="/assets/js/APlayer.min.js"> </script><h2 id="struts2中s-iterator-标签的使用详解"><a href="#struts2中s-iterator-标签的使用详解" class="headerlink" title="struts2中s:iterator 标签的使用详解"></a>struts2中s:iterator 标签的使用详解</h2><a id="more"></a>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Clover支持两种启动方式，启动过程如下：</p>
 <ul>
 <li><p>基于<code>BIOS</code>的电脑（老式主板）<br>BIOS -&gt; MBR -&gt; PBR -&gt; boot -&gt; CLOVERX64.efi -&gt; OSLoader</p>
 </li>
@@ -783,7 +784,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-03-31T15:49:22.811Z" itemprop="dateUpdated">2018-03-31 23:49:22</time>
+    最后更新时间：<time datetime="2018-04-22T06:48:19.519Z" itemprop="dateUpdated">2018-04-22 14:48:19</time>
 </span><br>
 
 
@@ -827,7 +828,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Install-macOS-on-laptop.html&title=《Install macOS on laptop》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Install-macOS-on-laptop.html&title=《Install macOS on laptop》 — Athlonreg's Blog&source=struts2中s:iterator 标签的使用详解" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -1007,7 +1008,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Install-macOS-on-laptop.html&title=《Install macOS on laptop》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Install-macOS-on-laptop.html&title=《Install macOS on laptop》 — Athlonreg's Blog&source=struts2中s:iterator 标签的使用详解" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

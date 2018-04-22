@@ -26,9 +26,9 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Hacintosh,黑苹果">
+    <meta name="keywords" content="黑苹果,Hacintosh">
     <meta name="description" content="利用 AppleALC 驱动声卡">
-<meta name="keywords" content="Hacintosh,黑苹果">
+<meta name="keywords" content="黑苹果,Hacintosh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Driver audio for hackintosh">
 <meta property="og:url" content="https://blog.iamzhl.top/Driver-audio-for-hackintosh.html">
@@ -63,7 +63,7 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/codec.txt.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-11-08-03.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-11-08-04.png">
-<meta property="og:updated_time" content="2018-03-29T09:57:34.597Z">
+<meta property="og:updated_time" content="2018-04-22T06:51:49.725Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Driver audio for hackintosh">
 <meta name="twitter:description" content="利用 AppleALC 驱动声卡">
@@ -202,7 +202,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前期准备"><span class="post-toc-number">2.</span> <span class="post-toc-text">前期准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Codec-txt的数据整理"><span class="post-toc-number">3.</span> <span class="post-toc-text">Codec.txt的数据整理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AppleALC中数据的筛选"><span class="post-toc-number">4.</span> <span class="post-toc-text">AppleALC中数据的筛选</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开工"><span class="post-toc-number">5.</span> <span class="post-toc-text">开工</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于解决耳机与内建输入的切换"><span class="post-toc-number">6.</span> <span class="post-toc-text">关于解决耳机与内建输入的切换</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于唤醒无声"><span class="post-toc-number">7.</span> <span class="post-toc-text">关于唤醒无声</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于万能声卡"><span class="post-toc-number">8.</span> <span class="post-toc-text">关于万能声卡</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于完整仿冒"><span class="post-toc-number">9.</span> <span class="post-toc-text">关于完整仿冒</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言-1"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#完整制作仿冒声卡思路"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">完整制作仿冒声卡思路</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#知识普及"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">知识普及</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开始"><span class="post-toc-number">9.4.</span> <span class="post-toc-text">开始</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#整理Codec，提取所有有效Node值"><span class="post-toc-number">9.4.1.</span> <span class="post-toc-text">整理Codec，提取所有有效Node值</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#将整理出的所有Node的Pin-Default值进行转换修正得出需要的设定值"><span class="post-toc-number">9.4.2.</span> <span class="post-toc-text">将整理出的所有Node的Pin Default值进行转换修正得出需要的设定值</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#根据规律或者规则得出ConfigData"><span class="post-toc-number">9.4.3.</span> <span class="post-toc-text">根据规律或者规则得出ConfigData</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#PathMap的获取和整理"><span class="post-toc-number">9.4.4.</span> <span class="post-toc-text">PathMap的获取和整理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AppleHDA-修改"><span class="post-toc-number">10.</span> <span class="post-toc-text">AppleHDA 修改</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Credit"><span class="post-toc-number">11.</span> <span class="post-toc-text">Credit</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">12.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#利用-AppleALC-驱动声卡"><span class="post-toc-number">1.</span> <span class="post-toc-text">利用 AppleALC 驱动声卡</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">2.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前期准备"><span class="post-toc-number">3.</span> <span class="post-toc-text">前期准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Codec-txt的数据整理"><span class="post-toc-number">4.</span> <span class="post-toc-text">Codec.txt的数据整理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AppleALC中数据的筛选"><span class="post-toc-number">5.</span> <span class="post-toc-text">AppleALC中数据的筛选</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开工"><span class="post-toc-number">6.</span> <span class="post-toc-text">开工</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于解决耳机与内建输入的切换"><span class="post-toc-number">7.</span> <span class="post-toc-text">关于解决耳机与内建输入的切换</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于唤醒无声"><span class="post-toc-number">8.</span> <span class="post-toc-text">关于唤醒无声</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于万能声卡"><span class="post-toc-number">9.</span> <span class="post-toc-text">关于万能声卡</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于完整仿冒"><span class="post-toc-number">10.</span> <span class="post-toc-text">关于完整仿冒</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言-1"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#完整制作仿冒声卡思路"><span class="post-toc-number">10.2.</span> <span class="post-toc-text">完整制作仿冒声卡思路</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#知识普及"><span class="post-toc-number">10.3.</span> <span class="post-toc-text">知识普及</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开始"><span class="post-toc-number">10.4.</span> <span class="post-toc-text">开始</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#整理Codec，提取所有有效Node值"><span class="post-toc-number">10.4.1.</span> <span class="post-toc-text">整理Codec，提取所有有效Node值</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#将整理出的所有Node的Pin-Default值进行转换修正得出需要的设定值"><span class="post-toc-number">10.4.2.</span> <span class="post-toc-text">将整理出的所有Node的Pin Default值进行转换修正得出需要的设定值</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#根据规律或者规则得出ConfigData"><span class="post-toc-number">10.4.3.</span> <span class="post-toc-text">根据规律或者规则得出ConfigData</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#PathMap的获取和整理"><span class="post-toc-number">10.4.4.</span> <span class="post-toc-text">PathMap的获取和整理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AppleHDA-修改"><span class="post-toc-number">11.</span> <span class="post-toc-text">AppleHDA 修改</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Credit"><span class="post-toc-number">12.</span> <span class="post-toc-text">Credit</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">13.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
         </nav>
     </aside>
 
@@ -228,7 +228,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <script src="/assets/js/APlayer.min.js"> </script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+            <script src="/assets/js/APlayer.min.js"> </script><h2 id="利用-AppleALC-驱动声卡"><a href="#利用-AppleALC-驱动声卡" class="headerlink" title="利用 AppleALC 驱动声卡"></a>利用 AppleALC 驱动声卡</h2><a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>在<code>vit9696</code>推出<code>AppleALC</code>后，经过越来越多人仿冒声卡得到的数据的提交整理，<code>AppleALC</code>的数据越来越集中，也使声卡驱动变得越来越简单。</p>
 <p>本文提供使用<code>AppleALC</code>驱动声卡的思路以及常见错误和驱动后的问题进行修复。</p>
 </blockquote>
@@ -734,7 +735,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-03-29T09:57:34.597Z" itemprop="dateUpdated">2018-03-29 17:57:34</time>
+    最后更新时间：<time datetime="2018-04-22T06:51:49.725Z" itemprop="dateUpdated">2018-04-22 14:51:49</time>
 </span><br>
 
 
@@ -778,7 +779,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Driver-audio-for-hackintosh.html&title=《Driver audio for hackintosh》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Driver-audio-for-hackintosh.html&title=《Driver audio for hackintosh》 — Athlonreg's Blog&source=利用 AppleALC 驱动声卡" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -958,7 +959,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Driver-audio-for-hackintosh.html&title=《Driver audio for hackintosh》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Driver-audio-for-hackintosh.html&title=《Driver audio for hackintosh》 — Athlonreg's Blog&source=利用 AppleALC 驱动声卡" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

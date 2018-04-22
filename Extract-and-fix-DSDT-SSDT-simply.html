@@ -51,7 +51,7 @@
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170830-14-1.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170830-15-1.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/170830-16-1.png">
-<meta property="og:updated_time" content="2018-03-29T09:57:44.642Z">
+<meta property="og:updated_time" content="2018-04-22T06:51:18.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Extract and fix DSDT SSDT simply">
 <meta name="twitter:description" content="DSDT SSDT 简单提取修复">
@@ -190,7 +190,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开工"><span class="post-toc-number">1.</span> <span class="post-toc-text">开工</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开始操作"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">开始操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改完成"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">修改完成</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#完工"><span class="post-toc-number">2.</span> <span class="post-toc-text">完工</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DSDT-SSDT-简单提取修复"><span class="post-toc-number">1.</span> <span class="post-toc-text">DSDT SSDT 简单提取修复</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开工"><span class="post-toc-number"></span> <span class="post-toc-text">开工</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">1.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开始操作"><span class="post-toc-number">2.</span> <span class="post-toc-text">开始操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改完成"><span class="post-toc-number">3.</span> <span class="post-toc-text">修改完成</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#完工"><span class="post-toc-number"></span> <span class="post-toc-text">完工</span></a>
         </nav>
     </aside>
 
@@ -216,7 +216,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <script src="/assets/js/APlayer.min.js"> </script><h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先在 CLOVER 引导界面按 F4 或者 FN + F4 提取原始表单，然后进入 Mac ，利用 Clover Configurator 挂载ESP分区，提取的表单就在 /EFI/CLOVER/ACPI/origin ,将 origin 整个拷贝到桌面，并删除 origin 中除 DSDT SSDT 以外的所有文件</p>
+            <script src="/assets/js/APlayer.min.js"> </script><h2 id="DSDT-SSDT-简单提取修复"><a href="#DSDT-SSDT-简单提取修复" class="headerlink" title="DSDT SSDT 简单提取修复"></a>DSDT SSDT 简单提取修复</h2><a id="more"></a>
+<h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先在 CLOVER 引导界面按 F4 或者 FN + F4 提取原始表单，然后进入 Mac ，利用 Clover Configurator 挂载ESP分区，提取的表单就在 /EFI/CLOVER/ACPI/origin ,将 origin 整个拷贝到桌面，并删除 origin 中除 DSDT SSDT 以外的所有文件</p>
 <p>然后下载要用到的工具</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iasl：https://bitbucket.org/RehabMan/acpica/downloads/</span><br><span class="line">MaciASL：链接:http://pan.baidu.com/s/1pKAksR5  密码:nxyr</span><br></pre></td></tr></table></figure>
 <p>将 iasl 放到 /usr/bin </p>
@@ -355,7 +356,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-03-29T09:57:44.642Z" itemprop="dateUpdated">2018-03-29 17:57:44</time>
+    最后更新时间：<time datetime="2018-04-22T06:51:18.537Z" itemprop="dateUpdated">2018-04-22 14:51:18</time>
 </span><br>
 
 
@@ -399,7 +400,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Extract-and-fix-DSDT-SSDT-simply.html&title=《Extract and fix DSDT SSDT simply》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Extract-and-fix-DSDT-SSDT-simply.html&title=《Extract and fix DSDT SSDT simply》 — Athlonreg's Blog&source=DSDT SSDT 简单提取修复" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -579,7 +580,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Extract-and-fix-DSDT-SSDT-simply.html&title=《Extract and fix DSDT SSDT simply》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Extract-and-fix-DSDT-SSDT-simply.html&title=《Extract and fix DSDT SSDT simply》 — Athlonreg's Blog&source=DSDT SSDT 简单提取修复" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

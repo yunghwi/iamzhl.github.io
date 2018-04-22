@@ -36,7 +36,7 @@
 <meta property="og:description" content="字典序问题">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/20170831-zidianxu-1.png">
-<meta property="og:updated_time" content="2017-12-24T11:30:43.000Z">
+<meta property="og:updated_time" content="2018-04-22T06:46:06.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Problem about dictionary order">
 <meta name="twitter:description" content="字典序问题">
@@ -175,7 +175,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#问题描述"><span class="post-toc-number">1.</span> <span class="post-toc-text">问题描述</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#思路"><span class="post-toc-number">2.</span> <span class="post-toc-text">思路</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码实现"><span class="post-toc-number">3.</span> <span class="post-toc-text">代码实现</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字典序问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">字典序问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#问题描述"><span class="post-toc-number"></span> <span class="post-toc-text">问题描述</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#思路"><span class="post-toc-number"></span> <span class="post-toc-text">思路</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码实现"><span class="post-toc-number"></span> <span class="post-toc-text">代码实现</span></a>
         </nav>
     </aside>
 
@@ -201,7 +201,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <script src="/assets/js/APlayer.min.js"> </script><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A由26个小写字母组成。该字母表产生的升序字符串中字母从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1次。例如，a,b,ab,bc,xyz等字符串都是升序字符串。现在对字母表中产生的所有长度不超过6的升序字符串，计算它在字典中的编码。</p>
+            <script src="/assets/js/APlayer.min.js"> </script><h2 id="字典序问题"><a href="#字典序问题" class="headerlink" title="字典序问题"></a>字典序问题</h2><a id="more"></a>
+<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A由26个小写字母组成。该字母表产生的升序字符串中字母从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1次。例如，a,b,ab,bc,xyz等字符串都是升序字符串。现在对字母表中产生的所有长度不超过6的升序字符串，计算它在字典中的编码。</p>
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>首先判断字符串长度为3，先算长度为1和2的所有情况，即从26个字母中选1个或两个字母，因为是升序，即sum=C（26，1）+C（26，2）；</p>
 <p>之后再看字符串的第一个字符，为’d’,之前有以a,b,c开头的长度为3的字符串，以a开头，后边2位需要在25个字母中选择（除了a），以b开头的后2位需要在24个字母中选择（除了a,b），以c开头的在23个字母（除了a,,b,c）中选择，即sum+=(C(25,2)+C(24,2)+C(23,2));</p>
 <p>然后再看下一个字母’g’，d与g之间有e,f,需要算以de开头以及以df开头的所有情况，即sum+=(C(21,1)+C(20,1))；</p>
@@ -222,7 +223,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-12-24T11:30:43.000Z" itemprop="dateUpdated">2017-12-24 19:30:43</time>
+    最后更新时间：<time datetime="2018-04-22T06:46:06.901Z" itemprop="dateUpdated">2018-04-22 14:46:06</time>
 </span><br>
 
 
@@ -266,7 +267,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Problem-about-dictionary-order.html&title=《Problem about dictionary order》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Problem-about-dictionary-order.html&title=《Problem about dictionary order》 — Athlonreg's Blog&source=字典序问题" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -304,9 +305,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/Problem-about-coin-array.html" id="post-prev" class="post-nav-link">
+      <a href="/How-to-use-xcode-select-in-terminal.html" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Problem about coin array</h4>
+        <h4 class="title">How to use xcode-select in terminal</h4>
       </a>
     </div>
   
@@ -446,7 +447,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Problem-about-dictionary-order.html&title=《Problem about dictionary order》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Problem-about-dictionary-order.html&title=《Problem about dictionary order》 — Athlonreg's Blog&source=字典序问题" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
