@@ -9,8 +9,6 @@ tags:
 - 分支管理
 ---
 
-![2018042201](http://ovefvi4g3.bkt.clouddn.com/2018042201.png)
-
 利用 GitHub 进行团队开发
 <!--more-->
 

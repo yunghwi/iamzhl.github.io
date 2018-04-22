@@ -8,6 +8,9 @@ tags:
 - codec
 ---
 
+## AppleALC 目前支持的 Codec
+<!--more-->
+
 #### Currently supported codecs
 | Vendor | Codec | Revisions | MinKernel | MaxKernel |
 |--------|-------|-----------|-----------|-----------|

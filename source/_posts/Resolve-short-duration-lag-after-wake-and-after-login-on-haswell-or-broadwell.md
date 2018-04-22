@@ -8,6 +8,9 @@ tags:
 - 黑苹果
 ---
 
+## Resolve short duration lag after wake and after login on haswell or broadwell
+<!--more-->
+
 ### 写在前面
 
 > 本文来自 [tonymacx86.com](https://www.tonymacx86.com/threads/readme-common-some-unsolved-problems-in-10-12-sierra.202316/page-94#post-1485104) 

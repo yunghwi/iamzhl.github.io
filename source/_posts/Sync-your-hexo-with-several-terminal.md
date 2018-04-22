@@ -2,12 +2,15 @@
 title: Sync your hexo with several terminal
 date: 2017-10-14 23:35:54
 categories: Study
-description: Sync your hexo with several terminal（对多设备之间 hexo 搭建的 blog 进行同步）
+description: 对多设备之间 hexo 搭建的 blog 进行同步
 tags: 
 - git 
 - 同步 
 - github
 ---
+
+对多设备之间`hexo`搭建的`blog`进行同步
+<!--more-->
 
 ## 前言
 > Sync your hexo with several terminal

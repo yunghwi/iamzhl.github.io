@@ -9,6 +9,9 @@ tags:
 - Hacintosh
 ---
 
+## 加快黑苹果开机速度的一种方法
+<!--more-->
+
 # 知识普及
 
 有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。

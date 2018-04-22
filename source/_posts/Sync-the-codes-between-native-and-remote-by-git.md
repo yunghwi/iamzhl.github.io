@@ -9,6 +9,9 @@ tags:
 - github 
 ---
 
+## 利用 git 实现本地和远程之间代码的同步
+<!--more-->
+
 ## 前言
 > Sync the codes between native and remote by git
 > 转载请注明[原出处](https://blog.iamzhl.top/2017/09/27/Sync%20the%20codes%20between%20native%20and%20remote%20by%20git/)
