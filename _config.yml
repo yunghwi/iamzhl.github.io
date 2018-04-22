@@ -112,6 +112,5 @@ deploy:
   repository: 
     coding: https://git.coding.net/iamzhl/iamzhl.coding.me.git
     github: https://github.com/athlonreg/iamzhl.github.io.git
-#    github: git@github.com:Syncanvas/canvas.git
   branch: master
 - type: baidu_url_submitter
