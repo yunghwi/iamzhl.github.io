@@ -9,6 +9,9 @@ tags:
 - 分支管理
 ---
 
+利用 GitHub 进行团队开发
+<!--more-->
+
 ### 创建项目
 本文以`GitHub`项目为例: 
 
@@ -288,6 +291,5 @@ $ git config --global user.email "电子邮件" 。
 
 - 提交代码加注释`git commit -m 'B developed'`。
 
-<!--more-->
 
 
