@@ -4,8 +4,242 @@
 
     
   <url>
+    <loc>https://blog.iamzhl.top/Resolve-short-duration-lag-after-wake-and-after-login-on-haswell-or-broadwell.html</loc>
+    <lastmod>2018-04-22T06:41:50.561Z</lastmod>
+    <data>
+        <display>
+        <title>Resolve short duration lag after wake and after login on haswell or broadwell</title>
+        <pubTime>2017-10-06T19:06:04.000Z</pubTime>
+        
+        <tag>黑苹果</tag>
+         
+        <tag>short duration lag</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/RecurMatrix.html</loc>
+    <lastmod>2018-04-22T06:41:36.938Z</lastmod>
+    <data>
+        <display>
+        <title>RecurMatrix</title>
+        <pubTime>2018-01-17T07:54:02.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+        <tag>算法</tag>
+         
+        <tag>矩阵连乘问题</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Reverse-part-of-array.html</loc>
+    <lastmod>2018-04-22T06:40:56.806Z</lastmod>
+    <data>
+        <display>
+        <title>Reverse part of array</title>
+        <pubTime>2018-01-17T08:23:37.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+        <tag>算法</tag>
+         
+        <tag>逆置</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/RW-NTFS-partition-natively-on-macOS.html</loc>
+    <lastmod>2018-04-22T06:40:29.346Z</lastmod>
+    <data>
+        <display>
+        <title>RW NTFS partition natively on macOS</title>
+        <pubTime>2017-10-26T16:00:00.000Z</pubTime>
+        
+        <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
+         
+        <tag>NTFS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Solve-problem-of-subset-sum-with-backtracking-method.html</loc>
+    <lastmod>2018-04-22T06:40:18.345Z</lastmod>
+    <data>
+        <display>
+        <title>Solve problem of subset sum with backtracking method</title>
+        <pubTime>2017-12-12T06:12:40.000Z</pubTime>
+        
+        <tag>子集和问题</tag>
+         
+        <tag>回溯</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Speed-up-the-hackintosh-to-boot.html</loc>
+    <lastmod>2018-04-22T06:40:04.959Z</lastmod>
+    <data>
+        <display>
+        <title>Speed up the hackintosh to boot</title>
+        <pubTime>2017-09-04T16:00:00.000Z</pubTime>
+        
+        <tag>Hacintosh</tag>
+         
+        <tag>黑苹果</tag>
+         
+        <tag>开机速度</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Statistical-problem.html</loc>
+    <lastmod>2018-04-22T06:39:44.572Z</lastmod>
+    <data>
+        <display>
+        <title>Statistical problem</title>
+        <pubTime>2017-08-28T16:00:00.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>C语言</tag>
+         
+        <tag>统计数字</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Supported-codecs-by-AppleALC.html</loc>
+    <lastmod>2018-04-22T06:39:25.323Z</lastmod>
+    <data>
+        <display>
+        <title>Supported codecs by AppleALC</title>
+        <pubTime>2018-04-18T12:41:37.000Z</pubTime>
+        
+        <tag>AppleALC</tag>
+         
+        <tag>codec</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Sync-the-codes-between-native-and-remote-by-git.html</loc>
+    <lastmod>2018-04-22T06:39:10.310Z</lastmod>
+    <data>
+        <display>
+        <title>Sync the codes between native and remote by git</title>
+        <pubTime>2017-09-27T14:54:26.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>同步</tag>
+         
+        <tag>github</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/Sync-your-hexo-with-several-terminal.html</loc>
+    <lastmod>2018-04-22T06:38:02.656Z</lastmod>
+    <data>
+        <display>
+        <title>Sync your hexo with several terminal</title>
+        <pubTime>2017-10-14T15:35:54.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>同步</tag>
+         
+        <tag>github</tag>
+         
+         
+           
+             
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.iamzhl.top/Use-GitHub-for-team-development.html</loc>
-    <lastmod>2018-04-22T06:34:56.676Z</lastmod>
+    <lastmod>2018-04-22T06:36:52.087Z</lastmod>
     <data>
         <display>
         <title>Use GitHub for team development</title>
@@ -27,29 +261,31 @@
     </url>
 
     
-    
-    
   <url>
-    <loc>https://blog.iamzhl.top/Supported-codecs-by-AppleALC.html</loc>
-    <lastmod>2018-04-18T12:57:35.778Z</lastmod>
+    <loc>https://blog.iamzhl.top/The-simplest-case-demo-about-client-and-server.html</loc>
+    <lastmod>2018-04-22T06:36:47.136Z</lastmod>
     <data>
         <display>
-        <title>Supported codecs by AppleALC</title>
-        <pubTime>2018-04-18T12:41:37.000Z</pubTime>
+        <title>The simplest case demo about client and server</title>
+        <pubTime>2017-09-06T16:00:00.000Z</pubTime>
         
-        <tag>AppleALC</tag>
+        <tag>Java</tag>
          
-        <tag>codec</tag>
+        <tag>网络编程</tag>
+         
+        <tag>客户机与服务器</tag>
          
          
            
              
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
           
         </display>
     </data>
     </url>
 
+    
+    
     
   <url>
     <loc>https://blog.iamzhl.top/Deploy-tale-on-Fedora27.html</loc>
@@ -266,76 +502,6 @@
         <tag>花屏</tag>
          
         <tag>Framebuffer</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Speed-up-the-hackintosh-to-boot.html</loc>
-    <lastmod>2018-03-29T09:59:42.071Z</lastmod>
-    <data>
-        <display>
-        <title>Speed up the hackintosh to boot</title>
-        <pubTime>2017-09-04T16:00:00.000Z</pubTime>
-        
-        <tag>Hacintosh</tag>
-         
-        <tag>黑苹果</tag>
-         
-        <tag>开机速度</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/RW-NTFS-partition-natively-on-macOS.html</loc>
-    <lastmod>2018-03-29T09:59:32.532Z</lastmod>
-    <data>
-        <display>
-        <title>RW NTFS partition natively on macOS</title>
-        <pubTime>2017-10-26T16:00:00.000Z</pubTime>
-        
-        <tag>Hacintosh</tag>
-         
-        <tag>黑苹果</tag>
-         
-        <tag>NTFS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Resolve-short-duration-lag-after-wake-and-after-login-on-haswell-or-broadwell.html</loc>
-    <lastmod>2018-03-29T09:59:23.131Z</lastmod>
-    <data>
-        <display>
-        <title>Resolve short duration lag after wake and after login on haswell or broadwell</title>
-        <pubTime>2017-10-06T19:06:04.000Z</pubTime>
-        
-        <tag>黑苹果</tag>
-         
-        <tag>short duration lag</tag>
          
          
            
@@ -594,26 +760,6 @@
 
     
   <url>
-    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
-    <lastmod>2018-03-19T15:26:23.936Z</lastmod>
-    <data>
-        <display>
-        <title>How to unzip packages without .DS_store</title>
-        <pubTime>2018-03-15T09:11:43.000Z</pubTime>
-        
-        <tag>.DS_store</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.iamzhl.top/How-to-change-your-username-on-your-mac.html</loc>
     <lastmod>2018-03-19T15:26:23.936Z</lastmod>
     <data>
@@ -628,6 +774,26 @@
         <tag>计算机名</tag>
          
         <tag>mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hackintosh" url="https://blog.iamzhl.top/categories/Hackintosh/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
+    <lastmod>2018-03-19T15:26:23.936Z</lastmod>
+    <data>
+        <display>
+        <title>How to unzip packages without .DS_store</title>
+        <pubTime>2018-03-15T09:11:43.000Z</pubTime>
+        
+        <tag>.DS_store</tag>
          
          
            
@@ -664,30 +830,6 @@
 
     
   <url>
-    <loc>https://blog.iamzhl.top/Reverse-part-of-array.html</loc>
-    <lastmod>2018-01-17T08:27:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>Reverse part of array</title>
-        <pubTime>2018-01-17T08:23:37.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-        <tag>算法</tag>
-         
-        <tag>逆置</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.iamzhl.top/n-queen.html</loc>
     <lastmod>2018-01-17T08:05:58.000Z</lastmod>
     <data>
@@ -700,30 +842,6 @@
         <tag>算法</tag>
          
         <tag>n皇后问题</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/RecurMatrix.html</loc>
-    <lastmod>2018-01-17T07:55:50.000Z</lastmod>
-    <data>
-        <display>
-        <title>RecurMatrix</title>
-        <pubTime>2018-01-17T07:54:02.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-        <tag>算法</tag>
-         
-        <tag>矩阵连乘问题</tag>
          
          
            
@@ -1014,76 +1132,6 @@
 
     
   <url>
-    <loc>https://blog.iamzhl.top/Solve-problem-of-subset-sum-with-backtracking-method.html</loc>
-    <lastmod>2017-12-24T11:30:02.000Z</lastmod>
-    <data>
-        <display>
-        <title>Solve problem of subset sum with backtracking method</title>
-        <pubTime>2017-12-12T06:12:40.000Z</pubTime>
-        
-        <tag>子集和问题</tag>
-         
-        <tag>回溯</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Sync-the-codes-between-native-and-remote-by-git.html</loc>
-    <lastmod>2017-12-24T11:29:24.000Z</lastmod>
-    <data>
-        <display>
-        <title>Sync the codes between native and remote by git</title>
-        <pubTime>2017-09-27T14:54:26.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>同步</tag>
-         
-        <tag>github</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Sync-your-hexo-with-several-terminal.html</loc>
-    <lastmod>2017-12-24T11:28:54.000Z</lastmod>
-    <data>
-        <display>
-        <title>Sync your hexo with several terminal</title>
-        <pubTime>2017-10-14T15:35:54.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>同步</tag>
-         
-        <tag>github</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.iamzhl.top/Problem-about-police-and-gangster-110.html</loc>
     <lastmod>2017-12-24T11:27:40.000Z</lastmod>
     <data>
@@ -1125,54 +1173,6 @@
            
              
               <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/Statistical-problem.html</loc>
-    <lastmod>2017-12-24T11:25:10.000Z</lastmod>
-    <data>
-        <display>
-        <title>Statistical problem</title>
-        <pubTime>2017-08-28T16:00:00.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-        <tag>C语言</tag>
-         
-        <tag>统计数字</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://blog.iamzhl.top/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.iamzhl.top/The-simplest-case-demo-about-client-and-server.html</loc>
-    <lastmod>2017-12-24T11:20:14.000Z</lastmod>
-    <data>
-        <display>
-        <title>The simplest case demo about client and server</title>
-        <pubTime>2017-09-06T16:00:00.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>网络编程</tag>
-         
-        <tag>客户机与服务器</tag>
-         
-         
-           
-             
-              <breadCrumb title="Study" url="https://blog.iamzhl.top/categories/Study/"/>
           
         </display>
     </data>

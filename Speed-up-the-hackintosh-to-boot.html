@@ -37,7 +37,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-07-1.png">
 <meta property="og:image" content="http://ovefvi4g3.bkt.clouddn.com/2017-09-05-08-1.png">
-<meta property="og:updated_time" content="2018-03-29T09:59:42.071Z">
+<meta property="og:updated_time" content="2018-04-22T06:40:04.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Speed up the hackintosh to boot">
 <meta name="twitter:description" content="加快黑苹果开机速度的一种方法">
@@ -176,7 +176,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#知识普及"><span class="post-toc-number">1.</span> <span class="post-toc-text">知识普及</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">2.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开工"><span class="post-toc-number">3.</span> <span class="post-toc-text">开工</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#提取-Reset-Address-和-Reset-Value-值"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">提取 Reset Address 和 Reset Value 值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设定Reset-Address-和-Reset-Value-值"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">设定Reset Address 和 Reset Value 值</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#完工"><span class="post-toc-number">4.</span> <span class="post-toc-text">完工</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#加快黑苹果开机速度的一种方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">加快黑苹果开机速度的一种方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#知识普及"><span class="post-toc-number"></span> <span class="post-toc-text">知识普及</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number"></span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开工"><span class="post-toc-number"></span> <span class="post-toc-text">开工</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#提取-Reset-Address-和-Reset-Value-值"><span class="post-toc-number">1.</span> <span class="post-toc-text">提取 Reset Address 和 Reset Value 值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设定Reset-Address-和-Reset-Value-值"><span class="post-toc-number">2.</span> <span class="post-toc-text">设定Reset Address 和 Reset Value 值</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#完工"><span class="post-toc-number"></span> <span class="post-toc-text">完工</span></a>
         </nav>
     </aside>
 
@@ -202,7 +202,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <script src="/assets/js/APlayer.min.js"> </script><h1 id="知识普及"><a href="#知识普及" class="headerlink" title="知识普及"></a>知识普及</h1><p>有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。</p>
+            <script src="/assets/js/APlayer.min.js"> </script><h2 id="加快黑苹果开机速度的一种方法"><a href="#加快黑苹果开机速度的一种方法" class="headerlink" title="加快黑苹果开机速度的一种方法"></a>加快黑苹果开机速度的一种方法</h2><a id="more"></a>
+<h1 id="知识普及"><a href="#知识普及" class="headerlink" title="知识普及"></a>知识普及</h1><p>有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。</p>
 <p>这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。</p>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin </p>
 <h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><h2 id="提取-Reset-Address-和-Reset-Value-值"><a href="#提取-Reset-Address-和-Reset-Value-值" class="headerlink" title="提取 Reset Address 和 Reset Value 值"></a>提取 Reset Address 和 Reset Value 值</h2><p>用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处：</p>
@@ -218,7 +219,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-03-29T09:59:42.071Z" itemprop="dateUpdated">2018-03-29 17:59:42</time>
+    最后更新时间：<time datetime="2018-04-22T06:40:04.959Z" itemprop="dateUpdated">2018-04-22 14:40:04</time>
 </span><br>
 
 
@@ -262,7 +263,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Speed-up-the-hackintosh-to-boot.html&title=《Speed up the hackintosh to boot》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Speed-up-the-hackintosh-to-boot.html&title=《Speed up the hackintosh to boot》 — Athlonreg's Blog&source=加快黑苹果开机速度的一种方法" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -442,7 +443,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Speed-up-the-hackintosh-to-boot.html&title=《Speed up the hackintosh to boot》 — Athlonreg's Blog&source=日常生活中的整理的一些玩机小技巧，欢迎各位拍砖！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Speed-up-the-hackintosh-to-boot.html&title=《Speed up the hackintosh to boot》 — Athlonreg's Blog&source=加快黑苹果开机速度的一种方法" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
