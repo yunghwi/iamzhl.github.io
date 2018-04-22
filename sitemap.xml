@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.iamzhl.top/categories/index.html</loc>
+    
+    <lastmod>2018-04-22T02:18:18.442Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iamzhl.top/tags/index.html</loc>
+    
+    <lastmod>2018-04-22T02:18:01.446Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.iamzhl.top/Use-GitHub-for-team-development.html</loc>
     
     <lastmod>2018-04-21T18:03:27.943Z</lastmod>
@@ -177,14 +191,14 @@
   </url>
   
   <url>
-    <loc>https://blog.iamzhl.top/How-to-change-your-username-on-your-mac.html</loc>
+    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
     
     <lastmod>2018-03-19T15:26:23.936Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.iamzhl.top/How-to-unzip-packages-without-DS-store.html</loc>
+    <loc>https://blog.iamzhl.top/How-to-change-your-username-on-your-mac.html</loc>
     
     <lastmod>2018-03-19T15:26:23.936Z</lastmod>
     
@@ -369,20 +383,6 @@
     <loc>https://blog.iamzhl.top/about/index.html</loc>
     
     <lastmod>2017-09-15T16:18:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/categories/index.html</loc>
-    
-    <lastmod>2017-09-13T11:40:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iamzhl.top/tags/index.html</loc>
-    
-    <lastmod>2017-09-13T11:07:43.000Z</lastmod>
     
   </url>
   
