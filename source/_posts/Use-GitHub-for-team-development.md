@@ -168,7 +168,7 @@ Fast-forward
  1 file changed, 178 insertions(+)
 ```
 
-> 当然`git pull`也可以
+当然`git pull`也可以
 
 ```
 $ git pull origin dev
@@ -184,9 +184,15 @@ Fast-forward
 
 ```
 $ git add .
+```
+
+```
 $ git commit -m "Some fix (credit by A)"
+```
+
+```
 $ git push origin dev 
-``` 
+```
 
 在项目代码将要合并到主干`master`的时候，要由一名工程师做最后的合并处理，如创建分支的`A`。由于在合并代码时极易产生冲突，所以一定要先与主干代码版本做对比（`git diff`），合并时可以使用`git merge`，当然如果`dev`可以废除的话，也可以使用`git rebase`做最后的合并。 
 
