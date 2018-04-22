@@ -9,6 +9,9 @@ tags:
 - 编译
 ---
 
+## DSDT SSDT 简单提取修复
+<!--more-->
+
 # 开工
 ## 准备工作
 首先在 CLOVER 引导界面按 F4 或者 FN + F4 提取原始表单，然后进入 Mac ，利用 Clover Configurator 挂载ESP分区，提取的表单就在 /EFI/CLOVER/ACPI/origin ,将 origin 整个拷贝到桌面，并删除 origin 中除 DSDT SSDT 以外的所有文件

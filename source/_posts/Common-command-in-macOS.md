@@ -8,6 +8,9 @@ tags:
 - macOS
 ---
 
+## macOS下一些常用命令
+<!--more-->
+
 ### Trim
 > 开启
 ```

@@ -9,6 +9,9 @@ tags:
 - Xcode
 ---
 
+## How to use xcode-select in terminal
+<!--more-->
+
 ## It’s not uncommon developers to have multiple versions of Xcode installed. For example, I typically have the latest beta as well as the most current production release installed.
 
 However, there are times when you may want various tools, such as xcodebuild, to point to a specific Xcode folder. To faciliate this, you can use xcode-select. A common use case is if you use scripts and/or makefiles to build your projects.

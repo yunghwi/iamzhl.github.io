@@ -9,6 +9,9 @@ tags:
 - 补丁
 ---
 
+## 黑苹果常见补丁
+<!--more-->
+
 ### 先说说怎样强制加载某个驱动
 如下，`KextToPatch`并列`ForceKextsToLoad`，设置`kext`路径
 ```

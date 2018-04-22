@@ -4,8 +4,11 @@ date: 2018-03-15 17:11:43
 categories: Hackintosh
 description: mac 下解压压缩包避免生产.DS_store文件
 tags: 
-    - .DS_store
+- .DS_store
 ---
+
+## mac 下解压压缩包避免生产.DS_store文件
+<!--more-->
 
 ### Mac下面压缩的时候总会自动生成 .DS_store 文件，用户可以自行选择是否需要生成，执行下面命令之后需要重启Mac生效。
 

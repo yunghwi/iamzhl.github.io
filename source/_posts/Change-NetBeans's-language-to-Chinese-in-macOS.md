@@ -7,6 +7,9 @@ tags:
 - NetBeans
 ---
 
+## macOS 下修改 NetBeans 的界面语言
+<!--more-->
+
 ## `macOS`下修改`NetBeans`的界面语言
 在`Applications`中找到`NetBeans`的安装目录：`/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/etc/netbeans.conf`，以纯文本文档格式打开，搜索`netbeans_default_options`，在最后加上`--locale zh:CN`，改为英文则是`--locale en:US`，如图所示：
 

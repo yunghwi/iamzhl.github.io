@@ -9,6 +9,9 @@ tags:
 - 镜像
 ---
 
+## 制作可启动的安装镜像来安装macOS High Sierra 10.13.4
+<!--more-->
+
 ## 前言
 随着新的`macOS High Sierra 10.13.4`操作系统发布，很多盆友迫不及待的做了一个`.dmg`格式的压缩镜像以备用，但发现用`Apple`官方的方法制作出的镜像用`CLOVER`引导时是看不到安装镜像的，最后，在[黑果小兵](https://blog.daliansky.net)的帮助下，终于找到了解决方法。
 

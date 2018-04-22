@@ -10,6 +10,9 @@ tags:
 - 环境
 ---
 
+## Install macOS High Sierra on HP OMEN by HP Laptop
+<!--more-->
+
 ## 安装 jdk 
 Mac系统自带jdk，但是版本比较老，我们可以去官网下载最新的Jdk，安装比较简单，这里不再赘述。
 

@@ -10,6 +10,9 @@ tags:
     - mac
 ---
 
+## 更改 mac 的帐户名、主机名和计算机名
+<!--more-->
+
 ### 帐户信息修改
 ```
 System Preferences > Users & Groups > 右单击当前用户 > Advanced Options

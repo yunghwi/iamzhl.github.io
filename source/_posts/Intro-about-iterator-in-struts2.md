@@ -9,6 +9,9 @@ tags:
 - 框架
 ---
 
+## struts2中s:iterator 标签的使用详解
+<!--more-->
+
 ### 简单的`Demo`
 > s:iterator 标签有三个属性：
 

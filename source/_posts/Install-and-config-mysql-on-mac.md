@@ -8,6 +8,9 @@ tags:
 - Mac
 ---
 
+## 在 Mac 安装和配置 MySQL
+<!--more-->
+
 ## 准备
 ### 安装`HomeBrew`
 ```

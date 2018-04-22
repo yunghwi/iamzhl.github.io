@@ -10,6 +10,9 @@ tags:
 - 任何来源
 ---
 
+## 在 macOS 启用任何来源
+<!--more-->
+
 ### Allow apps downloaded from anywhere on
 许多朋友升级到 macOS Sierra 后在"安全性与隐私"中找不到"任何来源"选项，这里我教给大家怎么打开"任何来源"。
 

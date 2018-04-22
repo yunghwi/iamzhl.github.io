@@ -7,6 +7,9 @@ tags:
 - launchpad
 ---
 
+## Change launchpad icon grid layout in your MAC
+<!--more-->
+
 ### preface
 Launchpad is the quick application launcher available from the Mac OS X Dock and a keystroke that looks quite a bit like the Homescreen of iOS. By default, the Launchpad app grid usually displays icons in 7 rows and 5 columns of apps, but with a little adjustment from the command line of OS X you can switch and customize the Launchpad icon grid to any number of apps you’d like to see on the Mac.
 

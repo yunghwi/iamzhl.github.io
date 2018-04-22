@@ -9,6 +9,9 @@ tags:
 - 暗影精灵
 ---
 
+## Install macOS High Sierra on HP OMEN by HP Laptop
+<!--more-->
+
 ### Laptop Configuration
 ```
 ----------------------------------

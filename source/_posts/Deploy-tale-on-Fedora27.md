@@ -7,6 +7,9 @@ tags:
 - Tale
 ---
 
+## 在 Fedora27 部署国人开源博客 Tale
+<!--more-->
+
 ## 前言
 > 什么是`Nginx`?
 

@@ -8,6 +8,9 @@ tags:
 - X455LD
 ---
 
+## Install macOS High Sierra on ASUS X455LD i5 4210u
+<!--more-->
+
 ### Laptop Configuration
 ```
 Computer model              Asus F455LD Notebook
