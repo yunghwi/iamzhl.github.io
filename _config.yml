@@ -110,7 +110,8 @@ theme: indigo
 deploy:
 - type: git
   repository: 
-    coding: https://git.coding.net/iamzhl/iamzhl.coding.me.git
-    github: https://github.com/athlonreg/iamzhl.github.io.git
+    coding: git@git.coding.net:iamzhl/iamzhl.coding.me.git
+    github: git@github.com:athlonreg/iamzhl.github.io.git
+    github: git@github.com:Syncanvas/canvas.github.io.git
   branch: master
 - type: baidu_url_submitter
