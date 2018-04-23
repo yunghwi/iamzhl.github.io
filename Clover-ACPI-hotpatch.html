@@ -1,33 +1,156 @@
 <!DOCTYPE html>
-<html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/vendors/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/vendors/pace/pace-theme-mac-osx.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/vendors/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2ec55fb7"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
     
 
     
+  
+
+  
+
+  
+    
+      
+    
 
     
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
-    <meta charset="utf-8">
-    
-    <meta name="google-site-verification" content="true">
-    
-    
-    <meta name="sogou_site_verification" content="true">
-    
-    
-    <link rel="canonical" href="true/Clover-ACPI-hotpatch.html">
-    
-    
-    <title>Clover ACPI hotpatch | Athlonreg&#39;s Blog | 套陆的博客</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="theme-color" content="#3F51B5">
-    
-    
-    <meta name="keywords" content="Hacintosh,SSDT,hotpatch,ACPI">
-    <meta name="description" content="Using Clover to &quot;hotpatch&quot; ACPI">
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hacintosh,SSDT,hotpatch,ACPI," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Athlonreg's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+<script>
+  (function(){
+    if(''){
+      if(prompt('请输入文章密码') !== ''){
+        alert('密码错误!');
+        history.back();
+      }
+    }
+  })();
+</script>
+
+<meta name="description" content="Using Clover to &quot;hotpatch&quot; ACPI">
 <meta name="keywords" content="Hacintosh,SSDT,hotpatch,ACPI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Clover ACPI hotpatch">
@@ -42,174 +165,361 @@
 <meta name="twitter:title" content="Clover ACPI hotpatch">
 <meta name="twitter:description" content="Using Clover to &quot;hotpatch&quot; ACPI">
 <meta name="twitter:image" content="http://ovefvi4g3.bkt.clouddn.com/batthot_diffmerge_initial.png">
-    
-        <link rel="alternate" type="application/atom+xml" title="Athlonreg&#39;s Blog" href="/atom.xml">
-    
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
-    <script>window.lazyScripts=[]</script>
 
-    <!-- custom head -->
-    
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":14,"offset_float":14,"b2t":true,"scrollpercent":false,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.iamzhl.top/Clover-ACPI-hotpatch.html"/>
+
+
+
+
+
+  <title>Clover ACPI hotpatch | Athlonreg's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
 
 </head>
 
-<body>
-    <div id="loading" class="active"></div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-    <aside id="menu" class="hide" >
-  <div class="inner flex-row-vertical">
-    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-    </a>
-    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
-      <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/avatar.jpg">
-        </a>
-        <hgroup class="introduce">
-          <h5 class="nickname">athlonreg/套陆</h5>
-          <a href="mailto:15563836030@163.com" title="15563836030@163.com" class="mail">15563836030@163.com</a>
-        </hgroup>
-      </div>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/athlonreg"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Athlonreg's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <div class="scroll-wrap flex-col">
-      <ul class="nav">
+      
+        <h1 class="site-subtitle" itemprop="description">套陆的博客</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
         
-            <li class="waves-block waves-effect">
-              <a href="/"  >
-                <i class="icon icon-lg icon-home"></i>
-                Home
-              </a>
-            </li>
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
         
-            <li class="waves-block waves-effect">
-              <a href="/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                Archives
-              </a>
-            </li>
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
         
-            <li class="waves-block waves-effect">
-              <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                Tags
-              </a>
-            </li>
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
         
-            <li class="waves-block waves-effect">
-              <a href="/categories"  >
-                <i class="icon icon-lg icon-th-list"></i>
-                Categories
-              </a>
-            </li>
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
+          </a>
+        </li>
+      
         
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/athlonreg" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                GitHub
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://blog.daliansky.net" target="_blank" >
-                <i class="icon icon-lg icon-apple"></i>
-                Daliansky
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://syncanvas.github.io/atom.xml" target="_blank" >
-                <i class="icon icon-lg icon-feed"></i>
-                Feed
-              </a>
-            </li>
-        
-      </ul>
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Suche
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
-</aside>
+  <div id="local-search-result"></div>
+</div>
 
-    <main id="main">
-        <header class="top-header" id="header">
-    <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">Clover ACPI hotpatch</div>
-        
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
-        
+
+
     </div>
-</header>
-<header class="content-header post-header">
+  
+</nav>
 
-    <div class="container fade-scale">
-        <h1 class="title">Clover ACPI hotpatch</h1>
-        <h5 class="subtitle">
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
             
-                <time datetime="2017-12-17T07:30:15.000Z" itemprop="datePublished" class="page-time">
-  2017-12-17
-</time>
 
-
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Hackintosh/">Hackintosh</a></li></ul>
-
-            
-        </h5>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
 
+  
 
-</header>
+  
+  
+  
 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.iamzhl.top/Clover-ACPI-hotpatch.html">
 
-<div class="container body-wrap">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="athlonreg/套陆">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Athlonreg's Blog">
+    </span>
+
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Using-Clover-to-“hotpatch”-ACPI"><span class="post-toc-number">1.</span> <span class="post-toc-text">Using Clover to “hotpatch” ACPI</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Preface–序言"><span class="post-toc-number">2.</span> <span class="post-toc-text">Preface–序言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Brief-description-for-hotpatch–hotpatch概要"><span class="post-toc-number">3.</span> <span class="post-toc-text">Brief description for hotpatch–hotpatch概要</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#A-brief-description-of-each-hotpatch-SSDT-is-provided-below–下面是每一个-hotpatch-SSDT-的概要"><span class="post-toc-number">4.</span> <span class="post-toc-text">A brief description of each hotpatch SSDT is provided below–下面是每一个 hotpatch SSDT 的概要</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Introduction-说明文档"><span class="post-toc-number">5.</span> <span class="post-toc-text">Introduction-说明文档</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Clover-mechanisms-Clover机制"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Clover mechanisms-Clover机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Renaming-ACPI-objects-重命名ACPI对象"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Renaming ACPI objects-重命名ACPI对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Removing-methods-移除方法"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">Removing methods-移除方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Redirect-and-Replace-重定向和替换"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">Redirect and Replace-重定向和替换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Rename-and-Replace-重命名和替换"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">Rename and Replace-重命名和替换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Tips-for-complex-Rename-and-Replace"><span class="post-toc-number">5.5.1.</span> <span class="post-toc-text">Tips for complex Rename and Replace</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Code-value-patching"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">Code value patching</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Clover-ACPI-configuration"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">Clover ACPI configuration</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Troubleshooting"><span class="post-toc-number">5.8.</span> <span class="post-toc-text">Troubleshooting</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Battery-Status-Hotpatch"><span class="post-toc-number">6.</span> <span class="post-toc-text">Battery Status Hotpatch</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Using-diffmerge-to-find-patched-vs-native-differences"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">Using diffmerge to find patched vs. native differences</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Constructing-the-initial-SSDT"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">Constructing the initial SSDT</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Resolving-errors"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">Resolving errors</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Renaming-existing-methods"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">Renaming existing methods</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Conclusion"><span class="post-toc-number">6.5.</span> <span class="post-toc-text">Conclusion</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Disabling-discrete-switched-GPU-with-Hotpatch"><span class="post-toc-number">7.</span> <span class="post-toc-text">Disabling discrete/switched GPU with Hotpatch</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Building-the-replacement-INI-OFF-REG-methods"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">Building the replacement _INI/_OFF/_REG methods</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Renaming-the-methods"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">Renaming the methods</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#A-simple-example"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">A simple example</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Conclusion-1"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">Conclusion</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Credits"><span class="post-toc-number">8.</span> <span class="post-toc-text">Credits</span></a></li></ol>
-        </nav>
-    </aside>
+      <header class="post-header">
 
+        
+        
+          <h2 class="post-title" itemprop="name headline">Clover ACPI hotpatch</h2>
+        
 
-<article id="post-Clover-ACPI-hotpatch"
-  class="post-article article-type-post fade" itemprop="blogPost">
-
-    <div class="post-card">
-        <h1 class="post-card-title">Clover ACPI hotpatch</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-12-17 15:30:15" datetime="2017-12-17T07:30:15.000Z"  itemprop="datePublished">2017-12-17</time>
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-17T15:30:15+08:00">
+                2017-12-17
+              </time>
+            
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Hackintosh/">Hackintosh</a></li></ul>
-
-
 
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
-    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
-</span>
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/" itemprop="url" rel="index">
+                    <span itemprop="name">Hackintosh</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/Clover-ACPI-hotpatch.html" class="leancloud_visitors" data-flag-title="Clover ACPI hotpatch">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  20,466 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  120 分钟
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  Using Clover to "hotpatch" ACPI
+              </div>
+          
 
         </div>
-        <div class="post-content" id="post-content" itemprop="postContent">
-            <script src="/assets/js/APlayer.min.js"> </script><h2 id="Using-Clover-to-“hotpatch”-ACPI"><a href="#Using-Clover-to-“hotpatch”-ACPI" class="headerlink" title="Using Clover to “hotpatch” ACPI"></a>Using Clover to “hotpatch” ACPI</h2><a id="more"></a>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="Using-Clover-to-“hotpatch”-ACPI"><a href="#Using-Clover-to-“hotpatch”-ACPI" class="headerlink" title="Using Clover to “hotpatch” ACPI"></a>Using Clover to “hotpatch” ACPI</h2><a id="more"></a>
 <h2 id="Preface–序言"><a href="#Preface–序言" class="headerlink" title="Preface–序言"></a>Preface–序言</h2><p>This blog is created by me to introduce how to using Clover to hotpatch ACPI，and provide an Chinese version。</p>
 <blockquote>
 <p>我写这篇博客是为了介绍如何使用<code>Clover</code>对<code>ACPI</code>使用<code>hotpatch</code>，并翻译原贴提供中文参考帖。</p>
@@ -545,13 +855,7 @@
 <p>Next apply the battery patch only using MaciASL to DSDT.dsl. In this case, we apply the “ASUS N55SL/VivoBook”. There is no need to fix any errors, as we are interested only in the differences created by applying the battery patch. Save the patched file as DSDT_patched.dsl.</p>
 <p>Now you can run diffmerge to see the differences between DSDT.dsl and DSDT_patched.dsl. I usually just do this from Terminal:</p>
 <p><code>$ diffmerge DSDT.dsl DSDT_patched.dsl</code></p>
-<p>The initial diffmerge window will look something like this:<br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/batthot_diffmerge_initial.png" alt="batthot_diffmerge_initial" title="">
-                </div>
-                <div class="image-caption">batthot_diffmerge_initial</div>
-            </figure></p>
+<p>The initial diffmerge window will look something like this:<br><img src="http://ovefvi4g3.bkt.clouddn.com/batthot_diffmerge_initial.png" alt="batthot_diffmerge_initial"></p>
 <p>From there, we can examine the parts that have changes by clicking on the markers in the left column.</p>
 <p>In the examples, the groups of changes you find:</p>
 <ul>
@@ -1211,13 +1515,7 @@ Else
 </code></pre><p>Notice how FBST and _BIX were added to scope _SB.PCI0.BAT0, but BIFA was added to _SB.PCI0.LPCB.EC0. It is important to inject all methods into their original scope.</p>
 <p>Now, we add SMBR, SMBW, ECSB, and TACH:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br><span class="line">606</span><br><span class="line">607</span><br><span class="line">608</span><br><span class="line">609</span><br><span class="line">610</span><br><span class="line">611</span><br><span class="line">612</span><br><span class="line">613</span><br><span class="line">614</span><br><span class="line">615</span><br><span class="line">616</span><br><span class="line">617</span><br><span class="line">618</span><br><span class="line">619</span><br><span class="line">620</span><br><span class="line">621</span><br><span class="line">622</span><br><span class="line">623</span><br><span class="line">624</span><br><span class="line">625</span><br><span class="line">626</span><br><span class="line">627</span><br><span class="line">628</span><br><span class="line">629</span><br><span class="line">630</span><br><span class="line">631</span><br><span class="line">632</span><br><span class="line">633</span><br><span class="line">634</span><br><span class="line">635</span><br><span class="line">636</span><br><span class="line">637</span><br><span class="line">638</span><br><span class="line">639</span><br><span class="line">640</span><br><span class="line">641</span><br><span class="line">642</span><br><span class="line">643</span><br><span class="line">644</span><br><span class="line">645</span><br><span class="line">646</span><br><span class="line">647</span><br><span class="line">648</span><br><span class="line">649</span><br><span class="line">650</span><br><span class="line">651</span><br><span class="line">652</span><br><span class="line">653</span><br><span class="line">654</span><br><span class="line">655</span><br><span class="line">656</span><br><span class="line">657</span><br><span class="line">658</span><br><span class="line">659</span><br><span class="line">660</span><br><span class="line">661</span><br><span class="line">662</span><br><span class="line">663</span><br><span class="line">664</span><br><span class="line">665</span><br><span class="line">666</span><br><span class="line">667</span><br><span class="line">668</span><br><span class="line">669</span><br><span class="line">670</span><br><span class="line">671</span><br><span class="line">672</span><br><span class="line">673</span><br><span class="line">674</span><br><span class="line">675</span><br><span class="line">676</span><br><span class="line">677</span><br><span class="line">678</span><br><span class="line">679</span><br><span class="line">680</span><br><span class="line">681</span><br><span class="line">682</span><br><span class="line">683</span><br><span class="line">684</span><br></pre></td><td class="code"><pre><span class="line">DefinitionBlock(&quot;&quot;, &quot;SSDT&quot;, 2, &quot;hack&quot;, &quot;batt&quot;, 0)</span><br><span class="line">&#123;</span><br><span class="line">	// patched methods</span><br><span class="line">    Scope (_SB.PCI0)</span><br><span class="line">    &#123;</span><br><span class="line">        Scope (BAT0)</span><br><span class="line">        &#123;</span><br><span class="line">            Method (FBST, 4, NotSerialized)</span><br><span class="line">            &#123;</span><br><span class="line">                And (Arg1, 0xFFFF, Local1)</span><br><span class="line">                Store (Zero, Local0)</span><br><span class="line">                If (^^LPCB.EC0.ACAP ())</span><br><span class="line">                &#123;</span><br><span class="line">                    Store (One, Local0)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                If (Local0)</span><br><span class="line">                &#123;</span><br><span class="line">                    If (CHGS (Zero))</span><br><span class="line">&#123;</span><br><span class="line">	Store (0x02, Local0)</span><br><span class="line">&#125;</span><br><span class="line">Else</span><br><span class="line">&#123;</span><br><span class="line">	Store (Zero, Local0)</span><br><span class="line">&#125;</span><br><span class="line">				&#125;</span><br><span class="line">                Else</span><br><span class="line">                &#123;</span><br><span class="line">                    Store (One, Local0)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                If (BLLO)</span><br><span class="line">                &#123;</span><br><span class="line">                    ShiftLeft (One, 0x02, Local2)</span><br><span class="line">                    Or (Local0, Local2, Local0)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                If (And (^^LPCB.EC0.EB0S, 0x08))</span><br><span class="line">                &#123;</span><br><span class="line">                    ShiftLeft (One, 0x02, Local2)</span><br><span class="line">                    Or (Local0, Local2, Local0)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                If (LGreaterEqual (Local1, 0x8000))</span><br><span class="line">                &#123;</span><br><span class="line">                    Subtract (0xFFFF, Local1, Local1)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                Store (Arg2, Local2)</span><br><span class="line">                If (LEqual (PUNT, Zero))</span><br><span class="line">                &#123;</span><br><span class="line">                    Multiply (Local1, ^^LPCB.EC0.B0DV, Local1)</span><br><span class="line">                    Multiply (Local2, 0x0A, Local2)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                And (Local0, 0x02, Local3)</span><br><span class="line">                If (LNot (Local3))</span><br><span class="line">                &#123;</span><br><span class="line">                    Subtract (LFCC, Local2, Local3)</span><br><span class="line">                    Divide (LFCC, 0xC8, Local4, Local5)</span><br><span class="line">                    If (LLess (Local3, Local5))</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (LFCC, Local2)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                Else</span><br><span class="line">                &#123;</span><br><span class="line">                    Divide (LFCC, 0xC8, Local4, Local5)</span><br><span class="line">                    Subtract (LFCC, Local5, Local4)</span><br><span class="line">                    If (LGreater (Local2, Local4))</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (Local4, Local2)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                If (LNot (^^LPCB.EC0.ACAP ()))</span><br><span class="line">                &#123;</span><br><span class="line">                    Divide (Local2, MBLF, Local3, Local4)</span><br><span class="line">                    If (LLess (Local1, Local4))</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (Local4, Local1)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                Store (Local0, Index (PBST, Zero))</span><br><span class="line">                Store (Local1, Index (PBST, One))</span><br><span class="line">                Store (Local2, Index (PBST, 0x02))</span><br><span class="line">                Store (Arg3, Index (PBST, 0x03))</span><br><span class="line">            &#125;</span><br><span class="line">            Method (_BIX, 0, NotSerialized)  // _BIX: Battery Information Extended</span><br><span class="line">            &#123;</span><br><span class="line">                If (LNot (^^LPCB.EC0.BATP (Zero)))</span><br><span class="line">                &#123;</span><br><span class="line">                    Return (NBIX)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                If (LEqual (^^LPCB.EC0.GBTT (Zero), 0xFF))</span><br><span class="line">                &#123;</span><br><span class="line">                    Return (NBIX)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                _BIF ()</span><br><span class="line">                Store (DerefOf (Index (PBIF, Zero)), Index (BIXT, One))</span><br><span class="line">                Store (DerefOf (Index (PBIF, One)), Index (BIXT, 0x02))</span><br><span class="line">                Store (DerefOf (Index (PBIF, 0x02)), Index (BIXT, 0x03))</span><br><span class="line">                Store (DerefOf (Index (PBIF, 0x03)), Index (BIXT, 0x04))</span><br><span class="line">                Store (DerefOf (Index (PBIF, 0x04)), Index (BIXT, 0x05))</span><br><span class="line">                Store (DerefOf (Index (PBIF, 0x05)), Index (BIXT, 0x06))</span><br><span class="line">                Store (DerefOf (Index (PBIF, 0x06)), Index (BIXT, 0x07))</span><br><span class="line">                Store (DerefOf (Index (PBIF, 0x07)), Index (BIXT, 0x0E))</span><br><span class="line">                Store (DerefOf (Index (PBIF, 0x08)), Index (BIXT, 0x0F))</span><br><span class="line">                Store (DerefOf (Index (PBIF, 0x09)), Index (BIXT, 0x10))</span><br><span class="line">                Store (DerefOf (Index (PBIF, 0x0A)), Index (BIXT, 0x11))</span><br><span class="line">                Store (DerefOf (Index (PBIF, 0x0B)), Index (BIXT, 0x12))</span><br><span class="line">                Store (DerefOf (Index (PBIF, 0x0C)), Index (BIXT, 0x13))</span><br><span class="line">                If (LEqual (DerefOf (Index (BIXT, One)), One))</span><br><span class="line">                &#123;</span><br><span class="line">                    Store (Zero, Index (BIXT, One))</span><br><span class="line">                    Store (DerefOf (Index (BIXT, 0x05)), Local0)</span><br><span class="line">                    Multiply (DerefOf (Index (BIXT, 0x02)), Local0, Index (BIXT, 0x02))</span><br><span class="line">                    Multiply (DerefOf (Index (BIXT, 0x03)), Local0, Index (BIXT, 0x03))</span><br><span class="line">                    Multiply (DerefOf (Index (BIXT, 0x06)), Local0, Index (BIXT, 0x06))</span><br><span class="line">                    Multiply (DerefOf (Index (BIXT, 0x07)), Local0, Index (BIXT, 0x07))</span><br><span class="line">                    Multiply (DerefOf (Index (BIXT, 0x0E)), Local0, Index (BIXT, 0x0E))</span><br><span class="line">                    Multiply (DerefOf (Index (BIXT, 0x0F)), Local0, Index (BIXT, 0x0F))</span><br><span class="line">                    Divide (DerefOf (Index (BIXT, 0x02)), 0x03E8, Local0, Index (BIXT, 0x02))</span><br><span class="line">                    Divide (DerefOf (Index (BIXT, 0x03)), 0x03E8, Local0, Index (BIXT, 0x03))</span><br><span class="line">                    Divide (DerefOf (Index (BIXT, 0x06)), 0x03E8, Local0, Index (BIXT, 0x06))</span><br><span class="line">                    Divide (DerefOf (Index (BIXT, 0x07)), 0x03E8, Local0, Index (BIXT, 0x07))</span><br><span class="line">                    Divide (DerefOf (Index (BIXT, 0x0E)), 0x03E8, Local0, Index (BIXT, 0x0E))</span><br><span class="line">                    Divide (DerefOf (Index (BIXT, 0x0F)), 0x03E8, Local0, Index (BIXT, 0x0F))</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                Store (B1B2(^^LPCB.EC0.XC30,^^LPCB.EC0.XC31), Index (BIXT, 0x08))</span><br><span class="line">                Store (0x0001869F, Index (BIXT, 0x09))</span><br><span class="line">                Return (BIXT)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Scope (_SB.PCI0.LPCB.EC0)</span><br><span class="line">    &#123;</span><br><span class="line">        Method (BIFA, 0, NotSerialized)</span><br><span class="line">        &#123;</span><br><span class="line">            If (ECAV ())</span><br><span class="line">            &#123;</span><br><span class="line">                If (BSLF)</span><br><span class="line">                &#123;</span><br><span class="line">                    Store (B1B2(B1S0,B1S1), Local0)</span><br><span class="line">                &#125;</span><br><span class="line">                Else</span><br><span class="line">                &#123;</span><br><span class="line">                    Store (B1B2(B0S0,B0S1), Local0)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            Else</span><br><span class="line">            &#123;</span><br><span class="line">                Store (Ones, Local0)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Return (Local0)</span><br><span class="line">        &#125;</span><br><span class="line">        Method (SMBR, 3, Serialized)</span><br><span class="line">        &#123;</span><br><span class="line">            Store (Package (0x03)</span><br><span class="line">                &#123;</span><br><span class="line">                    0x07,</span><br><span class="line">                    Zero,</span><br><span class="line">                    Zero</span><br><span class="line">                &#125;, Local0)</span><br><span class="line">            If (LNot (ECAV ()))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Local0)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            If (LNotEqual (Arg0, RDBL))</span><br><span class="line">            &#123;</span><br><span class="line">                If (LNotEqual (Arg0, RDWD))</span><br><span class="line">                &#123;</span><br><span class="line">                    If (LNotEqual (Arg0, RDBT))</span><br><span class="line">                    &#123;</span><br><span class="line">                        If (LNotEqual (Arg0, RCBT))</span><br><span class="line">                        &#123;</span><br><span class="line">                            If (LNotEqual (Arg0, RDQK))</span><br><span class="line">                            &#123;</span><br><span class="line">                                Return (Local0)</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Acquire (MUEC, 0xFFFF)</span><br><span class="line">            Store (PRTC, Local1)</span><br><span class="line">            Store (Zero, Local2)</span><br><span class="line">            While (LNotEqual (Local1, Zero))</span><br><span class="line">            &#123;</span><br><span class="line">                Stall (0x0A)</span><br><span class="line">                Increment (Local2)</span><br><span class="line">                If (LGreater (Local2, 0x03E8))</span><br><span class="line">                &#123;</span><br><span class="line">                    Store (SBBY, Index (Local0, Zero))</span><br><span class="line">                    Store (Zero, Local1)</span><br><span class="line">                &#125;</span><br><span class="line">                Else</span><br><span class="line">                &#123;</span><br><span class="line">                    Store (PRTC, Local1)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            If (LLessEqual (Local2, 0x03E8))</span><br><span class="line">            &#123;</span><br><span class="line">                ShiftLeft (Arg1, One, Local3)</span><br><span class="line">                Or (Local3, One, Local3)</span><br><span class="line">                Store (Local3, ADDR)</span><br><span class="line">                If (LNotEqual (Arg0, RDQK))</span><br><span class="line">                &#123;</span><br><span class="line">                    If (LNotEqual (Arg0, RCBT))</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (Arg2, CMDB)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                WRBA(Zero)</span><br><span class="line">                Store (Arg0, PRTC)</span><br><span class="line">                Store (SWTC (Arg0), Index (Local0, Zero))</span><br><span class="line">                If (LEqual (DerefOf (Index (Local0, Zero)), Zero))</span><br><span class="line">                &#123;</span><br><span class="line">                    If (LEqual (Arg0, RDBL))</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (BCNT, Index (Local0, One))</span><br><span class="line">                        Store (RDBA(), Index (Local0, 0x02))</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    If (LEqual (Arg0, RDWD))</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (0x02, Index (Local0, One))</span><br><span class="line">                        Store (B1B2(T2B0,T2B1), Index (Local0, 0x02))</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    If (LEqual (Arg0, RDBT))</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (One, Index (Local0, One))</span><br><span class="line">                        Store (DAT0, Index (Local0, 0x02))</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    If (LEqual (Arg0, RCBT))</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (One, Index (Local0, One))</span><br><span class="line">                        Store (DAT0, Index (Local0, 0x02))</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Release (MUEC)</span><br><span class="line">            Return (Local0)</span><br><span class="line">        &#125;</span><br><span class="line">        Method (SMBW, 5, Serialized)</span><br><span class="line">        &#123;</span><br><span class="line">            Store (Package (0x01)</span><br><span class="line">                &#123;</span><br><span class="line">                    0x07</span><br><span class="line">                &#125;, Local0)</span><br><span class="line">            If (LNot (ECAV ()))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Local0)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            If (LNotEqual (Arg0, WRBL))</span><br><span class="line">            &#123;</span><br><span class="line">                If (LNotEqual (Arg0, WRWD))</span><br><span class="line">                &#123;</span><br><span class="line">                    If (LNotEqual (Arg0, WRBT))</span><br><span class="line">                    &#123;</span><br><span class="line">                        If (LNotEqual (Arg0, SDBT))</span><br><span class="line">                        &#123;</span><br><span class="line">                            If (LNotEqual (Arg0, WRQK))</span><br><span class="line">                            &#123;</span><br><span class="line">                                Return (Local0)</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Acquire (MUEC, 0xFFFF)</span><br><span class="line">            Store (PRTC, Local1)</span><br><span class="line">            Store (Zero, Local2)</span><br><span class="line">            While (LNotEqual (Local1, Zero))</span><br><span class="line">            &#123;</span><br><span class="line">                Stall (0x0A)</span><br><span class="line">                Increment (Local2)</span><br><span class="line">                If (LGreater (Local2, 0x03E8))</span><br><span class="line">                &#123;</span><br><span class="line">                    Store (SBBY, Index (Local0, Zero))</span><br><span class="line">                    Store (Zero, Local1)</span><br><span class="line">                &#125;</span><br><span class="line">                Else</span><br><span class="line">                &#123;</span><br><span class="line">                    Store (PRTC, Local1)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            If (LLessEqual (Local2, 0x03E8))</span><br><span class="line">            &#123;</span><br><span class="line">                WRBA(Zero)</span><br><span class="line">                ShiftLeft (Arg1, One, Local3)</span><br><span class="line">                Store (Local3, ADDR)</span><br><span class="line">                If (LNotEqual (Arg0, WRQK))</span><br><span class="line">                &#123;</span><br><span class="line">                    If (LNotEqual (Arg0, SDBT))</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (Arg2, CMDB)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                If (LEqual (Arg0, WRBL))</span><br><span class="line">                &#123;</span><br><span class="line">                    Store (Arg3, BCNT)</span><br><span class="line">                    WRBA(Arg4)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                If (LEqual (Arg0, WRWD))</span><br><span class="line">                &#123;</span><br><span class="line">                    Store(Arg4,T2B0) Store(ShiftRight(Arg4,8),T2B1)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                If (LEqual (Arg0, WRBT))</span><br><span class="line">                &#123;</span><br><span class="line">                    Store (Arg4, DAT0)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                If (LEqual (Arg0, SDBT))</span><br><span class="line">                &#123;</span><br><span class="line">                    Store (Arg4, DAT0)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                Store (Arg0, PRTC)</span><br><span class="line">                Store (SWTC (Arg0), Index (Local0, Zero))</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Release (MUEC)</span><br><span class="line">            Return (Local0)</span><br><span class="line">        &#125;</span><br><span class="line">        Method (ECSB, 7, NotSerialized)</span><br><span class="line">        &#123;</span><br><span class="line">            Store (Package (0x05)</span><br><span class="line">                &#123;</span><br><span class="line">                    0x11,</span><br><span class="line">                    Zero,</span><br><span class="line">                    Zero,</span><br><span class="line">                    Zero,</span><br><span class="line">                    Buffer (0x20)&#123;&#125;</span><br><span class="line">                &#125;, Local1)</span><br><span class="line">            If (LGreater (Arg0, One))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Local1)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            If (ECAV ())</span><br><span class="line">            &#123;</span><br><span class="line">                Acquire (MUEC, 0xFFFF)</span><br><span class="line">                If (LEqual (Arg0, Zero))</span><br><span class="line">                &#123;</span><br><span class="line">                    Store (PRTC, Local0)</span><br><span class="line">                &#125;</span><br><span class="line">                Else</span><br><span class="line">                &#123;</span><br><span class="line">                    Store (PRT2, Local0)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                Store (Zero, Local2)</span><br><span class="line">                While (LNotEqual (Local0, Zero))</span><br><span class="line">                &#123;</span><br><span class="line">                    Stall (0x0A)</span><br><span class="line">                    Increment (Local2)</span><br><span class="line">                    If (LGreater (Local2, 0x03E8))</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (SBBY, Index (Local1, Zero))</span><br><span class="line">                        Store (Zero, Local0)</span><br><span class="line">                    &#125;</span><br><span class="line">                    ElseIf (LEqual (Arg0, Zero))</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (PRTC, Local0)</span><br><span class="line">                    &#125;</span><br><span class="line">                    Else</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (PRT2, Local0)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                If (LLessEqual (Local2, 0x03E8))</span><br><span class="line">                &#123;</span><br><span class="line">                    If (LEqual (Arg0, Zero))</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (Arg2, ADDR)</span><br><span class="line">                        Store (Arg3, CMDB)</span><br><span class="line">                        If (LOr (LEqual (Arg1, 0x0A), LEqual (Arg1, 0x0B)))</span><br><span class="line">                        &#123;</span><br><span class="line">                            Store (DerefOf (Index (Arg6, Zero)), BCNT)</span><br><span class="line">                            WRBA(DerefOf (Index (Arg6, One)))</span><br><span class="line">                        &#125;</span><br><span class="line">                        Else</span><br><span class="line">                        &#123;</span><br><span class="line">                            Store (Arg4, DAT0)</span><br><span class="line">                            Store (Arg5, DAT1)</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        Store (Arg1, PRTC)</span><br><span class="line">                    &#125;</span><br><span class="line">                    Else</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (Arg2, ADD2)</span><br><span class="line">                        Store (Arg3, CMD2)</span><br><span class="line">                        If (LOr (LEqual (Arg1, 0x0A), LEqual (Arg1, 0x0B)))</span><br><span class="line">                        &#123;</span><br><span class="line">                            Store (DerefOf (Index (Arg6, Zero)), BCN2)</span><br><span class="line">                            WRBB(DerefOf (Index (Arg6, One)))</span><br><span class="line">                        &#125;</span><br><span class="line">                        Else</span><br><span class="line">                        &#123;</span><br><span class="line">                            Store (Arg4, DA20)</span><br><span class="line">                            Store (Arg5, DA21)</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        Store (Arg1, PRT2)</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    Store (0x7F, Local0)</span><br><span class="line">                    If (LEqual (Arg0, Zero))</span><br><span class="line">                    &#123;</span><br><span class="line">                        While (PRTC)</span><br><span class="line">                        &#123;</span><br><span class="line">                            Sleep (One)</span><br><span class="line">                            Decrement (Local0)</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    Else</span><br><span class="line">                    &#123;</span><br><span class="line">                        While (PRT2)</span><br><span class="line">                        &#123;</span><br><span class="line">                            Sleep (One)</span><br><span class="line">                            Decrement (Local0)</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    If (Local0)</span><br><span class="line">                    &#123;</span><br><span class="line">                        If (LEqual (Arg0, Zero))</span><br><span class="line">                        &#123;</span><br><span class="line">                            Store (SSTS, Local0)</span><br><span class="line">                            Store (DAT0, Index (Local1, One))</span><br><span class="line">                            Store (DAT1, Index (Local1, 0x02))</span><br><span class="line">                            Store (BCNT, Index (Local1, 0x03))</span><br><span class="line">                            Store (RDBA(), Index (Local1, 0x04))</span><br><span class="line">                        &#125;</span><br><span class="line">                        Else</span><br><span class="line">                        &#123;</span><br><span class="line">                            Store (SST2, Local0)</span><br><span class="line">                            Store (DA20, Index (Local1, One))</span><br><span class="line">                            Store (DA21, Index (Local1, 0x02))</span><br><span class="line">                            Store (BCN2, Index (Local1, 0x03))</span><br><span class="line">                            Store (RDBB(), Index (Local1, 0x04))</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        And (Local0, 0x1F, Local0)</span><br><span class="line">                        If (Local0)</span><br><span class="line">                        &#123;</span><br><span class="line">                            Add (Local0, 0x10, Local0)</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        Store (Local0, Index (Local1, Zero))</span><br><span class="line">                    &#125;</span><br><span class="line">                    Else</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (0x10, Index (Local1, Zero))</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                Release (MUEC)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Return (Local1)</span><br><span class="line">        &#125;</span><br><span class="line">        Method (TACH, 1, Serialized)</span><br><span class="line">        &#123;</span><br><span class="line">            If (ECAV ())</span><br><span class="line">            &#123;</span><br><span class="line">                Switch (Arg0)</span><br><span class="line">                &#123;</span><br><span class="line">                    Case (Zero)</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (B1B2(TH00,TH01), Local0)</span><br><span class="line">                        Break</span><br><span class="line">                    &#125;</span><br><span class="line">                    Case (One)</span><br><span class="line">                    &#123;</span><br><span class="line">                        Store (B1B2(TH10,TH11), Local0)</span><br><span class="line">                        Break</span><br><span class="line">                    &#125;</span><br><span class="line">                    Default</span><br><span class="line">                    &#123;</span><br><span class="line">                        Return (Ones)</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                Multiply (Local0, 0x02, Local0)</span><br><span class="line">                If (LNotEqual (Local0, Zero))</span><br><span class="line">                &#123;</span><br><span class="line">                    Divide (0x0041CDB4, Local0, Local1, Local0)</span><br><span class="line">                    Return (Local0)</span><br><span class="line">                &#125;</span><br><span class="line">                Else</span><br><span class="line">                &#123;</span><br><span class="line">                    Return (Ones)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            Else</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Ones)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Method (B1B2, 2, NotSerialized) &#123; Return (Or (Arg0, ShiftLeft (Arg1, 8))) &#125;</span><br><span class="line"></span><br><span class="line">    // added methods (group 2)</span><br><span class="line">    Scope (_SB.PCI0.LPCB)</span><br><span class="line">    &#123;</span><br><span class="line">        Scope (EC0)</span><br><span class="line">        &#123;</span><br><span class="line">            Method (RDBA, 0, Serialized)</span><br><span class="line">            &#123;</span><br><span class="line">                Name (TEMP, Buffer(0x20) &#123; &#125;)</span><br><span class="line">                Store (BA00, Index(TEMP, 0x00))</span><br><span class="line">                Store (BA01, Index(TEMP, 0x01))</span><br><span class="line">                Store (BA02, Index(TEMP, 0x02))</span><br><span class="line">                Store (BA03, Index(TEMP, 0x03))</span><br><span class="line">                Store (BA04, Index(TEMP, 0x04))</span><br><span class="line">                Store (BA05, Index(TEMP, 0x05))</span><br><span class="line">                Store (BA06, Index(TEMP, 0x06))</span><br><span class="line">                Store (BA07, Index(TEMP, 0x07))</span><br><span class="line">                Store (BA08, Index(TEMP, 0x08))</span><br><span class="line">                Store (BA09, Index(TEMP, 0x09))</span><br><span class="line">                Store (BA0A, Index(TEMP, 0x0A))</span><br><span class="line">                Store (BA0B, Index(TEMP, 0x0B))</span><br><span class="line">                Store (BA0C, Index(TEMP, 0x0C))</span><br><span class="line">                Store (BA0D, Index(TEMP, 0x0D))</span><br><span class="line">                Store (BA0E, Index(TEMP, 0x0E))</span><br><span class="line">                Store (BA0F, Index(TEMP, 0x0F))</span><br><span class="line">                Store (BA10, Index(TEMP, 0x10))</span><br><span class="line">                Store (BA11, Index(TEMP, 0x11))</span><br><span class="line">                Store (BA12, Index(TEMP, 0x12))</span><br><span class="line">                Store (BA13, Index(TEMP, 0x13))</span><br><span class="line">                Store (BA14, Index(TEMP, 0x14))</span><br><span class="line">                Store (BA15, Index(TEMP, 0x15))</span><br><span class="line">                Store (BA16, Index(TEMP, 0x16))</span><br><span class="line">                Store (BA17, Index(TEMP, 0x17))</span><br><span class="line">                Store (BA18, Index(TEMP, 0x18))</span><br><span class="line">                Store (BA19, Index(TEMP, 0x19))</span><br><span class="line">                Store (BA1A, Index(TEMP, 0x1A))</span><br><span class="line">                Store (BA1B, Index(TEMP, 0x1B))</span><br><span class="line">                Store (BA1C, Index(TEMP, 0x1C))</span><br><span class="line">                Store (BA1D, Index(TEMP, 0x1D))</span><br><span class="line">                Store (BA1E, Index(TEMP, 0x1E))</span><br><span class="line">                Store (BA1F, Index(TEMP, 0x1F))</span><br><span class="line">                Return (TEMP)</span><br><span class="line">            &#125;</span><br><span class="line">            Method (WRBA, 1, Serialized)</span><br><span class="line">            &#123;</span><br><span class="line">                Name (TEMP, Buffer(0x20) &#123; &#125;)</span><br><span class="line">                Store (Arg0, TEMP)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x00)), BA00)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x01)), BA01)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x02)), BA02)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x03)), BA03)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x04)), BA04)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x05)), BA05)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x06)), BA06)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x07)), BA07)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x08)), BA08)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x09)), BA09)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x0A)), BA0A)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x0B)), BA0B)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x0C)), BA0C)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x0D)), BA0D)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x0E)), BA0E)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x0F)), BA0F)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x10)), BA10)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x11)), BA11)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x12)), BA12)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x13)), BA13)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x14)), BA14)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x15)), BA15)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x16)), BA16)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x17)), BA17)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x18)), BA18)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x19)), BA19)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x1A)), BA1A)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x1B)), BA1B)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x1C)), BA1C)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x1D)), BA1D)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x1E)), BA1E)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x1F)), BA1F)</span><br><span class="line">            &#125;</span><br><span class="line">            Method (RDBB, 0, Serialized)</span><br><span class="line">            &#123;</span><br><span class="line">                Name (TEMP, Buffer(0x20) &#123; &#125;)</span><br><span class="line">                Store (BB00, Index(TEMP, 0x00))</span><br><span class="line">                Store (BB01, Index(TEMP, 0x01))</span><br><span class="line">                Store (BB02, Index(TEMP, 0x02))</span><br><span class="line">                Store (BB03, Index(TEMP, 0x03))</span><br><span class="line">                Store (BB04, Index(TEMP, 0x04))</span><br><span class="line">                Store (BB05, Index(TEMP, 0x05))</span><br><span class="line">                Store (BB06, Index(TEMP, 0x06))</span><br><span class="line">                Store (BB07, Index(TEMP, 0x07))</span><br><span class="line">                Store (BB08, Index(TEMP, 0x08))</span><br><span class="line">                Store (BB09, Index(TEMP, 0x09))</span><br><span class="line">                Store (BB0A, Index(TEMP, 0x0A))</span><br><span class="line">                Store (BB0B, Index(TEMP, 0x0B))</span><br><span class="line">                Store (BB0C, Index(TEMP, 0x0C))</span><br><span class="line">                Store (BB0D, Index(TEMP, 0x0D))</span><br><span class="line">                Store (BB0E, Index(TEMP, 0x0E))</span><br><span class="line">                Store (BB0F, Index(TEMP, 0x0F))</span><br><span class="line">                Store (BB10, Index(TEMP, 0x10))</span><br><span class="line">                Store (BB11, Index(TEMP, 0x11))</span><br><span class="line">                Store (BB12, Index(TEMP, 0x12))</span><br><span class="line">                Store (BB13, Index(TEMP, 0x13))</span><br><span class="line">                Store (BB14, Index(TEMP, 0x14))</span><br><span class="line">                Store (BB15, Index(TEMP, 0x15))</span><br><span class="line">                Store (BB16, Index(TEMP, 0x16))</span><br><span class="line">                Store (BB17, Index(TEMP, 0x17))</span><br><span class="line">                Store (BB18, Index(TEMP, 0x18))</span><br><span class="line">                Store (BB19, Index(TEMP, 0x19))</span><br><span class="line">                Store (BB1A, Index(TEMP, 0x1A))</span><br><span class="line">                Store (BB1B, Index(TEMP, 0x1B))</span><br><span class="line">                Store (BB1C, Index(TEMP, 0x1C))</span><br><span class="line">                Store (BB1D, Index(TEMP, 0x1D))</span><br><span class="line">                Store (BB1E, Index(TEMP, 0x1E))</span><br><span class="line">                Store (BB1F, Index(TEMP, 0x1F))</span><br><span class="line">                Return (TEMP)</span><br><span class="line">            &#125;</span><br><span class="line">            Method (WRBB, 1, Serialized)</span><br><span class="line">            &#123;</span><br><span class="line">                Name (TEMP, Buffer(0x20) &#123; &#125;)</span><br><span class="line">                Store (Arg0, TEMP)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x00)), BB00)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x01)), BB01)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x02)), BB02)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x03)), BB03)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x04)), BB04)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x05)), BB05)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x06)), BB06)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x07)), BB07)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x08)), BB08)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x09)), BB09)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x0A)), BB0A)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x0B)), BB0B)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x0C)), BB0C)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x0D)), BB0D)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x0E)), BB0E)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x0F)), BB0F)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x10)), BB10)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x11)), BB11)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x12)), BB12)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x13)), BB13)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x14)), BB14)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x15)), BB15)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x16)), BB16)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x17)), BB17)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x18)), BB18)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x19)), BB19)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x1A)), BB1A)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x1B)), BB1B)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x1C)), BB1C)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x1D)), BB1D)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x1E)), BB1E)</span><br><span class="line">                Store (DerefOf(Index(TEMP, 0x1F)), BB1F)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>With all the nodes expanded in MaciASL, our work looks like this:<br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ovefvi4g3.bkt.clouddn.com/ssd_with_nodes_expanded.png" alt="ssd_with_nodes_expanded" title="">
-                </div>
-                <div class="image-caption">ssd_with_nodes_expanded</div>
-            </figure></p>
+<p>With all the nodes expanded in MaciASL, our work looks like this:<br><img src="http://ovefvi4g3.bkt.clouddn.com/ssd_with_nodes_expanded.png" alt="ssd_with_nodes_expanded"></p>
 <h3 id="Resolving-errors"><a href="#Resolving-errors" class="headerlink" title="Resolving errors"></a>Resolving errors</h3><p>Now we need to start resolving errors by using External or defining the patched EC fields as necessary.<br>We can use the compiler to help.</p>
 <p>Clicking Compile will show the first error: “3, 6085, Object not found or not accessible from scope (_SB.PCI0)”<br>It is at this line:</p>
 <pre><code>Scope (_SB.PCI0)
@@ -2793,329 +3091,965 @@ Method (FAOF, 0, Serialized)
 <h3 id="Conclusion-1"><a href="#Conclusion-1" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>Hotpatching discrete GPU disable code is a bit simpler than battery status, but involves similar concepts.</p>
 <h2 id="Credits"><a href="#Credits" class="headerlink" title="Credits"></a>Credits</h2><p><a href="https://github.com/RehabMan/OS-X-Clover-Laptop-Config" target="_blank" rel="noopener">https://github.com/RehabMan/OS-X-Clover-Laptop-Config</a><br><a href="https://www.tonymacx86.com/threads/guide-using-clover-to-hotpatch-acpi.200137/" target="_blank" rel="noopener">https://www.tonymacx86.com/threads/guide-using-clover-to-hotpatch-acpi.200137/</a></p>
 
-        </div>
-
-        <blockquote class="post-copyright">
-    
-    <div class="content">
-        
-<span class="post-time">
-    最后更新时间：<time datetime="2018-04-22T06:55:05.712Z" itemprop="dateUpdated">2018-04-22 14:55:05</time>
-</span><br>
-
-
-        
+      
     </div>
     
-    <footer>
-        <a href="https://blog.iamzhl.top">
-            <img src="/img/avatar.jpg" alt="athlonreg/套陆">
-            athlonreg/套陆
-        </a>
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="athlonreg/套陆 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>关注微信公众号来订阅我的博客吧!!!</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>请作者喝杯咖啡！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="athlonreg/套陆 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="athlonreg/套陆 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    athlonreg/套陆
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://blog.iamzhl.top/Clover-ACPI-hotpatch.html" title="Clover ACPI hotpatch">https://blog.iamzhl.top/Clover-ACPI-hotpatch.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hacintosh/" rel="tag"><i class="fa fa-tag"></i> Hacintosh</a>
+          
+            <a href="/tags/SSDT/" rel="tag"><i class="fa fa-tag"></i> SSDT</a>
+          
+            <a href="/tags/hotpatch/" rel="tag"><i class="fa fa-tag"></i> hotpatch</a>
+          
+            <a href="/tags/ACPI/" rel="tag"><i class="fa fa-tag"></i> ACPI</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/HP-OMEN-by-HP-Laptop.html" rel="next" title="HP OMEN by HP Laptop">
+                <i class="fa fa-chevron-left"></i> HP OMEN by HP Laptop
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Install-and-config-mysql-on-mac.html" rel="prev" title="Install and config mysql on mac">
+                Install and config mysql on mac <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
     </footer>
-</blockquote>
-
-        
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
-</div>
-
+  </div>
+  
+  
+  
+  </article>
 
 
-        <div class="post-footer">
-            
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACPI/">ACPI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hacintosh/">Hacintosh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSDT/">SSDT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hotpatch/">hotpatch</a></li></ul>
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
-            
-<div class="page-share-wrap">
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
-
-<div class="page-share" id="pageShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.iamzhl.top/Clover-ACPI-hotpatch.html&title=《Clover ACPI hotpatch》 — Athlonreg's Blog&pic=https://blog.iamzhl.top/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Clover-ACPI-hotpatch.html&title=《Clover ACPI hotpatch》 — Athlonreg's Blog&source=Using Clover to “hotpatch” ACPI" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.iamzhl.top/Clover-ACPI-hotpatch.html" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Clover ACPI hotpatch》 — Athlonreg's Blog&url=https://blog.iamzhl.top/Clover-ACPI-hotpatch.html&via=https://blog.iamzhl.top" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.iamzhl.top/Clover-ACPI-hotpatch.html" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-
-    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
-        <i class="icon icon-share-alt icon-lg"></i>
-    </a>
-</div>
-
+      <div id="SOHUCS"></div>
+    
+  </div>
 
 
         </div>
-    </div>
-
-    
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/Install-and-config-mysql-on-mac.html" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Install and config mysql on mac</h4>
-      </a>
-    </div>
-  
-
-  
-    <div class="waves-block waves-effect next">
-      <a href="/HP-OMEN-by-HP-Laptop.html" id="post-next" class="post-nav-link">
-        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">HP OMEN by HP Laptop</h4>
-      </a>
-    </div>
-  
-</nav>
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Valine Comments -->
-    <div class="comments vcomment" id="comments"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
-    <!-- Valine Comments script -->
-    <script>
-        var GUEST_INFO = ['nick','mail','link'];
-        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-          return GUEST_INFO.indexOf(item) > -1
-        });
-        new Valine({
-            el: '#comments',
-            notify: 'true' == 'true',
-            verify: 'true' == 'true',
-            appId: "UvfjEEwG1cCMWwMoSfmFPHsp-gzGzoHsz",
-            appKey: "05veilg20psiTa5NPUhOxz6I",
-            avatar: "mm",
-            placeholder: "给博主留言...",
-            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
-            pageSize: "10"
-        })
-    </script>
-    <!-- Valine Comments end -->
-
-
-
-
-
-
-
-</article>
-
-<div id="reward" class="page-modal reward-lay">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <h3 class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        请站长喝杯咖啡吧~
-        <i class="icon icon-quote-right"></i>
-    </h3>
-    <div class="reward-content">
         
-        <div class="reward-code">
-            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/uploads/avatar.jpg"
+              alt="athlonreg/套陆" />
+          
+            <p class="site-author-name" itemprop="name">athlonreg/套陆</p>
+            <p class="site-description motion-element" itemprop="description"></p>
         </div>
-        
-        <label class="reward-toggle">
-            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
-                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
-            <div class="reward-toggle-ctrol">
-                <span class="reward-toggle-item wechat">微信</span>
-                <span class="reward-toggle-label"></span>
-                <span class="reward-toggle-item alipay">支付宝</span>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
             </div>
-        </label>
-        
-    </div>
-</div>
+          
 
-
-
-</div>
-
-        <footer class="footer">
-    <div class="top">
-        
-<p>
-    <span id="busuanzi_container_site_uv" style='display:none'>
-        站点总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style='display:none'>
-        站点总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
-
-        <p>
+          
             
-                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
-        </p>
-    </div>
-    <div class="bottom">
-        <p><span>athlonreg/套陆 &copy; 2017 - 2018</span>
-            <span>
-                
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
-            </span>
-        </p>
-    </div>
-</footer>
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/athlonreg" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:qingyingairen@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/u/a918c9e67dc2" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-heartbeat"></i>简书</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/iamzhl" target="_blank" title="coding">
+                  
+                    <i class="fa fa-fw fa-spinner"></i>coding</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Clover-to-“hotpatch”-ACPI"><span class="nav-number">1.</span> <span class="nav-text">Using Clover to “hotpatch” ACPI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Preface–序言"><span class="nav-number">2.</span> <span class="nav-text">Preface–序言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Brief-description-for-hotpatch–hotpatch概要"><span class="nav-number">3.</span> <span class="nav-text">Brief description for hotpatch–hotpatch概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-brief-description-of-each-hotpatch-SSDT-is-provided-below–下面是每一个-hotpatch-SSDT-的概要"><span class="nav-number">4.</span> <span class="nav-text">A brief description of each hotpatch SSDT is provided below–下面是每一个 hotpatch SSDT 的概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-说明文档"><span class="nav-number">5.</span> <span class="nav-text">Introduction-说明文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Clover-mechanisms-Clover机制"><span class="nav-number">5.1.</span> <span class="nav-text">Clover mechanisms-Clover机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-ACPI-objects-重命名ACPI对象"><span class="nav-number">5.2.</span> <span class="nav-text">Renaming ACPI objects-重命名ACPI对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Removing-methods-移除方法"><span class="nav-number">5.3.</span> <span class="nav-text">Removing methods-移除方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redirect-and-Replace-重定向和替换"><span class="nav-number">5.4.</span> <span class="nav-text">Redirect and Replace-重定向和替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rename-and-Replace-重命名和替换"><span class="nav-number">5.5.</span> <span class="nav-text">Rename and Replace-重命名和替换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips-for-complex-Rename-and-Replace"><span class="nav-number">5.5.1.</span> <span class="nav-text">Tips for complex Rename and Replace</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-value-patching"><span class="nav-number">5.6.</span> <span class="nav-text">Code value patching</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clover-ACPI-configuration"><span class="nav-number">5.7.</span> <span class="nav-text">Clover ACPI configuration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Troubleshooting"><span class="nav-number">5.8.</span> <span class="nav-text">Troubleshooting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Battery-Status-Hotpatch"><span class="nav-number">6.</span> <span class="nav-text">Battery Status Hotpatch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-diffmerge-to-find-patched-vs-native-differences"><span class="nav-number">6.1.</span> <span class="nav-text">Using diffmerge to find patched vs. native differences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Constructing-the-initial-SSDT"><span class="nav-number">6.2.</span> <span class="nav-text">Constructing the initial SSDT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resolving-errors"><span class="nav-number">6.3.</span> <span class="nav-text">Resolving errors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-existing-methods"><span class="nav-number">6.4.</span> <span class="nav-text">Renaming existing methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion"><span class="nav-number">6.5.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Disabling-discrete-switched-GPU-with-Hotpatch"><span class="nav-number">7.</span> <span class="nav-text">Disabling discrete/switched GPU with Hotpatch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-the-replacement-INI-OFF-REG-methods"><span class="nav-number">7.1.</span> <span class="nav-text">Building the replacement _INI/_OFF/_REG methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Renaming-the-methods"><span class="nav-number">7.2.</span> <span class="nav-text">Renaming the methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-simple-example"><span class="nav-number">7.3.</span> <span class="nav-text">A simple example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion-1"><span class="nav-number">7.4.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Credits"><span class="nav-number">8.</span> <span class="nav-text">Credits</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
     </main>
-    <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy;  2017 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">athlonreg/套陆</span>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      61.8k
+    </span>
+  
+</div>
 
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.iamzhl.top/Clover-ACPI-hotpatch.html&title=《Clover ACPI hotpatch》 — Athlonreg's Blog&pic=https://blog.iamzhl.top/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.iamzhl.top/Clover-ACPI-hotpatch.html&title=《Clover ACPI hotpatch》 — Athlonreg's Blog&source=Using Clover to “hotpatch” ACPI" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.iamzhl.top/Clover-ACPI-hotpatch.html" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Clover ACPI hotpatch》 — Athlonreg's Blog&url=https://blog.iamzhl.top/Clover-ACPI-hotpatch.html&via=https://blog.iamzhl.top" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.iamzhl.top/Clover-ACPI-hotpatch.html" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aO27DMBAFwNz/0k6bIqbfWzoBTA4rI5FEjYoF9/P1Fa/Hj7W+Zv17/cxkl62FgYHxsYzHcq032LkmYSfvhoGBcQ8jD6D5X9avnnyI5N0wMDAwclISpl8EzfJYiYGBgZEf3dbPaVNWDAwMjJ0ktg2ybZr6T7k4BgbGBzLyqvv///6T/gYGBsZHMR7lSo50s8ZkHmR/2QUDA+NoRh7g3nVkbJPnYvgDAwPjUEZSoG8PbUkRbXblUzAGBsYFjPwAlxTL8gPfrP2JgYFxGyMJZ+3j2sJ9kr7WFUEMDIyDGOsbZo3G2WGxPTi+qBpiYGAcxGiLXwk7weeFtmHwxcDAOIgxa0/un83eey8GBsbZjFmK+3cBd5ZgY2Bg3MDIx7Z2xiP2RzFeNFMxMDCOZrSDDrM2Z/Lf/UENDAyM8xiz4lfLa5PkelwMAwPjGkZ+c3tYnDVKi7COgYFxAWN2aEuunLUZ8s+HgYFxA2PWBpiV+2fPeSzXVjcDAwPjoxizFuO6xJ8H6Da4P/3oGBgYFzBmhbAkILbheFb+w8DAuIfRJpCzVDbfsWgeYGBgHMp4lKsttM0GMtrPhIGBcTYjXzsFtRY5S30xMDDOZrRBNhnwetfnKNqcGBgYFzB2Al8+FraTxL64EgMDA2NUrN8ZnqgDOgYGBsYoOM5aC8mrP+1vYGBgHM3Y2aAdxUgCdDJ4gYGBcQ+jTR3bpuasAdk2NTEwMA5lfAMmWLwqxoaWXQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+<div class="powered-by">
+<i class="fa fa-user-md"></i>
+<span id="busuanzi_container_site_pv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>
+</span>
 </div>
 
 
 
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共61.8k字</span>
+</div>
 
-    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+  
+  <script type="text/javascript" src="/vendors/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine@1.1.4/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+    new Valine({
+        av: AV,
+        el: '#vcomments' ,
+        verify: 'false',
+        notify: 'false',
+        app_id: 'UvfjEEwG1cCMWwMoSfmFPHsp-gzGzoHsz',
+        app_key: '05veilg20psiTa5NPUhOxz6I',
+        placeholder: '给博主留言...'
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("UvfjEEwG1cCMWwMoSfmFPHsp-gzGzoHsz", "05veilg20psiTa5NPUhOxz6I");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
-
-
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
 </script>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+  
+
+  
+  
 
 
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<template id="search-tpl">
-<li class="item">
-    <a href="{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
-</template>
-
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
 
 
-
-<!-- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-});
-</script>
-
-<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
-
-
-
-
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
+  
 
 </body>
 </html>
