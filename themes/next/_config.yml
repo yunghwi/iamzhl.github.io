@@ -494,11 +494,11 @@ changyan:
 # more info please open https://valine.js.org
 valine:
   enable: false
-  appid: UvfjEEwG1cCMWwMoSfmFPHsp-gzGzoHsz # your leancloud application appid
-  appkey: 05veilg20psiTa5NPUhOxz6I # your leancloud application appkey
+  appid: GgQQ9sJJh6wCVyqmpuJtGXGK-gzGzoHsz # your leancloud application appid
+  appkey: Xvu0NyYdtycdOYy5ARB3uzba # your leancloud application appkey
   notify: true # mail notifier , https://github.com/xCss/Valine/wiki
   verify: true # Verification code
-  placeholder: Just go go # comment box placeholder
+  placeholder: 留下你的脚印吧´◡` # comment box placeholder
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
@@ -519,12 +519,12 @@ gitment:
   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
   count: true # Show comments count in post meta area
   lazy: false # Comments lazy loading with a button
-  cleanly: false # Hide 'Powered by ...' on footer, and more
-  language: # Force language, or auto switch by theme
+  cleanly: true # Hide 'Powered by ...' on footer, and more
+  language: zh-CN # Force language, or auto switch by theme
   github_user: athlonreg # MUST HAVE, Your Github Username
-  github_repo: https://github.com/athlonreg/git-comment # MUST HAVE, The name of the repo you use to store Gitment comments
-  client_id: 523fc2cf01cca35582ad # MUST HAVE, Github client id for the Gitment
-  client_secret: cb43751ff9a0519d18b46258acc3b6a6163c072e # EITHER this or proxy_gateway, Github access secret token for the Gitment
+  github_repo: git-comment # MUST HAVE, The name of the repo you use to store Gitment comments
+  client_id: 2532600737516ae73769 # MUST HAVE, Github client id for the Gitment
+  client_secret: 5447e3b58a359bae698dcac5318ec956949b2163 # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
 
@@ -635,8 +635,8 @@ rating:
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
   enable: true
-  app_id: UvfjEEwG1cCMWwMoSfmFPHsp-gzGzoHsz #<app_id>
-  app_key: 05veilg20psiTa5NPUhOxz6I #<app_key>
+  app_id: GgQQ9sJJh6wCVyqmpuJtGXGK-gzGzoHsz #<app_id>
+  app_key: Xvu0NyYdtycdOYy5ARB3uzba #<app_key>
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in lc counter and just want to use it directly
   # (without hexo-leancloud-counter-security plugin), set the `security` to `false`.
