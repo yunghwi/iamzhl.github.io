@@ -451,16 +451,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Problem about Sending out death squads]]></title>
-    <url>%2FProblem-about-Sending-out-death-squads.html</url>
-    <content type="text"><![CDATA[派遣敢死队问题 问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
+    <title><![CDATA[Problem about police and gangster 110]]></title>
+    <url>%2FProblem-about-police-and-gangster-110.html</url>
+    <content type="text"><![CDATA[警匪110问题 问题描述 思路1、一共九个数字，八个操作符；2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；3、共有 3^8 种情况，遍历每种情况判断输出；4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1x10+2，然后下一次循环操作符为+，需要计算的就是12+3，同理在3、4之间的空需要计算的是3x10+4，而不是（12+3）x10+4，所以需要一个临时变量来记录上次的操作数，还需要一个变量来记录上次的操作符将上次的结果进行统计处理，原因就在于我们无法确定下次的操作符是不是留空。6、由于我们在统计和时，只有在下一次循环才能处理最后一个操作数，所以需要将9最后单独处理。 代码实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int a[9]=&#123;1,2,3,4,5,6,7,8,9&#125;; int sum; int temp; int oper,lastoper; int number; int i,j; for(i=0;i&lt;pow(3,8);i++) &#123; sum=0; temp=1; lastoper=1; number=i; for(j=1;j&lt;=8;j++) &#123; //操作八次 oper=number%3; number=number/3; if (!oper) temp=temp*10+a[j]; //留空单独处理 if (oper==1) &#123; //当前操作符 if(lastoper==1)&#123; //前一次操作符 sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; //更新上次操作符 &#125; if(oper==2)&#123; if(lastoper==1)&#123; sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; &#125; &#125; if(lastoper==1) //第九次操作单独处理 sum=sum+temp; if(lastoper==2) sum=sum-temp; if(sum==110) &#123; number=i; for(j=1;j&lt;=8;j++) &#123; printf(&quot;%d&quot;,a[j-1]); oper=number%3; number=number/3; if(oper==1) printf(&quot;+&quot;); if(oper==2) printf(&quot;-&quot;); else continue; &#125; printf(&quot;9\n&quot;); &#125; &#125; return 0;&#125; 运行结果]]></content>
       <categories>
         <category>algorithm</category>
       </categories>
       <tags>
         <tag>算法</tag>
         <tag>C语言</tag>
-        <tag>派遣敢死队</tag>
+        <tag>警匪110</tag>
       </tags>
   </entry>
   <entry>
@@ -477,16 +477,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Problem about police and gangster 110]]></title>
-    <url>%2FProblem-about-police-and-gangster-110.html</url>
-    <content type="text"><![CDATA[警匪110问题 问题描述 思路1、一共九个数字，八个操作符；2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；3、共有 3^8 种情况，遍历每种情况判断输出；4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1x10+2，然后下一次循环操作符为+，需要计算的就是12+3，同理在3、4之间的空需要计算的是3x10+4，而不是（12+3）x10+4，所以需要一个临时变量来记录上次的操作数，还需要一个变量来记录上次的操作符将上次的结果进行统计处理，原因就在于我们无法确定下次的操作符是不是留空。6、由于我们在统计和时，只有在下一次循环才能处理最后一个操作数，所以需要将9最后单独处理。 代码实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int a[9]=&#123;1,2,3,4,5,6,7,8,9&#125;; int sum; int temp; int oper,lastoper; int number; int i,j; for(i=0;i&lt;pow(3,8);i++) &#123; sum=0; temp=1; lastoper=1; number=i; for(j=1;j&lt;=8;j++) &#123; //操作八次 oper=number%3; number=number/3; if (!oper) temp=temp*10+a[j]; //留空单独处理 if (oper==1) &#123; //当前操作符 if(lastoper==1)&#123; //前一次操作符 sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; //更新上次操作符 &#125; if(oper==2)&#123; if(lastoper==1)&#123; sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; &#125; &#125; if(lastoper==1) //第九次操作单独处理 sum=sum+temp; if(lastoper==2) sum=sum-temp; if(sum==110) &#123; number=i; for(j=1;j&lt;=8;j++) &#123; printf(&quot;%d&quot;,a[j-1]); oper=number%3; number=number/3; if(oper==1) printf(&quot;+&quot;); if(oper==2) printf(&quot;-&quot;); else continue; &#125; printf(&quot;9\n&quot;); &#125; &#125; return 0;&#125; 运行结果]]></content>
+    <title><![CDATA[Problem about Sending out death squads]]></title>
+    <url>%2FProblem-about-Sending-out-death-squads.html</url>
+    <content type="text"><![CDATA[派遣敢死队问题 问题描述 思路1、首先将所有士兵直属上级的编号放于数组a；2、每个人有两种选择，去和不去，用0和1表示，转换为二进制放于数组b；3、最后判断每个士兵是不是与其直属上级同时执行任务，进而对count进行统计。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int number; int count=0; int flag; scanf(&quot;%d&quot;,&amp;number);//派遣的人数 int i,j; int temp; int a[number],b[number];//a a[0]=0;//将军 for(i=1;i&lt;number;i++)&#123; scanf(&quot;%d&quot;,&amp;a[i]);//每个人的直属上级 &#125; for(i=1;i&lt;pow(2,number);i++)&#123; temp=i; for(j=0;j&lt;number;j++)&#123; //遍历所有情况 b[j]=temp%2; temp/=2; &#125; flag=1; for(j=1;j&lt;number;j++)&#123; //将军没有上级，不用判断 if(b[j]==1&amp;&amp;b[a[j]-1]==1)&#123; //判断是否士兵和上级同时执行任务 //b[j]为编号为j+1的士兵去不去 //b[a[j]-1]为编号为j+1的士兵的直接上级去不去 flag=0; break; &#125; &#125; if(flag==1) count++; &#125; printf(&quot;%d\n&quot;,count); return 0;&#125; 运行结果]]></content>
       <categories>
         <category>algorithm</category>
       </categories>
       <tags>
         <tag>算法</tag>
         <tag>C语言</tag>
-        <tag>警匪110</tag>
+        <tag>派遣敢死队</tag>
       </tags>
   </entry>
   <entry>
