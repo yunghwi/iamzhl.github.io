@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 
+{# NexT version #}
+{% set version = next_env('version') %}
+
 {% set html_class = 'theme-next ' + theme.scheme %}
 {% if theme.motion.enable %}
   {% set html_class = html_class + ' use-motion' %}
@@ -7,9 +10,11 @@
 
 <html class="{{ html_class | lower }}" lang="{{ config.language }}">
 <head>
-  {% include '_partials/head.swig' %}
+  {{ partial('_partials/head/head.swig', {}, {cache: theme.cache.enable}) }}
+  {% include '_partials/head/head-unique.swig' %}
   <title>{% block title %}{% endblock %}</title>
   {% include '_third-party/analytics/index.swig' %}
+  {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
@@ -22,19 +27,21 @@
   <div class="{{ container_class }} {% block page_class %}{% endblock %}">
     <div class="headband"></div>
 
-    <a href="https://github.com/athlonreg"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
-
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> {%- include '_partials/header.swig' %} </div>
+      <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
     </header>
+
+    {{ partial('_third-party/github-banner.swig', {}, {cache: theme.cache.enable}) }}
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          {% if theme.scheme === 'Pisces' || theme.scheme === 'Gemini' %}
+            {% include '_partials/header/sub-menu.swig' %}
+          {% endif %}
           <div id="content" class="content">
             {% block content %}{% endblock %}
           </div>
-          {% include '_third-party/duoshuo-hot-articles.swig' %}
           {% include '_partials/comments.swig' %}
         </div>
         {% if theme.sidebar.display !== 'remove' %}
@@ -45,7 +52,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        {% include '_partials/footer.swig' %}
+        {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
         {% include '_third-party/analytics/analytics-with-widget.swig' %}
         {% block footer %}{% endblock %}
       </div>
@@ -60,6 +67,14 @@
       </div>
     {% endif %}
 
+    {% if theme.needmoreshare2.enable and theme.needmoreshare2.float.enable %}
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    {% endif %}
+
   </div>
 
   {% include '_scripts/vendors.swig' %}
@@ -68,8 +83,6 @@
   {% set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
   {% include scheme_script %}
 
-  {% include '_scripts/pages/post-details.swig' %}
-
   {% block script_extra %}{% endblock %}
 
   {% include '_scripts/boostrap.swig' %}
@@ -77,10 +90,15 @@
   {% include '_third-party/comments/index.swig' %}
   {% include '_third-party/search/index.swig' %}
   {% include '_third-party/analytics/lean-analytics.swig' %}
+  {% include '_third-party/analytics/firestore.swig' %}
   {% include '_third-party/seo/baidu-push.swig' %}
+  {% include '_third-party/math/index.swig' %}
+  {% include '_third-party/needsharebutton.swig' %}
   {% include '_third-party/rating.swig' %}
-  {% include '_third-party/mathjax.swig' %}
+  {% include '_third-party/pangu.swig' %}
   {% include '_third-party/scroll-cookie.swig' %}
   {% include '_third-party/exturl.swig' %}
+  {% include '_third-party/bookmark.swig' %}
+  {% include '_third-party/copy-code.swig' %}
 </body>
 </html>
