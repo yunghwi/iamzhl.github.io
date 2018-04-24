@@ -316,7 +316,7 @@ related_posts:
 
 # Declare license on posts
 post_copyright:
-  enable: false
+  enable: true
   license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a>
 
 # Post edit
@@ -459,12 +459,12 @@ math:
 
 # Han Support
 # Dependencies: https://github.com/theme-next/theme-next-han
-han: false
+han: true
 
 # Pangu Support
 # Dependencies: https://github.com/theme-next/theme-next-pangu
 # For more information: https://github.com/vinta/pangu.js
-pangu: false
+pangu: true
 
 # Swiftype Search API Key
 #swiftype_key:
@@ -532,18 +532,18 @@ gitment:
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-baidushare:
-  type: slide
+#baidushare:
+#  type: slide
 
 # Share
 # This plugin is more useful in China, make sure you known how to use it.
 # And you can find the use guide at official webiste: http://www.jiathis.com/.
 # Warning: JiaThis does not support https.
-jiathis: true
+jiathis: false
   ##uid: Get this uid from http://www.jiathis.com/
 
 #ShareSDK
-sharesdk: true
+sharesdk: false
 shareSDKappkey: 256898a22bf64
 
 #add_this_id:
@@ -562,18 +562,18 @@ shareSDKappkey: 256898a22bf64
 needmoreshare2:
   enable: true
   postbottom:
-    enable: false
-    options:
-      iconStyle: box
-      boxForm: horizontal
-      position: bottomCenter
-      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
-  float:
     enable: true
     options:
       iconStyle: default
       boxForm: horizontal
-      position: bottomCenter
+      position: middle
+      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook,RenRen,Posterous,Tumblr,GoogleBookmarks,Newsvine,Mailto,Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru,Linkedin
+  float:
+    enable: false
+    options:
+      iconStyle: default
+      boxForm: horizontal
+      position: top
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Linkedin
 
 # Google Webmaster tools verification setting
@@ -774,7 +774,7 @@ tabs:
 # Reading progress bar
 # Dependencies: https://github.com/theme-next/theme-next-reading-progress
 reading_progress:
-  enable: false
+  enable: true
   color: "#37c6c0"
   height: 2px
 
@@ -807,15 +807,15 @@ motion:
 # Please, choose only any one variant, do not need to install both.
 # For install 2.x: https://github.com/theme-next/theme-next-fancybox
 # For install 3.x: https://github.com/theme-next/theme-next-fancybox3
-fancybox: false
+fancybox: true
 
 # Added switch option for separated repo in 6.0.0.
 # Dependencies: https://github.com/theme-next/theme-next-fastclick
-fastclick: false
+fastclick: true
 
 # Added switch option for separated repo in 6.0.0.
 # Dependencies: https://github.com/theme-next/theme-next-jquery-lazyload
-lazyload: false
+lazyload: true
 
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
@@ -836,7 +836,7 @@ pace: false
 #pace-theme-minimal
 # For example
 # pace_theme: pace-theme-center-simple
-pace_theme: pace-theme-minimal
+pace_theme: pace-theme-center-atom
 
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
@@ -845,7 +845,7 @@ canvas_nest: true
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
 # three_waves
-three_waves: false
+three_waves: true
 # canvas_lines
 canvas_lines: false
 # canvas_sphere
@@ -858,7 +858,7 @@ canvas_sphere: false
 # alpha: The transparency of the ribbon.
 # zIndex: The display level of the ribbon.
 canvas_ribbon:
-  enable: false
+  enable: true
   size: 300
   alpha: 0.6
   zIndex: -1
