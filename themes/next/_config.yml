@@ -138,8 +138,8 @@ menu_settings:
 # Schemes
 #scheme: Muse
 #scheme: Mist
-#scheme: Pisces
-scheme: Gemini
+scheme: Pisces
+#scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -291,7 +291,7 @@ codeblock:
 
 # Wechat Subscriber
 wechat_subscriber:
-  enabled: true
+  enabled: false
   qcode: /uploads/wechat-qcode.jpg
   description: 关注微信公众号来订阅我的博客吧!!!
 
@@ -426,7 +426,7 @@ font:
 
 # Math Equations Render Support
 math:
-  enable: false
+  enable: true
 
   # Default(true) will load mathjax/katex script on demand
   # That is it only render those page who has 'mathjax: true' in Front Matter.
@@ -532,14 +532,14 @@ gitment:
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-#baidushare:
-##  type: button
+baidushare:
+  type: slide
 
 # Share
 # This plugin is more useful in China, make sure you known how to use it.
 # And you can find the use guide at official webiste: http://www.jiathis.com/.
 # Warning: JiaThis does not support https.
-#jiathis: true
+jiathis: true
   ##uid: Get this uid from http://www.jiathis.com/
 
 #ShareSDK
@@ -560,7 +560,7 @@ shareSDKappkey: 256898a22bf64
 #           Technorati,Posterous,Tumblr,GoogleBookmarks,Newsvine,
 #           Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
 needmoreshare2:
-  enable: false
+  enable: true
   postbottom:
     enable: false
     options:
@@ -569,12 +569,12 @@ needmoreshare2:
       position: bottomCenter
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
   float:
-    enable: false
+    enable: true
     options:
-      iconStyle: box
+      iconStyle: default
       boxForm: horizontal
-      position: middleRight
-      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
+      position: bottomCenter
+      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Linkedin
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
@@ -729,7 +729,7 @@ local_search:
 # Bookmark Support
 # Dependencies: https://github.com/theme-next/theme-next-bookmark
 bookmark:
-  enable: false
+  enable: true
   # if auto
   #   - save the reading position when closing the page
   #   - or clicking the bookmark-icon
@@ -840,7 +840,7 @@ pace_theme: pace-theme-minimal
 
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
-canvas_nest: false
+canvas_nest: true
 
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
