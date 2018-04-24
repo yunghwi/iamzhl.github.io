@@ -1,4 +1,5 @@
-layout: tags
+title: Tagcloud
+type: "tags"
 comments: false
 ---
 

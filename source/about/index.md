@@ -1,5 +1,6 @@
----
-title: About me
+title: 关于
+type: "about"
+comments: false
 ---
 
 Hi, Everybody. I'am athlonreg. 
