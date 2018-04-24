@@ -4,6 +4,7 @@ date: {{ date }}
 categories: {{ categories }}
 description: {{ description }}
 tags:
+copyright: true
 ---
 
 

@@ -77,15 +77,15 @@ footer:
   # -------------------------------------------------------------
   powered:
     # Hexo link (Powered by Hexo).
-    enable: true
+    enable: false
     # Version info of Hexo after Hexo link (vX.X.X).
-    version: true
+    version: false
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
+    enable: false
     # Version info of NexT after scheme info (vX.X.X).
-    version: true
+    version: false
   # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
@@ -296,7 +296,7 @@ wechat_subscriber:
   description: 关注微信公众号来订阅我的博客吧!!!
 
 # Reward
-reward_comment: Donate comment here
+reward_comment: 请站长喝杯咖啡吧´◡`
 wechatpay: /images/wechatpay.jpg
 alipay: /images/alipay.jpg
 #bitcoin: /images/bitcoin.png
@@ -539,7 +539,7 @@ gitment:
 # This plugin is more useful in China, make sure you known how to use it.
 # And you can find the use guide at official webiste: http://www.jiathis.com/.
 # Warning: JiaThis does not support https.
-#jiathis:
+jiathis: true
   ##uid: Get this uid from http://www.jiathis.com/
 
 #add_this_id:
@@ -634,7 +634,7 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: true
+  enable: false
   app_id: GgQQ9sJJh6wCVyqmpuJtGXGK-gzGzoHsz #<app_id>
   app_key: Xvu0NyYdtycdOYy5ARB3uzba #<app_key>
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
@@ -664,6 +664,12 @@ busuanzi_count:
   post_views: true
   post_views_icon: eye
 
+# Post wordcount display settings
+# Dependencies: https://github.com/willin/hexo-wordcount
+post_wordcount:
+  item_text: true
+  wordcount: true
+  min2read: true
 
 # Tencent analytics ID
 tencent_analytics: 65767586
