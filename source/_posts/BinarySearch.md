@@ -1,5 +1,6 @@
 ---
 title: BinarySearch
+copyright: true
 date: 2018-01-17 15:29:36
 categories: algorithm
 description: 二分查找

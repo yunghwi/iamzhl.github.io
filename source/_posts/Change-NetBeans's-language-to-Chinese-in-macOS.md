@@ -1,5 +1,6 @@
 ---
 title: Change NetBeans's language to Chinese in macOS
+copyright: true
 date: 2017-12-09 02:36:23
 categories: Study
 description: macOS 下修改 NetBeans 的界面语言

@@ -1,5 +1,6 @@
 ---
 title: Common patches on Hackintosh
+copyright: true
 date: 2018-04-09 10:08:56
 categories: Hackintosh
 description: 黑苹果常见补丁

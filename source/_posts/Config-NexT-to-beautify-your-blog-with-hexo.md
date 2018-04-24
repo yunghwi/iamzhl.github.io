@@ -1,5 +1,6 @@
 ---
 title: Config NexT to beautify your blog with hexo
+copyright: true
 date: 2017-09-14 19:04:36
 categories: Study
 description: NexT使用详解

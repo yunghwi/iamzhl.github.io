@@ -1,5 +1,6 @@
 ---
 title: Deploy tale on CentOS7
+copyright: true
 date: 2018-04-14 09:34:15
 categories: Linux
 description: 在 CentOS7 部署国人开源博客 Tale

@@ -1,5 +1,6 @@
 ---
 title: Allow apps downloaded from anywhere on macOS
+copyright: true
 date: 2017-09-15 21:16:31
 categories: Hackintosh
 description: 在 macOS 启用任何来源

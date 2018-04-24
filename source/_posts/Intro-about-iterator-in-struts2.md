@@ -1,5 +1,6 @@
 ---
 title: Intro about iterator in struts2
+copyright: true
 date: 2018-04-11 10:12:17
 categories: Study
 description: struts2中s:iterator 标签的使用详解

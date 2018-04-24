@@ -1,5 +1,6 @@
 ---
 title: Driver audio for hackintosh
+copyright: true
 date: 2017-11-06
 categories: Hackintosh
 description: 利用 AppleALC 驱动声卡

@@ -1,5 +1,6 @@
 ---
 title: Sync the codes between native and remote by git 
+copyright: true
 date: 2017-09-27 22:54:26
 categories: Study
 description: 利用 git 实现本地和远程之间代码的同步

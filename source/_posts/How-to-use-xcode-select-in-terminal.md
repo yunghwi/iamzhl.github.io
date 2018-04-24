@@ -1,5 +1,6 @@
 ---
 title: How to use xcode-select in terminal
+copyright: true
 date: 2017-09-03
 categories: Hackintosh
 description: How to use xcode-select in terminal

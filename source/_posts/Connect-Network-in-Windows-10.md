@@ -1,5 +1,6 @@
 ---
 title: Connect Network in Windows 10
+copyright: true
 date: 2017-10-15 21:59:01
 categories: Study
 password: password

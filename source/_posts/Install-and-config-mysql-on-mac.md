@@ -1,5 +1,6 @@
 ---
 title: Install and config mysql on mac
+copyright: true
 date: 2017-12-20 17:01:00
 categories: Study
 description: 在 Mac 安装和配置 MySQL

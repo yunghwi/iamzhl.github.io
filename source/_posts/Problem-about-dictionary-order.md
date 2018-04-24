@@ -1,5 +1,6 @@
 ---
 title: Problem about dictionary order
+copyright: true
 date: 2017-08-31
 categories: algorithm
 description: 字典序问题

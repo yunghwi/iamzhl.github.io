@@ -1,5 +1,6 @@
 ---
 title: Problem about Sending out death squads
+copyright: true
 date: 2017-09-18
 categories: algorithm
 description: 派遣敢死队问题

@@ -1,5 +1,6 @@
 ---
 title: 0-1 backpack
+copyright: true
 date: 2018-01-17 16:51:25
 categories: algorithm
 description: 0-1背包问题

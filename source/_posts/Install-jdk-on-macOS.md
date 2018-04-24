@@ -1,5 +1,6 @@
 ---
 title: Install jdk on macOS
+copyright: true
 date: 2017-08-28
 categories: Study
 description: Mac 下搭建 Java 开发环境

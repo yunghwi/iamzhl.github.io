@@ -1,5 +1,6 @@
 ---
 title: Problem about low-carbon lifestyle answering
+copyright: true
 date: 2017-09-12
 categories: algorithm
 description: 低碳生活答题问题

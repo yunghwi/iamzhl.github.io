@@ -1,5 +1,6 @@
 ---
 title: Problem about coin array
+copyright: true
 date: 2017-09-03
 categories: algorithm
 description: 金币阵列问题

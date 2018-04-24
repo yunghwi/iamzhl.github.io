@@ -1,5 +1,6 @@
 ---
 title: RW NTFS partition natively on macOS
+copyright: true
 date: 2017-10-27
 categories: Hackintosh
 description: 实现 MAC 原生读写 NTFS 分区

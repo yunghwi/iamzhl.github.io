@@ -1,5 +1,6 @@
 ---
 title: Speed up the hackintosh to boot
+copyright: true
 date: 2017-09-05
 categories: Hackintosh
 description: 加快黑苹果开机速度的一种方法

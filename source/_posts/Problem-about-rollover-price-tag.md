@@ -1,5 +1,6 @@
 ---
 title: Problem about rollover price tag
+copyright: true
 date: 2017-09-18
 categories: algorithm
 description: 价牌翻转问题

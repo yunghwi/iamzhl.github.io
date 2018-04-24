@@ -1,6 +1,7 @@
 ---
 title: Deploy tale on Fedora27
 date: 2018-04-15 09:30:10
+copyright: true
 categories: Linux
 description: 在 Fedora27 部署国人开源博客 Tale
 tags: 

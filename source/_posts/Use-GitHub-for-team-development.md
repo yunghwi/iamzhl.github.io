@@ -1,5 +1,6 @@
 ---
 title: Use GitHub for team development
+copyright: true
 date: 2018-04-21 22:07:42
 categories: Study
 description: 利用 GitHub 进行团队开发

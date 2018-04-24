@@ -1,5 +1,6 @@
 ---
 title: How to unzip packages without .DS_store
+copyright: true
 date: 2018-03-15 17:11:43
 categories: Hackintosh
 description: mac 下解压压缩包避免生产.DS_store文件

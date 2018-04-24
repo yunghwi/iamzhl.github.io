@@ -1,5 +1,6 @@
 ---
 title: RecurMatrix
+copyright: true
 date: 2018-01-17 15:54:02
 categories: algorithm
 description: 矩阵连乘问题

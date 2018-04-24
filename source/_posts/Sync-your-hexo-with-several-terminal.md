@@ -1,5 +1,6 @@
 ---
 title: Sync your hexo with several terminal
+copyright: true
 date: 2017-10-14 23:35:54
 categories: Study
 description: 对多设备之间 hexo 搭建的 blog 进行同步

@@ -1,5 +1,6 @@
 ---
 title: Clover ACPI hotpatch
+copyright: true
 date: 2017-12-17 15:30:15
 categories: Hackintosh
 description: Using Clover to "hotpatch" ACPI 

@@ -1,5 +1,6 @@
 ---
 title: Ldu crawl based on nodejs
+copyright: true
 date: 2018-01-10 19:40:02
 categories: Study
 description: 基于Nodejs实现的网络爬虫

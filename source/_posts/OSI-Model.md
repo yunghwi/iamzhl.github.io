@@ -1,5 +1,6 @@
 ---
 title: OSI Model
+copyright: true
 date: 2018-04-09 16:36:53
 categories: Linux
 description: OSI 七层模型

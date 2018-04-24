@@ -1,5 +1,6 @@
 ---
 title: Common Keyboard  shortcut on MAC
+copyright: true
 date: 2017-10-26 08:14:21
 categories: Study
 description: MAC 常用快捷键整理

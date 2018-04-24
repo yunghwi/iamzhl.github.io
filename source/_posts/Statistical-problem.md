@@ -1,5 +1,6 @@
 ---
 title: Statistical problem
+copyright: true
 date: 2017-08-29
 categories: algorithm
 description: 统计数字问题

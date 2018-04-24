@@ -1,5 +1,6 @@
 ---
 title: Extract and fix DSDT SSDT simply
+copyright: true
 date: 2017-08-30
 categories: Hackintosh
 description: DSDT SSDT 简单提取修复

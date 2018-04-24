@@ -1,5 +1,6 @@
 ---
 title: Problem about police and gangster 110
+copyright: true
 date: 2017-09-18
 categories: algorithm
 description: 警匪110问题

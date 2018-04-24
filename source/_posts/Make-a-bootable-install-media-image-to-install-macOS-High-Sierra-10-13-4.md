@@ -1,5 +1,6 @@
 ---
 title: Make a bootable install image to install macOS High Sierra 10.13.4
+copyright: true
 date: 2018-03-30 19:52:35
 categories: Hackintosh
 description: 制作可启动的安装镜像来安装macOS High Sierra 10.13.4

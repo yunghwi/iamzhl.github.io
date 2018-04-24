@@ -1,5 +1,6 @@
 ---
 title: n queen
+copyright: true
 date: 2018-01-17 16:04:05
 categories: algorithm
 description: n皇后问题
