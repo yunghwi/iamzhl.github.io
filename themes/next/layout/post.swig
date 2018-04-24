@@ -20,6 +20,8 @@
         {% include '_partials/share/baidushare.swig' %}
       {% elseif theme.add_this_id %}
         {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.sharesdk %}
+        {% include '_partials/share/sharesdk.swig' %}
       {% endif %}
     </div>
   </div>
