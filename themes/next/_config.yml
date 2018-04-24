@@ -542,7 +542,7 @@ gitment:
 #jiathis: true
   ##uid: Get this uid from http://www.jiathis.com/
 
-#Share
+#ShareSDK
 sharesdk: true
 shareSDKappkey: 256898a22bf64
 
