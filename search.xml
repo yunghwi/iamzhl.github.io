@@ -298,8 +298,8 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -333,8 +333,8 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -357,8 +357,8 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>NTFS</tag>
       </tags>
   </entry>
@@ -430,8 +430,8 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>Window Server Service only ran for 0 seconds</tag>
         <tag>Disable DGPU</tag>
         <tag>屏蔽独显</tag>
@@ -464,19 +464,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Problem about rollover price tag]]></title>
-    <url>%2FProblem-about-rollover-price-tag.html</url>
-    <content type="text"><![CDATA[价牌翻转问题 问题描述 思路1、已知是一个四位数，那么共有1001-9999种情况；2、一个数颠倒之后，数字顺序颠倒并且每个数字颠倒，例如1269颠倒之后就是6921；3、0不能是第一位也不能是最后一位。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;math.h&gt;int array[4]=&#123;0&#125;;int inverse(int a)&#123;//求一个数颠倒之后的结果 int b=0; int arr[4]=&#123;0&#125;; for(int i=0;i&lt;4;i++)&#123; arr[i]=(int)(a/pow(10,3-i))%10; if(arr[i]==9) b+=6*pow(10,i); else if(arr[i]==6) b+=9*pow(10,i); else b+=arr[i]*pow(10,i); &#125; return b;&#125;int main()&#123; int i,j; int k=0,l=0; int temp; int flag; int up[50]=&#123;0&#125;,down[50]=&#123;0&#125;;//分别存放赚钱和赔钱的价牌 for(i=1001;i&lt;10000;i++)&#123; temp=i; flag=1; for(j=0;j&lt;4;j++)&#123; array[j]=(int)(temp/pow(10,3-j))%10; if(array[j]==3||array[j]==4||array[j]==7)&#123;//分割数字排除不能翻转的数字 flag=0; break; &#125; &#125; if(flag)&#123; if(array[0]==0 || array[3]==0)//0不能位于第一位和最后一位 continue; if(inverse(i)-i&gt;800&amp;&amp;inverse(i)-i&lt;900) up[k++]=i; if(i-inverse(i)&gt;200&amp;&amp;i-inverse(i)&lt;300) down[l++]=i; &#125; &#125; for(i=0;i&lt;50;i++)&#123;//依次输出赚钱的原价，颠倒价、赚的钱、赔钱的原价、颠倒价、赔的钱 for(j=0;j&lt;50;j++)&#123; if((inverse(up[i])-up[i])-(down[j]-inverse(down[j]))==558)&#123; printf(&quot;%d\t%d\t%d\t&quot;,up[i],inverse(up[i]),inverse(up[i])-up[i]); printf(&quot;%d\t%d\t%d\n&quot;,down[j],inverse(down[j]),down[j]-inverse(down[j])); &#125; &#125; &#125; return 0;&#125; 运行结果：]]></content>
-      <categories>
-        <category>algorithm</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>C语言</tag>
-        <tag>价牌翻转</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Problem about police and gangster 110]]></title>
     <url>%2FProblem-about-police-and-gangster-110.html</url>
     <content type="text"><![CDATA[警匪110问题 问题描述 思路1、一共九个数字，八个操作符；2、每个操作符有三种情况，即留空、加或者减，分别用0、1和2表示；3、共有 3^8 种情况，遍历每种情况判断输出；4、需要注意的是留空和’+’、’-‘需要分开处理，因为留空之后需要将其前后的数据连在一起。5、以12+34+56+7-8+9为例，给和sum赋初值为0，第一次循环操作符为留空，需要先加上第一位的1，然后进行这一次运算，即1x10+2，然后下一次循环操作符为+，需要计算的就是12+3，同理在3、4之间的空需要计算的是3x10+4，而不是（12+3）x10+4，所以需要一个临时变量来记录上次的操作数，还需要一个变量来记录上次的操作符将上次的结果进行统计处理，原因就在于我们无法确定下次的操作符是不是留空。6、由于我们在统计和时，只有在下一次循环才能处理最后一个操作数，所以需要将9最后单独处理。 代码实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include &lt;stdio.h&gt; #include &lt;math.h&gt; int main() &#123; int a[9]=&#123;1,2,3,4,5,6,7,8,9&#125;; int sum; int temp; int oper,lastoper; int number; int i,j; for(i=0;i&lt;pow(3,8);i++) &#123; sum=0; temp=1; lastoper=1; number=i; for(j=1;j&lt;=8;j++) &#123; //操作八次 oper=number%3; number=number/3; if (!oper) temp=temp*10+a[j]; //留空单独处理 if (oper==1) &#123; //当前操作符 if(lastoper==1)&#123; //前一次操作符 sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; //更新上次操作符 &#125; if(oper==2)&#123; if(lastoper==1)&#123; sum=sum+temp; temp=a[j]; &#125; if(lastoper==2)&#123; sum=sum-temp; temp=a[j]; &#125; lastoper=oper; &#125; &#125; if(lastoper==1) //第九次操作单独处理 sum=sum+temp; if(lastoper==2) sum=sum-temp; if(sum==110) &#123; number=i; for(j=1;j&lt;=8;j++) &#123; printf(&quot;%d&quot;,a[j-1]); oper=number%3; number=number/3; if(oper==1) printf(&quot;+&quot;); if(oper==2) printf(&quot;-&quot;); else continue; &#125; printf(&quot;9\n&quot;); &#125; &#125; return 0;&#125; 运行结果]]></content>
@@ -490,6 +477,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Problem about rollover price tag]]></title>
+    <url>%2FProblem-about-rollover-price-tag.html</url>
+    <content type="text"><![CDATA[价牌翻转问题 问题描述 思路1、已知是一个四位数，那么共有1001-9999种情况；2、一个数颠倒之后，数字顺序颠倒并且每个数字颠倒，例如1269颠倒之后就是6921；3、0不能是第一位也不能是最后一位。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;math.h&gt;int array[4]=&#123;0&#125;;int inverse(int a)&#123;//求一个数颠倒之后的结果 int b=0; int arr[4]=&#123;0&#125;; for(int i=0;i&lt;4;i++)&#123; arr[i]=(int)(a/pow(10,3-i))%10; if(arr[i]==9) b+=6*pow(10,i); else if(arr[i]==6) b+=9*pow(10,i); else b+=arr[i]*pow(10,i); &#125; return b;&#125;int main()&#123; int i,j; int k=0,l=0; int temp; int flag; int up[50]=&#123;0&#125;,down[50]=&#123;0&#125;;//分别存放赚钱和赔钱的价牌 for(i=1001;i&lt;10000;i++)&#123; temp=i; flag=1; for(j=0;j&lt;4;j++)&#123; array[j]=(int)(temp/pow(10,3-j))%10; if(array[j]==3||array[j]==4||array[j]==7)&#123;//分割数字排除不能翻转的数字 flag=0; break; &#125; &#125; if(flag)&#123; if(array[0]==0 || array[3]==0)//0不能位于第一位和最后一位 continue; if(inverse(i)-i&gt;800&amp;&amp;inverse(i)-i&lt;900) up[k++]=i; if(i-inverse(i)&gt;200&amp;&amp;i-inverse(i)&lt;300) down[l++]=i; &#125; &#125; for(i=0;i&lt;50;i++)&#123;//依次输出赚钱的原价，颠倒价、赚的钱、赔钱的原价、颠倒价、赔的钱 for(j=0;j&lt;50;j++)&#123; if((inverse(up[i])-up[i])-(down[j]-inverse(down[j]))==558)&#123; printf(&quot;%d\t%d\t%d\t&quot;,up[i],inverse(up[i]),inverse(up[i])-up[i]); printf(&quot;%d\t%d\t%d\n&quot;,down[j],inverse(down[j]),down[j]-inverse(down[j])); &#125; &#125; &#125; return 0;&#125; 运行结果：]]></content>
+      <categories>
+        <category>algorithm</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>C语言</tag>
+        <tag>价牌翻转</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Allow apps downloaded from anywhere on macOS]]></title>
     <url>%2FAllow-apps-downloaded-from-anywhere-in-macOS.html</url>
     <content type="text"><![CDATA[在 macOS 启用任何来源 Allow apps downloaded from anywhere on许多朋友升级到 macOS Sierra 后在”安全性与隐私”中找不到”任何来源”选项，这里我教给大家怎么打开”任何来源”。 打开终端，输入以下代码回车： 1sudo spctl --master-disable 会提示输入密码，根据提示输入密码回车之后就可以在”安全性与隐私”中打开”任何来源”选项了]]></content>
@@ -497,9 +497,9 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
         <tag>终端</tag>
+        <tag>Hacintosh</tag>
         <tag>任何来源</tag>
       </tags>
   </entry>
@@ -524,8 +524,8 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>BCM94352z</tag>
       </tags>
   </entry>
@@ -556,19 +556,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Speed up the hackintosh to boot]]></title>
-    <url>%2FSpeed-up-the-hackintosh-to-boot.html</url>
-    <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hacintosh</tag>
-        <tag>黑苹果</tag>
-        <tag>开机速度</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Check CPU frequences by using AppleIntelInfo]]></title>
     <url>%2FCheck-CPU-frequences-by-using-AppleIntelInfo.html</url>
     <content type="text"><![CDATA[利用 AppleIntelInfo 查看变频 前言很多朋友在查看自己机器变频时利用 CPU-S 发现并不准确，这里我教给大家一种比较准确的方法—-利用 AppleIntelInfo 查看变频 开工首先下载 AppleIntelInfo 源码编译，打开终端，输入：1cd ~/Desktop 回车继续敲： 1git clone https://github.com/athlonreg/AppleIntelInfo.git 回车后就把 AppleIntelInfo 源码下载在桌面了 然后打开 AppleIntelInfo 的工程文件进行编译生成 .kext 内和扩展文件，这一部分这里不再赘述，如果不会的话参考我的另一个帖子，里面有提到，链接在这(后面的汉字也是地址的一部分哦)： 1http://athlonreg.top/2017/08/31/解决Lilu造成的一些问题/ 将编译后的 AppleIntelInfo.kext 放到桌面 然后开始利用命令行看变频数据打开终端，输入： 1cd ~/Desktop 回车后继续敲 1sudo chown -R root:wheel AppleIntelInfo.kext 回车会提示输入密码，输入之后回车继续敲： 1sudo kextutil AppleIntelInfo.kext 再回车，接着敲： 1sudo cat /tmp/AppleIntelInfo.dat 回车之后变频数据就出来了，例如我的机器： 一般我们只看最后一行就可以了哦 比如我的机器就是 800、 1000、 …… 、 2700 ，单位是MHz，正好符合我的机器，最低 800MHz ，最高2.4GHz，可超频到2.7GHz。 完工行胜于言，快去试试你的机器是不是变频正常吧！！]]></content>
@@ -576,23 +563,23 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hacintosh</tag>
         <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
         <tag>AppleIntelInfo</tag>
         <tag>变频</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Problem about coin array]]></title>
-    <url>%2FProblem-about-coin-array.html</url>
-    <content type="text"><![CDATA[金币阵列问题 问题描述有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 思路本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];nt number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
+    <title><![CDATA[Speed up the hackintosh to boot]]></title>
+    <url>%2FSpeed-up-the-hackintosh-to-boot.html</url>
+    <content type="text"><![CDATA[加快黑苹果开机速度的一种方法 知识普及有的黑苹果重启速度特别慢（大约2、3分钟），这问题多半与Clover的 Reset Address 与 Reset Value 有关 ( 这里只针对 Clover ) 。 这个问题和 Reset Address 与 Reset Value 参数有关，这两个参数位于 Clover Configurator 的Acpi部分左下方。如果什么都不填默认值分别为：0x64与0xFE，即：重启通过PS控制器完成，PS控制器只有黑苹果才有，白苹果则是通过PCI实现，所以，如果你的电脑恰好也是通过PCI控制，那么就会有问题了。针对PCI这两个值应该填写：0x0CF9与0x06。 当然，还有一种更精确找到该值的办法，就是我们要用到的唯一一个表单，就是FACP这个表。 准备工作首先利用 CLOVER 在引导界面按 F4 或者 Fn+F4 提取原始 ACPI 表单，提取出来的表单就在 /EFI/CLOVER/ACPI/origin 开工提取 Reset Address 和 Reset Value 值用 MaciASL 打开 FACP 这个表单，Command + F 搜索 Reset Register ， Address 值和 Value to cause reset 值就是我们所说的 PCI 需要设定的两个值，如图高亮处： 设定Reset Address 和 Reset Value 值提取出来这两个值后就要修改 config 了，用 Clover Configurator 打开你的 config ，如图位置填上提取到的两个值： 保存重启就可以了. 完工]]></content>
       <categories>
-        <category>algorithm</category>
+        <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>算法</tag>
-        <tag>C语言</tag>
-        <tag>金币阵列</tag>
+        <tag>黑苹果</tag>
+        <tag>Hacintosh</tag>
+        <tag>开机速度</tag>
       </tags>
   </entry>
   <entry>
@@ -606,6 +593,19 @@
         <tag>终端</tag>
         <tag>Mac</tag>
         <tag>Xcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Problem about coin array]]></title>
+    <url>%2FProblem-about-coin-array.html</url>
+    <content type="text"><![CDATA[金币阵列问题 问题描述有m*n枚金币在桌面上排列成一个m行n列的金币阵列。每一枚金币或正面朝上，或背面朝上。用数字表示金币状态，0表示正面朝上，1表示背面朝上。 金币阵列游戏的规则1、每次将任一行金币翻过来放在原来的位置上;2、每次可以任选2列，交换这2列金币的位置. 任务给定金币的初始状态和目标状态，编程计算按金币游戏规则，将金币排列从初始状态变换到目标状态所需的最少变换次数。 思路本例的实质是将一个二进制矩阵从一种形式利用相应规则变换到另一种形式。提供的规则有两种：1、将某一行的金币翻转;2、将某两列进行交换。 在这两种操作中，第一种操作可能会影响到某一行或者某一列中已经排列好的相关元素，因此，首先利用该规则进行变换，而后续的操作则不再利用该规则。 那么在程序中应该如下操作：1、将矩阵中的每一列作为第1列，并利用第一个规则将第1列中的相关元素与目标矩阵中第1列的元素进行配对，如果不相同，则利用每1个规则进行翻转； 2、从第2列开始，将处理后的列与目标列进行比较，如果相同，则转下一列；如果不同，看是否可以通过列的交换完成，如果可以，则继续扫描，否则无解。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;stdio.h&gt;#define row 4#define col 3int source[row][col] = &#123;1,0,1,0,0,0,1,1,0,1,0,1&#125;; //sourceint target[row][col] = &#123;1,0,1,1,1,1,0,1,1,1,0,1&#125;; //targetint temparr[row][col];nt number = 0; //转换的次数int minnum = 9999;void raw_change(int i) &#123; //行翻转 int j; for(j=0; j&lt;col; j++) &#123; temparr[i][j] = 1-temparr[i][j]; &#125; number++;&#125;void col_exchange(int i, int j) &#123; //列交换 int temp, k; int temp, k; for(k=0; k&lt;row; k++) &#123; temp = temparr[k][i]; temparr[k][i] = temparr[k][j]; temparr[k][j] = temp; &#125; if(i != j) number++; &#125;int judge(int i, int j) &#123; //temparr的i列是否和target的j列相同 int flag; for(int k=0; k&lt;row; k++) &#123; flag=1; if(temparr[k][i] != target[k][j]) &#123; flag=0; break; &#125; &#125; return flag;&#125;int main() &#123; // insert code here... int i,j,k; for(i=0; i&lt;col; i++) &#123; //代表source的列 for(j=0; j&lt;row; j++) &#123; for(k=0; k&lt;col; k++) &#123; temparr[j][k] = source[j][k]; //给替身数组赋值 &#125; &#125; number=0; col_exchange(0,i); //temparr数组的列先做交换，把其他列放到第一列的位置 for(j=0; j&lt;row; j++) &#123; //判断temparr的0号列和target的0号列是否相同，不同则翻转 if(temparr[j][0] != target[j][0]) &#123; raw_change(j); //如果第1列不匹配，那么行全部翻转 &#125; &#125; int found; for(j=0; j&lt;col; j++) &#123; //代表target，从第2行开始，到最后一行 found=0; for(k=j; k&lt;col; k++) &#123; //代表temparr，从第2行开始，直到最后一行 if(judge(k, j)) &#123; found=1; col_exchange(k, j); break; &#125; &#125; if(!found) &#123; break; &#125; &#125; if(found) &#123; minnum=number; &#125; &#125; if(minnum&lt;9999) &#123; printf(&quot;一共变换%d次！\n&quot;, minnum); &#125; else&#123; printf(&quot;无解！\n&quot;); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>algorithm</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>C语言</tag>
+        <tag>金币阵列</tag>
       </tags>
   </entry>
   <entry>
