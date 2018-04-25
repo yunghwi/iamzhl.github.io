@@ -169,7 +169,7 @@
 
 
   <meta name="description" content="Install macOS on laptop 原版黑苹果安装参考贴">
-<meta name="keywords" content="Hacintosh,黑苹果">
+<meta name="keywords" content="黑苹果,Hacintosh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Install macOS on laptop">
 <meta property="og:url" content="https://blog.iamzhl.top/Install-macOS-on-laptop.html">
@@ -578,6 +578,26 @@
                
                  <span class="leancloud-visitors-count"></span>
              </span>
+
+             <span class="post-time">
+             &nbsp; | &nbsp;
+                   <span class="post-meta-item-icon">
+                     <i class="fa fa-calendar-o"></i>
+                   </span>
+                   <span class="post-meta-item-text">本文共计:</span>
+                   <span class="post-count">4,115 字</span>
+                   
+                 </span>
+            
+              <span class="post-time">
+             &nbsp; | &nbsp;
+                   <span class="post-meta-item-icon">
+                     <i class="fa fa-calendar-o"></i>
+                   </span>
+                   <span class="post-meta-item-text">阅读时长:</span>
+                   <span class="post-count">15 分钟</span>
+                   
+              </span>
           
 
           
@@ -868,9 +888,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hacintosh/" rel="tag"><i class="fa fa-tag"></i> Hacintosh</a>
-          
             <a href="/tags/黑苹果/" rel="tag"><i class="fa fa-tag"></i> 黑苹果</a>
+          
+            <a href="/tags/Hacintosh/" rel="tag"><i class="fa fa-tag"></i> Hacintosh</a>
           
         </div>
       
@@ -1373,6 +1393,12 @@
 
     
 
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
     
 
   </div>
@@ -2051,6 +2077,18 @@
       
       new needShareButton('#needsharebutton-postbottom', pbOptions);
     
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "default";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "top";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Linkedin";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
     
   </script>
 

@@ -527,6 +527,26 @@
                
                  <span class="leancloud-visitors-count"></span>
              </span>
+
+             <span class="post-time">
+             &nbsp; | &nbsp;
+                   <span class="post-meta-item-icon">
+                     <i class="fa fa-calendar-o"></i>
+                   </span>
+                   <span class="post-meta-item-text">本文共计:</span>
+                   <span class="post-count">437 字</span>
+                   
+                 </span>
+            
+              <span class="post-time">
+             &nbsp; | &nbsp;
+                   <span class="post-meta-item-icon">
+                     <i class="fa fa-calendar-o"></i>
+                   </span>
+                   <span class="post-meta-item-text">阅读时长:</span>
+                   <span class="post-count">2 分钟</span>
+                   
+              </span>
           
 
           
@@ -661,8 +681,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Allow-apps-downloaded-from-anywhere-in-macOS.html" rel="next" title="Allow apps downloaded from anywhere on macOS">
-                <i class="fa fa-chevron-left"></i> Allow apps downloaded from anywhere on macOS
+              <a href="/Problem-about-Sending-out-death-squads.html" rel="next" title="Problem about Sending out death squads">
+                <i class="fa fa-chevron-left"></i> Problem about Sending out death squads
               </a>
             
           </div>
@@ -1136,6 +1156,12 @@
 
     
 
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
     
 
   </div>
@@ -1814,6 +1840,18 @@
       
       new needShareButton('#needsharebutton-postbottom', pbOptions);
     
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "default";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "top";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Linkedin";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
     
   </script>
 

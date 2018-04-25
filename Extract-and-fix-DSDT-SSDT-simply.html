@@ -541,6 +541,26 @@
                
                  <span class="leancloud-visitors-count"></span>
              </span>
+
+             <span class="post-time">
+             &nbsp; | &nbsp;
+                   <span class="post-meta-item-icon">
+                     <i class="fa fa-calendar-o"></i>
+                   </span>
+                   <span class="post-meta-item-text">本文共计:</span>
+                   <span class="post-count">473 字</span>
+                   
+                 </span>
+            
+              <span class="post-time">
+             &nbsp; | &nbsp;
+                   <span class="post-meta-item-icon">
+                     <i class="fa fa-calendar-o"></i>
+                   </span>
+                   <span class="post-meta-item-text">阅读时长:</span>
+                   <span class="post-count">2 分钟</span>
+                   
+              </span>
           
 
           
@@ -1192,6 +1212,12 @@
 
     
 
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
     
 
   </div>
@@ -1870,6 +1896,18 @@
       
       new needShareButton('#needsharebutton-postbottom', pbOptions);
     
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "default";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "top";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Linkedin";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
     
   </script>
 
