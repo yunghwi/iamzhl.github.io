@@ -232,6 +232,26 @@
                {% endif %}
                  <span class="leancloud-visitors-count"></span>
              </span>
+
+             <span class="post-time">
+             &nbsp; | &nbsp;
+                   <span class="post-meta-item-icon">
+                     <i class="fa fa-calendar-o"></i>
+                   </span>
+                   <span class="post-meta-item-text">本文共计:</span>
+                   <span class="post-count">{{ wordcount(post.content) }} 字</span>
+                   
+                 </span>
+            
+              <span class="post-time">
+             &nbsp; | &nbsp;
+                   <span class="post-meta-item-icon">
+                     <i class="fa fa-calendar-o"></i>
+                   </span>
+                   <span class="post-meta-item-text">阅读时长:</span>
+                   <span class="post-count">{{ min2read(post.content) }} 分钟</span>
+                   
+              </span>
           {% endif %}
 
           {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}

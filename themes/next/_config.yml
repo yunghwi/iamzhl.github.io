@@ -569,7 +569,7 @@ needmoreshare2:
       position: middle
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook,RenRen,Posterous,Tumblr,GoogleBookmarks,Newsvine,Mailto,Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru,Linkedin
   float:
-    enable: false
+    enable: true
     options:
       iconStyle: default
       boxForm: horizontal
